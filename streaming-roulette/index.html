@@ -1,124 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Legal Streaming Roulette & Finder</title>
-    <script src="https://jsdelivr.net"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find your next free watch. Spin through legal movie, classic cinema, documentary, retro TV, and anime streaming services.">
+  <meta name="color-scheme" content="dark">
+  <title>Free Legal Streaming Roulette &amp; Finder</title>
+  <!-- Official Tailwind CSS v4 Play CDN. All application logic is inline below. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    body { margin: 0; background: #020617; color: #e2e8f0; font-family: ui-sans-serif, system-ui, sans-serif; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid #a5b4fc; outline-offset: 5px; }
+    .film-grid { background-image: radial-gradient(#33415566 1px, transparent 1px); background-size: 22px 22px; }
+    .genre:has(input:checked) { border-color: #818cf8; background: #312e8155; color: #e0e7ff; box-shadow: 0 0 0 1px #818cf8; }
+    .genre:has(input:focus-visible) { outline: 3px solid #a5b4fc; outline-offset: 4px; }
+    .genre small { display: block; margin-top: .25rem; color: #94a3b8; font-weight: 400; }
+    @keyframes wheel { to { transform: rotate(360deg); } }
+    @keyframes reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .spinning #spinIcon { animation: wheel .65s linear infinite; }
+    .reveal { animation: reveal .4s ease-out both; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+  </style>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans">
+<body class="min-h-screen flex flex-col antialiased">
+  <header class="border-b border-slate-800 bg-slate-950/95">
+    <div class="max-w-6xl mx-auto px-5 py-5 sm:px-8">
+      <a href="../index.html" class="inline-block text-sm text-slate-400 hover:text-indigo-300 transition-colors">← Back to Hub</a>
+      <div class="flex items-center gap-3 mt-6 mb-2">
+        <span aria-hidden="true" class="grid size-10 place-items-center rounded-xl border border-indigo-400/30 bg-indigo-500/15 text-indigo-300 text-xl">▶</span>
+        <div><p class="font-bold tracking-tight text-white">FreeStream<span class="text-indigo-400"> Roulette</span></p><p class="text-xs text-slate-500 mt-0.5">A MICRO-TOOLS HUB EXPERIMENT</p></div>
+      </div>
+    </div>
+  </header>
 
-    <!-- Header Navigation -->
-    <header class="border-b border-gray-800 bg-gray-950 p-4">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold text-indigo-400">🎬 FreeStream Roulette</h1>
-            <a href="../index.html" class="text-sm text-gray-400 hover:text-white">← Back to Hub</a>
+  <main class="w-full max-w-6xl mx-auto flex-1 px-5 py-10 sm:px-8 sm:py-14">
+    <div class="mb-9 max-w-2xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4">Less scrolling. More watching.</p>
+      <h1 class="text-3xl sm:text-5xl leading-tight font-bold tracking-tight text-white">Free Legal Streaming<br><span class="text-indigo-400">Roulette &amp; Finder</span></h1>
+      <p class="mt-5 text-slate-400 leading-relaxed max-w-xl">Your next movie night starts here. Pick a mood, give the wheel a spin, and discover a legal place to watch for free.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_280px] gap-7 items-start">
+      <section aria-labelledby="finderTitle" class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:p-8 shadow-2xl shadow-black/20">
+        <div class="flex items-center gap-3 mb-7"><span class="text-xs font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 rounded-lg px-2.5 py-1.5">01</span><h2 id="finderTitle" class="font-semibold text-lg text-white">Set the mood</h2></div>
+        <fieldset id="genreFilters">
+          <legend class="text-sm text-slate-400 mb-4">What are you in the mood for?</legend>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <label class="genre cursor-pointer rounded-xl border border-slate-700 bg-slate-950/40 p-4 text-sm font-semibold transition-colors hover:border-slate-500"><input class="sr-only" type="radio" name="genre" value="all" checked><span aria-hidden="true" class="block text-xl mb-2">✦</span>All<small>A little of everything</small></label>
+            <label class="genre cursor-pointer rounded-xl border border-slate-700 bg-slate-950/40 p-4 text-sm font-semibold transition-colors hover:border-slate-500"><input class="sr-only" type="radio" name="genre" value="hollywood"><span aria-hidden="true" class="block text-xl mb-2">🎬</span>Hollywood<small>Big-screen favorites</small></label>
+            <label class="genre cursor-pointer rounded-xl border border-slate-700 bg-slate-950/40 p-4 text-sm font-semibold transition-colors hover:border-slate-500"><input class="sr-only" type="radio" name="genre" value="classics"><span aria-hidden="true" class="block text-xl mb-2">🎞</span>Classics<small>Timeless cinema</small></label>
+            <label class="genre cursor-pointer rounded-xl border border-slate-700 bg-slate-950/40 p-4 text-sm font-semibold transition-colors hover:border-slate-500"><input class="sr-only" type="radio" name="genre" value="documentaries"><span aria-hidden="true" class="block text-xl mb-2">🌍</span>Documentaries<small>Real-world stories</small></label>
+            <label class="genre cursor-pointer rounded-xl border border-slate-700 bg-slate-950/40 p-4 text-sm font-semibold transition-colors hover:border-slate-500"><input class="sr-only" type="radio" name="genre" value="retro"><span aria-hidden="true" class="block text-xl mb-2">📺</span>Retro TV<small>Comfort-watch channels</small></label>
+            <label class="genre cursor-pointer rounded-xl border border-slate-700 bg-slate-950/40 p-4 text-sm font-semibold transition-colors hover:border-slate-500"><input class="sr-only" type="radio" name="genre" value="anime"><span aria-hidden="true" class="block text-xl mb-2">🌸</span>Anime<small>Animated adventures</small></label>
+          </div>
+        </fieldset>
+        <p id="matchCount" class="text-xs text-slate-400 mt-4 mb-6"></p>
+        <button id="spinBtn" type="button" class="flex justify-center items-center gap-3 w-full rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold px-4 py-4 transition-colors shadow-lg shadow-indigo-950/50 disabled:opacity-70 disabled:cursor-wait">
+          <span id="spinIcon" aria-hidden="true" class="inline-block text-2xl leading-none">⟳</span><span id="spinLabel">Spin the Roulette Wheel</span>
+        </button>
+        <p id="status" role="status" aria-live="polite" aria-atomic="true" class="text-center text-xs text-slate-400 mt-3 min-h-5">Let chance pick your next streaming destination.</p>
+
+        <div class="mt-7 pt-7 border-t border-slate-800">
+          <div id="emptyState" class="film-grid rounded-xl border border-slate-800 py-10 px-5 text-center"><span aria-hidden="true" class="text-3xl">🍿</span><p class="text-slate-300 font-medium mt-4">Movie night, minus the indecision.</p><p class="text-sm text-slate-500 mt-2">Your next discovery will appear right here.</p></div>
+          <article id="resultBox" aria-labelledby="platformName" hidden class="rounded-xl border border-indigo-500/30 bg-gradient-to-br from-indigo-950/60 to-slate-950 p-5 sm:p-6">
+            <div class="flex flex-wrap gap-2 items-center justify-between"><span id="platformTag" class="text-xs uppercase tracking-wider font-semibold text-indigo-300"></span><span class="text-xs font-medium rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-300 px-3 py-1">✓ 100% Legal &amp; Free</span></div>
+            <h3 id="platformName" class="text-2xl font-bold text-white mt-5" tabindex="-1"></h3>
+            <p id="platformDesc" class="mt-3 text-sm leading-7 text-slate-300"></p>
+            <p id="platformNote" class="mt-3 text-xs leading-5 text-slate-400"></p>
+            <a id="platformLink" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 mt-6 rounded-lg bg-indigo-600 hover:bg-indigo-500 transition-colors text-white text-sm font-semibold px-5 py-3">Explore platform <span aria-hidden="true">↗</span></a>
+            <p class="mt-3 text-xs text-slate-500">Opens the official streaming site in a new tab.</p>
+          </article>
         </div>
-    </header>
+      </section>
 
-    <!-- Main Dashboard Container -->
-    <main class="flex-grow max-w-5xl w-full mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
-        
-        <!-- Left Side: Interactive Filtering Controls -->
-        <section class="md:col-span-2 bg-gray-950 p-6 rounded-xl border border-gray-800 shadow-xl flex flex-col justify-between">
-            <div>
-                <h2 class="text-2xl font-bold mb-2">Find Something Free to Watch</h2>
-                <p class="text-gray-400 text-sm mb-6">Filter through 100% legal, ad-supported, or public domain streaming platforms instantly. No sign-ups required.</p>
-                
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Select Mood / Genre</label>
-                        <select id="genreFilter" class="w-full bg-gray-900 border border-gray-800 rounded-lg p-3 text-white focus:outline-none focus:border-indigo-500">
-                            <option value="all">Any Genre / All Platforms</option>
-                            <option value="movies">Hollywood Movies & Blockbusters</option>
-                            <option value="classics">Classic Cinema & Public Domain</option>
-                            <option value="docs">Documentaries & Reality</option>
-                            <option value="tv">Live TV & Retro Shows</option>
-                            <option value="anime">Anime & International</option>
-                        </select>
-                    </div>
+      <aside aria-label="Advertisement and information" class="space-y-5">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4"><div class="film-grid min-h-[300px] rounded-xl border-2 border-dashed border-slate-700 flex flex-col justify-center items-center text-center px-4"><span aria-hidden="true" class="border border-slate-700 rounded px-2 py-1 text-slate-500 text-xs mb-4">AD</span><p class="font-mono text-[11px] tracking-widest text-slate-400 leading-6">ADSENSE BANNER PLACEMENT</p><p class="text-xs text-slate-600 mt-2">Responsive display space</p></div></div>
+        <div class="rounded-2xl border border-slate-800 p-5"><h2 class="text-sm font-semibold text-slate-200">Good to know</h2><p class="text-xs leading-6 text-slate-400 mt-3">We recommend platforms, not individual titles. Free catalogs can include ads, and availability varies by country. Some services require a free account.</p><p class="text-xs leading-6 text-slate-400 mt-3">No subscriptions to spin. No data sent. Just a little movie-night serendipity.</p></div>
+      </aside>
+    </div>
+  </main>
+  <footer class="border-t border-slate-800"><div class="max-w-6xl mx-auto px-5 sm:px-8 py-6 flex flex-wrap justify-between gap-3 text-xs text-slate-500"><p>© 2026 Micro-Tools Hub</p><p>Made for curious people. Powered by chance.</p></div></footer>
 
-                    <button id="spinBtn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-4 rounded-lg transition dynamic-shadow cursor-pointer">
-                        🎲 Spin the Roulette Wheel
-                    </button>
-                </div>
-            </div>
+  <script>
+    'use strict';
+    // Official free destinations only. Freevee and Crunchyroll's former free
+    // tier are intentionally omitted; a paid trial is not a free catalog.
+    const platforms = [
+      { name: 'Tubi', genres: ['hollywood', 'classics', 'documentaries', 'retro', 'anime'], description: 'Explore a broad on-demand library of Hollywood films, cult favorites, documentaries, television series, and anime. Browse by collection when you want to turn a random pick into a double feature.', note: 'Free with ads. Catalog and access vary by region.', url: 'https://tubitv.com/home' },
+      { name: 'Pluto TV', genres: ['hollywood', 'classics', 'documentaries', 'retro'], description: 'Bring back the joy of channel surfing with themed live channels, classic television, movies, and an on-demand library. Tune in to whatever is playing or browse for something that suits your evening.', note: 'Free with ads. Channels vary by country.', url: 'https://pluto.tv/live-tv' },
+      { name: 'The Roku Channel', genres: ['hollywood', 'retro'], description: 'Discover free movies, familiar television series, and live channels in Roku’s streaming catalog. Choose titles marked free; premium subscriptions are offered separately.', note: 'Free catalog supported by ads. Regional and account restrictions may apply.', url: 'https://therokuchannel.roku.com/' },
+      { name: 'Plex', genres: ['hollywood', 'classics', 'documentaries', 'retro'], description: 'Browse free on-demand films, independent discoveries, documentaries, and live television. Head to the free streaming catalog rather than rental listings to keep your watch night subscription-free.', note: 'Free titles include ads. Rentals and other paid features are separate.', url: 'https://watch.plex.tv/' },
+      { name: 'Internet Archive — Feature Films', genres: ['classics'], description: 'Step into cinema history with a curated collection of public-domain and openly shared feature films. Discover silent-era storytelling, vintage science fiction, and classic screen performances.', note: 'Free archival collection. Check each item’s rights information; rights can differ by country.', url: 'https://archive.org/details/feature_films' },
+      { name: 'Documentary+', genres: ['documentaries'], description: 'Follow real people and remarkable stories through documentary features and shorts covering culture, music, sports, and the world around us. A focused choice when you want something grounded in real life.', note: 'Free with ads where available. Regional availability varies.', url: 'https://www.docplus.com/' },
+      { name: 'RetroCrush', genres: ['anime'], description: 'Rediscover classic anime through a dedicated catalog of nostalgic series and films. Explore its free selections for vintage animation, memorable characters, and cult favorites.', note: 'Free selections supported by ads; premium titles are separate. Primarily available in North America.', url: 'https://www.retrocrush.tv/' },
+      { name: 'Shout! TV', genres: ['classics', 'retro'], description: 'Find cult cinema, classic television, comedy, and genre favorites from the Shout! library. Its free streams are a natural fit for a nostalgic evening or an offbeat movie discovery.', note: 'Free with ads. Some titles and streams are region-limited.', url: 'https://shout-tv.com/' },
+      { name: 'Xumo Play', genres: ['hollywood', 'documentaries', 'retro'], description: 'Dip into free live channels and on-demand entertainment spanning movies, television, and factual programming. It is an easy starting point for relaxed, lean-back channel surfing.', note: 'Free with ads in supported regions. Channel lineups vary.', url: 'https://play.xumo.com/' }
+    ];
+    const genreNames = { all: 'All', hollywood: 'Hollywood', classics: 'Classics', documentaries: 'Documentaries', retro: 'Retro TV', anime: 'Anime' };
+    const filters = document.getElementById('genreFilters');
+    const spinBtn = document.getElementById('spinBtn');
+    const spinLabel = document.getElementById('spinLabel');
+    const resultBox = document.getElementById('resultBox');
+    const status = document.getElementById('status');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let lastPlatform = null;
+    let spinning = false;
 
-            <!-- Result Box -->
-            <div id="resultBox" class="mt-8 p-5 bg-gray-900 rounded-lg border border-gray-800 hidden">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <span id="platformTag" class="text-xs font-extrabold uppercase px-2 py-1 bg-indigo-950 text-indigo-300 rounded border border-indigo-800">Platform</span>
-                        <h3 id="platformName" class="text-xl font-bold mt-2 text-white">Platform Name</h3>
-                        <p id="platformDesc" class="text-sm text-gray-400 mt-1">Platform description goes here.</p>
-                    </div>
-                </div>
-                <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center">
-                    <span id="costTag" class="text-xs text-green-400 font-medium">✓ 100% Free / Ad-Supported</span>
-                    <a id="platformLink" href="#" target="_blank" class="inline-flex items-center text-sm font-semibold text-indigo-400 hover:text-indigo-300">
-                        Launch Platform <span class="ml-1">➔</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Right Side: Sidebar AdSense Placeholder -->
-        <aside class="bg-gray-950 p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[250px]">
-            <!-- Google AdSense Placeholder Frame -->
-            <div class="absolute inset-0 border-2 border-dashed border-gray-800 m-3 rounded-lg flex flex-col items-center justify-center bg-gray-900/50">
-                <span class="text-xs font-mono tracking-widest text-gray-600 uppercase mb-1">AdSense Placement</span>
-                <span class="text-[10px] font-mono text-gray-700">(Responsive Sidebar Banner)</span>
-            </div>
-        </aside>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-800 bg-gray-950 p-4 text-center text-xs text-gray-500 mt-auto">
-        <p>© 2026 Micro-Tools Hub experiment. Running client-side via GitHub Pages.</p>
-    </footer>
-
-    <!-- Logic Script -->
-    <script>
-        const platforms = [
-            { name: "Tubi TV", genre: "movies", desc: "Massive library of free Hollywood movies, popular TV series, and niche cult classics. Supported entirely by short ad breaks.", url: "https://tubitv.com" },
-            { name: "Pluto TV", genre: "tv", desc: "Drop into hundreds of live, themed virtual TV channels broadcasting retro sit-coms, 24/7 news, gaming channels, and movies.", url: "https://pluto.tv" },
-            { name: "The Roku Channel", genre: "movies", desc: "Stream free premium movies, Roku Originals, and live TV channels completely free right inside your web browser.", url: "https://roku.com" },
-            { name: "Freevee (Amazon)", genre: "tv", desc: "Amazon's ad-supported streaming destination premium shows, original series, and hit blockbusters without an Prime subscription.", url: "https://amazon.com" },
-            { name: "Internet Archive Movie Vault", genre: "classics", desc: "The ultimate vault for classic cinema. Stream thousands of public domain movies, silent films, and vintage horror entirely free.", url: "https://archive.org" },
-            { name: "Crunchyroll (Free Tier)", genre: "anime", desc: "Watch thousands of episodes of top-tier anime series locally with standard commercial breaks.", url: "https://crunchyroll.com" },
-            { name: "Documentary+ (DocPlus)", genre: "docs", desc: "A beautiful streaming home dedicated exclusively to award-winning documentary feature films and non-fiction shorts.", url: "https://docplus.com" },
-            { name: "Plex Free Movies", genre: "movies", desc: "Thousands of free on-demand movies, documentaries, and over 200 live TV channels accessible globally on almost any device.", url: "https://plex.tv" }
-        ];
-
-        const spinBtn = document.getElementById('spinBtn');
-        const genreFilter = document.getElementById('genreFilter');
-        const resultBox = document.getElementById('resultBox');
-        const platformName = document.getElementById('platformName');
-        const platformDesc = document.getElementById('platformDesc');
-        const platformTag = document.getElementById('platformTag');
-        const platformLink = document.getElementById('platformLink');
-
-        spinBtn.addEventListener('click', () => {
-            const selectedGenre = genreFilter.value;
-            
-            // Filter the static array based on user input selection
-            const filtered = selectedGenre === 'all' 
-                ? platforms 
-                : platforms.filter(p => p.genre === selectedGenre);
-
-            // Select a completely random matching entry
-            const randomPlatform = filtered[Math.floor(Math.random() * filtered.length)];
-
-            // Update DOM Elements smoothly
-            platformName.textContent = randomPlatform.name;
-            platformDesc.textContent = randomPlatform.desc;
-            platformTag.textContent = randomPlatform.genre;
-            platformLink.href = randomPlatform.url;
-
-            // Reveal the box UI element
-            resultBox.classList.remove('hidden');
-            resultBox.classList.add('animate-fade-in');
-        });
-    </script>
+    function selectedGenre() { return filters.querySelector('input:checked').value; }
+    function matches(genre) { return platforms.filter(platform => genre === 'all' || platform.genres.includes(genre)); }
+    function updateCount() {
+      const count = matches(selectedGenre()).length;
+      document.getElementById('matchCount').textContent = `${count} free streaming ${count === 1 ? 'destination' : 'destinations'} in the mix`;
+    }
+    filters.addEventListener('change', () => {
+      updateCount();
+      resultBox.hidden = true;
+      document.getElementById('emptyState').hidden = false;
+      status.textContent = 'Mood set. Spin to find a matching platform.';
+    });
+    spinBtn.addEventListener('click', () => {
+      if (spinning) return;
+      const genre = selectedGenre();
+      const pool = matches(genre);
+      if (!pool.length) {
+        status.textContent = 'No platforms match this filter. Try All.';
+        return;
+      }
+      // Avoid an immediate repeat when the chosen genre has alternatives.
+      const alternatives = pool.filter(platform => platform !== lastPlatform);
+      const choices = alternatives.length ? alternatives : pool;
+      spinning = true;
+      spinBtn.disabled = true;
+      filters.disabled = true;
+      spinBtn.classList.add('spinning');
+      spinBtn.setAttribute('aria-busy', 'true');
+      spinLabel.textContent = 'Finding your next watch…';
+      status.textContent = 'Spinning the wheel…';
+      resultBox.hidden = true;
+      document.getElementById('emptyState').hidden = false;
+      window.setTimeout(() => {
+        const platform = choices[Math.floor(Math.random() * choices.length)];
+        lastPlatform = platform;
+        document.getElementById('platformName').textContent = platform.name;
+        document.getElementById('platformDesc').textContent = platform.description;
+        document.getElementById('platformNote').textContent = platform.note;
+        document.getElementById('platformTag').textContent = genre === 'all' ? 'Your wildcard pick' : genreNames[genre];
+        const link = document.getElementById('platformLink');
+        link.href = platform.url;
+        link.setAttribute('aria-label', `Explore ${platform.name} (opens in a new tab)`);
+        document.getElementById('emptyState').hidden = true;
+        resultBox.hidden = false;
+        resultBox.classList.remove('reveal');
+        void resultBox.offsetWidth;
+        resultBox.classList.add('reveal');
+        status.textContent = `Your pick: ${platform.name}. Spin again for another discovery.`;
+        spinLabel.textContent = 'Spin the Roulette Wheel';
+        spinBtn.classList.remove('spinning');
+        spinBtn.removeAttribute('aria-busy');
+        spinBtn.disabled = false;
+        filters.disabled = false;
+        spinning = false;
+      }, reducedMotion.matches ? 0 : 850);
+    });
+    updateCount();
+  </script>
 </body>
 </html>
