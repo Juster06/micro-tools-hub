@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="WebUtils Hub: free browser tools for finding your next watch, untangling Excel formulas, and cleaning up your writing.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%234f46e5'/%3E%3Ctext x='24' y='33' text-anchor='middle' font-size='30' fill='white'%3EW%3C/text%3E%3C/svg%3E">
+  <title>WebUtils Hub — Small tools. Everyday wins.</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    body { margin:0; background:#020617; color:#e2e8f0; font-family:ui-sans-serif,system-ui,sans-serif; }
+    [hidden] { display:none!important; }
+    :focus-visible { outline:3px solid #a5b4fc; outline-offset:5px; }
+    .dot-grid { background-image:radial-gradient(#33415566 1px,transparent 1px); background-size:20px 20px; }
+    .tool-card { transition:transform .2s ease,border-color .2s ease,background-color .2s ease; }
+    .tool-card:hover { transform:translateY(-4px); }
+    input[type="search"]::-webkit-search-cancel-button { display:none; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; scroll-behavior:auto!important; } .tool-card:hover { transform:none; } }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+  <a href="#tools" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-indigo-600 focus:px-4 focus:py-3 focus:text-white">Skip to tools</a>
+  <header class="border-b border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex flex-wrap justify-between items-center gap-4">
+      <a href="index.html" aria-label="WebUtils Hub home" class="inline-flex items-center gap-3 rounded-lg">
+        <span aria-hidden="true" class="size-10 grid place-items-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-950/50 text-white">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7" stroke-linecap="round"/></svg>
+        </span><span class="font-bold text-lg tracking-tight text-white">WebUtils <span class="text-indigo-400">Hub</span></span>
+      </a>
+      <a href="#tools" class="text-sm text-slate-400 hover:text-indigo-300 transition-colors rounded">Explore tools <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main class="flex-1 w-full max-w-6xl mx-auto px-5 sm:px-8 pt-12 sm:pt-16 pb-10">
+    <section aria-labelledby="welcomeTitle" class="relative pb-10 sm:pb-12">
+      <div aria-hidden="true" class="pointer-events-none absolute -top-12 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl"></div>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-5">Your everyday digital toolkit</p>
+      <h1 id="welcomeTitle" class="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.12] text-white">Small tools.<br><span class="text-indigo-400">Everyday wins.</span></h1>
+      <p class="mt-6 max-w-xl text-slate-400 leading-relaxed sm:text-lg">Less busywork, more doing. A growing collection of focused browser tools for your spreadsheets, your writing, and your downtime.</p>
+      <div class="flex flex-wrap gap-x-5 gap-y-2 mt-6 text-xs text-slate-400">
+        <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-emerald-400">✓</span> Free to use</span>
+        <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-emerald-400">✓</span> No account needed</span>
+        <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-emerald-400">✓</span> Runs in your browser</span>
+      </div>
+    </section>
+
+    <div aria-label="Top advertisement space" class="rounded-2xl border border-slate-800 bg-slate-900/30 p-3 mb-10"><div class="dot-grid min-h-24 rounded-xl border-2 border-dashed border-slate-700 flex flex-col items-center justify-center text-center p-5"><p class="text-[11px] font-mono tracking-[0.2em] text-slate-400">ADSENSE PLACEMENT</p><p class="text-xs text-slate-600 mt-2">Responsive banner space</p></div></div>
+
+    <section id="tools" aria-labelledby="toolsTitle" class="scroll-mt-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-6">
+        <div><p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-2">Find your shortcut</p><h2 id="toolsTitle" class="text-2xl font-bold tracking-tight text-white">The tool collection</h2></div>
+        <div role="search" class="sm:w-80">
+          <label for="toolSearch" class="sr-only">Search tools by title</label>
+          <div class="relative">
+            <svg aria-hidden="true" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5" stroke-linecap="round"/></svg>
+            <input id="toolSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search tools by name…" aria-controls="toolGrid" aria-describedby="resultCount" class="w-full rounded-xl border border-slate-700 bg-slate-900/70 py-3 pl-11 pr-11 text-sm text-slate-100 placeholder:text-slate-500 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
+            <button id="clearSearch" type="button" hidden aria-label="Clear search" class="absolute right-2 top-1/2 -translate-y-1/2 grid place-items-center size-8 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white"><span aria-hidden="true">×</span></button>
+          </div>
+        </div>
+      </div>
+      <p id="resultCount" role="status" aria-live="polite" aria-atomic="true" class="text-xs text-slate-500 mb-5">3 tools ready to use</p>
+
+      <div id="toolGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="streaming-roulette/index.html" data-title="Free Stream Roulette" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="streamTitle">
+          <div class="flex items-start justify-between mb-7"><span aria-hidden="true" class="size-12 rounded-xl border border-indigo-400/20 bg-indigo-500/10 text-indigo-300 grid place-items-center"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3V9Z" stroke-linejoin="round"/></svg></span><span class="text-[10px] uppercase tracking-wider text-emerald-300 border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 rounded-full">Live</span></div>
+          <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-indigo-400 mb-2">Discover &amp; unwind</p><h3 id="streamTitle" class="text-lg font-semibold text-white group-hover:text-indigo-200">Free Stream Roulette</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">Skip the endless scrolling. Pick a genre and discover a legal, free streaming destination for your next movie night.</p>
+          <div class="mt-auto pt-7 flex justify-between items-center text-xs font-semibold text-indigo-300"><span>Find your next watch</span><span aria-hidden="true" class="text-lg">↗</span></div>
+        </a>
+        <a href="excel-sandbox/index.html" data-title="Excel Formula Sandbox" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="excelTitle">
+          <div class="flex items-start justify-between mb-7"><span aria-hidden="true" class="size-12 rounded-xl border border-emerald-400/20 bg-emerald-500/10 text-emerald-300 grid place-items-center font-mono font-semibold text-2xl">ƒx</span><span class="text-[10px] uppercase tracking-wider text-emerald-300 border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 rounded-full">Live</span></div>
+          <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400 mb-2">Untangle &amp; understand</p><h3 id="excelTitle" class="text-lg font-semibold text-white group-hover:text-indigo-200">Excel Formula Sandbox</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">Make sense of nested formulas with a readable tree, matching parenthesis colors, and one-click formatted copying.</p>
+          <div class="mt-auto pt-7 flex justify-between items-center text-xs font-semibold text-indigo-300"><span>Untangle a formula</span><span aria-hidden="true" class="text-lg">↗</span></div>
+        </a>
+        <a href="text-cleaner/index.html" data-title="AI Text Footprint Cleanser" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="cleanerTitle">
+          <div class="flex items-start justify-between mb-7"><span aria-hidden="true" class="size-12 rounded-xl border border-violet-400/20 bg-violet-500/10 text-violet-300 grid place-items-center"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m4 16-1 5 5-1L20 8a2.8 2.8 0 0 0-4-4L4 16Z" stroke-linejoin="round"/><path d="m14 6 4 4M4 16l4 4"/></svg></span><span class="text-[10px] uppercase tracking-wider text-emerald-300 border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 rounded-full">Live</span></div>
+          <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-violet-400 mb-2">Simplify &amp; express</p><h3 id="cleanerTitle" class="text-lg font-semibold text-white group-hover:text-indigo-200">AI Text Footprint Cleanser</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">Spot overused phrases and trade buzzwords for simpler wording. Keep your voice, with live writing metrics and reversible edits.</p>
+          <div class="mt-auto pt-7 flex justify-between items-center text-xs font-semibold text-indigo-300"><span>Clean up your writing</span><span aria-hidden="true" class="text-lg">↗</span></div>
+        </a>
+      </div>
+      <div id="emptyState" hidden class="dot-grid rounded-2xl border border-slate-800 bg-slate-900/30 text-center px-6 py-14"><span aria-hidden="true" class="text-3xl text-indigo-300">⌕</span><h3 class="mt-3 text-lg font-semibold text-white">No tools found</h3><p class="mt-2 text-sm text-slate-400">Try “Excel”, “Stream”, or “Text” to find a tool.</p><button id="resetSearch" type="button" class="mt-5 text-sm font-semibold text-indigo-300 hover:text-indigo-200 rounded">Show all tools →</button></div>
+    </section>
+
+    <div aria-label="Bottom advertisement space" class="rounded-2xl border border-slate-800 bg-slate-900/30 p-3 mt-10"><div class="dot-grid min-h-24 rounded-xl border-2 border-dashed border-slate-700 flex flex-col items-center justify-center text-center p-5"><p class="text-[11px] font-mono tracking-[0.2em] text-slate-400">ADSENSE PLACEMENT</p><p class="text-xs text-slate-600 mt-2">Responsive banner space</p></div></div>
+    <p class="text-center text-xs leading-6 text-slate-500 mt-7">Built for quick tasks, without an account. Tool processing runs locally; styling loads from Tailwind’s Play CDN.</p>
+  </main>
+  <footer class="border-t border-slate-800"><div class="max-w-6xl mx-auto px-5 sm:px-8 py-6 flex flex-wrap justify-between items-center gap-3 text-xs text-slate-500"><p>© 2026 WebUtils Hub</p><a href="#welcomeTitle" class="hover:text-indigo-300 rounded">Back to top ↑</a></div></footer>
+  <script>
+    'use strict';
+    const searchInput = document.getElementById('toolSearch');
+    const cards = Array.from(document.querySelectorAll('#toolGrid [data-title]'));
+    const clearButton = document.getElementById('clearSearch');
+    const resultCount = document.getElementById('resultCount');
+    function normalize(text) {
+      return text.normalize('NFKC').toLocaleLowerCase('en').trim().replace(/\s+/g, ' ');
+    }
+    function filterTools() {
+      const query = normalize(searchInput.value);
+      let visible = 0;
+      cards.forEach(card => {
+        const matches = normalize(card.dataset.title).includes(query);
+        card.hidden = !matches;
+        if (matches) visible++;
+      });
+      document.getElementById('emptyState').hidden = visible !== 0;
+      clearButton.hidden = !searchInput.value;
+      resultCount.textContent = query ? `${visible} of ${cards.length} tools match your search` : `${cards.length} tools ready to use`;
+    }
+    function resetSearch() { searchInput.value = ''; filterTools(); searchInput.focus(); }
+    searchInput.addEventListener('input', filterTools);
+    searchInput.addEventListener('keydown', event => { if (event.key === 'Escape') resetSearch(); });
+    clearButton.addEventListener('click', resetSearch);
+    document.getElementById('resetSearch').addEventListener('click', resetSearch);
+    // Reconcile the grid with any search value restored by the browser.
+    window.addEventListener('pageshow', filterTools);
+    filterTools();
+  </script>
+</body>
+</html>
