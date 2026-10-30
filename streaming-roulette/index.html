@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Legal Streaming Roulette & Finder</title>
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans">
+
+    <!-- Header Navigation -->
+    <header class="border-b border-gray-800 bg-gray-950 p-4">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-indigo-400">🎬 FreeStream Roulette</h1>
+            <a href="../index.html" class="text-sm text-gray-400 hover:text-white">← Back to Hub</a>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <main class="flex-grow max-w-5xl w-full mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
+        
+        <!-- Left Side: Interactive Filtering Controls -->
+        <section class="md:col-span-2 bg-gray-950 p-6 rounded-xl border border-gray-800 shadow-xl flex flex-col justify-between">
+            <div>
+                <h2 class="text-2xl font-bold mb-2">Find Something Free to Watch</h2>
+                <p class="text-gray-400 text-sm mb-6">Filter through 100% legal, ad-supported, or public domain streaming platforms instantly. No sign-ups required.</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Select Mood / Genre</label>
+                        <select id="genreFilter" class="w-full bg-gray-900 border border-gray-800 rounded-lg p-3 text-white focus:outline-none focus:border-indigo-500">
+                            <option value="all">Any Genre / All Platforms</option>
+                            <option value="movies">Hollywood Movies & Blockbusters</option>
+                            <option value="classics">Classic Cinema & Public Domain</option>
+                            <option value="docs">Documentaries & Reality</option>
+                            <option value="tv">Live TV & Retro Shows</option>
+                            <option value="anime">Anime & International</option>
+                        </select>
+                    </div>
+
+                    <button id="spinBtn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-4 rounded-lg transition dynamic-shadow cursor-pointer">
+                        🎲 Spin the Roulette Wheel
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Box -->
+            <div id="resultBox" class="mt-8 p-5 bg-gray-900 rounded-lg border border-gray-800 hidden">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span id="platformTag" class="text-xs font-extrabold uppercase px-2 py-1 bg-indigo-950 text-indigo-300 rounded border border-indigo-800">Platform</span>
+                        <h3 id="platformName" class="text-xl font-bold mt-2 text-white">Platform Name</h3>
+                        <p id="platformDesc" class="text-sm text-gray-400 mt-1">Platform description goes here.</p>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center">
+                    <span id="costTag" class="text-xs text-green-400 font-medium">✓ 100% Free / Ad-Supported</span>
+                    <a id="platformLink" href="#" target="_blank" class="inline-flex items-center text-sm font-semibold text-indigo-400 hover:text-indigo-300">
+                        Launch Platform <span class="ml-1">➔</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Side: Sidebar AdSense Placeholder -->
+        <aside class="bg-gray-950 p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[250px]">
+            <!-- Google AdSense Placeholder Frame -->
+            <div class="absolute inset-0 border-2 border-dashed border-gray-800 m-3 rounded-lg flex flex-col items-center justify-center bg-gray-900/50">
+                <span class="text-xs font-mono tracking-widest text-gray-600 uppercase mb-1">AdSense Placement</span>
+                <span class="text-[10px] font-mono text-gray-700">(Responsive Sidebar Banner)</span>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-gray-950 p-4 text-center text-xs text-gray-500 mt-auto">
+        <p>© 2026 Micro-Tools Hub experiment. Running client-side via GitHub Pages.</p>
+    </footer>
+
+    <!-- Logic Script -->
+    <script>
+        const platforms = [
+            { name: "Tubi TV", genre: "movies", desc: "Massive library of free Hollywood movies, popular TV series, and niche cult classics. Supported entirely by short ad breaks.", url: "https://tubitv.com" },
+            { name: "Pluto TV", genre: "tv", desc: "Drop into hundreds of live, themed virtual TV channels broadcasting retro sit-coms, 24/7 news, gaming channels, and movies.", url: "https://pluto.tv" },
+            { name: "The Roku Channel", genre: "movies", desc: "Stream free premium movies, Roku Originals, and live TV channels completely free right inside your web browser.", url: "https://roku.com" },
+            { name: "Freevee (Amazon)", genre: "tv", desc: "Amazon's ad-supported streaming destination premium shows, original series, and hit blockbusters without an Prime subscription.", url: "https://amazon.com" },
+            { name: "Internet Archive Movie Vault", genre: "classics", desc: "The ultimate vault for classic cinema. Stream thousands of public domain movies, silent films, and vintage horror entirely free.", url: "https://archive.org" },
+            { name: "Crunchyroll (Free Tier)", genre: "anime", desc: "Watch thousands of episodes of top-tier anime series locally with standard commercial breaks.", url: "https://crunchyroll.com" },
+            { name: "Documentary+ (DocPlus)", genre: "docs", desc: "A beautiful streaming home dedicated exclusively to award-winning documentary feature films and non-fiction shorts.", url: "https://docplus.com" },
+            { name: "Plex Free Movies", genre: "movies", desc: "Thousands of free on-demand movies, documentaries, and over 200 live TV channels accessible globally on almost any device.", url: "https://plex.tv" }
+        ];
+
+        const spinBtn = document.getElementById('spinBtn');
+        const genreFilter = document.getElementById('genreFilter');
+        const resultBox = document.getElementById('resultBox');
+        const platformName = document.getElementById('platformName');
+        const platformDesc = document.getElementById('platformDesc');
+        const platformTag = document.getElementById('platformTag');
+        const platformLink = document.getElementById('platformLink');
+
+        spinBtn.addEventListener('click', () => {
+            const selectedGenre = genreFilter.value;
+            
+            // Filter the static array based on user input selection
+            const filtered = selectedGenre === 'all' 
+                ? platforms 
+                : platforms.filter(p => p.genre === selectedGenre);
+
+            // Select a completely random matching entry
+            const randomPlatform = filtered[Math.floor(Math.random() * filtered.length)];
+
+            // Update DOM Elements smoothly
+            platformName.textContent = randomPlatform.name;
+            platformDesc.textContent = randomPlatform.desc;
+            platformTag.textContent = randomPlatform.genre;
+            platformLink.href = randomPlatform.url;
+
+            // Reveal the box UI element
+            resultBox.classList.remove('hidden');
+            resultBox.classList.add('animate-fade-in');
+        });
+    </script>
+</body>
+</html>
