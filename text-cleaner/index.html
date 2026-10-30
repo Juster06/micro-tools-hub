@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Spot overused phrases and simplify your writing with a private, browser-based text cleaner.">
+  <title>AI Text Footprint Cleanser</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    body { margin:0; background:#020617; color:#e2e8f0; font-family:ui-sans-serif,system-ui,sans-serif; }
+    [hidden] { display:none!important; }
+    :focus-visible { outline:3px solid #a5b4fc; outline-offset:4px; }
+    .editor { position:relative; height:360px; isolation:isolate; }
+    .editor textarea,.editor .highlight-layer { box-sizing:border-box; position:absolute; inset:0; width:100%; height:100%; margin:0; padding:1.25rem; border:0; font:400 16px/1.9 ui-sans-serif,system-ui,sans-serif; letter-spacing:normal; white-space:pre-wrap; overflow-wrap:break-word; word-break:normal; tab-size:4; text-align:left; }
+    .highlight-layer { overflow:hidden; pointer-events:none; color:#e2e8f0; }
+    .editor textarea { resize:none; overflow:auto; background:transparent; color:transparent; caret-color:#c7d2fe; -webkit-text-fill-color:transparent; }
+    .editor textarea::placeholder { color:#64748b; -webkit-text-fill-color:#64748b; }
+    .editor textarea::selection { background:#6366f155; color:transparent; }
+    .editor textarea:focus { outline:none; }
+    .editor:focus-within { box-shadow:inset 0 0 0 2px #818cf8; }
+    mark { background:#f59e0b24; color:#fde68a; border-radius:3px; box-shadow:0 1px 0 #fbbf2466; }
+    .dot-grid { background-image:radial-gradient(#33415566 1px,transparent 1px); background-size:22px 22px; }
+    @keyframes cleaned { from { box-shadow:inset 0 0 0 2px #34d399; } to { box-shadow:inset 0 0 0 2px transparent; } }
+    .just-cleaned { animation:cleaned .8s ease-out; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
+    @media (forced-colors:active) { .editor textarea { color:CanvasText; -webkit-text-fill-color:CanvasText; } .highlight-layer { visibility:hidden; } }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+  <header class="border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-5">
+      <a href="../index.html" class="inline-block text-sm text-slate-400 hover:text-indigo-300 transition-colors">← Back to Hub</a>
+      <div class="flex items-center gap-3 mt-6 mb-2"><span aria-hidden="true" class="size-10 grid place-items-center rounded-xl bg-indigo-500/15 border border-indigo-400/30 text-indigo-300 text-xl">✎</span><div><p class="font-semibold text-white">Text<span class="text-indigo-400"> Cleanser</span></p><p class="text-xs text-slate-500 mt-0.5 tracking-wider">MICRO-TOOLS HUB</p></div></div>
+    </div>
+  </header>
+  <main class="w-full max-w-6xl mx-auto px-5 sm:px-8 py-10 sm:py-12 flex-1">
+    <div class="flex flex-wrap items-center gap-2 text-xs text-indigo-300 mb-5"><span class="rounded-full border border-indigo-500/25 bg-indigo-500/10 px-3 py-1">LOCAL &amp; PRIVATE</span><span class="text-slate-500">Your words stay with you.</span></div>
+    <div class="max-w-2xl mb-8"><h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight text-white">AI Text Footprint<br><span class="text-indigo-400">Cleanser</span></h1><p class="text-slate-400 mt-5 leading-relaxed max-w-xl">Less buzzword. More you. Spot tired phrases, simplify the wording, and give your ideas room to breathe.</p></div>
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_260px] gap-7 items-start">
+      <section aria-labelledby="editorTitle" class="min-w-0 rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden shadow-2xl shadow-black/10">
+        <div class="flex flex-wrap justify-between items-center gap-4 px-5 sm:px-6 py-5 border-b border-slate-800"><div class="flex items-center gap-3"><span aria-hidden="true" class="font-mono text-xs text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 rounded-md px-2 py-1">Aa</span><label id="editorTitle" for="textInput" class="text-white font-semibold">Your writing</label></div><div class="flex gap-4 text-xs"><button id="exampleBtn" type="button" class="text-indigo-300 hover:text-indigo-200 rounded">Try an example</button><button id="clearBtn" type="button" class="text-slate-400 hover:text-slate-200 rounded">Clear</button></div></div>
+        <div class="editor bg-slate-950/70" id="editor"><div id="highlights" class="highlight-layer" aria-hidden="true"></div><textarea id="textInput" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="editorHelp" placeholder="Paste a paragraph, an essay, or a first draft here. We’ll highlight overused phrases as you type…"></textarea></div>
+        <div class="px-5 sm:px-6 py-3 border-y border-slate-800 flex flex-wrap justify-between gap-2 text-xs text-slate-500"><p id="editorHelp"><span class="inline-block size-2 rounded-full bg-amber-300 mr-1" aria-hidden="true"></span> Amber highlights = phrases you can simplify</p><span id="matchCount">0 phrases found</span></div>
+        <div class="grid grid-cols-3 divide-x divide-slate-800 py-5 text-center" aria-label="Live writing metrics"><div><p id="wordCount" class="font-mono text-xl sm:text-2xl font-semibold text-white">0</p><p class="text-[11px] sm:text-xs text-slate-500 mt-1">Words</p></div><div><p id="readingTime" class="font-mono text-xl sm:text-2xl font-semibold text-white">0 sec</p><p class="text-[11px] sm:text-xs text-slate-500 mt-1">Reading time</p></div><div><p class="font-mono text-xl sm:text-2xl font-semibold text-amber-200"><span id="clutterScore">0</span><span class="text-xs text-slate-500"> / 100</span></p><p class="text-[11px] sm:text-xs text-slate-500 mt-1">AI Clutter Index Score</p></div></div>
+        <div class="px-5 sm:px-6 pb-6"><button id="humanizeBtn" type="button" disabled class="w-full rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed text-white px-5 py-4 font-semibold transition-colors"><span aria-hidden="true">✦</span> Humanize Text</button><div class="flex justify-between items-center gap-3 mt-4"><button id="undoBtn" type="button" disabled class="text-xs text-slate-300 hover:text-white disabled:opacity-35 disabled:cursor-not-allowed rounded">↶ Undo changes</button><button id="copyBtn" type="button" disabled class="text-xs text-indigo-300 hover:text-indigo-200 disabled:opacity-35 disabled:cursor-not-allowed rounded">Copy text ↗</button></div><p id="status" role="status" aria-live="polite" aria-atomic="true" class="text-xs text-slate-400 mt-4 leading-5">Paste your text to get started. You’re always the final editor.</p></div>
+      </section>
+      <aside class="space-y-5" aria-label="Writing guide">
+        <section class="rounded-2xl border border-slate-800 p-5"><p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-4">Small edits, clearer ideas</p><h2 class="text-sm text-white font-semibold">What gets cleaned up?</h2><div class="mt-4 space-y-3 text-sm"><p class="flex justify-between gap-2"><span class="text-slate-500 line-through">delve into</span><span class="text-emerald-300">explore</span></p><p class="flex justify-between gap-2"><span class="text-slate-500 line-through">furthermore</span><span class="text-emerald-300">also</span></p><p class="flex justify-between gap-2"><span class="text-slate-500 line-through">utilize</span><span class="text-emerald-300">use</span></p><p class="flex justify-between gap-2"><span class="text-slate-500 line-through">tapestry</span><span class="text-emerald-300">mix</span></p></div><p class="text-xs leading-6 text-slate-400 mt-5">Whole words and phrases only. Capitalization is preserved. Review each edit to make sure it fits your meaning.</p></section>
+        <section class="rounded-2xl border border-slate-800 bg-indigo-950/20 p-5"><h2 class="text-sm font-semibold text-slate-200">About the score</h2><p class="text-xs leading-6 text-slate-400 mt-3">The index measures the share of words covered by our phrase list. A lower score means fewer listed phrases, not better writing.</p><p class="text-xs leading-6 text-slate-400 mt-3">It is not an AI detector and cannot identify who wrote a text or guarantee any detector result. These phrases also appear in human writing.</p><p class="text-xs leading-6 text-slate-400 mt-3">Reading time assumes 200 words per minute.</p></section>
+        <p class="px-1 text-xs leading-6 text-slate-500">No uploads. No accounts. No saved drafts. All text processing happens in this browser; only the Tailwind styling script loads externally.</p>
+      </aside>
+    </div>
+  </main>
+  <footer class="border-t border-slate-800"><div class="max-w-6xl mx-auto px-5 sm:px-8 pt-6"><div aria-label="Advertisement" class="rounded-2xl border border-slate-800 bg-slate-900/30 p-4"><div class="dot-grid min-h-32 rounded-xl border-2 border-dashed border-slate-700 flex flex-col items-center justify-center text-center px-4 py-7"><p class="text-xs font-mono tracking-[0.16em] text-slate-400">ADSENSE BANNER PLACEMENT</p><p class="text-xs text-slate-600 mt-2">Responsive footer banner</p></div></div><div class="py-6 flex flex-wrap justify-between gap-3 text-xs text-slate-500"><p>© 2026 Micro-Tools Hub</p><p>Clearer words. Your voice.</p></div></div></footer>
+  <script>
+    'use strict';
+    // An editorial phrase list, not a classifier. No text is sent to a service.
+    const replacements = Object.freeze({
+      'delve into': 'explore', 'delve': 'explore', 'tapestry': 'mix',
+      'testament to': 'sign of', 'testament': 'sign', 'furthermore': 'also',
+      'moreover': 'also', 'in conclusion': 'to sum up', 'in summary': 'to sum up',
+      'utilize': 'use', 'utilizing': 'using', 'utilization': 'use',
+      'leverage': 'use', 'leveraging': 'using', 'pivotal': 'important',
+      'paramount': 'essential', 'multifaceted': 'complex', 'plethora of': 'many',
+      'a plethora of': 'many', 'myriad of': 'many', 'cutting-edge': 'modern',
+      'seamless': 'smooth', 'seamlessly': 'smoothly', 'robust': 'strong',
+      'in order to': 'to', 'it is worth noting that': 'note that',
+      'at the end of the day': 'ultimately', 'in today’s world': 'today',
+      "in today's world": 'today', 'embark on': 'start', 'serves as': 'is'
+    });
+    const escapePattern = text => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const alternatives = Object.keys(replacements).sort((a, b) => b.length - a.length).map(phrase => escapePattern(phrase).replace(/ /g, '\\s+')).join('|');
+    const phrasePattern = new RegExp(`(?<![\\p{L}\\p{M}\\p{N}_])(?:${alternatives})(?![\\p{L}\\p{M}\\p{N}_])`, 'giu');
+    const wordPattern = /[\p{L}\p{N}]+(?:[’'\-][\p{L}\p{N}]+)*/gu;
+    const input = document.getElementById('textInput');
+    const layer = document.getElementById('highlights');
+    const humanizeBtn = document.getElementById('humanizeBtn');
+    const undoBtn = document.getElementById('undoBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const status = document.getElementById('status');
+    const editor = document.getElementById('editor');
+    let undoState = null;
+    let currentMatches = [];
+    let revision = 0;
+    let composing = false;
+    const countWords = text => (text.match(wordPattern) || []).length;
+    const keyFor = phrase => phrase.toLowerCase().replace(/\s+/g, ' ');
+
+    function preserveCase(original, replacement) {
+      if (original === original.toUpperCase()) return replacement.toUpperCase();
+      const letters = original.match(/\p{L}+/gu) || [];
+      if (letters.length > 1 && letters.every(word => word[0] === word[0].toUpperCase())) {
+        return replacement.replace(/\p{L}+/gu, word => word[0].toUpperCase() + word.slice(1));
+      }
+      if (/^\p{Lu}/u.test(original)) return replacement[0].toUpperCase() + replacement.slice(1);
+      return replacement;
+    }
+    function syncScroll() {
+      layer.scrollTop = input.scrollTop;
+      layer.scrollLeft = input.scrollLeft;
+    }
+    function update() {
+      revision++;
+      const text = input.value;
+      currentMatches = Array.from(text.matchAll(phrasePattern));
+      const fragment = document.createDocumentFragment();
+      let position = 0;
+      currentMatches.forEach(match => {
+        fragment.append(document.createTextNode(text.slice(position, match.index)));
+        const mark = document.createElement('mark');
+        mark.textContent = match[0];
+        fragment.append(mark);
+        position = match.index + match[0].length;
+      });
+      fragment.append(document.createTextNode(text.slice(position) + '\n'));
+      layer.replaceChildren(fragment);
+      // Reserve the same width as the textarea's native scrollbar, if present.
+      layer.style.width = `${input.clientWidth}px`;
+      const words = countWords(text);
+      const coveredWords = currentMatches.reduce((total, match) => total + countWords(match[0]), 0);
+      const seconds = Math.ceil(words / 200 * 60);
+      document.getElementById('wordCount').textContent = words.toLocaleString();
+      document.getElementById('readingTime').textContent = seconds < 60 ? `${seconds} sec` : `${Math.ceil(seconds / 60)} min`;
+      document.getElementById('clutterScore').textContent = words ? Math.min(100, Math.round(coveredWords / words * 100)) : 0;
+      document.getElementById('matchCount').textContent = `${currentMatches.length} ${currentMatches.length === 1 ? 'phrase' : 'phrases'} found`;
+      humanizeBtn.disabled = !currentMatches.length || composing;
+      copyBtn.disabled = !text.trim();
+      undoBtn.disabled = !undoState;
+      syncScroll();
+    }
+    input.addEventListener('input', () => {
+      undoState = null;
+      editor.classList.remove('just-cleaned');
+      update();
+      status.textContent = currentMatches.length ? 'Highlighted phrases are suggestions. Choose Humanize Text to replace them.' : input.value.trim() ? 'No listed phrases found. Keep reviewing for clarity and meaning.' : 'Paste your text to get started. You’re always the final editor.';
+    });
+    input.addEventListener('compositionstart', () => { composing = true; humanizeBtn.disabled = true; });
+    input.addEventListener('compositionend', () => { composing = false; update(); });
+    input.addEventListener('scroll', syncScroll);
+    new ResizeObserver(() => { layer.style.width = `${input.clientWidth}px`; syncScroll(); }).observe(input);
+    humanizeBtn.addEventListener('click', () => {
+      if (!currentMatches.length || composing) return;
+      const count = currentMatches.length;
+      undoState = { text: input.value, start: input.selectionStart, end: input.selectionEnd, scroll: input.scrollTop };
+      const scroll = input.scrollTop;
+      input.value = input.value.replace(phrasePattern, match => preserveCase(match, replacements[keyFor(match)]));
+      update();
+      input.scrollTop = scroll;
+      syncScroll();
+      editor.classList.remove('just-cleaned');
+      void editor.offsetWidth;
+      editor.classList.add('just-cleaned');
+      status.textContent = `Replaced ${count} ${count === 1 ? 'phrase' : 'phrases'}. Read the edits in context; use Undo changes to restore your original.`;
+    });
+    undoBtn.addEventListener('click', () => {
+      if (!undoState) return;
+      const previous = undoState;
+      input.value = previous.text;
+      undoState = null;
+      update();
+      editor.classList.remove('just-cleaned');
+      input.focus(); input.setSelectionRange(previous.start, previous.end);
+      input.scrollTop = previous.scroll; syncScroll();
+      status.textContent = 'Original text restored.';
+    });
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      input.value = ''; undoState = null; update(); input.focus();
+      status.textContent = 'Cleared. Paste a fresh draft whenever you’re ready.';
+    });
+    document.getElementById('exampleBtn').addEventListener('click', () => {
+      // An example should never replace an existing draft without an explicit clear.
+      if (input.value.trim()) { status.textContent = 'Clear your current draft first to load the example.'; return; }
+      input.value = 'Let’s delve into the details of this project. Furthermore, its robust design is a testament to careful planning. Moreover, we can utilize simple tools to create a seamless experience. In conclusion, this tapestry of ideas gives us a strong starting point.';
+      undoState = null; update(); input.focus();
+      status.textContent = 'Example loaded. Try Humanize Text to see the suggested edits.';
+    });
+    copyBtn.addEventListener('click', async () => {
+      const text = input.value;
+      const currentRevision = revision;
+      let copied = false;
+      try {
+        if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); copied = true; }
+      } catch (_) { /* Fall back to selecting text locally. */ }
+      if (revision !== currentRevision) return;
+      if (!copied) {
+        const helper = document.createElement('textarea');
+        helper.value = text; helper.style.cssText = 'position:fixed;left:-9999px;top:0';
+        document.body.append(helper); helper.select();
+        try { copied = document.execCommand('copy'); } catch (_) { copied = false; }
+        helper.remove(); copyBtn.focus();
+      }
+      status.textContent = copied ? 'Text copied to clipboard.' : 'Clipboard unavailable. Your text is selected; use Ctrl+C or Command+C.';
+      if (!copied) { input.focus(); input.select(); }
+    });
+    update();
+  </script>
+</body>
+</html>

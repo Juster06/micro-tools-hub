@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Untangle nested Excel formulas with a private, local formatter and color-coded structure analyzer.">
+  <title>Excel Formula Sandbox &amp; Analyzer</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    body { margin:0; background:#020617; color:#e2e8f0; font-family:ui-sans-serif,system-ui,sans-serif; }
+    [hidden] { display:none!important; }
+    :focus-visible { outline:3px solid #a5b4fc; outline-offset:4px; }
+    textarea { tab-size:2; }
+    #formattedFormula { tab-size:2; line-height:1.9; white-space:pre; }
+    .pair-0 { color:#a5b4fc; } .pair-1 { color:#f9a8d4; } .pair-2 { color:#67e8f9; } .pair-3 { color:#fcd34d; } .pair-4 { color:#c4b5fd; } .pair-5 { color:#6ee7b7; }
+    .fn { color:#93c5fd; font-weight:600; } .fn-if { color:#c4b5fd; font-weight:600; } .fn-vlookup { color:#fcd34d; font-weight:600; } .fn-index { color:#67e8f9; font-weight:600; } .fn-match { color:#f9a8d4; font-weight:600; } .fn-xlookup { color:#6ee7b7; font-weight:600; }
+    .string { color:#a7f3d0; } .number { color:#fdba74; } .operator { color:#94a3b8; } .bad { color:#fda4af; text-decoration:underline wavy; text-underline-offset:4px; }
+    .dot-grid { background-image:radial-gradient(#33415566 1px,transparent 1px); background-size:20px 20px; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; } }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+  <header class="border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5">
+      <a href="../index.html" class="inline-block text-sm text-slate-400 hover:text-indigo-300 transition-colors">← Back to Hub</a>
+      <div class="flex items-center gap-3 mt-6 mb-2"><span aria-hidden="true" class="size-10 grid place-items-center rounded-xl bg-indigo-500/15 border border-indigo-400/30 text-indigo-300 font-mono font-bold">ƒx</span><div><p class="font-semibold text-white">Excel<span class="text-indigo-400"> Sandbox</span></p><p class="text-xs text-slate-500 mt-0.5 tracking-wider">MICRO-TOOLS HUB</p></div></div>
+    </div>
+  </header>
+  <main class="w-full max-w-7xl mx-auto px-5 sm:px-8 py-10 sm:py-12 flex-1">
+    <div class="max-w-2xl mb-8"><p class="text-xs text-indigo-400 uppercase tracking-[0.2em] font-semibold mb-4">Make sense of every nested layer</p><h1 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight text-white">Excel Formula<br><span class="text-indigo-400">Sandbox &amp; Analyzer</span></h1><p class="text-slate-400 mt-4 leading-relaxed">Turn a wall of formula into a clear, readable tree. Trace matching parentheses, spot nested functions, and find your way back to the logic.</p></div>
+    <div class="grid xl:grid-cols-[minmax(0,1fr)_260px] gap-7 items-start">
+      <div class="min-w-0 space-y-5">
+        <section aria-labelledby="inputTitle" class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+          <div class="p-5 sm:p-6 flex flex-wrap justify-between gap-4 items-center"><div class="flex items-center gap-3"><span class="font-mono text-xs text-indigo-300 px-2 py-1 rounded-md border border-indigo-500/20 bg-indigo-500/10">01</span><label for="formulaInput" id="inputTitle" class="text-white font-semibold">Paste your formula</label></div><div class="flex gap-4 text-xs"><button type="button" id="exampleBtn" class="text-indigo-300 hover:text-indigo-200 rounded">Load example</button><button type="button" id="clearBtn" class="text-slate-400 hover:text-slate-200 rounded">Clear</button></div></div>
+          <div class="px-5 sm:px-6"><textarea id="formulaInput" rows="8" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="inputHelp" placeholder='=IF(A2>100, XLOOKUP(B2, Products[ID], Products[Price], "Not found"), 0)' class="block w-full min-h-56 resize-y rounded-xl border border-slate-700 bg-slate-950 text-slate-200 placeholder:text-slate-600 p-4 font-mono text-sm leading-7 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/25"></textarea></div>
+          <div class="px-5 sm:px-6 py-4 flex flex-wrap justify-between gap-2 text-xs text-slate-500"><p id="inputHelp">Updates as you type · Formula text stays in this browser</p><span id="charCount">0 / 50,000 characters</span></div>
+        </section>
+        <section aria-labelledby="outputTitle" class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
+          <div class="p-5 sm:p-6 flex flex-wrap items-center justify-between gap-4 border-b border-slate-800"><div class="flex items-center gap-3"><span class="font-mono text-xs text-indigo-300 px-2 py-1 rounded-md border border-indigo-500/20 bg-indigo-500/10">02</span><h2 id="outputTitle" class="text-white font-semibold">The formula, untangled</h2></div><button id="copyBtn" type="button" disabled class="rounded-lg bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-sm font-semibold text-white px-4 py-2.5">Copy Formatted Formula</button></div>
+          <div class="px-5 sm:px-6 py-3 border-b border-slate-800 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400" aria-label="Structure statistics"><span><strong id="functionCount" class="text-slate-200 font-mono">0</strong> function calls</span><span><strong id="depthCount" class="text-slate-200 font-mono">0</strong> nesting depth</span><span><strong id="lineCount" class="text-slate-200 font-mono">0</strong> formatted lines</span></div>
+          <div id="emptyState" class="dot-grid text-center px-6 py-16"><span aria-hidden="true" class="text-3xl text-indigo-300 font-mono">( ƒx )</span><p class="mt-4 text-slate-300 text-sm font-medium">A little structure goes a long way.</p><p class="mt-2 text-xs text-slate-500">Paste a formula above, or load an example to explore.</p></div>
+          <div id="codeArea" hidden class="overflow-x-auto bg-slate-950/60"><pre id="formattedFormula" tabindex="0" aria-label="Formatted formula tree" class="m-0 p-5 sm:p-6 text-sm font-mono min-h-44"></pre></div>
+          <div class="px-5 sm:px-6 py-4 border-t border-slate-800"><p id="analysisStatus" role="status" aria-live="polite" aria-atomic="true" class="text-xs text-slate-400">Ready when you are.</p><ul id="diagnostics" class="text-xs text-rose-300 mt-2 space-y-1" hidden></ul><p id="copyStatus" role="status" aria-live="polite" class="text-xs text-indigo-300 mt-2" hidden></p></div>
+        </section>
+      </div>
+      <aside class="space-y-5" aria-label="Guide and advertisement">
+        <div class="border border-slate-800 rounded-2xl bg-slate-900/40 p-4"><div class="dot-grid border-2 border-dashed border-slate-700 rounded-xl min-h-[280px] flex flex-col items-center justify-center text-center px-4"><span aria-hidden="true" class="text-xs text-slate-500 border border-slate-700 rounded px-2 py-1 mb-4">AD</span><p class="text-[11px] font-mono tracking-widest leading-6 text-slate-400">ADSENSE BANNER PLACEMENT</p><p class="text-xs text-slate-600 mt-2">Responsive display space</p></div></div>
+        <section class="border border-slate-800 rounded-2xl p-5"><h2 class="text-sm font-semibold text-slate-200">Read the colors</h2><p class="text-xs leading-6 text-slate-400 mt-3">Each nesting level gets a color. An opening parenthesis and its closing partner share the same shade.</p><div class="flex gap-3 font-mono mt-3 text-lg" aria-label="Parenthesis depth colors"><span class="pair-0">()</span><span class="pair-1">()</span><span class="pair-2">()</span><span class="pair-3">()</span><span class="pair-4">()</span></div><div class="flex flex-wrap gap-x-3 gap-y-2 mt-4 text-xs font-mono" aria-label="Highlighted functions"><span class="fn-if">IF</span><span class="fn-vlookup">VLOOKUP</span><span class="fn-index">INDEX</span><span class="fn-match">MATCH</span><span class="fn-xlookup">XLOOKUP</span></div></section>
+        <section class="border border-slate-800 rounded-2xl p-5"><h2 class="text-sm font-semibold text-slate-200">A lens, not a calculator</h2><p class="text-xs leading-6 text-slate-400 mt-3">This tool formats structure; it does not calculate results or fully validate Excel syntax. Quoted text, sheet names, and structured references stay intact. Comma and semicolon separators are supported.</p><p class="text-xs leading-6 text-slate-400 mt-3">No uploads, storage, or formula execution. Only Tailwind’s styling script loads from its official Play CDN.</p></section>
+      </aside>
+    </div>
+  </main>
+  <footer class="border-t border-slate-800"><div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-wrap justify-between gap-3 text-xs text-slate-500"><p>© 2026 Micro-Tools Hub</p><p>Less formula fatigue. More clarity.</p></div></footer>
+  <script>
+    'use strict';
+    const input = document.getElementById('formulaInput');
+    const output = document.getElementById('formattedFormula');
+    const copyBtn = document.getElementById('copyBtn');
+    const copyStatus = document.getElementById('copyStatus');
+    const limit = 50000;
+    const specialFunctions = { IF: 'fn-if', IFS: 'fn-if', IFERROR: 'fn-if', VLOOKUP: 'fn-vlookup', INDEX: 'fn-index', MATCH: 'fn-match', XMATCH: 'fn-match', XLOOKUP: 'fn-xlookup' };
+    const example = '=IFERROR(IF(A2>100,XLOOKUP(B2,Products[ID],Products[Price],"Not found"),INDEX(Prices!$C$2:$C$100,MATCH(B2,Prices!$A$2:$A$100,0))),"Check your inputs")';
+    let formattedText = '';
+    let revision = 0;
+
+    // A lossless lexer: quoted strings, quoted sheet names, and bracketed
+    // references are atomic. Delimiters inside them never change tree depth.
+    function tokenize(source) {
+      const tokens = [];
+      const issues = [];
+      let i = 0;
+      while (i < source.length) {
+        const start = i;
+        const ch = source[i];
+        if (ch === '"' || ch === "'") {
+          i++;
+          let closed = false;
+          while (i < source.length) {
+            if (source[i] === ch) {
+              if (source[i + 1] === ch) { i += 2; continue; }
+              i++; closed = true; break;
+            }
+            i++;
+          }
+          if (!closed) issues.push(`Unclosed ${ch === '"' ? 'text string' : 'quoted sheet name'} at character ${start + 1}.`);
+          tokens.push({ text: source.slice(start, i), type: ch === '"' ? 'string' : 'reference', start, invalid: !closed });
+        } else if (ch === '[') {
+          let depth = 1;
+          i++;
+          while (i < source.length && depth) {
+            // Excel structured references use an apostrophe to escape special characters.
+            if (source[i] === "'" && /[\[\]#'@]/.test(source[i + 1] || '')) { i += 2; continue; }
+            if (source[i] === '[') depth++;
+            if (source[i] === ']') depth--;
+            i++;
+          }
+          if (depth) issues.push(`Unclosed reference bracket at character ${start + 1}.`);
+          tokens.push({ text: source.slice(start, i), type: 'reference', start, invalid: depth !== 0 });
+        } else if (/\s/.test(ch)) {
+          while (i < source.length && /\s/.test(source[i])) i++;
+          tokens.push({ text: source.slice(start, i), type: 'space', start });
+        } else if ('(){},;'.includes(ch)) {
+          tokens.push({ text: ch, type: 'delimiter', start }); i++;
+        } else if ('=+-*/^&<>%:!@'.includes(ch)) {
+          tokens.push({ text: ch, type: 'operator', start }); i++;
+        } else if (ch === ']') {
+          issues.push(`Unexpected closing reference bracket at character ${i + 1}.`);
+          tokens.push({ text: ch, type: 'reference', start, invalid: true }); i++;
+        } else {
+          while (i < source.length && !/[\s"'\[\](){} ,;=+\-*/^&<>%:!@]/.test(source[i])) i++;
+          const text = source.slice(start, i);
+          tokens.push({ text, type: /^\d+(?:\.\d+)?$/.test(text) ? 'number' : 'word', start });
+        }
+      }
+      return { tokens, issues };
+    }
+
+    function analyze(source) {
+      const { tokens, issues } = tokenize(source);
+      const stack = [];
+      let maxDepth = 0;
+      let functionCount = 0;
+      tokens.forEach((token, index) => {
+        if (token.type !== 'delimiter') return;
+        if (token.text === '(' || token.text === '{') {
+          token.depth = stack.length;
+          stack.push(token);
+          maxDepth = Math.max(maxDepth, stack.length);
+          if (token.text === '(') {
+            let previous = index - 1;
+            while (previous >= 0 && tokens[previous].type === 'space') previous--;
+            const name = tokens[previous];
+            if (name && name.type === 'word' && /^[\p{L}_\\][\p{L}\p{N}_.\\]*$/u.test(name.text)) {
+              const shortName = name.text.toUpperCase().replace(/^_XLFN\./, '');
+              name.functionClass = specialFunctions[shortName] || 'fn';
+              functionCount++;
+            }
+          }
+        } else if (token.text === ')' || token.text === '}') {
+          const opening = stack[stack.length - 1];
+          if (!opening || opening.text !== (token.text === ')' ? '(' : '{')) {
+            token.invalid = true;
+            issues.push(`Unexpected “${token.text}” at character ${token.start + 1}.`);
+          } else {
+            stack.pop(); token.depth = opening.depth;
+          }
+        }
+      });
+      stack.forEach(token => {
+        token.invalid = true;
+        issues.push(`Unclosed “${token.text}” at character ${token.start + 1}.`);
+      });
+      return { tokens, issues, maxDepth, functionCount };
+    }
+
+    // Build the tree iteratively, without evaluating user input or using HTML injection.
+    function format(tokens) {
+      const pieces = [];
+      let depth = 0;
+      let lineStart = true;
+      function write(text, className = '') {
+        if (lineStart) {
+          pieces.push({ text: '  '.repeat(Math.min(depth, 40)), className: '' });
+          lineStart = false;
+        }
+        pieces.push({ text, className });
+      }
+      function newline() {
+        if (!lineStart) { pieces.push({ text: '\n', className: '' }); lineStart = true; }
+      }
+      tokens.forEach((token, index) => {
+        const text = token.text;
+        if (token.type === 'space') {
+          // Retain inline spaces: Excel's space operator means intersection.
+          // Newline indentation is replaced, never whitespace inside atomic tokens.
+          const next = tokens.slice(index + 1, index + 2)[0];
+          if (!lineStart && next && ![')', '}', ',', ';'].includes(next.text)) write(' ');
+          return;
+        }
+        const className = token.invalid ? 'bad' : token.functionClass || (token.depth !== undefined ? `pair-${token.depth % 6}` : ['string', 'number', 'operator'].includes(token.type) ? token.type : '');
+        if (text === '(' || text === '{') {
+          write(text, className);
+          depth++;
+          newline();
+        } else if ((text === ')' || text === '}') && !token.invalid) {
+          depth = Math.max(0, depth - 1);
+          newline();
+          write(text, className);
+        } else if ((text === ',' || text === ';') && token.type === 'delimiter') {
+          write(text, 'operator');
+          newline();
+        } else {
+          write(text, className);
+        }
+      });
+      return pieces;
+    }
+
+    function render() {
+      revision++;
+      const source = input.value.trim();
+      const overLimit = input.value.length > limit;
+      document.getElementById('charCount').textContent = `${input.value.length.toLocaleString()} / 50,000 characters`;
+      output.replaceChildren();
+      formattedText = '';
+      copyBtn.disabled = true;
+      copyStatus.hidden = true;
+      const diagnostics = document.getElementById('diagnostics');
+      diagnostics.replaceChildren(); diagnostics.hidden = true;
+      document.getElementById('emptyState').hidden = !!source && !overLimit;
+      document.getElementById('codeArea').hidden = !source || overLimit;
+      const status = document.getElementById('analysisStatus');
+      ['functionCount', 'depthCount', 'lineCount'].forEach(id => document.getElementById(id).textContent = '0');
+      if (overLimit) {
+        status.textContent = 'Formula exceeds 50,000 characters. Shorten it to analyze; nothing has been truncated or copied.';
+        return;
+      }
+      if (!source) { status.textContent = 'Ready when you are.'; return; }
+      const result = analyze(source);
+      const pieces = format(result.tokens);
+      const fragment = document.createDocumentFragment();
+      pieces.forEach(piece => {
+        formattedText += piece.text;
+        if (!piece.className) fragment.append(document.createTextNode(piece.text));
+        else { const span = document.createElement('span'); span.className = piece.className; span.textContent = piece.text; fragment.append(span); }
+      });
+      output.append(fragment);
+      document.getElementById('functionCount').textContent = result.functionCount;
+      document.getElementById('depthCount').textContent = result.maxDepth;
+      document.getElementById('lineCount').textContent = formattedText.split('\n').length;
+      status.textContent = result.issues.length ? `${result.issues.length} structural ${result.issues.length === 1 ? 'issue' : 'issues'} found. Check the highlighted delimiters.` : 'Delimiters balanced. Structure formatted locally; Excel syntax and results are not evaluated.';
+      if (!source.startsWith('=')) status.textContent += ' Tip: Excel formulas usually begin with =.';
+      diagnostics.hidden = !result.issues.length;
+      result.issues.slice(0, 20).forEach(issue => { const li = document.createElement('li'); li.textContent = issue; diagnostics.append(li); });
+      if (result.issues.length > 20) { const li = document.createElement('li'); li.textContent = `${result.issues.length - 20} more issues. Fix the first issues and recheck.`; diagnostics.append(li); }
+      copyBtn.disabled = result.issues.length > 0;
+    }
+    input.addEventListener('input', render);
+    document.getElementById('exampleBtn').addEventListener('click', () => { input.value = example; render(); input.focus(); });
+    document.getElementById('clearBtn').addEventListener('click', () => { input.value = ''; render(); input.focus(); });
+    copyBtn.addEventListener('click', async () => {
+      const text = formattedText;
+      const currentRevision = revision;
+      let copied = false;
+      try {
+        if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); copied = true; }
+      } catch (_) { /* Use the local-selection fallback below. */ }
+      if (revision !== currentRevision) return;
+      if (!copied) {
+        const helper = document.createElement('textarea');
+        helper.value = text;
+        helper.setAttribute('aria-label', 'Formula clipboard helper');
+        helper.style.cssText = 'position:fixed;left:-9999px;top:0';
+        document.body.append(helper); helper.select();
+        try { copied = document.execCommand('copy'); } catch (_) { copied = false; }
+        helper.remove(); copyBtn.focus();
+      }
+      copyStatus.hidden = false;
+      copyStatus.textContent = copied ? 'Formatted formula copied to clipboard.' : 'Clipboard unavailable. The formatted formula is selected; use Ctrl+C or Command+C.';
+      if (!copied) {
+        const selection = window.getSelection();
+        const range = document.createRange(); range.selectNodeContents(output);
+        selection.removeAllRanges(); selection.addRange(range); output.focus();
+      }
+    });
+    render();
+  </script>
+</body>
+</html>
