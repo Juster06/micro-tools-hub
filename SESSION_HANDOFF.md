@@ -38,14 +38,15 @@ Full cross-browser/physical-device, screen-reader, account-security, hosting-set
 
 - Audited source baseline: `main` at `1cf6a8ae0973918c95b6bf4a56b0a9708ace35f0`.
 - Delivery branch: **`docs/persistent-project-memory`**.
-- Planned delivery: commit the management changes, verify the remote branch, and open a pull request targeting `main`; do not merge as part of this setup.
+- Published checkpoint: `9753eb81aa38692e40ffb5e65561f0e51876416b` on the delivery branch, verified by fetching the remote and comparing its tree with the staged files.
+- Review: [pull request #4](https://github.com/Juster06/micro-tools-hub/pull/4) targets `main` and was opened for review; it has not been merged as part of this setup. This updated handoff follows the verified checkpoint in a final documentation commit.
 - The exact containing delivery commit is resolved with `git log -1 --format="%H %s"` after checking out the delivery branch, and remote state with `git ls-remote origin refs/heads/docs/persistent-project-memory`.
-- A document cannot contain its own resulting commit hash. Use the known baseline above plus the containing commit/remote ref; inspect the PR for actual review/merge state. This handoff does not independently claim a push, merge, or deployment.
+- A document cannot contain its own resulting commit hash. Use the known baseline/checkpoint above plus the containing commit/remote ref; inspect the PR for actual review/merge state. The checkpoint push is verified; do not infer a merge or deployment from it.
 - The owner's original local directory has no `.git`. Use the repository clone for Git operations and keep documentation-only synchronization from overwriting unrelated local edits.
 
 ## Unfinished work and exact next action
 
-**Current implementation task:** none. The project-memory setup is ready for validation/delivery review. If this branch has not been merged, finish review and synchronize it before starting tool development. If checks fail or remote delivery is incomplete, resolve that first.
+**Current implementation task:** none. Project-memory files and checks are complete; the feature branch is published and PR #4 awaits review. If this branch has not been merged, finish review and synchronize it before starting tool development. If later checks fail or a checkout lacks the final handoff, resolve that first.
 
 Then:
 
