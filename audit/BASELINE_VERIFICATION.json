@@ -1,0 +1,95 @@
+{
+  "verified_on": "2026-10-31",
+  "source_revision": "1cf6a8ae0973918c95b6bf4a56b0a9708ace35f0",
+  "browser": "156.0.4314.56",
+  "scope": "Functional smoke checks in desktop Edge; not a complete cross-browser, screen-reader, or security audit.",
+  "pages": [
+    {
+      "path": "index.html",
+      "checks": [
+        "four cards; normalized search; no results; reset; keyboard focus",
+        "390px and 1440px no horizontal overflow"
+      ],
+      "source_sha256": "88baccb0b24b4ea4b808c3bd6374ee9e373ce2de1e0f7a1dbc9f97bfeb21eefc",
+      "publication": {
+        "url": "https://everydaydigitalbox.com/",
+        "http_status": 200,
+        "checked_at": "2026-10-31T02:44:47.818Z",
+        "source_matches": true
+      }
+    },
+    {
+      "path": "text-cleaner/index.html",
+      "checks": [
+        "Back to Hub link",
+        "empty state; phrase detection; case-preserving replacements; undo; clipboard; safe rendering; 10000 words; example",
+        "390px and 1440px no horizontal overflow"
+      ],
+      "source_sha256": "9c9e0e6a9a9796b73b26f21adb8cffa33a7aa6b2e669b64bfb9ab54972273443",
+      "publication": {
+        "url": "https://everydaydigitalbox.com/text-cleaner/",
+        "http_status": 200,
+        "checked_at": "2026-10-31T02:44:48.934Z",
+        "source_matches": true
+      }
+    },
+    {
+      "path": "excel-sandbox/index.html",
+      "checks": [
+        "Back to Hub link",
+        "empty state; nested calls and depth; strings with commas; copy; unclosed delimiter rejection; semicolons; 50001-character rejection; example",
+        "390px and 1440px no horizontal overflow"
+      ],
+      "source_sha256": "badb1ccd17302f8006397ff0553b483a3cdcf426bad61976477f4c77908c4191",
+      "publication": {
+        "url": "https://everydaydigitalbox.com/excel-sandbox/",
+        "http_status": 200,
+        "checked_at": "2026-10-31T02:44:49.843Z",
+        "source_matches": true
+      }
+    },
+    {
+      "path": "streaming-roulette/index.html",
+      "checks": [
+        "Back to Hub link",
+        "9 destinations; no immediate repeat; anime filter returns 2; matching destination; HTTPS outbound link; opener protection",
+        "390px and 1440px no horizontal overflow"
+      ],
+      "source_sha256": "6f9cb3b2c114e03f545034ef0b1065ae5d4c50b13d9576882cdb5cffe5aef761",
+      "publication": {
+        "url": "https://everydaydigitalbox.com/streaming-roulette/",
+        "http_status": 200,
+        "checked_at": "2026-10-31T02:44:50.664Z",
+        "source_matches": true
+      }
+    },
+    {
+      "path": "social-counter/index.html",
+      "checks": [
+        "Back to Hub link",
+        "141-character LinkedIn warning; all over-limit states; detailed social test run recorded separately",
+        "390px and 1440px no horizontal overflow"
+      ],
+      "source_sha256": "8703dcdc3a4f13c8597022f3338b750f67042f9d2782d996d55e95412844e47b",
+      "publication": {
+        "url": "https://everydaydigitalbox.com/social-counter/",
+        "http_status": 200,
+        "checked_at": "2026-10-31T02:44:51.352Z",
+        "source_matches": true
+      }
+    }
+  ],
+  "result": "PASS",
+  "shared_checks": [
+    "No browser page errors",
+    "Only external browser requests were GETs for Tailwind Play CDN; no user-input requests",
+    "All five live page HTML hashes match inspected source after line-ending/trailing-whitespace normalization"
+  ],
+  "social_counter_detailed_checks": [
+    "All platform boundary values 0, 140, 141, 280, 281, 2200, 2201, 3000, 3001, 4000, 4001",
+    "Unicode code points; HTML input treated as text",
+    "All preview modes; expansion; line clamping after line breaks",
+    "Clean and copy success; blocked clipboard manual fallback",
+    "Viewport widths 320, 390, 768, 1024, 1440, 1600; hub search and navigation"
+  ]
+}

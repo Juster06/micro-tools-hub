@@ -17,6 +17,25 @@ The project is intended for creators, writers, students, developers, and office 
 | Issues and suggestions | [GitHub Issues](https://github.com/Juster06/micro-tools-hub/issues) |
 | Proposed changes | [Pull requests](https://github.com/Juster06/micro-tools-hub/pulls) |
 
+## Development continuity and project planning
+
+Future development sessions should begin with [AGENTS.md](AGENTS.md) and [SESSION_HANDOFF.md](SESSION_HANDOFF.md), inspect Git state, and verify the actual source before choosing work. These repository files preserve project state; they do not schedule agents or guarantee that an unmerged branch is available in another checkout.
+
+| Document | Purpose |
+| --- | --- |
+| [Project master plan](PROJECT_MASTER_PLAN.md) | Authoritative vision, priorities, constraints, milestones, and deferred scope |
+| [Tool registry](TOOL_REGISTRY.json) | Canonical machine-readable inventory, statuses, features, dependencies, and evidence |
+| [Progress tracker](PROGRESS_TRACKER.md) | Counts derived from the registry and current work |
+| [Roadmap](ROADMAP.md) | Prioritized next-twenty sequence and complete category catalog |
+| [Architecture](ARCHITECTURE.md) | Verified runtime structure, design, privacy, limits, and deployment boundaries |
+| [Decisions](DECISIONS.md) | Reasons and consequences of significant choices |
+| [Changelog](CHANGELOG.md) | Meaningful changes separated from publication claims |
+| [Baseline audit](audit/CURRENT_STATE.md) | Source-backed current state and verification scope |
+| [Backlog reconciliation](audit/BACKLOG_RECONCILIATION.md) | Each initial proposed utility mapped to its canonical tool |
+| [Management commands](scripts/README.md) | Python status workflow, reports, synchronization, and tests; existing Node compatibility |
+
+Tool development is the current priority. Growth milestones are aspirations; new tools are built one at a time with scoped validation. Analytics, advertising integration, traffic generation, and SEO automation are deferred. The future 9–11-day SEO observation idea is recorded in the master plan only.
+
 ## What the project provides
 
 - A responsive, dark slate and indigo dashboard with searchable tool cards.
@@ -111,6 +130,19 @@ Tailwind describes Play CDN as a development option. The current site uses it fo
 micro-tools-hub/
 ├── index.html                  # Searchable hub and tool cards
 ├── README.md                   # Project documentation
+├── AGENTS.md                   # Instructions for future sessions
+├── PROJECT_MASTER_PLAN.md      # Vision, scope, constraints and milestones
+├── TOOL_REGISTRY.json          # Canonical inventory and verification status
+├── PROGRESS_TRACKER.md         # Registry-derived counts and current work
+├── ROADMAP.md                  # Next twenty tools and complete category catalog
+├── ARCHITECTURE.md             # Runtime design, limits and deployment
+├── DECISIONS.md                # Dated decision log
+├── CHANGELOG.md                # Meaningful implementation/documentation changes
+├── SESSION_HANDOFF.md          # Continuation instructions and Git context
+├── scripts/                    # Python tracking engine and Node compatibility
+├── tests/                      # Isolated Python management tests
+├── reports/                    # Generated local snapshots, ignored by Git
+├── audit/                      # Current-state and baseline verification evidence
 ├── CNAME                       # Custom domain: everydaydigitalbox.com
 ├── social-counter/
 │   └── index.html              # Social counters and live previews
@@ -229,12 +261,26 @@ Open a pull request targeting `main` so the changes can be reviewed before mergi
 5. Add a card inside `#toolGrid` in the root `index.html`, with a matching relative link, unique heading ID, and searchable `data-title`.
 6. Update the homepage's initial tool-count text. The runtime filter counts the cards automatically.
 7. Check navigation and searching, then add the tool's description and links to this README.
+8. Update the canonical registry entry, test/publication evidence, changelog, and session handoff. Run the synchronization and validation commands below. A registry entry alone does not create or publish a utility.
 
 Use `textContent` when displaying user input rather than interpreting it as HTML. If a tool introduces a remote service, persistent storage, advertising, or account access, document that behavior instead of retaining an inaccurate local-only claim.
 
 ## Verification and maintenance
 
-The repository does not currently include a package manifest or a committed automated test suite. For routine changes, check the affected behavior in a browser and inspect the developer console for errors.
+The website has no package manifest or build step. Python 3.10+ and its standard library run the complete developer-only tracking workflow. Run from the repository root:
+
+```sh
+python scripts/project_status.py
+python -m unittest discover -s tests -v
+node --test scripts/project.test.mjs
+git diff --check
+```
+
+The command checks the registry, project links/source/evidence, and static HTML; updates only marked progress, roadmap and handoff content; and writes latest local JSON reports under ignored `reports/`. It preserves manual notes and does not promote tool statuses. The existing Node commands remain compatibility entry points to the same Python engine; Node 20+ is needed only for their tests.
+
+Use `python scripts/project_status.py --check-only` for a snapshot without documentation updates, or add `--no-report` for no report writes. A downloaded non-Git copy reports Git state as UNKNOWN. These commands do not rerun browser interactions, verify live publication, push/deploy, or perform a security audit. See [management command documentation](scripts/README.md) for individual commands, reports, exit codes, and limitations.
+
+For utility changes, check the affected behavior in a browser and inspect the developer console for errors. Save the actual test scope and results; mark a utility RELEASED only after checking both its implementation and its published version.
 
 Suggested checks:
 

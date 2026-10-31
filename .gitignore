@@ -1,0 +1,4 @@
+# Latest local reports may contain repository-relative change names. Do not publish.
+/reports/
+__pycache__/
+*.py[cod]
