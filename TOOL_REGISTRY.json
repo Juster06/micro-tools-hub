@@ -1,0 +1,3113 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-31",
+  "project": {
+    "name": "Everyday Digital Box — WebUtils Hub",
+    "repository": "https://github.com/Juster06/micro-tools-hub",
+    "website": "https://everydaydigitalbox.com/"
+  },
+  "status_definitions": {
+    "IDEA": "Unprioritized suggestion.",
+    "PLANNED": "Accepted backlog concept; dependencies or scope still need review.",
+    "READY": "Bounded scope and local implementation approach defined; not implemented.",
+    "IN_PROGRESS": "Actively being implemented.",
+    "BLOCKED": "Specific prerequisite prevents progress; explain it in notes.",
+    "IMPLEMENTED": "Source exists but required tests have not passed.",
+    "TESTED": "Required scoped tests passed; publication unverified.",
+    "RELEASED": "Source, scoped behavior and publication checked with dated evidence.",
+    "DEPRECATED": "Retained record for a retired tool."
+  },
+  "categories": [
+    {
+      "id": "pdf",
+      "name": "PDF Tools"
+    },
+    {
+      "id": "image",
+      "name": "Image Tools"
+    },
+    {
+      "id": "text",
+      "name": "Text and Writing Tools"
+    },
+    {
+      "id": "data",
+      "name": "Excel and Data Tools"
+    },
+    {
+      "id": "developer",
+      "name": "Developer Tools"
+    },
+    {
+      "id": "social",
+      "name": "Social Media Tools"
+    },
+    {
+      "id": "calculator",
+      "name": "Calculators"
+    },
+    {
+      "id": "security",
+      "name": "Security and Privacy Tools"
+    },
+    {
+      "id": "conversion",
+      "name": "File Conversion Tools"
+    },
+    {
+      "id": "productivity",
+      "name": "Everyday Productivity Tools"
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment Tools"
+    }
+  ],
+  "proposal_resolutions": [
+    {
+      "proposed_name": "Word Counter",
+      "tool_id": "text-cleaner",
+      "disposition": "EXISTING_FEATURE",
+      "reason": "Word count is already present; improve that tool if requirements justify it."
+    },
+    {
+      "proposed_name": "Reading Time Calculator",
+      "tool_id": "text-cleaner",
+      "disposition": "EXISTING_FEATURE",
+      "reason": "Existing 200-words-per-minute estimate; do not count it as another shipped page."
+    },
+    {
+      "proposed_name": "Extra Space Remover",
+      "tool_id": "social-counter",
+      "disposition": "EXISTING_FEATURE",
+      "reason": "Clean Spaces & Copy already covers repeated horizontal whitespace; generalization belongs to that utility unless distinct requirements justify separation."
+    },
+    {
+      "proposed_name": "JPG to PNG",
+      "tool_id": "image-format-converter",
+      "disposition": "COMBINED",
+      "reason": "Use one image conversion interface."
+    },
+    {
+      "proposed_name": "PNG to JPG",
+      "tool_id": "image-format-converter",
+      "disposition": "COMBINED",
+      "reason": "Use one image conversion interface with a transparency background choice."
+    },
+    {
+      "proposed_name": "Image to WebP",
+      "tool_id": "image-format-converter",
+      "disposition": "COMBINED",
+      "reason": "Use the same format converter and detect support."
+    },
+    {
+      "proposed_name": "CSV to JSON",
+      "tool_id": "csv-json-converter",
+      "disposition": "COMBINED",
+      "reason": "One bidirectional conversion utility."
+    },
+    {
+      "proposed_name": "JSON to CSV",
+      "tool_id": "csv-json-converter",
+      "disposition": "COMBINED",
+      "reason": "One bidirectional conversion utility."
+    },
+    {
+      "proposed_name": "SHA-256 Hash Generator",
+      "tool_id": "sha256-hash-checker",
+      "disposition": "COMBINED",
+      "reason": "Share digest generation and comparison for text and bounded files."
+    },
+    {
+      "proposed_name": "File Hash Checker",
+      "tool_id": "sha256-hash-checker",
+      "disposition": "COMBINED",
+      "reason": "File mode belongs to the same hash utility."
+    },
+    {
+      "proposed_name": "Markdown to HTML",
+      "tool_id": "markdown-converter-previewer",
+      "disposition": "COMBINED",
+      "reason": "Share parser and sanitizer with Markdown preview."
+    },
+    {
+      "proposed_name": "Markdown Previewer",
+      "tool_id": "markdown-converter-previewer",
+      "disposition": "COMBINED",
+      "reason": "One conversion and preview utility."
+    },
+    {
+      "proposed_name": "PDF Merger",
+      "tool_id": "pdf-merger",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "PDF Splitter",
+      "tool_id": "pdf-splitter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "PDF Rotator",
+      "tool_id": "pdf-rotator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Image to PDF",
+      "tool_id": "image-to-pdf",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "PDF to Image",
+      "tool_id": "pdf-to-image",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "PDF Watermark",
+      "tool_id": "pdf-watermark",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "PDF Page Numbering",
+      "tool_id": "pdf-page-numbering",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "PDF Metadata Viewer",
+      "tool_id": "pdf-metadata-viewer",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "PDF Compressor",
+      "tool_id": "pdf-compressor",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Image Compressor",
+      "tool_id": "image-compressor",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Image Resizer",
+      "tool_id": "image-resizer",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Image Cropper",
+      "tool_id": "image-cropper",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Image Rotator",
+      "tool_id": "image-rotator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Image Watermark",
+      "tool_id": "image-watermark",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Image Color Picker",
+      "tool_id": "image-color-picker",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Passport Photo Layout Maker",
+      "tool_id": "passport-photo-layout-maker",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Case Converter",
+      "tool_id": "case-converter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Duplicate Line Remover",
+      "tool_id": "duplicate-line-remover",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Text Difference Checker",
+      "tool_id": "text-difference-checker",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Text Sorter",
+      "tool_id": "text-sorter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Text Reverser",
+      "tool_id": "text-reverser",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Find and Replace",
+      "tool_id": "find-and-replace",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Slug Generator",
+      "tool_id": "slug-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Excel to CSV",
+      "tool_id": "excel-to-csv",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "CSV Column Extractor",
+      "tool_id": "csv-column-extractor",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Duplicate Row Finder",
+      "tool_id": "duplicate-row-finder",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "CSV Data Cleaner",
+      "tool_id": "csv-data-cleaner",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "CSV Merger",
+      "tool_id": "csv-merger",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "JSON Formatter",
+      "tool_id": "json-formatter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "CSV Viewer",
+      "tool_id": "csv-viewer",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Excel Formula Generator",
+      "tool_id": "excel-formula-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Base64 Encoder and Decoder",
+      "tool_id": "base64-encoder-decoder",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "URL Encoder and Decoder",
+      "tool_id": "url-encoder-decoder",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "UUID Generator",
+      "tool_id": "uuid-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Regex Tester",
+      "tool_id": "regex-tester",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "HTML Formatter",
+      "tool_id": "html-formatter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "CSS Minifier",
+      "tool_id": "css-minifier",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "JavaScript Minifier",
+      "tool_id": "javascript-minifier",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Timestamp Converter",
+      "tool_id": "timestamp-converter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Hashtag Organizer",
+      "tool_id": "hashtag-organizer",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "YouTube Title Checker",
+      "tool_id": "youtube-title-checker",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "YouTube Description Formatter",
+      "tool_id": "youtube-description-formatter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Instagram Bio Formatter",
+      "tool_id": "instagram-bio-formatter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Social Media Line Break Tool",
+      "tool_id": "social-media-line-break-tool",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Emoji Picker",
+      "tool_id": "emoji-picker",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Hashtag Counter",
+      "tool_id": "hashtag-counter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "YouTube Thumbnail Preview",
+      "tool_id": "youtube-thumbnail-preview",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Posting Calendar Generator",
+      "tool_id": "posting-calendar-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Username Generator",
+      "tool_id": "username-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Percentage Calculator",
+      "tool_id": "percentage-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Percentage Change Calculator",
+      "tool_id": "percentage-change-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "VAT Calculator",
+      "tool_id": "vat-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Discount Calculator",
+      "tool_id": "discount-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Age Calculator",
+      "tool_id": "age-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Date Difference Calculator",
+      "tool_id": "date-difference-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Working Days Calculator",
+      "tool_id": "working-days-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Loan Repayment Calculator",
+      "tool_id": "loan-repayment-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Profit Margin Calculator",
+      "tool_id": "profit-margin-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Compound Interest Calculator",
+      "tool_id": "compound-interest-calculator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Password Generator",
+      "tool_id": "password-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Password Strength Checker",
+      "tool_id": "password-strength-checker",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Secure Random Number Generator",
+      "tool_id": "secure-random-number-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Local Text Encryption",
+      "tool_id": "local-text-encryption",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "EXIF Metadata Viewer",
+      "tool_id": "exif-metadata-viewer",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "EXIF Metadata Remover",
+      "tool_id": "exif-metadata-remover",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "File Signature Inspector",
+      "tool_id": "file-signature-inspector",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Passphrase Generator",
+      "tool_id": "passphrase-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "QR Code Generator",
+      "tool_id": "qr-code-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "TXT to PDF",
+      "tool_id": "txt-to-pdf",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "HTML to Markdown",
+      "tool_id": "html-to-markdown",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "CSV to TXT",
+      "tool_id": "csv-to-txt",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "JSON to TXT",
+      "tool_id": "json-to-txt",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "SVG to PNG",
+      "tool_id": "svg-to-png",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "PNG to ICO",
+      "tool_id": "png-to-ico",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "File Size Converter",
+      "tool_id": "file-size-converter",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "HTML Previewer",
+      "tool_id": "html-previewer",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Pomodoro Timer",
+      "tool_id": "pomodoro-timer",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Countdown Timer",
+      "tool_id": "countdown-timer",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Random Name Picker",
+      "tool_id": "random-name-picker",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Decision Wheel",
+      "tool_id": "decision-wheel",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Local To-Do List",
+      "tool_id": "local-to-do-list",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Invoice Generator",
+      "tool_id": "invoice-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Resume Builder",
+      "tool_id": "resume-builder",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Meeting Agenda Generator",
+      "tool_id": "meeting-agenda-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    },
+    {
+      "proposed_name": "Printable Calendar Generator",
+      "tool_id": "printable-calendar-generator",
+      "disposition": "NEW_TOOL",
+      "reason": "Distinct primary task; scope and dependencies recorded in the canonical entry."
+    }
+  ],
+  "tools": [
+    {
+      "id": "social-counter",
+      "name": "Social Media Character Counter & Live Previewer",
+      "category": "social",
+      "description": "Count caption characters and preview approximate feed openings.",
+      "directory_path": "social-counter",
+      "status": "RELEASED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Modern browser DOM APIs"
+      ],
+      "required_features": [
+        "Four simultaneous counters",
+        "LinkedIn 140-character hook warning",
+        "Switchable expandable previews",
+        "Whitespace cleanup and clipboard fallback"
+      ],
+      "testing_status": "SMOKE_PASSED",
+      "last_verification_date": "2026-10-31",
+      "notes": "Counts code points rather than X weighted units; previews are estimates; no persistence.",
+      "sequence_rank": null,
+      "related_tools": [
+        "social-media-line-break-tool"
+      ],
+      "verification": {
+        "source_revision": "1cf6a8ae0973918c95b6bf4a56b0a9708ace35f0",
+        "source_sha256": "8703dcdc3a4f13c8597022f3338b750f67042f9d2782d996d55e95412844e47b",
+        "evidence_path": "audit/BASELINE_VERIFICATION.json",
+        "test_scope": [
+          "Back to Hub link",
+          "141-character LinkedIn warning; all over-limit states; detailed social test run recorded separately",
+          "390px and 1440px no horizontal overflow"
+        ],
+        "publication": {
+          "url": "https://everydaydigitalbox.com/social-counter/",
+          "http_status": 200,
+          "checked_at": "2026-10-31T02:44:51.352Z",
+          "source_matches": true
+        }
+      }
+    },
+    {
+      "id": "excel-sandbox",
+      "name": "Excel Formula Sandbox & Analyzer",
+      "category": "data",
+      "description": "Format and inspect Excel formula structure without evaluation.",
+      "directory_path": "excel-sandbox",
+      "status": "RELEASED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Modern browser DOM APIs"
+      ],
+      "required_features": [
+        "Color-coded delimiters",
+        "Function and nesting statistics",
+        "Structural diagnostics",
+        "50,000-character cap and copying"
+      ],
+      "testing_status": "SMOKE_PASSED",
+      "last_verification_date": "2026-10-31",
+      "notes": "No formula evaluation or complete Excel syntax validation; indentation depth visually capped at 40.",
+      "sequence_rank": null,
+      "related_tools": [
+        "excel-formula-generator"
+      ],
+      "verification": {
+        "source_revision": "1cf6a8ae0973918c95b6bf4a56b0a9708ace35f0",
+        "source_sha256": "badb1ccd17302f8006397ff0553b483a3cdcf426bad61976477f4c77908c4191",
+        "evidence_path": "audit/BASELINE_VERIFICATION.json",
+        "test_scope": [
+          "Back to Hub link",
+          "empty state; nested calls and depth; strings with commas; copy; unclosed delimiter rejection; semicolons; 50001-character rejection; example",
+          "390px and 1440px no horizontal overflow"
+        ],
+        "publication": {
+          "url": "https://everydaydigitalbox.com/excel-sandbox/",
+          "http_status": 200,
+          "checked_at": "2026-10-31T02:44:49.843Z",
+          "source_matches": true
+        }
+      }
+    },
+    {
+      "id": "text-cleaner",
+      "name": "AI Text Footprint Cleanser",
+      "category": "text",
+      "description": "Highlight and replace listed editorial phrases locally.",
+      "directory_path": "text-cleaner",
+      "status": "RELEASED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Modern browser DOM APIs"
+      ],
+      "required_features": [
+        "Phrase highlights and case preservation",
+        "Undo replacement operation",
+        "Word count and reading-time estimate",
+        "Clipboard fallback"
+      ],
+      "testing_status": "SMOKE_PASSED",
+      "last_verification_date": "2026-10-31",
+      "notes": "Rule-based, not an AI detector; word counts and reading time already exist; no explicit input size cap.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": {
+        "source_revision": "1cf6a8ae0973918c95b6bf4a56b0a9708ace35f0",
+        "source_sha256": "9c9e0e6a9a9796b73b26f21adb8cffa33a7aa6b2e669b64bfb9ab54972273443",
+        "evidence_path": "audit/BASELINE_VERIFICATION.json",
+        "test_scope": [
+          "Back to Hub link",
+          "empty state; phrase detection; case-preserving replacements; undo; clipboard; safe rendering; 10000 words; example",
+          "390px and 1440px no horizontal overflow"
+        ],
+        "publication": {
+          "url": "https://everydaydigitalbox.com/text-cleaner/",
+          "http_status": 200,
+          "checked_at": "2026-10-31T02:44:48.934Z",
+          "source_matches": true
+        }
+      }
+    },
+    {
+      "id": "streaming-roulette",
+      "name": "Free Stream Roulette",
+      "category": "entertainment",
+      "description": "Pick a curated streaming destination by genre.",
+      "directory_path": "streaming-roulette",
+      "status": "RELEASED",
+      "priority": "P2",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Modern browser DOM APIs"
+      ],
+      "required_features": [
+        "Six genre options",
+        "Nine configured destinations",
+        "Avoid immediate repeats where alternatives exist",
+        "Safe outbound links"
+      ],
+      "testing_status": "SMOKE_PASSED",
+      "last_verification_date": "2026-10-31",
+      "notes": "Curated destinations, not films or live catalogs. Regional availability and provider claims not re-audited in this session.",
+      "sequence_rank": null,
+      "related_tools": [
+        "decision-wheel"
+      ],
+      "verification": {
+        "source_revision": "1cf6a8ae0973918c95b6bf4a56b0a9708ace35f0",
+        "source_sha256": "6f9cb3b2c114e03f545034ef0b1065ae5d4c50b13d9576882cdb5cffe5aef761",
+        "evidence_path": "audit/BASELINE_VERIFICATION.json",
+        "test_scope": [
+          "Back to Hub link",
+          "9 destinations; no immediate repeat; anime filter returns 2; matching destination; HTTPS outbound link; opener protection",
+          "390px and 1440px no horizontal overflow"
+        ],
+        "publication": {
+          "url": "https://everydaydigitalbox.com/streaming-roulette/",
+          "http_status": 200,
+          "checked_at": "2026-10-31T02:44:50.664Z",
+          "source_matches": true
+        }
+      }
+    },
+    {
+      "id": "pdf-merger",
+      "name": "PDF Merger",
+      "category": "pdf",
+      "description": "Merge local PDFs in an explicit order.",
+      "directory_path": "pdf-merger",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "PDF parsing/manipulation library: evaluate license, size, encryption and malformed-file behavior before selection"
+      ],
+      "required_features": [
+        "Reorder input files",
+        "Preserve page sizes",
+        "Download merged PDF"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "pdf-splitter",
+      "name": "PDF Splitter",
+      "category": "pdf",
+      "description": "Extract selected PDF pages or ranges.",
+      "directory_path": "pdf-splitter",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "PDF parsing/manipulation library: evaluate license, size, encryption and malformed-file behavior before selection"
+      ],
+      "required_features": [
+        "Validate ranges",
+        "Preserve requested order",
+        "Download selected pages"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "pdf-rotator",
+      "name": "PDF Rotator",
+      "category": "pdf",
+      "description": "Rotate selected PDF pages without rasterizing them.",
+      "directory_path": "pdf-rotator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "PDF parsing/manipulation library: evaluate license, size, encryption and malformed-file behavior before selection"
+      ],
+      "required_features": [
+        "Select pages",
+        "Apply 90-degree increments",
+        "Download rotated PDF"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "image-to-pdf",
+      "name": "Image to PDF",
+      "category": "pdf",
+      "description": "Arrange local images into a PDF.",
+      "directory_path": "image-to-pdf",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "PDF parsing/manipulation library: evaluate license, size, encryption and malformed-file behavior before selection"
+      ],
+      "required_features": [
+        "Reorder images",
+        "Choose page size and fit",
+        "Download PDF"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "pdf-to-image",
+      "name": "PDF to Image",
+      "category": "pdf",
+      "description": "Render selected PDF pages to images.",
+      "directory_path": "pdf-to-image",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "PDF parsing/manipulation library: evaluate license, size, encryption and malformed-file behavior before selection"
+      ],
+      "required_features": [
+        "Page selection",
+        "Resolution and memory limit",
+        "Download PNG or JPEG"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "pdf-watermark",
+      "name": "PDF Watermark",
+      "category": "pdf",
+      "description": "Add a text watermark to selected pages.",
+      "directory_path": "pdf-watermark",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "PDF parsing/manipulation library: evaluate license, size, encryption and malformed-file behavior before selection"
+      ],
+      "required_features": [
+        "Position and opacity",
+        "Page range",
+        "Preserve document content"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "pdf-page-numbering",
+      "name": "PDF Page Numbering",
+      "category": "pdf",
+      "description": "Add page numbers with configurable placement.",
+      "directory_path": "pdf-page-numbering",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "PDF parsing/manipulation library: evaluate license, size, encryption and malformed-file behavior before selection"
+      ],
+      "required_features": [
+        "Start number and offset",
+        "Page selection",
+        "Download numbered PDF"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "pdf-metadata-viewer",
+      "name": "PDF Metadata Viewer",
+      "category": "pdf",
+      "description": "Inspect metadata and basic page information locally.",
+      "directory_path": "pdf-metadata-viewer",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "PDF parsing/manipulation library: evaluate license, size, encryption and malformed-file behavior before selection"
+      ],
+      "required_features": [
+        "Show absent fields honestly",
+        "Handle malformed or encrypted files",
+        "No uploads"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "pdf-compressor",
+      "name": "PDF Compressor",
+      "category": "pdf",
+      "description": "Evaluate meaningful local PDF compression without promising a smaller output.",
+      "directory_path": "pdf-compressor",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "implementation_complexity": "XL",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "PDF parsing/manipulation library: evaluate license, size, encryption and malformed-file behavior before selection"
+      ],
+      "required_features": [
+        "Size comparison",
+        "Preserve text and layout where possible",
+        "Explain quality tradeoffs",
+        "Report no improvement honestly"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "image-compressor",
+      "name": "Image Compressor",
+      "category": "image",
+      "description": "Reduce raster image size with visible quality tradeoffs.",
+      "directory_path": "image-compressor",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser image decoding and Canvas; format support and memory limits must be tested"
+      ],
+      "required_features": [
+        "Quality control",
+        "Before and after sizes",
+        "Download and format disclosure"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "image-format-converter"
+      ],
+      "verification": null
+    },
+    {
+      "id": "image-resizer",
+      "name": "Image Resizer",
+      "category": "image",
+      "description": "Resize raster images by dimensions or percentage.",
+      "directory_path": "image-resizer",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser image decoding and Canvas; format support and memory limits must be tested"
+      ],
+      "required_features": [
+        "Aspect-ratio lock",
+        "Dimension limits",
+        "Download resized image"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "image-cropper"
+      ],
+      "verification": null
+    },
+    {
+      "id": "image-format-converter",
+      "name": "Image Format Converter",
+      "category": "image",
+      "description": "Convert among JPEG, PNG and WebP in one interface.",
+      "directory_path": "image-format-converter",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser image decoding and Canvas; format support and memory limits must be tested"
+      ],
+      "required_features": [
+        "Explicit input and output formats",
+        "JPEG background choice for transparency",
+        "Runtime format support check"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "image-compressor"
+      ],
+      "verification": null
+    },
+    {
+      "id": "image-cropper",
+      "name": "Image Cropper",
+      "category": "image",
+      "description": "Crop an image with an accessible selection workflow.",
+      "directory_path": "image-cropper",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser image decoding and Canvas; format support and memory limits must be tested"
+      ],
+      "required_features": [
+        "Aspect ratios",
+        "Numeric crop controls",
+        "Preview and download"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "image-resizer"
+      ],
+      "verification": null
+    },
+    {
+      "id": "image-rotator",
+      "name": "Image Rotator",
+      "category": "image",
+      "description": "Rotate or flip local raster images.",
+      "directory_path": "image-rotator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser image decoding and Canvas; format support and memory limits must be tested"
+      ],
+      "required_features": [
+        "Quarter turns",
+        "Horizontal and vertical flips",
+        "Download result"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "image-watermark",
+      "name": "Image Watermark",
+      "category": "image",
+      "description": "Overlay text on local raster images.",
+      "directory_path": "image-watermark",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser image decoding and Canvas; format support and memory limits must be tested"
+      ],
+      "required_features": [
+        "Placement and opacity",
+        "Preview",
+        "Download without changing original"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "image-color-picker",
+      "name": "Image Color Picker",
+      "category": "image",
+      "description": "Inspect pixel colors in a local image.",
+      "directory_path": "image-color-picker",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser image decoding and Canvas; format support and memory limits must be tested"
+      ],
+      "required_features": [
+        "Pointer and keyboard coordinates",
+        "HEX and RGB",
+        "Copy selected color"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "passport-photo-layout-maker",
+      "name": "Passport Photo Layout Maker",
+      "category": "image",
+      "description": "Arrange user-sized photo tiles on a printable sheet.",
+      "directory_path": "passport-photo-layout-maker",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser image decoding and Canvas; format support and memory limits must be tested"
+      ],
+      "required_features": [
+        "User-defined dimensions",
+        "Print scaling guide",
+        "No guarantee of official document acceptance"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "case-converter",
+      "name": "Case Converter",
+      "category": "text",
+      "description": "Convert text case with an explicit choice of transformation.",
+      "directory_path": "case-converter",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Uppercase and lowercase",
+        "Title and sentence modes with documented rules",
+        "Copy and clear",
+        "Preserve line breaks"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 1,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "duplicate-line-remover",
+      "name": "Duplicate Line Remover",
+      "category": "text",
+      "description": "Remove repeated lines with controllable matching rules.",
+      "directory_path": "duplicate-line-remover",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Preserve first occurrence",
+        "Case-sensitive toggle",
+        "Whitespace and blank-line options",
+        "Copy and counts"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 2,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "text-difference-checker",
+      "name": "Text Difference Checker",
+      "category": "text",
+      "description": "Compare two texts and explain line-level differences.",
+      "directory_path": "text-difference-checker",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Insertions and removals",
+        "Empty inputs",
+        "Large-input cap",
+        "Accessible non-color-only differences"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "text-sorter",
+      "name": "Text Sorter",
+      "category": "text",
+      "description": "Sort text lines using explicit ordering rules.",
+      "directory_path": "text-sorter",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Ascending and descending",
+        "Numeric or locale-aware lexical order",
+        "Empty-line policy",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 3,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "text-reverser",
+      "name": "Text Reverser",
+      "category": "text",
+      "description": "Reverse text by line, word, or grapheme unit.",
+      "directory_path": "text-reverser",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Explicit reversal unit",
+        "Preserve emoji where segmentation is supported",
+        "Document fallback",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 6,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "find-and-replace",
+      "name": "Find and Replace",
+      "category": "text",
+      "description": "Preview and apply literal text replacements safely.",
+      "directory_path": "find-and-replace",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Literal search by default",
+        "Case-sensitive option",
+        "Match count and undo",
+        "Empty-search guard"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 5,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "slug-generator",
+      "name": "Slug Generator",
+      "category": "text",
+      "description": "Create URL-friendly slugs from text with documented Unicode rules.",
+      "directory_path": "slug-generator",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Whitespace and punctuation normalization",
+        "Accent handling policy",
+        "Hyphen cleanup",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 4,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "csv-json-converter",
+      "name": "CSV ↔ JSON Converter",
+      "category": "data",
+      "description": "Convert CSV and arrays of JSON records in a single utility.",
+      "directory_path": "csv-json-converter",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "CSV/workbook parsers where needed: evaluate correctness, license and bundle size"
+      ],
+      "required_features": [
+        "Quoted fields and multiline values",
+        "Delimiter and header options",
+        "Explicit null and type rules",
+        "Download"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "excel-to-csv",
+      "name": "Excel to CSV",
+      "category": "data",
+      "description": "Export a selected worksheet from a local spreadsheet.",
+      "directory_path": "excel-to-csv",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "CSV/workbook parsers where needed: evaluate correctness, license and bundle size"
+      ],
+      "required_features": [
+        "Workbook parsing",
+        "Sheet selection",
+        "CSV escaping",
+        "Formula handling disclosure"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "csv-column-extractor",
+      "name": "CSV Column Extractor",
+      "category": "data",
+      "description": "Select named or numbered columns from CSV data.",
+      "directory_path": "csv-column-extractor",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "CSV/workbook parsers where needed: evaluate correctness, license and bundle size"
+      ],
+      "required_features": [
+        "Quoted CSV support",
+        "Duplicate-header policy",
+        "Column reorder",
+        "Download"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "duplicate-row-finder",
+      "name": "Duplicate Row Finder",
+      "category": "data",
+      "description": "Find or remove repeated CSV records.",
+      "directory_path": "duplicate-row-finder",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "CSV/workbook parsers where needed: evaluate correctness, license and bundle size"
+      ],
+      "required_features": [
+        "Selected key columns",
+        "Case and whitespace policy",
+        "Keep-first option",
+        "Download"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "csv-data-cleaner",
+      "name": "CSV Data Cleaner",
+      "category": "data",
+      "description": "Apply explicit cleaning operations to CSV fields.",
+      "directory_path": "csv-data-cleaner",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "CSV/workbook parsers where needed: evaluate correctness, license and bundle size"
+      ],
+      "required_features": [
+        "Preview transformations",
+        "Missing-value policy",
+        "Column selection",
+        "Download"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "csv-viewer"
+      ],
+      "verification": null
+    },
+    {
+      "id": "csv-merger",
+      "name": "CSV Merger",
+      "category": "data",
+      "description": "Append compatible CSV files while validating headers.",
+      "directory_path": "csv-merger",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "CSV/workbook parsers where needed: evaluate correctness, license and bundle size"
+      ],
+      "required_features": [
+        "Header alignment",
+        "Mismatch errors",
+        "Input order",
+        "Quoted fields"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "json-formatter",
+      "name": "JSON Formatter",
+      "category": "data",
+      "description": "Validate, pretty-print and compact JSON locally.",
+      "directory_path": "json-formatter",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native JSON.parse and JSON.stringify"
+      ],
+      "required_features": [
+        "JSON.parse without eval",
+        "Parse errors",
+        "Indent selection and compact mode",
+        "Copy and input size cap"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 7,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "csv-viewer",
+      "name": "CSV Viewer",
+      "category": "data",
+      "description": "Inspect a local CSV in a bounded accessible table.",
+      "directory_path": "csv-viewer",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "CSV/workbook parsers where needed: evaluate correctness, license and bundle size"
+      ],
+      "required_features": [
+        "Delimiter choice",
+        "Quoted fields",
+        "Pagination or virtualization",
+        "Large-file warning"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "csv-data-cleaner"
+      ],
+      "verification": null
+    },
+    {
+      "id": "excel-formula-generator",
+      "name": "Excel Formula Generator",
+      "category": "data",
+      "description": "Generate formulas from deterministic guided templates.",
+      "directory_path": "excel-formula-generator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser-native deterministic templates; no parser or AI service"
+      ],
+      "required_features": [
+        "Explicit supported operations",
+        "Locale separator choice",
+        "Explanation and examples",
+        "No AI service or calculation claim"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "excel-sandbox"
+      ],
+      "verification": null
+    },
+    {
+      "id": "base64-encoder-decoder",
+      "name": "Base64 Encoder and Decoder",
+      "category": "developer",
+      "description": "Encode and decode Unicode text with clear Base64 validation.",
+      "directory_path": "base64-encoder-decoder",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "UTF-8 conversion",
+        "Invalid-input errors",
+        "Copy",
+        "Base64 is not encryption disclosure"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 9,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "url-encoder-decoder",
+      "name": "URL Encoder and Decoder",
+      "category": "developer",
+      "description": "Encode or decode URI components with explicit mode selection.",
+      "directory_path": "url-encoder-decoder",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Component and full-URI modes",
+        "Malformed escape errors",
+        "Plus-sign behavior explained",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 8,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "uuid-generator",
+      "name": "UUID Generator",
+      "category": "developer",
+      "description": "Generate version-4 UUIDs using browser cryptographic randomness.",
+      "directory_path": "uuid-generator",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser cryptographic randomness; feature-detect and fail clearly if unavailable"
+      ],
+      "required_features": [
+        "Secure-context feature detection",
+        "Bounded batch size",
+        "Copy and download",
+        "No Math.random fallback"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 10,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "sha256-hash-checker",
+      "name": "SHA-256 Text & File Hash Checker",
+      "category": "developer",
+      "description": "Hash text or a bounded local file and compare a known digest.",
+      "directory_path": "sha256-hash-checker",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser Web Crypto SHA-256; bounded file reads"
+      ],
+      "required_features": [
+        "Web Crypto SHA-256",
+        "UTF-8 text",
+        "File memory limit",
+        "Expected-digest comparison"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "regex-tester",
+      "name": "Regex Tester",
+      "category": "developer",
+      "description": "Inspect regular-expression matches with explicit execution limits.",
+      "directory_path": "regex-tester",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser Worker with termination timeout; bounded input"
+      ],
+      "required_features": [
+        "Pattern and flags validation",
+        "Worker execution and timeout",
+        "Match details",
+        "No unbounded main-thread regex"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "html-formatter",
+      "name": "HTML Formatter",
+      "category": "developer",
+      "description": "Format markup using an evaluated parser without executing it.",
+      "directory_path": "html-formatter",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed non-executing HTML parser and whitespace-preservation policy"
+      ],
+      "required_features": [
+        "Parse errors",
+        "Preserve meaningful whitespace",
+        "Safe text output",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "css-minifier",
+      "name": "CSS Minifier",
+      "category": "developer",
+      "description": "Minify stylesheet text using a reviewed parser.",
+      "directory_path": "css-minifier",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed CSS parser/minifier and license"
+      ],
+      "required_features": [
+        "Preserve strings and URLs",
+        "Error reporting",
+        "Before and after sizes",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "javascript-minifier",
+      "name": "JavaScript Minifier",
+      "category": "developer",
+      "description": "Minify JavaScript source without running it.",
+      "directory_path": "javascript-minifier",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed JavaScript parser/minifier and license; consider worker isolation"
+      ],
+      "required_features": [
+        "Reviewed parser",
+        "Syntax errors",
+        "Safe output",
+        "Input cap and worker evaluation"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "timestamp-converter",
+      "name": "Timestamp Converter",
+      "category": "developer",
+      "description": "Convert epoch values and ISO dates with explicit timezone handling.",
+      "directory_path": "timestamp-converter",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Seconds versus milliseconds",
+        "UTC and local display",
+        "Invalid and out-of-range input",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 11,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "hashtag-organizer",
+      "name": "Hashtag Organizer",
+      "category": "social",
+      "description": "Normalize and group hashtag lists without platform account access.",
+      "directory_path": "hashtag-organizer",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Duplicate removal",
+        "Explicit case policy",
+        "Counts and optional sorting",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 19,
+      "related_tools": [
+        "hashtag-counter"
+      ],
+      "verification": null
+    },
+    {
+      "id": "youtube-title-checker",
+      "name": "YouTube Title Checker",
+      "category": "social",
+      "description": "Measure title length against a maintained configurable guide.",
+      "directory_path": "youtube-title-checker",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Character count",
+        "Opening preview",
+        "Guidance is not a ranking prediction",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "youtube-description-formatter",
+      "name": "YouTube Description Formatter",
+      "category": "social",
+      "description": "Assemble structured descriptions from user-provided sections.",
+      "directory_path": "youtube-description-formatter",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Section ordering",
+        "Links as plain text",
+        "Copy",
+        "No automatic publishing"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "instagram-bio-formatter",
+      "name": "Instagram Bio Formatter",
+      "category": "social",
+      "description": "Preview and format a short profile biography.",
+      "directory_path": "instagram-bio-formatter",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Line breaks",
+        "Length guide",
+        "Mobile preview",
+        "No account access"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "social-media-line-break-tool",
+      "name": "Social Media Line Break Tool",
+      "category": "social",
+      "description": "Prepare deliberate caption line breaks without hidden-character promises.",
+      "directory_path": "social-media-line-break-tool",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Preview blank lines",
+        "Normalize line endings",
+        "Copy",
+        "Document platform variability"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "social-counter"
+      ],
+      "verification": null
+    },
+    {
+      "id": "emoji-picker",
+      "name": "Emoji Picker",
+      "category": "social",
+      "description": "Find and copy emoji from a maintained local dataset.",
+      "directory_path": "emoji-picker",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed local emoji dataset and usage license"
+      ],
+      "required_features": [
+        "Search and categories",
+        "Accessible names",
+        "Variation and skin-tone handling",
+        "Dataset license review"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "hashtag-counter",
+      "name": "Hashtag Counter",
+      "category": "social",
+      "description": "Count hashtags in pasted posts with explicit token rules.",
+      "directory_path": "hashtag-counter",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Unicode policy",
+        "Duplicate and unique counts",
+        "List extraction",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "hashtag-organizer"
+      ],
+      "verification": null
+    },
+    {
+      "id": "youtube-thumbnail-preview",
+      "name": "YouTube Thumbnail Preview",
+      "category": "social",
+      "description": "Preview a local thumbnail at typical feed sizes.",
+      "directory_path": "youtube-thumbnail-preview",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Local image input",
+        "Safe-area guides",
+        "Mobile and desktop frames",
+        "No upload or performance prediction"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "posting-calendar-generator",
+      "name": "Posting Calendar Generator",
+      "category": "social",
+      "description": "Build a manual posting plan for export.",
+      "directory_path": "posting-calendar-generator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Date range and timezone",
+        "User-defined frequency",
+        "CSV or printable export",
+        "No platform integration"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "username-generator",
+      "name": "Username Generator",
+      "category": "social",
+      "description": "Generate candidate usernames from local user-supplied words.",
+      "directory_path": "username-generator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Length and character options",
+        "Bounded output",
+        "Copy",
+        "No availability guarantee"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "percentage-calculator",
+      "name": "Percentage Calculator",
+      "category": "calculator",
+      "description": "Calculate a percentage of a value and one value as a percentage of another.",
+      "directory_path": "percentage-calculator",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Explicit formula selection",
+        "Finite numeric validation",
+        "Zero-denominator handling",
+        "Rounding disclosure"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 12,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "percentage-change-calculator",
+      "name": "Percentage Change Calculator",
+      "category": "calculator",
+      "description": "Calculate increase or decrease from a starting value.",
+      "directory_path": "percentage-change-calculator",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Display formula",
+        "Zero-base error",
+        "Negative-value policy",
+        "Rounding"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 13,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "vat-calculator",
+      "name": "VAT Calculator",
+      "category": "calculator",
+      "description": "Add or remove a user-entered VAT rate.",
+      "directory_path": "vat-calculator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "User-entered rate",
+        "Inclusive and exclusive modes",
+        "Currency rounding",
+        "No claim of current legal rates"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "discount-calculator",
+      "name": "Discount Calculator",
+      "category": "calculator",
+      "description": "Calculate a discounted price and savings.",
+      "directory_path": "discount-calculator",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Price and percentage validation",
+        "0 to 100 percent range",
+        "Savings breakdown",
+        "Rounding"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 14,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "age-calculator",
+      "name": "Age Calculator",
+      "category": "calculator",
+      "description": "Calculate calendar age between user-selected dates.",
+      "directory_path": "age-calculator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Leap-day policy",
+        "Future-date handling",
+        "Years months and days",
+        "Date-only semantics"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "date-difference-calculator",
+      "name": "Date Difference Calculator",
+      "category": "calculator",
+      "description": "Compare two calendar dates without daylight-saving drift.",
+      "directory_path": "date-difference-calculator",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Date-only validation",
+        "UTC day arithmetic",
+        "Inclusive toggle",
+        "Signed or absolute result choice"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 16,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "working-days-calculator",
+      "name": "Working Days Calculator",
+      "category": "calculator",
+      "description": "Count weekdays with user-defined exclusions.",
+      "directory_path": "working-days-calculator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Weekend selection",
+        "Optional holiday list",
+        "Inclusive policy",
+        "No automatic official-holiday claim"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "loan-repayment-calculator",
+      "name": "Loan Repayment Calculator",
+      "category": "calculator",
+      "description": "Estimate fixed-rate loan payments from explicit assumptions.",
+      "directory_path": "loan-repayment-calculator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Principal rate and term",
+        "Zero-interest case",
+        "Payment schedule",
+        "Exclude unprovided fees and variable rates"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "profit-margin-calculator",
+      "name": "Profit Margin Calculator",
+      "category": "calculator",
+      "description": "Calculate profit, margin and markup with distinct labels.",
+      "directory_path": "profit-margin-calculator",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Cost and revenue",
+        "Zero-denominator handling",
+        "Negative values policy",
+        "Formula explanation"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 15,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "compound-interest-calculator",
+      "name": "Compound Interest Calculator",
+      "category": "calculator",
+      "description": "Estimate growth under user-defined compounding assumptions.",
+      "directory_path": "compound-interest-calculator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Principal and contributions",
+        "Compounding frequency",
+        "Zero-rate case",
+        "No investment-return guarantee"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "password-generator",
+      "name": "Password Generator",
+      "category": "security",
+      "description": "Create passwords using browser cryptographic randomness.",
+      "directory_path": "password-generator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser Web Crypto where cryptographic randomness or hashing is required"
+      ],
+      "required_features": [
+        "Length and character sets",
+        "Unbiased selection",
+        "No storage or logging",
+        "Copy with sensitive-data notice"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "password-strength-checker",
+      "name": "Password Strength Checker",
+      "category": "security",
+      "description": "Estimate password strength locally without implying certainty.",
+      "directory_path": "password-strength-checker",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed locally bundled password-strength estimator and license"
+      ],
+      "required_features": [
+        "Reviewed local estimator",
+        "No network transmission",
+        "Explain estimates",
+        "No secret persistence"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "secure-random-number-generator",
+      "name": "Secure Random Number Generator",
+      "category": "security",
+      "description": "Generate unbiased integers within a validated safe-integer interval.",
+      "directory_path": "secure-random-number-generator",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser cryptographic randomness; feature-detect and fail clearly if unavailable"
+      ],
+      "required_features": [
+        "crypto.getRandomValues",
+        "Rejection sampling",
+        "Inclusive bounds and bounded batch",
+        "No insecure fallback"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 20,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "local-text-encryption",
+      "name": "Local Text Encryption",
+      "category": "security",
+      "description": "Design authenticated local text encryption with an explicit format.",
+      "directory_path": "local-text-encryption",
+      "status": "PLANNED",
+      "priority": "P3",
+      "implementation_complexity": "XL",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Web Crypto authenticated encryption and password derivation",
+        "Separate reviewed threat model and versioned format"
+      ],
+      "required_features": [
+        "Web Crypto authenticated encryption",
+        "Reviewed password derivation",
+        "Versioned export format",
+        "Wrong-password and tamper detection"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Requires a separate design and validation gate before implementation.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "exif-metadata-viewer",
+      "name": "EXIF Metadata Viewer",
+      "category": "security",
+      "description": "Inspect supported photo metadata locally.",
+      "directory_path": "exif-metadata-viewer",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed format-specific metadata parser"
+      ],
+      "required_features": [
+        "Supported-format disclosure",
+        "Location awareness",
+        "Malformed-file handling",
+        "No upload"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "exif-metadata-remover",
+      "name": "EXIF Metadata Remover",
+      "category": "security",
+      "description": "Remove selected image metadata with verifiable output checks.",
+      "directory_path": "exif-metadata-remover",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed metadata parser/removal method and exported-metadata verifier"
+      ],
+      "required_features": [
+        "Review metadata removal method",
+        "Orientation handling",
+        "Reinspect export",
+        "No blanket all-formats guarantee"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "file-signature-inspector",
+      "name": "File Signature Inspector",
+      "category": "security",
+      "description": "Compare initial file bytes with a maintained signature list.",
+      "directory_path": "file-signature-inspector",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser Web Crypto where cryptographic randomness or hashing is required"
+      ],
+      "required_features": [
+        "Bounded header reads",
+        "Extension mismatch",
+        "Unknown result",
+        "Not an antivirus claim"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "passphrase-generator",
+      "name": "Passphrase Generator",
+      "category": "security",
+      "description": "Generate random word sequences from a reviewed local word list.",
+      "directory_path": "passphrase-generator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed licensed word list",
+        "Browser cryptographic randomness and unbiased selection"
+      ],
+      "required_features": [
+        "Licensed word list",
+        "Cryptographic unbiased word selection",
+        "Length options",
+        "No logging"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "qr-code-generator",
+      "name": "QR Code Generator",
+      "category": "security",
+      "description": "Generate QR codes locally from user-provided text.",
+      "directory_path": "qr-code-generator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed locally bundled QR encoder and license"
+      ],
+      "required_features": [
+        "Reviewed local QR encoder",
+        "Capacity errors",
+        "PNG or SVG export",
+        "No URL-shortening service"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "txt-to-pdf",
+      "name": "TXT to PDF",
+      "category": "conversion",
+      "description": "Render local plain text into a paginated PDF.",
+      "directory_path": "txt-to-pdf",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed PDF text rendering library and font licensing"
+      ],
+      "required_features": [
+        "Line wrapping",
+        "Font and Unicode coverage",
+        "Page margins",
+        "Download"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "markdown-converter-previewer",
+      "name": "Markdown Converter & Previewer",
+      "category": "conversion",
+      "description": "Convert Markdown to sanitized HTML and preview it safely.",
+      "directory_path": "markdown-converter-previewer",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed Markdown parser and sanitizer; local bundled assets preferred"
+      ],
+      "required_features": [
+        "Reviewed Markdown parser and sanitizer",
+        "Safe link handling",
+        "Preview and source",
+        "Download HTML"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "html-to-markdown",
+      "name": "HTML to Markdown",
+      "category": "conversion",
+      "description": "Convert supplied markup to Markdown without executing it.",
+      "directory_path": "html-to-markdown",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed non-executing HTML-to-Markdown conversion library"
+      ],
+      "required_features": [
+        "Reviewed DOM conversion",
+        "Document unsupported markup",
+        "Copy",
+        "Safe parsing"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "csv-to-txt",
+      "name": "CSV to TXT",
+      "category": "conversion",
+      "description": "Render selected CSV fields into a configurable text layout.",
+      "directory_path": "csv-to-txt",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Format-specific parsers, sanitizers or encoders: evaluate before implementation"
+      ],
+      "required_features": [
+        "Quoted fields",
+        "Delimiter and header choice",
+        "Line format",
+        "Download"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "json-to-txt",
+      "name": "JSON to TXT",
+      "category": "conversion",
+      "description": "Extract readable text from selected JSON values.",
+      "directory_path": "json-to-txt",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Format-specific parsers, sanitizers or encoders: evaluate before implementation"
+      ],
+      "required_features": [
+        "Parse errors",
+        "Explicit field path",
+        "Missing-value handling",
+        "Download"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "svg-to-png",
+      "name": "SVG to PNG",
+      "category": "conversion",
+      "description": "Rasterize bounded SVG input without fetching external resources.",
+      "directory_path": "svg-to-png",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed SVG sanitization and external-resource blocking",
+        "Canvas rasterization with tested dimension limits"
+      ],
+      "required_features": [
+        "Sanitize SVG",
+        "Block scripts and remote references",
+        "Dimension limits",
+        "PNG export"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "png-to-ico",
+      "name": "PNG to ICO",
+      "category": "conversion",
+      "description": "Package supported PNG-derived sizes into an icon file.",
+      "directory_path": "png-to-ico",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Reviewed local ICO encoder"
+      ],
+      "required_features": [
+        "Reviewed ICO encoder",
+        "Multiple sizes",
+        "Transparency",
+        "Compatibility checks"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "file-size-converter",
+      "name": "File Size Converter",
+      "category": "conversion",
+      "description": "Convert byte quantities using explicitly labeled units.",
+      "directory_path": "file-size-converter",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Format-specific parsers, sanitizers or encoders: evaluate before implementation"
+      ],
+      "required_features": [
+        "SI versus IEC units",
+        "Finite nonnegative input",
+        "Rounding",
+        "Copy"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "html-previewer",
+      "name": "HTML Previewer",
+      "category": "conversion",
+      "description": "Preview untrusted markup in an isolated sandbox.",
+      "directory_path": "html-previewer",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Sandboxed iframe with restrictive CSP and no script/same-origin privileges"
+      ],
+      "required_features": [
+        "Sandbox without scripts or same-origin privileges",
+        "Block outbound resource loads",
+        "Show source",
+        "Reset preview"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "pomodoro-timer",
+      "name": "Pomodoro Timer",
+      "category": "productivity",
+      "description": "Run a work and break timer with user-selected durations.",
+      "directory_path": "pomodoro-timer",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Pause and resume",
+        "Deadline-based timing",
+        "Background-tab behavior",
+        "Optional sound initiated by user"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "countdown-timer"
+      ],
+      "verification": null
+    },
+    {
+      "id": "countdown-timer",
+      "name": "Countdown Timer",
+      "category": "productivity",
+      "description": "Run a duration timer using an actual deadline rather than interval ticks.",
+      "directory_path": "countdown-timer",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Start pause reset",
+        "Validate duration",
+        "Reconcile background-tab delays",
+        "Accessible completion state"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 17,
+      "related_tools": [
+        "pomodoro-timer"
+      ],
+      "verification": null
+    },
+    {
+      "id": "random-name-picker",
+      "name": "Random Name Picker",
+      "category": "productivity",
+      "description": "Draw from a local list with an explicit replacement policy.",
+      "directory_path": "random-name-picker",
+      "status": "READY",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Browser cryptographic randomness; feature-detect and fail clearly if unavailable"
+      ],
+      "required_features": [
+        "Trim and blank-line handling",
+        "Duplicate-name policy",
+        "Crypto-backed draw",
+        "Reset and copy result"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": 18,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "decision-wheel",
+      "name": "Decision Wheel",
+      "category": "productivity",
+      "description": "Choose from user-provided options with an accessible textual result.",
+      "directory_path": "decision-wheel",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Option editor",
+        "Fair random choice",
+        "Reduced motion",
+        "Not a duplicate of curated Stream Roulette"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [
+        "streaming-roulette"
+      ],
+      "verification": null
+    },
+    {
+      "id": "local-to-do-list",
+      "name": "Local To-Do List",
+      "category": "productivity",
+      "description": "Manage tasks with explicit opt-in local persistence.",
+      "directory_path": "local-to-do-list",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Explicit opt-in localStorage, export format and clear-all behavior"
+      ],
+      "required_features": [
+        "Add edit complete delete",
+        "Storage disclosure and clear-all",
+        "Local-only data",
+        "Export and import"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "invoice-generator",
+      "name": "Invoice Generator",
+      "category": "productivity",
+      "description": "Create a printable invoice from user-entered business details.",
+      "directory_path": "invoice-generator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Line items and totals",
+        "User-entered tax",
+        "Print layout",
+        "No official accounting-compliance claim"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "resume-builder",
+      "name": "Resume Builder",
+      "category": "productivity",
+      "description": "Prepare a structured printable resume without account registration.",
+      "directory_path": "resume-builder",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "L",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Section editing",
+        "Accessible form",
+        "Print layout",
+        "Explicit local-draft behavior"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "meeting-agenda-generator",
+      "name": "Meeting Agenda Generator",
+      "category": "productivity",
+      "description": "Build a structured agenda with time allocations.",
+      "directory_path": "meeting-agenda-generator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Items owners and durations",
+        "Total time",
+        "Printable output",
+        "Copy or download"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    },
+    {
+      "id": "printable-calendar-generator",
+      "name": "Printable Calendar Generator",
+      "category": "productivity",
+      "description": "Create monthly calendars with explicit locale choices.",
+      "directory_path": "printable-calendar-generator",
+      "status": "PLANNED",
+      "priority": "P2",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4"
+      ],
+      "required_features": [
+        "Month and year",
+        "Week-start option",
+        "Print margins",
+        "No automatic holiday accuracy claim"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Proposed scope only; no tool page has been implemented.",
+      "sequence_rank": null,
+      "related_tools": [],
+      "verification": null
+    }
+  ]
+}
