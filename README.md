@@ -36,7 +36,7 @@ Future development sessions should begin with [AGENTS.md](AGENTS.md) and [SESSIO
 
 Tool development is the current priority. Growth milestones are aspirations; new tools are built one at a time with scoped validation. Analytics, advertising integration, traffic generation, and SEO automation are deferred. The future 9–11-day SEO observation idea is recorded in the master plan only.
 
-On Windows, the optional **Everyday Digital Box — Project Status** desktop launcher runs the existing tracking command in a responsive local window. Create/recreate its desktop and Start menu shortcuts with `python scripts/install_status_shortcut.py`. See [Windows launcher instructions](scripts/WINDOWS_LAUNCHER.md) for starting, manual taskbar pinning, requirements and limitations. The launcher is separate from the website.
+On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu launcher now opens the [local Project Control Dashboard](scripts/DASHBOARD.md), with overview/milestones, registry exploration, queue, validation, activity, blockers and Quick Actions. It reuses the existing tracking workflow and stays separate from the website. Create/recreate shortcuts with `python scripts/install_status_shortcut.py`; existing targets remain valid. See [Windows launcher instructions](scripts/WINDOWS_LAUNCHER.md) for manual taskbar pinning, requirements and limitations.
 
 ## What the project provides
 
