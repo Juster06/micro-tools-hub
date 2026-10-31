@@ -2,6 +2,13 @@
 
 Meaningful project changes, with source state separated from publication. Git history is authoritative for exact commit timestamps.
 
+## Unreleased — Windows project-status launcher (Task 2.5)
+
+- Added a responsive Tkinter GUI that automatically runs the existing project-status command, streams output, shows success/warnings/failure, and provides Run Again, Open Reports, Open Project Folder and Close.
+- Added a verified current-user Desktop/Start menu shortcut installer using standard-library Windows Shell APIs, absolute paths, the same Python installation, a default icon and matching AppUserModelID. Taskbar pinning remains manual; no registry/settings pin manipulation is performed.
+- Added temporary-fixture launcher tests and native Windows shortcut round-trip/idempotence checks. Real GUI controls, independent cwd, responsiveness and deliberate failure output were exercised; scaled-display button clipping found during GUI testing was fixed.
+- Documented installation, recreation, manual pinning, dependencies, behavior and future dashboard extension points. No Task 3, public website, tool inventory or backend changes.
+
 ## Unreleased — automated tracking infrastructure (Task 2)
 
 - Extended the existing registry and generated-document conventions with a Python standard-library tracking engine and six command entry points, including one complete project-status command.

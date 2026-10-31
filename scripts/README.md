@@ -1,5 +1,7 @@
 # Automated project tracking
 
+For a Windows graphical entry point with verified desktop/Start menu shortcuts, see [Windows launcher instructions](WINDOWS_LAUNCHER.md). It runs this same project-status workflow; it is not a second tracking engine.
+
 Use **Python 3.10+**, with its standard library only. These commands are development utilities, not a website build or backend. No credentials, network connection, third-party packages, analytics, scheduled task, or JavaScript execution is required.
 
 ## Complete workflow

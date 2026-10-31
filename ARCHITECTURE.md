@@ -35,6 +35,11 @@ scripts/generate_handoff.py      generated local Git/session snapshot
 scripts/project_status.py        complete tracking workflow
 tests/test_tracking.py           isolated Python unittest fixtures
 reports/                        ignored, latest-only local JSON snapshots
+scripts/status_launcher.pyw      Windows no-console GUI entry point
+scripts/status_launcher.py       Tk view and background subprocess controller
+scripts/install_status_shortcut.py current-user shortcut installer/verifier
+scripts/windows_shortcuts.py     ctypes Windows Shell adapter
+tests/test_status_launcher.py    isolated launcher and native shortcut tests
 audit/                          dated baseline and initial backlog reconciliation
 ```
 
@@ -55,6 +60,14 @@ Static verification parses HTML without executing JavaScript: required files, ba
 The generated handoff is a dated-by-context snapshot of observed local files, not a live Git view or proof of completion. It preserves manual notes and distinguishes registry evidence from newly run tests. The generator settles its own changed-file entry, but a later commit necessarily changes HEAD. Use `python scripts/project_status.py --check-only` after committing to refresh local reports/Git state without editing documentation; combine with `--no-report` for a fully read-only status invocation. Exit codes: 0 for no critical errors (warnings allowed), 1 for validation failure, 2 for invocation/I/O failure.
 
 Writes are atomic per file and marker changes are preflighted. Run one tracking writer per checkout; there is no cross-process transaction lock. Unexpected session termination does not trigger a hook. Agent startup/shutdown instructions are checkpoints, not a background scheduler. Full commands and limitations are documented in `scripts/README.md`.
+
+## Local Windows launcher
+
+Task 2.5 adds a Tkinter window outside the public site's runtime. `status_launcher.pyw` starts the GUI without a console; its worker calls the existing `project_status.py` with the same Python installation, absolute paths, explicit project-root cwd, merged UTF-8 stdout/stderr and CREATE_NO_WINDOW. A queue delivers output to the Tk thread, with one run at a time per window. Folder actions use the Windows shell. Closing leaves an already-started check free to finish its writes.
+
+The standard-library shortcut installer uses documented Shell COM/Known Folder APIs and verifies Desktop and Start menu `.lnk` targets, arguments, working directories and AppUserModelID. It respects redirected desktops, defaults to the installed Python icon, and refuses unrelated same-name links. No pinning settings, registry configuration, admin changes or remote services are involved. Taskbar pinning remains manual.
+
+The GUI's context, worker and actions are separated for a later dashboard-opening action; no Task 3 dashboard is implemented. See `scripts/WINDOWS_LAUNCHER.md`. Launcher files must remain in the selected checkout; moving the checkout/Python or switching to a branch without them requires recreating/restoring shortcuts.
 
 ## Routing and discovery
 
