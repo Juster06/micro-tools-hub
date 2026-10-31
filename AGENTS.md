@@ -17,6 +17,12 @@ These instructions apply to this repository and its descendants. Read them at th
 
 ## Choosing work and avoiding duplicates
 
+### Local Project Control Dashboard
+
+Task 3 extends the installed Windows launcher; read `scripts/DASHBOARD.md` for its module boundaries and report freshness contract. Preserve `scripts/status_launcher.pyw`, shortcut targets and AppUserModelID. Keep registry exploration read-only, background work outside Tk, and widget updates on the main thread. Read the latest manual `**Next major task:**` handoff field before selecting a READY utility. Task 4 requires separate scope and must not begin during Task 3.
+
+Structural reports are not functional test totals. Missing test-run reports display unavailable; never reuse historical handoff counts as current results. Input/report hashes and host-specific Git settings remain ignored in `reports/`. The dashboard lock coordinates dashboard refreshes only; avoid concurrent independent CLI writers. For dashboard changes, run Python/Node suites and project status, use temporary corrupt/slow/large fixtures, and record actual Windows GUI scope without inventing results.
+
 - Follow the latest explicit user instruction. Otherwise resolve the handoff's unfinished task, then select the lowest available `sequence_rank` in the registry that is `READY` and has no unmet prerequisite.
 - Check IDs, names, descriptions, `related_tools`, proposal resolutions, existing pages, and homepage search before creating a tool. Search code for the actual capability, not just a matching page title.
 - Prefer enhancing a canonical tool or adding a mode when the same primary task already exists. Record a reason before splitting a shared interface.

@@ -2,6 +2,13 @@
 
 Meaningful project changes, with source state separated from publication. Git history is authoritative for exact commit timestamps.
 
+## Unreleased — local Project Control Dashboard (Task 3)
+
+- Extended the installed launcher into seven local Tk screens: overview/milestones, read-only searchable/filterable/sortable registry/details, development queue, testing/validation, activity/documents, blockers and Quick Actions/complete latest command output. Preserved shortcut targets and AppUserModelID.
+- Separated data, operations, widgets, screens and coordination; added batched rendering/debounced search, hash-based evidence freshness, an OS-backed dashboard refresh lock and safe local settings/actions. Missing test totals remain unavailable; structural PASS is never treated as functional test success.
+- Added temporary-fixture coverage for malformed/missing/partial data, counts, ordering, freshness, safe actions, worker/concurrency failures and 1,500-entry Windows Tk rendering. Existing management/shortcut behavior remains tested.
+- Added optional local Git path settings for desktop PATH differences, no-console Git calls, native startup errors and scrollable/scaled-display overview layout. Updated architecture, continuity and usage docs; Task 4 remains separately scoped. No public website, inventory, analytics or advertising changes.
+
 ## Unreleased — Windows project-status launcher (Task 2.5)
 
 - Added a responsive Tkinter GUI that automatically runs the existing project-status command, streams output, shows success/warnings/failure, and provides Run Again, Open Reports, Open Project Folder and Close.

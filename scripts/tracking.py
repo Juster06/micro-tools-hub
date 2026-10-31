@@ -608,17 +608,17 @@ def check_project(root, registry=None):
     return finish(result)
 
 
-def git_snapshot(root):
+def git_snapshot(root, git_executable="git"):
     """Only report branch, hashes and relative change names; never remotes/authors/messages."""
     def run(args):
-        return subprocess.run(["git", "-C", str(root), *args], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=10, check=True).stdout.strip()
+        return subprocess.run([git_executable, "-C", str(root), *args], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=10, check=True, creationflags=subprocess.CREATE_NO_WINDOW if sys.platform == "win32" else 0).stdout.strip()
     try:
         top = Path(run(["rev-parse", "--show-toplevel"])).resolve()
         if top != root.resolve():
             return {"status": "UNKNOWN", "reason": "Project root is not the Git repository root.", "branch": "UNKNOWN", "latest_commit": "UNKNOWN", "working_tree": "UNKNOWN", "changes": []}
         commit = run(["rev-parse", "--verify", "HEAD"])
         branch = run(["branch", "--show-current"]) or "DETACHED HEAD"
-        raw = subprocess.run(["git", "-C", str(root), "status", "--porcelain=v1", "-z", "--untracked-files=normal"], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=10, check=True).stdout
+        raw = subprocess.run([git_executable, "-C", str(root), "status", "--porcelain=v1", "-z", "--untracked-files=normal"], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=10, check=True, creationflags=subprocess.CREATE_NO_WINDOW if sys.platform == "win32" else 0).stdout
         parts, changes, index = raw.split("\0"), [], 0
         while index < len(parts):
             item = parts[index]

@@ -65,9 +65,11 @@ The backlog total includes READY and BLOCKED; those rows must not be added again
 
 ## Current development task
 
-Task 2 extends the existing project-memory foundation with automated validation, static verification, generated reports, and checkpoints. No new utility implementation started in this session. Git delivery and review state are recorded in `SESSION_HANDOFF.md`; this tracker does not independently assert deployment.
+Task 3 extends the Windows launcher into a local Project Control Dashboard, reusing Task 2 validation, registry and reports. Task 4 — Reusable Tool Development Framework is the next owner-directed major task, not started here. Case Converter remains the registry's next READY public utility. No new utility implementation started in this session. Git delivery and review state are recorded in `SESSION_HANDOFF.md`; this tracker does not independently assert deployment.
 
 ## Recently completed work
+
+- Extended the installed Windows launcher into a modular offline dashboard with seven screens, read-only registry exploration, documented development ordering, validation freshness/diagnostics, Git/documents, blockers and safe local Quick Actions. Shortcut targets remain unchanged; exact tests and GUI scope are in the latest handoff.
 
 - Read the full README and all existing page sources; inspected repository structure, Git status, and recent history.
 - Confirmed the existing homepage and each utility have matching live HTML and passed the recorded Edge smoke checks.

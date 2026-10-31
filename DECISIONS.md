@@ -1,5 +1,15 @@
 # Decision log
 
+## 2026-10-31 — Extend the installed launcher into an offline dashboard
+
+**Decision:** Retain `.pyw`/shortcut entry points and Python/Tk; separate dashboard data, operations and presentation into a package. Reuse existing tracking schemas/counts/order. Keep registry exploration read-only and host-specific settings/reports ignored.
+
+**Reason:** The owner requested local visual monitoring without a server, database, public website changes or broken desktop integration. Desktop Python can inherit a PATH without Git.
+
+**Alternatives:** Local web server/framework, a second application, duplicated validators, or extracting historical documentation test counts as current results.
+
+**Consequences:** Background jobs and an OS file lock serialize dashboard refreshes; only the main thread updates Tk. Source/report hashes detect stale snapshots, with documented legacy timestamp limits. Structural PASS never implies tests. Totals remain unavailable until a structured test-report contract exists. A local Git path fixes activity metadata without global Windows changes. Task 4 remains separately scoped and unstarted.
+
 ## 2026-10-31 — Extend tracking through one Python engine
 
 **Decision:** Add Python standard-library validation, generation, static verification and orchestration. Keep the existing Node API as a compatibility bridge to the same engine. Use UTF-8 explicitly at process boundaries and preserve LF/CRLF outside generated content.

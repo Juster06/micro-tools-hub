@@ -1,6 +1,6 @@
 # Windows Project Status launcher
 
-The launcher is a local desktop interface to the existing tracking command. It is separate from the public website and does not implement Task 3's Project Control Dashboard.
+The launcher is a local desktop interface to the existing tracking command. Task 3 extends this same entry point into the [Project Control Dashboard](DASHBOARD.md), separate from the public website. Existing shortcut targets remain valid; the window title is now “Everyday Digital Box — Project Control Dashboard”.
 
 ## Start it
 
