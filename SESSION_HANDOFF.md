@@ -1,24 +1,24 @@
 # Session handoff
 
-## Latest session — Task 2 automated tracking (2026-10-31, Europe/London)
+## Latest session — Task 2.5 Windows status launcher (2026-10-31, Europe/London)
 
-This section supersedes the retained Task 1 notes below. Task 2 extends the existing management system; it does not start Case Converter or any other utility implementation.
+This section supersedes the historical Task 2/Task 1 notes retained below. Task 2 was merged into main at `93c095ea411fb3cc0f0ade05322a26ddb5ce4303`; Task 2.5 started from that clean verified Git checkout, not the downloaded non-Git copy.
 
-**Current status:** Task 2 is complete, reviewed and published as [pull request #5](https://github.com/Juster06/micro-tools-hub/pull/5). The owner explicitly authorized committing, pushing, reviewing and merging. Published checkpoint: `f454d7ca759d408c6049aee24379b1ac80fde278`, fetched and confirmed to match the reviewed local tree. Branch: `feat/automated-project-tracking`, based on verified Task 1 commit `25df9fa8e81601591563fcfd4eede8d98ac8d65f`. This delivery includes the foundation from PR #4 and Task 2 together. This document is a pre-merge checkpoint; GitHub's actual PR state and remote main determine merge completion.
+**Scope/status:** a real local Tkinter launcher is implemented and graphically tested. Desktop and Start menu shortcuts were installed on the current Windows host and independently read back to verify target, arguments, working directory and AppUserModelID. Taskbar pinning is intentionally manual and was not performed. No Task 3 dashboard or public utility has been started.
 
-Completed infrastructure: six Python CLI entry points, a shared standard-library engine, schema/dependency/link/source checks, static HTML/interface verification, generated progress and Git handoff, ignored latest-only JSON reports, and a Node compatibility bridge. Registry metadata adds milestones and declared interface IDs only; lifecycle states and functional/publication verification dates remain unchanged.
+**Locations:** source entry point is `<active-checkout>/scripts/status_launcher.pyw`; discover the checkout's absolute location with `git rev-parse --show-toplevel`. The GUI displays that root. The desktop shortcut is named **Everyday Digital Box — Project Status** in the actual Windows Desktop Known Folder; a matching Start menu Programs shortcut is also installed. Paths are host-specific and are not hardcoded in committed documents or scripts.
 
-**Files created:** `.gitignore`; `scripts/tracking.py`; `scripts/validate_registry.py`; `scripts/generate_progress.py`; `scripts/check_project.py`; `scripts/verify_tools.py`; `scripts/generate_handoff.py`; `scripts/project_status.py`; `tests/test_tracking.py`. Four reports are created locally under ignored `reports/`.
+**Recreate/start/pin:** `python scripts/install_status_shortcut.py` creates or refreshes verified current-user shortcuts. Double-click the desktop shortcut to run checks automatically. To pin, launch it, right-click its running taskbar icon, and choose Pin to taskbar; use the Start menu entry if appropriate. Windows policy may restrict that menu. See `scripts/WINDOWS_LAUNCHER.md`.
 
-**Files modified:** `AGENTS.md`, `ARCHITECTURE.md`, `CHANGELOG.md`, `DECISIONS.md`, `PROGRESS_TRACKER.md`, `SESSION_HANDOFF.md`, `README.md`, `TOOL_REGISTRY.json`, `scripts/README.md`, `scripts/project.mjs`, and one message-case assertion in `scripts/project.test.mjs`. Existing generated roadmap/reconciliation blocks are synchronized using the same registry. No runtime HTML or CNAME changes.
+**Files created:** `scripts/status_launcher.py`, `scripts/status_launcher.pyw`, `scripts/windows_shortcuts.py`, `scripts/install_status_shortcut.py`, `scripts/WINDOWS_LAUNCHER.md`, `tests/test_status_launcher.py`. **Files modified:** README, scripts README, architecture, master plan, changelog and this handoff. The generated status block is moved here; older manual notes are retained. No registry/tool lifecycle, homepage, utility HTML, CNAME or tracking-engine behavior changes.
 
-**Verification:** `python -m unittest discover -s tests -v` passed all **57** isolated tests after the review corrections; `node --test scripts/project.test.mjs` passed all **10** compatibility tests. All six Python CLI commands ran successfully. The consolidated workflow and all four latest reports showed **PASS, 0 errors, 0 warnings** in the Git worktree. `git diff --check` passed, and Git comparison against the Task 1 base confirmed all five HTML pages and CNAME unchanged. Static verification does not execute JavaScript or refresh the historical functional/live baseline. No new functional tool tests or deployment checks are claimed by this task.
+**Verification:** all **69 Python tests** and **10 Node compatibility tests** passed on Windows. This includes the 57 existing management tests and 12 launcher/process/shortcut tests. Native COM round-trip tests used temporary Desktop/Programs fixture folders, and installation was repeated successfully. The real installed desktop link also launched from an unrelated current directory and ran the actual project command successfully in the verified Git checkout.
 
-**Pre-existing issue:** a fresh Windows worktree reproduced false stale-generated-document errors caused by CRLF. The new shared engine fixes newline handling. A bridge regression found during development was corrected with explicit UTF-8; both cases have isolated tests. No website regression has been observed because runtime source is unchanged.
+**Actual GUI checks:** startup and automatic execution; visible correct root and streamed output; Run Again with another successful run; Open Reports and Open Project Folder opening the correct Explorer locations; Close; responsive controls/progress while an isolated fixture child slept 20 seconds; and clear failure output/exit code 3 in that fixture. The failure fixture did not modify the real project. Initial scaled-display clipping that hid buttons was corrected using a resizable grid. Python 3.14.4/Tk 8.6 were available; no admin elevation or extra PowerShell/console window was used by the launcher.
 
-**Limitations:** static checks cannot prove behavior, accessibility, current external services or publication. Free-text library dependencies are descriptive; only `depends_on`/`tool:<id>` references are resolved. Git is UNKNOWN in the owner's downloaded non-Git copy. Reports are snapshots, atomic per file, without a cross-process lock; run one writer per checkout. An interrupted session has no cleanup hook.
+**Limits/dependencies:** Windows desktop Python 3.10+ with Tcl/Tk and matching python/pythonw, standard library only. The window is a local development tool, not a website feature. Existing project checks update generated notes and local reports. One worker per window; do not launch multiple writers for one checkout. Closing a running window lets the already-started child finish in the background. Moving Python/the checkout or removing launcher files requires recreating/restoring the shortcuts. No automatic taskbar settings, registry configuration, pinning, paid APIs, scheduler or Task 3 implementation.
 
-**Exact next action:** check PR #5 and finish any remaining authorized merge. If merged, fetch remote `main`, verify its tree and run `python scripts/project_status.py --check-only` before synchronizing the local copy. Review fixed two crash paths: malformed registry tool objects and malformed verification-report structures now yield ordinary validation errors. No remaining blocking findings were identified in the reviewed scope. GitHub returned no commit statuses or PR-triggered workflow runs for the reviewed checkpoint; the test evidence is local. After delivery, Case Converter remains the next ready utility, but it is not started during this merge task.
+**Git/continuation:** the owner explicitly authorized pushing and merging Task 2.5. Delivery branch: `feat/windows-status-launcher`, based on main `93c095e`; implementation checkpoint `3139493a0af994f17dfc8f574a08da4cc8df3b09`, with Task 3 priority recorded at `24a6f9999eb1bfcfa38370d12657cfb0dccd970c`. This document is a pre-merge checkpoint: verify the branch's pull request and remote main before claiming publication or merge. The containing delivery commit is identified with `git log -1 --format="%H %s"`; the final delivery message reports actual Git state. After the reviewed PR is merged, synchronize this checkout to main so the installed shortcut continues to find its files. Task 3 is the owner's next major task, an internal dashboard; do not automatically start Case Converter instead merely because it remains the next READY public utility. The GUI keeps project context, worker and action handlers separate for that extension. Do not begin Task 3 during Task 2.5.
 
 ### Generated local status snapshot
 
@@ -29,8 +29,8 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Tool status counts: IDEA: 0; PLANNED: 68; READY: 20; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 4; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Case Converter.
-- Git branch: feat/automated-project-tracking.
-- Latest commit observed before generation: f454d7ca759d408c6049aee24379b1ac80fde278.
+- Git branch: feat/windows-status-launcher.
+- Latest commit observed before generation: 24a6f9999eb1bfcfa38370d12657cfb0dccd970c.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -55,6 +55,32 @@ These are registry verification records, not new tests or tasks executed by this
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->
+
+---
+
+## Historical Task 2 session — automated tracking (2026-10-31, Europe/London)
+
+This section supersedes the retained Task 1 notes below. Task 2 extends the existing management system; it does not start Case Converter or any other utility implementation.
+
+**Current status:** Task 2 is complete, reviewed and published as [pull request #5](https://github.com/Juster06/micro-tools-hub/pull/5). The owner explicitly authorized committing, pushing, reviewing and merging. Published checkpoint: `f454d7ca759d408c6049aee24379b1ac80fde278`, fetched and confirmed to match the reviewed local tree. Branch: `feat/automated-project-tracking`, based on verified Task 1 commit `25df9fa8e81601591563fcfd4eede8d98ac8d65f`. This delivery includes the foundation from PR #4 and Task 2 together. This document is a pre-merge checkpoint; GitHub's actual PR state and remote main determine merge completion.
+
+Completed infrastructure: six Python CLI entry points, a shared standard-library engine, schema/dependency/link/source checks, static HTML/interface verification, generated progress and Git handoff, ignored latest-only JSON reports, and a Node compatibility bridge. Registry metadata adds milestones and declared interface IDs only; lifecycle states and functional/publication verification dates remain unchanged.
+
+**Files created:** `.gitignore`; `scripts/tracking.py`; `scripts/validate_registry.py`; `scripts/generate_progress.py`; `scripts/check_project.py`; `scripts/verify_tools.py`; `scripts/generate_handoff.py`; `scripts/project_status.py`; `tests/test_tracking.py`. Four reports are created locally under ignored `reports/`.
+
+**Files modified:** `AGENTS.md`, `ARCHITECTURE.md`, `CHANGELOG.md`, `DECISIONS.md`, `PROGRESS_TRACKER.md`, `SESSION_HANDOFF.md`, `README.md`, `TOOL_REGISTRY.json`, `scripts/README.md`, `scripts/project.mjs`, and one message-case assertion in `scripts/project.test.mjs`. Existing generated roadmap/reconciliation blocks are synchronized using the same registry. No runtime HTML or CNAME changes.
+
+**Verification:** `python -m unittest discover -s tests -v` passed all **57** isolated tests after the review corrections; `node --test scripts/project.test.mjs` passed all **10** compatibility tests. All six Python CLI commands ran successfully. The consolidated workflow and all four latest reports showed **PASS, 0 errors, 0 warnings** in the Git worktree. `git diff --check` passed, and Git comparison against the Task 1 base confirmed all five HTML pages and CNAME unchanged. Static verification does not execute JavaScript or refresh the historical functional/live baseline. No new functional tool tests or deployment checks are claimed by this task.
+
+**Pre-existing issue:** a fresh Windows worktree reproduced false stale-generated-document errors caused by CRLF. The new shared engine fixes newline handling. A bridge regression found during development was corrected with explicit UTF-8; both cases have isolated tests. No website regression has been observed because runtime source is unchanged.
+
+**Limitations:** static checks cannot prove behavior, accessibility, current external services or publication. Free-text library dependencies are descriptive; only `depends_on`/`tool:<id>` references are resolved. Git is UNKNOWN in the owner's downloaded non-Git copy. Reports are snapshots, atomic per file, without a cross-process lock; run one writer per checkout. An interrupted session has no cleanup hook.
+
+**Exact next action:** check PR #5 and finish any remaining authorized merge. If merged, fetch remote `main`, verify its tree and run `python scripts/project_status.py --check-only` before synchronizing the local copy. Review fixed two crash paths: malformed registry tool objects and malformed verification-report structures now yield ordinary validation errors. No remaining blocking findings were identified in the reviewed scope. GitHub returned no commit statuses or PR-triggered workflow runs for the reviewed checkpoint; the test evidence is local. After delivery, Case Converter remains the next ready utility, but it is not started during this merge task.
+
+### Generated local status snapshot
+
+Generated status is now recorded in the Task 2.5 section above.
 
 ---
 

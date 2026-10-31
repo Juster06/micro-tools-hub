@@ -59,6 +59,8 @@ Related but distinct tasks retain separate entries where their input, output, or
 
 ## Future features — deferred
 
+- **Owner-directed Task 3:** the next major development task is an internal visual Project Control Dashboard, separate from the public website. Task 2.5 provides only a Windows status launcher and extension points for opening that dashboard. Do not implement Task 3 until it is separately requested/scoped, and do not automatically substitute the default next utility for this owner-directed priority. Internal administration features do not increase the public tool inventory.
+
 - **SEO monitoring concept:** later, consider traffic metrics and configurable decline thresholds, an observation period of approximately 9–11 days, an SEO review recommendation, and an action/outcome record. This is a concept only. There is no approved analytics integration, scheduled task, observation threshold, or automatic settings change.
 - **Advertising:** existing layout placeholders may remain. Real AdSense integration, consent handling, and monetization are not current development priorities and need authorization.
 - **Discovery at scale:** category filters, better search, related-tool links, and pagination/virtualization should follow measured needs. Do not replace the homepage preemptively.
