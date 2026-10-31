@@ -4,7 +4,7 @@
 
 This section supersedes the retained Task 1 notes below. Task 2 extends the existing management system; it does not start Case Converter or any other utility implementation.
 
-**Current status:** Task 2 is complete; the owner has now explicitly authorized committing, pushing, preparing a pull request, reviewing and merging. Branch: `feat/automated-project-tracking`, based on verified Task 1 commit `25df9fa8e81601591563fcfd4eede8d98ac8d65f`. PR #4 is still open at pre-merge review, so this branch includes the foundation and Task 2 together. The initial local checkpoint is `c986d9c44be933ca3f9d33b3d544e1f14a12b4bb`. Actual publication/merge is verified separately after review; do not infer it from this prepared handoff.
+**Current status:** Task 2 is complete, reviewed and published as [pull request #5](https://github.com/Juster06/micro-tools-hub/pull/5). The owner explicitly authorized committing, pushing, reviewing and merging. Published checkpoint: `f454d7ca759d408c6049aee24379b1ac80fde278`, fetched and confirmed to match the reviewed local tree. Branch: `feat/automated-project-tracking`, based on verified Task 1 commit `25df9fa8e81601591563fcfd4eede8d98ac8d65f`. This delivery includes the foundation from PR #4 and Task 2 together. This document is a pre-merge checkpoint; GitHub's actual PR state and remote main determine merge completion.
 
 Completed infrastructure: six Python CLI entry points, a shared standard-library engine, schema/dependency/link/source checks, static HTML/interface verification, generated progress and Git handoff, ignored latest-only JSON reports, and a Node compatibility bridge. Registry metadata adds milestones and declared interface IDs only; lifecycle states and functional/publication verification dates remain unchanged.
 
@@ -18,7 +18,7 @@ Completed infrastructure: six Python CLI entry points, a shared standard-library
 
 **Limitations:** static checks cannot prove behavior, accessibility, current external services or publication. Free-text library dependencies are descriptive; only `depends_on`/`tool:<id>` references are resolved. Git is UNKNOWN in the owner's downloaded non-Git copy. Reports are snapshots, atomic per file, without a cross-process lock; run one writer per checkout. An interrupted session has no cleanup hook.
 
-**Exact next action:** check the delivery PR/Git state and finish any remaining authorized merge, then verify remote `main` and synchronize the local copy. Review fixed two crash paths: malformed registry tool objects and malformed verification-report structures now yield ordinary validation errors. After delivery, the next ready utility is Case Converter; do not start it during this merge task. Its scope and ranking are unchanged. The containing commit is a pre-merge checkpoint; GitHub's actual merge result and remote main are authoritative for whether delivery is finished.
+**Exact next action:** check PR #5 and finish any remaining authorized merge. If merged, fetch remote `main`, verify its tree and run `python scripts/project_status.py --check-only` before synchronizing the local copy. Review fixed two crash paths: malformed registry tool objects and malformed verification-report structures now yield ordinary validation errors. No remaining blocking findings were identified in the reviewed scope. GitHub returned no commit statuses or PR-triggered workflow runs for the reviewed checkpoint; the test evidence is local. After delivery, Case Converter remains the next ready utility, but it is not started during this merge task.
 
 ### Generated local status snapshot
 
@@ -30,7 +30,7 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Case Converter.
 - Git branch: feat/automated-project-tracking.
-- Latest commit observed before generation: c986d9c44be933ca3f9d33b3d544e1f14a12b4bb.
+- Latest commit observed before generation: f454d7ca759d408c6049aee24379b1ac80fde278.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -51,10 +51,7 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
-- ` M` CHANGELOG.md
 - ` M` SESSION_HANDOFF.md
-- ` M` scripts/tracking.py
-- ` M` tests/test_tracking.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->
