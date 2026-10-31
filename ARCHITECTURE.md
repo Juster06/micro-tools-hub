@@ -26,10 +26,35 @@ CHANGELOG.md                     meaningful change history
 SESSION_HANDOFF.md               exact continuation instructions and Git context
 scripts/project.mjs             check / sync / summary, Node built-ins only
 scripts/project.test.mjs         management validator regression cases
+scripts/tracking.py             shared offline standard-library tracking engine
+scripts/validate_registry.py     registry validation entry point
+scripts/generate_progress.py     marked-document generation entry point
+scripts/check_project.py         consistency check entry point
+scripts/verify_tools.py          static structure verification entry point
+scripts/generate_handoff.py      generated local Git/session snapshot
+scripts/project_status.py        complete tracking workflow
+tests/test_tracking.py           isolated Python unittest fixtures
+reports/                        ignored, latest-only local JSON snapshots
 audit/                          dated baseline and initial backlog reconciliation
 ```
 
-Management scripts are developer tools. They do not load in the website, require a framework, add telemetry, or become a deployment build requirement. Node.js with built-in test runner and `structuredClone` support (Node 20+ recommended) runs them without installing dependencies.
+Management scripts are developer tools. They do not load in the website, add telemetry, or become a deployment build requirement. Python 3.10+ and its standard library run the complete workflow without dependencies. The existing Node exports/commands delegate to Python via a UTF-8 JSON bridge; they share the same validation, counts and generation logic. Node 20+ remains useful for compatibility tests.
+
+## Automated tracking workflow
+
+Run `python scripts/project_status.py` from the repository root. Entry points resolve their default root from their own script location; `--root` accepts a Windows or other project path, including spaces. The workflow validates the registry, checks consistency, verifies static tool structure, refreshes only existing generated blocks, rechecks consistency, generates a handoff, and saves four fixed latest reports. It records the initial consistency result too, so repaired generated drift is not concealed.
+
+The registry retains its existing statuses and descriptive dependencies. Optional `depends_on` and `tool:<id>` dependencies encode resolvable tool references; cycle checks use an iterative graph algorithm. Optional `expected_interface_ids` declares static controls, and top-level `milestones` defines growth targets. None of these metadata additions changes a tool status or functional evidence date.
+
+Progress status rows partition the inventory; the separate backlog subtotal overlaps IDEA/PLANNED/READY/BLOCKED. Category, priority, next-milestone percentage and recent evidence dates derive from the same registry. Generated progress has no run timestamp, so unchanged inputs produce identical content. Existing roadmap and reconciliation markers are also refreshed; manual text outside markers and LF/CRLF style are preserved.
+
+Static verification parses HTML without executing JavaScript: required files, basic HTML5 tags, title, hub/homepage links, duplicate IDs, and declared controls. Source/evidence hashes remain checked separately. No command automatically promotes TESTED/RELEASED, runs functional tests, contacts the live site, commits, pushes, or deploys.
+
+`reports/` contains `registry-validation.json`, `project-consistency.json`, `tool-verification.json`, and `project-status.json`. Each uses a timestamped schema with status, counts, errors, warnings and details. Reports overwrite the previous snapshot and are ignored by Git. Git collection omits authors, commit messages, remotes and raw stderr; it records only branch, commit hash and repository-relative changes. Git unavailable/non-root/unborn states become UNKNOWN rather than fabricated clean/pushed states.
+
+The generated handoff is a dated-by-context snapshot of observed local files, not a live Git view or proof of completion. It preserves manual notes and distinguishes registry evidence from newly run tests. The generator settles its own changed-file entry, but a later commit necessarily changes HEAD. Use `python scripts/project_status.py --check-only` after committing to refresh local reports/Git state without editing documentation; combine with `--no-report` for a fully read-only status invocation. Exit codes: 0 for no critical errors (warnings allowed), 1 for validation failure, 2 for invocation/I/O failure.
+
+Writes are atomic per file and marker changes are preflighted. Run one tracking writer per checkout; there is no cross-process transaction lock. Unexpected session termination does not trigger a hook. Agent startup/shutdown instructions are checkpoints, not a background scheduler. Full commands and limitations are documented in `scripts/README.md`.
 
 ## Routing and discovery
 

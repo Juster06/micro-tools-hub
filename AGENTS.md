@@ -12,7 +12,7 @@ These instructions apply to this repository and its descendants. Read them at th
 2. Read the complete `README.md` on first contact or when it changes. Read `ARCHITECTURE.md` and relevant `DECISIONS.md` entries before changing behavior.
 3. Inspect `git status --short --branch`, remotes, branch, and recent commits. Fetch remote state when available. Do not overwrite unrelated work or assume a downloaded ZIP is a Git clone.
 4. Read relevant source and tests. Actual source determines what is implemented; investigate disagreement with documents before proceeding.
-5. Run `node scripts/project.mjs check`. Review unfinished tasks and failing checks before selecting unrelated work.
+5. Run `python scripts/project_status.py`. It validates first, refreshes marked progress/roadmap/handoff blocks, and saves ignored local reports. Inspect Git status again after generation. Review failures and unfinished work before selecting unrelated work. Use `--check-only` for a snapshot without documentation updates.
 6. Confirm the active branch contains the latest handoff. Unmerged branch documentation is not automatically present in `main` or another machine.
 
 ## Choosing work and avoiding duplicates
@@ -28,7 +28,7 @@ These instructions apply to this repository and its descendants. Read them at th
 
 - Prefer static HTML, small inline CSS, vanilla browser JavaScript, and the existing Tailwind Play CDN setup. Keep each tool at `<slug>/index.html`; the root `index.html` is the hub.
 - No backend, database, paid API, account system, or major framework without a clear technical reason and owner approval. Small maintained libraries may be used after documenting license, payload, offline behavior, versioning, and privacy implications.
-- A dependency mentioned as a candidate in the registry is not installed or approved by that mention. Evaluate it before use. Tooling-only Node scripts do not introduce a website runtime or build requirement.
+- A dependency mentioned as a candidate in the registry is not installed or approved by that mention. Evaluate it before use. Tooling-only Python scripts and the Node compatibility commands do not introduce a website runtime or build requirement.
 - Preserve all working pages, the `CNAME`, and the Google site-verification tag. Preserve the public website/code and restrict changes to authorized accounts; do not change visibility or access settings without a specific instruction.
 - Use lowercase hyphenated directory names and stable unique IDs. Do not recycle an old ID for a different task.
 - Match slate/indigo styling, responsive spacing, clear labels, visible focus states, keyboard controls, reduced motion, and readable errors. Every utility needs a top-left `href="../index.html"` Back to Hub link.
@@ -47,24 +47,30 @@ These instructions apply to this repository and its descendants. Read them at th
 
 ## Validation and status rules
 
-- Run `node scripts/project.mjs check` and `node --test scripts/project.test.mjs` for registry/tool-management changes; run `git diff --check` before committing.
+- Run `python scripts/project_status.py`, `python -m unittest discover -s tests -v`, and `node --test scripts/project.test.mjs` for tracking-system changes; run `git diff --check` before committing. Python 3.10+ with its standard library is sufficient for the tracking workflow; Node is needed only for compatibility checks.
 - For a utility change, test normal, empty, invalid, boundary, and representative large inputs; narrow mobile and desktop layouts; keyboard interaction; errors; copy/download behavior; safe rendering; and network behavior. Document browser/version, exact scope, results, and omissions.
 - Use existing tests when applicable. Do not replace behavior validation with a JSON check. The management checker is not a security audit or full UI test suite.
 - Update `audit/` evidence and source hashes when tested implementation changes. For additional test formats, extend the checker deliberately rather than weakening release gates.
 - `IMPLEMENTED`: source exists, tests outstanding. `TESTED`: required scoped tests passed, publication unverified. `RELEASED`: behavior verified and live publication checked with dated matching-source evidence. A HTTP 200 alone is insufficient.
 - Existing releases have a dated Edge smoke-test baseline, not exhaustive compatibility certification. Record regressions honestly; downgrade verification status when evidence no longer matches source.
 - Planned entries have `last_verification_date: null` and no test/publication claim. Record blocked prerequisites in notes. Status definitions live in `TOOL_REGISTRY.json`.
-- Update registry data first; run `node scripts/project.mjs sync` to derive progress counts, roadmap tables, and backlog mappings. Do not manually edit generated blocks or count merged features as separate tools.
+- Update registry data first; run `python scripts/generate_progress.py` to derive progress counts, roadmap tables, and backlog mappings. The existing `node scripts/project.mjs sync` delegates to the same engine. Do not manually edit generated blocks or count merged features as separate tools.
+- `depends_on` and dependency strings written as `tool:<id>` are checked tool references, including cycles. Other dependency strings remain descriptive candidates, not proof that a package exists. Optional `expected_interface_ids` declares static controls the verifier can reliably check.
+- Static HTML verification never changes TESTED/RELEASED status or refreshes functional/publication dates. Reports are offline local snapshots, not functional test results. Keep `reports/` ignored; do not publish credentials, authors, remote URLs, or absolute local paths in reports.
 
 ## Branches, publication, and session shutdown
 
 1. Use a feature branch for substantial changes. Review the diff and keep unrelated owner changes intact. Do not delete working tools without approval.
 2. Run appropriate tests and record results and omissions. Reconcile registry, generated progress/roadmap, README, decisions, and changelog.
 3. Update `SESSION_HANDOFF.md` with completed work, files changed, tests/results, known issues, unfinished work, exact next action, branch, and known commit references.
-4. Check documentation consistency with `node scripts/project.mjs sync`, `node scripts/project.mjs check`, and `git diff --check`.
+4. Run `python scripts/project_status.py` and review its consolidated errors/warnings, generated progress, and handoff. Update manual completion notes, blockers and changelog with actual evidence. Unexpected termination does not guarantee cleanup: the next session must recover from source, registry and Git.
 5. Commit/push within the user's authorized scope. Verify the remote branch/commit before claiming a push. Opening a PR is not merging or deploying it; report pending review separately.
 6. Inspect final Git status. State what remains uncommitted or unpublished. A handoff cannot embed its own commit hash; give the known baseline/checkpoint and the command/ref that identifies the containing delivery commit.
 7. Save continuity files in the repository and synchronize explicitly requested local copies without overwriting unrelated edits. Do not promise automatic recall of uncommitted files from another checkout.
+
+## Checkpoint after a utility
+
+Run its relevant functional tests, inspect consistency issues, update the registry using the actual result, regenerate tracking information, update the changelog and manual handoff, and record the next task. Run the consistency checker again after integration. Resolve errors before moving on; structural checks alone cannot establish a release. Do not push or deploy without authorization. The status command itself performs neither action.
 
 ## Deferred scope
 

@@ -1,5 +1,68 @@
 # Session handoff
 
+## Latest session — Task 2 automated tracking (2026-10-31, Europe/London)
+
+This section supersedes the retained Task 1 notes below. Task 2 extends the existing management system; it does not start Case Converter or any other utility implementation.
+
+**Current status:** Task 2 is complete; the owner has now explicitly authorized committing, pushing, preparing a pull request, reviewing and merging. Branch: `feat/automated-project-tracking`, based on verified Task 1 commit `25df9fa8e81601591563fcfd4eede8d98ac8d65f`. PR #4 is still open at pre-merge review, so this branch includes the foundation and Task 2 together. The initial local checkpoint is `c986d9c44be933ca3f9d33b3d544e1f14a12b4bb`. Actual publication/merge is verified separately after review; do not infer it from this prepared handoff.
+
+Completed infrastructure: six Python CLI entry points, a shared standard-library engine, schema/dependency/link/source checks, static HTML/interface verification, generated progress and Git handoff, ignored latest-only JSON reports, and a Node compatibility bridge. Registry metadata adds milestones and declared interface IDs only; lifecycle states and functional/publication verification dates remain unchanged.
+
+**Files created:** `.gitignore`; `scripts/tracking.py`; `scripts/validate_registry.py`; `scripts/generate_progress.py`; `scripts/check_project.py`; `scripts/verify_tools.py`; `scripts/generate_handoff.py`; `scripts/project_status.py`; `tests/test_tracking.py`. Four reports are created locally under ignored `reports/`.
+
+**Files modified:** `AGENTS.md`, `ARCHITECTURE.md`, `CHANGELOG.md`, `DECISIONS.md`, `PROGRESS_TRACKER.md`, `SESSION_HANDOFF.md`, `README.md`, `TOOL_REGISTRY.json`, `scripts/README.md`, `scripts/project.mjs`, and one message-case assertion in `scripts/project.test.mjs`. Existing generated roadmap/reconciliation blocks are synchronized using the same registry. No runtime HTML or CNAME changes.
+
+**Verification:** `python -m unittest discover -s tests -v` passed all **57** isolated tests after the review corrections; `node --test scripts/project.test.mjs` passed all **10** compatibility tests. All six Python CLI commands ran successfully. The consolidated workflow and all four latest reports showed **PASS, 0 errors, 0 warnings** in the Git worktree. `git diff --check` passed, and Git comparison against the Task 1 base confirmed all five HTML pages and CNAME unchanged. Static verification does not execute JavaScript or refresh the historical functional/live baseline. No new functional tool tests or deployment checks are claimed by this task.
+
+**Pre-existing issue:** a fresh Windows worktree reproduced false stale-generated-document errors caused by CRLF. The new shared engine fixes newline handling. A bridge regression found during development was corrected with explicit UTF-8; both cases have isolated tests. No website regression has been observed because runtime source is unchanged.
+
+**Limitations:** static checks cannot prove behavior, accessibility, current external services or publication. Free-text library dependencies are descriptive; only `depends_on`/`tool:<id>` references are resolved. Git is UNKNOWN in the owner's downloaded non-Git copy. Reports are snapshots, atomic per file, without a cross-process lock; run one writer per checkout. An interrupted session has no cleanup hook.
+
+**Exact next action:** check the delivery PR/Git state and finish any remaining authorized merge, then verify remote `main` and synchronize the local copy. Review fixed two crash paths: malformed registry tool objects and malformed verification-report structures now yield ordinary validation errors. After delivery, the next ready utility is Case Converter; do not start it during this merge task. Its scope and ranking are unchanged. The containing commit is a pre-merge checkpoint; GitHub's actual merge result and remote main are authoritative for whether delivery is finished.
+
+### Generated local status snapshot
+
+<!-- GENERATED:STATUS:START -->
+Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
+
+- Milestone: 25 released tools; 4 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 20; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 4; DEPRECATED: 0.
+- Current registered tool task: none; see manual session notes for infrastructure work.
+- Next ready tool: Case Converter.
+- Git branch: feat/automated-project-tracking.
+- Latest commit observed before generation: c986d9c44be933ca3f9d33b3d544e1f14a12b4bb.
+- Working tree at snapshot: Dirty.
+- Push/deployment status: UNKNOWN; this offline command does not verify either.
+
+### Recorded recent completions
+
+These are registry verification records, not new tests or tasks executed by this generator.
+- AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
+- Free Stream Roulette: RELEASED, evidence dated 2026-10-31.
+- Social Media Character Counter & Live Previewer: RELEASED, evidence dated 2026-10-31.
+- Excel Formula Sandbox & Analyzer: RELEASED, evidence dated 2026-10-31.
+
+### Known tool blockers
+- PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
+
+### Outstanding automated validation
+- registry-validation: PASS (0 errors, 0 warnings).
+- project-consistency: PASS (0 errors, 0 warnings).
+- tool-verification: PASS (0 errors, 0 warnings).
+
+### Uncommitted changes (repository-relative)
+- ` M` CHANGELOG.md
+- ` M` SESSION_HANDOFF.md
+- ` M` scripts/tracking.py
+- ` M` tests/test_tracking.py
+
+Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
+<!-- GENERATED:STATUS:END -->
+
+---
+
+## Historical Task 1 handoff — retained for context, superseded above
+
 Session date: **2026-10-31 (Europe/London)**. Task: establish persistent project management and plan future tool development. No new utility implementation was requested for this initial setup.
 
 ## Current project status

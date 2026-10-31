@@ -2,6 +2,18 @@
 
 Meaningful project changes, with source state separated from publication. Git history is authoritative for exact commit timestamps.
 
+## Unreleased — automated tracking infrastructure (Task 2)
+
+- Extended the existing registry and generated-document conventions with a Python standard-library tracking engine and six command entry points, including one complete project-status command.
+- Added schema/dependency/cycle checks, read-only source/link/evidence consistency checks, static HTML/control verification, category/priority/milestone reports, generated Git handoff, and four ignored latest-only JSON reports.
+- Retained Node commands/exports as a UTF-8 compatibility bridge to the shared Python rules.
+- Fixed the pre-existing false stale-document failures caused by Windows CRLF checkouts. Added isolated unittest fixtures covering failure handling, repeat generation, note preservation, Git failures, CLI paths, and a 1,500-tool dependency chain.
+- Updated checkpoint instructions, architecture, README, progress and handoff. Added milestone/interface metadata without changing existing tool statuses or functional verification dates.
+- Existing website HTML and domain configuration are unchanged. No new utilities, external services, analytics, advertising, or deployment were introduced.
+- Pre-merge review added regressions for malformed tool objects and verification-report structures; both now return validation failures rather than crashing.
+
+Task 2 publication and merge are authorized by the owner's follow-up request. Its scripts never commit, push, deploy or claim that static checks are functional tests; repository delivery is a separate reviewed action. See the latest handoff for verified delivery checkpoints.
+
 ## Unreleased — persistent project-memory foundation
 
 - Added permanent agent startup/shutdown instructions and a documented continuation procedure.

@@ -32,7 +32,7 @@ Future development sessions should begin with [AGENTS.md](AGENTS.md) and [SESSIO
 | [Changelog](CHANGELOG.md) | Meaningful changes separated from publication claims |
 | [Baseline audit](audit/CURRENT_STATE.md) | Source-backed current state and verification scope |
 | [Backlog reconciliation](audit/BACKLOG_RECONCILIATION.md) | Each initial proposed utility mapped to its canonical tool |
-| [Management commands](scripts/README.md) | Repeatable synchronization, validation, and test commands |
+| [Management commands](scripts/README.md) | Python status workflow, reports, synchronization, and tests; existing Node compatibility |
 
 Tool development is the current priority. Growth milestones are aspirations; new tools are built one at a time with scoped validation. Analytics, advertising integration, traffic generation, and SEO automation are deferred. The future 9–11-day SEO observation idea is recorded in the master plan only.
 
@@ -139,7 +139,9 @@ micro-tools-hub/
 ├── DECISIONS.md                # Dated decision log
 ├── CHANGELOG.md                # Meaningful implementation/documentation changes
 ├── SESSION_HANDOFF.md          # Continuation instructions and Git context
-├── scripts/                    # Developer-only management checks and tests
+├── scripts/                    # Python tracking engine and Node compatibility
+├── tests/                      # Isolated Python management tests
+├── reports/                    # Generated local snapshots, ignored by Git
 ├── audit/                      # Current-state and baseline verification evidence
 ├── CNAME                       # Custom domain: everydaydigitalbox.com
 ├── social-counter/
@@ -265,17 +267,18 @@ Use `textContent` when displaying user input rather than interpreting it as HTML
 
 ## Verification and maintenance
 
-The website has no package manifest or build step. Developer-only Node scripts now validate the project registry and management documents, with a small committed regression suite for those checks. Run from the repository root with a current Node.js release (Node 20+ recommended):
+The website has no package manifest or build step. Python 3.10+ and its standard library run the complete developer-only tracking workflow. Run from the repository root:
 
 ```sh
-node scripts/project.mjs summary
-node scripts/project.mjs sync
-node scripts/project.mjs check
+python scripts/project_status.py
+python -m unittest discover -s tests -v
 node --test scripts/project.test.mjs
 git diff --check
 ```
 
-The management checker verifies inventory fields, unique identities, statuses, evidence/source hashes, homepage integration, and generated-document consistency. It does not rerun browser interactions, verify live publication, or perform a security audit. See [management command documentation](scripts/README.md).
+The command checks the registry, project links/source/evidence, and static HTML; updates only marked progress, roadmap and handoff content; and writes latest local JSON reports under ignored `reports/`. It preserves manual notes and does not promote tool statuses. The existing Node commands remain compatibility entry points to the same Python engine; Node 20+ is needed only for their tests.
+
+Use `python scripts/project_status.py --check-only` for a snapshot without documentation updates, or add `--no-report` for no report writes. A downloaded non-Git copy reports Git state as UNKNOWN. These commands do not rerun browser interactions, verify live publication, push/deploy, or perform a security audit. See [management command documentation](scripts/README.md) for individual commands, reports, exit codes, and limitations.
 
 For utility changes, check the affected behavior in a browser and inspect the developer console for errors. Save the actual test scope and results; mark a utility RELEASED only after checking both its implementation and its published version.
 

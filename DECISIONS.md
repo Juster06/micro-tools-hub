@@ -1,5 +1,25 @@
 # Decision log
 
+## 2026-10-31 — Extend tracking through one Python engine
+
+**Decision:** Add Python standard-library validation, generation, static verification and orchestration. Keep the existing Node API as a compatibility bridge to the same engine. Use UTF-8 explicitly at process boundaries and preserve LF/CRLF outside generated content.
+
+**Reason:** Task 2 requests portable Python commands and reliable Windows behavior. A fresh Windows checkout reproduced a pre-existing CRLF comparison failure; independent Python and Node rules would drift.
+
+**Alternatives:** Maintain two validators/generators, require Node from Python, or discard existing command conventions.
+
+**Consequences:** Python 3.10+ runs the complete tracking workflow; Node is optional for compatibility callers/tests. There is no new website runtime or package dependency. Legacy Node summary `planned` keeps its backlog meaning while new reports label exact statuses separately.
+
+## 2026-10-31 — Local reports and explicit verification boundaries
+
+**Decision:** Overwrite four ignored local reports with a common schema; include static results and observed Git facts, never auto-promote tool lifecycle statuses. Generate only marked document sections. Add check-only/no-report options for post-commit or read-only inspection.
+
+**Reason:** Repeatable progress must not fabricate functional success, publication, push state, or completed work. Reports should not publish local paths, identities, or unnecessary history.
+
+**Alternatives:** Commit a report every run, infer releases from HTML presence, fetch GitHub automatically, or rewrite whole handoffs.
+
+**Consequences:** Report timestamps and relative changes are local; push/deployment remain UNKNOWN unless separately verified. Manual notes survive generation. Snapshot Git state can age after a later commit; use check-only reports for the latest HEAD. Writers are atomic per file but should run one at a time per checkout. No background scheduler or termination hook is created.
+
 ## 2026-10-31 — Repository files are the continuity mechanism
 
 **Decision:** Use AGENTS, handoff, master plan, registry, progress, roadmap, architecture, decision log, and changelog files in the repository.
