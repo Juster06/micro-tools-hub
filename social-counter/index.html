@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Count caption characters for X, LinkedIn, Instagram and TikTok, preview your opening lines, and clean up spaces. All text processing stays in your browser.">
+  <title>Social Media Character Counter &amp; Live Previewer | WebUtils Hub</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    body { margin:0; background:#020617; color:#e2e8f0; font-family:ui-sans-serif,system-ui,sans-serif; }
+    [hidden] { display:none!important; }
+    :focus-visible { outline:3px solid #a5b4fc; outline-offset:4px; }
+    .dot-grid { background-image:radial-gradient(#33415566 1px,transparent 1px); background-size:20px 20px; }
+    textarea { min-height:290px; }
+    progress { display:block; width:100%; height:6px; border:0; border-radius:99px; overflow:hidden; background:#1e293b; appearance:none; }
+    progress::-webkit-progress-bar { background:#1e293b; }
+    progress::-webkit-progress-value { background:#818cf8; border-radius:99px; }
+    progress::-moz-progress-bar { background:#818cf8; border-radius:99px; }
+    [data-state="warning"] progress::-webkit-progress-value { background:#fbbf24; }
+    [data-state="warning"] progress::-moz-progress-bar { background:#fbbf24; }
+    [data-state="over"] progress::-webkit-progress-value { background:#fb7185; }
+    [data-state="over"] progress::-moz-progress-bar { background:#fb7185; }
+    .counter[data-state="over"] { border-color:#fb718566; background:#fb718509; }
+    .counter[data-state="over"] .remaining { color:#fda4af; }
+    .counter[data-state="warning"] .remaining { color:#fcd34d; }
+    .platform-tab[aria-pressed="true"] { background:#4f46e5; color:white; box-shadow:0 2px 8px #0003; }
+    #previewText { white-space:pre-wrap; overflow-wrap:anywhere; line-height:1.65; }
+    #previewText.clamped { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; }
+    #previewCard[data-platform="tiktok"] #previewText.clamped { -webkit-line-clamp:2; }
+    #previewCard[data-platform="linkedin"] #previewText.clamped { -webkit-line-clamp:3; }
+    #previewCard[data-platform="instagram"] #previewText.clamped { -webkit-line-clamp:2; }
+    #previewCard[data-platform="tiktok"] { background:linear-gradient(160deg,#171e37,#080d1b); min-height:390px; display:flex; flex-direction:column; justify-content:flex-end; }
+    #previewCard[data-platform="tiktok"] .feed-actions { border-color:#ffffff15; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+  <header class="border-b border-slate-800">
+    <div class="max-w-[1440px] mx-auto px-5 sm:px-8 py-5">
+      <a href="../index.html" class="inline-block text-sm text-slate-400 hover:text-indigo-300 rounded">← Back to Hub</a>
+      <div class="flex items-center justify-between gap-4 mt-6 mb-1">
+        <div class="flex items-center gap-3"><span aria-hidden="true" class="size-10 grid place-items-center rounded-xl bg-indigo-500/15 border border-indigo-400/30 text-indigo-300 font-mono text-xl">#</span><div><p class="font-semibold text-white">Social<span class="text-indigo-400"> Counter</span></p><p class="text-[10px] text-slate-500 mt-1 tracking-[0.18em]">WEBUTILS HUB</p></div></div>
+        <span class="text-[10px] sm:text-xs text-emerald-300 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1.5">● Local &amp; private</span>
+      </div>
+    </div>
+  </header>
+  <main class="flex-1 w-full max-w-[1440px] mx-auto px-5 sm:px-8 py-10 sm:py-12">
+    <div class="mb-9 max-w-3xl"><p class="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-4">Make every character count</p><h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-[1.15] text-white">Social Media Character Counter<br class="hidden sm:block"> <span class="text-indigo-400">&amp; Live Previewer</span></h1><p class="mt-5 text-slate-400 leading-relaxed max-w-2xl">One caption. Four platforms. Check your limits, polish your spacing, and see how your opening lines land before you post.</p></div>
+    <noscript><p class="mb-6 rounded-xl border border-amber-500/30 p-4 text-amber-200">Enable JavaScript to use the local counters and live previews.</p></noscript>
+    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] 2xl:grid-cols-[minmax(0,1fr)_360px_210px] gap-6 items-start">
+      <div class="min-w-0 space-y-5">
+        <section class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden" aria-labelledby="editorTitle">
+          <div class="px-5 sm:px-6 py-5 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3"><div class="flex items-center gap-3"><span aria-hidden="true" class="text-xs font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-md px-2 py-1">01</span><label for="captionInput" id="editorTitle" class="font-semibold text-white">Write your caption</label></div><div class="flex gap-4 text-xs"><button id="exampleBtn" type="button" class="text-indigo-300 hover:text-indigo-200 rounded">Try an example</button><button id="clearBtn" type="button" class="text-slate-400 hover:text-slate-200 rounded">Clear</button></div></div>
+          <textarea id="captionInput" aria-describedby="countHelp" placeholder="Start with a hook. Tell your story. Make it yours…" class="block w-full resize-y bg-slate-950/60 text-base leading-8 p-5 sm:p-6 text-slate-200 placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-400" spellcheck="true"></textarea>
+          <div class="px-5 sm:px-6 py-3 border-y border-slate-800 flex justify-between gap-3 text-xs text-slate-500"><span><strong id="characterCount" class="font-mono text-slate-300">0</strong> characters</span><span><strong id="wordCount" class="font-mono text-slate-300">0</strong> words</span></div>
+          <div class="p-5 sm:p-6"><button id="cleanCopyBtn" type="button" disabled class="w-full rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed text-white font-semibold py-3.5 px-4 transition-colors">Clean Spaces &amp; Copy <span aria-hidden="true">↗</span></button><p class="text-xs leading-5 text-slate-500 mt-3">Removes repeated spaces and trims line edges. Your line breaks stay intact.</p><p id="copyStatus" role="status" aria-live="polite" class="text-xs text-indigo-300 mt-3 min-h-5"></p></div>
+        </section>
+        <section aria-labelledby="limitsTitle"><div class="flex items-center justify-between gap-3 mb-3"><h2 id="limitsTitle" class="text-sm font-semibold text-white">Your platform limits</h2><span class="text-[10px] text-slate-500 uppercase tracking-wider">Updates as you type</span></div><div id="counterGrid" class="grid sm:grid-cols-2 gap-3"></div><p id="countHelp" class="text-xs text-slate-500 leading-5 mt-4">Counts Unicode code points, including spaces and line breaks. X uses weighted counting for some characters and links, so its final count can differ. Previews are estimates; feed cut-offs vary by device and app.</p></section>
+      </div>
+      <section class="min-w-0 rounded-2xl border border-slate-800 bg-slate-900/40 p-5" aria-labelledby="previewTitle">
+        <div class="flex items-center justify-between gap-2 mb-2"><h2 id="previewTitle" class="text-white font-semibold">Live Card Preview</h2><span class="text-[10px] uppercase tracking-wider text-emerald-300 flex items-center gap-1.5"><span aria-hidden="true" class="size-1.5 rounded-full bg-emerald-400"></span>Live</span></div><p class="text-xs text-slate-500 leading-5 mb-5">Give your first few lines a test run.</p>
+        <div role="group" aria-label="Preview platform" class="grid grid-cols-4 gap-1 p-1 bg-slate-950 rounded-xl border border-slate-800 mb-6"><button type="button" data-platform="x" aria-pressed="false" class="platform-tab rounded-lg py-2 text-xs text-slate-400">X</button><button type="button" data-platform="linkedin" aria-pressed="true" class="platform-tab rounded-lg py-2 text-xs text-slate-400">LinkedIn</button><button type="button" data-platform="instagram" aria-pressed="false" class="platform-tab rounded-lg py-2 text-xs text-slate-400">Instagram</button><button type="button" data-platform="tiktok" aria-pressed="false" class="platform-tab rounded-lg py-2 text-xs text-slate-400">TikTok</button></div>
+        <div class="rounded-[2rem] border border-slate-700 bg-slate-950 p-2 shadow-2xl shadow-black/20">
+          <div aria-hidden="true" class="flex justify-between items-center px-4 py-2 text-[10px] text-slate-500 font-semibold"><span>9:41</span><span class="w-16 h-3 bg-slate-800 rounded-full"></span><span>▰</span></div>
+          <div class="px-4 py-3 flex justify-between border-b border-slate-800 text-xs text-slate-300"><span id="feedTitle" class="font-semibold">LinkedIn</span><span aria-hidden="true">⌕ &nbsp; •••</span></div>
+          <article id="previewCard" data-platform="linkedin" class="p-4 rounded-b-[1.5rem]">
+            <div class="flex items-center gap-2.5 mb-4"><div aria-hidden="true" class="size-9 shrink-0 grid place-items-center rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold border border-indigo-400/20">YO</div><div class="min-w-0"><p class="font-semibold text-sm text-slate-100">Your Name <span aria-hidden="true" class="text-indigo-400">✓</span></p><p id="profileMeta" class="text-[10px] text-slate-500 mt-0.5">Creator · Just now · 🌐</p></div><span aria-hidden="true" class="ml-auto text-slate-500">•••</span></div>
+            <p id="previewText" class="text-sm text-slate-500 clamped">Your next great post starts here. Type a caption to preview it live.</p>
+            <button type="button" id="expandBtn" hidden aria-expanded="false" aria-controls="previewText" class="text-xs text-indigo-300 hover:text-indigo-200 mt-2 rounded">…see more</button>
+            <div aria-hidden="true" class="feed-actions flex justify-between border-t border-slate-800 mt-5 pt-4 text-slate-500 text-xs"><span>♡ &nbsp; Like</span><span>◯ &nbsp; Reply</span><span>↗ &nbsp; Share</span></div>
+          </article>
+        </div>
+        <p id="previewHint" class="text-xs text-slate-500 mt-5 leading-5">LinkedIn: the first 140 characters are used as an opening-line guide.</p>
+      </section>
+      <aside class="lg:col-span-2 2xl:col-span-1 space-y-5" aria-label="Advertisement and writing tip">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/30 p-3"><div class="dot-grid rounded-xl border-2 border-dashed border-slate-700 min-h-48 2xl:min-h-[420px] flex flex-col justify-center items-center text-center px-4 py-8"><span aria-hidden="true" class="text-[10px] text-slate-500 border border-slate-700 rounded px-2 py-1 mb-4">AD</span><p class="text-[11px] font-mono tracking-[0.14em] text-slate-400 leading-6">ADSENSE BANNER PLACEMENT</p><p class="text-xs text-slate-600 mt-3">Responsive display space</p></div></div>
+        <div class="rounded-2xl border border-slate-800 p-5"><p class="text-xs font-semibold text-indigo-300">Lead with the good part.</p><p class="text-xs text-slate-500 leading-6 mt-2">Put your main idea in the opening lines. Give readers a reason to tap “more”.</p></div>
+      </aside>
+    </div>
+    <p class="mt-10 text-center text-xs text-slate-500 leading-6">Your caption stays in this tab. No uploads, saved drafts, analytics, or logging.<br>Styling loads from Tailwind’s Play CDN.</p>
+  </main>
+  <footer class="border-t border-slate-800"><div class="max-w-[1440px] mx-auto px-5 sm:px-8 py-6 flex flex-wrap justify-between gap-3 text-xs text-slate-500"><p>© 2026 WebUtils Hub</p><p>Small tools. Everyday wins.</p></div></footer>
+  <script>
+    'use strict';
+    const platforms = [
+      { id:'x', name:'X (Twitter)', badge:'𝕏', limit:280, cutoff:280, more:'Show more', meta:'@yourhandle · now', hint:'X: previewing a standard 280-character post.' },
+      { id:'linkedin', name:'LinkedIn', badge:'in', limit:3000, cutoff:140, more:'…see more', meta:'Creator · Just now · 🌐', hint:'LinkedIn: the first 140 characters are used as an opening-line guide.' },
+      { id:'instagram', name:'Instagram', badge:'◎', limit:2200, cutoff:125, more:'…more', meta:'yourhandle · Original post', hint:'Instagram: an approximate 125-character opening, with a two-line feed preview.' },
+      { id:'tiktok', name:'TikTok Caption', badge:'♪', limit:4000, cutoff:90, more:'…more', meta:'@yourhandle · Just now', hint:'TikTok: an approximate two-line caption preview. Actual space varies with the video and app.' }
+    ];
+    const byId = id => document.getElementById(id);
+    const input = byId('captionInput');
+    const previewText = byId('previewText');
+    const expandBtn = byId('expandBtn');
+    let selectedPlatform = platforms[1];
+    let expanded = false;
+    let currentCharacters = [];
+    let copyBusy = false;
+
+    // Only trusted, static platform labels enter this markup. Caption content
+    // is always assigned with textContent, never interpreted as HTML.
+    byId('counterGrid').innerHTML = platforms.map(p => `<article id="counter-${p.id}" class="counter rounded-xl border border-slate-800 bg-slate-900/50 p-4" data-state="normal" aria-labelledby="label-${p.id}"><div class="flex justify-between items-center gap-2 mb-4"><h3 id="label-${p.id}" class="text-sm font-medium text-slate-200"><span aria-hidden="true" class="text-indigo-300 font-bold mr-2">${p.badge}</span>${p.name}</h3><span class="text-[10px] text-slate-500 font-mono">${p.limit.toLocaleString('en')}</span></div><p class="font-mono text-lg text-slate-200 mb-3"><span id="count-${p.id}">0</span><span class="text-xs text-slate-600"> / ${p.limit.toLocaleString('en')}</span></p><progress id="progress-${p.id}" max="${p.limit}" value="0" aria-label="${p.name} characters used"></progress><p id="remaining-${p.id}" class="remaining text-xs text-slate-500 mt-3"></p>${p.id === 'linkedin' ? '<p id="linkedinHook" class="text-[11px] text-slate-500 leading-5 mt-2">Opening hook: 0 / 140 characters</p>' : ''}</article>`).join('');
+
+    function cleanSpaces(text) {
+      return text.replace(/\r\n?/g, '\n').split('\n').map(line => line.replace(/[^\S\r\n]+/g, ' ').trim()).join('\n').trim();
+    }
+
+    function renderPreview() {
+      const p = selectedPlatform;
+      const text = currentCharacters.join('');
+      const hasText = text.trim().length > 0;
+      previewText.textContent = hasText ? (expanded ? text : currentCharacters.slice(0, p.cutoff).join('')) : 'Your next great post starts here. Type a caption to preview it live.';
+      previewText.classList.toggle('text-slate-500', !hasText);
+      previewText.classList.toggle('text-slate-200', hasText);
+      previewText.classList.toggle('clamped', !expanded);
+      // Also detect visual truncation caused by narrow screens or line breaks.
+      const clipped = !expanded && previewText.scrollHeight > previewText.clientHeight + 1;
+      expandBtn.hidden = !hasText || (!expanded && currentCharacters.length <= p.cutoff && !clipped);
+      expandBtn.textContent = expanded ? 'Show less' : p.more;
+      expandBtn.setAttribute('aria-expanded', String(expanded));
+    }
+
+    function update() {
+      currentCharacters = Array.from(input.value.replace(/\r\n?/g, '\n'));
+      const count = currentCharacters.length;
+      byId('characterCount').textContent = count.toLocaleString('en');
+      byId('wordCount').textContent = (input.value.match(/[\p{L}\p{N}]+(?:[’'\-][\p{L}\p{N}]+)*/gu) || []).length.toLocaleString('en');
+      byId('cleanCopyBtn').disabled = copyBusy || !input.value.trim();
+      platforms.forEach(p => {
+        const remaining = p.limit - count;
+        const state = remaining < 0 ? 'over' : (count >= p.limit * .9 || (p.id === 'linkedin' && count > 140)) ? 'warning' : 'normal';
+        byId(`counter-${p.id}`).dataset.state = state;
+        byId(`count-${p.id}`).textContent = count.toLocaleString('en');
+        byId(`progress-${p.id}`).value = Math.min(count, p.limit);
+        byId(`progress-${p.id}`).setAttribute('aria-valuetext', `${count} of ${p.limit} characters. ${remaining < 0 ? -remaining + ' over limit' : remaining + ' remaining'}.`);
+        byId(`remaining-${p.id}`).textContent = remaining < 0 ? `${(-remaining).toLocaleString('en')} characters over limit` : remaining === 0 ? 'At the character limit' : `${remaining.toLocaleString('en')} characters remaining`;
+      });
+      const pastHook = count > 140;
+      byId('linkedinHook').textContent = pastHook ? 'Past 140 characters · “See more” may hide the rest' : `Opening hook: ${count} / 140 characters`;
+      byId('linkedinHook').classList.toggle('text-amber-300', pastHook);
+      byId('linkedinHook').classList.toggle('text-slate-500', !pastHook);
+      renderPreview();
+    }
+
+    input.addEventListener('input', () => { expanded = false; byId('copyStatus').textContent = ''; update(); });
+    document.querySelectorAll('.platform-tab').forEach(button => button.addEventListener('click', () => {
+      selectedPlatform = platforms.find(p => p.id === button.dataset.platform);
+      document.querySelectorAll('.platform-tab').forEach(tab => tab.setAttribute('aria-pressed', String(tab === button)));
+      byId('previewCard').dataset.platform = selectedPlatform.id;
+      byId('feedTitle').textContent = selectedPlatform.id === 'tiktok' ? 'For You · TikTok' : selectedPlatform.name;
+      byId('profileMeta').textContent = selectedPlatform.meta;
+      byId('previewHint').textContent = selectedPlatform.hint;
+      expanded = false;
+      renderPreview();
+    }));
+    expandBtn.addEventListener('click', () => { expanded = !expanded; renderPreview(); });
+    byId('clearBtn').addEventListener('click', () => { input.value = ''; expanded = false; byId('copyStatus').textContent = ''; update(); input.focus(); });
+    byId('exampleBtn').addEventListener('click', () => {
+      input.value = 'Your next big idea deserves a little space. ✨\n\nWe built a toolkit for the everyday: fewer repetitive tasks, clearer writing, and more time for what matters.\n\nWhat would you create with an extra hour?\n\n#CreateMore #EverydayWins';
+      expanded = false; byId('copyStatus').textContent = ''; update(); input.focus();
+    });
+
+    byId('cleanCopyBtn').addEventListener('click', async () => {
+      if (copyBusy) return;
+      input.value = cleanSpaces(input.value);
+      expanded = false;
+      copyBusy = true;
+      update();
+      const cleaned = input.value;
+      let copied = false;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(cleaned);
+          copied = true;
+        }
+      } catch { /* Clipboard permissions may be unavailable in a local tab. */ }
+      if (!copied) {
+        // A temporary local field copies the captured text without changing
+        // any caption the user may have typed while permissions were pending.
+        const helper = document.createElement('textarea');
+        helper.value = cleaned;
+        helper.style.cssText = 'position:fixed;left:-9999px;top:0';
+        helper.setAttribute('aria-label', 'Cleaned caption for copying');
+        document.body.appendChild(helper);
+        helper.select();
+        try { copied = document.execCommand('copy'); } catch { copied = false; }
+        helper.remove();
+      }
+      copyBusy = false;
+      update();
+      if (!copied) { input.focus(); input.select(); }
+      byId('copyStatus').textContent = copied ? 'Spaces cleaned. Caption copied to clipboard.' : 'Spaces cleaned. Clipboard unavailable; select the caption and press Ctrl+C (⌘C on Mac).';
+    });
+    // Re-check visual line clamping after font/layout changes or a resize.
+    new ResizeObserver(renderPreview).observe(byId('previewCard'));
+    window.addEventListener('pageshow', update);
+    update();
+  </script>
+</body>
+</html>
