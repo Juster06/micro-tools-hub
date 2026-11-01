@@ -2,7 +2,7 @@
 
 ## Reusable utility development
 
-Task 4 adds development-only scaffolding, templates, functional checks, homepage patch previews and ordered batch proposals. Read the [utility contract](TOOL_CONTRACT.md) and [developer guide](TOOL_DEVELOPMENT_GUIDE.md) before implementing a tool. Start with `python scripts/plan_tool_batch.py --count 10` and `python scripts/create_tool.py --id case-converter --dry-run`. These commands do not implement or publish Case Converter. Task 5 is the next separately scoped task.
+Task 4 provides development-only scaffolding, templates, functional checks, homepage patch previews and ordered batch proposals. Read the [utility contract](TOOL_CONTRACT.md) and [developer guide](TOOL_DEVELOPMENT_GUIDE.md) before implementing a tool. Use `python scripts/plan_tool_batch.py --count 10` to inspect READY work; for example, `python scripts/create_tool.py --id duplicate-line-remover --dry-run` only proposes a scaffold. Select work only within the latest owner-authorized scope.
 
 Python 3.10+ standard library runs the generator/planner/structural checks; Node 22.4+ and an installed Chromium browser enable actual logic/interaction tests. Tool users need only their browser. Public website, GitHub repository and existing dashboard shortcuts remain unchanged.
 
@@ -47,12 +47,18 @@ On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu l
 ## What the project provides
 
 - A responsive, dark slate and indigo dashboard with searchable tool cards.
-- Four utilities that perform their core processing in the browser using vanilla JavaScript.
+- Four released utilities plus a locally tested Case Converter, using vanilla JavaScript for browser processing.
 - Standalone HTML pages that can be edited or hosted without an application build step.
 - No application backend, database, user accounts, or API keys.
 - Consistent navigation back to the hub from each tool.
 - Features such as visible keyboard focus, descriptive labels, status messages, and reduced-motion handling.
 - Styled advertisement placeholders for possible future monetization.
+
+## Case Converter — local TESTED implementation
+
+[Case Converter](case-converter/index.html) offers uppercase, lowercase, Title Case, Sentence case, Capitalize Words, Alternating Case and Inverse Case, with live character/word/line counts, unchanged original input, Copy, UTF-8 download and Clear. Read [its rules and test scope](case-converter/README.md) before relying on language-specific casing. Input stays in the browser; the limit is 100,000 UTF-16 units.
+
+Task 5 is local only: the feature branch includes a gated homepage card marked “Tested · publication pending”. The published/released count remains **four**. No Task 5 push, PR, merge, deployment or live verification is claimed. Use `python scripts/test_tool.py --id case-converter` for scoped functional tests. GitHub delivery and publication require separate authorization.
 
 ## Available tools
 

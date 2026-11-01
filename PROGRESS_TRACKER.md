@@ -10,14 +10,14 @@ Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` f
 | Total registered utilities | 93 |
 | IDEA | 0 |
 | PLANNED | 68 |
-| READY | 20 |
+| READY | 19 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 0 |
+| TESTED | 1 |
 | RELEASED | 4 |
 | DEPRECATED | 0 |
-| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 89 |
+| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 88 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
@@ -49,12 +49,13 @@ Current growth milestone: **25 released tools**. Progress: 4/25 (16.0%); remaini
 
 Current registered tool task: **none**. Session infrastructure work is recorded in the manual handoff.
 
-Next ready tool: **Case Converter**.
+Next ready tool: **Duplicate Line Remover**.
 
 ### Recently verified tools (registry evidence dates)
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
+| Case Converter | TESTED | 2026-11-01 |
 | AI Text Footprint Cleanser | RELEASED | 2026-10-31 |
 | Free Stream Roulette | RELEASED | 2026-10-31 |
 | Social Media Character Counter & Live Previewer | RELEASED | 2026-10-31 |
@@ -65,9 +66,11 @@ The backlog total includes READY and BLOCKED; those rows must not be added again
 
 ## Current development task
 
-Task 4 provides the reusable tool contract, templates, safe staged generator, gated homepage proposals, scoped logic/browser testing and batch planner. Existing dashboard/tracking and public sources remain intact. Next major task is Task 5 — First End-to-End Tool Implementation, recommended Case Converter; it has not begun. Registry counts and statuses did not change. Git delivery and review state are recorded in `SESSION_HANDOFF.md`; this tracker does not independently assert deployment.
+Task 5 Case Converter is locally implemented and TESTED, with publication unverified. Seven conversion modes, live counts, copy/download/clear, actual logic/browser tests and a gated local homepage card are complete. Only its registry entry advanced; four tools remain RELEASED. The current follow-up is separately authorized GitHub delivery, review, integration and live publication verification, not another utility. `SESSION_HANDOFF.md` records the exact local Git state and test scope.
 
 ## Recently completed work
+
+- Implemented Case Converter using the Task 4 scaffold, with source-matched local test evidence, 69 JSON logic cases plus counter/boundary tests, and real browser interaction/integration coverage. The local card is marked publication pending; no release was claimed.
 
 - Added the development framework with explicit scaffold/nonfunctional gates, temporary-fixture tests and real Chromium regression profiles; see `TOOL_DEVELOPMENT_GUIDE.md` for commands and limitations.
 
@@ -84,11 +87,11 @@ Task 4 provides the reusable tool contract, templates, safe staged generator, ga
 ## Next recommended tasks
 
 <!-- GENERATED:NEXT:START -->
-1. **Case Converter** — Convert text case with an explicit choice of transformation.
 2. **Duplicate Line Remover** — Remove repeated lines with controllable matching rules.
 3. **Text Sorter** — Sort text lines using explicit ordering rules.
 4. **Slug Generator** — Create URL-friendly slugs from text with documented Unicode rules.
 5. **Find and Replace** — Preview and apply literal text replacements safely.
+6. **Text Reverser** — Reverse text by line, word, or grapheme unit.
 <!-- GENERATED:NEXT:END -->
 
 Start only after reviewing/synchronizing the management branch. For each utility, finish planning, implementation, testing, homepage integration, and evidence before selecting the next item.

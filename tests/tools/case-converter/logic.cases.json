@@ -1,0 +1,557 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "uppercase-empty",
+      "input": "",
+      "options": {
+        "mode": "uppercase"
+      },
+      "expected": ""
+    },
+    {
+      "id": "uppercase-whitespace",
+      "input": " \t\r\n  ",
+      "options": {
+        "mode": "uppercase"
+      },
+      "expected": " \t\r\n  "
+    },
+    {
+      "id": "uppercase-numbers-emoji",
+      "input": "123 😀!? —",
+      "options": {
+        "mode": "uppercase"
+      },
+      "expected": "123 😀!? —"
+    },
+    {
+      "id": "lowercase-empty",
+      "input": "",
+      "options": {
+        "mode": "lowercase"
+      },
+      "expected": ""
+    },
+    {
+      "id": "lowercase-whitespace",
+      "input": " \t\r\n  ",
+      "options": {
+        "mode": "lowercase"
+      },
+      "expected": " \t\r\n  "
+    },
+    {
+      "id": "lowercase-numbers-emoji",
+      "input": "123 😀!? —",
+      "options": {
+        "mode": "lowercase"
+      },
+      "expected": "123 😀!? —"
+    },
+    {
+      "id": "title-empty",
+      "input": "",
+      "options": {
+        "mode": "title"
+      },
+      "expected": ""
+    },
+    {
+      "id": "title-whitespace",
+      "input": " \t\r\n  ",
+      "options": {
+        "mode": "title"
+      },
+      "expected": " \t\r\n  "
+    },
+    {
+      "id": "title-numbers-emoji",
+      "input": "123 😀!? —",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "123 😀!? —"
+    },
+    {
+      "id": "sentence-empty",
+      "input": "",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": ""
+    },
+    {
+      "id": "sentence-whitespace",
+      "input": " \t\r\n  ",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": " \t\r\n  "
+    },
+    {
+      "id": "sentence-numbers-emoji",
+      "input": "123 😀!? —",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "123 😀!? —"
+    },
+    {
+      "id": "capitalize-empty",
+      "input": "",
+      "options": {
+        "mode": "capitalize"
+      },
+      "expected": ""
+    },
+    {
+      "id": "capitalize-whitespace",
+      "input": " \t\r\n  ",
+      "options": {
+        "mode": "capitalize"
+      },
+      "expected": " \t\r\n  "
+    },
+    {
+      "id": "capitalize-numbers-emoji",
+      "input": "123 😀!? —",
+      "options": {
+        "mode": "capitalize"
+      },
+      "expected": "123 😀!? —"
+    },
+    {
+      "id": "alternating-empty",
+      "input": "",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": ""
+    },
+    {
+      "id": "alternating-whitespace",
+      "input": " \t\r\n  ",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": " \t\r\n  "
+    },
+    {
+      "id": "alternating-numbers-emoji",
+      "input": "123 😀!? —",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": "123 😀!? —"
+    },
+    {
+      "id": "inverse-empty",
+      "input": "",
+      "options": {
+        "mode": "inverse"
+      },
+      "expected": ""
+    },
+    {
+      "id": "inverse-whitespace",
+      "input": " \t\r\n  ",
+      "options": {
+        "mode": "inverse"
+      },
+      "expected": " \t\r\n  "
+    },
+    {
+      "id": "inverse-numbers-emoji",
+      "input": "123 😀!? —",
+      "options": {
+        "mode": "inverse"
+      },
+      "expected": "123 😀!? —"
+    },
+    {
+      "id": "upper-basic",
+      "input": "Hello World",
+      "options": {
+        "mode": "uppercase"
+      },
+      "expected": "HELLO WORLD"
+    },
+    {
+      "id": "upper-unicode",
+      "input": "café déjà vu — Привет αβγ 😀",
+      "options": {
+        "mode": "uppercase"
+      },
+      "expected": "CAFÉ DÉJÀ VU — ПРИВЕТ ΑΒΓ 😀"
+    },
+    {
+      "id": "upper-expansion",
+      "input": "straße ß",
+      "options": {
+        "mode": "uppercase"
+      },
+      "expected": "STRASSE SS"
+    },
+    {
+      "id": "upper-decomposed",
+      "input": "école",
+      "options": {
+        "mode": "uppercase"
+      },
+      "expected": "ÉCOLE"
+    },
+    {
+      "id": "upper-deseret",
+      "input": "𐐨",
+      "options": {
+        "mode": "uppercase"
+      },
+      "expected": "𐐀"
+    },
+    {
+      "id": "lower-basic",
+      "input": "HELLO WORLD",
+      "options": {
+        "mode": "lowercase"
+      },
+      "expected": "hello world"
+    },
+    {
+      "id": "lower-unicode",
+      "input": "CAFÉ ПРИВЕТ ΑΒΓ 中文 😀",
+      "options": {
+        "mode": "lowercase"
+      },
+      "expected": "café привет αβγ 中文 😀"
+    },
+    {
+      "id": "lower-dotted-i",
+      "input": "İSTANBUL",
+      "options": {
+        "mode": "lowercase"
+      },
+      "expected": "i̇stanbul"
+    },
+    {
+      "id": "lower-deseret",
+      "input": "𐐀",
+      "options": {
+        "mode": "lowercase"
+      },
+      "expected": "𐐨"
+    },
+    {
+      "id": "title-basic",
+      "input": "the lord of the rings",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "The Lord of the Rings"
+    },
+    {
+      "id": "title-lines",
+      "input": "  a TALE of TWO cities\nand THE sea ",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "  A Tale of Two Cities\nAnd the Sea "
+    },
+    {
+      "id": "title-colon",
+      "input": "war and peace: a story of hope",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "War and Peace: A Story of Hope"
+    },
+    {
+      "id": "title-last-minor",
+      "input": "a twist of",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "A Twist Of"
+    },
+    {
+      "id": "title-apostrophes",
+      "input": "don't STOP o’NEILL'S mother-in-law",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "Don't Stop O’neill's Mother-in-Law"
+    },
+    {
+      "id": "title-quotes",
+      "input": "rock 'n' roll",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "Rock 'N' Roll"
+    },
+    {
+      "id": "title-unicode",
+      "input": "straße in münchen — 你好 and ПРИВЕТ",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "Straße in München — 你好 and Привет"
+    },
+    {
+      "id": "title-whitespace-layout",
+      "input": "\tTHE  WIND\r\nIN THE willows\rto SEA",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "\tThe  Wind\r\nIn the Willows\rTo Sea"
+    },
+    {
+      "id": "title-combining",
+      "input": "éCLAIR and CAFÉ",
+      "options": {
+        "mode": "title"
+      },
+      "expected": "Éclair and Café"
+    },
+    {
+      "id": "sentence-basic",
+      "input": "hello world. how are you?",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "Hello world. How are you?"
+    },
+    {
+      "id": "sentence-whitespace-layout",
+      "input": "hello world.  how ARE you?!\tFINE!\r\nnext LINE",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "Hello world.  How are you?!\tFine!\r\nNext line"
+    },
+    {
+      "id": "sentence-abbreviation-decimal",
+      "input": "dr. SMITH paid 3.14 dollars. NEXT.",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "Dr. smith paid 3.14 dollars. Next."
+    },
+    {
+      "id": "sentence-abbreviations",
+      "input": "use e.g. APPLES and i.e. WORDS. END",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "Use e.g. apples and i.e. words. End"
+    },
+    {
+      "id": "sentence-initials",
+      "input": "u.s. NEWS with A. SMITH. NEXT",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "U.s. news with a. smith. Next"
+    },
+    {
+      "id": "sentence-domain",
+      "input": "visit example.com. NEXT",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "Visit example.com. Next"
+    },
+    {
+      "id": "sentence-repeat",
+      "input": "stop... WHAT??!!  NEXT",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "Stop... What??!!  Next"
+    },
+    {
+      "id": "sentence-quotes",
+      "input": "\"hELLO.\" 'NEXT?'\n(THIRD!)",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "\"Hello.\" 'Next?'\n(Third!)"
+    },
+    {
+      "id": "sentence-numeric-start",
+      "input": "123 HELLO. 456 NEXT",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "123 Hello. 456 Next"
+    },
+    {
+      "id": "sentence-unicode",
+      "input": "éTÉ. ПРИВЕТ! ΑΒΓ? 中文 😀",
+      "options": {
+        "mode": "sentence"
+      },
+      "expected": "Été. Привет! Αβγ? 中文 😀"
+    },
+    {
+      "id": "capitalize-basic",
+      "input": "hello world from london",
+      "options": {
+        "mode": "capitalize"
+      },
+      "expected": "Hello World From London"
+    },
+    {
+      "id": "capitalize-mixed",
+      "input": "tHE lORD oF tHE rINGS",
+      "options": {
+        "mode": "capitalize"
+      },
+      "expected": "The Lord Of The Rings"
+    },
+    {
+      "id": "capitalize-apostrophes",
+      "input": "don't STOP o’NEILL'S mother-in-law",
+      "options": {
+        "mode": "capitalize"
+      },
+      "expected": "Don't Stop O’neill's Mother-In-Law"
+    },
+    {
+      "id": "capitalize-whitespace-layout",
+      "input": " hello  WORLD\tfrom\r\nLONDON ",
+      "options": {
+        "mode": "capitalize"
+      },
+      "expected": " Hello  World\tFrom\r\nLondon "
+    },
+    {
+      "id": "capitalize-unicode",
+      "input": "éCOLE 你好 ПРИВЕТ αβγ 😀",
+      "options": {
+        "mode": "capitalize"
+      },
+      "expected": "École 你好 Привет Αβγ 😀"
+    },
+    {
+      "id": "capitalize-number",
+      "input": "3d AND 2d",
+      "options": {
+        "mode": "capitalize"
+      },
+      "expected": "3D And 2D"
+    },
+    {
+      "id": "alternating-basic",
+      "input": "hello world",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": "hElLo WoRlD"
+    },
+    {
+      "id": "alternating-mixed",
+      "input": "HELLO World",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": "hElLo WoRlD"
+    },
+    {
+      "id": "alternating-ignore",
+      "input": "A 1-B😀c!D",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": "a 1-B😀c!D"
+    },
+    {
+      "id": "alternating-uncased",
+      "input": "ab 中 cd",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": "aB 中 cD"
+    },
+    {
+      "id": "alternating-combining",
+      "input": "éx́a",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": "éX́a"
+    },
+    {
+      "id": "alternating-expansion",
+      "input": "aßc",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": "aSSc"
+    },
+    {
+      "id": "alternating-lines",
+      "input": "ab\r\ncd\tef",
+      "options": {
+        "mode": "alternating"
+      },
+      "expected": "aB\r\ncD\teF"
+    },
+    {
+      "id": "inverse-basic",
+      "input": "Hello WORLD",
+      "options": {
+        "mode": "inverse"
+      },
+      "expected": "hELLO world"
+    },
+    {
+      "id": "inverse-punctuation",
+      "input": "aBc 123!? 😀",
+      "options": {
+        "mode": "inverse"
+      },
+      "expected": "AbC 123!? 😀"
+    },
+    {
+      "id": "inverse-unicode",
+      "input": "éÉßẞ ΑβΓ ПрИвЕт 中文",
+      "options": {
+        "mode": "inverse"
+      },
+      "expected": "ÉéSSß αΒγ пРиВеТ 中文"
+    },
+    {
+      "id": "inverse-titlecase-letter",
+      "input": "ǅ",
+      "options": {
+        "mode": "inverse"
+      },
+      "expected": "ǆ"
+    },
+    {
+      "id": "inverse-combining",
+      "input": "éÉ",
+      "options": {
+        "mode": "inverse"
+      },
+      "expected": "Éé"
+    },
+    {
+      "id": "unsupported-mode",
+      "input": "hello",
+      "options": {
+        "mode": "__proto__"
+      },
+      "error": "supported conversion mode"
+    },
+    {
+      "id": "non-string-input",
+      "input": 123,
+      "options": {
+        "mode": "uppercase"
+      },
+      "error": "Text must be a string"
+    }
+  ]
+}

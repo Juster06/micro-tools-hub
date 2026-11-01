@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Convert text case with an explicit choice of transformation.">
+  <meta name="color-scheme" content="dark">
+  <title>Case Converter — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+body { background:radial-gradient(ellipse at 80% 0%,#312e8126,transparent 48%),#020617; }
+.container { max-width:1200px; }
+.topbar { display:flex; justify-content:space-between; gap:20px; align-items:center; }
+.topbar .back-link { margin:0; font-size:.875rem; text-decoration:none; padding:4px 0; }
+.brand { color:#cbd5e1; font-size:.875rem; font-weight:600; }
+.hero { padding-top:22px; padding-bottom:8px; }
+.eyebrow { font-weight:650; color:#a5b4fc; }
+h1 { font-size:clamp(2.2rem,5vw,3.3rem); letter-spacing:-.045em; line-height:1.1; }
+.description { max-width:72ch; margin-bottom:24px; }
+.toolbar { display:flex; flex-wrap:wrap; align-items:end; gap:16px; padding:20px 22px; margin:10px 0 24px; }
+.toolbar label { font-size:.85rem; color:#cbd5e1; margin:0 0 8px; }
+.mode-control { flex:1; min-width:180px; max-width:330px; }
+select { min-height:46px; padding-right:32px; font-weight:600; color:#c7d2fe; }
+.live { color:#94a3b8; font-size:.8rem; margin:auto 0 12px auto; }
+.live::before { content:''; display:inline-block; width:7px; height:7px; background:#818cf8; border-radius:50%; margin-right:7px; }
+.editor { padding:0; overflow:hidden; }
+.editor-top { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:18px 20px; border-bottom:1px solid #334155; }
+.editor-top label { margin:0; font-size:.95rem; }
+.tag { color:#c7d2fe; background:#312e8166; border:1px solid #6366f144; border-radius:6px; padding:4px 9px; font-size:.72rem; white-space:nowrap; }
+.original-tag { background:transparent; color:#94a3b8; border-color:#334155; }
+.editor textarea { border:0; border-radius:0; background:#080f21; min-height:310px; line-height:1.8; padding:20px; font-size:.95rem; }
+.editor textarea:focus-visible { outline-offset:-4px; }
+textarea::placeholder { color:#64748b; opacity:1; }
+.stats { display:flex; flex-wrap:wrap; gap:18px; padding:15px 20px; border-top:1px solid #334155; font-size:.74rem; color:#94a3b8; }
+.stats strong { font-size:.92rem; color:#e2e8f0; font-variant-numeric:tabular-nums; margin-right:4px; }
+.editor-actions { padding:11px 16px; min-height:58px; border-top:1px solid #334155; display:flex; flex-wrap:wrap; gap:10px; }
+.editor-actions button { min-height:38px; padding:7px 12px; font-size:.8rem; }
+.output-helper { font-size:.74rem; color:#94a3b8; padding:0 20px; }
+.feedback { min-height:48px; padding:5px 2px 0; }
+#toolStatus { color:#c7d2fe; margin:10px 0; }
+#toolError { margin:10px 0; padding:12px 15px; background:#4c051933; border:1px solid #fb718555; border-radius:8px; }
+.support { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 24px; margin:14px 0 28px; color:#94a3b8; font-size:.78rem; line-height:1.8; }
+.support p { margin:0; }
+.rules { margin-top:12px; }
+.rules summary { cursor:pointer; font-size:.95rem; font-weight:600; color:#cbd5e1; min-height:28px; }
+.rules-content { display:grid; grid-template-columns:1fr 1fr; gap:8px 36px; padding-top:16px; font-size:.83rem; color:#94a3b8; line-height:1.8; }
+.rules-content h2 { color:#c7d2fe; margin:12px 0 8px; font-size:.93rem; }
+.rules-content li { margin-bottom:8px; }
+.rules-content ul { padding-left:18px; }
+footer { margin-top:28px; border-top:1px solid #1e293b; }
+@media(max-width:700px) { .brand { font-size:.72rem; } .toolbar { gap:12px; padding:16px; } .live { width:100%; margin:0; } .mode-control { max-width:none; } .rules-content { grid-template-columns:1fr; } .editor textarea { min-height:245px; } .hero { padding-top:12px; } }
+
+.skip-link { position:absolute; left:18px; top:8px; transform:translateY(-160%); background:#4338ca; color:white; padding:10px; z-index:10; } .skip-link:focus { transform:none; }
+</style>
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased">
+  <a href="#toolInput" class="skip-link">Skip to text input</a>
+  <header class="border-b border-slate-800">
+    <div class="container topbar">
+      <a href="../index.html" class="back-link text-indigo-300">← Back to Hub</a>
+      <span class="brand">Everyday Digital Box</span>
+    </div>
+  </header>
+  <main class="container">
+    <section class="hero" aria-labelledby="pageTitle">
+      <p class="eyebrow">Text &amp; writing tools</p>
+      <h1 id="pageTitle">Case Converter<span style="color:#818cf8">.</span></h1>
+      <p class="description">Seven ways to change your text. Keep the original, compare the result, and copy or download it — all in your browser.</p>
+    </section>
+    <div class="panel toolbar" aria-label="Conversion controls">
+      <div class="mode-control">
+        <label for="toolMode">Conversion style</label>
+        <select id="toolMode" aria-describedby="liveHelp">
+          <option value="uppercase">UPPERCASE</option>
+          <option value="lowercase">lowercase</option>
+          <option value="title">Title Case</option>
+          <option value="sentence">Sentence case</option>
+          <option value="capitalize">Capitalize Words</option>
+          <option value="alternating">aLtErNaTiNg CaSe</option>
+          <option value="inverse">Inverse Case</option>
+        </select>
+      </div>
+      <button id="runBtn" type="button" class="primary">Convert text</button>
+      <span id="liveHelp" class="live">Updates as you type or change styles</span>
+    </div>
+    <div class="panels">
+      <section class="panel editor" aria-label="Original text">
+        <div class="editor-top"><label for="toolInput">Your original text</label><span class="tag original-tag">INPUT</span></div>
+        <textarea id="toolInput" rows="11" spellcheck="false" placeholder="Type or paste your text here…" aria-describedby="inputHelp countingHelp"></textarea>
+        <div class="stats" aria-label="Live input statistics">
+          <span><strong id="characterCount">0</strong> Characters</span>
+          <span><strong id="wordCount">0</strong> Words</span>
+          <span><strong id="lineCount">0</strong> Lines</span>
+        </div>
+      </section>
+      <section class="panel editor" aria-label="Converted result">
+        <div class="editor-top"><label for="toolOutput">Converted text</label><span id="modeLabel" class="tag">UPPERCASE</span></div>
+        <textarea id="toolOutput" rows="11" readonly spellcheck="false" placeholder="Your converted text will appear here." aria-describedby="toolStatus"></textarea>
+        <div class="editor-actions">
+          <button id="copyBtn" type="button" class="primary" disabled>Copy result</button>
+          <button id="downloadBtn" type="button" disabled>Download .txt</button>
+          <button id="clearBtn" type="button">Clear all</button>
+        </div>
+      </section>
+    </div>
+    <div class="feedback">
+      <p id="toolError" role="alert" hidden></p>
+      <p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Type or paste text to get started.</p>
+      <p id="outputEmpty" class="output-helper">Choose a style and add text to create a result.</p>
+    </div>
+    <div class="support">
+      <p id="inputHelp">Your original stays unchanged. <span id="inputSize">0 / 100,000 units</span>.</p>
+      <p>Local processing · No uploads or saved drafts</p>
+    </div>
+    <details class="panel rules">
+      <summary>Conversion rules, counts &amp; privacy</summary>
+      <div class="rules-content">
+        <div>
+          <h2>Seven styles, predictable rules</h2>
+          <ul>
+            <li><strong>UPPERCASE / lowercase:</strong> native Unicode casing. Accents and non-Latin text are retained.</li>
+            <li><strong>Title Case:</strong> lowercase first, then capitalize significant words. Keep a, an, the, and, as, at, but, by, for, from, in, nor, of, on, or, per, to, via and vs lowercase, except the first/last word of each line or after a colon.</li>
+            <li><strong>Sentence case:</strong> lowercase first; capitalize the first letter and after . ? ! or a line break. Common abbreviations, initials and decimal points receive limited protection. Names/acronyms and ambiguous sentence endings need your review.</li>
+            <li><strong>Capitalize Words:</strong> lowercase first, then uppercase the first letter of each word. Internal straight/curly apostrophes stay within a word; hyphens separate words. No special surname rules.</li>
+            <li><strong>Alternating Case:</strong> start lowercase and alternate across cased letters. Numbers, spaces, punctuation, emoji and letters without case do not advance the pattern.</li>
+            <li><strong>Inverse Case:</strong> flip each cased letter; leave other characters unchanged.</li>
+          </ul>
+        </div>
+        <div>
+          <h2 id="countingHelp">What the counters mean</h2>
+          <p>Characters count Unicode code points, including spaces and line endings. Emoji sequences and combining accents can count as several characters. Words count non-whitespace groups, not linguistic words. Empty input has zero lines; otherwise each CRLF, CR or LF starts another line, including a trailing empty line.</p>
+          <h2>Unicode &amp; limits</h2>
+          <p>Whitespace and punctuation are preserved. No accent stripping or Unicode normalization is applied. Language-neutral casing can expand a letter (ß → SS); Turkish, Greek context and editorial conventions may need manual review. Limit: 100,000 UTF-16 code units. Oversized input is kept and a clear error is shown.</p>
+          <h2>Your text stays here</h2>
+          <p>Conversion runs in this browser tab. No input is uploaded, logged or stored. Styling loads from Tailwind’s Play CDN. Copy depends on browser permissions; downloads are UTF-8 text files. Text areas use the browser’s normal LF line endings.</p>
+        </div>
+      </div>
+    </details>
+  </main>
+  <footer class="container">Everyday Digital Box · Small tools. Everyday wins.</footer>
+
+<script id="edb-tool-metadata">window.EDB_META = {"id": "case-converter", "name": "Case Converter", "category": "text"};</script>
+<script id="edb-tool-logic">
+(() => {
+  'use strict';
+  const LIMIT = 100000;
+  const MODES = new Set(['uppercase', 'lowercase', 'title', 'sentence', 'capitalize', 'alternating', 'inverse']);
+  const MINOR = new Set(['a', 'an', 'the', 'and', 'as', 'at', 'but', 'by', 'for', 'from', 'in', 'nor', 'of', 'on', 'or', 'per', 'to', 'via', 'vs']);
+  const WORDS = /[\p{L}\p{N}][\p{L}\p{M}\p{N}]*(?:['’][\p{L}\p{N}][\p{L}\p{M}\p{N}]*)*/gu;
+  const LETTER = /\p{L}/u;
+  function requireText(text) {
+    if (typeof text !== 'string') throw new TypeError('Text must be a string.');
+  }
+  function capitalize(word) {
+    return word.replace(LETTER, letter => letter.toUpperCase());
+  }
+  function titleCase(text) {
+    // Work per line without replacing CR/LF, tabs, punctuation or spacing.
+    return text.toLowerCase().replace(/[^\r\n]+/gu, line => {
+      const words = [...line.matchAll(WORDS)];
+      let number = 0, previousEnd = 0;
+      return line.replace(WORDS, (word, offset) => {
+        const afterColon = line.slice(previousEnd, offset).includes(':');
+        const significant = number === 0 || number === words.length - 1 || afterColon || !MINOR.has(word);
+        number++;
+        previousEnd = offset + word.length;
+        return significant ? capitalize(word) : word;
+      });
+    });
+  }
+  function periodEndsSentence(text, index) {
+    const next = text.slice(index + 1, index + 3);
+    const previous = text.slice(Math.max(0, index - 2), index);
+    if (/\p{Nd}$/u.test(previous) && /^\p{Nd}/u.test(next)) return false;
+    if (/^\p{L}/u.test(next)) return false; // Joined dots: e.g., domains/initials.
+    const tail = text.slice(Math.max(0, index - 40), index + 1);
+    if (/(?:^|[^\p{L}])(?:mr|mrs|ms|dr|prof|sr|jr|st|vs|etc|e\.g|i\.e|a\.m|p\.m)\.$/u.test(tail)) return false;
+    if (/(?:^|[^\p{L}])(?:\p{L}\.)+$/u.test(tail)) return false;
+    return true;
+  }
+  function sentenceCase(text) {
+    const lower = text.toLowerCase();
+    const result = [];
+    let beginning = true;
+    for (let index = 0; index < lower.length;) {
+      const letter = String.fromCodePoint(lower.codePointAt(index));
+      if (LETTER.test(letter)) {
+        result.push(beginning ? letter.toUpperCase() : letter);
+        beginning = false;
+      } else {
+        result.push(letter);
+        if (letter === '\r' || letter === '\n' || letter === '?' || letter === '!') beginning = true;
+        else if (letter === '.' && periodEndsSentence(lower, index)) beginning = true;
+      }
+      index += letter.length;
+    }
+    return result.join('');
+  }
+  function alternatingCase(text) {
+    let useLower = true;
+    const result = [];
+    for (const letter of text) {
+      const lower = letter.toLowerCase(), upper = letter.toUpperCase();
+      if (!LETTER.test(letter) || lower === upper) result.push(letter);
+      else {
+        result.push(useLower ? lower : upper);
+        useLower = !useLower;
+      }
+    }
+    return result.join('');
+  }
+  function inverseCase(text) {
+    return Array.from(text, letter => {
+      if (!LETTER.test(letter)) return letter;
+      const lower = letter.toLowerCase(), upper = letter.toUpperCase();
+      return lower === upper ? letter : letter === lower ? upper : lower;
+    }).join('');
+  }
+  function statistics(text) {
+    requireText(text);
+    let characters = 0, words = 0, lines = text.length ? 1 : 0;
+    for (const ignored of text) characters++;
+    for (const ignored of text.matchAll(/\S+/gu)) words++;
+    for (const ignored of text.matchAll(/\r\n|\r|\n/g)) lines++;
+    return {characters, words, lines};
+  }
+  function run(text, options = {}) {
+    requireText(text);
+    if (text.length > LIMIT) throw new RangeError('Text is too large. Limit: 100,000 UTF-16 code units. Your original text has been kept.');
+    const mode = options && options.mode !== undefined ? options.mode : 'uppercase';
+    if (typeof mode !== 'string' || !MODES.has(mode)) throw new Error('Choose a supported conversion mode.');
+    switch (mode) {
+      case 'uppercase': return text.toUpperCase();
+      case 'lowercase': return text.toLowerCase();
+      case 'title': return titleCase(text);
+      case 'sentence': return sentenceCase(text);
+      case 'capitalize': return text.toLowerCase().replace(WORDS, word => capitalize(word));
+      case 'alternating': return alternatingCase(text);
+      case 'inverse': return inverseCase(text);
+    }
+  }
+  window.EDB_TOOL = Object.freeze({isScaffold: false, allowEmpty: false, limit: LIMIT, run, statistics});
+})();
+</script>
+<script id="edb-tool-ui">
+(() => {
+  'use strict';
+  const get = id => document.getElementById(id);
+  const input = get('toolInput'), output = get('toolOutput'), mode = get('toolMode');
+  const copy = get('copyBtn'), download = get('downloadBtn'), error = get('toolError'), status = get('toolStatus');
+  let revision = 0, timer, composing = false;
+  const tell = message => { status.textContent = message; };
+  const selectedName = () => mode.selectedOptions[0].textContent;
+  function invalidate() {
+    clearTimeout(timer);
+    revision++;
+    output.value = '';
+    copy.disabled = download.disabled = true;
+    error.hidden = true;
+    error.textContent = '';
+    get('outputEmpty').hidden = false;
+  }
+  function updateStatistics() {
+    const counts = window.EDB_TOOL.statistics(input.value);
+    get('characterCount').textContent = counts.characters.toLocaleString('en-US');
+    get('wordCount').textContent = counts.words.toLocaleString('en-US');
+    get('lineCount').textContent = counts.lines.toLocaleString('en-US');
+    get('inputSize').textContent = input.value.length.toLocaleString('en-US') + ' / 100,000 units';
+  }
+  function convert(announceEmpty = false) {
+    invalidate();
+    get('modeLabel').textContent = selectedName();
+    if (!input.value.trim()) {
+      tell(announceEmpty ? 'Input required. Type or paste some text first.' : 'Ready. Type or paste text to get started.');
+      return;
+    }
+    try {
+      output.value = window.EDB_TOOL.run(input.value, {mode: mode.value});
+      copy.disabled = download.disabled = output.value.length === 0;
+      get('outputEmpty').hidden = output.value.length !== 0;
+      tell('Conversion completed — ' + selectedName() + '.');
+    } catch (problem) {
+      error.textContent = problem instanceof Error ? problem.message : 'Conversion could not finish. Review your input.';
+      error.hidden = false;
+      tell('No result. Your original text is unchanged.');
+    }
+  }
+  input.addEventListener('input', event => {
+    invalidate();
+    updateStatistics();
+    if (composing || event.isComposing) { tell('Finish composing to update the result.'); return; }
+    if (!input.value.trim()) { convert(); return; }
+    tell('Updating conversion…');
+    timer = setTimeout(() => convert(), 120);
+  });
+  input.addEventListener('compositionstart', () => { composing = true; invalidate(); get('runBtn').disabled = true; });
+  input.addEventListener('compositionend', () => { composing = false; get('runBtn').disabled = false; updateStatistics(); convert(); });
+  mode.addEventListener('change', () => convert(true));
+  get('runBtn').addEventListener('click', () => { updateStatistics(); convert(true); });
+  get('clearBtn').addEventListener('click', () => {
+    invalidate();
+    input.value = '';
+    mode.value = 'uppercase';
+    get('modeLabel').textContent = selectedName();
+    updateStatistics();
+    tell('Cleared. Ready for new text.');
+    input.focus();
+  });
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const current = revision, value = output.value;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(value);
+      if (current === revision) tell('Text copied.');
+    } catch {
+      if (current === revision) {
+        output.focus(); output.select();
+        tell('Clipboard unavailable. Result selected; press Ctrl+C (or ⌘C) to copy.');
+      }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(new Blob([output.value], {type: 'text/plain;charset=utf-8'}));
+      const link = document.createElement('a');
+      link.href = url; link.download = 'case-converter-output.txt';
+      document.body.append(link); link.click(); link.remove();
+      tell('UTF-8 text download requested. Check your browser’s downloads.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+  updateStatistics();
+})();
+</script>
+</body>
+</html>

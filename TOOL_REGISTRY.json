@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-10-31",
+  "updated_on": "2026-11-01",
   "project": {
     "name": "Everyday Digital Box — WebUtils Hub",
     "repository": "https://github.com/Juster06/micro-tools-hub",
@@ -1284,24 +1284,53 @@
       "category": "text",
       "description": "Convert text case with an explicit choice of transformation.",
       "directory_path": "case-converter",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
         "Tailwind CSS Play CDN v4"
       ],
       "required_features": [
-        "Uppercase and lowercase",
-        "Title and sentence modes with documented rules",
-        "Copy and clear",
-        "Preserve line breaks"
+        "Seven modes: uppercase, lowercase, title, sentence, capitalize words, alternating and inverse case",
+        "Documented Unicode, title-case, sentence-case and counting rules",
+        "Live input character, word and line statistics",
+        "Copy with denial handling, UTF-8 text download and clear",
+        "Preserve original input, whitespace and line breaks",
+        "Live conversion with stale-output invalidation and a clear size limit",
+        "Accessible keyboard controls and responsive browser-local processing"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-01",
+      "notes": "Task 5 local implementation and required scoped logic/browser/layout checks passed. Homepage integration prepared locally; publication unverified. No RELEASED claim.",
       "sequence_rank": 1,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "660150fcec9188eef9704c813145ef04b7c3bdc7",
+        "source_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+        "evidence_path": "audit/CASE_CONVERTER_VERIFICATION.json",
+        "test_scope": [
+          "69 exact-output transformation cases across all seven modes, Unicode, punctuation, whitespace, abbreviations and invalid input",
+          "20 additional statistics/long-input/limit logic tests; actual 100,000-unit results and oversized rejection",
+          "22 real Chromium DSL cases: all modes, live counters, switching, copy success/denial, UTF-8 download, clear, empty input, safe rendering, stale results, keyboard and 320/375/768/1440px overflow",
+          "9 extended real Chromium cases: full/oversized and emoji limits, immediate invalidation, delayed copy, safe filename/UTF-8/object-URL revocation, keyboard, simulated composition and transport/storage calls",
+          "Manual review of rendered 1440px desktop and 375px mobile screenshots from the byte-identical generated source; labels, selected mode, panes, feedback and readable layout reviewed"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolMode",
+        "runBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "characterCount",
+        "wordCount",
+        "lineCount",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "duplicate-line-remover",
