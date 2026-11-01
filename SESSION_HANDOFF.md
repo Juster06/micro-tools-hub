@@ -2,7 +2,11 @@
 
 ## Latest session — Task 4 reusable tool development framework (2026-11-01, Europe/London)
 
-**Status:** implementation is complete on `feat/reusable-tool-framework`, based on clean synchronized main `73f5eea1c4d3b67490894cc2fe2855b9bc6c46d4`. Commit locally only; no push, PR, merge or deployment is authorized for this task. Identify its containing delivery commit with `git log -1 --format="%H %s"`. The active checkout stays in place. Historical Task 3 notes below describe the prior scope and are superseded by this section.
+**Status:** Task 4 is complete, reviewed and integrated into `main` through [PR #8](https://github.com/Juster06/micro-tools-hub/pull/8), merged at `33ea1682bba108f8ff91617ae08224f0d72573e6`. The owner explicitly authorized final integration and a documentation-only synchronization, superseding the earlier local-only/no-merge instructions. The active checkout remains in its original location and was synchronized by switching to main and fast-forwarding only. Original local Task 4 commit `631f75b09e2d26f4d8302e70653c0b0d0c86777e` remains preserved on `feat/reusable-tool-framework`; that branch was not overwritten. Historical Task 3 notes below describe the prior scope.
+
+**Publication and merge verification (2026-11-01):** GitHub feature commit `69acace7f27dfe0bcff5ce9e9c8529d458422c04` and local `631f75b09e2d26f4d8302e70653c0b0d0c86777e` have identical complete Git trees (`9189153c3992d5416875f8cea0a17e1117cb7b67`). PR #8 still targeted main, was mergeable and contained exactly the reviewed 34 files. The pre-merge target remained `73f5eea1c4d3b67490894cc2fe2855b9bc6c46d4`, with no unexpected changes or unrelated commits. GitHub performed a normal merge commit with an expected-head guard. The merged tree exactly matched the tested feature tree, and all 34 Task 4 files were independently verified on main. No force-push, history rewrite, destructive reset, checkout move/deletion, public HTML/CNAME/registry change or Task 5 work occurred.
+
+**Final post-merge verification:** all 123 Python tests and 21 Node tests passed on merged main. Both neutral templates passed structure, 6 actual logic cases and 12 Chromium browser cases (48 assertions); the four unchanged released tools passed structure and 12 browser cases (41 assertions). Both existing Desktop and Start menu shortcuts were actually launched sequentially from an unrelated working directory after synchronization, and each completed the full project workflow with zero errors/warnings. Their bytes, targets, arguments, working directories and AppUserModelID remain unchanged. The real dashboard displayed 93 registered / 4 released / 20 READY / 68 PLANNED / 1 BLOCKED, milestone 4/25 (16%) and fresh PASS reports. Functional test totals remain explicitly unavailable under its existing report contract; the scoped results here are independent evidence.
 
 **Next major task:** Task 5 — First End-to-End Tool Implementation, recommended Case Converter. Await its separate instructions. Task 4 ran only its generator dry run: no actual Case Converter bundle/page/algorithm/card was created and no registry entry changed.
 
@@ -18,7 +22,7 @@
 
 **Reports/dashboard:** four existing tracking report schemas and the dashboard remain unchanged. New ignored `reports/tool-tests/<id>.json` bind source, cases, manifest, tool metadata and runner hashes; integration requires nonempty passing layers no older than 24 hours. Registry remains 93 total, 4 RELEASED, 20 READY, 68 PLANNED, 1 BLOCKED; milestone 4/25 (16%). Next queue candidate Case Converter; PDF Compressor feasibility blocker remains. Dashboard test totals stay unavailable under its existing schema, not fabricated from other reports. Both actual Desktop and Start menu shortcuts were launched sequentially from an unrelated working directory and each completed full project status successfully. The GUI displayed current counts, 4/25 (16%), Case Converter first in the queue, the PDF Compressor blocker, four fresh PASS reports and explicit unavailable functional-test totals. Shortcut bytes, targets, arguments, working directories and AppUserModelID were independently read back and match Task 3; no installation/modification occurred.
 
-**Validation/continuation:** full status succeeded through both launchers with no errors/warnings. All 123 Python and 21 Node tests passed again after final code review. Final delivery uses a reviewed local feature-branch commit after full validation and privacy/ignored-file checks; the final report records its actual hash. No remote delivery is included. After committing use `python scripts/project_status.py --check-only`, bind current local provenance and Reload Saved Data to preserve a clean tree; a full dashboard refresh legitimately changes the generated handoff snapshot. Do not push, merge, move/delete checkout, recreate shortcuts, begin Task 5 or add public utilities during Task 4.
+**Validation/continuation:** integration is complete; await separate Task 5 instructions. This documentation-only checkpoint records the completed merge and post-merge testing; identify its containing commit with `git log -1 --format="%H %s"`. Local Git has no HTTPS push credentials, so documentation is synchronized through the connected GitHub account using a normal child commit and a guarded non-force fast-forward of remote main, followed by local fetch/fast-forward. Only this handoff changes after the reviewed merge. After the checkpoint, run `python scripts/project_status.py --check-only`, save current local provenance and Reload Saved Data to preserve a clean main checkout matching origin/main. The generated snapshot below necessarily observes the preceding merge commit and pre-checkpoint working files; it cannot embed its own resulting commit. A future full refresh may legitimately change that generated block. Do not recreate shortcuts, modify public utilities or begin Task 5 during integration.
 
 **Files:** added contract/guide, `templates/` (page, input variants, fragment CSS/UI and README), six framework Python command/module files plus template verifier, two Node workers and Node unit suite, Python framework tests and four existing-tool browser profiles. Updated `.gitignore`, AGENTS, architecture, master plan, roadmap, progress narrative, decisions, changelog, README, scripts README and this handoff. No generated reports, development bundles, machine settings, private paths or credentials are committed.
 
@@ -31,8 +35,8 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Tool status counts: IDEA: 0; PLANNED: 68; READY: 20; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 4; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Case Converter.
-- Git branch: feat/reusable-tool-framework.
-- Latest commit observed before generation: 73f5eea1c4d3b67490894cc2fe2855b9bc6c46d4.
+- Git branch: main.
+- Latest commit observed before generation: 33ea1682bba108f8ff91617ae08224f0d72573e6.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -53,40 +57,7 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
-- `M ` .gitignore
-- `M ` AGENTS.md
-- `M ` ARCHITECTURE.md
-- `M ` CHANGELOG.md
-- `M ` DECISIONS.md
-- `M ` PROGRESS_TRACKER.md
-- `M ` PROJECT_MASTER_PLAN.md
-- `M ` README.md
-- `M ` ROADMAP.md
-- `MM` SESSION_HANDOFF.md
-- `A ` TOOL_CONTRACT.md
-- `AM` TOOL_DEVELOPMENT_GUIDE.md
-- `MM` scripts/README.md
-- `A ` scripts/create_tool.py
-- `A ` scripts/integrate_tool.py
-- `AM` scripts/plan_tool_batch.py
-- `A ` scripts/test_tool.py
-- `A ` scripts/tool-framework.test.mjs
-- `A ` scripts/tool-tests/browser.mjs
-- `A ` scripts/tool-tests/runner.mjs
-- `A ` scripts/tool_framework.py
-- `A ` scripts/tool_homepage.py
-- `A ` scripts/verify_tool_templates.py
-- `A ` templates/README.md
-- `A ` templates/fragments/base.css
-- `A ` templates/fragments/tool-ui.js
-- `A ` templates/structured-input.html
-- `A ` templates/text-input.html
-- `A ` templates/tool-page.html
-- `AM` tests/test_tool_framework.py
-- `A ` tests/tools/excel-sandbox/browser.cases.json
-- `A ` tests/tools/social-counter/browser.cases.json
-- `A ` tests/tools/streaming-roulette/browser.cases.json
-- `A ` tests/tools/text-cleaner/browser.cases.json
+- ` M` SESSION_HANDOFF.md
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->
