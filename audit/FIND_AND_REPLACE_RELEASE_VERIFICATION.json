@@ -258,7 +258,7 @@
       "approved_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
       "public_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
       "source_matches": true,
-      "checked_at": "2026-11-01T22:53:45.335621+00:00"
+      "checked_at": "2026-11-01T23:04:37.764829+00:00"
     },
     {
       "id": "case-converter",
@@ -267,7 +267,7 @@
       "approved_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
       "public_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
       "source_matches": true,
-      "checked_at": "2026-11-01T22:53:45.748594+00:00"
+      "checked_at": "2026-11-01T23:04:38.213544+00:00"
     },
     {
       "id": "social-counter",
@@ -276,7 +276,7 @@
       "approved_sha256": "8703dcdc3a4f13c8597022f3338b750f67042f9d2782d996d55e95412844e47b",
       "public_sha256": "8703dcdc3a4f13c8597022f3338b750f67042f9d2782d996d55e95412844e47b",
       "source_matches": true,
-      "checked_at": "2026-11-01T22:53:46.228881+00:00"
+      "checked_at": "2026-11-01T23:04:38.637510+00:00"
     },
     {
       "id": "excel-sandbox",
@@ -285,7 +285,7 @@
       "approved_sha256": "badb1ccd17302f8006397ff0553b483a3cdcf426bad61976477f4c77908c4191",
       "public_sha256": "badb1ccd17302f8006397ff0553b483a3cdcf426bad61976477f4c77908c4191",
       "source_matches": true,
-      "checked_at": "2026-11-01T22:53:46.687391+00:00"
+      "checked_at": "2026-11-01T23:04:39.050009+00:00"
     },
     {
       "id": "text-cleaner",
@@ -294,7 +294,7 @@
       "approved_sha256": "9c9e0e6a9a9796b73b26f21adb8cffa33a7aa6b2e669b64bfb9ab54972273443",
       "public_sha256": "9c9e0e6a9a9796b73b26f21adb8cffa33a7aa6b2e669b64bfb9ab54972273443",
       "source_matches": true,
-      "checked_at": "2026-11-01T22:53:47.490152+00:00"
+      "checked_at": "2026-11-01T23:04:39.453511+00:00"
     },
     {
       "id": "streaming-roulette",
@@ -303,7 +303,7 @@
       "approved_sha256": "6f9cb3b2c114e03f545034ef0b1065ae5d4c50b13d9576882cdb5cffe5aef761",
       "public_sha256": "6f9cb3b2c114e03f545034ef0b1065ae5d4c50b13d9576882cdb5cffe5aef761",
       "source_matches": true,
-      "checked_at": "2026-11-01T22:53:47.953813+00:00"
+      "checked_at": "2026-11-01T23:04:39.891926+00:00"
     }
   ],
   "premerge_validation": {
@@ -330,7 +330,269 @@
     "Only recorded Edge/public desktop and viewport emulation; source equality does not independently audit CDN delivery",
     "GitHub had no CI check runs/status results; actual fresh local regression results are recorded instead"
   ],
-  "release_metadata_publication": "These actual implementation deployment/live/source gates preceded RELEASED. Release metadata/Live labels require independently verified subsequent deployment before completion.",
+  "release_metadata_publication": {
+    "commit": "0734bd97ceaa3395ea52d78162c14a76c7c63356",
+    "parent": "d3ddb6de807913c05832e24a77797f033b353497",
+    "tree": "a614d054236a6d7046509aec27058192940bdb9a",
+    "method": "Connected GitHub exact reviewed blobs/tree, expected parent/head, force=false. Independent fetch/tree/index/working-file equality and ancestry checks preceded guarded local fast-forward; no reset/restore or feature rewrite.",
+    "reviewed_files": 17,
+    "deployment": {
+      "id": 41359958798,
+      "head_sha": "0734bd97ceaa3395ea52d78162c14a76c7c63356",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Juster06/micro-tools-hub/actions/runs/41359958798",
+      "created_at": "2026-11-01T23:00:49Z",
+      "updated_at": "2026-11-01T23:01:29Z"
+    },
+    "public_source_and_registry": {
+      "attempt": 2,
+      "checked_at": "2026-11-01T23:01:30.979178+00:00",
+      "pages": [
+        {
+          "path": "index.html",
+          "url": "https://everydaydigitalbox.com/",
+          "http_status": 200,
+          "source_sha256": "c74f1e4c530d9d5526576c0238cb1017803e4a337e90494efcf2f30f42ad6da1",
+          "live_sha256": "c74f1e4c530d9d5526576c0238cb1017803e4a337e90494efcf2f30f42ad6da1",
+          "source_matches": true,
+          "etag": "\"6ae7c4c6-496b\"",
+          "checked_at": "2026-11-01T23:01:31.259306+00:00"
+        },
+        {
+          "path": "text-sorter/index.html",
+          "url": "https://everydaydigitalbox.com/text-sorter/",
+          "http_status": 200,
+          "source_sha256": "018f431ad20d178eb16b1b1d4782f6a31ca47f5b0ea2986c4d859c3d5529b3cf",
+          "live_sha256": "018f431ad20d178eb16b1b1d4782f6a31ca47f5b0ea2986c4d859c3d5529b3cf",
+          "source_matches": true,
+          "etag": "\"6ae7c4c6-4b02\"",
+          "checked_at": "2026-11-01T23:01:31.536011+00:00"
+        },
+        {
+          "path": "slug-generator/index.html",
+          "url": "https://everydaydigitalbox.com/slug-generator/",
+          "http_status": 200,
+          "source_sha256": "682769f856e500f5db53dc6781eeedfb1486a3bec7f7c35fc4cb7119b0a90ea8",
+          "live_sha256": "682769f856e500f5db53dc6781eeedfb1486a3bec7f7c35fc4cb7119b0a90ea8",
+          "source_matches": true,
+          "etag": "\"6ae7c4c6-442d\"",
+          "checked_at": "2026-11-01T23:01:31.794694+00:00"
+        },
+        {
+          "path": "find-and-replace/index.html",
+          "url": "https://everydaydigitalbox.com/find-and-replace/",
+          "http_status": 200,
+          "source_sha256": "b6a0d254ee8de1047bec187c58e2aea71c67c00cc4734bc48f523cd347f9e058",
+          "live_sha256": "b6a0d254ee8de1047bec187c58e2aea71c67c00cc4734bc48f523cd347f9e058",
+          "source_matches": true,
+          "etag": "\"6ae7c4c6-4928\"",
+          "checked_at": "2026-11-01T23:01:32.066932+00:00"
+        }
+      ],
+      "registry": {
+        "http_status": 200,
+        "matches": true,
+        "tool_statuses": {
+          "text-sorter": "RELEASED",
+          "find-and-replace": "RELEASED",
+          "slug-generator": "RELEASED"
+        },
+        "released_count": 9
+      }
+    },
+    "live_browser": {
+      "started_at": "2026-11-01T23:03:25.532Z",
+      "checks": [
+        {
+          "name": "Actual public homepage card, registry route/category and lifecycle label",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual homepage card navigation",
+          "result": "PASS"
+        },
+        {
+          "name": "Canonical HTTPS route and correct title",
+          "result": "PASS"
+        },
+        {
+          "name": "Public committed browser case: initial",
+          "result": "PASS",
+          "assertions": 4
+        },
+        {
+          "name": "Public committed browser case: live-original",
+          "result": "PASS",
+          "assertions": 2
+        },
+        {
+          "name": "Public committed browser case: case-option",
+          "result": "PASS",
+          "assertions": 3
+        },
+        {
+          "name": "Public committed browser case: literal-combined",
+          "result": "PASS",
+          "assertions": 2
+        },
+        {
+          "name": "Public committed browser case: empty-search-guard",
+          "result": "PASS",
+          "assertions": 4
+        },
+        {
+          "name": "Public committed browser case: apply-undo",
+          "result": "PASS",
+          "assertions": 4
+        },
+        {
+          "name": "Public committed browser case: delete-all",
+          "result": "PASS",
+          "assertions": 5
+        },
+        {
+          "name": "Public committed browser case: copy",
+          "result": "PASS",
+          "assertions": 3
+        },
+        {
+          "name": "Public committed browser case: denied",
+          "result": "PASS",
+          "assertions": 3
+        },
+        {
+          "name": "Public committed browser case: download",
+          "result": "PASS",
+          "assertions": 3
+        },
+        {
+          "name": "Public committed browser case: clear",
+          "result": "PASS",
+          "assertions": 5
+        },
+        {
+          "name": "Public committed browser case: empty",
+          "result": "PASS",
+          "assertions": 2
+        },
+        {
+          "name": "Public committed browser case: oversized",
+          "result": "PASS",
+          "assertions": 5
+        },
+        {
+          "name": "Public committed browser case: keyboard-run",
+          "result": "PASS",
+          "assertions": 1
+        },
+        {
+          "name": "Public committed browser case: layout-320",
+          "result": "PASS",
+          "assertions": 2
+        },
+        {
+          "name": "Public committed browser case: layout-375",
+          "result": "PASS",
+          "assertions": 2
+        },
+        {
+          "name": "Public committed browser case: layout-768",
+          "result": "PASS",
+          "assertions": 2
+        },
+        {
+          "name": "Public committed browser case: layout-1440",
+          "result": "PASS",
+          "assertions": 2
+        },
+        {
+          "name": "Non-overlapping global replacement, literal dollar values, exact count/original",
+          "result": "PASS"
+        },
+        {
+          "name": "Apply/Undo and manual-edit undo invalidation",
+          "result": "PASS"
+        },
+        {
+          "name": "Simulated clipboard success/denial execute production handlers truthfully",
+          "result": "PASS"
+        },
+        {
+          "name": "Production UTF-8 Blob exact contents/bytes/MIME/fixed filename/URL revocation in memory",
+          "result": "PASS"
+        },
+        {
+          "name": "Native CDP Enter/Tab operate actual public controls",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual public desktop/mobile result screenshots, no horizontal overflow",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual processing transport/persistence probes empty; markup stays text; no uncaught JS errors",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual Back to Hub/search/reset preserves nine correct public routes",
+          "result": "PASS"
+        }
+      ],
+      "failures": [],
+      "result": "PASS",
+      "browser": "Edg/156.0.4314.58",
+      "last_browser_command": "Browser.close",
+      "finished_at": "2026-11-01T23:03:50.714Z"
+    },
+    "existing_six_public_routes": [
+      {
+        "id": "duplicate-line-remover",
+        "url": "https://everydaydigitalbox.com/duplicate-line-remover/",
+        "result": "PASS",
+        "title": "Duplicate Line Remover — Everyday Digital Box"
+      },
+      {
+        "id": "case-converter",
+        "url": "https://everydaydigitalbox.com/case-converter/",
+        "result": "PASS",
+        "title": "Case Converter — Everyday Digital Box"
+      },
+      {
+        "id": "social-counter",
+        "url": "https://everydaydigitalbox.com/social-counter/",
+        "result": "PASS",
+        "title": "Social Media Character Counter & Live Previewer | WebUtils Hub"
+      },
+      {
+        "id": "excel-sandbox",
+        "url": "https://everydaydigitalbox.com/excel-sandbox/",
+        "result": "PASS",
+        "title": "Excel Formula Sandbox & Analyzer"
+      },
+      {
+        "id": "text-cleaner",
+        "url": "https://everydaydigitalbox.com/text-cleaner/",
+        "result": "PASS",
+        "title": "AI Text Footprint Cleanser"
+      },
+      {
+        "id": "streaming-roulette",
+        "url": "https://everydaydigitalbox.com/streaming-roulette/",
+        "result": "PASS",
+        "title": "Free Legal Streaming Roulette & Finder"
+      }
+    ],
+    "counts": {
+      "total": 93,
+      "released": 9,
+      "tested": 0,
+      "ready": 15,
+      "planned": 68,
+      "blocked": 1,
+      "milestone": "9/25 (36%)"
+    }
+  },
   "final_release_state_regression": {
     "python": {
       "passed": 123,
@@ -391,5 +653,47 @@
     },
     "status": "PASS"
   },
-  "live_visual_review": "Actual public full-page 1440px desktop and 375px mobile screenshots reviewed, including result/actions/statistics; source identity checked independently by HTTP/hash."
+  "live_visual_review": "Actual public full-page 1440px desktop and 375px mobile screenshots reviewed, including result/actions/statistics; source identity checked independently by HTTP/hash.",
+  "windows_shortcuts": {
+    "desktop": {
+      "actual_existing_shortcut": "desktop",
+      "checked_at": "2026-11-01T23:02:28.387497+00:00",
+      "unrelated_working_directory": true,
+      "workflow_exit_code": 0,
+      "workflow_status": "PASS",
+      "native_overview_counts": {
+        "total": 93,
+        "released": 9,
+        "tested": 0,
+        "ready": 15,
+        "planned": 68,
+        "blocked": 1
+      },
+      "native_milestone": "9/25 (36%)",
+      "native_validation": "Four current tracking reports show PASS; functional totals unavailable under existing schema",
+      "shortcut_definitions": "Bytes/target/arguments/cwd/AppID verified unchanged",
+      "report_generated_at": "2026-11-01T23:01:30+00:00"
+    },
+    "start_menu": {
+      "actual_existing_shortcut": "start-menu",
+      "checked_at": "2026-11-01T23:04:36.486674+00:00",
+      "unrelated_working_directory": true,
+      "workflow_exit_code": 0,
+      "workflow_status": "PASS",
+      "native_overview_counts": {
+        "total": 93,
+        "released": 9,
+        "tested": 0,
+        "ready": 15,
+        "planned": 68,
+        "blocked": 1
+      },
+      "native_milestone": "9/25 (36%)",
+      "native_validation": "Four current tracking reports show PASS; functional totals unavailable under existing schema",
+      "shortcut_definitions": "Bytes/target/arguments/cwd/AppID verified unchanged",
+      "report_generated_at": "2026-11-01T23:03:24+00:00"
+    },
+    "preservation": "Both exact existing shortcut files/properties remain unchanged; launcher/dashboard code untouched; no registry edits or reinstall",
+    "functional_test_totals": "Unavailable under unchanged dashboard report schema; actual Python/Node results are recorded separately"
+  }
 }
