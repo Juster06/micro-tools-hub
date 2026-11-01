@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "anime-filter-result",
+      "steps": [
+        {
+          "action": "click",
+          "selector": "input[value=\"anime\"]"
+        },
+        {
+          "action": "expect",
+          "selector": "#matchCount",
+          "property": "textContent",
+          "includes": "2 free streaming destinations"
+        },
+        {
+          "action": "click",
+          "selector": "#spinBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#resultBox",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#platformName",
+          "property": "textContent",
+          "oneOf": [
+            "RetroCrush",
+            "Tubi"
+          ]
+        },
+        {
+          "action": "expect",
+          "selector": "#platformLink",
+          "property": "href",
+          "oneOf": [
+            "https://www.retrocrush.tv/",
+            "https://tubitv.com/home"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "all-filter-controls-and-safe-link",
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "#matchCount",
+          "property": "textContent",
+          "includes": "9 free streaming destinations"
+        },
+        {
+          "action": "click",
+          "selector": "#spinBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#resultBox",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#spinBtn",
+          "property": "disabled",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#platformLink",
+          "property": "target",
+          "equals": "_blank"
+        },
+        {
+          "action": "expect",
+          "selector": "#platformLink",
+          "property": "rel",
+          "includes": "noopener"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="@@DESCRIPTION@@">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex">
+  <title>@@NAME@@ — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>@@CSS@@</style>
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased">
+  <header class="border-b border-slate-800">
+    <div class="container py-6">
+      <a href="../index.html" class="back-link text-indigo-300">← Back to Hub</a>
+      <p class="eyebrow text-indigo-400">@@CATEGORY@@</p>
+      <h1 class="text-3xl font-bold text-white">@@NAME@@</h1>
+      <p class="description text-slate-400">@@DESCRIPTION@@</p>
+      <p id="scaffoldNotice" role="note" class="notice">Development scaffold — functionality is not implemented. Not a public utility.</p>
+    </div>
+  </header>
+  <main class="container">
+    <div class="panels">
+      <section class="panel" aria-labelledby="inputHeading">
+        <h2 id="inputHeading">Input</h2>
+        @@INPUT@@
+        <label for="toolMode">Operation</label>
+        <select id="toolMode"><option value="default">Default — implement the required modes</option></select>
+        <div class="actions">
+          <button id="runBtn" type="button" class="primary">Run</button>
+          <button id="clearBtn" type="button">Clear</button>
+        </div>
+        <p id="toolError" role="alert" hidden></p>
+        <p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Development scaffold. Implement and test the required behavior first.</p>
+      </section>
+      <section class="panel" aria-labelledby="outputHeading">
+        <h2 id="outputHeading">Result</h2>
+        <label for="toolOutput">Output</label>
+        <textarea id="toolOutput" rows="10" readonly spellcheck="false" placeholder="Results appear here only after actual functionality is implemented."></textarea>
+        <div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled>Download text</button></div>
+      </section>
+    </div>
+    <aside class="panel guidance" aria-label="Privacy and limits">
+      <h2>Privacy & limits</h2>
+      <p>Input is processed in this browser tab. No uploads, analytics or saved drafts. Styling loads from Tailwind’s Play CDN.</p>
+      <p>Starting input limit: 100,000 UTF-16 code units. Review the limit, Unicode rules, empty input and every mode before implementation.</p>
+    </aside>
+  </main>
+  <footer class="container">Everyday Digital Box · Local browser processing</footer>
+  <script id="edb-tool-metadata">window.EDB_META = @@METADATA@@;</script>
+  <script id="edb-tool-logic">
+    'use strict';
+    // Keep deterministic logic separate from DOM code for fixture-based tests.
+    // This is deliberately NOT an implementation of the registry tool.
+    window.EDB_TOOL = {
+      isScaffold: true,
+      allowEmpty: false,
+      run(input, options = {}) {
+        throw new Error('Not implemented — replace this placeholder with the actual tool logic.');
+      }
+    };
+  </script>
+  <script id="edb-tool-ui">@@UI@@</script>
+</body>
+</html>

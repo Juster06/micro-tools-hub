@@ -65,9 +65,11 @@ The backlog total includes READY and BLOCKED; those rows must not be added again
 
 ## Current development task
 
-Task 3 extends the Windows launcher into a local Project Control Dashboard, reusing Task 2 validation, registry and reports. Task 4 — Reusable Tool Development Framework is the next owner-directed major task, not started here. Case Converter remains the registry's next READY public utility. No new utility implementation started in this session. Git delivery and review state are recorded in `SESSION_HANDOFF.md`; this tracker does not independently assert deployment.
+Task 4 provides the reusable tool contract, templates, safe staged generator, gated homepage proposals, scoped logic/browser testing and batch planner. Existing dashboard/tracking and public sources remain intact. Next major task is Task 5 — First End-to-End Tool Implementation, recommended Case Converter; it has not begun. Registry counts and statuses did not change. Git delivery and review state are recorded in `SESSION_HANDOFF.md`; this tracker does not independently assert deployment.
 
 ## Recently completed work
+
+- Added the development framework with explicit scaffold/nonfunctional gates, temporary-fixture tests and real Chromium regression profiles; see `TOOL_DEVELOPMENT_GUIDE.md` for commands and limitations.
 
 - Extended the installed Windows launcher into a modular offline dashboard with seven screens, read-only registry exploration, documented development ordering, validation freshness/diagnostics, Git/documents, blockers and safe local Quick Actions. Shortcut targets remain unchanged; exact tests and GUI scope are in the latest handoff.
 

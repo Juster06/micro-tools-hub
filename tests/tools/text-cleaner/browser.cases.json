@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "word-count-and-copy",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#textInput",
+          "value": "Hello world"
+        },
+        {
+          "action": "expect",
+          "selector": "#wordCount",
+          "property": "textContent",
+          "equals": "2"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "value",
+          "equals": "Hello world"
+        }
+      ]
+    },
+    {
+      "id": "replace-undo-clear",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#textInput",
+          "value": "We utilize tools. Furthermore, we learn."
+        },
+        {
+          "action": "click",
+          "selector": "#humanizeBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#textInput",
+          "property": "value",
+          "equals": "We use tools. Also, we learn."
+        },
+        {
+          "action": "click",
+          "selector": "#undoBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#textInput",
+          "property": "value",
+          "equals": "We utilize tools. Furthermore, we learn."
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#textInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "safe-editor-markup",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#textInput",
+          "value": "<img src=x onerror=alert(1)> utilize"
+        },
+        {
+          "action": "expect",
+          "selector": "#highlights img",
+          "property": "exists",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#textInput",
+          "property": "value",
+          "equals": "<img src=x onerror=alert(1)> utilize"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — Reusable tool development framework (Task 4, 2026-11-01)
+
+- Added a new-tool contract, text/structured standalone templates, generation-time shared UI fragments and practical developer guide with a Case Converter dry-run example only.
+- Added safe registry-driven scaffold generation with dry-run, existing-file protection, path checks and rollback; bundles remain ignored and unpublished.
+- Added ordered dependency-aware batch proposals and gated minimal homepage patch previews; neither changes lifecycle or publishes placeholders.
+- Added independently scoped structural, real Node logic and optional isolated Chromium interaction testing, hash-bound ignored reports, neutral template verification and released-page regression cases.
+- Preserved all released HTML, homepage, CNAME, registry, existing tracking report schemas, dashboard code and Windows shortcut identities. Task 5 is deferred; Task 4 is committed locally only.
+
 Meaningful project changes, with source state separated from publication. Git history is authoritative for exact commit timestamps.
 
 ## Unreleased — local Project Control Dashboard (Task 3)

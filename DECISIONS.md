@@ -1,5 +1,25 @@
 # Decision log
 
+## 2026-11-01 — Stage tools and expand UI fragments at generation time
+
+**Decision:** Generate six-file bundles only under ignored `development/scaffolds/<id>/`; use a nested real page and development preview hub. Expand shared CSS/HTML/JS fragments into standalone pages. Promote source/tests manually after real implementation.
+
+**Reason:** READY entries must not acquire canonical unfinished pages, contradict source validation or become publicly available. Standalone deployment needs no runtime/build migration.
+
+**Alternatives:** Put placeholders directly at public routes, automatically advance lifecycle, retrofit all released pages, or introduce a frontend framework.
+
+**Consequences:** The registry remains authoritative; scaffolds stay READY. Existing canonical/bundle paths are never overwritten. Moving a completed implementation is explicit; regenerated templates do not update old pages automatically.
+
+## 2026-11-01 — Separate test scopes and preview homepage integration
+
+**Decision:** Use Python structure/discovery/gates, Node deterministic logic and installed Chromium/CDP interaction tests without packages. Generate minimal validated homepage patches only after current canonical functional/audit evidence; do not apply automatically. Keep existing Task 2 report contracts and legacy cards unchanged.
+
+**Reason:** Structural PASS cannot prove useful behavior, and manual homepage formatting is valuable. Explicit NOT RUN/PARTIAL/UNKNOWN/STALE avoids fake completion. Current hashes plus age bind integration to tested inputs.
+
+**Alternatives:** Treat page existence as testing, introduce a heavy automation stack or silently rewrite the whole hub.
+
+**Consequences:** Node/browser are optional execution dependencies; missing layers cannot pass. Clipboard/download are simulated, external HTTP(S) is blocked, and manual visual/OS/publication checks remain necessary. Specialist asynchronous/file/security tools need scoped adapters/tests. Dashboard functional-test totals remain unavailable under its current contract. No status, release date or publication evidence changes automatically.
+
 ## 2026-10-31 — Extend the installed launcher into an offline dashboard
 
 **Decision:** Retain `.pyw`/shortcut entry points and Python/Tk; separate dashboard data, operations and presentation into a package. Reuse existing tracking schemas/counts/order. Keep registry exploration read-only and host-specific settings/reports ignored.
