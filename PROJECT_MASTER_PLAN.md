@@ -1,5 +1,11 @@
 # Project master plan
 
+## Task 4 infrastructure checkpoint (2026-11-01)
+
+The reusable development framework is implemented locally on `feat/reusable-tool-framework`, based on synchronized Task 3 main `73f5eea1c4d3b67490894cc2fe2855b9bc6c46d4`. Contract, standalone templates, safe staged generation, gated homepage proposals, actual logic/browser testing and ordered batch planning are documented in `TOOL_DEVELOPMENT_GUIDE.md`. Registry lifecycle remains manual and evidence-based; no public utility was added and growth targets are unchanged.
+
+Next major task: **Task 5 — First End-to-End Tool Implementation**, recommended candidate Case Converter. Await that scope; Task 4's dry run and neutral template fixtures do not implement it. Publishing or merging Task 4 requires separate authorization.
+
 This document is authoritative for project vision and scope. Source code is authoritative for implemented behavior; `TOOL_REGISTRY.json` is authoritative for inventory/status; `SESSION_HANDOFF.md` records the last session.
 
 ## Vision

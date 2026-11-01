@@ -19,7 +19,7 @@ These instructions apply to this repository and its descendants. Read them at th
 
 ### Local Project Control Dashboard
 
-Task 3 extends the installed Windows launcher; read `scripts/DASHBOARD.md` for its module boundaries and report freshness contract. Preserve `scripts/status_launcher.pyw`, shortcut targets and AppUserModelID. Keep registry exploration read-only, background work outside Tk, and widget updates on the main thread. Read the latest manual `**Next major task:**` handoff field before selecting a READY utility. Task 4 requires separate scope and must not begin during Task 3.
+Task 3 extends the installed Windows launcher; read `scripts/DASHBOARD.md` for its module boundaries and report freshness contract. Preserve `scripts/status_launcher.pyw`, shortcut targets and AppUserModelID. Keep registry exploration read-only, background work outside Tk, and widget updates on the main thread. Read the latest manual `**Next major task:**` handoff field before selecting a READY utility. Task 3 is integrated; Task 4 framework usage is documented below. Read the latest handoff before selecting Task 5.
 
 Structural reports are not functional test totals. Missing test-run reports display unavailable; never reuse historical handoff counts as current results. Input/report hashes and host-specific Git settings remain ignored in `reports/`. The dashboard lock coordinates dashboard refreshes only; avoid concurrent independent CLI writers. For dashboard changes, run Python/Node suites and project status, use temporary corrupt/slow/large fixtures, and record actual Windows GUI scope without inventing results.
 
@@ -29,6 +29,14 @@ Structural reports are not functional test totals. Missing test-run reports disp
 - Treat the initial backlog as proposals with scoped acceptance features. `READY` does not mean implemented. Never invent a page, test result, publication, or completion date.
 - Work on one bounded utility at a time. Milestone targets do not authorize building hundreds of pages at once.
 - For a new tool, define acceptance behavior, dependencies, size limits, error cases, and test scope before writing its implementation.
+
+## Reusable tool development framework
+
+Read `TOOL_CONTRACT.md` and `TOOL_DEVELOPMENT_GUIDE.md` before creating utilities. Use `python scripts/plan_tool_batch.py --count 10` and generator `--dry-run` first. Generation stays under ignored `development/scaffolds/`, never modifies the registry/homepage and cannot establish implemented/tested/released status. Preserve the existing statuses and manually record actual scoped evidence.
+
+Keep pure logic in the inline `edb-tool-logic` adapter for template tools; add nonempty logic/browser cases, test actual behavior and handle specialist interfaces explicitly. Run `python scripts/test_tool.py --id TOOL_ID`; omitted/unavailable scopes and empty suites are not functional PASS. After canonical promotion and evidence updates, rerun canonical tests before `python scripts/integrate_tool.py --id TOOL_ID`. Review/apply its patch separately; preserve existing legacy cards. Do not bypass freshness/audit gates.
+
+For framework changes run the full Python suite, `node --test scripts/project.test.mjs scripts/tool-framework.test.mjs`, `python scripts/verify_tool_templates.py`, applicable released-page browser profiles and full project status. Record actual browser/OS/manual scope and limitations; do not invent test totals in the dashboard. No Task 5 or additional utility work without its separate scope.
 
 ## Technology and repository conventions
 

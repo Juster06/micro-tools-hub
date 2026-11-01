@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "formula-format-and-copy",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#formulaInput",
+          "value": "=SUM(A1,A2)"
+        },
+        {
+          "action": "expect",
+          "selector": "#functionCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#depthCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#formattedFormula",
+          "property": "textContent",
+          "includes": "SUM("
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "value",
+          "includes": "SUM("
+        }
+      ]
+    },
+    {
+      "id": "invalid-and-clear",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#formulaInput",
+          "value": "=SUM(A1"
+        },
+        {
+          "action": "expect",
+          "selector": "#diagnostics",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#formulaInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#functionCount",
+          "property": "textContent",
+          "equals": "0"
+        }
+      ]
+    },
+    {
+      "id": "formula-markup-is-text",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#formulaInput",
+          "value": "=IF(A1=\"<img>\",1,0)"
+        },
+        {
+          "action": "expect",
+          "selector": "#formattedFormula img",
+          "property": "exists",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#formattedFormula",
+          "property": "textContent",
+          "includes": "<img>"
+        }
+      ]
+    }
+  ]
+}

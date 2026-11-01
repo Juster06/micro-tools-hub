@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "unicode-counters-preview",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#captionInput",
+          "value": "Hi 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "#characterCount",
+          "property": "textContent",
+          "equals": "4"
+        },
+        {
+          "action": "expect",
+          "selector": "#count-x",
+          "property": "textContent",
+          "equals": "4"
+        },
+        {
+          "action": "expect",
+          "selector": "#previewText",
+          "property": "textContent",
+          "equals": "Hi 😀"
+        }
+      ]
+    },
+    {
+      "id": "clean-copy-clear",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#captionInput",
+          "value": "  Hello   world \n  Next  "
+        },
+        {
+          "action": "click",
+          "selector": "#cleanCopyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#captionInput",
+          "property": "value",
+          "equals": "Hello world\nNext"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "value",
+          "equals": "Hello world\nNext"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#characterCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#cleanCopyBtn",
+          "property": "disabled",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "safe-preview-and-boundaries",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#captionInput",
+          "value": "<img src=x onerror=alert(1)> 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "#previewText img",
+          "property": "exists",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#previewText",
+          "property": "textContent",
+          "equals": "<img src=x onerror=alert(1)> 😀"
+        },
+        {
+          "action": "set",
+          "selector": "#captionInput",
+          "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        {
+          "action": "expect",
+          "selector": "#linkedinHook",
+          "property": "textContent",
+          "includes": "Past 140"
+        },
+        {
+          "action": "set",
+          "selector": "#captionInput",
+          "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        {
+          "action": "expect",
+          "selector": "#counter-x",
+          "property": "data-state",
+          "equals": "over"
+        }
+      ]
+    },
+    {
+      "id": "clipboard-denial",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#captionInput",
+          "value": "Hello"
+        },
+        {
+          "action": "clipboard",
+          "mode": "failure"
+        },
+        {
+          "action": "click",
+          "selector": "#cleanCopyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyStatus",
+          "property": "textContent",
+          "includes": "Clipboard unavailable"
+        },
+        {
+          "action": "expect",
+          "selector": "#captionInput",
+          "property": "selectionStart",
+          "equals": 0
+        },
+        {
+          "action": "expect",
+          "selector": "#captionInput",
+          "property": "selectionEnd",
+          "equals": 5
+        }
+      ]
+    }
+  ]
+}

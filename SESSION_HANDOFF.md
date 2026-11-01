@@ -1,6 +1,99 @@
 # Session handoff
 
-## Latest session — Task 3 local Project Control Dashboard (2026-10-31, Europe/London)
+## Latest session — Task 4 reusable tool development framework (2026-11-01, Europe/London)
+
+**Status:** implementation is complete on `feat/reusable-tool-framework`, based on clean synchronized main `73f5eea1c4d3b67490894cc2fe2855b9bc6c46d4`. Commit locally only; no push, PR, merge or deployment is authorized for this task. Identify its containing delivery commit with `git log -1 --format="%H %s"`. The active checkout stays in place. Historical Task 3 notes below describe the prior scope and are superseded by this section.
+
+**Next major task:** Task 5 — First End-to-End Tool Implementation, recommended Case Converter. Await its separate instructions. Task 4 ran only its generator dry run: no actual Case Converter bundle/page/algorithm/card was created and no registry entry changed.
+
+**Framework:** `TOOL_CONTRACT.md`, `TOOL_DEVELOPMENT_GUIDE.md`; text/structured standalone templates and generation-time UI/CSS fragments; shared `scripts/tool_framework.py` and `tool_homepage.py`; safe generator, ordered batch planner, independently scoped tool tests and gated homepage patch preview. No runtime build, third-party testing packages, backend or new public utility. Existing HTML, homepage cards/count, CNAME, registry, publication evidence, dashboard/shortcut code remain unchanged.
+
+**Safety/lifecycle:** generator accepts READY with satisfied tool prerequisites, validates registry/ID/path, refuses canonical directories/existing bundles and rolls back only its own exclusive creations. Six-file development bundles remain ignored under `development/scaffolds/<id>/`; nested preview hub preserves Back to Hub. Scaffold notice, `noindex`, throwing placeholder and empty NOT RUN cases prevent fake completion. Promotion and lifecycle changes are manual; new cards require current canonical functional and existing audit evidence. Preview writes only an ignored proposed patch, never changes the homepage. Existing manually maintained cards return NO_CHANGE.
+
+**Commands:** `python scripts/create_tool.py --id case-converter --dry-run`; `python scripts/plan_tool_batch.py --count 10`; `python scripts/test_tool.py --id TOOL_ID`; `python scripts/integrate_tool.py --id TOOL_ID`; `python scripts/verify_tool_templates.py`; full Python tests and `node --test scripts/project.test.mjs scripts/tool-framework.test.mjs`. Full command schemas, evidence/promotion order, explicit scoped exit codes and known limitations are in the guide.
+
+**Testing results:** 123 Python tests (96 existing + 27 new) passed; all 21 Node tests (10 existing + 11 new) passed. Both neutral template fixtures passed structural checks, 6 total actual logic cases and 12 real browser cases (48 assertions). All four unchanged released pages passed structural plus 12 real browser cases (41 assertions): Social Counter 4, Excel 3, Text Cleanser 3, Stream Roulette 2. Browser engine: Edge 156.0.4314.58; Node 24.22.1; Python 3.14.4. Tests used temporary neutral fixtures, never implemented Case Converter or modified released pages. Integration fixture proposals passed real Git patch checks for LF and CRLF and reject stale/scaffold evidence.
+
+**Scope honesty:** browser tests execute actual DOM and JavaScript via isolated installed Chromium/CDP, block external HTTP(S) and simulate clipboard/download APIs without touching host clipboard/Downloads. They do not certify visual layout, assistive technology, real OS clipboard permissions, remote provider availability or new live publication. Released tools lack the new isolated logic adapter, so their reports explicitly have logic NOT RUN and overall PARTIAL even when selected structural/browser layers pass. Empty/missing/scaffold suites never imply PASS. Specialist async/file/security/timer logic needs separately designed tests; generic logic is deterministic synchronous JSON-compatible computation, not an untrusted-code sandbox.
+
+**Reports/dashboard:** four existing tracking report schemas and the dashboard remain unchanged. New ignored `reports/tool-tests/<id>.json` bind source, cases, manifest, tool metadata and runner hashes; integration requires nonempty passing layers no older than 24 hours. Registry remains 93 total, 4 RELEASED, 20 READY, 68 PLANNED, 1 BLOCKED; milestone 4/25 (16%). Next queue candidate Case Converter; PDF Compressor feasibility blocker remains. Dashboard test totals stay unavailable under its existing schema, not fabricated from other reports. Both actual Desktop and Start menu shortcuts were launched sequentially from an unrelated working directory and each completed full project status successfully. The GUI displayed current counts, 4/25 (16%), Case Converter first in the queue, the PDF Compressor blocker, four fresh PASS reports and explicit unavailable functional-test totals. Shortcut bytes, targets, arguments, working directories and AppUserModelID were independently read back and match Task 3; no installation/modification occurred.
+
+**Validation/continuation:** full status succeeded through both launchers with no errors/warnings. All 123 Python and 21 Node tests passed again after final code review. Final delivery uses a reviewed local feature-branch commit after full validation and privacy/ignored-file checks; the final report records its actual hash. No remote delivery is included. After committing use `python scripts/project_status.py --check-only`, bind current local provenance and Reload Saved Data to preserve a clean tree; a full dashboard refresh legitimately changes the generated handoff snapshot. Do not push, merge, move/delete checkout, recreate shortcuts, begin Task 5 or add public utilities during Task 4.
+
+**Files:** added contract/guide, `templates/` (page, input variants, fragment CSS/UI and README), six framework Python command/module files plus template verifier, two Node workers and Node unit suite, Python framework tests and four existing-tool browser profiles. Updated `.gitignore`, AGENTS, architecture, master plan, roadmap, progress narrative, decisions, changelog, README, scripts README and this handoff. No generated reports, development bundles, machine settings, private paths or credentials are committed.
+
+### Generated local status snapshot
+
+<!-- GENERATED:STATUS:START -->
+Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
+
+- Milestone: 25 released tools; 4 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 20; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 4; DEPRECATED: 0.
+- Current registered tool task: none; see manual session notes for infrastructure work.
+- Next ready tool: Case Converter.
+- Git branch: feat/reusable-tool-framework.
+- Latest commit observed before generation: 73f5eea1c4d3b67490894cc2fe2855b9bc6c46d4.
+- Working tree at snapshot: Dirty.
+- Push/deployment status: UNKNOWN; this offline command does not verify either.
+
+### Recorded recent completions
+
+These are registry verification records, not new tests or tasks executed by this generator.
+- AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
+- Free Stream Roulette: RELEASED, evidence dated 2026-10-31.
+- Social Media Character Counter & Live Previewer: RELEASED, evidence dated 2026-10-31.
+- Excel Formula Sandbox & Analyzer: RELEASED, evidence dated 2026-10-31.
+
+### Known tool blockers
+- PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
+
+### Outstanding automated validation
+- registry-validation: PASS (0 errors, 0 warnings).
+- project-consistency: PASS (0 errors, 0 warnings).
+- tool-verification: PASS (0 errors, 0 warnings).
+
+### Uncommitted changes (repository-relative)
+- `M ` .gitignore
+- `M ` AGENTS.md
+- `M ` ARCHITECTURE.md
+- `M ` CHANGELOG.md
+- `M ` DECISIONS.md
+- `M ` PROGRESS_TRACKER.md
+- `M ` PROJECT_MASTER_PLAN.md
+- `M ` README.md
+- `M ` ROADMAP.md
+- `MM` SESSION_HANDOFF.md
+- `A ` TOOL_CONTRACT.md
+- `AM` TOOL_DEVELOPMENT_GUIDE.md
+- `MM` scripts/README.md
+- `A ` scripts/create_tool.py
+- `A ` scripts/integrate_tool.py
+- `AM` scripts/plan_tool_batch.py
+- `A ` scripts/test_tool.py
+- `A ` scripts/tool-framework.test.mjs
+- `A ` scripts/tool-tests/browser.mjs
+- `A ` scripts/tool-tests/runner.mjs
+- `A ` scripts/tool_framework.py
+- `A ` scripts/tool_homepage.py
+- `A ` scripts/verify_tool_templates.py
+- `A ` templates/README.md
+- `A ` templates/fragments/base.css
+- `A ` templates/fragments/tool-ui.js
+- `A ` templates/structured-input.html
+- `A ` templates/text-input.html
+- `A ` templates/tool-page.html
+- `AM` tests/test_tool_framework.py
+- `A ` tests/tools/excel-sandbox/browser.cases.json
+- `A ` tests/tools/social-counter/browser.cases.json
+- `A ` tests/tools/streaming-roulette/browser.cases.json
+- `A ` tests/tools/text-cleaner/browser.cases.json
+
+Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
+<!-- GENERATED:STATUS:END -->
+
+---
+
+## Historical Task 3 local Project Control Dashboard (2026-10-31, Europe/London)
 
 **Status:** Task 3 is implemented, verified and integrated into `main` through [PR #7](https://github.com/Juster06/micro-tools-hub/pull/7), merged at `4af5349e06906da0219667f17549b62ff62e5c32`. The original active checkout remains in place and is synchronized to main. Task 2.5's verified base was `bdf4de0e20808f1e160f36e99005fd3114ae035e`; local implementation history is preserved under `checkpoint/task3-local-before-publication`.
 
@@ -26,41 +119,10 @@
 
 **Limits/continuation:** Windows desktop Python 3.10+ with Tcl/Tk; standard library only. Git optional; Node required only for compatibility tests. No screen-reader certification or general cross-platform GUI certification. Test totals/durations are unavailable in current report contracts; command output lasts for the current window. Read `scripts/DASHBOARD.md` for troubleshooting and module extension rules. Task 3 integration is complete; await separately scoped Task 4 instructions. Identify the containing documentation checkpoint with `git log -1 --format="%H %s"`; its generated snapshot necessarily predates its own commit. Keep the active checkout in place on main. Full refreshes may legitimately update the generated handoff; check-only validation updates local reports without modifying documents. Remote merge was verified independently; no website deployment verification is claimed by the offline dashboard.
 
-### Generated local status snapshot
+### Historical snapshot
 
-<!-- GENERATED:STATUS:START -->
-Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
+The single generated local snapshot now belongs to the latest Task 4 section above.
 
-- Milestone: 25 released tools; 4 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 20; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 4; DEPRECATED: 0.
-- Current registered tool task: none; see manual session notes for infrastructure work.
-- Next ready tool: Case Converter.
-- Git branch: main.
-- Latest commit observed before generation: 4af5349e06906da0219667f17549b62ff62e5c32.
-- Working tree at snapshot: Dirty.
-- Push/deployment status: UNKNOWN; this offline command does not verify either.
-
-### Recorded recent completions
-
-These are registry verification records, not new tests or tasks executed by this generator.
-- AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
-- Free Stream Roulette: RELEASED, evidence dated 2026-10-31.
-- Social Media Character Counter & Live Previewer: RELEASED, evidence dated 2026-10-31.
-- Excel Formula Sandbox & Analyzer: RELEASED, evidence dated 2026-10-31.
-
-### Known tool blockers
-- PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
-
-### Outstanding automated validation
-- registry-validation: PASS (0 errors, 0 warnings).
-- project-consistency: PASS (0 errors, 0 warnings).
-- tool-verification: PASS (0 errors, 0 warnings).
-
-### Uncommitted changes (repository-relative)
-- ` M` SESSION_HANDOFF.md
-
-Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
-<!-- GENERATED:STATUS:END -->
 
 ---
 

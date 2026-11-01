@@ -1,5 +1,9 @@
 # Development roadmap
 
+## Framework readiness — Task 4
+
+Reusable templates, safe staged scaffolding, functional checks and validated homepage patch proposals are available. Use `python scripts/plan_tool_batch.py --count 10` to propose existing READY work in sequence; proposals are not authorization to build or publish a batch. See `TOOL_DEVELOPMENT_GUIDE.md`. Next major task is separately scoped Task 5, Case Converter recommended; no tool status/count changed during Task 4.
+
 Source of inventory, status, priority, dependencies, and order: `TOOL_REGISTRY.json`. Run `node scripts/project.mjs sync` after changing it. The complete proposal mapping is in `audit/BACKLOG_RECONCILIATION.md`.
 
 ## Priority and effort conventions

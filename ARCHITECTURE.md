@@ -1,5 +1,19 @@
 # Architecture
 
+## Task 4 development framework
+
+The framework is development-only and leaves the existing public homepage, four released pages, registry and dashboard implementation unchanged. `TOOL_CONTRACT.md` defines new-tool requirements and legacy/specialist exceptions; `TOOL_DEVELOPMENT_GUIDE.md` gives the full workflow.
+
+- `scripts/tool_framework.py`: shared registry lookup, safe paths, template expansion, exclusive creation/rollback, ordered planning, structure validation, test discovery/hashing and freshness gates.
+- `scripts/create_tool.py`: six-file ignored development bundles from READY entries; `--dry-run` writes nothing. Canonical routes are populated only by a deliberate developer promotion after actual implementation.
+- `templates/`: text/structured input variants and CSS/UI fragments expanded into standalone HTML. No shared runtime or frontend build dependency.
+- `scripts/tool_homepage.py` and `integrate_tool.py`: strict minimal homepage patch proposals, current functional/audit gates, no automatic application; legacy cards are preserved exactly.
+- `scripts/test_tool.py` and `tool-tests/`: independently scoped structural, deterministic Node logic and optional real Chromium/CDP interaction checks. Existing Task 2 reports retain their schemas; tool reports live in ignored `reports/tool-tests/`. Source/cases/manifest/registry/runner hashes and a 24-hour gate prevent stale integration evidence.
+- `scripts/plan_tool_batch.py`: read-only machine-readable proposals using existing sequence/dependencies; specialist/dependency/blocked/released classifications and filename estimates, no time estimates.
+- `scripts/verify_tool_templates.py`, `tests/test_tool_framework.py`, `scripts/tool-framework.test.mjs`, `tests/tools/*/browser.cases.json`: neutral temporary fixtures, negative safety tests and unchanged released-page regression profiles.
+
+Python 3.10+ standard library handles framework commands; Node 22.4+ and an installed Chromium browser are needed for optional logic/interaction execution. Only trusted repository scripts are executed. Clipboard/download APIs are simulated in browser tests; external HTTP(S) is blocked. The generic logic adapter is synchronous and DOM-free; specialist async/file/crypto interfaces need explicit additional design and tests. Empty suites/scaffolds cannot produce functional PASS. No command advances lifecycle, pushes, merges or deploys. Dashboard counts/queue/milestones still derive from the unchanged registry; separate tool-test reports are not silently substituted for unavailable dashboard test totals.
+
 Verified baseline: 2026-10-31, source revision `1cf6a8ae0973918c95b6bf4a56b0a9708ace35f0`. Evidence: `audit/BASELINE_VERIFICATION.json`. This management change leaves the runtime HTML pages and domain configuration unchanged.
 
 ## Runtime structure

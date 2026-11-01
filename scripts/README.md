@@ -1,5 +1,21 @@
 # Automated project tracking
 
+## Reusable tool framework commands
+
+These development commands are separate from the existing tracking workflow below. They never promote registry statuses or publish tools. See `../TOOL_DEVELOPMENT_GUIDE.md` for schemas, promotion/evidence gates and a dry-run example.
+
+| Command | Result |
+| --- | --- |
+| `python scripts/create_tool.py --id case-converter --dry-run` | Validate/propose six ignored bundle files without writes |
+| `python scripts/create_tool.py --id TOOL_ID` | Create a new READY development scaffold; no canonical/public page |
+| `python scripts/plan_tool_batch.py --count 10` | Ordered JSON proposal only; optional `--output reports/batch-plans/plan.json` |
+| `python scripts/test_tool.py --id TOOL_ID` | Explicit structural/logic/browser scopes, separate ignored tool report |
+| `python scripts/integrate_tool.py --id TOOL_ID` | Eligible canonical tool's proposed homepage patch only; existing legacy card NO_CHANGE |
+| `python scripts/verify_tool_templates.py` | Temporary neutral text/structured implementation fixtures; no registered utility |
+| `node --test scripts/project.test.mjs scripts/tool-framework.test.mjs` | Existing compatibility and new logic-adapter unit suites |
+
+Generator, planner, integration and tool-test entry points accept `--root PATH`; the neutral template verifier uses its own temporary root. Logic/browser tests require Node 22.4+; browser interaction also requires installed Chromium (Edge/Chrome; optional `--browser PATH` or `EDB_TEST_BROWSER`). No npm packages. Missing execution support is NOT RUN/UNKNOWN, not PASS. Clipboard/download APIs are simulated and external HTTP(S) blocked in headless tests. Existing tracking commands still require only Python and do not run JavaScript. `reports/tool-tests/`, template reports and optional batch/patch outputs stay ignored. Development bundles are ignored under `development/`.
+
 The existing Windows launcher now opens the [local Project Control Dashboard](DASHBOARD.md), retaining verified Desktop/Start menu shortcut targets. It runs this same workflow; it is not a second tracking engine. See [Windows launcher instructions](WINDOWS_LAUNCHER.md) for shortcut installation and manual pinning.
 
 Use **Python 3.10+**, with its standard library only. These commands are development utilities, not a website build or backend. No credentials, network connection, third-party packages, analytics, scheduled task, or JavaScript execution is required.

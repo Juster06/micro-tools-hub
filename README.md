@@ -1,5 +1,11 @@
 # Everyday Digital Box — WebUtils Hub
 
+## Reusable utility development
+
+Task 4 adds development-only scaffolding, templates, functional checks, homepage patch previews and ordered batch proposals. Read the [utility contract](TOOL_CONTRACT.md) and [developer guide](TOOL_DEVELOPMENT_GUIDE.md) before implementing a tool. Start with `python scripts/plan_tool_batch.py --count 10` and `python scripts/create_tool.py --id case-converter --dry-run`. These commands do not implement or publish Case Converter. Task 5 is the next separately scoped task.
+
+Python 3.10+ standard library runs the generator/planner/structural checks; Node 22.4+ and an installed Chromium browser enable actual logic/interaction tests. Tool users need only their browser. Public website, GitHub repository and existing dashboard shortcuts remain unchanged.
+
 **Small tools. Everyday wins.**
 
 Everyday Digital Box is a collection of free, focused browser utilities for everyday writing, spreadsheet work, social content, and entertainment discovery. The website is branded **WebUtils Hub**, and its GitHub repository is named **micro-tools-hub**.

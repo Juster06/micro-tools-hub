@@ -2,3 +2,5 @@
 /reports/
 __pycache__/
 *.py[cod]
+# Scaffolds are development artifacts, never part of a website publication.
+/development/
