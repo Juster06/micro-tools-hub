@@ -232,7 +232,179 @@
     "Only recorded Edge engine executed. Live OS clipboard APIs simulated; download Blob inspected in memory; no OS save dialog, IME or screen-reader certification. Existing legacy tools have no isolated logic adapters; selected structure/browser scopes passed."
   ],
   "test_harness_note": "First live run correctly displayed Clipboard unavailable; the scratch assertion omitted the word unavailable. Assertion corrected to the actual truthful manual-copy guidance and the entire live suite rerun successfully. Public implementation was unchanged.",
-  "release_metadata_publication": "First implementation deployment and live source/behavior verified before lifecycle transition. The Live hub label and registry update require a separately verified subsequent deployment; final handoff records that result.",
+  "release_metadata_publication": {
+    "result": "PASS",
+    "commit": "4b45af339e84ce2e4499a4afe2117137b4d9a2b2",
+    "reviewed_tree": "d38e4c99ab6c31241383bfd5d03f9cdad9c28313",
+    "expected_parent": "97a0912a9f6e917c4d6457e856bed45fbc325450",
+    "method": "Connected GitHub Git data API: exact staged blob/tree identities checked; normal single-parent commit; main update expected old head with force=false. Fetched back and advanced local main only after ancestry, parent, complete tree, index and working-file equality checks; no reset or working-file overwrite.",
+    "bounded_attempts": 4,
+    "verified": {
+      "attempt": 4,
+      "checked_at": "2026-11-01T04:19:12.101705+00:00",
+      "deployments": [
+        {
+          "id": 41272555186,
+          "head_sha": "4b45af339e84ce2e4499a4afe2117137b4d9a2b2",
+          "head_branch": "main",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Juster06/micro-tools-hub/actions/runs/41272555186",
+          "created_at": "2026-11-01T04:18:07Z",
+          "updated_at": "2026-11-01T04:18:40Z"
+        }
+      ],
+      "pages": [
+        {
+          "path": "index.html",
+          "url": "https://everydaydigitalbox.com/",
+          "http_status": 200,
+          "source_sha256": "5b8cd29dcc705934de3e6762a4de878deefe88d38ea349d407ba771a77f71c38",
+          "live_sha256": "5b8cd29dcc705934de3e6762a4de878deefe88d38ea349d407ba771a77f71c38",
+          "source_matches": true,
+          "etag": "\"6ae6bd9a-3da7\"",
+          "checked_at": "2026-11-01T04:19:12.572435+00:00"
+        },
+        {
+          "path": "case-converter/index.html",
+          "url": "https://everydaydigitalbox.com/case-converter/",
+          "http_status": 200,
+          "source_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+          "live_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+          "source_matches": true,
+          "etag": "\"6ae6bd9a-523c\"",
+          "checked_at": "2026-11-01T04:19:13.773622+00:00"
+        }
+      ],
+      "registry": {
+        "http_status": 200,
+        "matches": true,
+        "case_status": "RELEASED",
+        "released_count": 5
+      }
+    },
+    "live_browser_after_release_metadata": {
+      "started_at": "2026-11-01T04:19:16.000Z",
+      "scope": "Actual HTTPS public pages in isolated Edge; clipboard success/denial simulated; download Blob captured in memory, no OS clipboard/save-dialog or screen-reader certification.",
+      "checks": [
+        {
+          "name": "Public homepage has released availability and Live label",
+          "result": "PASS"
+        },
+        {
+          "name": "Public homepage loads and Case Converter card is visible",
+          "result": "PASS"
+        },
+        {
+          "name": "Real homepage card navigation reaches public Case Converter",
+          "result": "PASS"
+        },
+        {
+          "name": "Canonical slash route loads same Case Converter interface",
+          "result": "PASS"
+        },
+        {
+          "name": "Live uppercase conversion; original preserved",
+          "result": "PASS"
+        },
+        {
+          "name": "Live lowercase conversion; original preserved",
+          "result": "PASS"
+        },
+        {
+          "name": "Live title conversion; original preserved",
+          "result": "PASS"
+        },
+        {
+          "name": "Live sentence conversion; original preserved",
+          "result": "PASS"
+        },
+        {
+          "name": "Live capitalize conversion; original preserved",
+          "result": "PASS"
+        },
+        {
+          "name": "Live alternating conversion; original preserved",
+          "result": "PASS"
+        },
+        {
+          "name": "Live inverse conversion; original preserved",
+          "result": "PASS"
+        },
+        {
+          "name": "Unicode character/word/line statistics update",
+          "result": "PASS"
+        },
+        {
+          "name": "Public production copy handler succeeds with simulated clipboard",
+          "result": "PASS"
+        },
+        {
+          "name": "Public copy denial reports truthful failure",
+          "result": "PASS"
+        },
+        {
+          "name": "Production UTF-8 download Blob/filename/bytes/revocation verified in memory",
+          "result": "PASS"
+        },
+        {
+          "name": "Clear resets input/output/mode/counts/focus",
+          "result": "PASS"
+        },
+        {
+          "name": "Native CDP Tab and Enter operate conversion controls",
+          "result": "PASS"
+        },
+        {
+          "name": "375px mobile usable controls and no horizontal overflow",
+          "result": "PASS"
+        },
+        {
+          "name": "No uncaught JavaScript errors/rejections in live Case Converter",
+          "result": "PASS"
+        },
+        {
+          "name": "Back to Hub reaches actual public homepage",
+          "result": "PASS"
+        },
+        {
+          "name": "Existing public excel-sandbox accessible",
+          "result": "PASS",
+          "title": "Excel Formula Sandbox & Analyzer"
+        },
+        {
+          "name": "Existing public social-counter accessible",
+          "result": "PASS",
+          "title": "Social Media Character Counter & Live Previewer | WebUtils Hub"
+        },
+        {
+          "name": "Existing public text-cleaner accessible",
+          "result": "PASS",
+          "title": "AI Text Footprint Cleanser"
+        },
+        {
+          "name": "Existing public streaming-roulette accessible",
+          "result": "PASS",
+          "title": "Free Legal Streaming Roulette & Finder"
+        }
+      ],
+      "result": "PASS",
+      "browser": "Edg/156.0.4314.58",
+      "homepage_availability": "released",
+      "clipboard_denial_message": "Clipboard unavailable. Result selected; press Ctrl+C (or ⌘C) to copy.",
+      "finished_at": "2026-11-01T04:19:29.426Z"
+    },
+    "final_registry_counts": {
+      "total": 93,
+      "RELEASED": 5,
+      "TESTED": 0,
+      "READY": 19,
+      "PLANNED": 68,
+      "BLOCKED": 1,
+      "milestone": "5/25 = 20%"
+    },
+    "checkpoint": "A subsequent documentation-only commit records these already-observed results. Public HTML, registry and tool source remain identical."
+  },
   "protected_public_sources": [
     {
       "path": "excel-sandbox/index.html",
