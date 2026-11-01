@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased — Duplicate Line Remover (Task 6, local only, 2026-11-01)
+
+- Used Task 4 dry run and real text scaffold, implemented in the ignored bundle and deliberately promoted the actual standalone source/tests. No shared template change.
+- Added first-occurrence Set-based matching with case/trim comparison options, separate blank removal and deterministic post-deduplication sorting. Retained lines preserve original text; LF/CRLF/CR, Unicode, trailing records and all statistics have documented exact rules.
+- Added live updates with immediate invalidation, copy success/denial and revision guards, UTF-8 download/URL cleanup, Clear/default reset, labels/keyboard/mobile/fallback styling and explicit 100,000 UTF-16-unit rejection without truncation.
+- Added exact-output framework fixtures and additional full-limit/invalid-input/real browser tests; recorded actual local visual/source evidence. Only Duplicate Line Remover becomes TESTED, publication null; five released sources/cards, CNAME, management framework, dashboard and shortcut definitions are preserved.
+- Final regression, gated homepage integration and actual native dashboard checks are recorded in the latest handoff. No push, PR, merge, deploy, RELEASED transition or Task 7.
+
+
 ## Released — Case Converter (Task 5, 2026-11-01)
 
 - Merged PR #9 normally as `97a0912a9f6e917c4d6457e856bed45fbc325450`; preserved the original local feature branch and safely fast-forwarded main. Both reviewed feature commits have tree `792bd602b4a1d2fa7fc3907914531ba155ebd610`.

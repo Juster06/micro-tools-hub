@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Remove repeated lines with controllable matching rules.">
+  <meta name="color-scheme" content="dark">
+  <title>Duplicate Line Remover — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+body { background:radial-gradient(ellipse at 85% 0%,#312e8126,transparent 45%),#020617; }
+.container { max-width:1200px; } .topbar { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.topbar .back-link { margin:0; text-decoration:none; font-size:.875rem; } .brand { font-size:.85rem; font-weight:600; color:#cbd5e1; }
+.hero { padding:22px 0 12px; } .eyebrow { color:#a5b4fc; font-weight:650; } h1 { font-size:clamp(2rem,5vw,3.1rem); letter-spacing:-.045em; line-height:1.15; }
+.description { margin-bottom:10px; } .privacy { color:#a5b4fc; font-size:.85rem; } .options { padding:18px 20px; margin:12px 0 20px; background:#0f172a; border-radius:16px; }
+.option-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 24px; }
+.option { display:flex; align-items:flex-start; gap:12px; padding:10px 6px; margin:0; cursor:pointer; font-size:.9rem; }
+.option input { width:20px; height:20px; flex:none; margin:2px 0; padding:0; accent-color:#818cf8; }
+.option small { display:block; margin-top:5px; font-weight:400; line-height:1.5; color:#94a3b8; }
+.toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:16px 0 22px; } .live { margin:0; font-size:.8rem; color:#94a3b8; }
+.editor { padding:0; overflow:hidden; } .editor-top { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:18px 20px; border-bottom:1px solid #334155; }
+.editor-top label { margin:0; font-size:.95rem; } .tag { color:#a5b4fc; font-size:.72rem; border:1px solid #334155; border-radius:6px; padding:4px 8px; }
+.editor textarea { border:0; border-radius:0; background:#080f21; min-height:300px; padding:20px; line-height:1.8; font-size:.95rem; }
+.editor-foot { padding:14px 20px; border-top:1px solid #334155; font-size:.8rem; color:#94a3b8; } .editor-foot.actions { margin:0; }
+.statistics { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin:20px 0; }
+.stat { padding:14px 16px; border:1px solid #334155; border-radius:12px; background:#0f172a; min-width:0; }
+.stat dt { font-size:.74rem; line-height:1.5; color:#94a3b8; } .stat dd { margin:7px 0 0; font-size:1.6rem; font-weight:650; color:#e2e8f0; overflow-wrap:anywhere; font-variant-numeric:tabular-nums; }
+.feedback { min-height:50px; } #toolStatus { color:#cbd5e1; } .rules { margin-top:20px; } .rules summary { cursor:pointer; font-weight:600; min-height:30px; }
+.rules-content { display:grid; grid-template-columns:1fr 1fr; gap:24px; padding-top:12px; color:#94a3b8; font-size:.85rem; line-height:1.8; }
+.rules-content h2 { color:#c7d2fe; font-size:.95rem; margin:14px 0 6px; } .rules-content p { margin:6px 0; }
+footer { border-top:1px solid #1e293b; margin-top:28px; } .skip-link { position:absolute; top:8px; left:18px; transform:translateY(-160%); background:#4338ca; color:white; padding:10px; z-index:10; } .skip-link:focus { transform:none; }
+@media(max-width:700px) { .option-grid,.rules-content { grid-template-columns:1fr; } .statistics { grid-template-columns:repeat(2,minmax(0,1fr)); } .stat:last-child { grid-column:1/-1; } .editor textarea { min-height:240px; } .brand { font-size:.7rem; } .hero { padding-top:12px; } }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased">
+  <a href="#toolInput" class="skip-link">Skip to text input</a>
+  <header class="border-b border-slate-800"><div class="container topbar">
+    <a href="../index.html" class="back-link text-indigo-300">← Back to Hub</a><span class="brand">Everyday Digital Box</span>
+  </div></header>
+  <main class="container">
+    <section class="hero" aria-labelledby="pageTitle">
+      <p class="eyebrow">Text &amp; writing tools</p>
+      <h1 id="pageTitle">Duplicate Line Remover<span style="color:#818cf8">.</span></h1>
+      <p class="description">Remove repeated lines instantly while keeping your text organized.</p>
+      <p class="privacy">Your text is processed in your browser.</p>
+    </section>
+    <fieldset class="options" aria-describedby="comparisonHelp"><legend>Matching &amp; output options</legend>
+      <div class="option-grid">
+        <label class="option" for="ignoreCase"><input id="ignoreCase" type="checkbox"><span>Case-insensitive matching<small>Match Apple and apple; keep the first spelling.</small></span></label>
+        <label class="option" for="trimComparison"><input id="trimComparison" type="checkbox"><span>Ignore surrounding whitespace<small>Compare trimmed lines; keep the original spaces.</small></span></label>
+        <label class="option" for="removeBlankLines"><input id="removeBlankLines" type="checkbox"><span>Remove blank lines<small>Remove empty and whitespace-only lines separately.</small></span></label>
+        <label class="option" for="sort"><input id="sort" type="checkbox"><span>Sort results alphabetically<small>Sort retained lines by the selected comparison key.</small></span></label>
+      </div>
+      <p id="comparisonHelp" class="guidance">All options start off. Keep the first occurrence and original order. Matching options never trim or change retained text.</p>
+    </fieldset>
+    <div class="toolbar"><button id="runBtn" type="button" class="primary">Remove duplicates</button><p class="live">Updates as you type or change an option</p></div>
+    <div class="panels">
+      <section class="panel editor" aria-label="Original input">
+        <div class="editor-top"><label for="toolInput">Your original lines</label><span id="inputState" class="tag">Empty input</span></div>
+        <textarea id="toolInput" rows="11" spellcheck="false" placeholder="apple&#10;banana&#10;apple&#10;orange&#10;banana" aria-describedby="inputHelp countingHelp"></textarea>
+        <div class="editor-foot" id="inputHelp">Original stays unchanged · <span id="inputSize">0 / 100,000 UTF-16 units</span></div>
+      </section>
+      <section class="panel editor" aria-label="Cleaned result">
+        <div class="editor-top"><label for="toolOutput">Cleaned lines</label><span id="outputState" class="tag">No result yet</span></div>
+        <textarea id="toolOutput" rows="11" readonly spellcheck="false" placeholder="Your unique lines will appear here." aria-describedby="toolStatus"></textarea>
+        <div class="editor-foot actions"><button id="copyBtn" type="button" class="primary" disabled>Copy result</button><button id="downloadBtn" type="button" disabled>Download .txt</button><button id="clearBtn" type="button">Clear all</button></div>
+      </section>
+    </div>
+    <dl class="statistics" aria-label="Line removal statistics">
+      <div class="stat"><dt>Original lines</dt><dd id="originalCount">0</dd></div>
+      <div class="stat"><dt>Retained lines</dt><dd id="retainedCount">0</dd></div>
+      <div class="stat"><dt>Duplicates removed</dt><dd id="duplicateCount">0</dd></div>
+      <div class="stat"><dt>Blank lines removed</dt><dd id="blankCount">0</dd></div>
+      <div class="stat"><dt>Total removed</dt><dd id="removedCount">0</dd></div>
+    </dl>
+    <div class="feedback"><p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Add lines to get started.</p></div>
+    <details class="panel rules"><summary>Matching rules, line counts &amp; privacy</summary><div class="rules-content">
+      <div><h2>Keep the first occurrence exactly</h2><p>Default matching is case-sensitive and whitespace-sensitive. Later matching lines are duplicates. Case-insensitive matching uses JavaScript’s native Unicode lowercase conversion on each comparison key; this is not full Unicode case folding or locale-specific matching. ß and ss stay distinct. Accents and combining characters are never stripped or normalized.</p>
+      <h2>Whitespace &amp; blank lines</h2><p>Ignore surrounding whitespace uses JavaScript trim() for comparison only, including tabs and Unicode whitespace such as non-breaking spaces. Retained text is never trimmed. Blank means empty or whitespace-only by the same trim() rule; zero-width space is not blank. Remove blank lines runs before duplicate detection, so those removals are counted only as blanks.</p><p>With blank removal off, keep the first distinct blank line under the selected matching rules; additional matching blanks count as duplicates.</p></div>
+      <div><h2 id="countingHelp">Line endings &amp; counts</h2><p>LF, CRLF and CR separate lines. Empty input has zero lines; each separator in nonempty input starts another line, including a trailing blank. Output uses LF. Counts describe retained logical records, so one retained empty line has an empty text result but a retained count of one. Copy and download are disabled when the result has no characters.</p>
+      <h2>Deterministic sorting</h2><p>Sorting is optional and happens after deduplication. Compare the selected keys lexicographically by UTF-16 code units, with earlier occurrences first for equal keys. This is a predictable alphabetical-style order, not locale-aware collation or natural numeric sorting. Original retained text is unchanged.</p>
+      <h2>Local processing &amp; limits</h2><p>Limit: 100,000 UTF-16 code units. Larger input stays intact and shows an error. Your text is not uploaded, logged or stored. The page and Tailwind Play CDN styling may require network requests; text processing does not. Copy depends on browser permissions; downloads are UTF-8 .txt files.</p></div>
+    </div></details>
+  </main>
+  <footer class="container">Everyday Digital Box · Small tools. Everyday wins.</footer>
+<script id="edb-tool-metadata">window.EDB_META = {"id": "duplicate-line-remover", "name": "Duplicate Line Remover", "category": "text"};</script>
+<script id="edb-tool-logic">
+(() => {
+  'use strict';
+  const LIMIT = 100000;
+  const OPTION_KEYS = ['ignoreCase', 'trimComparison', 'removeBlankLines', 'sort'];
+  function countLines(text) {
+    if (typeof text !== 'string') throw new TypeError('Text must be a string.');
+    return text.length === 0 ? 0 : (text.match(/\r\n|\r|\n/g) || []).length + 1;
+  }
+  function run(input, options = {}) {
+    if (typeof input !== 'string') throw new TypeError('Text must be a string.');
+    if (input.length > LIMIT) throw new RangeError('Input exceeds 100,000 UTF-16 units. Shorten your text; the original is unchanged.');
+    if (!options || typeof options !== 'object' || Array.isArray(options)) throw new TypeError('Options must be an object.');
+    for (const key of Object.keys(options)) {
+      if (!OPTION_KEYS.includes(key) || typeof options[key] !== 'boolean') throw new TypeError('Matching options must be supported booleans.');
+    }
+    const lines = input.length ? input.split(/\r\n|\r|\n/) : [];
+    const seen = new Set(), retained = [];
+    let removedDuplicates = 0, removedBlankLines = 0;
+    for (const line of lines) {
+      if (options.removeBlankLines && line.trim().length === 0) { removedBlankLines++; continue; }
+      let key = options.trimComparison ? line.trim() : line;
+      if (options.ignoreCase) key = key.toLowerCase();
+      if (seen.has(key)) { removedDuplicates++; continue; }
+      seen.add(key);
+      retained.push({text: line, key, index: retained.length});
+    }
+    if (options.sort) retained.sort((a, b) => a.key < b.key ? -1 : a.key > b.key ? 1 : a.index - b.index);
+    return {text: retained.map(line => line.text).join('\n'), originalLines: lines.length,
+      retainedLines: retained.length, removedDuplicates, removedBlankLines,
+      totalRemoved: removedDuplicates + removedBlankLines};
+  }
+  window.EDB_TOOL = Object.freeze({isScaffold: false, allowEmpty: true, limit: LIMIT, run, countLines});
+})();
+</script>
+<script id="edb-tool-ui">
+(() => {
+  'use strict';
+  const get = id => document.getElementById(id);
+  const input = get('toolInput'), output = get('toolOutput'), copy = get('copyBtn'), download = get('downloadBtn');
+  const error = get('toolError'), status = get('toolStatus'), run = get('runBtn');
+  const options = ['ignoreCase', 'trimComparison', 'removeBlankLines', 'sort'].map(get);
+  const resultCounts = ['retainedCount', 'duplicateCount', 'blankCount', 'removedCount'];
+  const format = value => value.toLocaleString('en-US');
+  let revision = 0, timer, composing = false;
+  const tell = message => { status.textContent = message; };
+  function invalidate() {
+    clearTimeout(timer); revision++;
+    output.value = ''; copy.disabled = download.disabled = true;
+    error.hidden = true; error.textContent = '';
+    resultCounts.forEach(id => { get(id).textContent = '—'; });
+    get('outputState').textContent = 'No current result';
+  }
+  function updateOriginal() {
+    get('inputSize').textContent = format(input.value.length) + ' / 100,000 UTF-16 units';
+    get('originalCount').textContent = input.value.length > window.EDB_TOOL.limit ? '—' : format(window.EDB_TOOL.countLines(input.value));
+    get('inputState').textContent = input.value.length > window.EDB_TOOL.limit ? 'Over limit' : input.value.length ? 'Original preserved' : 'Empty input';
+  }
+  function clean() {
+    invalidate(); updateOriginal();
+    if (composing) { tell('Finish composing to update the result.'); return; }
+    try {
+      const settings = Object.fromEntries(options.map(option => [option.id, option.checked]));
+      const result = window.EDB_TOOL.run(input.value, settings);
+      output.value = result.text;
+      const counts = [result.retainedLines, result.removedDuplicates, result.removedBlankLines, result.totalRemoved];
+      resultCounts.forEach((id, index) => { get(id).textContent = format(counts[index]); });
+      copy.disabled = download.disabled = result.text.length === 0;
+      get('outputState').textContent = input.value.length ? 'Current result' : 'No result yet';
+      tell(!input.value.length ? 'Ready. Add lines to get started.' :
+        'Kept ' + format(result.retainedLines) + ' of ' + format(result.originalLines) + ' lines. Removed ' + format(result.removedDuplicates) + ' duplicates and ' + format(result.removedBlankLines) + ' blanks.' +
+        (result.text.length ? '' : ' The result has no characters to copy or download.'));
+    } catch (problem) {
+      error.textContent = problem instanceof Error ? problem.message : 'Could not finish. Review your input.';
+      error.hidden = false; tell('No current result. Your original text is unchanged.');
+    }
+  }
+  function schedule() {
+    invalidate(); updateOriginal();
+    if (composing) { tell('Finish composing to update the result.'); return; }
+    if (!input.value.length || input.value.length > window.EDB_TOOL.limit) { clean(); return; }
+    tell('Updating result…'); timer = setTimeout(clean, 120);
+  }
+  input.addEventListener('input', event => {
+    if (event.isComposing) { invalidate(); updateOriginal(); tell('Finish composing to update the result.'); return; }
+    schedule();
+  });
+  input.addEventListener('compositionstart', () => { composing = true; invalidate(); run.disabled = true; });
+  input.addEventListener('compositionend', () => { composing = false; run.disabled = false; clean(); });
+  options.forEach(option => option.addEventListener('change', schedule));
+  run.addEventListener('click', clean);
+  get('clearBtn').addEventListener('click', () => {
+    composing = false; run.disabled = false; input.value = ''; options.forEach(option => { option.checked = false; });
+    clean(); tell('Cleared. All options reset. Ready for new lines.'); input.focus();
+  });
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const current = revision, value = output.value;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(value);
+      if (current === revision) tell('Text copied.');
+    } catch {
+      if (current === revision) { output.focus(); output.select(); tell('Clipboard unavailable. Result selected; press Ctrl+C (or ⌘C) to copy.'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(new Blob([output.value], {type: 'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = 'duplicate-lines-cleaned.txt';
+      document.body.append(link); link.click(); link.remove();
+      tell('UTF-8 text download requested. Check your browser’s downloads.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+  clean();
+})();
+</script>
+</body>
+</html>
