@@ -64,6 +64,18 @@ Task 5 was merged through [PR #9](https://github.com/Juster06/micro-tools-hub/pu
 
 [Duplicate Line Remover](duplicate-line-remover/index.html) keeps the first unique line with optional case-insensitive matching, surrounding-whitespace comparison, blank removal and deterministic sorting. It preserves original retained text, shows five actual line statistics, updates live, and supports copy/UTF-8 download/Clear. See [rules, limits and tests](duplicate-line-remover/README.md) and [release audit](audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json), with original local evidence retained. [PR #10](https://github.com/Juster06/micro-tools-hub/pull/10) was merged, and actual public behavior plus exact deployed source identity passed on 2026-11-01 before the RELEASED transition. [Open the live tool](https://everydaydigitalbox.com/duplicate-line-remover/). Its hub card uses the established Live presentation. Six tools are released; milestone 6/25 (24%).
 
+## Task 7 — three local tested tools, publication pending
+
+These tools are implemented and independently tested on the local Task 7 feature branch. They are **not released or published**. Their local hub cards say **Tested · publication pending**; the six existing released tools and 6/25 (24%) milestone remain unchanged.
+
+| Local tool | Function and exact rules |
+| --- | --- |
+| [Text Sorter](text-sorter/index.html) | Stable lexical/numeric line sorting, explicit invalid-number/blank policy, copy and UTF-8 download. [Rules/tests](text-sorter/README.md). |
+| [Slug Generator](slug-generator/index.html) | Unicode/ASCII slugs with documented accent/normalization policies. [Rules/tests](slug-generator/README.md). |
+| [Find and Replace](find-and-replace/index.html) | Literal replacement preview, match counts, Apply and one-level Undo. [Rules/tests](find-and-replace/README.md). |
+
+Selection and independent test/evidence workflow: [Task 7 development plan](audit/TASK_7_DEVELOPMENT_PLAN.md). Open these pages from the unchanged active checkout; remote URLs have not been published. No push, PR, merge or deployment is part of this local task.
+
 ## Available tools
 
 | Tool | Purpose | Open the tool |

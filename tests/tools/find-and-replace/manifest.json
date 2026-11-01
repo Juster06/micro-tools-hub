@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "find-and-replace",
+  "canonical_path": "find-and-replace/index.html",
+  "template": "text",
+  "requires_specialized_implementation": false,
+  "purpose": "Framework identity and independent test adapter; lifecycle is defined only by TOOL_REGISTRY.json."
+}

@@ -1477,7 +1477,7 @@
       "category": "text",
       "description": "Sort text lines using explicit ordering rules.",
       "directory_path": "text-sorter",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -1489,12 +1489,40 @@
         "Empty-line policy",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-01",
+      "notes": "Task 7 local tested utility; exact rules/defaults/limits in tool README and source-bound audit. Publication pending; no deployment authorized.",
       "sequence_rank": 3,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "d83e9afdd2f80c456fe9d4a534c45053dfc77b1c",
+        "source_sha256": "018f431ad20d178eb16b1b1d4782f6a31ca47f5b0ea2986c4d859c3d5529b3cf",
+        "evidence_path": "audit/TEXT_SORTER_VERIFICATION.json",
+        "test_scope": [
+          "Exact independent logic and full-limit/error fixtures",
+          "Real local Edge interactions, stale-state/privacy checks, keyboard and 320/375/768/1440 layouts",
+          "Desktop/narrow screenshot review; clipboard/download/composition simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "toolMode",
+        "caseSensitive",
+        "trimComparison",
+        "removeBlankLines",
+        "inputUnitsCount",
+        "originalLinesCount",
+        "retainedLinesCount",
+        "invalidNumericCount"
+      ]
     },
     {
       "id": "text-reverser",
@@ -1527,7 +1555,7 @@
       "category": "text",
       "description": "Preview and apply literal text replacements safely.",
       "directory_path": "find-and-replace",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -1539,12 +1567,40 @@
         "Match count and undo",
         "Empty-search guard"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-01",
+      "notes": "Task 7 local tested utility; exact rules/defaults/limits in tool README and source-bound audit. Publication pending; no deployment authorized.",
       "sequence_rank": 5,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "588f761e819ce9a9ae04732584bea5b7ce8ccb3d",
+        "source_sha256": "b6a0d254ee8de1047bec187c58e2aea71c67c00cc4734bc48f523cd347f9e058",
+        "evidence_path": "audit/FIND_AND_REPLACE_VERIFICATION.json",
+        "test_scope": [
+          "Exact independent logic and full-limit/error fixtures",
+          "Real local Edge interactions, stale-state/privacy checks, keyboard and 320/375/768/1440 layouts",
+          "Desktop/narrow screenshot review; clipboard/download/composition simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "findText",
+        "replaceText",
+        "caseSensitive",
+        "applyBtn",
+        "undoBtn",
+        "inputUnitsCount",
+        "outputUnitsCount",
+        "matchesCount"
+      ]
     },
     {
       "id": "slug-generator",
@@ -1552,7 +1608,7 @@
       "category": "text",
       "description": "Create URL-friendly slugs from text with documented Unicode rules.",
       "directory_path": "slug-generator",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -1564,12 +1620,37 @@
         "Hyphen cleanup",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-01",
+      "notes": "Task 7 local tested utility; exact rules/defaults/limits in tool README and source-bound audit. Publication pending; no deployment authorized.",
       "sequence_rank": 4,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "65d47800bc74a9023690d67c2aa7f856b151f918",
+        "source_sha256": "682769f856e500f5db53dc6781eeedfb1486a3bec7f7c35fc4cb7119b0a90ea8",
+        "evidence_path": "audit/SLUG_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Exact independent logic and full-limit/error fixtures",
+          "Real local Edge interactions, stale-state/privacy checks, keyboard and 320/375/768/1440 layouts",
+          "Desktop/narrow screenshot review; clipboard/download/composition simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "toolMode",
+        "stripAccents",
+        "inputUnitsCount",
+        "outputUnitsCount",
+        "segmentsCount"
+      ]
     },
     {
       "id": "csv-json-converter",

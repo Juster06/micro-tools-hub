@@ -1,0 +1,190 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-01",
+  "source_revision": "588f761e819ce9a9ae04732584bea5b7ce8ccb3d",
+  "browser": "Edg/156.0.4314.58",
+  "scope": "Local standalone functional checks, actual Chromium DOM, desktop/narrow screenshot review. Publication NOT VERIFIED. Clipboard and composition simulated; production UTF-8 download Blob captured in memory. External HTTP(S) blocked.",
+  "pages": [
+    {
+      "path": "find-and-replace/index.html",
+      "source_sha256": "b6a0d254ee8de1047bec187c58e2aea71c67c00cc4734bc48f523cd347f9e058",
+      "checks": [
+        "33 exact JSON logic fixtures, every setting, combinations, Unicode/line rules, statistics, empty/invalid/oversized input",
+        "18 real browser cases / 54 assertions, including 320/375/768/1440 widths",
+        "9 additional independent Node logic tests: exact full-limit fixtures, invalid input/options, immutability and tool-specific policies",
+        "12 extended browser cases: stale results/actions/counts, rapid input/options, delayed clipboard completion, UTF-8 bytes/filename/revocation/failure, composition, transport/storage probes, labels/keyboard and tool-specific limits",
+        "Actual 1440px desktop and 320px mobile full-page screenshots reviewed; 375/768 screenshots captured with overflow/current-output checks. CDN blocked verifies fallback CSS."
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "find-and-replace",
+    "generated_at": "2026-11-01T21:39:06+00:00",
+    "input_hash": "cec5ae5ee3d4f8b7db5e4191b62e4f3aea702daecd803604a1f6356a49e82227",
+    "source_sha256": "b6a0d254ee8de1047bec187c58e2aea71c67c00cc4734bc48f523cd347f9e058",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 33,
+        "failed": 0,
+        "assertions": 33,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 18,
+        "failed": 0,
+        "assertions": 54,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "status": "PASS"
+  },
+  "additional_node_result": {
+    "passed": 21,
+    "failed": 0,
+    "logic_tests": 9,
+    "browser_tests": 12
+  },
+  "test_commands": [
+    "python scripts/test_tool.py --id find-and-replace",
+    "node --test --test-concurrency=1 tests/tools/find-and-replace/logic.test.mjs tests/tools/find-and-replace/extended-browser.test.mjs"
+  ],
+  "limitations": [
+    "Recorded Edge engine only; viewport emulation, not physical-device or screen-reader certification",
+    "Clipboard/composition simulated; downloads inspected in memory, not OS clipboard/IME/save-dialog certification",
+    "Host boundary fixtures are not universal performance benchmarks",
+    "No publication evidence or release claim"
+  ],
+  "initial_test_findings": "Initial new preview UI arrow-function syntax error was caught and fixed. Incorrect ASCII segment-count and full-limit fixture length were corrected against documented rules. Initial guards prevented READY entries with canonical source; lifecycle/promotion was staged explicitly. Final source whitespace was cleaned before source commits. Fresh canonical/Node reruns passed without changing existing framework/tests/assertions/timeouts.",
+  "integration_strategy": "Existing homepage gate requires all other canonical routes already integrated. Only new Task 7 directories are promoted one at a time from owned staging/cache; no shared gate change. Original six source pages/cards/evidence and active checkout/shortcut definitions remain protected.",
+  "final_canonical_tool_report": {
+    "schema_version": 1,
+    "tool_id": "find-and-replace",
+    "generated_at": "2026-11-01T21:44:36+00:00",
+    "input_hash": "bec59d7b35542f8ca5ab443b12330e7a53ab2ec2f0fa062cb541c9882fe5fcd0",
+    "source_sha256": "b6a0d254ee8de1047bec187c58e2aea71c67c00cc4734bc48f523cd347f9e058",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 33,
+        "failed": 0,
+        "assertions": 33,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 18,
+        "failed": 0,
+        "assertions": 54,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "status": "PASS"
+  },
+  "final_regression": {
+    "checked_at": "2026-11-01T21:46:45.454472+00:00",
+    "python": {
+      "passed": 123,
+      "failed": 0
+    },
+    "node": {
+      "passed": 158,
+      "failed": 0,
+      "skipped": 0,
+      "execution": "All existing and new suites, --test-concurrency=1; existing assertions/timeouts unchanged"
+    },
+    "released_tool_framework_browser": {
+      "passed": 56,
+      "assertions": 242,
+      "failed": 0,
+      "scope": "Six released tools; legacy isolated logic remains NOT RUN/overall PARTIAL"
+    },
+    "template_verification": {
+      "logic_passed": 6,
+      "browser_passed": 12,
+      "assertions": 48
+    },
+    "project_status": {
+      "status": "PASS",
+      "errors": 0,
+      "warnings": 0
+    },
+    "dashboard": {
+      "result": "PASS",
+      "desktop": {
+        "result": "PASS",
+        "checked_at": "2026-11-01T21:46:14.103646+00:00",
+        "actual_shortcut": "Desktop",
+        "unrelated_cwd": true,
+        "workflow_exit_code": 0,
+        "project_status": "PASS",
+        "native_counts": {
+          "total": 93,
+          "released": 6,
+          "tested": 3,
+          "ready": 15,
+          "planned": 68,
+          "blocked": 1
+        },
+        "milestone": "6/25 (24%)",
+        "validation_screen": "Four current PASS reports; functional totals unavailable under existing schema"
+      },
+      "start_menu": {
+        "result": "PASS",
+        "checked_at": "2026-11-01T21:46:45.217449+00:00",
+        "actual_shortcut": "Start menu",
+        "unrelated_cwd": true,
+        "workflow_exit_code": 0,
+        "project_status": "PASS",
+        "native_counts": {
+          "total": 93,
+          "released": 6,
+          "tested": 3,
+          "ready": 15,
+          "planned": 68,
+          "blocked": 1
+        },
+        "milestone": "6/25 (24%)",
+        "validation_screen": "Four current PASS reports; functional totals unavailable under existing schema"
+      },
+      "shortcut_definitions": "Both byte-identical and read back unchanged; no installation or registry edits",
+      "functional_test_totals": "Unavailable under unchanged report schema"
+    },
+    "integration": "Three independent actual hub/back/search tests, six cases total, plus unchanged released-tool navigation suites; all passed in full Node suite. Integration reruns produced empty patches.",
+    "privacy_preservation": "PASS: complete 35-file allowlist; credentials/personal paths/artifacts/whitespace scan; six protected sources/cards/evidence/CNAME, other 90 entries, shared framework/dashboard/launcher and existing tests unchanged."
+  },
+  "homepage_integration": {
+    "browser_tests": 2,
+    "passed": 2,
+    "availability": "tested",
+    "label": "Tested · publication pending",
+    "publication": null,
+    "idempotence": "Empty patch after separate gated application; no existing card altered"
+  },
+  "interface_declaration": "Final registry expected_interface_ids enumerates actual controls/statistics; all structural checks pass without warnings. Source/framework unchanged."
+}
