@@ -1,5 +1,19 @@
 # Session handoff
 
+## Latest session — Task 7 final integration and independent release (2026-11-01, Europe/London)
+
+**Status:** PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%). Reviewed published feature `2434104f0b0f7b1b66e2041370c77700c6f1508e` and original local feature `6ceb3288fcad6eb10d3d1d5b8e7af1774c43d16d` share full tree `361cc2cf355e27c773bb1ff55593292b5f59dc30`. All four local commits remain intact. Local main safely fast-forwarded to the merge; no reset, force update, checkout move/replacement/deletion or history rewrite.
+
+**Independent publication/source:** current successful Pages build logs confirm checkout main, source ., destination ./_site via GitHub-managed Jekyll. All three canonical public URLs returned HTTP 200 and their exact approved normalized whole HTML hashes before lifecycle changes. Live public DSL cases plus independent stability/numeric/Unicode/literal/Apply/Undo/privacy/export/keyboard/mobile/navigation checkpoints passed per tool; six prior routes remain accessible with unchanged public source. Original implementation audits retained; new per-tool release audits bind merge revision, dated genuine publication and scoped actual results. Clipboard simulated, production UTF-8 Blob captured in memory, external delivery/TLS enabled; no OS clipboard/IME/Save-dialog or all-browser certification.
+
+**Premerge validation:** fresh Python 123/123, Node 158/158 sequentially, all three independent tool scopes, six released-tool framework browsers 56/242 assertions, templates 6 logic/12 browser/48 assertions and complete project status passed with zero errors/warnings. Full document-generation workflow also passed on an isolated exact-commit copy. GitHub had no CI check results; these are actual local outcomes. Assertions/timeouts/shared framework unchanged. Final release-state regression now also passed: Python 123/123, Node 158/158 sequentially without skips; all three canonical suites and strict lifecycle-aware hub tests, six previous released-tool framework browsers 56 cases/242 assertions plus their additional Node tests, templates 6 logic/12 browser/48 assertions, registry and complete project status PASS with zero errors/warnings. All nine approved source HTML files remain unchanged. Existing Duplicate Line Remover global inventory assertion includes the new released batch; no behavior assertion or timeout was weakened.
+
+**Release metadata:** only independently qualified entries/cards advance; approved source HTML is untouched. Preserve other 90 registry entries, original audits and prior release evidence/CNAME, existing six cards, framework/templates/dashboard/launcher and shortcut identities. Publication of these reviewed metadata changes uses exact blob/tree identities, expected main head/parent and force=false; independently verify the subsequent Pages deployment and public Live labels/registry/source equality before completion. Existing CLI Git credentials are unavailable; owner explicitly authorizes connected GitHub publication.
+
+**Next major task:** finish only authorized Task 7 release-state regression, native Desktop and Start menu launches, guarded metadata publication and independent final deployment/public agreement, then clean synchronized main. No Task 8 or other utility is authorized.
+
+### Historical Task 7 local implementation checkpoint
+
 ## Latest session — Task 7 LOCAL BATCH COMPLETE: three utilities tested (2026-11-01, Europe/London)
 
 **Status:** locally implemented Text Sorter, Slug Generator, and Find and Replace on `feat/task-7-three-tool-batch`, from clean freshly fetched main `5d331d671df4f9f17647f9adad3c8ac9debd19ef`. Planner selected existing READY/P1/text entries at ranks 3/4/5, no unmet prerequisites, only existing Tailwind Play CDN styling. Preferred Word Frequency Counter/Whitespace Cleaner are not registered candidates; no new entries or priorities. See `audit/TASK_7_DEVELOPMENT_PLAN.md` for exact selection, acceptance policies and workflow.
@@ -111,21 +125,21 @@
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 25 released tools; 6 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 15; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 3; RELEASED: 6; DEPRECATED: 0.
+- Milestone: 25 released tools; 9 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 15; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 9; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Text Reverser.
-- Git branch: feat/task-7-three-tool-batch.
-- Latest commit observed before generation: 588f761e819ce9a9ae04732584bea5b7ce8ccb3d.
+- Git branch: main.
+- Latest commit observed before generation: d3ddb6de807913c05832e24a77797f033b353497.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
-- Text Sorter: TESTED, evidence dated 2026-11-01.
-- Slug Generator: TESTED, evidence dated 2026-11-01.
-- Find and Replace: TESTED, evidence dated 2026-11-01.
+- Text Sorter: RELEASED, evidence dated 2026-11-01.
+- Slug Generator: RELEASED, evidence dated 2026-11-01.
+- Find and Replace: RELEASED, evidence dated 2026-11-01.
 - Duplicate Line Remover: RELEASED, evidence dated 2026-11-01.
 - Case Converter: RELEASED, evidence dated 2026-11-01.
 - AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
@@ -151,11 +165,14 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` find-and-replace/README.md
 - ` M` index.html
 - ` M` slug-generator/README.md
+- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
+- ` M` tests/tools/slug-generator/integration-browser.test.mjs
+- ` M` tests/tools/text-sorter/integration-browser.test.mjs
 - ` M` text-sorter/README.md
-- `??` audit/FIND_AND_REPLACE_VERIFICATION.json
-- `??` audit/SLUG_GENERATOR_VERIFICATION.json
-- `??` audit/TASK_7_DEVELOPMENT_PLAN.md
-- `??` audit/TEXT_SORTER_VERIFICATION.json
+- `??` audit/FIND_AND_REPLACE_RELEASE_VERIFICATION.json
+- `??` audit/SLUG_GENERATOR_RELEASE_VERIFICATION.json
+- `??` audit/TEXT_SORTER_RELEASE_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

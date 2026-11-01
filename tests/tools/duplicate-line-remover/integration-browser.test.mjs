@@ -16,7 +16,9 @@ else {
   assert.equal(publication.source_matches,true);
   assert.equal(publication.url,'https://everydaydigitalbox.com/duplicate-line-remover/');
 }
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,toolStatus==='RELEASED'?6:5);
+const task7Ids=['text-sorter','slug-generator','find-and-replace'];
+const task7Released=registry.tools.filter(t=>task7Ids.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,(toolStatus==='RELEASED'?6:5)+task7Released);
 const availability=toolStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

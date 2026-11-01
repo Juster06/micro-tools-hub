@@ -14,14 +14,14 @@ Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` f
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 3 |
-| RELEASED | 6 |
+| TESTED | 0 |
+| RELEASED | 9 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 84 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **25 released tools**. Progress: 6/25 (24.0%); remaining: 19.
+Current growth milestone: **25 released tools**. Progress: 9/25 (36.0%); remaining: 16.
 
 ### Tools by category
 
@@ -55,9 +55,9 @@ Next ready tool: **Text Reverser**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| Text Sorter | TESTED | 2026-11-01 |
-| Slug Generator | TESTED | 2026-11-01 |
-| Find and Replace | TESTED | 2026-11-01 |
+| Text Sorter | RELEASED | 2026-11-01 |
+| Slug Generator | RELEASED | 2026-11-01 |
+| Find and Replace | RELEASED | 2026-11-01 |
 | Duplicate Line Remover | RELEASED | 2026-11-01 |
 | Case Converter | RELEASED | 2026-11-01 |
 | AI Text Footprint Cleanser | RELEASED | 2026-10-31 |
@@ -70,7 +70,7 @@ The backlog total includes READY and BLOCKED; those rows must not be added again
 
 ## Current development task
 
-Task 7 is a local controlled batch: Text Sorter, Slug Generator and Find and Replace are independently TESTED / REQUIRED_PASSED, with publication pending and no release claim. Planner selection, exact policies and source-bound evidence are in the batch plan/individual audits. Their three cards are integrated locally; existing six releases remain unchanged. Inventory is 93 total, 6 RELEASED, 3 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone remains 6/25 (24%). Actual final regression/dashboard/delivery results are in SESSION_HANDOFF.md. No remote publication or Task 8 is authorized.
+PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%). Final release-state regression, independently verified metadata deployment, native Desktop/Start menu launches and clean synchronized main precede completion. Do not begin Task 8.
 
 ## Recently completed work
 

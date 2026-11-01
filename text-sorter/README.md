@@ -1,6 +1,6 @@
 # Text Sorter
 
-Registry ID: `text-sorter`. Canonical route: `text-sorter/index.html`. Category: text. Task 7 local utility; publication is **not verified**. Lifecycle and current source-bound evidence are recorded in TOOL_REGISTRY.json; no release is claimed here.
+Registry ID: `text-sorter`. Canonical route: `text-sorter/index.html`. Category: text. Task 7 utility released after independent public behavior/deployed-source verification on 2026-11-01. Current lifecycle: RELEASED / REQUIRED_PASSED. [Live tool](https://everydaydigitalbox.com/text-sorter/); [release audit](../audit/TEXT_SORTER_RELEASE_VERIFICATION.json). Original local evidence is retained unchanged.
 
 Put your lines in order, with clear alphabetical and numeric rules.
 
@@ -20,8 +20,14 @@ Run `python scripts/test_tool.py --id text-sorter` and `node --test --test-concu
 
 Browser tests use isolated Edge/Chromium profiles, block external HTTP(S), simulate clipboard success/denial, and capture download Blobs in memory. Composition events are simulated. Mobile checks use viewport emulation at 320 and 375 pixels, plus 768/1440. This is not screen-reader, physical-device, native IME/clipboard/save-dialog or all-browser certification. Limits are bounded host test fixtures, not universal performance guarantees. See the Task 7 plan and audit for final results.
 
-## Task 7 verified local checkpoint
+## Historical Task 7 verified local checkpoint
 
 Lifecycle: TESTED / REQUIRED_PASSED; publication null. Source revision `d83e9afdd2f80c456fe9d4a534c45053dfc77b1c`; normalized HTML SHA-256 `018f431ad20d178eb16b1b1d4782f6a31ca47f5b0ea2986c4d859c3d5529b3cf`. See [scoped audit](../audit/TEXT_SORTER_VERIFICATION.json).
 
 Passed 34 exact framework logic fixtures plus 9 independent Node logic tests; 20 framework browser cases / 47 assertions, 11 extended real browser cases, and 2 actual hub/navigation/search cases (33 browser cases total for this utility). Full project regression: Python 123/123, Node 158/158 sequentially, six released-tool framework browser regressions 56 cases/242 assertions, neutral templates 6 logic/12 browser/48 assertions, project validation zero errors/warnings. All three local hub cards remain publication pending; existing six released tools are unchanged. This checkpoint does not claim deployment or release.
+
+## Verified release
+
+PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%).
+
+This utility independently passed 31 actual public browser cases/checkpoints. Complete public HTML/inline JavaScript/CSS matches its approved hash. Copy APIs were simulated and UTF-8 download Blob/content/bytes/revocation inspected in memory. Release metadata deployment and final local regressions/shortcut results are recorded in the latest handoff and release audit; implementation source remains unchanged. No Task 8 work is authorized.

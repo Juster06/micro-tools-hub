@@ -1,6 +1,6 @@
 # Find and Replace
 
-Registry ID: `find-and-replace`. Canonical route: `find-and-replace/index.html`. Category: text. Task 7 local utility; publication is **not verified**. Lifecycle and current source-bound evidence are recorded in TOOL_REGISTRY.json; no release is claimed here.
+Registry ID: `find-and-replace`. Canonical route: `find-and-replace/index.html`. Category: text. Task 7 utility released after independent public behavior/deployed-source verification on 2026-11-01. Current lifecycle: RELEASED / REQUIRED_PASSED. [Live tool](https://everydaydigitalbox.com/find-and-replace/); [release audit](../audit/FIND_AND_REPLACE_RELEASE_VERIFICATION.json). Original local evidence is retained unchanged.
 
 Preview literal replacements, keep your original, and apply only when ready.
 
@@ -20,8 +20,14 @@ Run `python scripts/test_tool.py --id find-and-replace` and `node --test --test-
 
 Browser tests use isolated Edge/Chromium profiles, block external HTTP(S), simulate clipboard success/denial, and capture download Blobs in memory. Composition events are simulated. Mobile checks use viewport emulation at 320 and 375 pixels, plus 768/1440. This is not screen-reader, physical-device, native IME/clipboard/save-dialog or all-browser certification. Limits are bounded host test fixtures, not universal performance guarantees. See the Task 7 plan and audit for final results.
 
-## Task 7 verified local checkpoint
+## Historical Task 7 verified local checkpoint
 
 Lifecycle: TESTED / REQUIRED_PASSED; publication null. Source revision `588f761e819ce9a9ae04732584bea5b7ce8ccb3d`; normalized HTML SHA-256 `b6a0d254ee8de1047bec187c58e2aea71c67c00cc4734bc48f523cd347f9e058`. See [scoped audit](../audit/FIND_AND_REPLACE_VERIFICATION.json).
 
 Passed 33 exact framework logic fixtures plus 9 independent Node logic tests; 18 framework browser cases / 54 assertions, 12 extended real browser cases, and 2 actual hub/navigation/search cases (32 browser cases total for this utility). Full project regression: Python 123/123, Node 158/158 sequentially, six released-tool framework browser regressions 56 cases/242 assertions, neutral templates 6 logic/12 browser/48 assertions, project validation zero errors/warnings. All three local hub cards remain publication pending; existing six released tools are unchanged. This checkpoint does not claim deployment or release.
+
+## Verified release
+
+PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%).
+
+This utility independently passed 29 actual public browser cases/checkpoints. Complete public HTML/inline JavaScript/CSS matches its approved hash. Copy APIs were simulated and UTF-8 download Blob/content/bytes/revocation inspected in memory. Release metadata deployment and final local regressions/shortcut results are recorded in the latest handoff and release audit; implementation source remains unchanged. No Task 8 work is authorized.

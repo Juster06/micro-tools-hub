@@ -8,9 +8,18 @@ const source=fileURLToPath(new URL('../../../text-sorter/index.html',import.meta
 const registry=JSON.parse(fs.readFileSync(new URL('../../../TOOL_REGISTRY.json',import.meta.url),'utf8'));
 const routes=registry.tools.filter(t=>['IMPLEMENTED','TESTED','RELEASED'].includes(t.status)).map(t=>t.directory_path+'/index.html').sort();
 const caseStatus=registry.tools.find(t=>t.id==='text-sorter').status;
-assert.equal(caseStatus,'TESTED','Task 7 remains locally tested');
-assert.equal(registry.tools.find(t=>t.id==='text-sorter').verification.publication,null);
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,6);
+assert.ok(['TESTED','RELEASED'].includes(caseStatus),'Tool must have source-bound scoped verification');
+const publication=registry.tools.find(t=>t.id==='text-sorter').verification.publication;
+if(caseStatus==='TESTED') assert.equal(publication,null);
+else {
+  assert.equal(publication.http_status,200);
+  assert.equal(publication.source_matches,true);
+  assert.equal(publication.url,'https://everydaydigitalbox.com/text-sorter/');
+  assert.ok(Number.isFinite(Date.parse(publication.checked_at)));
+}
+const batchIds=['text-sorter','slug-generator','find-and-replace'];
+const batchReleased=registry.tools.filter(t=>batchIds.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,6+batchReleased);
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

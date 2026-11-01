@@ -1,0 +1,389 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-01",
+  "source_revision": "d3ddb6de807913c05832e24a77797f033b353497",
+  "browser": "Edg/156.0.4314.58",
+  "scope": "Actual public HTTPS documents loaded with Page.navigate in isolated Edge; external delivery enabled, normal TLS. Exact committed independent browser fixtures executed against public DOM. Clipboard simulated, production UTF-8 Blob captured in memory; no OS clipboard/IME/save-dialog/screen-reader/all-browser certification. Original implementation audit preserved unchanged.",
+  "pages": [
+    {
+      "path": "slug-generator/index.html",
+      "source_sha256": "682769f856e500f5db53dc6781eeedfb1486a3bec7f7c35fc4cb7119b0a90ea8",
+      "checks": [
+        "33 exact JSON logic fixtures, every setting, combinations, Unicode/line rules, statistics, empty/invalid/oversized input",
+        "17 real browser cases / 42 assertions, including 320/375/768/1440 widths",
+        "9 additional independent Node logic tests: exact full-limit fixtures, invalid input/options, immutability and tool-specific policies",
+        "11 extended browser cases: stale results/actions/counts, rapid input/options, delayed clipboard completion, UTF-8 bytes/filename/revocation/failure, composition, transport/storage probes, labels/keyboard and tool-specific limits",
+        "Actual 1440px desktop and 320px mobile full-page screenshots reviewed; 375/768 screenshots captured with overflow/current-output checks. CDN blocked verifies fallback CSS.",
+        "Actual public homepage card, registry route/category and lifecycle label",
+        "Actual homepage card navigation",
+        "Canonical HTTPS route and correct title",
+        "Public committed browser case: initial",
+        "Public committed browser case: live-original",
+        "Public committed browser case: ascii",
+        "Public committed browser case: accents",
+        "Public committed browser case: combined",
+        "Public committed browser case: stats",
+        "Public committed browser case: copy",
+        "Public committed browser case: denied",
+        "Public committed browser case: download",
+        "Public committed browser case: clear",
+        "Public committed browser case: empty",
+        "Public committed browser case: oversized",
+        "Public committed browser case: keyboard-run",
+        "Public committed browser case: layout-320",
+        "Public committed browser case: layout-375",
+        "Public committed browser case: layout-768",
+        "Public committed browser case: layout-1440",
+        "Unicode/lowercase/emoji/punctuation/hyphen joining and exact segment count",
+        "Configured accent preservation on actual public page",
+        "Simulated clipboard success/denial execute production handlers truthfully",
+        "Production UTF-8 Blob exact contents/bytes/MIME/fixed filename/URL revocation in memory",
+        "Native CDP Enter/Tab operate actual public controls",
+        "Actual public desktop/mobile result screenshots, no horizontal overflow",
+        "Actual processing transport/persistence probes empty; markup stays text; no uncaught JS errors",
+        "Actual Back to Hub/search/reset preserves nine correct public routes"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/slug-generator/",
+        "http_status": 200,
+        "checked_at": "2026-11-01T22:52:38.994811+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "integration": {
+    "pr": "https://github.com/Juster06/micro-tools-hub/pull/11",
+    "merge_commit": "d3ddb6de807913c05832e24a77797f033b353497",
+    "merged_at": "2026-11-01T22:51:53Z",
+    "merge_tree": "361cc2cf355e27c773bb1ff55593292b5f59dc30",
+    "base_main": "5d331d671df4f9f17647f9adad3c8ac9debd19ef",
+    "original_local_commit": "6ceb3288fcad6eb10d3d1d5b8e7af1774c43d16d",
+    "published_feature_commit": "2434104f0b0f7b1b66e2041370c77700c6f1508e"
+  },
+  "deployment": {
+    "id": 41359251674,
+    "head_sha": "d3ddb6de807913c05832e24a77797f033b353497",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674",
+    "created_at": "2026-11-01T22:51:56Z",
+    "updated_at": "2026-11-01T22:52:40Z",
+    "configuration": {
+      "branch": "main",
+      "source": ".",
+      "destination": "./_site",
+      "builder": "GitHub-managed Jekyll Pages",
+      "verified_build_job": 125005872009,
+      "log_evidence": [
+        "2026-11-01T22:52:07.5016088Z   ref: main",
+        "2026-11-01T22:52:08.9719584Z   source: .",
+        "2026-11-01T22:52:08.9719795Z   destination: ./_site",
+        "2026-11-01T22:52:14.0031347Z             Source: /github/workspace/.",
+        "2026-11-01T22:52:14.0031816Z        Destination: /github/workspace/./_site"
+      ]
+    }
+  },
+  "public_source": {
+    "path": "slug-generator/index.html",
+    "url": "https://everydaydigitalbox.com/slug-generator/",
+    "http_status": 200,
+    "source_sha256": "682769f856e500f5db53dc6781eeedfb1486a3bec7f7c35fc4cb7119b0a90ea8",
+    "live_sha256": "682769f856e500f5db53dc6781eeedfb1486a3bec7f7c35fc4cb7119b0a90ea8",
+    "source_matches": true,
+    "etag": "\"6ae7c2b2-442d\"",
+    "checked_at": "2026-11-01T22:52:38.994811+00:00"
+  },
+  "public_homepage_source": {
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "source_sha256": "a02d49234ddec8f29f6cc40863c4634f8daca8bd08a5650910bcabc5de28e274",
+    "live_sha256": "a02d49234ddec8f29f6cc40863c4634f8daca8bd08a5650910bcabc5de28e274",
+    "source_matches": true,
+    "etag": "\"6ae7c2b2-49b0\"",
+    "checked_at": "2026-11-01T22:52:38.412593+00:00"
+  },
+  "normalization": "scripts/tracking.py normalized_hash: UTF-8 optional BOM, CRLF to LF, rstrip trailing whitespace, UTF-8 SHA-256. Whole HTML including inline JS/CSS and CDN URL matches, with no transformation exception.",
+  "live_browser": {
+    "started_at": "2026-11-01T22:53:45.553Z",
+    "checks": [
+      {
+        "name": "Actual public homepage card, registry route/category and lifecycle label",
+        "result": "PASS"
+      },
+      {
+        "name": "Actual homepage card navigation",
+        "result": "PASS"
+      },
+      {
+        "name": "Canonical HTTPS route and correct title",
+        "result": "PASS"
+      },
+      {
+        "name": "Public committed browser case: initial",
+        "result": "PASS",
+        "assertions": 4
+      },
+      {
+        "name": "Public committed browser case: live-original",
+        "result": "PASS",
+        "assertions": 2
+      },
+      {
+        "name": "Public committed browser case: ascii",
+        "result": "PASS",
+        "assertions": 1
+      },
+      {
+        "name": "Public committed browser case: accents",
+        "result": "PASS",
+        "assertions": 1
+      },
+      {
+        "name": "Public committed browser case: combined",
+        "result": "PASS",
+        "assertions": 2
+      },
+      {
+        "name": "Public committed browser case: stats",
+        "result": "PASS",
+        "assertions": 2
+      },
+      {
+        "name": "Public committed browser case: copy",
+        "result": "PASS",
+        "assertions": 3
+      },
+      {
+        "name": "Public committed browser case: denied",
+        "result": "PASS",
+        "assertions": 3
+      },
+      {
+        "name": "Public committed browser case: download",
+        "result": "PASS",
+        "assertions": 3
+      },
+      {
+        "name": "Public committed browser case: clear",
+        "result": "PASS",
+        "assertions": 5
+      },
+      {
+        "name": "Public committed browser case: empty",
+        "result": "PASS",
+        "assertions": 2
+      },
+      {
+        "name": "Public committed browser case: oversized",
+        "result": "PASS",
+        "assertions": 5
+      },
+      {
+        "name": "Public committed browser case: keyboard-run",
+        "result": "PASS",
+        "assertions": 1
+      },
+      {
+        "name": "Public committed browser case: layout-320",
+        "result": "PASS",
+        "assertions": 2
+      },
+      {
+        "name": "Public committed browser case: layout-375",
+        "result": "PASS",
+        "assertions": 2
+      },
+      {
+        "name": "Public committed browser case: layout-768",
+        "result": "PASS",
+        "assertions": 2
+      },
+      {
+        "name": "Public committed browser case: layout-1440",
+        "result": "PASS",
+        "assertions": 2
+      },
+      {
+        "name": "Unicode/lowercase/emoji/punctuation/hyphen joining and exact segment count",
+        "result": "PASS"
+      },
+      {
+        "name": "Configured accent preservation on actual public page",
+        "result": "PASS"
+      },
+      {
+        "name": "Simulated clipboard success/denial execute production handlers truthfully",
+        "result": "PASS"
+      },
+      {
+        "name": "Production UTF-8 Blob exact contents/bytes/MIME/fixed filename/URL revocation in memory",
+        "result": "PASS"
+      },
+      {
+        "name": "Native CDP Enter/Tab operate actual public controls",
+        "result": "PASS"
+      },
+      {
+        "name": "Actual public desktop/mobile result screenshots, no horizontal overflow",
+        "result": "PASS"
+      },
+      {
+        "name": "Actual processing transport/persistence probes empty; markup stays text; no uncaught JS errors",
+        "result": "PASS"
+      },
+      {
+        "name": "Actual Back to Hub/search/reset preserves nine correct public routes",
+        "result": "PASS"
+      }
+    ],
+    "failures": [],
+    "result": "PASS",
+    "browser": "Edg/156.0.4314.58",
+    "last_browser_command": "Browser.close",
+    "finished_at": "2026-11-01T22:54:01.727Z"
+  },
+  "previous_evidence": "audit/SLUG_GENERATOR_VERIFICATION.json",
+  "protected_public_sources": [
+    {
+      "id": "duplicate-line-remover",
+      "url": "https://everydaydigitalbox.com/duplicate-line-remover/",
+      "http_status": 200,
+      "approved_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+      "public_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+      "source_matches": true,
+      "checked_at": "2026-11-01T22:53:45.335621+00:00"
+    },
+    {
+      "id": "case-converter",
+      "url": "https://everydaydigitalbox.com/case-converter/",
+      "http_status": 200,
+      "approved_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+      "public_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+      "source_matches": true,
+      "checked_at": "2026-11-01T22:53:45.748594+00:00"
+    },
+    {
+      "id": "social-counter",
+      "url": "https://everydaydigitalbox.com/social-counter/",
+      "http_status": 200,
+      "approved_sha256": "8703dcdc3a4f13c8597022f3338b750f67042f9d2782d996d55e95412844e47b",
+      "public_sha256": "8703dcdc3a4f13c8597022f3338b750f67042f9d2782d996d55e95412844e47b",
+      "source_matches": true,
+      "checked_at": "2026-11-01T22:53:46.228881+00:00"
+    },
+    {
+      "id": "excel-sandbox",
+      "url": "https://everydaydigitalbox.com/excel-sandbox/",
+      "http_status": 200,
+      "approved_sha256": "badb1ccd17302f8006397ff0553b483a3cdcf426bad61976477f4c77908c4191",
+      "public_sha256": "badb1ccd17302f8006397ff0553b483a3cdcf426bad61976477f4c77908c4191",
+      "source_matches": true,
+      "checked_at": "2026-11-01T22:53:46.687391+00:00"
+    },
+    {
+      "id": "text-cleaner",
+      "url": "https://everydaydigitalbox.com/text-cleaner/",
+      "http_status": 200,
+      "approved_sha256": "9c9e0e6a9a9796b73b26f21adb8cffa33a7aa6b2e669b64bfb9ab54972273443",
+      "public_sha256": "9c9e0e6a9a9796b73b26f21adb8cffa33a7aa6b2e669b64bfb9ab54972273443",
+      "source_matches": true,
+      "checked_at": "2026-11-01T22:53:47.490152+00:00"
+    },
+    {
+      "id": "streaming-roulette",
+      "url": "https://everydaydigitalbox.com/streaming-roulette/",
+      "http_status": 200,
+      "approved_sha256": "6f9cb3b2c114e03f545034ef0b1065ae5d4c50b13d9576882cdb5cffe5aef761",
+      "public_sha256": "6f9cb3b2c114e03f545034ef0b1065ae5d4c50b13d9576882cdb5cffe5aef761",
+      "source_matches": true,
+      "checked_at": "2026-11-01T22:53:47.953813+00:00"
+    }
+  ],
+  "premerge_validation": {
+    "python": {
+      "passed": 123,
+      "failed": 0
+    },
+    "node": {
+      "passed": 158,
+      "failed": 0,
+      "execution": "--test-concurrency=1, all existing/new suites; assertions/timeouts unchanged"
+    },
+    "tool_logic": 42,
+    "tool_browser": 30,
+    "released_framework_browser": "56 cases / 242 assertions PASS; legacy isolated logic NOT RUN",
+    "templates": "6 logic + 12 browser / 48 assertions PASS",
+    "status": "PASS; 0 errors/warnings; full document-generation workflow also executed on exact-commit isolated clone"
+  },
+  "limitations": [
+    "Recorded Edge engine only; viewport emulation, not physical-device or screen-reader certification",
+    "Clipboard/composition simulated; downloads inspected in memory, not OS clipboard/IME/save-dialog certification",
+    "Host boundary fixtures are not universal performance benchmarks",
+    "No publication evidence or release claim",
+    "Only recorded Edge/public desktop and viewport emulation; source equality does not independently audit CDN delivery",
+    "GitHub had no CI check runs/status results; actual fresh local regression results are recorded instead"
+  ],
+  "release_metadata_publication": "These actual implementation deployment/live/source gates preceded RELEASED. Release metadata/Live labels require independently verified subsequent deployment before completion.",
+  "final_release_state_regression": {
+    "python": {
+      "passed": 123,
+      "failed": 0
+    },
+    "node": {
+      "passed": 158,
+      "failed": 0,
+      "skipped": 0,
+      "execution": "--test-concurrency=1; all existing/new suites, assertions/timeouts unchanged"
+    },
+    "previous_six_framework_browser": {
+      "passed": 56,
+      "assertions": 242,
+      "failed": 0,
+      "legacy_isolated_logic": "NOT RUN; combined legacy profiles PARTIAL"
+    },
+    "templates": {
+      "logic": 6,
+      "browser": 12,
+      "assertions": 48
+    },
+    "project_status": "PASS; 0 errors/warnings",
+    "source_cards_audits_CNAME_privacy": "Reviewed allowlist; original nine source HTML files, six existing card blocks, prior audits/evidence, other 90 registry entries and shared framework/dashboard/launcher unchanged"
+  },
+  "final_canonical_tool_report": {
+    "schema_version": 1,
+    "tool_id": "slug-generator",
+    "generated_at": "2026-11-01T22:58:34+00:00",
+    "input_hash": "dde7a05b3abe19b575ed9d1ec38403bec43f38c7d66fd7494808d9d99004f281",
+    "source_sha256": "682769f856e500f5db53dc6781eeedfb1486a3bec7f7c35fc4cb7119b0a90ea8",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 33,
+        "failed": 0,
+        "assertions": 33,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 17,
+        "failed": 0,
+        "assertions": 42,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "status": "PASS"
+  },
+  "live_visual_review": "Actual public full-page 1440px desktop and 375px mobile screenshots reviewed, including result/actions/statistics; source identity checked independently by HTTP/hash."
+}

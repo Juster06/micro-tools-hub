@@ -1,5 +1,12 @@
 # Changelog
 
+## Released — Task 7 verified text utilities (2026-11-01)
+
+- PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%).
+- Independently verified each qualifying utility with real public DOM scenarios and exact HTML/inline JS/CSS hashes. Added separate release audits; preserved original implementation audits and six prior sources/cards/evidence/CNAME.
+- Updated only qualifying card availability via the existing gated proposals. Three lifecycle-aware integration headers strictly validate publication evidence; the existing Duplicate Line Remover global inventory assertion now includes the released Task 7 batch. No utility implementation, shared gate or test timeout changed.
+- Final regression, metadata-deployment and native shortcut checkpoints are recorded in the latest handoff. No Task 8.
+
 ## Unreleased — Task 7 local three-tool batch (2026-11-01)
 
 - Planner selected existing READY Text Sorter, Slug Generator and Find and Replace, in registry order. Preferred unregistered candidates were not added. Generated and inspected separate text scaffolds, implemented actual standalone pages, and committed each source/test checkpoint before evidence.

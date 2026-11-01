@@ -10,7 +10,7 @@ Python 3.10+ standard library runs the generator/planner/structural checks; Node
 
 Everyday Digital Box is a collection of free, focused browser utilities for everyday writing, spreadsheet work, social content, and entertainment discovery. The website is branded **WebUtils Hub**, and its GitHub repository is named **micro-tools-hub**.
 
-The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It currently contains six released standalone tools, linked from a searchable dashboard.
+The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It currently contains nine released standalone tools, linked from a searchable dashboard.
 
 ## Project links
 
@@ -47,7 +47,7 @@ On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu l
 ## What the project provides
 
 - A responsive, dark slate and indigo dashboard with searchable tool cards.
-- Six released utilities including Duplicate Line Remover, using vanilla JavaScript for browser processing.
+- Nine released utilities including the Task 7 text tools, using vanilla JavaScript for browser processing.
 - Standalone HTML pages that can be edited or hosted without an application build step.
 - No application backend, database, user accounts, or API keys.
 - Consistent navigation back to the hub from each tool.
@@ -58,28 +58,31 @@ On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu l
 
 [Case Converter](case-converter/index.html) offers uppercase, lowercase, Title Case, Sentence case, Capitalize Words, Alternating Case and Inverse Case, with live character/word/line counts, unchanged original input, Copy, UTF-8 download and Clear. Read [its rules and test scope](case-converter/README.md) before relying on language-specific casing. Input stays in the browser; the limit is 100,000 UTF-16 units.
 
-Task 5 was merged through [PR #9](https://github.com/Juster06/micro-tools-hub/pull/9). [Live Case Converter](https://everydaydigitalbox.com/case-converter/) behavior and deployed source identity were verified on 2026-11-01 before its RELEASED transition. See [release evidence](audit/CASE_CONVERTER_RELEASE_VERIFICATION.json) for deployment, source hash and actual test scope. The hub uses the released “Live” presentation; current inventory is **six released tools**, 6/25 (24%). Use `python scripts/test_tool.py --id case-converter` for scoped regression tests.
+Task 5 was merged through [PR #9](https://github.com/Juster06/micro-tools-hub/pull/9). [Live Case Converter](https://everydaydigitalbox.com/case-converter/) behavior and deployed source identity were verified on 2026-11-01 before its RELEASED transition. See [release evidence](audit/CASE_CONVERTER_RELEASE_VERIFICATION.json) for deployment, source hash and actual test scope. The hub uses the released “Live” presentation; current inventory is **nine released tools**, 9/25 (36%). Use `python scripts/test_tool.py --id case-converter` for scoped regression tests.
 
 ## Duplicate Line Remover — released and live verified
 
-[Duplicate Line Remover](duplicate-line-remover/index.html) keeps the first unique line with optional case-insensitive matching, surrounding-whitespace comparison, blank removal and deterministic sorting. It preserves original retained text, shows five actual line statistics, updates live, and supports copy/UTF-8 download/Clear. See [rules, limits and tests](duplicate-line-remover/README.md) and [release audit](audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json), with original local evidence retained. [PR #10](https://github.com/Juster06/micro-tools-hub/pull/10) was merged, and actual public behavior plus exact deployed source identity passed on 2026-11-01 before the RELEASED transition. [Open the live tool](https://everydaydigitalbox.com/duplicate-line-remover/). Its hub card uses the established Live presentation. Six tools are released; milestone 6/25 (24%).
+[Duplicate Line Remover](duplicate-line-remover/index.html) keeps the first unique line with optional case-insensitive matching, surrounding-whitespace comparison, blank removal and deterministic sorting. It preserves original retained text, shows five actual line statistics, updates live, and supports copy/UTF-8 download/Clear. See [rules, limits and tests](duplicate-line-remover/README.md) and [release audit](audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json), with original local evidence retained. [PR #10](https://github.com/Juster06/micro-tools-hub/pull/10) was merged, and actual public behavior plus exact deployed source identity passed on 2026-11-01 before the RELEASED transition. [Open the live tool](https://everydaydigitalbox.com/duplicate-line-remover/). Its hub card uses the established Live presentation. Nine tools are released; milestone 9/25 (36%).
 
-## Task 7 — three local tested tools, publication pending
+## Task 7 — verified public releases
 
-These tools are implemented and independently tested on the local Task 7 feature branch. They are **not released or published**. Their local hub cards say **Tested · publication pending**; the six existing released tools and 6/25 (24%) milestone remain unchanged.
+PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%).
 
-| Local tool | Function and exact rules |
+| Utility | Release status and rules |
 | --- | --- |
-| [Text Sorter](text-sorter/index.html) | Stable lexical/numeric line sorting, explicit invalid-number/blank policy, copy and UTF-8 download. [Rules/tests](text-sorter/README.md). |
-| [Slug Generator](slug-generator/index.html) | Unicode/ASCII slugs with documented accent/normalization policies. [Rules/tests](slug-generator/README.md). |
-| [Find and Replace](find-and-replace/index.html) | Literal replacement preview, match counts, Apply and one-level Undo. [Rules/tests](find-and-replace/README.md). |
+| [Text Sorter](text-sorter/index.html) | [Live tool](https://everydaydigitalbox.com/text-sorter/) · RELEASED · [Rules/tests](text-sorter/README.md) |
+| [Slug Generator](slug-generator/index.html) | [Live tool](https://everydaydigitalbox.com/slug-generator/) · RELEASED · [Rules/tests](slug-generator/README.md) |
+| [Find and Replace](find-and-replace/index.html) | [Live tool](https://everydaydigitalbox.com/find-and-replace/) · RELEASED · [Rules/tests](find-and-replace/README.md) |
 
-Selection and independent test/evidence workflow: [Task 7 development plan](audit/TASK_7_DEVELOPMENT_PLAN.md). Open these pages from the unchanged active checkout; remote URLs have not been published. No push, PR, merge or deployment is part of this local task.
+Each entry has independent implementation/live/source evidence. Six prior releases and their source/evidence remain unchanged. No additional utility is authorized.
 
 ## Available tools
 
 | Tool | Purpose | Open the tool |
 | --- | --- | --- |
+| Find and Replace | Preview and apply literal text replacements safely. | [Live tool](https://everydaydigitalbox.com/find-and-replace/) · [Source](find-and-replace/index.html) |
+| Slug Generator | Create URL-friendly slugs from text with documented Unicode rules. | [Live tool](https://everydaydigitalbox.com/slug-generator/) · [Source](slug-generator/index.html) |
+| Text Sorter | Sort text lines using explicit ordering rules. | [Live tool](https://everydaydigitalbox.com/text-sorter/) · [Source](text-sorter/index.html) |
 | Duplicate Line Remover | Remove repeated lines with configurable matching and accurate statistics. | [Live tool](https://everydaydigitalbox.com/duplicate-line-remover/) · [Source](duplicate-line-remover/index.html) |
 | Case Converter | Seven text-case transformations with live counts, copy and UTF-8 download. | [Live tool](https://everydaydigitalbox.com/case-converter/) · [Source](case-converter/index.html) |
 | Social Media Character Counter & Live Previewer | Check caption lengths, preview opening lines, and clean spaces before copying. | [Live tool](https://everydaydigitalbox.com/social-counter/) · [Source](social-counter/index.html) |
