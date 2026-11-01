@@ -10,14 +10,14 @@ Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` f
 | Total registered utilities | 93 |
 | IDEA | 0 |
 | PLANNED | 68 |
-| READY | 19 |
+| READY | 18 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 0 |
+| TESTED | 1 |
 | RELEASED | 5 |
 | DEPRECATED | 0 |
-| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 88 |
+| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 87 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
@@ -49,12 +49,13 @@ Current growth milestone: **25 released tools**. Progress: 5/25 (20.0%); remaini
 
 Current registered tool task: **none**. Session infrastructure work is recorded in the manual handoff.
 
-Next ready tool: **Duplicate Line Remover**.
+Next ready tool: **Text Sorter**.
 
 ### Recently verified tools (registry evidence dates)
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
+| Duplicate Line Remover | TESTED | 2026-11-01 |
 | Case Converter | RELEASED | 2026-11-01 |
 | AI Text Footprint Cleanser | RELEASED | 2026-10-31 |
 | Free Stream Roulette | RELEASED | 2026-10-31 |
@@ -66,7 +67,7 @@ The backlog total includes READY and BLOCKED; those rows must not be added again
 
 ## Current development task
 
-Task 5 Case Converter is RELEASED after PR #9 integration, successful GitHub Pages deployment, real public browser checks and matching normalized source on 2026-11-01. Only its lifecycle entry advanced; the original four pages and CNAME are unchanged. Inventory is five released tools and milestone 5/25 (20%). See `audit/CASE_CONVERTER_RELEASE_VERIFICATION.json` and `SESSION_HANDOFF.md` for dated evidence, publication checkpoints, tests and limitations. Do not begin another utility.
+Task 6 Duplicate Line Remover is locally TESTED / REQUIRED_PASSED, with publication unverified and a gated local hub card marked Tested/publication pending. Only its lifecycle entry changed. Five released tools remain unchanged; counts are 93 total, 5 RELEASED, 1 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED; milestone remains 5/25 (20%). Source, exact rules and actual scoped evidence are recorded in its README and audit. Finish the local checkpoint, then await separate PR/review/publication authorization; do not begin Task 7.
 
 ## Recently completed work
 
@@ -87,11 +88,11 @@ Task 5 Case Converter is RELEASED after PR #9 integration, successful GitHub Pag
 ## Next recommended tasks
 
 <!-- GENERATED:NEXT:START -->
-2. **Duplicate Line Remover** — Remove repeated lines with controllable matching rules.
 3. **Text Sorter** — Sort text lines using explicit ordering rules.
 4. **Slug Generator** — Create URL-friendly slugs from text with documented Unicode rules.
 5. **Find and Replace** — Preview and apply literal text replacements safely.
 6. **Text Reverser** — Reverse text by line, word, or grapheme unit.
+7. **JSON Formatter** — Validate, pretty-print and compact JSON locally.
 <!-- GENERATED:NEXT:END -->
 
 Start only after reviewing/synchronizing the management branch. For each utility, finish planning, implementation, testing, homepage integration, and evidence before selecting the next item.

@@ -47,7 +47,7 @@ On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu l
 ## What the project provides
 
 - A responsive, dark slate and indigo dashboard with searchable tool cards.
-- Five released utilities including Case Converter, using vanilla JavaScript for browser processing.
+- Five released utilities and a locally tested Duplicate Line Remover, using vanilla JavaScript for browser processing.
 - Standalone HTML pages that can be edited or hosted without an application build step.
 - No application backend, database, user accounts, or API keys.
 - Consistent navigation back to the hub from each tool.
@@ -59,6 +59,10 @@ On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu l
 [Case Converter](case-converter/index.html) offers uppercase, lowercase, Title Case, Sentence case, Capitalize Words, Alternating Case and Inverse Case, with live character/word/line counts, unchanged original input, Copy, UTF-8 download and Clear. Read [its rules and test scope](case-converter/README.md) before relying on language-specific casing. Input stays in the browser; the limit is 100,000 UTF-16 units.
 
 Task 5 was merged through [PR #9](https://github.com/Juster06/micro-tools-hub/pull/9). [Live Case Converter](https://everydaydigitalbox.com/case-converter/) behavior and deployed source identity were verified on 2026-11-01 before its RELEASED transition. See [release evidence](audit/CASE_CONVERTER_RELEASE_VERIFICATION.json) for deployment, source hash and actual test scope. The hub uses the released “Live” presentation; inventory is **five released tools**, 5/25 (20%). Use `python scripts/test_tool.py --id case-converter` for scoped regression tests.
+
+## Duplicate Line Remover — locally TESTED, publication pending
+
+[Duplicate Line Remover](duplicate-line-remover/index.html) keeps the first unique line with optional case-insensitive matching, surrounding-whitespace comparison, blank removal and deterministic sorting. It preserves original retained text, shows five actual line statistics, updates live, and supports copy/UTF-8 download/Clear. See [rules, limits and tests](duplicate-line-remover/README.md) and [local audit](audit/DUPLICATE_LINE_REMOVER_VERIFICATION.json). Task 6 is local only on `feat/duplicate-line-remover`; its gated hub card says “Tested · publication pending”. No push, PR, merge, deployment or RELEASED claim is included. Five tools remain released and milestone remains 20%.
 
 ## Available tools
 

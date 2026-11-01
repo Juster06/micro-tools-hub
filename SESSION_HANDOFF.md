@@ -1,5 +1,27 @@
 # Session handoff
 
+## Latest session — Task 6 Duplicate Line Remover (2026-11-01, Europe/London)
+
+**Status:** implementation, integration and final required tests complete locally on `feat/duplicate-line-remover`, from clean synchronized main `be89426ebd85ca25a8ac731fda3a5361e95e19c7`. Real source checkpoint `bf1bbcd5153f2e4047de61acd9c2b5390ab4812c` contains standalone source, README and tests. The final delivery checkpoint also records TESTED metadata and audited local hub integration; identify its containing final commit with `git log -1 --format="%H %s"`. No push, PR, merge, deployment or live verification is authorized for Task 6. Preserve the active checkout and installed shortcut targets.
+
+**Functionality/rules:** Set-based first-occurrence retention; options ignoreCase, trimComparison, removeBlankLines and sort all default false. Native Unicode lowercase and trim affect comparison keys only, never retained text. Blank removal precedes duplicate detection with separate counts. Sorting is deterministic UTF-16 lexicographic key order after deduplication, not locale-aware collation. LF/CRLF/CR supported, LF output, empty input zero records, trailing separator another record; one empty retained record has empty output but retained count one. Five statistics are actual transformation results; pending/error counts are unavailable rather than stale. Limit 100,000 UTF-16 units, no silent maxlength truncation, exact oversized original retained. Live debounce 120 ms immediately invalidates obsolete output/actions/counts. Clear resets all options/counters/focus; clipboard announcements use revision guards; UTF-8 Blob downloads revoke URLs even after failure. Full Unicode/line/count/empty-result policies are in the tool README and on-page rules.
+
+**Lifecycle/source:** only the existing Duplicate Line Remover entry changes READY → IMPLEMENTED → TESTED / REQUIRED_PASSED. Publication remains null. Dated scoped source-bound evidence: `audit/DUPLICATE_LINE_REMOVER_VERIFICATION.json`; normalized source SHA-256 `bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6`. Inventory 93 total, 5 RELEASED, 1 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED; milestone 5/25 (20%). Existing five source pages, their release evidence, CNAME, framework/templates, dashboard/launcher code and shortcut identities remain unchanged.
+
+**Tests checkpoint:** 66 framework JSON logic and 22 real Chromium browser cases / 112 assertions passed on canonical source. Additional Node suite passed 25 logic and 12 real browser tests, including all sixteen settings at the limit, 100,001 logical records, large repeats, oversized inputs, rapid changes, delayed clipboard races, download bytes/filename/revocation/failure, simulated composition, transport/persistence probes and keyboard/labels. Actual 1440px desktop and 375px mobile screenshots (including result/actions/counts) reviewed with CDN blocked; inline fallback is usable. Python initial regression 123/123 passed. Final Python 123/123 and complete Node 91/91 passed. Full Node used --test-concurrency=1 after a concurrent run hit CDP control timeouts (79 pass / 12 hook failures); standalone new suites also passed, assertions/timeouts unchanged. Case Converter passed 69 logic and 22 framework browser cases plus its unchanged Node suites; original four passed 12 browser cases / 41 assertions; neutral templates passed 6 logic and 12 browser cases / 48 assertions. Full project validation passed with 0 errors/warnings. New hub integration contributes two real navigation/search cases, bringing this tool to 36 real browser cases (22 DSL + 12 extended + 2 integration).
+
+**Integration:** the Task 4 generator dry run and real six-file scaffold were inspected. The implementation replaces the placeholder and retains the adapter/metadata contract. A real source checkpoint precedes revision evidence. Fresh canonical logic/browser/audit evidence passed the gated homepage proposal. The minimal patch was reviewed, git apply --check passed and it was applied only locally. Its idempotent rerun proposed no content changes. Actual Back to Hub/return/search/reset and six registry-derived routes/count passed. All five old card HTML blocks are preserved exactly; new card remains Tested/publication pending. An early consistency test flagged expected missing hub/generated metadata during promotion; no shared tests or gates were weakened. Fixture selector/default bugs were corrected and actual suites rerun.
+
+**Limitations:** recorded Edge 156.0.4314.58 only; headless isolated profiles, external HTTP(S) blocked, simulated clipboard/download/composition. No actual OS clipboard/save dialog/IME, screen-reader, physical-device or all-browser certification. Native lowercase is not full case folding; sorting is not locale collation; performance limits are scoped host measurements/guards. Legacy tools lack isolated logic adapters, so their scoped structure/browser passes must not be described as full isolated logic PASS. Dashboard functional-test totals remain unavailable under its existing schema.
+
+**Dashboard/preservation:** actual existing Desktop shortcut launched from unrelated cwd and completed full status with exit 0. Native overview displayed 93 total, 5 released, 1 tested, 18 READY, 68 PLANNED, 1 BLOCKED and 5/25 (20%); native validation screen showed four current PASS reports. Both Desktop and Start menu links remain byte-identical, including targets/arguments/root/AppID. Start menu was preserved/read back, not freshly launched in Task 6. Dashboard/launcher code unchanged; do not invent GUI functional-test totals. After final commit use check-only validation plus verified report provenance and Reload Saved Data to preserve a clean tree.
+
+**Final review/delivery:** new standalone page/README, manifest/JSON cases, three tool-specific Node suites and scoped audit. Updated only its registry entry, local hub, root README, changelog, roadmap/progress and this handoff. Existing five releases and evidence/CNAME, shared scripts/templates, prior tests and installed shortcuts unchanged. Final whitespace/privacy/allowlist review and project validation precede the local delivery commit; exact containing commit is obtained with git log. No push, PR, merge or deploy.
+
+**Next major task:** Task 6 local implementation is complete. Await separately authorized GitHub PR preparation/review/integration and genuine live matching-source publication verification. No remaining implementation blocker. Do not push, open a PR, merge, deploy or begin Task 7. Text Sorter is the next READY queue entry only.
+
+### Historical Task 5 integration and release
+
 ## Latest session — Task 5 COMPLETE: Case Converter released and live verified (2026-11-01, Europe/London)
 
 **Status:** PR #9 merged normally at 2026-11-01T04:09:59Z as `97a0912a9f6e917c4d6457e856bed45fbc325450`, tree `792bd602b4a1d2fa7fc3907914531ba155ebd610`. Local main safely fast-forwarded; the original local `feat/case-converter` remains `a6f608dd83d92509d3968bb777d47587395c7ff2`. The API-published feature commit `a6f678d8c4f770bd55eccc8ad493d3aa3ef8b85c` has the identical reviewed tree. No force-push, destructive reset, checkout move or history rewrite.
@@ -46,17 +68,18 @@
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 25 released tools; 5 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 19; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 5; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 18; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 1; RELEASED: 5; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
-- Next ready tool: Duplicate Line Remover.
-- Git branch: main.
-- Latest commit observed before generation: 97a0912a9f6e917c4d6457e856bed45fbc325450.
+- Next ready tool: Text Sorter.
+- Git branch: feat/duplicate-line-remover.
+- Latest commit observed before generation: bf1bbcd5153f2e4047de61acd9c2b5390ab4812c.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
+- Duplicate Line Remover: TESTED, evidence dated 2026-11-01.
 - Case Converter: RELEASED, evidence dated 2026-11-01.
 - AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
 - Free Stream Roulette: RELEASED, evidence dated 2026-10-31.
@@ -78,10 +101,9 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
-- ` M` case-converter/README.md
 - ` M` index.html
-- ` M` tests/tools/case-converter/integration-browser.test.mjs
-- `??` audit/CASE_CONVERTER_RELEASE_VERIFICATION.json
+- `??` audit/DUPLICATE_LINE_REMOVER_VERIFICATION.json
+- `??` tests/tools/duplicate-line-remover/integration-browser.test.mjs
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

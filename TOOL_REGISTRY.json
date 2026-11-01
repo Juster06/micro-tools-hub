@@ -1367,7 +1367,7 @@
       "category": "text",
       "description": "Remove repeated lines with controllable matching rules.",
       "directory_path": "duplicate-line-remover",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -1379,12 +1379,43 @@
         "Whitespace and blank-line options",
         "Copy and counts"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-01",
+      "notes": "Task 6 local implementation and required scoped logic/browser/layout checks passed. First occurrence and original text retained, four options, accurate removal counts, copy/download/clear and 100,000-unit limit. Homepage integration local only; publication unverified. Not RELEASED.",
       "sequence_rank": 2,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "bf1bbcd5153f2e4047de61acd9c2b5390ab4812c",
+        "source_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+        "evidence_path": "audit/DUPLICATE_LINE_REMOVER_VERIFICATION.json",
+        "test_scope": [
+          "66 exact JSON logic cases: all sixteen settings combinations, output and every statistic, first occurrence, LF/CRLF/CR and trailing blanks, Unicode and invalid input",
+          "25 additional Node logic tests: all sixteen settings at 100,000 UTF-16 units, exact unique/repeated/separator/blank/emoji limits, oversized inputs, invalid options, immutable inputs and line counting",
+          "22 real Chromium DSL browser cases / 112 assertions: matching/blank/sort controls, preserved original, counters, copy success/denial, UTF-8 download, Clear, empty state, safe rendering, keyboard and 320/375/768/1440px overflow",
+          "12 extended Chromium cases: stale output/count/action invalidation, rapid input/options, delayed clipboard success/rejection, UTF-8 bytes/filename/revocation including download failure, full-limit repeated lines, oversized text/whitespace recovery, simulated composition, processing transport/persistence probes, missing clipboard and native labels/keyboard",
+          "Manual review of actual canonical 1440px desktop and 375px mobile screenshots, including mobile output/statistics/actions, with CDN blocked to verify inline fallback styling"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "ignoreCase",
+        "trimComparison",
+        "removeBlankLines",
+        "sort",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "originalCount",
+        "retainedCount",
+        "duplicateCount",
+        "blankCount",
+        "removedCount",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "text-difference-checker",

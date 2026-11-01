@@ -1,0 +1,927 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "basic",
+      "input": "apple\nbanana\napple\norange\nbanana",
+      "options": {},
+      "expected": {
+        "text": "apple\nbanana\norange",
+        "originalLines": 5,
+        "retainedLines": 3,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "no-duplicates",
+      "input": "zebra\napple\nbanana",
+      "options": {},
+      "expected": {
+        "text": "zebra\napple\nbanana",
+        "originalLines": 3,
+        "retainedLines": 3,
+        "removedDuplicates": 0,
+        "removedBlankLines": 0,
+        "totalRemoved": 0
+      }
+    },
+    {
+      "id": "every-line-duplicated",
+      "input": "x\ny\nx\ny",
+      "options": {},
+      "expected": {
+        "text": "x\ny",
+        "originalLines": 4,
+        "retainedLines": 2,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "expected": {
+        "text": "",
+        "originalLines": 0,
+        "retainedLines": 0,
+        "removedDuplicates": 0,
+        "removedBlankLines": 0,
+        "totalRemoved": 0
+      }
+    },
+    {
+      "id": "single",
+      "input": "  Apple  ",
+      "options": {},
+      "expected": {
+        "text": "  Apple  ",
+        "originalLines": 1,
+        "retainedLines": 1,
+        "removedDuplicates": 0,
+        "removedBlankLines": 0,
+        "totalRemoved": 0
+      }
+    },
+    {
+      "id": "case-sensitive",
+      "input": "Apple\napple\nAPPLE\nBanana",
+      "options": {},
+      "expected": {
+        "text": "Apple\napple\nAPPLE\nBanana",
+        "originalLines": 4,
+        "retainedLines": 4,
+        "removedDuplicates": 0,
+        "removedBlankLines": 0,
+        "totalRemoved": 0
+      }
+    },
+    {
+      "id": "case-insensitive-first",
+      "input": "Apple\napple\nAPPLE\nBanana",
+      "options": {
+        "ignoreCase": true
+      },
+      "expected": {
+        "text": "Apple\nBanana",
+        "originalLines": 4,
+        "retainedLines": 2,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "whitespace-sensitive",
+      "input": " apple \napple\napple ",
+      "options": {},
+      "expected": {
+        "text": " apple \napple\napple ",
+        "originalLines": 3,
+        "retainedLines": 3,
+        "removedDuplicates": 0,
+        "removedBlankLines": 0,
+        "totalRemoved": 0
+      }
+    },
+    {
+      "id": "trim-comparison-preserves-first",
+      "input": " apple \napple\napple ",
+      "options": {
+        "trimComparison": true
+      },
+      "expected": {
+        "text": " apple ",
+        "originalLines": 3,
+        "retainedLines": 1,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "all-blank-removal",
+      "input": "\t\n \n\n",
+      "options": {
+        "removeBlankLines": true
+      },
+      "expected": {
+        "text": "",
+        "originalLines": 4,
+        "retainedLines": 0,
+        "removedDuplicates": 0,
+        "removedBlankLines": 4,
+        "totalRemoved": 4
+      }
+    },
+    {
+      "id": "distinct-blanks-preserved",
+      "input": "\t\n \n\n\t\n",
+      "options": {},
+      "expected": {
+        "text": "\t\n \n",
+        "originalLines": 5,
+        "retainedLines": 3,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "blank-trim-dedup-first",
+      "input": "\t\n \n\n\t\n",
+      "options": {
+        "trimComparison": true
+      },
+      "expected": {
+        "text": "\t",
+        "originalLines": 5,
+        "retainedLines": 1,
+        "removedDuplicates": 4,
+        "removedBlankLines": 0,
+        "totalRemoved": 4
+      }
+    },
+    {
+      "id": "blank-priority-not-duplicate",
+      "input": "\n\nA\nA\n",
+      "options": {
+        "removeBlankLines": true
+      },
+      "expected": {
+        "text": "A",
+        "originalLines": 5,
+        "retainedLines": 1,
+        "removedDuplicates": 1,
+        "removedBlankLines": 3,
+        "totalRemoved": 4
+      }
+    },
+    {
+      "id": "first-order",
+      "input": "zebra\napple\nbanana\napple",
+      "options": {},
+      "expected": {
+        "text": "zebra\napple\nbanana",
+        "originalLines": 4,
+        "retainedLines": 3,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "sort-utf16",
+      "input": "zebra\napple\nBanana\napple\n10\n2",
+      "options": {
+        "sort": true
+      },
+      "expected": {
+        "text": "10\n2\nBanana\napple\nzebra",
+        "originalLines": 6,
+        "retainedLines": 5,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "endings-lf",
+      "input": "a\nb\na",
+      "options": {},
+      "expected": {
+        "text": "a\nb",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "endings-crlf",
+      "input": "a\r\nb\r\na",
+      "options": {},
+      "expected": {
+        "text": "a\nb",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "endings-cr",
+      "input": "a\rb\ra",
+      "options": {},
+      "expected": {
+        "text": "a\nb",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "mixed-line-endings",
+      "input": "a\rb\r\na\nb\rc",
+      "options": {},
+      "expected": {
+        "text": "a\nb\nc",
+        "originalLines": 5,
+        "retainedLines": 3,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "trailing-separator",
+      "input": "a\na\n",
+      "options": {},
+      "expected": {
+        "text": "a\n",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "leading-separator",
+      "input": "\na\na",
+      "options": {},
+      "expected": {
+        "text": "\na",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "single-newline",
+      "input": "\n",
+      "options": {},
+      "expected": {
+        "text": "",
+        "originalLines": 2,
+        "retainedLines": 1,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "single-crlf",
+      "input": "\r\n",
+      "options": {},
+      "expected": {
+        "text": "",
+        "originalLines": 2,
+        "retainedLines": 1,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "single-space",
+      "input": " ",
+      "options": {},
+      "expected": {
+        "text": " ",
+        "originalLines": 1,
+        "retainedLines": 1,
+        "removedDuplicates": 0,
+        "removedBlankLines": 0,
+        "totalRemoved": 0
+      }
+    },
+    {
+      "id": "empty-removed",
+      "input": " ",
+      "options": {
+        "removeBlankLines": true
+      },
+      "expected": {
+        "text": "",
+        "originalLines": 1,
+        "retainedLines": 0,
+        "removedDuplicates": 0,
+        "removedBlankLines": 1,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "non-latin",
+      "input": "你好\n日本語\nمرحبا\n你好",
+      "options": {},
+      "expected": {
+        "text": "你好\n日本語\nمرحبا",
+        "originalLines": 4,
+        "retainedLines": 3,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "emoji",
+      "input": "😀\n👩‍💻\n😀\n👩‍💻",
+      "options": {},
+      "expected": {
+        "text": "😀\n👩‍💻",
+        "originalLines": 4,
+        "retainedLines": 2,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "accent-insensitive-case-only",
+      "input": "École\nécole\nEcole",
+      "options": {
+        "ignoreCase": true
+      },
+      "expected": {
+        "text": "École\nEcole",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "no-unicode-normalization",
+      "input": "é\né\né",
+      "options": {
+        "ignoreCase": true
+      },
+      "expected": {
+        "text": "é\né",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "not-full-case-fold",
+      "input": "Straße\nSTRASSE\nstraße",
+      "options": {
+        "ignoreCase": true
+      },
+      "expected": {
+        "text": "Straße\nSTRASSE",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "turkish-native-lowercase",
+      "input": "İ\ni̇\ni\nI\nı",
+      "options": {
+        "ignoreCase": true
+      },
+      "expected": {
+        "text": "İ\ni\nı",
+        "originalLines": 5,
+        "retainedLines": 3,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "greek-context-native-lowercase",
+      "input": "ΟΣ\nος\nοσ",
+      "options": {
+        "ignoreCase": true
+      },
+      "expected": {
+        "text": "ΟΣ\nοσ",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "unicode-whitespace-comparison",
+      "input": " apple \napple\n\tapple",
+      "options": {
+        "trimComparison": true
+      },
+      "expected": {
+        "text": " apple ",
+        "originalLines": 3,
+        "retainedLines": 1,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "unicode-whitespace-blank",
+      "input": " \n \n﻿\n​",
+      "options": {
+        "removeBlankLines": true
+      },
+      "expected": {
+        "text": "​",
+        "originalLines": 4,
+        "retainedLines": 1,
+        "removedDuplicates": 0,
+        "removedBlankLines": 3,
+        "totalRemoved": 3
+      }
+    },
+    {
+      "id": "unicode-separators-inside-lines",
+      "input": "a b\na b\nx y",
+      "options": {},
+      "expected": {
+        "text": "a b\nx y",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "safe-keys",
+      "input": "__proto__\nconstructor\ntoString\n__proto__",
+      "options": {},
+      "expected": {
+        "text": "__proto__\nconstructor\ntoString",
+        "originalLines": 4,
+        "retainedLines": 3,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "markup-text",
+      "input": "<img src=x onerror=alert(1)>\n<script>x</script>\n<img src=x onerror=alert(1)>",
+      "options": {},
+      "expected": {
+        "text": "<img src=x onerror=alert(1)>\n<script>x</script>",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "internal-spaces-unchanged",
+      "input": "a  b\na b\n a  b ",
+      "options": {
+        "trimComparison": true
+      },
+      "expected": {
+        "text": "a  b\na b",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "sort-comparison-preserves-spaces",
+      "input": " Zebra \napple\nAPPLE\n banana ",
+      "options": {
+        "ignoreCase": true,
+        "trimComparison": true,
+        "sort": true
+      },
+      "expected": {
+        "text": "apple\n banana \n Zebra ",
+        "originalLines": 4,
+        "retainedLines": 3,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "punctuation-numeric",
+      "input": "1\n01\n1\na!\na?",
+      "options": {},
+      "expected": {
+        "text": "1\n01\na!\na?",
+        "originalLines": 5,
+        "retainedLines": 4,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "null-bytes",
+      "input": "a\u0000b\na\u0000b\nab",
+      "options": {},
+      "expected": {
+        "text": "a\u0000b\nab",
+        "originalLines": 3,
+        "retainedLines": 2,
+        "removedDuplicates": 1,
+        "removedBlankLines": 0,
+        "totalRemoved": 1
+      }
+    },
+    {
+      "id": "combination-0000",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": false,
+        "trimComparison": false,
+        "removeBlankLines": false,
+        "sort": false
+      },
+      "expected": {
+        "text": " b \nB\na\nA\n \n",
+        "originalLines": 8,
+        "retainedLines": 6,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "combination-0001",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": false,
+        "trimComparison": false,
+        "removeBlankLines": false,
+        "sort": true
+      },
+      "expected": {
+        "text": "\n \n b \nA\nB\na",
+        "originalLines": 8,
+        "retainedLines": 6,
+        "removedDuplicates": 2,
+        "removedBlankLines": 0,
+        "totalRemoved": 2
+      }
+    },
+    {
+      "id": "combination-1000",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": true,
+        "trimComparison": false,
+        "removeBlankLines": false,
+        "sort": false
+      },
+      "expected": {
+        "text": " b \nB\na\n \n",
+        "originalLines": 8,
+        "retainedLines": 5,
+        "removedDuplicates": 3,
+        "removedBlankLines": 0,
+        "totalRemoved": 3
+      }
+    },
+    {
+      "id": "combination-1001",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": true,
+        "trimComparison": false,
+        "removeBlankLines": false,
+        "sort": true
+      },
+      "expected": {
+        "text": "\n \n b \na\nB",
+        "originalLines": 8,
+        "retainedLines": 5,
+        "removedDuplicates": 3,
+        "removedBlankLines": 0,
+        "totalRemoved": 3
+      }
+    },
+    {
+      "id": "combination-0100",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": false,
+        "trimComparison": true,
+        "removeBlankLines": false,
+        "sort": false
+      },
+      "expected": {
+        "text": " b \nB\na\nA\n ",
+        "originalLines": 8,
+        "retainedLines": 5,
+        "removedDuplicates": 3,
+        "removedBlankLines": 0,
+        "totalRemoved": 3
+      }
+    },
+    {
+      "id": "combination-0101",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": false,
+        "trimComparison": true,
+        "removeBlankLines": false,
+        "sort": true
+      },
+      "expected": {
+        "text": " \nA\nB\na\n b ",
+        "originalLines": 8,
+        "retainedLines": 5,
+        "removedDuplicates": 3,
+        "removedBlankLines": 0,
+        "totalRemoved": 3
+      }
+    },
+    {
+      "id": "combination-1100",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": true,
+        "trimComparison": true,
+        "removeBlankLines": false,
+        "sort": false
+      },
+      "expected": {
+        "text": " b \na\n ",
+        "originalLines": 8,
+        "retainedLines": 3,
+        "removedDuplicates": 5,
+        "removedBlankLines": 0,
+        "totalRemoved": 5
+      }
+    },
+    {
+      "id": "combination-1101",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": true,
+        "trimComparison": true,
+        "removeBlankLines": false,
+        "sort": true
+      },
+      "expected": {
+        "text": " \na\n b ",
+        "originalLines": 8,
+        "retainedLines": 3,
+        "removedDuplicates": 5,
+        "removedBlankLines": 0,
+        "totalRemoved": 5
+      }
+    },
+    {
+      "id": "combination-0010",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": false,
+        "trimComparison": false,
+        "removeBlankLines": true,
+        "sort": false
+      },
+      "expected": {
+        "text": " b \nB\na\nA",
+        "originalLines": 8,
+        "retainedLines": 4,
+        "removedDuplicates": 1,
+        "removedBlankLines": 3,
+        "totalRemoved": 4
+      }
+    },
+    {
+      "id": "combination-0011",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": false,
+        "trimComparison": false,
+        "removeBlankLines": true,
+        "sort": true
+      },
+      "expected": {
+        "text": " b \nA\nB\na",
+        "originalLines": 8,
+        "retainedLines": 4,
+        "removedDuplicates": 1,
+        "removedBlankLines": 3,
+        "totalRemoved": 4
+      }
+    },
+    {
+      "id": "combination-1010",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": true,
+        "trimComparison": false,
+        "removeBlankLines": true,
+        "sort": false
+      },
+      "expected": {
+        "text": " b \nB\na",
+        "originalLines": 8,
+        "retainedLines": 3,
+        "removedDuplicates": 2,
+        "removedBlankLines": 3,
+        "totalRemoved": 5
+      }
+    },
+    {
+      "id": "combination-1011",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": true,
+        "trimComparison": false,
+        "removeBlankLines": true,
+        "sort": true
+      },
+      "expected": {
+        "text": " b \na\nB",
+        "originalLines": 8,
+        "retainedLines": 3,
+        "removedDuplicates": 2,
+        "removedBlankLines": 3,
+        "totalRemoved": 5
+      }
+    },
+    {
+      "id": "combination-0110",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": false,
+        "trimComparison": true,
+        "removeBlankLines": true,
+        "sort": false
+      },
+      "expected": {
+        "text": " b \nB\na\nA",
+        "originalLines": 8,
+        "retainedLines": 4,
+        "removedDuplicates": 1,
+        "removedBlankLines": 3,
+        "totalRemoved": 4
+      }
+    },
+    {
+      "id": "combination-0111",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": false,
+        "trimComparison": true,
+        "removeBlankLines": true,
+        "sort": true
+      },
+      "expected": {
+        "text": "A\nB\na\n b ",
+        "originalLines": 8,
+        "retainedLines": 4,
+        "removedDuplicates": 1,
+        "removedBlankLines": 3,
+        "totalRemoved": 4
+      }
+    },
+    {
+      "id": "combination-1110",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": true,
+        "trimComparison": true,
+        "removeBlankLines": true,
+        "sort": false
+      },
+      "expected": {
+        "text": " b \na",
+        "originalLines": 8,
+        "retainedLines": 2,
+        "removedDuplicates": 3,
+        "removedBlankLines": 3,
+        "totalRemoved": 6
+      }
+    },
+    {
+      "id": "combination-1111",
+      "input": " b \nB\n b \na\nA\n \n\n",
+      "options": {
+        "ignoreCase": true,
+        "trimComparison": true,
+        "removeBlankLines": true,
+        "sort": true
+      },
+      "expected": {
+        "text": "a\n b ",
+        "originalLines": 8,
+        "retainedLines": 2,
+        "removedDuplicates": 3,
+        "removedBlankLines": 3,
+        "totalRemoved": 6
+      }
+    },
+    {
+      "id": "invalid-input-null",
+      "input": null,
+      "options": {},
+      "error": "Text must be a string"
+    },
+    {
+      "id": "invalid-input-number",
+      "input": 12,
+      "options": {},
+      "error": "Text must be a string"
+    },
+    {
+      "id": "invalid-input-array",
+      "input": [],
+      "options": {},
+      "error": "Text must be a string"
+    },
+    {
+      "id": "invalid-input-object",
+      "input": {},
+      "options": {},
+      "error": "Text must be a string"
+    },
+    {
+      "id": "invalid-options-numeric",
+      "input": "x",
+      "options": {
+        "ignoreCase": 1
+      },
+      "error": "supported booleans"
+    },
+    {
+      "id": "invalid-options-string",
+      "input": "x",
+      "options": {
+        "sort": "true"
+      },
+      "error": "supported booleans"
+    },
+    {
+      "id": "invalid-options-unknown",
+      "input": "x",
+      "options": {
+        "outputTrim": true
+      },
+      "error": "supported booleans"
+    },
+    {
+      "id": "invalid-options-array",
+      "input": "x",
+      "options": [],
+      "error": "Options must be an object"
+    },
+    {
+      "id": "long-repeated-lines",
+      "input": "x\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\n",
+      "options": {},
+      "expected": {
+        "text": "x\n",
+        "originalLines": 5001,
+        "retainedLines": 2,
+        "removedDuplicates": 4999,
+        "removedBlankLines": 0,
+        "totalRemoved": 4999
+      }
+    }
+  ]
+}

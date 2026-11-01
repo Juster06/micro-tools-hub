@@ -1,0 +1,989 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "empty-initial",
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "0"
+        }
+      ]
+    },
+    {
+      "id": "basic-and-preserved",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "apple\nbanana\napple\norange\nbanana"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "apple\nbanana\norange"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "apple\nbanana\napple\norange\nbanana"
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "5"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "3"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "2"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "2"
+        }
+      ]
+    },
+    {
+      "id": "case-toggle",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Apple\napple\nAPPLE"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Apple\napple\nAPPLE"
+        },
+        {
+          "action": "click",
+          "selector": "#ignoreCase"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Apple"
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "3"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "2"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "2"
+        },
+        {
+          "action": "click",
+          "selector": "#ignoreCase"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Apple\napple\nAPPLE"
+        }
+      ]
+    },
+    {
+      "id": "trim-toggle-first-preserved",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": " apple \napple\napple "
+        },
+        {
+          "action": "click",
+          "selector": "#trimComparison"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": " apple "
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": " apple \napple\napple "
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "3"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "2"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "2"
+        }
+      ]
+    },
+    {
+      "id": "blank-removal-separate",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": " \n\nx\nx\n"
+        },
+        {
+          "action": "click",
+          "selector": "#removeBlankLines"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "x"
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "5"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "3"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "4"
+        }
+      ]
+    },
+    {
+      "id": "blank-default-distinct",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\t\n \n\n\t\n"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "\t\n \n"
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "5"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "3"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "2"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "2"
+        }
+      ]
+    },
+    {
+      "id": "sorting-on-off",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "zebra\napple\nBanana\napple"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "zebra\napple\nBanana"
+        },
+        {
+          "action": "click",
+          "selector": "#sort"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Banana\napple\nzebra"
+        },
+        {
+          "action": "click",
+          "selector": "#sort"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "zebra\napple\nBanana"
+        }
+      ]
+    },
+    {
+      "id": "all-combined",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": " Zebra \napple\nAPPLE\n banana \n\n"
+        },
+        {
+          "action": "click",
+          "selector": "#ignoreCase"
+        },
+        {
+          "action": "click",
+          "selector": "#trimComparison"
+        },
+        {
+          "action": "click",
+          "selector": "#removeBlankLines"
+        },
+        {
+          "action": "click",
+          "selector": "#sort"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "apple\n banana \n Zebra "
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "6"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "3"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "2"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "3"
+        }
+      ]
+    },
+    {
+      "id": "normalized-windows-lines",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "a\r\nb\ra\n"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "a\nb\n"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "a\nb\na\n"
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "4"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "3"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "1"
+        }
+      ]
+    },
+    {
+      "id": "one-retained-empty-line",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\n"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "2"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "no characters"
+        }
+      ]
+    },
+    {
+      "id": "unicode-and-combining",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "é\né\n😀\n中文\né"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "é\né\n😀\n中文"
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "5"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "4"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "1"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "1"
+        }
+      ]
+    },
+    {
+      "id": "copy-success",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "apple\napple"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "apple"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "apple"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Text copied"
+        }
+      ]
+    },
+    {
+      "id": "copy-denial",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "apple\napple"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "apple"
+        },
+        {
+          "action": "clipboard",
+          "mode": "failure"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Clipboard unavailable"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolOutput"
+        }
+      ]
+    },
+    {
+      "id": "utf8-download-content",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Café 😀\nCafé 😀\n中文"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Café 😀\n中文"
+        },
+        {
+          "action": "click",
+          "selector": "#downloadBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "count",
+          "equals": 1
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "text",
+          "equals": "Café 😀\n中文"
+        }
+      ]
+    },
+    {
+      "id": "clear-restores-every-default",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Apple\napple"
+        },
+        {
+          "action": "click",
+          "selector": "#ignoreCase"
+        },
+        {
+          "action": "click",
+          "selector": "#trimComparison"
+        },
+        {
+          "action": "click",
+          "selector": "#removeBlankLines"
+        },
+        {
+          "action": "click",
+          "selector": "#sort"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#ignoreCase",
+          "property": "checked",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#trimComparison",
+          "property": "checked",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#removeBlankLines",
+          "property": "checked",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#sort",
+          "property": "checked",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "empty-after-nonempty",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "x\nx"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "x"
+        },
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#originalCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#retainedCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#duplicateCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#blankCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#removedCount",
+          "property": "textContent",
+          "equals": "0"
+        }
+      ]
+    },
+    {
+      "id": "safe-rendering",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "<img src=x onerror=alert(1)>\n<script>alert(1)</script>\n<img src=x onerror=alert(1)>"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "<img src=x onerror=alert(1)>\n<script>alert(1)</script>"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "childElementCount",
+          "equals": 0
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "childElementCount",
+          "equals": 0
+        }
+      ]
+    },
+    {
+      "id": "keyboard-run",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "keyboard\nkeyboard"
+        },
+        {
+          "action": "focus",
+          "selector": "#sort"
+        },
+        {
+          "action": "key",
+          "key": "Tab"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "runBtn"
+        },
+        {
+          "action": "key",
+          "key": "Enter"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "keyboard"
+        }
+      ]
+    },
+    {
+      "id": "viewport-320",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "a long line word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word "
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 320
+    },
+    {
+      "id": "viewport-375",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "a long line word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word "
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 375
+    },
+    {
+      "id": "viewport-768",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "a long line word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word "
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 768
+    },
+    {
+      "id": "viewport-1440",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "a long line word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word "
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 1440
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-01",
+  "source_revision": "bf1bbcd5153f2e4047de61acd9c2b5390ab4812c",
+  "browser": "Edge 156.0.4314.58 (Chromium/CDP headless)",
+  "scope": "Local functional and manual screenshot/layout review; publication NOT VERIFIED. Clipboard/download/composition simulated in isolated profiles; external HTTP(S) blocked. Not all-browser, screen-reader or OS clipboard/IME/save-dialog certification.",
+  "pages": [
+    {
+      "path": "duplicate-line-remover/index.html",
+      "source_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+      "checks": [
+        "66 exact JSON logic cases: all sixteen settings combinations, output and every statistic, first occurrence, LF/CRLF/CR and trailing blanks, Unicode and invalid input",
+        "25 additional Node logic tests: all sixteen settings at 100,000 UTF-16 units, exact unique/repeated/separator/blank/emoji limits, oversized inputs, invalid options, immutable inputs and line counting",
+        "22 real Chromium DSL browser cases / 112 assertions: matching/blank/sort controls, preserved original, counters, copy success/denial, UTF-8 download, Clear, empty state, safe rendering, keyboard and 320/375/768/1440px overflow",
+        "12 extended Chromium cases: stale output/count/action invalidation, rapid input/options, delayed clipboard success/rejection, UTF-8 bytes/filename/revocation including download failure, full-limit repeated lines, oversized text/whitespace recovery, simulated composition, processing transport/persistence probes, missing clipboard and native labels/keyboard",
+        "Manual review of actual canonical 1440px desktop and 375px mobile screenshots, including mobile output/statistics/actions, with CDN blocked to verify inline fallback styling"
+      ],
+      "publication": null
+    }
+  ],
+  "test_commands": [
+    "python scripts/test_tool.py --id duplicate-line-remover --workspace canonical",
+    "node --test tests/tools/duplicate-line-remover/logic.test.mjs tests/tools/duplicate-line-remover/extended-browser.test.mjs"
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "duplicate-line-remover",
+    "generated_at": "2026-11-01T04:42:52+00:00",
+    "input_hash": "75aa141a9e8982c542df95e9e9a90fb81924291a02d77b0c21aa9721998ea720",
+    "source_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 66,
+        "failed": 0,
+        "assertions": 66,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 22,
+        "failed": 0,
+        "assertions": 112,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "status": "PASS"
+  },
+  "additional_node_result": {
+    "passed": 37,
+    "failed": 0,
+    "logic_tests": 25,
+    "browser_tests": 12
+  },
+  "policies": {
+    "defaults": "All four options off: case-sensitive, whitespace-sensitive, blank records eligible for first-occurrence retention, original order",
+    "unicode": "Native toLowerCase for comparison only; no full case folding, locale collation, accent stripping or Unicode normalization",
+    "sort": "Post-deduplication UTF-16 lexicographic comparison keys; original index breaks ties; retained text unchanged",
+    "lines": "LF/CRLF/CR; empty input zero, trailing separator another record; output LF; counts refer to retained records, including one empty record yielding empty output",
+    "limit": "100,000 UTF-16 units. No maxlength truncation; oversized original retained and current results invalidated. Set lookup; optional sort."
+  },
+  "limitations": [
+    "Only recorded Edge engine executed; physical-device and screen-reader compatibility not certified",
+    "Clipboard success/denial/missing API are simulated; UTF-8 download Blob is captured in memory, not an OS save-dialog test",
+    "Composition events are simulated, not native IME certification",
+    "Performance checks use actual exact full-limit fixtures and one-second Node VM call guards on this host, not universal timing guarantees",
+    "Native lowercase and UTF-16 sort are deliberately not full Unicode case folding or locale-aware alphabetical collation"
+  ],
+  "implementation_checkpoint": "Real local source commit created before recording its revision as evidence. Final TESTED metadata and homepage integration follow separately; no publication claim.",
+  "initial_test_findings": "Early fixture errors (special selectors incorrectly prefixed with # and an invalid-array fixture defaulted to {}) were corrected and all cases rerun. A repository consistency test before hub integration flagged the expected missing card/generated metadata; final regression must pass after the audited integration. No shared test or quality gate was weakened. One all-suite run with concurrent browser workers hit CDP control timeouts (79 passed, 12 browser-hook failures); the unchanged complete 91-test suite passed sequentially in 33.85 seconds. Standalone new-tool suites also passed. This is recorded as a local browser-test scheduling limitation; no timeout or assertion was weakened.",
+  "final_regression": {
+    "python": {
+      "passed": 123,
+      "failed": 0
+    },
+    "node": {
+      "passed": 91,
+      "failed": 0,
+      "execution": "node --test --test-concurrency=1; all existing and Case Converter plus new tool suites; assertions/timeouts unchanged"
+    },
+    "case_converter": {
+      "schema_version": 1,
+      "tool_id": "case-converter",
+      "generated_at": "2026-11-01T04:40:34+00:00",
+      "input_hash": "5d0de5f84470c67b534196bb3d822a9946fa2c6adf1c5425ba08e06c6862acc7",
+      "source_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+      "workspace": "canonical",
+      "is_scaffold": false,
+      "layers": {
+        "structural": {
+          "status": "PASS",
+          "errors": [],
+          "warnings": [],
+          "scope": "STRUCTURAL_ONLY"
+        },
+        "logic": {
+          "status": "PASS",
+          "passed": 69,
+          "failed": 0,
+          "assertions": 69,
+          "failures": [],
+          "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+        },
+        "browser": {
+          "status": "PASS",
+          "passed": 22,
+          "failed": 0,
+          "assertions": 89,
+          "failures": [],
+          "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+          "browser": "Edg/156.0.4314.58"
+        }
+      },
+      "status": "PASS"
+    },
+    "original_four_browser": {
+      "social-counter": {
+        "status": "PASS",
+        "passed": 4,
+        "failed": 0,
+        "assertions": 14,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      },
+      "excel-sandbox": {
+        "status": "PASS",
+        "passed": 3,
+        "failed": 0,
+        "assertions": 10,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      },
+      "text-cleaner": {
+        "status": "PASS",
+        "passed": 3,
+        "failed": 0,
+        "assertions": 8,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      },
+      "streaming-roulette": {
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 9,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "templates": {
+      "schema_version": 1,
+      "kind": "TEMPLATE_FRAMEWORK_TEST_ONLY",
+      "status": "PASS",
+      "results": [
+        {
+          "template": "text",
+          "schema_version": 1,
+          "tool_id": "text-fixture",
+          "generated_at": "2026-11-01T04:41:11+00:00",
+          "input_hash": "24bad3995f644e7a56d0b370180aca73f3437af3dea2784a0f5febef863b5927",
+          "source_sha256": "513aee55fbeae1fc149a9215a022068de797428dca4a26da262ec511f4fb764e",
+          "workspace": "staging",
+          "is_scaffold": false,
+          "layers": {
+            "structural": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "scope": "STRUCTURAL_ONLY"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 3,
+              "failed": 0,
+              "assertions": 3,
+              "failures": [],
+              "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 6,
+              "failed": 0,
+              "assertions": 24,
+              "failures": [],
+              "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+              "browser": "Edg/156.0.4314.58"
+            }
+          },
+          "status": "PASS"
+        },
+        {
+          "template": "structured",
+          "schema_version": 1,
+          "tool_id": "structured-fixture",
+          "generated_at": "2026-11-01T04:41:15+00:00",
+          "input_hash": "3a2d8cd2a5f6f8b8b48c44791d566d2ceed2066d87b67b1e044387c4872d99ac",
+          "source_sha256": "bea90e0e55bf8b00cb487bfbe35089c74dbe221213be0a39528fe6c70bd3b337",
+          "workspace": "staging",
+          "is_scaffold": false,
+          "layers": {
+            "structural": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "scope": "STRUCTURAL_ONLY"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 3,
+              "failed": 0,
+              "assertions": 3,
+              "failures": [],
+              "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 6,
+              "failed": 0,
+              "assertions": 24,
+              "failures": [],
+              "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+              "browser": "Edg/156.0.4314.58"
+            }
+          },
+          "status": "PASS"
+        }
+      ],
+      "scope": "Temporary neutral fixtures only. No Case Converter or other registry utility is implemented."
+    },
+    "project_status": "PASS; 0 errors; 0 warnings"
+  },
+  "local_homepage_integration": {
+    "result": "PASS",
+    "command": "python scripts/integrate_tool.py --id duplicate-line-remover; separately reviewed git apply --check/apply; Node integration browser suite",
+    "homepage_source_sha256": "e5360513e69df7dc0b1ca6fac089f14438b864de1fdc7f6547fa34a571b142e4",
+    "checks": [
+      "Actual Back to Hub and return navigation",
+      "Registry-derived six local routes/count",
+      "TESTED availability and publication-pending label; publication null; five released entries",
+      "Search finds Duplicate Line Remover and clear restores count",
+      "All five existing card HTML blocks preserved exactly",
+      "Existing integration tests unchanged and pass with six local routes"
+    ],
+    "publication": null
+  },
+  "dashboard_verification": {
+    "result": "PASS",
+    "checked_at": "2026-11-01T04:43:44+00:00",
+    "desktop_shortcut": "Actual existing link launched from unrelated cwd; native dashboard completed project status exit 0",
+    "overview": "93 registered, 5 released, 1 tested, 18 READY, 68 PLANNED, 1 BLOCKED; milestone 5/25 (20%)",
+    "validation_screen": "Four current tracking reports show PASS. Functional-test totals remain unavailable under the unchanged dashboard schema.",
+    "shortcut_preservation": "Desktop and Start menu bytes, targets, arguments, working directories and AppID match pre-task baseline. No installer, registry or taskbar setting changed. Start menu not freshly launched during Task 6."
+  }
+}
