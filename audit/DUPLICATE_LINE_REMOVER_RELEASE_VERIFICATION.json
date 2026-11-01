@@ -284,7 +284,231 @@
     "Existing legacy tools have no isolated logic adapters; required structural/browser scopes passed while overall reports remain PARTIAL.",
     "External delivery was enabled for actual public browser tests. The CDN library itself was not independently supply-chain audited."
   ],
-  "release_metadata_publication": "Implementation deployment, actual public behavior and exact source identity verified before lifecycle transition. The Live homepage/RELEASED registry metadata require an independently verified subsequent deployment; final handoff records the result.",
+  "release_metadata_publication": {
+    "result": "PASS",
+    "commit": "33feee1b559f42b481ea616cb5b5680a50edf48f",
+    "reviewed_tree": "d5aa5b1dff1684c46a7a2cf2920203906a7e1f2c",
+    "expected_parent": "34ad939b7802ff2c0342d591e9773b06d78a0fbd",
+    "method": "Connected GitHub Git data API: exact staged blobs/tree checked, ordinary single-parent commit, main update expected old head with force=false. Fetched and checked parent, ancestry, full remote/index/working tree equality and reviewed working bytes before guarded fast-forward of main. No reset, file restore/overwrite, checkout move or feature-branch rewrite.",
+    "bounded_attempts": 5,
+    "verified_deployment_and_public_state": {
+      "attempt": 5,
+      "checked_at": "2026-11-01T05:23:40.118967+00:00",
+      "deployments": [
+        {
+          "id": 41276702361,
+          "head_sha": "33feee1b559f42b481ea616cb5b5680a50edf48f",
+          "head_branch": "main",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Juster06/micro-tools-hub/actions/runs/41276702361",
+          "created_at": "2026-11-01T05:22:27Z",
+          "updated_at": "2026-11-01T05:23:05Z"
+        }
+      ],
+      "pages": [
+        {
+          "path": "index.html",
+          "url": "https://everydaydigitalbox.com/",
+          "http_status": 200,
+          "source_sha256": "b86975baf5bfa2b9452ae6eb73926bfc002fb3b906bd3ba374c9406b5a50dc88",
+          "live_sha256": "b86975baf5bfa2b9452ae6eb73926bfc002fb3b906bd3ba374c9406b5a50dc88",
+          "source_matches": true,
+          "etag": "\"6ae6ccb3-40be\"",
+          "checked_at": "2026-11-01T05:23:41.497914+00:00"
+        },
+        {
+          "path": "duplicate-line-remover/index.html",
+          "url": "https://everydaydigitalbox.com/duplicate-line-remover/",
+          "http_status": 200,
+          "source_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+          "live_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+          "source_matches": true,
+          "etag": "\"6ae6ccb3-4a68\"",
+          "checked_at": "2026-11-01T05:23:41.687743+00:00"
+        }
+      ],
+      "registry": {
+        "http_status": 200,
+        "matches": true,
+        "tool_status": "RELEASED",
+        "released_count": 6
+      }
+    },
+    "fresh_public_source_registry_check": {
+      "attempt": 1,
+      "checked_at": "2026-11-01T21:10:37.642023+00:00",
+      "deployments": [
+        {
+          "id": 41276702361,
+          "head_sha": "33feee1b559f42b481ea616cb5b5680a50edf48f",
+          "head_branch": "main",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/Juster06/micro-tools-hub/actions/runs/41276702361",
+          "created_at": "2026-11-01T05:22:27Z",
+          "updated_at": "2026-11-01T05:23:05Z"
+        }
+      ],
+      "pages": [
+        {
+          "path": "index.html",
+          "url": "https://everydaydigitalbox.com/",
+          "http_status": 200,
+          "source_sha256": "b86975baf5bfa2b9452ae6eb73926bfc002fb3b906bd3ba374c9406b5a50dc88",
+          "live_sha256": "b86975baf5bfa2b9452ae6eb73926bfc002fb3b906bd3ba374c9406b5a50dc88",
+          "source_matches": true,
+          "etag": "\"6ae6ccb3-40be\"",
+          "checked_at": "2026-11-01T21:10:38.601935+00:00"
+        },
+        {
+          "path": "duplicate-line-remover/index.html",
+          "url": "https://everydaydigitalbox.com/duplicate-line-remover/",
+          "http_status": 200,
+          "source_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+          "live_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+          "source_matches": true,
+          "etag": "\"6ae6ccb3-4a68\"",
+          "checked_at": "2026-11-01T21:10:38.925179+00:00"
+        }
+      ],
+      "registry": {
+        "http_status": 200,
+        "matches": true,
+        "tool_status": "RELEASED",
+        "released_count": 6
+      }
+    },
+    "live_browser_after_release_metadata": {
+      "started_at": "2026-11-01T21:10:24.333Z",
+      "scope": "Actual public HTTPS pages in isolated Edge. Clipboard APIs simulated; production UTF-8 download Blob captured in memory. No OS clipboard/save-dialog/IME/screen-reader certification. External delivery enabled with normal TLS verification.",
+      "checks": [
+        {
+          "name": "Released availability and Live label visible on actual public homepage",
+          "result": "PASS"
+        },
+        {
+          "name": "Public homepage loads; new card visible with correct route",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual card navigation reaches public tool",
+          "result": "PASS"
+        },
+        {
+          "name": "Canonical public slash route loads correctly",
+          "result": "PASS"
+        },
+        {
+          "name": "Basic live removal, exact first occurrence/original preservation and all five statistics",
+          "result": "PASS"
+        },
+        {
+          "name": "Default case-sensitive comparison retains distinct spelling",
+          "result": "PASS"
+        },
+        {
+          "name": "Case-insensitive option updates live and preserves first spelling/original",
+          "result": "PASS"
+        },
+        {
+          "name": "Surrounding whitespace comparison retains exact first line whitespace",
+          "result": "PASS"
+        },
+        {
+          "name": "Blank removal runs before duplicate detection with separate accurate counts",
+          "result": "PASS"
+        },
+        {
+          "name": "Sorting is optional and reversible without altering original order/input",
+          "result": "PASS"
+        },
+        {
+          "name": "All four options combined: exact sorted retained text, input and counts",
+          "result": "PASS"
+        },
+        {
+          "name": "Production live copy handler succeeds using simulated clipboard API",
+          "result": "PASS"
+        },
+        {
+          "name": "Simulated clipboard denial gives truthful current-result/manual-copy feedback",
+          "result": "PASS"
+        },
+        {
+          "name": "Production download UTF-8 Blob/content/bytes/safe filename/URL revocation verified in memory",
+          "result": "PASS"
+        },
+        {
+          "name": "Clear resets all options/input/output/counts/buttons/focus",
+          "result": "PASS"
+        },
+        {
+          "name": "Native CDP Tab/Enter operate real public page controls",
+          "result": "PASS"
+        },
+        {
+          "name": "375px mobile controls/result usable without horizontal overflow",
+          "result": "PASS"
+        },
+        {
+          "name": "No uncaught live JavaScript errors or promise rejections",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual Back to Hub, search and reset preserve six public routes",
+          "result": "PASS"
+        },
+        {
+          "name": "Existing public case-converter accessible",
+          "result": "PASS",
+          "title": "Case Converter — Everyday Digital Box"
+        },
+        {
+          "name": "Existing public excel-sandbox accessible",
+          "result": "PASS",
+          "title": "Excel Formula Sandbox & Analyzer"
+        },
+        {
+          "name": "Existing public social-counter accessible",
+          "result": "PASS",
+          "title": "Social Media Character Counter & Live Previewer | WebUtils Hub"
+        },
+        {
+          "name": "Existing public text-cleaner accessible",
+          "result": "PASS",
+          "title": "AI Text Footprint Cleanser"
+        },
+        {
+          "name": "Existing public streaming-roulette accessible",
+          "result": "PASS",
+          "title": "Free Legal Streaming Roulette & Finder"
+        }
+      ],
+      "result": "PASS",
+      "browser": "Edg/156.0.4314.58",
+      "last_browser_command": "Runtime.evaluate",
+      "homepage_availability": "released",
+      "finished_at": "2026-11-01T21:10:37.431Z"
+    },
+    "resumed_browser_retry": {
+      "initial_result": "FAIL",
+      "initial_finished_at": "2026-11-01T21:09:18.430Z",
+      "initial_passed_checks": 15,
+      "error": "Browser command timed out",
+      "resolution": "Isolated full rerun passed all 24 checks with the same assertions and timeouts; only scratch last-command diagnostics were added, with no public source or repository test changes."
+    },
+    "final_registry_counts": {
+      "total": 93,
+      "RELEASED": 6,
+      "TESTED": 0,
+      "READY": 18,
+      "PLANNED": 68,
+      "BLOCKED": 1,
+      "milestone": "6/25 = 24%"
+    },
+    "documentation_checkpoint": "Subsequent documentation-only commit records these observed results; public HTML, source and registry remain identical."
+  },
   "final_validation": {
     "python": {
       "passed": 123,
