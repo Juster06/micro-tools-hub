@@ -1,5 +1,29 @@
 # Session handoff
 
+## Latest session — Task 7 LOCAL BATCH COMPLETE: three utilities tested (2026-11-01, Europe/London)
+
+**Status:** locally implemented Text Sorter, Slug Generator, and Find and Replace on `feat/task-7-three-tool-batch`, from clean freshly fetched main `5d331d671df4f9f17647f9adad3c8ac9debd19ef`. Planner selected existing READY/P1/text entries at ranks 3/4/5, no unmet prerequisites, only existing Tailwind Play CDN styling. Preferred Word Frequency Counter/Whitespace Cleaner are not registered candidates; no new entries or priorities. See `audit/TASK_7_DEVELOPMENT_PLAN.md` for exact selection, acceptance policies and workflow.
+
+**Source checkpoints:** Text Sorter `d83e9afdd2f80c456fe9d4a534c45053dfc77b1c`; Slug Generator `65d47800bc74a9023690d67c2aa7f856b151f918`; Find and Replace `588f761e819ce9a9ae04732584bea5b7ce8ccb3d`. Each source/test commit precedes its registry evidence. All three independently passed staging/canonical exact fixtures and additional Node logic/browser tests, real desktop/mobile screenshot review with CDN blocked, then advanced IMPLEMENTED → TESTED / REQUIRED_PASSED with publication null. Separate scoped audits record actual source hashes, tests, browser, defaults and limitations. No RELEASED transition, live publication claim, push, PR, merge or deployment is authorized.
+
+**Behavior:** Text Sorter keeps duplicates and retained text, stable UTF-16 lexical/native-lowercase keys or strict finite decimal numeric ordering; invalid numeric lines stay last with a count/warning. Optional case-sensitive/trim/blank controls, LF/CRLF/CR and trailing-record policy. Slug Generator has Unicode/ASCII policies, lowercase, documented NFD mark stripping default or NFC accent preservation, single-hyphen token joining without transliteration. Find and Replace performs escaped literal non-overlapping matching, case sensitivity, exact literal replacement strings, match counts, empty-search guard, explicit Apply and one-level Undo. Each preserves original input, offers live preview/copy/UTF-8 download/Clear, labels/focus, safe rendering, input limit 100,000 UTF-16 units, immediate stale-result invalidation and asynchronous clipboard revision guards. Find/replacement limit 10,000 each; result limit 1,000,000 before joining. Full rules are in each tool README and page.
+
+**Integration/inventory:** the unchanged generator and integration framework were used. Only newly created Task 7 source directories were staged for one-at-a-time canonical promotion because the existing card gate requires every other canonical route already integrated. Each proposal was reviewed and checked before application; no gate was relaxed. Cards remain Tested · publication pending with exact registry routes/category/description; the existing six cards stay unchanged. Expected local inventory 93 total, 6 RELEASED, 3 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; released milestone remains 6/25 (24%). Previous release evidence, CNAME, six released sources, other 90 registry entries, shared scripts/templates, dashboard/launcher and shortcut definitions are preserved.
+
+**Validation:** final full regression and native dashboard checkpoint are recorded below only after actual execution. Independent source-bound reports and audit evidence are local; generated reports, screenshots, staging/cache, machine settings and personal paths must remain outside committed files. Initial new UI syntax and two fixture mistakes were caught and fixed; tests were rerun unchanged at the gates. No shared framework/test assertion or timeout was weakened. Commit identity uses the established Codex noreply identity per command, without changing local/global settings.
+
+**Final local checkpoint:** all three utilities independently TESTED / REQUIRED_PASSED, publication null. Text Sorter: 34 exact framework logic + 9 Node logic; 20 framework browser / 47 assertions + 11 extended + 2 integration = 33 browser cases. Slug Generator: 33 exact framework logic + 9 Node logic; 17 framework browser + 11 extended + 2 integration = 30 browser cases. Find and Replace: 33 exact framework logic + 9 Node logic; 18 framework browser + 12 extended + 2 integration = 32 browser cases. Total new logic cases 127, new browser cases 95. Full Python 123/123 and Node 158/158 passed sequentially with no skips. All six released-tool framework browser checks passed (56 cases/242 assertions), their additional Node suites passed, templates 6 logic/12 browser/48 assertions passed, all three integration proposals are idempotent with empty patches, and complete project validation passed with 0 errors/warnings after declaring actual interface IDs. New tool reports bind final canonical source/cases/manifest/metadata/runner hashes; audits preserve exact scope.
+
+**Native dashboard verification:** both actual existing Desktop and Start menu shortcuts launched separately from an unrelated cwd and completed the workflow exit 0. Native overview shows 93 total, 6 RELEASED, 3 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED, and 6/25 (24%); current four tracking reports PASS. Shortcut bytes/targets/arguments/cwd/AppID remain unchanged; no reinstall or registry edit. Functional test totals remain unavailable under the existing dashboard schema. Final source/card/other-entry/privacy/whitespace review and local-only integration commit complete delivery; post-commit check-only validation plus read-only reload preserves a clean tree. No source or publication blocker remains.
+
+**Limitations:** recorded Edge engine and viewport emulation, not physical devices, all-browser or screen-reader certification. Clipboard/composition APIs simulated; UTF-8 downloads captured in memory rather than native clipboard/IME/Save dialogs. Performance fixtures are not universal benchmarks. Unicode lowercase/simple case folding is not universal locale-aware matching; numeric sorting uses JavaScript Number precision; slug mark removal is not transliteration. Legacy isolated logic adapters remain NOT RUN and combined profiles PARTIAL; their requested structure/browser scopes can pass. Existing dashboard functional-test totals remain unavailable by design.
+
+**Delivery:** implementation checkpoints are separate logical commits; integration/documentation follows. Obtain the containing delivery commit with `git log -1 --format="%H %s"`; it cannot embed its own hash. Finish with check-only validation/provenance and read-only saved-data reload after the final local commit to preserve a clean tree. Existing active checkout must not move. No remote publication is authorized.
+
+**Next major task:** Task 7 local batch is complete. Await separately authorized owner review/GitHub PR preparation. Do not push, merge, deploy, mark these utilities RELEASED, or begin Task 8 or another utility.
+
+### Historical Task 6 integration and release
+
 ## Latest session — Task 6 COMPLETE: Duplicate Line Remover released and live verified (2026-11-01, Europe/London)
 
 **Status:** PR #10 merged normally at 2026-11-01T05:13:30Z as `34ad939b7802ff2c0342d591e9773b06d78a0fbd`, resulting tree `94d3c6ccc6bde666e6c1a5f2f3f7c1277131cdf3`. Local main safely fast-forwarded; original local `feat/duplicate-line-remover` remains `b93985c0c86a21aedf94d16dd4bb85c966ce2b6b`, including implementation checkpoint `bf1bbcd5153f2e4047de61acd9c2b5390ab4812c`. Published feature `aede32a6e784235f021aec19fb4bfd512bc4a853` has the identical reviewed complete tree. No reset, force-push, checkout move/deletion or history rewrite.
@@ -88,17 +112,20 @@
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 25 released tools; 6 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 18; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 6; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 15; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 3; RELEASED: 6; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
-- Next ready tool: Text Sorter.
-- Git branch: main.
-- Latest commit observed before generation: 34ad939b7802ff2c0342d591e9773b06d78a0fbd.
+- Next ready tool: Text Reverser.
+- Git branch: feat/task-7-three-tool-batch.
+- Latest commit observed before generation: 588f761e819ce9a9ae04732584bea5b7ce8ccb3d.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
+- Text Sorter: TESTED, evidence dated 2026-11-01.
+- Slug Generator: TESTED, evidence dated 2026-11-01.
+- Find and Replace: TESTED, evidence dated 2026-11-01.
 - Duplicate Line Remover: RELEASED, evidence dated 2026-11-01.
 - Case Converter: RELEASED, evidence dated 2026-11-01.
 - AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
@@ -121,10 +148,14 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
-- ` M` duplicate-line-remover/README.md
+- ` M` find-and-replace/README.md
 - ` M` index.html
-- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
-- `??` audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json
+- ` M` slug-generator/README.md
+- ` M` text-sorter/README.md
+- `??` audit/FIND_AND_REPLACE_VERIFICATION.json
+- `??` audit/SLUG_GENERATOR_VERIFICATION.json
+- `??` audit/TASK_7_DEVELOPMENT_PLAN.md
+- `??` audit/TEXT_SORTER_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

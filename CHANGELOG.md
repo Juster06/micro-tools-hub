@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — Task 7 local three-tool batch (2026-11-01)
+
+- Planner selected existing READY Text Sorter, Slug Generator and Find and Replace, in registry order. Preferred unregistered candidates were not added. Generated and inspected separate text scaffolds, implemented actual standalone pages, and committed each source/test checkpoint before evidence.
+- Added deterministic stable lexical/numeric sorting with truthful invalid-numeric handling; Unicode/ASCII slug generation with explicit accent rules; and literal find/replace preview with match counts, Apply and Undo. Each has live preview, accurate statistics, bounded inputs, no silent truncation, copy/download failure handling and stale-state guards.
+- Added independent exact logic fixtures, boundary/invalid-input tests and real Chromium suites including 320/375/768/1440 layouts, original preservation, rapid changes, composition, delayed clipboard, UTF-8 download cleanup, keyboard, safe rendering and processing transport/storage probes. Actual results and scope are in three separate audits and the latest handoff.
+- Advanced each independently to TESTED / REQUIRED_PASSED, publication null. Prepared three gated local cards labeled Tested · publication pending. Six released sources/cards/evidence, CNAME, shared framework/templates, dashboard/launcher/shortcuts and unrelated registry entries are preserved. Inventory becomes 6 RELEASED, 3 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED, 93 total; release milestone remains 24%.
+- Local commits only. No push, PR, merge, deployment, new release or Task 8.
+
 ## Released — Duplicate Line Remover (Task 6, 2026-11-01)
 
 - Merged PR #10 normally as `34ad939b7802ff2c0342d591e9773b06d78a0fbd` at 2026-11-01T05:13:30Z; preserved original local feature history and safely fast-forwarded main. Reviewed feature trees are identical.

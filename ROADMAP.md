@@ -1,5 +1,9 @@
 # Development roadmap
 
+## Task 7 — local three-tool batch, publication pending
+
+The actual planner selected Text Sorter, Slug Generator and Find and Replace (existing READY entries, sequence ranks 3–5), because Word Frequency Counter and Whitespace Cleaner are not registered candidates. Each standalone implementation now has independent source-bound local tests/audit and TESTED / REQUIRED_PASSED status; publication remains null. Three hub cards are prepared locally as Tested · publication pending. Previous six releases stay unchanged; released progress remains 6/25 (24%). Full regression/delivery and native dashboard verification are recorded in the current handoff. No push, PR, merge, deployment, RELEASED transition, Task 8 or further utility is authorized.
+
 ## Task 6 — Duplicate Line Remover released after live verification
 
 PR #10 merged as `34ad939b7802ff2c0342d591e9773b06d78a0fbd`. Successful main/root GitHub Pages deployment, real public Edge behavior and exact approved normalized source identity passed on 2026-11-01 before RELEASED. Original local audit remains unchanged; separate `audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json` records genuine release evidence and scope. The gated hub card uses the released Live presentation. Counts: 93 total, 6 RELEASED, 0 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED; milestone 6/25 (24%).
@@ -33,9 +37,9 @@ Execute in order unless the user steers the project or a dependency/regression j
 | ---: | --- | --- | --- | --- | --- |
 | 1 | case-converter | Case Converter | Text and Writing Tools | S | RELEASED |
 | 2 | duplicate-line-remover | Duplicate Line Remover | Text and Writing Tools | S | RELEASED |
-| 3 | text-sorter | Text Sorter | Text and Writing Tools | S | READY |
-| 4 | slug-generator | Slug Generator | Text and Writing Tools | S | READY |
-| 5 | find-and-replace | Find and Replace | Text and Writing Tools | S | READY |
+| 3 | text-sorter | Text Sorter | Text and Writing Tools | S | TESTED |
+| 4 | slug-generator | Slug Generator | Text and Writing Tools | S | TESTED |
+| 5 | find-and-replace | Find and Replace | Text and Writing Tools | S | TESTED |
 | 6 | text-reverser | Text Reverser | Text and Writing Tools | S | READY |
 | 7 | json-formatter | JSON Formatter | Excel and Data Tools | S | READY |
 | 8 | url-encoder-decoder | URL Encoder and Decoder | Developer Tools | S | READY |
@@ -105,10 +109,10 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | case-converter | Case Converter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | duplicate-line-remover | Duplicate Line Remover | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | text-difference-checker | Text Difference Checker | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
-| text-sorter | Text Sorter | READY | P1 | S | Browser-native approach; scope review before implementation |
+| text-sorter | Text Sorter | TESTED | P1 | S | Browser-native approach; scope review before implementation |
 | text-reverser | Text Reverser | READY | P1 | S | Browser-native approach; scope review before implementation |
-| find-and-replace | Find and Replace | READY | P1 | S | Browser-native approach; scope review before implementation |
-| slug-generator | Slug Generator | READY | P1 | S | Browser-native approach; scope review before implementation |
+| find-and-replace | Find and Replace | TESTED | P1 | S | Browser-native approach; scope review before implementation |
+| slug-generator | Slug Generator | TESTED | P1 | S | Browser-native approach; scope review before implementation |
 
 ### Excel and Data Tools
 

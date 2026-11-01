@@ -10,14 +10,14 @@ Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` f
 | Total registered utilities | 93 |
 | IDEA | 0 |
 | PLANNED | 68 |
-| READY | 18 |
+| READY | 15 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 0 |
+| TESTED | 3 |
 | RELEASED | 6 |
 | DEPRECATED | 0 |
-| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 87 |
+| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 84 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
@@ -49,12 +49,15 @@ Current growth milestone: **25 released tools**. Progress: 6/25 (24.0%); remaini
 
 Current registered tool task: **none**. Session infrastructure work is recorded in the manual handoff.
 
-Next ready tool: **Text Sorter**.
+Next ready tool: **Text Reverser**.
 
 ### Recently verified tools (registry evidence dates)
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
+| Text Sorter | TESTED | 2026-11-01 |
+| Slug Generator | TESTED | 2026-11-01 |
+| Find and Replace | TESTED | 2026-11-01 |
 | Duplicate Line Remover | RELEASED | 2026-11-01 |
 | Case Converter | RELEASED | 2026-11-01 |
 | AI Text Footprint Cleanser | RELEASED | 2026-10-31 |
@@ -67,7 +70,7 @@ The backlog total includes READY and BLOCKED; those rows must not be added again
 
 ## Current development task
 
-Task 6 Duplicate Line Remover is RELEASED after PR #10 integration, successful actual Pages publication, public browser checks and exact matching source on 2026-11-01. Only its lifecycle entry advanced; the five previous released source pages and CNAME are unchanged. Counts: 93 total, 6 RELEASED, 0 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED; milestone 6/25 (24%). The separate release audit and latest handoff record actual deployment/test/shortcut results and limitations. Do not begin Task 7.
+Task 7 is a local controlled batch: Text Sorter, Slug Generator and Find and Replace are independently TESTED / REQUIRED_PASSED, with publication pending and no release claim. Planner selection, exact policies and source-bound evidence are in the batch plan/individual audits. Their three cards are integrated locally; existing six releases remain unchanged. Inventory is 93 total, 6 RELEASED, 3 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone remains 6/25 (24%). Actual final regression/dashboard/delivery results are in SESSION_HANDOFF.md. No remote publication or Task 8 is authorized.
 
 ## Recently completed work
 
@@ -88,11 +91,11 @@ Task 6 Duplicate Line Remover is RELEASED after PR #10 integration, successful a
 ## Next recommended tasks
 
 <!-- GENERATED:NEXT:START -->
-3. **Text Sorter** — Sort text lines using explicit ordering rules.
-4. **Slug Generator** — Create URL-friendly slugs from text with documented Unicode rules.
-5. **Find and Replace** — Preview and apply literal text replacements safely.
 6. **Text Reverser** — Reverse text by line, word, or grapheme unit.
 7. **JSON Formatter** — Validate, pretty-print and compact JSON locally.
+8. **URL Encoder and Decoder** — Encode or decode URI components with explicit mode selection.
+9. **Base64 Encoder and Decoder** — Encode and decode Unicode text with clear Base64 validation.
+10. **UUID Generator** — Generate version-4 UUIDs using browser cryptographic randomness.
 <!-- GENERATED:NEXT:END -->
 
 Start only after reviewing/synchronizing the management branch. For each utility, finish planning, implementation, testing, homepage integration, and evidence before selecting the next item.
