@@ -7,6 +7,9 @@ import {launchBrowser,findBrowser} from '../../../scripts/tool-tests/browser.mjs
 const source=fileURLToPath(new URL('../../../case-converter/index.html',import.meta.url));
 const registry=JSON.parse(fs.readFileSync(new URL('../../../TOOL_REGISTRY.json',import.meta.url),'utf8'));
 const routes=registry.tools.filter(t=>['IMPLEMENTED','TESTED','RELEASED'].includes(t.status)).map(t=>t.directory_path+'/index.html').sort();
+const caseStatus=registry.tools.find(t=>t.id==='case-converter').status;
+assert.ok(['TESTED','RELEASED'].includes(caseStatus),'Case Converter must have scoped verification');
+const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});
 beforeEach(async()=>{await browser.load(source);});
@@ -28,8 +31,8 @@ test('Back to Hub reaches real hub, preserves all canonical routes and returns t
   await hub();
   assert.deepEqual(await browser.evaluate("Array.from(document.querySelectorAll('#toolGrid a[data-title]'),a=>a.getAttribute('href')).sort()"),routes);
   assert.equal(await browser.evaluate("document.getElementById('resultCount').textContent"),routes.length+' tools ready to use');
-  assert.equal(await browser.evaluate("document.querySelector('[data-tool-id=\"case-converter\"]').getAttribute('data-availability')"),'tested');
-  assert.match(await browser.evaluate("document.querySelector('[data-tool-id=\"case-converter\"]').textContent"),/publication pending/);
+  assert.equal(await browser.evaluate("document.querySelector('[data-tool-id=\"case-converter\"]').getAttribute('data-availability')"),availability);
+  assert.match(await browser.evaluate("document.querySelector('[data-tool-id=\"case-converter\"]').textContent"),caseStatus==='RELEASED'?/\bLive\b/:/publication pending/);
   await browser.evaluate("document.querySelector('[data-tool-id=\"case-converter\"]').click();true");
   await wait("document.getElementById('toolInput') && document.readyState==='complete'");
   assert.match(await browser.evaluate('document.title'),/Case Converter/);

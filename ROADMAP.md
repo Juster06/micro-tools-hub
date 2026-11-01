@@ -1,10 +1,10 @@
 # Development roadmap
 
-## Task 5 — locally tested Case Converter
+## Task 5 — Case Converter released after live verification
 
-Case Converter is implemented and TESTED on `feat/case-converter`; publication is unverified. Its seven styles, live counters, copy/download/clear, scoped evidence and tests are documented in `case-converter/README.md` and `audit/CASE_CONVERTER_VERIFICATION.json`. The gated homepage proposal is applied only in the local branch with a publication-pending label; no push/deployment occurred.
+PR #9 merged as `97a0912a9f6e917c4d6457e856bed45fbc325450`. The actual public Case Converter passed scoped live behavior checks and normalized deployed-source identity verification on 2026-11-01 before the RELEASED transition. The original local audit is retained; `audit/CASE_CONVERTER_RELEASE_VERIFICATION.json` records release evidence and limitations. The hub card uses the established Live label. Inventory: 93 total, 5 RELEASED, 0 TESTED, 19 READY, 68 PLANNED, 1 BLOCKED; milestone 5/25 (20%).
 
-Next owner action: separately authorize the Task 5 GitHub PR/review/integration/publication workflow. Duplicate Line Remover is the next READY registry candidate, not permission to begin another tool. Four tools remain RELEASED; Case Converter must not become RELEASED until live matching-source behavior is actually verified.
+Task 5 final publication verification is recorded in the latest handoff. No additional utility is authorized; Duplicate Line Remover remains a READY queue entry only.
 
 ## Framework readiness — Task 4
 
@@ -25,7 +25,7 @@ Execute in order unless the user steers the project or a dependency/regression j
 <!-- GENERATED:SEQUENCE:START -->
 | Order | Tool ID | Name | Category | Complexity | Status |
 | ---: | --- | --- | --- | --- | --- |
-| 1 | case-converter | Case Converter | Text and Writing Tools | S | TESTED |
+| 1 | case-converter | Case Converter | Text and Writing Tools | S | RELEASED |
 | 2 | duplicate-line-remover | Duplicate Line Remover | Text and Writing Tools | S | READY |
 | 3 | text-sorter | Text Sorter | Text and Writing Tools | S | READY |
 | 4 | slug-generator | Slug Generator | Text and Writing Tools | S | READY |
@@ -96,7 +96,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
 | text-cleaner | AI Text Footprint Cleanser | RELEASED | P2 | M | Modern browser DOM APIs |
-| case-converter | Case Converter | TESTED | P1 | S | Browser-native approach; scope review before implementation |
+| case-converter | Case Converter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | duplicate-line-remover | Duplicate Line Remover | READY | P1 | S | Browser-native approach; scope review before implementation |
 | text-difference-checker | Text Difference Checker | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | text-sorter | Text Sorter | READY | P1 | S | Browser-native approach; scope review before implementation |

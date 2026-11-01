@@ -10,7 +10,7 @@ Python 3.10+ standard library runs the generator/planner/structural checks; Node
 
 Everyday Digital Box is a collection of free, focused browser utilities for everyday writing, spreadsheet work, social content, and entertainment discovery. The website is branded **WebUtils Hub**, and its GitHub repository is named **micro-tools-hub**.
 
-The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It currently contains four standalone tools, linked from a searchable dashboard.
+The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It currently contains five released standalone tools, linked from a searchable dashboard.
 
 ## Project links
 
@@ -47,23 +47,24 @@ On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu l
 ## What the project provides
 
 - A responsive, dark slate and indigo dashboard with searchable tool cards.
-- Four released utilities plus a locally tested Case Converter, using vanilla JavaScript for browser processing.
+- Five released utilities including Case Converter, using vanilla JavaScript for browser processing.
 - Standalone HTML pages that can be edited or hosted without an application build step.
 - No application backend, database, user accounts, or API keys.
 - Consistent navigation back to the hub from each tool.
 - Features such as visible keyboard focus, descriptive labels, status messages, and reduced-motion handling.
 - Styled advertisement placeholders for possible future monetization.
 
-## Case Converter — local TESTED implementation
+## Case Converter — released and live verified
 
 [Case Converter](case-converter/index.html) offers uppercase, lowercase, Title Case, Sentence case, Capitalize Words, Alternating Case and Inverse Case, with live character/word/line counts, unchanged original input, Copy, UTF-8 download and Clear. Read [its rules and test scope](case-converter/README.md) before relying on language-specific casing. Input stays in the browser; the limit is 100,000 UTF-16 units.
 
-Task 5 is local only: the feature branch includes a gated homepage card marked “Tested · publication pending”. The published/released count remains **four**. No Task 5 push, PR, merge, deployment or live verification is claimed. Use `python scripts/test_tool.py --id case-converter` for scoped functional tests. GitHub delivery and publication require separate authorization.
+Task 5 was merged through [PR #9](https://github.com/Juster06/micro-tools-hub/pull/9). [Live Case Converter](https://everydaydigitalbox.com/case-converter/) behavior and deployed source identity were verified on 2026-11-01 before its RELEASED transition. See [release evidence](audit/CASE_CONVERTER_RELEASE_VERIFICATION.json) for deployment, source hash and actual test scope. The hub uses the released “Live” presentation; inventory is **five released tools**, 5/25 (20%). Use `python scripts/test_tool.py --id case-converter` for scoped regression tests.
 
 ## Available tools
 
 | Tool | Purpose | Open the tool |
 | --- | --- | --- |
+| Case Converter | Seven text-case transformations with live counts, copy and UTF-8 download. | [Live tool](https://everydaydigitalbox.com/case-converter/) · [Source](case-converter/index.html) |
 | Social Media Character Counter & Live Previewer | Check caption lengths, preview opening lines, and clean spaces before copying. | [Live tool](https://everydaydigitalbox.com/social-counter/) · [Source](social-counter/index.html) |
 | Excel Formula Sandbox & Analyzer | Make nested formulas easier to read and inspect their structure. | [Live tool](https://everydaydigitalbox.com/excel-sandbox/) · [Source](excel-sandbox/index.html) |
 | AI Text Footprint Cleanser | Highlight listed phrases and replace them with simpler wording. | [Live tool](https://everydaydigitalbox.com/text-cleaner/) · [Source](text-cleaner/index.html) |

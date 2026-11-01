@@ -1,5 +1,19 @@
 # Session handoff
 
+## Latest session — Task 5 final integration and release (2026-11-01, Europe/London)
+
+**Status:** PR #9 merged normally at 2026-11-01T04:09:59Z as `97a0912a9f6e917c4d6457e856bed45fbc325450`, tree `792bd602b4a1d2fa7fc3907914531ba155ebd610`. Local main safely fast-forwarded; the original local `feat/case-converter` remains `a6f608dd83d92509d3968bb777d47587395c7ff2`. The API-published feature commit `a6f678d8c4f770bd55eccc8ad493d3aa3ef8b85c` has the identical reviewed tree. No force-push, destructive reset, checkout move or history rewrite.
+
+**Publication:** GitHub-managed Pages build logs confirm main/root, Jekyll to ./_site. Implementation deployment [41272001438](https://github.com/Juster06/micro-tools-hub/actions/runs/41272001438) succeeded. Canonical HTTPS homepage and Case Converter returned 200 with normalized hashes identical to reviewed source. Case source SHA-256 `a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6`; inline JS/CSS and CDN URL identical. Actual public Edge checks and reviewed desktop/mobile screenshots passed. Copy success/denial simulated and UTF-8 Blob/filename/bytes/revocation inspected in memory; no OS clipboard/save-dialog/screen-reader certification. Original four public routes load without uncaught JS errors.
+
+**Lifecycle:** Case Converter is RELEASED after real live/source gates; prior local audit is preserved byte-for-byte and separate release audit added. Counts: 93 total, 5 RELEASED, 0 TESTED, 19 READY, 68 PLANNED, 1 BLOCKED; milestone 5/25 (20%). Only its framework-managed card changes to Live. Existing four pages, CNAME, framework, dashboard code and installed shortcut definitions remain unchanged.
+
+**Validation checkpoint:** pre-merge Python 123, Node 52, Case JSON logic 69, Case browser 22/89 assertions plus 11 Node browser cases, legacy browsers 12/41 assertions, project validation zero errors/warnings all passed. Final post-release Python 123/123 and Node 52/52 passed. Case 69 logic, 22 browser/89 assertions plus 11 Node browser cases passed; existing four tools 12 browser/41 assertions and template 6 logic/12 browser/48 assertions passed. Full project status and both actual existing Desktop/Start menu shortcut launches completed successfully, displaying 93 total, 5 released, 0 tested and 5/25 (20%). Native validation screen shows all four current reports PASS; its functional totals remain unavailable by design. Shortcut bytes/targets/arguments/root/AppID unchanged. Privacy/whitespace and protected-source/card/registry checks passed. Release audit includes the real results and scope. Guarded publication of these reviewed ten files and separate Live-label deployment verification remain next.
+
+**Next major task:** no further utility is authorized. Finish the authorized release metadata validation/publication and independently verify its Live-label deployment, then leave synchronized clean main. Do not begin Task 6.
+
+### Historical local implementation checkpoint
+
 ## Latest session — Task 5 Case Converter (2026-11-01, Europe/London)
 
 **Status:** the implementation and scoped tests are complete on `feat/case-converter`, based on clean synchronized main `be4770e750f198be0ed07d763ba5d1464dc3695e`. Source checkpoint `660150fcec9188eef9704c813145ef04b7c3bdc7` contains the actual standalone page and initial tests. Final documentation and dashboard compatibility checks passed; this local checkpoint records completion. Task 5 is local only: no push, PR, merge, deployment or live verification was authorized/performed. Identify the containing final checkpoint with `git log -1 --format="%H %s"`. The active checkout and installed shortcuts remain in place.
@@ -25,19 +39,19 @@
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 25 released tools; 4 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 19; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 1; RELEASED: 4; DEPRECATED: 0.
+- Milestone: 25 released tools; 5 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 19; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 5; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Duplicate Line Remover.
-- Git branch: feat/case-converter.
-- Latest commit observed before generation: 660150fcec9188eef9704c813145ef04b7c3bdc7.
+- Git branch: main.
+- Latest commit observed before generation: 97a0912a9f6e917c4d6457e856bed45fbc325450.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
-- Case Converter: TESTED, evidence dated 2026-11-01.
+- Case Converter: RELEASED, evidence dated 2026-11-01.
 - AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
 - Free Stream Roulette: RELEASED, evidence dated 2026-10-31.
 - Social Media Character Counter & Live Previewer: RELEASED, evidence dated 2026-10-31.
@@ -60,8 +74,8 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` TOOL_REGISTRY.json
 - ` M` case-converter/README.md
 - ` M` index.html
-- `??` audit/CASE_CONVERTER_VERIFICATION.json
-- `??` tests/tools/case-converter/integration-browser.test.mjs
+- ` M` tests/tools/case-converter/integration-browser.test.mjs
+- `??` audit/CASE_CONVERTER_RELEASE_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

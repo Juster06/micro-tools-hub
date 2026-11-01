@@ -1,5 +1,13 @@
 # Changelog
 
+## Released — Case Converter (Task 5, 2026-11-01)
+
+- Merged PR #9 normally as `97a0912a9f6e917c4d6457e856bed45fbc325450`; preserved the original local feature branch and safely fast-forwarded main. Both reviewed feature commits have tree `792bd602b4a1d2fa7fc3907914531ba155ebd610`.
+- Verified successful GitHub Pages main/root deployment run 41272001438, genuine public behavior and exact normalized Case Converter source SHA-256 `a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6`. No implementation transformation was required.
+- Advanced only Case Converter to RELEASED after these gates; retained its original local audit and added a separate dated release audit. Updated only its framework-managed hub availability to Live and derived inventory to 5 RELEASED, 0 TESTED, 19 READY, 68 PLANNED, 1 BLOCKED (93 total); 5/25 = 20%.
+- Adapted the tool-specific integration assertion to the registry lifecycle, preserving strict Tested/publication-pending or RELEASED/Live expectations. Public tool HTML, original four tools, CNAME, shared framework and dashboard/shortcut code are unchanged.
+- Local and live checks distinguish simulated clipboard/download APIs from OS permissions/save dialogs. Final validation, metadata deployment and shortcut verification are recorded in the latest handoff.
+
 ## Unreleased — Case Converter (Task 5, local only, 2026-11-01)
 
 - Implemented seven actual case conversions from the Task 4 generator, with documented title/sentence/Unicode rules and preserved original input/whitespace.

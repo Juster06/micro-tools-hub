@@ -1,0 +1,517 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-01",
+  "source_revision": "97a0912a9f6e917c4d6457e856bed45fbc325450",
+  "browser": "Edg/156.0.4314.58",
+  "scope": "Actual HTTPS public pages in isolated Edge; clipboard success/denial simulated; download Blob captured in memory, no OS clipboard/save-dialog or screen-reader certification. Local regression scope remains documented in the preserved original audit.",
+  "pages": [
+    {
+      "path": "case-converter/index.html",
+      "source_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+      "checks": [
+        "69 exact-output transformation cases across all seven modes, Unicode, punctuation, whitespace, abbreviations and invalid input",
+        "20 additional statistics/long-input/limit logic tests; actual 100,000-unit results and oversized rejection",
+        "22 real Chromium DSL cases: all modes, live counters, switching, copy success/denial, UTF-8 download, clear, empty input, safe rendering, stale results, keyboard and 320/375/768/1440px overflow",
+        "9 extended real Chromium cases: full/oversized and emoji limits, immediate invalidation, delayed copy, safe filename/UTF-8/object-URL revocation, keyboard, simulated composition and transport/storage calls",
+        "Manual review of rendered 1440px desktop and 375px mobile screenshots from the byte-identical generated source; labels, selected mode, panes, feedback and readable layout reviewed",
+        "Public homepage loads and Case Converter card is visible",
+        "Real homepage card navigation reaches public Case Converter",
+        "Canonical slash route loads same Case Converter interface",
+        "Live uppercase conversion; original preserved",
+        "Live lowercase conversion; original preserved",
+        "Live title conversion; original preserved",
+        "Live sentence conversion; original preserved",
+        "Live capitalize conversion; original preserved",
+        "Live alternating conversion; original preserved",
+        "Live inverse conversion; original preserved",
+        "Unicode character/word/line statistics update",
+        "Public production copy handler succeeds with simulated clipboard",
+        "Public copy denial reports truthful failure",
+        "Production UTF-8 download Blob/filename/bytes/revocation verified in memory",
+        "Clear resets input/output/mode/counts/focus",
+        "Native CDP Tab and Enter operate conversion controls",
+        "375px mobile usable controls and no horizontal overflow",
+        "No uncaught JavaScript errors/rejections in live Case Converter",
+        "Back to Hub reaches actual public homepage",
+        "Existing public excel-sandbox accessible",
+        "Existing public social-counter accessible",
+        "Existing public text-cleaner accessible",
+        "Existing public streaming-roulette accessible",
+        "Manual review of actual public 1440px desktop and 375px mobile screenshots: readable theme, controls, preserved original/result and stacked mobile layout"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/case-converter/",
+        "http_status": 200,
+        "checked_at": "2026-11-01T04:10:56.570975+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "integration": {
+    "pull_request": "https://github.com/Juster06/micro-tools-hub/pull/9",
+    "merge_commit": "97a0912a9f6e917c4d6457e856bed45fbc325450",
+    "merge_tree": "792bd602b4a1d2fa7fc3907914531ba155ebd610",
+    "merged_at": "2026-11-01T04:09:59Z",
+    "original_local_commit": "a6f608dd83d92509d3968bb777d47587395c7ff2",
+    "published_feature_commit": "a6f678d8c4f770bd55eccc8ad493d3aa3ef8b85c",
+    "identical_feature_trees": true
+  },
+  "deployment": {
+    "workflow": {
+      "id": 41272001438,
+      "head_sha": "97a0912a9f6e917c4d6457e856bed45fbc325450",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Juster06/micro-tools-hub/actions/runs/41272001438",
+      "created_at": "2026-11-01T04:10:01Z",
+      "updated_at": "2026-11-01T04:10:44Z"
+    },
+    "configuration": {
+      "source_branch": "main",
+      "source_directory": ".",
+      "builder": "GitHub-managed Jekyll Pages build",
+      "build_output": "./_site",
+      "verified_from": "Successful build job 124746513993: Checkout ref main; source .; destination ./_site"
+    },
+    "source_comparison": [
+      {
+        "path": "index.html",
+        "url": "https://everydaydigitalbox.com/",
+        "http_status": 200,
+        "source_sha256": "971d0d6559e1bc868fa89f9c8e3f1f7baa27272f839f14855d942ba9d9aa319b",
+        "live_sha256": "971d0d6559e1bc868fa89f9c8e3f1f7baa27272f839f14855d942ba9d9aa319b",
+        "source_matches": true,
+        "etag": "\"6ae6bbbd-3dbe\"",
+        "checked_at": "2026-11-01T04:10:55.661667+00:00"
+      },
+      {
+        "path": "case-converter/index.html",
+        "url": "https://everydaydigitalbox.com/case-converter/",
+        "http_status": 200,
+        "source_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+        "live_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+        "source_matches": true,
+        "etag": "\"6ae6bbbd-523c\"",
+        "checked_at": "2026-11-01T04:10:56.570975+00:00"
+      }
+    ],
+    "normalization": "scripts/tracking.py normalized_hash: decode UTF-8 BOM, CRLF to LF, strip trailing whitespace, SHA-256 UTF-8. HTML inline CSS/JS and Tailwind CDN script URL are identical; no transformation exception required."
+  },
+  "live_browser": {
+    "started_at": "2026-11-01T04:11:27.225Z",
+    "scope": "Actual HTTPS public pages in isolated Edge; clipboard success/denial simulated; download Blob captured in memory, no OS clipboard/save-dialog or screen-reader certification.",
+    "checks": [
+      {
+        "name": "Public homepage loads and Case Converter card is visible",
+        "result": "PASS"
+      },
+      {
+        "name": "Real homepage card navigation reaches public Case Converter",
+        "result": "PASS"
+      },
+      {
+        "name": "Canonical slash route loads same Case Converter interface",
+        "result": "PASS"
+      },
+      {
+        "name": "Live uppercase conversion; original preserved",
+        "result": "PASS"
+      },
+      {
+        "name": "Live lowercase conversion; original preserved",
+        "result": "PASS"
+      },
+      {
+        "name": "Live title conversion; original preserved",
+        "result": "PASS"
+      },
+      {
+        "name": "Live sentence conversion; original preserved",
+        "result": "PASS"
+      },
+      {
+        "name": "Live capitalize conversion; original preserved",
+        "result": "PASS"
+      },
+      {
+        "name": "Live alternating conversion; original preserved",
+        "result": "PASS"
+      },
+      {
+        "name": "Live inverse conversion; original preserved",
+        "result": "PASS"
+      },
+      {
+        "name": "Unicode character/word/line statistics update",
+        "result": "PASS"
+      },
+      {
+        "name": "Public production copy handler succeeds with simulated clipboard",
+        "result": "PASS"
+      },
+      {
+        "name": "Public copy denial reports truthful failure",
+        "result": "PASS"
+      },
+      {
+        "name": "Production UTF-8 download Blob/filename/bytes/revocation verified in memory",
+        "result": "PASS"
+      },
+      {
+        "name": "Clear resets input/output/mode/counts/focus",
+        "result": "PASS"
+      },
+      {
+        "name": "Native CDP Tab and Enter operate conversion controls",
+        "result": "PASS"
+      },
+      {
+        "name": "375px mobile usable controls and no horizontal overflow",
+        "result": "PASS"
+      },
+      {
+        "name": "No uncaught JavaScript errors/rejections in live Case Converter",
+        "result": "PASS"
+      },
+      {
+        "name": "Back to Hub reaches actual public homepage",
+        "result": "PASS"
+      },
+      {
+        "name": "Existing public excel-sandbox accessible",
+        "result": "PASS",
+        "title": "Excel Formula Sandbox & Analyzer"
+      },
+      {
+        "name": "Existing public social-counter accessible",
+        "result": "PASS",
+        "title": "Social Media Character Counter & Live Previewer | WebUtils Hub"
+      },
+      {
+        "name": "Existing public text-cleaner accessible",
+        "result": "PASS",
+        "title": "AI Text Footprint Cleanser"
+      },
+      {
+        "name": "Existing public streaming-roulette accessible",
+        "result": "PASS",
+        "title": "Free Legal Streaming Roulette & Finder"
+      }
+    ],
+    "result": "PASS",
+    "browser": "Edg/156.0.4314.58",
+    "homepage_availability": "tested",
+    "clipboard_denial_message": "Clipboard unavailable. Result selected; press Ctrl+C (or ⌘C) to copy.",
+    "finished_at": "2026-11-01T04:11:34.562Z"
+  },
+  "previous_evidence": "audit/CASE_CONVERTER_VERIFICATION.json",
+  "pre_merge_validation": {
+    "python": {
+      "passed": 123,
+      "failed": 0
+    },
+    "node": {
+      "passed": 52,
+      "failed": 0
+    },
+    "case_logic": 69,
+    "case_browser": 22,
+    "case_browser_assertions": 89,
+    "additional_case_browser": 11,
+    "existing_tool_browser": 12,
+    "existing_tool_browser_assertions": 41,
+    "project_status": "PASS; 0 errors, 0 warnings",
+    "privacy_whitespace_protected_sources": "PASS"
+  },
+  "limitations": [
+    "Native language-neutral casing may expand code points; no locale-specific editorial, surname or proper-name detection",
+    "Sentence abbreviation heuristics are deliberately limited; ambiguous sentence endings require review",
+    "Code-point and whitespace-token counts are not grapheme/linguistic segmentation",
+    "100,000 UTF-16 input units; native textareas use LF",
+    "Only recorded Edge engine executed. Live OS clipboard APIs simulated; download Blob inspected in memory; no OS save dialog, IME or screen-reader certification. Existing legacy tools have no isolated logic adapters; selected structure/browser scopes passed."
+  ],
+  "test_harness_note": "First live run correctly displayed Clipboard unavailable; the scratch assertion omitted the word unavailable. Assertion corrected to the actual truthful manual-copy guidance and the entire live suite rerun successfully. Public implementation was unchanged.",
+  "release_metadata_publication": "First implementation deployment and live source/behavior verified before lifecycle transition. The Live hub label and registry update require a separately verified subsequent deployment; final handoff records that result.",
+  "protected_public_sources": [
+    {
+      "path": "excel-sandbox/index.html",
+      "url": "https://everydaydigitalbox.com/excel-sandbox/",
+      "status": 200,
+      "source_matches": true,
+      "sha256": "badb1ccd17302f8006397ff0553b483a3cdcf426bad61976477f4c77908c4191"
+    },
+    {
+      "path": "social-counter/index.html",
+      "url": "https://everydaydigitalbox.com/social-counter/",
+      "status": 200,
+      "source_matches": true,
+      "sha256": "8703dcdc3a4f13c8597022f3338b750f67042f9d2782d996d55e95412844e47b"
+    },
+    {
+      "path": "text-cleaner/index.html",
+      "url": "https://everydaydigitalbox.com/text-cleaner/",
+      "status": 200,
+      "source_matches": true,
+      "sha256": "9c9e0e6a9a9796b73b26f21adb8cffa33a7aa6b2e669b64bfb9ab54972273443"
+    },
+    {
+      "path": "streaming-roulette/index.html",
+      "url": "https://everydaydigitalbox.com/streaming-roulette/",
+      "status": 200,
+      "source_matches": true,
+      "sha256": "6f9cb3b2c114e03f545034ef0b1065ae5d4c50b13d9576882cdb5cffe5aef761"
+    }
+  ],
+  "dashboard_verification": {
+    "launches": {
+      "desktop": {
+        "result": "PASS",
+        "checked_at": "2026-11-01T04:15:53+00:00",
+        "actual_existing_shortcut_launched": true,
+        "unrelated_cwd": true,
+        "workflow": "PASS; exit 0; 0 errors; 0 warnings",
+        "registry": {
+          "total": 93,
+          "released": 5,
+          "tested": 0,
+          "ready": 19,
+          "planned": 68,
+          "blocked": 1,
+          "milestone": "5/25; 20%"
+        }
+      },
+      "programs": {
+        "result": "PASS",
+        "checked_at": "2026-11-01T04:16:22+00:00",
+        "actual_existing_shortcut_launched": true,
+        "unrelated_cwd": true,
+        "workflow": "PASS; exit 0; 0 errors; 0 warnings",
+        "registry": {
+          "total": 93,
+          "released": 5,
+          "tested": 0,
+          "ready": 19,
+          "planned": 68,
+          "blocked": 1,
+          "milestone": "5/25; 20%"
+        }
+      }
+    },
+    "shortcut_definitions": "Desktop and Start menu link bytes, targets, arguments, working directories and AppID match original Task 4 baseline; no installer or taskbar settings changes.",
+    "native_validation_screen": "All four current saved validation reports show PASS. Python/Node functional totals remain unavailable under the existing dashboard schema; separately executed test results below are not invented GUI totals."
+  },
+  "final_validation": {
+    "python": {
+      "passed": 123,
+      "failed": 0
+    },
+    "node": {
+      "passed": 52,
+      "failed": 0
+    },
+    "case": {
+      "schema_version": 1,
+      "tool_id": "case-converter",
+      "generated_at": "2026-11-01T04:14:32+00:00",
+      "input_hash": "5d0de5f84470c67b534196bb3d822a9946fa2c6adf1c5425ba08e06c6862acc7",
+      "source_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+      "workspace": "canonical",
+      "is_scaffold": false,
+      "layers": {
+        "structural": {
+          "status": "PASS",
+          "errors": [],
+          "warnings": [],
+          "scope": "STRUCTURAL_ONLY"
+        },
+        "logic": {
+          "status": "PASS",
+          "passed": 69,
+          "failed": 0,
+          "assertions": 69,
+          "failures": [],
+          "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+        },
+        "browser": {
+          "status": "PASS",
+          "passed": 22,
+          "failed": 0,
+          "assertions": 89,
+          "failures": [],
+          "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+          "browser": "Edg/156.0.4314.58"
+        }
+      },
+      "status": "PASS"
+    },
+    "existing_tool_browser": {
+      "social-counter": {
+        "status": "PASS",
+        "passed": 4,
+        "failed": 0,
+        "assertions": 14,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      },
+      "excel-sandbox": {
+        "status": "PASS",
+        "passed": 3,
+        "failed": 0,
+        "assertions": 10,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      },
+      "text-cleaner": {
+        "status": "PASS",
+        "passed": 3,
+        "failed": 0,
+        "assertions": 8,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      },
+      "streaming-roulette": {
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 9,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "templates": {
+      "schema_version": 1,
+      "kind": "TEMPLATE_FRAMEWORK_TEST_ONLY",
+      "status": "PASS",
+      "results": [
+        {
+          "template": "text",
+          "schema_version": 1,
+          "tool_id": "text-fixture",
+          "generated_at": "2026-11-01T04:15:15+00:00",
+          "input_hash": "24bad3995f644e7a56d0b370180aca73f3437af3dea2784a0f5febef863b5927",
+          "source_sha256": "513aee55fbeae1fc149a9215a022068de797428dca4a26da262ec511f4fb764e",
+          "workspace": "staging",
+          "is_scaffold": false,
+          "layers": {
+            "structural": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "scope": "STRUCTURAL_ONLY"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 3,
+              "failed": 0,
+              "assertions": 3,
+              "failures": [],
+              "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 6,
+              "failed": 0,
+              "assertions": 24,
+              "failures": [],
+              "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+              "browser": "Edg/156.0.4314.58"
+            }
+          },
+          "status": "PASS"
+        },
+        {
+          "template": "structured",
+          "schema_version": 1,
+          "tool_id": "structured-fixture",
+          "generated_at": "2026-11-01T04:15:25+00:00",
+          "input_hash": "3a2d8cd2a5f6f8b8b48c44791d566d2ceed2066d87b67b1e044387c4872d99ac",
+          "source_sha256": "bea90e0e55bf8b00cb487bfbe35089c74dbe221213be0a39528fe6c70bd3b337",
+          "workspace": "staging",
+          "is_scaffold": false,
+          "layers": {
+            "structural": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "scope": "STRUCTURAL_ONLY"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 3,
+              "failed": 0,
+              "assertions": 3,
+              "failures": [],
+              "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 6,
+              "failed": 0,
+              "assertions": 24,
+              "failures": [],
+              "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+              "browser": "Edg/156.0.4314.58"
+            }
+          },
+          "status": "PASS"
+        }
+      ],
+      "scope": "Temporary neutral fixtures only. No Case Converter or other registry utility is implemented."
+    },
+    "project_status": {
+      "status": "PASS",
+      "generated_at": "2026-11-01T04:16:22+00:00",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "total": 93,
+        "by_status": {
+          "IDEA": 0,
+          "PLANNED": 68,
+          "READY": 19,
+          "IN_PROGRESS": 0,
+          "BLOCKED": 1,
+          "IMPLEMENTED": 0,
+          "TESTED": 0,
+          "RELEASED": 5,
+          "DEPRECATED": 0
+        },
+        "released": 5,
+        "tested": 0,
+        "implemented": 0,
+        "in_progress": 0,
+        "planned": 68,
+        "ready": 19,
+        "blocked": 1,
+        "backlog": 88,
+        "by_category": {
+          "pdf": 9,
+          "image": 8,
+          "text": 8,
+          "data": 10,
+          "developer": 9,
+          "social": 11,
+          "calculator": 10,
+          "security": 9,
+          "conversion": 9,
+          "productivity": 9,
+          "entertainment": 1
+        },
+        "by_priority": {
+          "P1": 20,
+          "P2": 71,
+          "P3": 2
+        },
+        "milestone": 25,
+        "milestone_percent": 20.0,
+        "remaining_to_milestone": 20
+      }
+    },
+    "privacy_whitespace": "PASS: only ten reviewed intended text files; no credentials, personal paths, local settings, generated reports or temporary/machine-specific files"
+  }
+}

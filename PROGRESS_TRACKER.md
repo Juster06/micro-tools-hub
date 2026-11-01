@@ -1,6 +1,6 @@
 # Progress tracker
 
-Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` for the full tracking workflow, or `python scripts/generate_progress.py` to refresh only registry-derived documents. Existing Node commands delegate to the same Python engine. Counts are not separate manually maintained totals. Last functional/publication baseline audit: 2026-10-31; static tracking checks do not refresh it.
+Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` for the full tracking workflow, or `python scripts/generate_progress.py` to refresh only registry-derived documents. Existing Node commands delegate to the same Python engine. Counts are not separate manually maintained totals. Original four-tool baseline audit: 2026-10-31. Case Converter live behavior/source verification: 2026-11-01; static tracking checks do not refresh either date.
 
 ## Inventory and current milestone
 
@@ -14,14 +14,14 @@ Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` f
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 1 |
-| RELEASED | 4 |
+| TESTED | 0 |
+| RELEASED | 5 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 88 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **25 released tools**. Progress: 4/25 (16.0%); remaining: 21.
+Current growth milestone: **25 released tools**. Progress: 5/25 (20.0%); remaining: 20.
 
 ### Tools by category
 
@@ -55,7 +55,7 @@ Next ready tool: **Duplicate Line Remover**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| Case Converter | TESTED | 2026-11-01 |
+| Case Converter | RELEASED | 2026-11-01 |
 | AI Text Footprint Cleanser | RELEASED | 2026-10-31 |
 | Free Stream Roulette | RELEASED | 2026-10-31 |
 | Social Media Character Counter & Live Previewer | RELEASED | 2026-10-31 |
@@ -66,7 +66,7 @@ The backlog total includes READY and BLOCKED; those rows must not be added again
 
 ## Current development task
 
-Task 5 Case Converter is locally implemented and TESTED, with publication unverified. Seven conversion modes, live counts, copy/download/clear, actual logic/browser tests and a gated local homepage card are complete. Only its registry entry advanced; four tools remain RELEASED. The current follow-up is separately authorized GitHub delivery, review, integration and live publication verification, not another utility. `SESSION_HANDOFF.md` records the exact local Git state and test scope.
+Task 5 Case Converter is RELEASED after PR #9 integration, successful GitHub Pages deployment, real public browser checks and matching normalized source on 2026-11-01. Only its lifecycle entry advanced; the original four pages and CNAME are unchanged. Inventory is five released tools and milestone 5/25 (20%). See `audit/CASE_CONVERTER_RELEASE_VERIFICATION.json` and `SESSION_HANDOFF.md` for dated evidence, publication checkpoints, tests and limitations. Do not begin another utility.
 
 ## Recently completed work
 
