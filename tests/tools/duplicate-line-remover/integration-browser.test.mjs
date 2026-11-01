@@ -8,9 +8,15 @@ const source=fileURLToPath(new URL('../../../duplicate-line-remover/index.html',
 const registry=JSON.parse(fs.readFileSync(new URL('../../../TOOL_REGISTRY.json',import.meta.url),'utf8'));
 const routes=registry.tools.filter(t=>['IMPLEMENTED','TESTED','RELEASED'].includes(t.status)).map(t=>t.directory_path+'/index.html').sort();
 const toolStatus=registry.tools.find(t=>t.id==='duplicate-line-remover').status;
-assert.equal(toolStatus,'TESTED','Local delivery must remain TESTED');
-assert.equal(registry.tools.find(t=>t.id==='duplicate-line-remover').verification.publication,null);
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,5);
+assert.ok(['TESTED','RELEASED'].includes(toolStatus),'Tool requires verified lifecycle');
+const publication=registry.tools.find(t=>t.id==='duplicate-line-remover').verification.publication;
+if(toolStatus==='TESTED') assert.equal(publication,null);
+else {
+  assert.equal(publication.http_status,200);
+  assert.equal(publication.source_matches,true);
+  assert.equal(publication.url,'https://everydaydigitalbox.com/duplicate-line-remover/');
+}
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,toolStatus==='RELEASED'?6:5);
 const availability=toolStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

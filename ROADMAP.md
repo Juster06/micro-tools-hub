@@ -1,10 +1,10 @@
 # Development roadmap
 
-## Task 6 — locally tested Duplicate Line Remover
+## Task 6 — Duplicate Line Remover released after live verification
 
-Duplicate Line Remover progressed from the existing READY entry through IMPLEMENTED to TESTED after actual local logic, browser and visual checks. Source checkpoint `bf1bbcd5153f2e4047de61acd9c2b5390ab4812c` contains the implementation and tests. Matching, blank removal, optional deterministic sorting, first-occurrence retention, accurate counts and actions are documented in `duplicate-line-remover/README.md`; source-bound audit is `audit/DUPLICATE_LINE_REMOVER_VERIFICATION.json`. Publication remains null; the gated local hub card is explicitly Tested/publication pending. Inventory: 93 total, 5 RELEASED, 1 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED; milestone 5/25 (20%).
+PR #10 merged as `34ad939b7802ff2c0342d591e9773b06d78a0fbd`. Successful main/root GitHub Pages deployment, real public Edge behavior and exact approved normalized source identity passed on 2026-11-01 before RELEASED. Original local audit remains unchanged; separate `audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json` records genuine release evidence and scope. The gated hub card uses the released Live presentation. Counts: 93 total, 6 RELEASED, 0 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED; milestone 6/25 (24%).
 
-Next action is a separately authorized GitHub PR/review/integration/publication verification workflow. Do not begin Task 7 or another utility. Text Sorter is a READY queue entry only.
+Final release-metadata deployment and native shortcut verification are recorded in the latest handoff. No Task 7 or additional utility is authorized; Text Sorter remains a READY queue entry only.
 
 ## Task 5 — Case Converter released after live verification
 
@@ -32,7 +32,7 @@ Execute in order unless the user steers the project or a dependency/regression j
 | Order | Tool ID | Name | Category | Complexity | Status |
 | ---: | --- | --- | --- | --- | --- |
 | 1 | case-converter | Case Converter | Text and Writing Tools | S | RELEASED |
-| 2 | duplicate-line-remover | Duplicate Line Remover | Text and Writing Tools | S | TESTED |
+| 2 | duplicate-line-remover | Duplicate Line Remover | Text and Writing Tools | S | RELEASED |
 | 3 | text-sorter | Text Sorter | Text and Writing Tools | S | READY |
 | 4 | slug-generator | Slug Generator | Text and Writing Tools | S | READY |
 | 5 | find-and-replace | Find and Replace | Text and Writing Tools | S | READY |
@@ -103,7 +103,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | --- | --- | --- | --- | --- | --- |
 | text-cleaner | AI Text Footprint Cleanser | RELEASED | P2 | M | Modern browser DOM APIs |
 | case-converter | Case Converter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| duplicate-line-remover | Duplicate Line Remover | TESTED | P1 | S | Browser-native approach; scope review before implementation |
+| duplicate-line-remover | Duplicate Line Remover | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | text-difference-checker | Text Difference Checker | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | text-sorter | Text Sorter | READY | P1 | S | Browser-native approach; scope review before implementation |
 | text-reverser | Text Reverser | READY | P1 | S | Browser-native approach; scope review before implementation |

@@ -14,14 +14,14 @@ Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` f
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 1 |
-| RELEASED | 5 |
+| TESTED | 0 |
+| RELEASED | 6 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 87 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **25 released tools**. Progress: 5/25 (20.0%); remaining: 20.
+Current growth milestone: **25 released tools**. Progress: 6/25 (24.0%); remaining: 19.
 
 ### Tools by category
 
@@ -55,7 +55,7 @@ Next ready tool: **Text Sorter**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| Duplicate Line Remover | TESTED | 2026-11-01 |
+| Duplicate Line Remover | RELEASED | 2026-11-01 |
 | Case Converter | RELEASED | 2026-11-01 |
 | AI Text Footprint Cleanser | RELEASED | 2026-10-31 |
 | Free Stream Roulette | RELEASED | 2026-10-31 |
@@ -67,7 +67,7 @@ The backlog total includes READY and BLOCKED; those rows must not be added again
 
 ## Current development task
 
-Task 6 Duplicate Line Remover is locally TESTED / REQUIRED_PASSED, with publication unverified and a gated local hub card marked Tested/publication pending. Only its lifecycle entry changed. Five released tools remain unchanged; counts are 93 total, 5 RELEASED, 1 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED; milestone remains 5/25 (20%). Source, exact rules and actual scoped evidence are recorded in its README and audit. Finish the local checkpoint, then await separate PR/review/publication authorization; do not begin Task 7.
+Task 6 Duplicate Line Remover is RELEASED after PR #10 integration, successful actual Pages publication, public browser checks and exact matching source on 2026-11-01. Only its lifecycle entry advanced; the five previous released source pages and CNAME are unchanged. Counts: 93 total, 6 RELEASED, 0 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED; milestone 6/25 (24%). The separate release audit and latest handoff record actual deployment/test/shortcut results and limitations. Do not begin Task 7.
 
 ## Recently completed work
 

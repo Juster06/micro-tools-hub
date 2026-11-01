@@ -2,7 +2,7 @@
 
 ## Reusable utility development
 
-Task 4 provides development-only scaffolding, templates, functional checks, homepage patch previews and ordered batch proposals. Read the [utility contract](TOOL_CONTRACT.md) and [developer guide](TOOL_DEVELOPMENT_GUIDE.md) before implementing a tool. Use `python scripts/plan_tool_batch.py --count 10` to inspect READY work; for example, `python scripts/create_tool.py --id duplicate-line-remover --dry-run` only proposes a scaffold. Select work only within the latest owner-authorized scope.
+Task 4 provides development-only scaffolding, templates, functional checks, homepage patch previews and ordered batch proposals. Read the [utility contract](TOOL_CONTRACT.md) and [developer guide](TOOL_DEVELOPMENT_GUIDE.md) before implementing a tool. Use `python scripts/plan_tool_batch.py --count 10` to inspect READY work; scaffold generation accepts existing READY entries only, and an inspected dry run precedes implementation. Select work only within the latest owner-authorized scope.
 
 Python 3.10+ standard library runs the generator/planner/structural checks; Node 22.4+ and an installed Chromium browser enable actual logic/interaction tests. Tool users need only their browser. Public website, GitHub repository and existing dashboard shortcuts remain unchanged.
 
@@ -10,7 +10,7 @@ Python 3.10+ standard library runs the generator/planner/structural checks; Node
 
 Everyday Digital Box is a collection of free, focused browser utilities for everyday writing, spreadsheet work, social content, and entertainment discovery. The website is branded **WebUtils Hub**, and its GitHub repository is named **micro-tools-hub**.
 
-The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It currently contains five released standalone tools, linked from a searchable dashboard.
+The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It currently contains six released standalone tools, linked from a searchable dashboard.
 
 ## Project links
 
@@ -47,7 +47,7 @@ On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu l
 ## What the project provides
 
 - A responsive, dark slate and indigo dashboard with searchable tool cards.
-- Five released utilities and a locally tested Duplicate Line Remover, using vanilla JavaScript for browser processing.
+- Six released utilities including Duplicate Line Remover, using vanilla JavaScript for browser processing.
 - Standalone HTML pages that can be edited or hosted without an application build step.
 - No application backend, database, user accounts, or API keys.
 - Consistent navigation back to the hub from each tool.
@@ -58,16 +58,17 @@ On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu l
 
 [Case Converter](case-converter/index.html) offers uppercase, lowercase, Title Case, Sentence case, Capitalize Words, Alternating Case and Inverse Case, with live character/word/line counts, unchanged original input, Copy, UTF-8 download and Clear. Read [its rules and test scope](case-converter/README.md) before relying on language-specific casing. Input stays in the browser; the limit is 100,000 UTF-16 units.
 
-Task 5 was merged through [PR #9](https://github.com/Juster06/micro-tools-hub/pull/9). [Live Case Converter](https://everydaydigitalbox.com/case-converter/) behavior and deployed source identity were verified on 2026-11-01 before its RELEASED transition. See [release evidence](audit/CASE_CONVERTER_RELEASE_VERIFICATION.json) for deployment, source hash and actual test scope. The hub uses the released “Live” presentation; inventory is **five released tools**, 5/25 (20%). Use `python scripts/test_tool.py --id case-converter` for scoped regression tests.
+Task 5 was merged through [PR #9](https://github.com/Juster06/micro-tools-hub/pull/9). [Live Case Converter](https://everydaydigitalbox.com/case-converter/) behavior and deployed source identity were verified on 2026-11-01 before its RELEASED transition. See [release evidence](audit/CASE_CONVERTER_RELEASE_VERIFICATION.json) for deployment, source hash and actual test scope. The hub uses the released “Live” presentation; current inventory is **six released tools**, 6/25 (24%). Use `python scripts/test_tool.py --id case-converter` for scoped regression tests.
 
-## Duplicate Line Remover — locally TESTED, publication pending
+## Duplicate Line Remover — released and live verified
 
-[Duplicate Line Remover](duplicate-line-remover/index.html) keeps the first unique line with optional case-insensitive matching, surrounding-whitespace comparison, blank removal and deterministic sorting. It preserves original retained text, shows five actual line statistics, updates live, and supports copy/UTF-8 download/Clear. See [rules, limits and tests](duplicate-line-remover/README.md) and [local audit](audit/DUPLICATE_LINE_REMOVER_VERIFICATION.json). Task 6 is local only on `feat/duplicate-line-remover`; its gated hub card says “Tested · publication pending”. No push, PR, merge, deployment or RELEASED claim is included. Five tools remain released and milestone remains 20%.
+[Duplicate Line Remover](duplicate-line-remover/index.html) keeps the first unique line with optional case-insensitive matching, surrounding-whitespace comparison, blank removal and deterministic sorting. It preserves original retained text, shows five actual line statistics, updates live, and supports copy/UTF-8 download/Clear. See [rules, limits and tests](duplicate-line-remover/README.md) and [release audit](audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json), with original local evidence retained. [PR #10](https://github.com/Juster06/micro-tools-hub/pull/10) was merged, and actual public behavior plus exact deployed source identity passed on 2026-11-01 before the RELEASED transition. [Open the live tool](https://everydaydigitalbox.com/duplicate-line-remover/). Its hub card uses the established Live presentation. Six tools are released; milestone 6/25 (24%).
 
 ## Available tools
 
 | Tool | Purpose | Open the tool |
 | --- | --- | --- |
+| Duplicate Line Remover | Remove repeated lines with configurable matching and accurate statistics. | [Live tool](https://everydaydigitalbox.com/duplicate-line-remover/) · [Source](duplicate-line-remover/index.html) |
 | Case Converter | Seven text-case transformations with live counts, copy and UTF-8 download. | [Live tool](https://everydaydigitalbox.com/case-converter/) · [Source](case-converter/index.html) |
 | Social Media Character Counter & Live Previewer | Check caption lengths, preview opening lines, and clean spaces before copying. | [Live tool](https://everydaydigitalbox.com/social-counter/) · [Source](social-counter/index.html) |
 | Excel Formula Sandbox & Analyzer | Make nested formulas easier to read and inspect their structure. | [Live tool](https://everydaydigitalbox.com/excel-sandbox/) · [Source](excel-sandbox/index.html) |

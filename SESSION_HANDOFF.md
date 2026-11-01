@@ -1,5 +1,21 @@
 # Session handoff
 
+## Latest session — Task 6 final integration and release (2026-11-01, Europe/London)
+
+**Status:** PR #10 merged normally at 2026-11-01T05:13:30Z as `34ad939b7802ff2c0342d591e9773b06d78a0fbd`, resulting tree `94d3c6ccc6bde666e6c1a5f2f3f7c1277131cdf3`. Local main safely fast-forwarded; original local `feat/duplicate-line-remover` remains `b93985c0c86a21aedf94d16dd4bb85c966ce2b6b`, including implementation checkpoint `bf1bbcd5153f2e4047de61acd9c2b5390ab4812c`. Published feature `aede32a6e784235f021aec19fb4bfd512bc4a853` has the identical reviewed complete tree. No reset, force-push, checkout move/deletion or history rewrite.
+
+**Publication/source:** actual successful [Pages implementation run 41276101870](https://github.com/Juster06/micro-tools-hub/actions/runs/41276101870) deployed the merge. Its build job confirms Checkout main, source root ., output ./_site via Jekyll. Public HTTPS homepage and canonical Duplicate Line Remover route returned 200 with exact normalized reviewed source. Approved/deployed tool SHA-256 `bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6`, including identical inline JS/CSS and CDN script URL; no transformation exception. Actual public Edge checks and desktop/mobile screenshots passed; protected five public routes also load with matching unchanged source. Copy APIs simulated, production UTF-8 Blob captured in memory, no OS permissions/save-dialog/screen-reader certification.
+
+**Lifecycle:** genuine live/source gates preceded RELEASED / REQUIRED_PASSED transition. Original local implementation audit remains byte-identical; new `audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json` records dated actual evidence. Only this entry/card changes. Inventory 93 total, 6 RELEASED, 0 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED; milestone 6/25 (24%). Five existing released sources/cards/evidence, CNAME, framework/templates and dashboard/launcher/shortcut definitions remain unchanged.
+
+**Validation checkpoint:** premerge Python 123, Node 91 sequentially, Duplicate Line Remover 66 JSON logic plus 25 additional logic and 36 browser cases, Case Converter 69 JSON logic and its browser suites, legacy 12 browser/41 assertions, neutral templates 6 logic/12 browser/48 assertions, privacy/whitespace and complete project status all passed. Final release-state Python 123/123 and Node 91/91 passed sequentially, as did Duplicate Line Remover/Case Converter, all legacy browser checks, template verification and full project status (0 errors/warnings). Both actual existing Desktop and Start menu shortcuts were launched separately from unrelated cwd and completed exit 0, displaying 93 total, 6 released, 0 tested, 18 READY, 68 PLANNED, 1 BLOCKED and 6/25 (24%). Native Desktop validation shows four current PASS reports. Both link bytes/targets/arguments/root/AppID remain unchanged. Privacy/whitespace and protected source/card/other-entry checks passed. Guarded publication of these ten reviewed metadata files and separate Live-label deployment verification remain next. No test timeout or assertion was weakened.
+
+**Release metadata:** the reviewed framework proposal changes only this card's availability from Tested/publication pending to Live. A separately successful metadata deployment and public registry/homepage equality must be verified before final completion. Publish only validated exact blobs/tree with the expected main head and force=false, then verify fetched content/ancestry and safely synchronize main. Existing local Git credentials are unavailable; connected GitHub publication is authorized by the user. Preserve the original feature branch.
+
+**Next major task:** finish this authorized Task 6 release validation, both installed shortcut launches, safe metadata publication and independent final deployment verification, then leave clean synchronized main. No Task 7 or other utility is authorized.
+
+### Historical Task 6 local implementation checkpoint
+
 ## Latest session — Task 6 Duplicate Line Remover (2026-11-01, Europe/London)
 
 **Status:** implementation, integration and final required tests complete locally on `feat/duplicate-line-remover`, from clean synchronized main `be89426ebd85ca25a8ac731fda3a5361e95e19c7`. Real source checkpoint `bf1bbcd5153f2e4047de61acd9c2b5390ab4812c` contains standalone source, README and tests. The final delivery checkpoint also records TESTED metadata and audited local hub integration; identify its containing final commit with `git log -1 --format="%H %s"`. No push, PR, merge, deployment or live verification is authorized for Task 6. Preserve the active checkout and installed shortcut targets.
@@ -67,19 +83,19 @@
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 25 released tools; 5 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 18; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 1; RELEASED: 5; DEPRECATED: 0.
+- Milestone: 25 released tools; 6 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 18; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 6; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Text Sorter.
-- Git branch: feat/duplicate-line-remover.
-- Latest commit observed before generation: bf1bbcd5153f2e4047de61acd9c2b5390ab4812c.
+- Git branch: main.
+- Latest commit observed before generation: 34ad939b7802ff2c0342d591e9773b06d78a0fbd.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
-- Duplicate Line Remover: TESTED, evidence dated 2026-11-01.
+- Duplicate Line Remover: RELEASED, evidence dated 2026-11-01.
 - Case Converter: RELEASED, evidence dated 2026-11-01.
 - AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
 - Free Stream Roulette: RELEASED, evidence dated 2026-10-31.
@@ -101,9 +117,10 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
+- ` M` duplicate-line-remover/README.md
 - ` M` index.html
-- `??` audit/DUPLICATE_LINE_REMOVER_VERIFICATION.json
-- `??` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- `??` audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

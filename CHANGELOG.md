@@ -1,5 +1,12 @@
 # Changelog
 
+## Released — Duplicate Line Remover (Task 6, 2026-11-01)
+
+- Merged PR #10 normally as `34ad939b7802ff2c0342d591e9773b06d78a0fbd` at 2026-11-01T05:13:30Z; preserved original local feature history and safely fast-forwarded main. Reviewed feature trees are identical.
+- Verified successful GitHub Pages main/root deployment run 41276101870, actual public matching/options/statistics/actions/keyboard/mobile/navigation and all five existing public routes. Deployed normalized source SHA-256 `bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6` exactly matches reviewed HTML/inline JS/CSS.
+- Advanced only Duplicate Line Remover to RELEASED after these gates. Original implementation audit is unchanged; separate release audit records genuine publication checks. Updated only its hub availability to Live; generated inventory becomes 6 RELEASED, 0 TESTED, 18 READY, 68 PLANNED, 1 BLOCKED, 93 total and 6/25 (24%).
+- Adapted its integration assertions to require valid publication and released counts for the released lifecycle. Source HTML, other five tools/cards/evidence, CNAME, shared framework/templates and dashboard/shortcut code are unchanged. Final regression and metadata-deployment/shortcut verification checkpoints appear in the latest handoff.
+
 ## Unreleased — Duplicate Line Remover (Task 6, local only, 2026-11-01)
 
 - Used Task 4 dry run and real text scaffold, implemented in the ignored bundle and deliberately promoted the actual standalone source/tests. No shared template change.
