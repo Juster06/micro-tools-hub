@@ -1,0 +1,868 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "mode-uppercase",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Hello World"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "uppercase"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "HELLO WORLD"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "Hello World"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Conversion completed"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "mode-lowercase",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "HELLO WORLD"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "lowercase"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "hello world"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "HELLO WORLD"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Conversion completed"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "mode-title",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "the lord of the rings"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "title"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "The Lord of the Rings"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "the lord of the rings"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Conversion completed"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "mode-sentence",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "hello world. how are you?"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "sentence"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Hello world. How are you?"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "hello world. how are you?"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Conversion completed"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "mode-capitalize",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "hello world from london"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "capitalize"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Hello World From London"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "hello world from london"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Conversion completed"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "mode-alternating",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "hello world"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "alternating"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "hElLo WoRlD"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "hello world"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Conversion completed"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "mode-inverse",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Hello WORLD"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "inverse"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "hELLO world"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "Hello WORLD"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Conversion completed"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "initial-empty-and-explicit-convert",
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "#toolMode option",
+          "property": "exists",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Input required"
+        }
+      ]
+    },
+    {
+      "id": "mode-switch-keeps-original",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "hello world"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "HELLO WORLD"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "alternating"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "hElLo WoRlD"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "title"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Hello World"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "hello world"
+        },
+        {
+          "action": "expect",
+          "selector": "#modeLabel",
+          "property": "textContent",
+          "equals": "Title Case"
+        }
+      ]
+    },
+    {
+      "id": "statistics-unicode-lines",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Hi 😀\nnext"
+        },
+        {
+          "action": "expect",
+          "selector": "#characterCount",
+          "property": "textContent",
+          "equals": "9"
+        },
+        {
+          "action": "expect",
+          "selector": "#wordCount",
+          "property": "textContent",
+          "equals": "3"
+        },
+        {
+          "action": "expect",
+          "selector": "#lineCount",
+          "property": "textContent",
+          "equals": "2"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "HI 😀\nNEXT"
+        }
+      ]
+    },
+    {
+      "id": "statistics-repeated-whitespace",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "a  b\tc\n"
+        },
+        {
+          "action": "expect",
+          "selector": "#characterCount",
+          "property": "textContent",
+          "equals": "7"
+        },
+        {
+          "action": "expect",
+          "selector": "#wordCount",
+          "property": "textContent",
+          "equals": "3"
+        },
+        {
+          "action": "expect",
+          "selector": "#lineCount",
+          "property": "textContent",
+          "equals": "2"
+        }
+      ]
+    },
+    {
+      "id": "copy-success",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "café 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "CAFÉ 😀"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "CAFÉ 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Text copied."
+        }
+      ]
+    },
+    {
+      "id": "copy-denial-truthful-fallback",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "hello"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "HELLO"
+        },
+        {
+          "action": "clipboard",
+          "mode": "failure"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Clipboard unavailable"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolOutput"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "selectionStart",
+          "equals": 0
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "selectionEnd",
+          "equals": 5
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": null
+        }
+      ]
+    },
+    {
+      "id": "utf8-download-content",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "café 😀\nnext"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "lowercase"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "café 😀\nnext"
+        },
+        {
+          "action": "click",
+          "selector": "#downloadBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "count",
+          "equals": 1
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "text",
+          "equals": "café 😀\nnext"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "download requested"
+        }
+      ]
+    },
+    {
+      "id": "clear-resets-all-and-focus",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Hello"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "inverse"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "hELLO"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolMode",
+          "property": "value",
+          "equals": "uppercase"
+        },
+        {
+          "action": "expect",
+          "selector": "#characterCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#wordCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#lineCount",
+          "property": "textContent",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "stale-output-updates-and-whitespace-clears",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "first"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "FIRST"
+        },
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "second"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "SECOND"
+        },
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": " \t\n"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#wordCount",
+          "property": "textContent",
+          "equals": "0"
+        }
+      ]
+    },
+    {
+      "id": "safe-markup-and-unchanged-input",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "<img src=x onerror=alert(1)> 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "<IMG SRC=X ONERROR=ALERT(1)> 😀"
+        },
+        {
+          "action": "expect",
+          "selector": ".editor img",
+          "property": "exists",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "<img src=x onerror=alert(1)> 😀"
+        }
+      ]
+    },
+    {
+      "id": "keyboard-clear-and-convert",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "hello"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "HELLO"
+        },
+        {
+          "action": "focus",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "key",
+          "key": "Enter"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        },
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "again"
+        },
+        {
+          "action": "focus",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "key",
+          "key": "Enter"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "AGAIN"
+        }
+      ]
+    },
+    {
+      "id": "viewport-320",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Readable café 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "READABLE CAFÉ 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "viewport-375",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Readable café 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "READABLE CAFÉ 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "viewport-768",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Readable café 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "READABLE CAFÉ 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "viewport-1440",
+      "width": 1440,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Readable café 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "READABLE CAFÉ 😀"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-01",
+  "source_revision": "660150fcec9188eef9704c813145ef04b7c3bdc7",
+  "browser": "Edge 156.0.4314.58 (Chromium/CDP headless)",
+  "scope": "Local functional and scoped manual layout verification. Publication NOT VERIFIED. Clipboard/download and composition use isolated simulations; not an all-browser or screen-reader certification.",
+  "pages": [
+    {
+      "path": "case-converter/index.html",
+      "source_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+      "checks": [
+        "69 exact-output transformation cases across all seven modes, Unicode, punctuation, whitespace, abbreviations and invalid input",
+        "20 additional statistics/long-input/limit logic tests; actual 100,000-unit results and oversized rejection",
+        "22 real Chromium DSL cases: all modes, live counters, switching, copy success/denial, UTF-8 download, clear, empty input, safe rendering, stale results, keyboard and 320/375/768/1440px overflow",
+        "9 extended real Chromium cases: full/oversized and emoji limits, immediate invalidation, delayed copy, safe filename/UTF-8/object-URL revocation, keyboard, simulated composition and transport/storage calls",
+        "Manual review of rendered 1440px desktop and 375px mobile screenshots from the byte-identical generated source; labels, selected mode, panes, feedback and readable layout reviewed"
+      ],
+      "publication": null
+    }
+  ],
+  "test_commands": [
+    "python scripts/test_tool.py --id case-converter --workspace canonical",
+    "node --test tests/tools/case-converter/logic.test.mjs tests/tools/case-converter/extended-browser.test.mjs"
+  ],
+  "limitations": [
+    "Native language-neutral casing may expand code points; no locale-specific editorial, surname or proper-name detection",
+    "Sentence abbreviation heuristics are deliberately limited; ambiguous sentence endings require review",
+    "Code-point and whitespace-token counts are not grapheme/linguistic segmentation",
+    "100,000 UTF-16 input units; native textareas use LF",
+    "External HTTP(S) blocked in headless tests; clipboard/download APIs and composition events simulated; no live publication or real OS clipboard certification"
+  ],
+  "local_homepage_integration": {
+    "result": "PASS",
+    "source": "Local feature-branch working tree before the final checkpoint; not published",
+    "homepage_source_sha256": "971d0d6559e1bc868fa89f9c8e3f1f7baa27272f839f14855d942ba9d9aa319b",
+    "command": "node --test tests/tools/case-converter/integration-browser.test.mjs",
+    "checks": [
+      "Actual Back to Hub and return navigation",
+      "Registry-derived canonical card routes/count",
+      "Case Converter availability remains TESTED/publication pending",
+      "Hub search finds Case Converter; clear restores count"
+    ],
+    "publication": null
+  }
+}

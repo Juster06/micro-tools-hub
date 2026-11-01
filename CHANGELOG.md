@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — Case Converter (Task 5, local only, 2026-11-01)
+
+- Implemented seven actual case conversions from the Task 4 generator, with documented title/sentence/Unicode rules and preserved original input/whitespace.
+- Added live code-point/whitespace-token/line counters, debounced conversion with immediate stale-result invalidation, clipboard denial handling, UTF-8 download/object-URL cleanup, Clear, keyboard and mobile layouts.
+- Added exact-output logic cases, counter/large-input tests and real Chromium UI/integration tests. Existing four released pages, CNAME, dashboard and launcher code remain unchanged.
+- Recorded source-matched scoped local audit evidence and advanced only Case Converter to TESTED. The framework's gated homepage patch is reviewed/applied on the local feature branch, preserving existing cards; new card says publication pending.
+- Released count stays four. No push, pull request, merge, deployment or live publication verification is included.
+
 ## Unreleased — Reusable tool development framework (Task 4, 2026-11-01)
 
 - Added a new-tool contract, text/structured standalone templates, generation-time shared UI fragments and practical developer guide with a Case Converter dry-run example only.

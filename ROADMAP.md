@@ -1,8 +1,14 @@
 # Development roadmap
 
+## Task 5 — locally tested Case Converter
+
+Case Converter is implemented and TESTED on `feat/case-converter`; publication is unverified. Its seven styles, live counters, copy/download/clear, scoped evidence and tests are documented in `case-converter/README.md` and `audit/CASE_CONVERTER_VERIFICATION.json`. The gated homepage proposal is applied only in the local branch with a publication-pending label; no push/deployment occurred.
+
+Next owner action: separately authorize the Task 5 GitHub PR/review/integration/publication workflow. Duplicate Line Remover is the next READY registry candidate, not permission to begin another tool. Four tools remain RELEASED; Case Converter must not become RELEASED until live matching-source behavior is actually verified.
+
 ## Framework readiness — Task 4
 
-Reusable templates, safe staged scaffolding, functional checks and validated homepage patch proposals are available. Use `python scripts/plan_tool_batch.py --count 10` to propose existing READY work in sequence; proposals are not authorization to build or publish a batch. See `TOOL_DEVELOPMENT_GUIDE.md`. Next major task is separately scoped Task 5, Case Converter recommended; no tool status/count changed during Task 4.
+Reusable templates, safe staged scaffolding, functional checks and validated homepage patch proposals are available. Use `python scripts/plan_tool_batch.py --count 10` to propose existing READY work in sequence; proposals are not authorization to build or publish a batch. See `TOOL_DEVELOPMENT_GUIDE.md`. Task 4 changed no tool status/count; the Task 5 checkpoint above records the subsequent utility implementation.
 
 Source of inventory, status, priority, dependencies, and order: `TOOL_REGISTRY.json`. Run `node scripts/project.mjs sync` after changing it. The complete proposal mapping is in `audit/BACKLOG_RECONCILIATION.md`.
 
@@ -14,12 +20,12 @@ Source of inventory, status, priority, dependencies, and order: `TOOL_REGISTRY.j
 
 ## Next twenty distinct utilities
 
-Execute in order unless the user steers the project or a dependency/regression justifies a documented change. No utility in this sequence has been implemented by the management setup.
+Execute in order unless the user steers the project or a dependency/regression justifies a documented change. Current implementation states are shown below; sequence rank alone does not imply implementation or publication.
 
 <!-- GENERATED:SEQUENCE:START -->
 | Order | Tool ID | Name | Category | Complexity | Status |
 | ---: | --- | --- | --- | --- | --- |
-| 1 | case-converter | Case Converter | Text and Writing Tools | S | READY |
+| 1 | case-converter | Case Converter | Text and Writing Tools | S | TESTED |
 | 2 | duplicate-line-remover | Duplicate Line Remover | Text and Writing Tools | S | READY |
 | 3 | text-sorter | Text Sorter | Text and Writing Tools | S | READY |
 | 4 | slug-generator | Slug Generator | Text and Writing Tools | S | READY |
@@ -90,7 +96,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
 | text-cleaner | AI Text Footprint Cleanser | RELEASED | P2 | M | Modern browser DOM APIs |
-| case-converter | Case Converter | READY | P1 | S | Browser-native approach; scope review before implementation |
+| case-converter | Case Converter | TESTED | P1 | S | Browser-native approach; scope review before implementation |
 | duplicate-line-remover | Duplicate Line Remover | READY | P1 | S | Browser-native approach; scope review before implementation |
 | text-difference-checker | Text Difference Checker | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | text-sorter | Text Sorter | READY | P1 | S | Browser-native approach; scope review before implementation |
