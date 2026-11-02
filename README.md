@@ -1,6 +1,22 @@
 # Everyday Digital Box — WebUtils Hub
 
-## Task 9.5 — GitHub functional CI verified; pull request awaiting review
+## Task 9.5 — functional CI integrated and verified on main
+
+[PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) merged as
+`3f08b910a70f105b91d26e6df8eca7c0477d504d`. Both the final PR workflow and
+genuine main push [run 41543825503](https://github.com/Juster06/micro-tools-hub/actions/runs/41543825503)
+passed Python, Node, real Chromium and the aggregate functional check. Actual
+counts, commands, artifacts, limits and protection options are in the
+[CI documentation](scripts/ci/README.md) and latest handoff.
+
+Existing Pages automatically deployed the merge; deployment remains separate
+from functional tests. All 18 utilities, registry, homepage/owner Analytics,
+domain, dashboard and shortcuts remain unchanged. Read-only inspection found
+main unprotected with no rulesets; no settings or lifecycle changes were made.
+Branch-protection enforcement and deployment gating are not enabled or claimed.
+No Task 10. Earlier task checkpoints below are historical.
+
+## Historical Stage B — GitHub CI verified; PR awaiting review
 
 [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) targets main and remains
 open. Genuine [hosted run 41425207614](https://github.com/Juster06/micro-tools-hub/actions/runs/41425207614)
@@ -10,7 +26,7 @@ All 18 tools, registry, homepage, owner Analytics, domain, dashboard and shortcu
 remain unchanged. CI does not claim branch-protection enforcement or block the
 separate Pages deployment. No merge, deployment, lifecycle/settings change or Task 10.
 
-## Task 9.5 Stage B — pull request and hosted verification
+## Historical Stage B — publication and investigation
 
 [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) targets main and remains
 open. The approved original local commit is preserved with exact published tree
@@ -19,7 +35,7 @@ issue; a CI-only bootstrap correction and regression guard are being verified.
 See [CI documentation](scripts/ci/README.md) and the latest handoff for actual
 results. No merge, deployment, repository settings or lifecycle change; no Task 10.
 
-## Task 9.5 — functional CI implemented locally; GitHub verification pending
+## Historical Stage A — local CI checkpoint
 
 The dedicated local branch `feat/task-9-5-functional-ci` adds genuine Python,
 Node and real Chromium quality gates, explicit coverage and failure propagation.

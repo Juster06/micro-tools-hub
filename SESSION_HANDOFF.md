@@ -1,6 +1,86 @@
 # Session handoff
 
-## Latest session — Task 9.5 Stage B VERIFIED: PR #14 ready for review (2026-11-02)
+## Latest session — Task 9.5 Stage C: CI integrated on main (2026-11-02)
+
+**Status:** [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) merged
+normally with the reviewed expected-head guard at 2026-11-02T23:14:09Z as
+`3f08b910a70f105b91d26e6df8eca7c0477d504d`. Both parents are the expected main
+`93867ed9d02b702eaff250288f58ca7abba7bbab` and reviewed feature
+`901bcaf4d792c187c35a2bf8a1d358324371c8c2`; resulting complete tree
+`fa114410eeaa83268110e2479ef72facb3624115` exactly matches the reviewed merge
+preview. The approved 19-file scope and all 205 other tracked blobs were verified.
+No auto-merge, force-push, destructive reset, history rewrite or checkout move.
+
+**Independent hosted evidence:** final PR [run 41535344652](https://github.com/Juster06/micro-tools-hub/actions/runs/41535344652)
+passed on pull_request for the exact reviewed feature. After merging, genuine main
+push [run 41543825503](https://github.com/Juster06/micro-tools-hub/actions/runs/41543825503)
+passed for merge commit `3f08b910a70f105b91d26e6df8eca7c0477d504d`:
+Windows-2022 Python job 125614314804, Ubuntu-24.04 Node job 125614314545,
+Ubuntu-22.04 real Chromium job 125614314837 and aggregate 125615536266 all SUCCESS.
+Actual logs and all three downloaded artifact ZIPs were independently inspected:
+Python **142/142**, Node **179 logic +196 browser =375/375**, additional **639**
+JSON logic cases, **291** browser fixture cases/**777** assertions, neutral
+templates **6 logic/12 browser/48 assertions**. Zero mandatory failures, skips,
+cancellations or timeouts. Actual Chrome/156.0.8078.4, Python 3.14.4, Node
+24.22.1 and Playwright 1.64.1; sandbox, action pins, assertions and waits unchanged.
+Artifact digests, exact summary/coverage allowlist, counts/log agreement,
+published coverage identity, privacy and seven-day retention PASS.
+
+**Deployment separation:** existing GitHub-managed Pages workflow automatically
+deployed the merge commit in successful [run 41543825473](https://github.com/Juster06/micro-tools-hub/actions/runs/41543825473).
+Build logs confirm ref main, repository root source `.`, destination `./_site`;
+deployment environment URL remains https://everydaydigitalbox.com/. No deployment
+configuration was changed. Public homepage, all 18 released utility pages and
+public registry returned HTTP 200 and matched entire normalized preserved source;
+owner Analytics remains present. Pages runs independently: functional CI does
+not block deployment. This public check is accessibility/source identity, not a
+new public interaction certification or release-status change.
+
+**Read-only protection inspection:** main reports protected=false, required
+checks off/empty; repository rulesets and active main rules are empty. Connected
+Juster06 account has admin permission and can manage rules in GitHub UI. The
+connector does not expose protection/ruleset writes; its Administration-write
+grant was not tested. Public repository branch protection and branch/tag rulesets
+support required checks on GitHub Free; a separately authorized rule could
+require pull requests and **Required functional checks** from GitHub Actions.
+Classic administrator bypass is default unless restricted; ruleset bypass actors
+are configurable. Classic push allowlists have organization-repository limits;
+require-PR rules are the relevant option for this user-owned repository. Exact
+account subscription was not inspected. No settings, protection, rulesets or
+permissions were modified. See [GitHub protection documentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
+and [ruleset options](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets).
+The unauthenticated protection-detail API required authentication; Pages settings
+API/UI were inaccessible in the signed-out browser. Current branch/rules API
+metadata and actual Pages build/deployment logs provide the recorded observations.
+
+**Local preservation:** safely switched the existing checkout to main and
+fast-forwarded from origin/main. Original feature branch remains at
+`f84c6eb614c104c7a738d8dbc876b903ad781316`, preserving original local CI/fix
+commits; published feature history is preserved by the normal merge. All 18 tool
+HTML, registry, homepage/Live cards/Analytics, CNAME, original tests/release audits,
+framework/templates, dashboard/launcher source and Desktop/Start menu shortcut
+bytes/targets/arguments/working directories/AppIDs remain unchanged. Installed
+shortcut GUI launch is not newly claimed in Stage C. Dashboard functional totals
+remain unavailable; structural report freshness is checked separately.
+Inventory unchanged: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED;
+18/25 (72%). Four specialist isolated-logic scopes remain explicitly NOT RUN;
+their mandatory structural/browser profiles passed.
+
+**Documentation delivery:** this documentation-only checkpoint records already
+verified merge/main evidence. Its exact final commit/tree, independently fetched
+local/remote equality and its own additional main CI/Pages verification are
+recorded in the final integration report; identify the containing commit with
+`git log -1 -- SESSION_HANDOFF.md`. No recursive self-hash/run claim is embedded.
+
+**Next major task:** await owner decision about separately authorizing main
+branch enforcement with an explicit owner/admin bypass policy. CI is operational
+on main; protection and deployment gating are not enabled or claimed. Do not
+change settings/lifecycle statuses, implement another utility or begin Task 10
+without separate authorization. No source changes or functional blockers remain.
+
+### Historical Stage B handoff
+
+## Task 9.5 Stage B VERIFIED: PR #14 ready for review (2026-11-02)
 
 **Status:** [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) is open,
 non-draft, targets main, conflict-free, auto-merge off. Genuine [Functional CI
@@ -464,8 +544,8 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Tool status counts: IDEA: 0; PLANNED: 68; READY: 6; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 18; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Profit Margin Calculator.
-- Git branch: feat/task-9-5-functional-ci.
-- Latest commit observed before generation: aea2910ae433f05d1546f6594fc4e0c11ffa074b.
+- Git branch: main.
+- Latest commit observed before generation: 3f08b910a70f105b91d26e6df8eca7c0477d504d.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 

@@ -1,6 +1,53 @@
-# Functional CI â€” Task 9.5 Stage A
+# Functional CI — Task 9.5
 
-## Stage B: genuine hosted CI verified; PR #14 awaiting review
+## Stage C: integrated on main, independently verified
+
+PR #14 merged normally as `3f08b910a70f105b91d26e6df8eca7c0477d504d` at
+2026-11-02T23:14:09Z, with expected reviewed head
+`901bcaf4d792c187c35a2bf8a1d358324371c8c2`. Complete merge tree
+`fa114410eeaa83268110e2479ef72facb3624115` matches the reviewed preview.
+Final PR run **41535344652** succeeded for that feature; genuine main push
+[run **41543825503**](https://github.com/Juster06/micro-tools-hub/actions/runs/41543825503)
+independently succeeded on the merge: Windows Python **142/142**, Ubuntu Node
+**179/179** plus **639** logic fixtures, real Ubuntu Chromium **196/196** plus
+**291** fixture cases/**777** assertions, templates **6 logic/12 browser/48
+assertions**, and aggregate **Required functional checks**. No mandatory failures,
+skips, cancellations or timeouts. Actual job logs and all three downloaded ZIPs
+were checked: digest, summary/coverage allowlist, counts/log agreement, exact
+published coverage map, privacy and seven-day retention. The final delivery
+report separately verifies this documentation checkpoint's own main CI run.
+
+Existing managed Pages run **41543825473** automatically deployed the merge,
+using main and repository root. Public homepage, all 18 released utility pages,
+registry and owner Analytics retain exact normalized source identity. No Pages
+workflow/source setting changed. Pages runs independently; this CI does not gate
+deployment. Hosted test success is distinct from public publication certification.
+
+Read-only inspection found main **unprotected**, required checks off/empty, no
+repository rulesets or active main rules. The connected owner account has admin
+rights; no protection/settings/permissions were changed. Public repositories can
+use branch protections and branch/tag rulesets with GitHub Free. A separately
+authorized policy could require PRs and the actual **Required functional checks**
+context from GitHub Actions, with an explicit owner/admin bypass policy. Classic
+admin bypass is default unless restricted; rulesets support configured bypass
+actors. Classic push allowlists have organization-repository limits; require-PR
+rules remain relevant here. This connector's Administration-write permission
+was not tested. See [protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
+and [available rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets).
+Exact subscription was not inspected; public feature availability needs no paid
+upgrade. Pages/protection detail endpoints were inaccessible to unauthenticated
+reads; branch/rules metadata and actual main/root build logs provide the recorded
+observations. No authentication/settings changes were attempted.
+
+Original local feature history and active checkout are preserved; local main was
+safely fast-forwarded. No utility/registry/homepage/Analytics/domain/audit/test/
+framework/dashboard/launcher/shortcut implementation changed. Four specialist
+isolated-logic adapters remain unavailable (explicit NOT RUN); mandatory structure
+and browser profiles pass. Native installed-shortcut GUI launch was not newly
+tested in this stage. No lifecycle changes or Task 10. Earlier stage summaries
+are historical; job/maintenance documentation below remains applicable.
+
+## Historical Stage B: genuine hosted CI verified; PR #14 awaiting review
 
 [Functional CI run 41425207614](https://github.com/Juster06/micro-tools-hub/actions/runs/41425207614)
 completed successfully for published feature 858fc772833a2456931cd80a3ac2eeaf397fd979

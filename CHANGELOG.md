@@ -1,5 +1,26 @@
 # Changelog
 
+## Task 9.5 Stage C — functional CI integrated and verified on main
+
+- Merged PR #14 normally at the reviewed head as
+  `3f08b910a70f105b91d26e6df8eca7c0477d504d`; merge tree matches the reviewed
+  `fa114410eeaa83268110e2479ef72facb3624115`. Safely fast-forwarded local main;
+  original local feature branch/history and active checkout preserved.
+- Genuine push run 41543825503 passed all four jobs on that merge, independently
+  of successful PR run 41535344652. Actual counts: Python 142, Node 179+196,
+  JSON logic 639, browser fixtures 291/777, templates 6/12/48. Mandatory failures,
+  skips, cancellations and timeouts: zero. All three actual artifacts were
+  downloaded and verified against logs, exact coverage, digests/privacy/retention.
+- Existing Pages automatically deployed the merge in successful run 41543825473;
+  actual main/root build and public source/registry/Analytics preservation checked.
+  Deployment remains independent of functional CI; no deployment setting changed.
+- Read-only main inspection: unprotected, checks off, no rulesets/active rules.
+  Connected account has admin rights; enforcement options/limits are documented,
+  without modifying protection, permissions or settings. All public utility,
+  registry/lifecycle, dashboard/launcher and shortcut content remains unchanged.
+- Final documentation checkpoint's own main CI/Pages and exact identity are
+  verified in the delivery report. No Task 10 or new utility development.
+
 ## Task 9.5 Stage B — GitHub functional CI verified; PR #14 open
 
 - Genuine pull_request run 41425207614 for published correction 858fc772833a2456931cd80a3ac2eeaf397fd979
