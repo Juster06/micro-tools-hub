@@ -201,7 +201,7 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 141,
+    "python-project": 142,
     "node-regression": 179,
     "browser-tests": 196
   },

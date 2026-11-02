@@ -1,5 +1,44 @@
 # Session handoff
 
+## Latest session — Task 9.5 Stage B: PR #14 open, hosted compatibility correction under verification
+
+**Authorization:** owner authorized publishing, one PR to main, real hosted tests
+and narrow compatibility fixes. No merge/settings/protection/deployment/status
+changes or Task 10. Base remains main `93867ed9d02b702eaff250288f58ca7abba7bbab`.
+
+**Initial publication:** preserved original local `0f4a1f31ac2036e15505a58196477f328554fb36`.
+Normal noninteractive Git push lacked authentication. Connected account published
+`6ab9a72ce0db09bd6ff52e0dae0cdde0a3b167be`, exact tree
+`1bbc130efb8fb43cd12d9c6cd9166fa4fa8527dd`. All 19 changed blobs and all 224
+complete-tree files independently fetched/verified, zero content differences.
+[PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) targets main, is open,
+non-draft, auto-merge off and conflict-free. Fresh prepublication local baseline
+passed 141 Python, 375 Node, 639 logic cases, 291 browser cases/777 assertions,
+templates, registry/source/homepage/status, lint/privacy/whitespace and preservation.
+
+**Actual hosted finding:** [run 41423878108](https://github.com/Juster06/micro-tools-hub/actions/runs/41423878108)
+is a genuine pull_request event for the published commit. Ubuntu Node passed
+179 tests plus 639 logic fixtures. Windows executed 141 Python tests: 135 passed,
+6 failed, zero skipped. Every failure compared the same temporary directory's
+Windows 8.3 alias against the resolved long name. Logs and uploaded failure
+summary are preserved outside Git; CI correctly returned nonzero. This is a
+fixture-root portability issue, not a production behavior defect.
+
+**Narrow correction:** the CI unittest bootstrap resolves Windows tempfile's root
+before discovery. Add one CI-only regression guard and increase the coverage
+floor to 142; existing 123 Python tests, all Node/browser assertions, timeouts,
+runtime/action pins and production/dashboard/launcher code remain unchanged.
+No skipped tests, error suppression, sandbox bypass or broad timeout changes.
+Final local regression and a new genuine hosted run are required before success.
+
+**Next major task:** finish this authorized Stage B correction/verification,
+inspect all genuine hosted jobs and actual sanitized artifacts, record final PR
+and source identities, leave PR open for review. Preserve both local/published
+histories and all website/runtime/registry/Analytics/domain/shortcut content.
+Do not merge, change settings/protection/statuses, deploy or begin Task 10.
+
+### Historical Task 9.5 Stage A delivery
+
 ## Latest session — Task 9.5 Stage A COMPLETE locally; GitHub verification pending (2026-11-02)
 
 **Status:** Local functional CI implementation only, on `feat/task-9-5-functional-ci`.
@@ -356,7 +395,7 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Profit Margin Calculator.
 - Git branch: feat/task-9-5-functional-ci.
-- Latest commit observed before generation: 93867ed9d02b702eaff250288f58ca7abba7bbab.
+- Latest commit observed before generation: 0f4a1f31ac2036e15505a58196477f328554fb36.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -383,16 +422,13 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
-- ` M` .gitignore
-- ` M` ARCHITECTURE.md
 - ` M` CHANGELOG.md
-- ` M` DECISIONS.md
 - ` M` README.md
 - ` M` SESSION_HANDOFF.md
-- ` M` scripts/README.md
-- `??` .github/
-- `??` scripts/ci/
-- `??` tests/test_ci.py
+- ` M` scripts/ci/README.md
+- ` M` scripts/ci/coverage.json
+- ` M` scripts/ci/unittest_runner.py
+- ` M` tests/test_ci.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

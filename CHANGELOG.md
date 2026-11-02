@@ -1,5 +1,17 @@
 # Changelog
 
+## Task 9.5 Stage B — hosted Windows fixture compatibility
+
+- Opened PR #14 against main with exact approved 19-file content; original local
+  commit preserved, independent fetched tree equality verified.
+- Genuine hosted run 41423878108 exposed six Windows short/long temporary-root
+  path comparisons (135/141 Python pass, zero skips). Failure evidence retained.
+- Canonicalize only the CI unittest temporary root before fixture discovery;
+  add one regression guard and raise the reviewed floor to 142 Python tests.
+  Existing tests/assertions and production/dashboard/launcher code stay unchanged.
+- Full local and subsequent hosted verification remain required. No merge,
+  deployment, settings/protection/lifecycle changes or Task 10.
+
 ## Local only — Task 9.5 functional CI and quality gates (2026-11-02)
 
 - Added SHA-pinned read-only PR-to-main/main-push/manual workflow, three genuine

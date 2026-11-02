@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 SPEC = importlib.util.spec_from_file_location("edb_ci", Path(__file__).resolve().parents[1] / "scripts/ci/run.py")
 ci = importlib.util.module_from_spec(SPEC)
@@ -17,6 +18,18 @@ def tap(**overrides):
 
 
 class CIGateTests(unittest.TestCase):
+    def test_windows_temporary_fixture_parent_is_canonical(self):
+        spec = importlib.util.spec_from_file_location("edb_ci_unittest", ci.MAP.with_name("unittest_runner.py"))
+        runner = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runner)
+        with tempfile.TemporaryDirectory(prefix="edb-ci-temp-parent-") as temporary:
+            child = Path(temporary) / "child"
+            child.mkdir()
+            alias = str(child / "..")
+            with patch.object(runner.sys, "platform", "win32"), patch.object(runner.tempfile, "tempdir", alias):
+                runner.canonicalize_temporary_root()
+                self.assertEqual(runner.tempfile.tempdir, str(Path(temporary).resolve()))
+
     def test_aggregate_requires_all_real_jobs_to_succeed(self):
         spec = importlib.util.spec_from_file_location("edb_required_checks", ci.MAP.with_name("required_checks.py"))
         aggregate = importlib.util.module_from_spec(spec)

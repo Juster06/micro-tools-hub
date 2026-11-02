@@ -2,12 +2,21 @@
 import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def canonicalize_temporary_root():
+    # Hosted Windows TEMP can use an 8.3 alias. Production resolves paths; give
+    # fixtures the same canonical parent without weakening any path assertions.
+    if sys.platform == "win32":
+        tempfile.tempdir = str(Path(tempfile.gettempdir()).resolve())
+
+
 def main():
+    canonicalize_temporary_root()
     suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"))
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     counts = {"tests": result.testsRun, "failed": len(result.failures) + len(result.errors),

@@ -1,4 +1,17 @@
-# Functional CI — Task 9.5 Stage A
+# Functional CI â€” Task 9.5 Stage A
+
+## Stage B hosted verification
+
+[PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) publishes the approved
+Stage A content against main. Initial pull_request run 41423878108 genuinely ran
+on GitHub. Node passed; Windows ran all 141 tests and failed six path comparisons
+because its TEMP used a short 8.3 alias while production correctly resolves long
+paths. Original logs/failure summary retained. The CI bootstrap now resolves the
+Windows temporary root before discovery, with one added guard (142-test floor).
+No original assertion, production behavior, browser flag or timeout changed.
+Full local regression and a subsequent complete hosted pass are required before
+calling this operational. Stage B authorizes publication/verification only;
+no merge, protection/settings edit, deployment, lifecycle transition or Task 10.
 
 This is a **local implementation; GitHub-hosted verification is pending**. No
 branch publication, PR, merge, deployment, settings/protection change or Task 10
@@ -150,7 +163,7 @@ Each required child exit must be zero, and each supported report must prove
 nonempty execution and clean PASS. Python skips/expected failures/unexpected
 successes are failures. Node cancellations/skips/todos, empty or missing/ambiguous
 TAP totals are failures even if Node itself exits zero. Reviewed test-count floors
-are 141 Python, 179 Node logic and 196 Node browser. JSON layers need PASS and
+are 142 Python, 179 Node logic and 196 Node browser. JSON layers need PASS and
 nonzero functional cases; template verification must include both templates and
 all layers. Registry/source/status warnings also fail the clean validation gate.
 There is no continue-on-error, suppressed exit, empty selection PASS or placeholder

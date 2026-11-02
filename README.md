@@ -1,5 +1,14 @@
 # Everyday Digital Box — WebUtils Hub
 
+## Task 9.5 Stage B — pull request and hosted verification
+
+[PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) targets main and remains
+open. The approved original local commit is preserved with exact published tree
+identity. Real hosted verification exposed a Windows temporary-directory alias
+issue; a CI-only bootstrap correction and regression guard are being verified.
+See [CI documentation](scripts/ci/README.md) and the latest handoff for actual
+results. No merge, deployment, repository settings or lifecycle change; no Task 10.
+
 ## Task 9.5 — functional CI implemented locally; GitHub verification pending
 
 The dedicated local branch `feat/task-9-5-functional-ci` adds genuine Python,
