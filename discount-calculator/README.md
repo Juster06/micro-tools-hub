@@ -1,6 +1,6 @@
 # Discount Calculator
 
-Registry ID: `discount-calculator`. Category: calculator. P1 / rank 14. Canonical route: `discount-calculator/index.html`. Task 9 local development; **publication pending**, no release claimed. Current lifecycle/evidence is authoritative in TOOL_REGISTRY.json.
+Registry ID: `discount-calculator`. Category: calculator. P1 / rank 14. Canonical route: `discount-calculator/index.html`. Task 9 public release verified 2026-11-02; [Live tool](https://everydaydigitalbox.com/discount-calculator/). Publication/source/behavior evidence: `audit/DISCOUNT_CALCULATOR_RELEASE_VERIFICATION.json`; original local implementation audit is preserved.
 
 ## Exact behavior, defaults and limits
 
@@ -14,4 +14,4 @@ Standalone vanilla HTML/JS, existing Tailwind Play CDN and expanded fallback CSS
 
 `python scripts/test_tool.py --id discount-calculator` runs nonempty actual framework structure/logic/browser scopes. `node --test --test-concurrency=1 tests/tools/discount-calculator/*.test.mjs` runs independent logic/boundary and extended browser/hub tests. Exact fixtures/oracles, all modes/options, empty/invalid/limits, statistics, original preservation, races, copy/UTF-8 Blob/revocation/failure, simulated composition, keyboard/labels and no input transport/storage probes are scoped in the individual audit. Screenshots and actual browser checks use 320/375/768/1440 viewports. Source revisions/hashes are recorded only after real tests and source checkpoint commits.
 
-Clipboard/composition fixtures are simulated; downloads captured in memory. No native clipboard/IME/Save-dialog, physical-device, screen-reader, cross-browser or general cryptographic certification. No publication, push or deployment is authorized by these local tests.
+Clipboard/composition fixtures are simulated; downloads captured in memory. No native clipboard/IME/Save-dialog, physical-device, screen-reader, cross-browser or general cryptographic certification. These local tests alone do not establish publication; separate successful deployment, exact public source and actual public behavior evidence is recorded in the release audit.

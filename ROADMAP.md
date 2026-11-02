@@ -1,5 +1,11 @@
 # Development roadmap
 
+## Task 9 — independently verified public releases
+
+PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).
+
+Exact public source/live evidence is in five separate release audits. Original implementation/prior release audits unchanged; current derived blocks follow the registry. Release-metadata deployment/public agreement and native launch verification precede completion. Earlier task sections are historical. No Task 10.
+
 ## Task 9 — local five-utility batch, publication pending
 
 Task 9 local development is complete on `feat/task-9-five-tool-batch`, based on synchronized Task 8 main `31948b0cd43a64527372bd090553847b59de1598` (tree `3694236221c04c3027341e02c8f9e138376e3e1f`). The actual proposal-only planner selected five existing READY/P1 entries at ranks 10–14; no eligible entry skipped, new registry entry, changed priority or unmet tool dependency. UUID Generator received separate cryptographic design/failure checks. Each independently progressed READY → IMPLEMENTED → TESTED / REQUIRED_PASSED after real tests and a source/test commit. Publication remains null.
@@ -68,11 +74,11 @@ Execute in order unless the user steers the project or a dependency/regression j
 | 7 | json-formatter | JSON Formatter | Excel and Data Tools | S | RELEASED |
 | 8 | url-encoder-decoder | URL Encoder and Decoder | Developer Tools | S | RELEASED |
 | 9 | base64-encoder-decoder | Base64 Encoder and Decoder | Developer Tools | S | RELEASED |
-| 10 | uuid-generator | UUID Generator | Developer Tools | S | TESTED |
-| 11 | timestamp-converter | Timestamp Converter | Developer Tools | S | TESTED |
-| 12 | percentage-calculator | Percentage Calculator | Calculators | S | TESTED |
-| 13 | percentage-change-calculator | Percentage Change Calculator | Calculators | S | TESTED |
-| 14 | discount-calculator | Discount Calculator | Calculators | S | TESTED |
+| 10 | uuid-generator | UUID Generator | Developer Tools | S | RELEASED |
+| 11 | timestamp-converter | Timestamp Converter | Developer Tools | S | RELEASED |
+| 12 | percentage-calculator | Percentage Calculator | Calculators | S | RELEASED |
+| 13 | percentage-change-calculator | Percentage Change Calculator | Calculators | S | RELEASED |
+| 14 | discount-calculator | Discount Calculator | Calculators | S | RELEASED |
 | 15 | profit-margin-calculator | Profit Margin Calculator | Calculators | S | READY |
 | 16 | date-difference-calculator | Date Difference Calculator | Calculators | S | READY |
 | 17 | countdown-timer | Countdown Timer | Everyday Productivity Tools | S | READY |
@@ -159,13 +165,13 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | --- | --- | --- | --- | --- | --- |
 | base64-encoder-decoder | Base64 Encoder and Decoder | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | url-encoder-decoder | URL Encoder and Decoder | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| uuid-generator | UUID Generator | TESTED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
+| uuid-generator | UUID Generator | RELEASED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | sha256-hash-checker | SHA-256 Text & File Hash Checker | PLANNED | P2 | M | Browser Web Crypto SHA-256; bounded file reads |
 | regex-tester | Regex Tester | PLANNED | P2 | L | Browser Worker with termination timeout; bounded input |
 | html-formatter | HTML Formatter | PLANNED | P2 | L | Reviewed non-executing HTML parser and whitespace-preservation policy |
 | css-minifier | CSS Minifier | PLANNED | P2 | L | Reviewed CSS parser/minifier and license |
 | javascript-minifier | JavaScript Minifier | PLANNED | P2 | L | Reviewed JavaScript parser/minifier and license; consider worker isolation |
-| timestamp-converter | Timestamp Converter | TESTED | P1 | S | Browser-native approach; scope review before implementation |
+| timestamp-converter | Timestamp Converter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 
 ### Social Media Tools
 
@@ -187,10 +193,10 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
-| percentage-calculator | Percentage Calculator | TESTED | P1 | S | Browser-native approach; scope review before implementation |
-| percentage-change-calculator | Percentage Change Calculator | TESTED | P1 | S | Browser-native approach; scope review before implementation |
+| percentage-calculator | Percentage Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
+| percentage-change-calculator | Percentage Change Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | vat-calculator | VAT Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
-| discount-calculator | Discount Calculator | TESTED | P1 | S | Browser-native approach; scope review before implementation |
+| discount-calculator | Discount Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | age-calculator | Age Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | date-difference-calculator | Date Difference Calculator | READY | P1 | S | Browser-native approach; scope review before implementation |
 | working-days-calculator | Working Days Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |

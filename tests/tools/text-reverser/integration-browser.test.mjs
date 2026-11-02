@@ -19,7 +19,9 @@ else {
 }
 const task8Ids=['text-reverser','json-formatter','url-encoder-decoder','base64-encoder-decoder'];
 const task8Released=registry.tools.filter(t=>task8Ids.includes(t.id)&&t.status==='RELEASED').length;
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,9+task8Released);
+const task9Ids=["uuid-generator","timestamp-converter","percentage-calculator","percentage-change-calculator","discount-calculator"];
+const task9Released=registry.tools.filter(t=>task9Ids.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,9+task8Released+task9Released);
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

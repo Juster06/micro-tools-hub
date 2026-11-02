@@ -1,5 +1,11 @@
 # Progress tracker
 
+## Task 9 — independently verified public releases
+
+PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).
+
+Exact public source/live evidence is in five separate release audits. Original implementation/prior release audits unchanged; current derived blocks follow the registry. Release-metadata deployment/public agreement and native launch verification precede completion. Earlier task sections are historical. No Task 10.
+
 ## Task 9 — local five-utility checkpoint
 
 Task 9 local development is complete on `feat/task-9-five-tool-batch`, based on synchronized Task 8 main `31948b0cd43a64527372bd090553847b59de1598` (tree `3694236221c04c3027341e02c8f9e138376e3e1f`). The actual proposal-only planner selected five existing READY/P1 entries at ranks 10–14; no eligible entry skipped, new registry entry, changed priority or unmet tool dependency. UUID Generator received separate cryptographic design/failure checks. Each independently progressed READY → IMPLEMENTED → TESTED / REQUIRED_PASSED after real tests and a source/test commit. Publication remains null.
@@ -26,14 +32,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 5 |
-| RELEASED | 13 |
+| TESTED | 0 |
+| RELEASED | 18 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 75 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **25 released tools**. Progress: 13/25 (52.0%); remaining: 12.
+Current growth milestone: **25 released tools**. Progress: 18/25 (72.0%); remaining: 7.
 
 ### Tools by category
 
@@ -67,14 +73,14 @@ Next ready tool: **Profit Margin Calculator**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| UUID Generator | TESTED | 2026-11-02 |
+| UUID Generator | RELEASED | 2026-11-02 |
 | URL Encoder and Decoder | RELEASED | 2026-11-02 |
-| Timestamp Converter | TESTED | 2026-11-02 |
+| Timestamp Converter | RELEASED | 2026-11-02 |
 | Text Reverser | RELEASED | 2026-11-02 |
-| Percentage Change Calculator | TESTED | 2026-11-02 |
-| Percentage Calculator | TESTED | 2026-11-02 |
+| Percentage Change Calculator | RELEASED | 2026-11-02 |
+| Percentage Calculator | RELEASED | 2026-11-02 |
 | JSON Formatter | RELEASED | 2026-11-02 |
-| Discount Calculator | TESTED | 2026-11-02 |
+| Discount Calculator | RELEASED | 2026-11-02 |
 | Base64 Encoder and Decoder | RELEASED | 2026-11-02 |
 | Text Sorter | RELEASED | 2026-11-01 |
 <!-- GENERATED:COUNTS:END -->

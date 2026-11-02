@@ -1,6 +1,6 @@
 # UUID Generator
 
-Registry ID: `uuid-generator`. Category: developer. P1 / rank 10. Canonical route: `uuid-generator/index.html`. Task 9 local development; **publication pending**, no release claimed. Current lifecycle/evidence is authoritative in TOOL_REGISTRY.json.
+Registry ID: `uuid-generator`. Category: developer. P1 / rank 10. Canonical route: `uuid-generator/index.html`. Task 9 public release verified 2026-11-02; [Live tool](https://everydaydigitalbox.com/uuid-generator/). Publication/source/behavior evidence: `audit/UUID_GENERATOR_RELEASE_VERIFICATION.json`; original local implementation audit is preserved.
 
 ## Exact behavior, defaults and limits
 
@@ -14,4 +14,4 @@ Standalone vanilla HTML/JS, existing Tailwind Play CDN and expanded fallback CSS
 
 `python scripts/test_tool.py --id uuid-generator` runs nonempty actual framework structure/logic/browser scopes. `node --test --test-concurrency=1 tests/tools/uuid-generator/*.test.mjs` runs independent logic/boundary and extended browser/hub tests. Exact fixtures/oracles, all modes/options, empty/invalid/limits, statistics, original preservation, races, copy/UTF-8 Blob/revocation/failure, simulated composition, keyboard/labels and no input transport/storage probes are scoped in the individual audit. Screenshots and actual browser checks use 320/375/768/1440 viewports. Source revisions/hashes are recorded only after real tests and source checkpoint commits.
 
-Clipboard/composition and entropy-failure fixtures are simulated; downloads captured in memory. Actual production browser random acquisition is tested separately from deterministic UUID byte formatting. No native clipboard/IME/Save-dialog, physical-device, screen-reader, cross-browser or general cryptographic certification. No publication, push or deployment is authorized by these local tests.
+Clipboard/composition and entropy-failure fixtures are simulated; downloads captured in memory. Actual production browser random acquisition is tested separately from deterministic UUID byte formatting. No native clipboard/IME/Save-dialog, physical-device, screen-reader, cross-browser or general cryptographic certification. These local tests alone do not establish publication; separate successful deployment, exact public source and actual public behavior evidence is recorded in the release audit.

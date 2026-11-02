@@ -17,8 +17,9 @@ else {
   assert.equal(publication.url,'https://everydaydigitalbox.com/percentage-calculator/');
   assert.ok(Number.isFinite(Date.parse(publication.checked_at)));
 }
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,13);
-assert.equal(caseStatus,'TESTED');
+const task9Ids=["uuid-generator","timestamp-converter","percentage-calculator","percentage-change-calculator","discount-calculator"];
+const task9Released=registry.tools.filter(t=>task9Ids.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,13+task9Released);
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

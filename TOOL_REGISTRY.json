@@ -2302,7 +2302,7 @@
       "category": "developer",
       "description": "Generate version-4 UUIDs using browser cryptographic randomness.",
       "directory_path": "uuid-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2317,19 +2317,29 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-02",
-      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
+      "notes": "Task 9 PR #13 merged. Independently passed actual public HTTPS browser behavior and exact approved deployed HTML before RELEASED. Separate release audit preserves original implementation evidence; owner Analytics unchanged.",
       "sequence_rank": 10,
       "related_tools": [],
       "verification": {
-        "source_revision": "3d01647cd2845789858fadfe4a15ce452b105a43",
+        "source_revision": "44620a1f4a5d6ae58366cb392926961d0b8edf7c",
         "source_sha256": "6a7aa06351d6170e76b0f1f000f7e43a23edfd941abb6c0cf9ffcffa230afe11",
-        "evidence_path": "audit/UUID_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/UUID_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
-          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
-          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+          "44 independent exact JSON logic fixtures",
+          "22 real browser interaction cases / 60 assertions",
+          "10 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+          "14 additional real browser cases: input/options races, clipboard/download cleanup, composition, privacy, keyboard and tool-specific actual crypto/timezone/numeric behavior",
+          "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed",
+          "Actual public HTTPS: 22 framework browser cases / 60 assertions",
+          "Actual public extended cases 14 and hub cases 2",
+          "Independent production/control-driven live checks 10"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/uuid-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-02T07:32:29.391628+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2479,7 +2489,7 @@
       "category": "developer",
       "description": "Convert epoch values and ISO dates with explicit timezone handling.",
       "directory_path": "timestamp-converter",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2493,19 +2503,29 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-02",
-      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
+      "notes": "Task 9 PR #13 merged. Independently passed actual public HTTPS browser behavior and exact approved deployed HTML before RELEASED. Separate release audit preserves original implementation evidence; owner Analytics unchanged.",
       "sequence_rank": 11,
       "related_tools": [],
       "verification": {
-        "source_revision": "9e6c9dead4994d979f9385fa2e091326c13f7233",
+        "source_revision": "44620a1f4a5d6ae58366cb392926961d0b8edf7c",
         "source_sha256": "7b90f9a23bca3dfa62dc294ae143d3c9011864e57cce8c396493eafaf6d69834",
-        "evidence_path": "audit/TIMESTAMP_CONVERTER_VERIFICATION.json",
+        "evidence_path": "audit/TIMESTAMP_CONVERTER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
-          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
-          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+          "52 independent exact JSON logic fixtures",
+          "25 real browser interaction cases / 52 assertions",
+          "10 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+          "13 additional real browser cases: input/options races, clipboard/download cleanup, composition, privacy, keyboard and tool-specific actual crypto/timezone/numeric behavior",
+          "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed",
+          "Actual public HTTPS: 25 framework browser cases / 52 assertions",
+          "Actual public extended cases 13 and hub cases 2",
+          "Independent production/control-driven live checks 56"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/timestamp-converter/",
+          "http_status": 200,
+          "checked_at": "2026-11-02T07:32:29.680436+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2782,7 +2802,7 @@
       "category": "calculator",
       "description": "Calculate a percentage of a value and one value as a percentage of another.",
       "directory_path": "percentage-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2796,19 +2816,29 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-02",
-      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
+      "notes": "Task 9 PR #13 merged. Independently passed actual public HTTPS browser behavior and exact approved deployed HTML before RELEASED. Separate release audit preserves original implementation evidence; owner Analytics unchanged.",
       "sequence_rank": 12,
       "related_tools": [],
       "verification": {
-        "source_revision": "74f05f8851097b9d9f4a853013add17873ac646b",
+        "source_revision": "44620a1f4a5d6ae58366cb392926961d0b8edf7c",
         "source_sha256": "cb10bb4c7700f9b9741d9acde4db5e503f7c3f1db0e0f165b53059f7acfa967b",
-        "evidence_path": "audit/PERCENTAGE_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/PERCENTAGE_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
-          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
-          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+          "55 independent exact JSON logic fixtures",
+          "21 real browser interaction cases / 48 assertions",
+          "10 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+          "13 additional real browser cases: input/options races, clipboard/download cleanup, composition, privacy, keyboard and tool-specific actual crypto/timezone/numeric behavior",
+          "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed",
+          "Actual public HTTPS: 21 framework browser cases / 48 assertions",
+          "Actual public extended cases 13 and hub cases 2",
+          "Independent production/control-driven live checks 53"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/percentage-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-02T07:32:29.991392+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2830,7 +2860,7 @@
       "category": "calculator",
       "description": "Calculate increase or decrease from a starting value.",
       "directory_path": "percentage-change-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2844,19 +2874,29 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-02",
-      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
+      "notes": "Task 9 PR #13 merged. Independently passed actual public HTTPS browser behavior and exact approved deployed HTML before RELEASED. Separate release audit preserves original implementation evidence; owner Analytics unchanged.",
       "sequence_rank": 13,
       "related_tools": [],
       "verification": {
-        "source_revision": "95a7f94dd29dd35c0bec87d6ed9508cfa1b547d3",
+        "source_revision": "44620a1f4a5d6ae58366cb392926961d0b8edf7c",
         "source_sha256": "93da729c6c5abcde3ee31a46bb4b2ba31dadf24ba91bf18ee15885b355b3434e",
-        "evidence_path": "audit/PERCENTAGE_CHANGE_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/PERCENTAGE_CHANGE_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
-          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
-          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+          "56 independent exact JSON logic fixtures",
+          "22 real browser interaction cases / 49 assertions",
+          "10 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+          "13 additional real browser cases: input/options races, clipboard/download cleanup, composition, privacy, keyboard and tool-specific actual crypto/timezone/numeric behavior",
+          "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed",
+          "Actual public HTTPS: 22 framework browser cases / 49 assertions",
+          "Actual public extended cases 13 and hub cases 2",
+          "Independent production/control-driven live checks 54"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/percentage-change-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-02T07:32:30.258478+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2902,7 +2942,7 @@
       "category": "calculator",
       "description": "Calculate a discounted price and savings.",
       "directory_path": "discount-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2916,19 +2956,29 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-02",
-      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
+      "notes": "Task 9 PR #13 merged. Independently passed actual public HTTPS browser behavior and exact approved deployed HTML before RELEASED. Separate release audit preserves original implementation evidence; owner Analytics unchanged.",
       "sequence_rank": 14,
       "related_tools": [],
       "verification": {
-        "source_revision": "3ac25346bb56a9bedbe1921975030c41a2bbeaa0",
+        "source_revision": "44620a1f4a5d6ae58366cb392926961d0b8edf7c",
         "source_sha256": "474875ac6e4c698545da568e63b2c402a9034469b6985e44c842b58fddc04e8c",
-        "evidence_path": "audit/DISCOUNT_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/DISCOUNT_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
-          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
-          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+          "52 independent exact JSON logic fixtures",
+          "22 real browser interaction cases / 49 assertions",
+          "10 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+          "13 additional real browser cases: input/options races, clipboard/download cleanup, composition, privacy, keyboard and tool-specific actual crypto/timezone/numeric behavior",
+          "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed",
+          "Actual public HTTPS: 22 framework browser cases / 49 assertions",
+          "Actual public extended cases 13 and hub cases 2",
+          "Independent production/control-driven live checks 50"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/discount-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-02T07:32:30.531180+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",

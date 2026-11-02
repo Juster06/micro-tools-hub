@@ -1,5 +1,21 @@
 # Session handoff
 
+## Latest session — Task 9 final integration and independent releases (2026-11-02, Europe/London)
+
+**Status:** PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).
+
+**Identity/history:** published feature `0c34ceafe7f66561651b2cb2fe8aa66bbe68120e` and original local feature `b06a634c63782d89ef8128d72c9ffd68382b89dc` have identical approved tree `5868e564f783c369fc9d4b123a731bf0603e82dd`. Merge tree matches exactly. Local main safely fast-forwarded; original six Task 9 commits, all prior branch heads and active checkout preserved, no reset or force update.
+
+**Independent public qualification:** actual successful Pages main/root/Jekyll build/deploy, canonical HTTP 200 and exact approved whole HTML/inline CSS/JS hashes precede each RELEASED transition. Each tool independently passed committed browser fixtures, extended actual public handlers, hub navigation/search and production/control-driven exact reference cases; UUID real Web Crypto acquisition is separate from deterministic entropy/failure stubs. All 13 prior public route/source checks passed. Five release audits retain genuine per-tool counts/timestamps/deployment details, original implementation audits untouched. Public screenshots at 375/1440 reviewed, all four required widths checked without overflow. No OS clipboard/IME/Save-dialog/physical-device/screen-reader/all-browser or cryptographic certification; host timezone/IEEE-754 limitations disclosed.
+
+**Premerge:** Python 123/123, full Node 375/375, five new independent suites, 13 prior regressions (380 isolated logic; 179 browser / 519 assertions), templates 6/12/48 and all 26 validation scopes passed. Full status generation also passed in an isolated exact GitHub merge-preview checkout. No functional GitHub CI PASS claimed.
+
+**Release-state verification:** Final full release-state regression passed: Python 123/123, Node 375/375, zero failures/skips; all five new suites, 13 prior regressions (380 logic, 179 browser/519 assertions), neutral templates 6/12/48, registry/source/homepage and project validation PASS with zero errors/warnings. Runtime sources/assertions/timeouts unchanged. Metadata deployment/public agreement and native shortcut observations follow after actual execution. Current release metadata/card labels require a subsequent successful deployment before final completion. All runtime HTML, 13 old cards/full entries/evidence, CNAME, owner Analytics, shared framework/templates/dashboard/launcher and earlier audits preserved. Thirteen lifecycle-aware global-inventory headers are metadata updates only; no assertion/timeout weakening.
+
+**Next major task:** finish authorized Task 9 release-state regression, guarded metadata publication, independent public agreement, both existing native shortcuts and clean synchronized main. Do not begin Task 10 or another utility. The containing delivery commit is identified by `git log -1 --format="%H %s"` and the final report; this handoff cannot embed its own commit hash.
+
+### Historical Task 9 local implementation checkpoint
+
 ## Task 9 — local five-utility delivery (2026-11-02, Europe/London)
 
 Task 9 local development is complete on `feat/task-9-five-tool-batch`, based on synchronized Task 8 main `31948b0cd43a64527372bd090553847b59de1598` (tree `3694236221c04c3027341e02c8f9e138376e3e1f`). The actual proposal-only planner selected five existing READY/P1 entries at ranks 10–14; no eligible entry skipped, new registry entry, changed priority or unmet tool dependency. UUID Generator received separate cryptographic design/failure checks. Each independently progressed READY → IMPLEMENTED → TESTED / REQUIRED_PASSED after real tests and a source/test commit. Publication remains null.
@@ -257,26 +273,26 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 25 released tools; 13 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 6; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 5; RELEASED: 13; DEPRECATED: 0.
+- Milestone: 25 released tools; 18 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 6; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 18; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Profit Margin Calculator.
-- Git branch: feat/task-9-five-tool-batch.
-- Latest commit observed before generation: 3ac25346bb56a9bedbe1921975030c41a2bbeaa0.
+- Git branch: main.
+- Latest commit observed before generation: 44620a1f4a5d6ae58366cb392926961d0b8edf7c.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
-- UUID Generator: TESTED, evidence dated 2026-11-02.
+- UUID Generator: RELEASED, evidence dated 2026-11-02.
 - URL Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
-- Timestamp Converter: TESTED, evidence dated 2026-11-02.
+- Timestamp Converter: RELEASED, evidence dated 2026-11-02.
 - Text Reverser: RELEASED, evidence dated 2026-11-02.
-- Percentage Change Calculator: TESTED, evidence dated 2026-11-02.
-- Percentage Calculator: TESTED, evidence dated 2026-11-02.
+- Percentage Change Calculator: RELEASED, evidence dated 2026-11-02.
+- Percentage Calculator: RELEASED, evidence dated 2026-11-02.
 - JSON Formatter: RELEASED, evidence dated 2026-11-02.
-- Discount Calculator: TESTED, evidence dated 2026-11-02.
+- Discount Calculator: RELEASED, evidence dated 2026-11-02.
 - Base64 Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
 - Text Sorter: RELEASED, evidence dated 2026-11-01.
 
@@ -299,14 +315,26 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` index.html
 - ` M` percentage-calculator/README.md
 - ` M` percentage-change-calculator/README.md
+- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
+- ` M` tests/tools/json-formatter/integration-browser.test.mjs
+- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
+- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
+- ` M` tests/tools/slug-generator/integration-browser.test.mjs
+- ` M` tests/tools/text-reverser/integration-browser.test.mjs
+- ` M` tests/tools/text-sorter/integration-browser.test.mjs
+- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
+- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
 - ` M` timestamp-converter/README.md
 - ` M` uuid-generator/README.md
-- `??` audit/DISCOUNT_CALCULATOR_VERIFICATION.json
-- `??` audit/PERCENTAGE_CALCULATOR_VERIFICATION.json
-- `??` audit/PERCENTAGE_CHANGE_CALCULATOR_VERIFICATION.json
-- `??` audit/TASK_9_DEVELOPMENT_PLAN.md
-- `??` audit/TIMESTAMP_CONVERTER_VERIFICATION.json
-- `??` audit/UUID_GENERATOR_VERIFICATION.json
+- `??` audit/DISCOUNT_CALCULATOR_RELEASE_VERIFICATION.json
+- `??` audit/PERCENTAGE_CALCULATOR_RELEASE_VERIFICATION.json
+- `??` audit/PERCENTAGE_CHANGE_CALCULATOR_RELEASE_VERIFICATION.json
+- `??` audit/TIMESTAMP_CONVERTER_RELEASE_VERIFICATION.json
+- `??` audit/UUID_GENERATOR_RELEASE_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

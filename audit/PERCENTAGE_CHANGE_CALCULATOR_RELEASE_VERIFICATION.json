@@ -1,0 +1,676 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-02",
+  "source_revision": "44620a1f4a5d6ae58366cb392926961d0b8edf7c",
+  "browser": "Edg/156.0.4314.58",
+  "scope": "Actual public HTTPS DOM in installed Edge, normal TLS/external delivery enabled; approved browser fixtures/extended handlers and independent exact control-driven reference cases. Clipboard/composition/download capture simulated; UUID deterministic entropy stubs explicitly separate from real production Web Crypto success checks. Owner homepage Analytics is preserved and distinct from utility input-processing probes. Original implementation audit unchanged.",
+  "pages": [
+    {
+      "path": "percentage-change-calculator/index.html",
+      "source_sha256": "93da729c6c5abcde3ee31a46bb4b2ba31dadf24ba91bf18ee15885b355b3434e",
+      "checks": [
+        "56 independent exact JSON logic fixtures",
+        "22 real browser interaction cases / 49 assertions",
+        "10 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+        "13 additional real browser cases: input/options races, clipboard/download cleanup, composition, privacy, keyboard and tool-specific actual crypto/timezone/numeric behavior",
+        "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed",
+        "Actual public HTTPS: 22 framework browser cases / 49 assertions",
+        "Actual public extended cases 13 and hub cases 2",
+        "Independent production/control-driven live checks 54"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/percentage-change-calculator/",
+        "http_status": 200,
+        "checked_at": "2026-11-02T07:32:30.258478+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "integration": {
+    "pr": 13,
+    "url": "https://github.com/Juster06/micro-tools-hub/pull/13",
+    "merged": true,
+    "merged_at": "2026-11-02T07:29:53Z",
+    "merge_commit": "44620a1f4a5d6ae58366cb392926961d0b8edf7c",
+    "tree": "5868e564f783c369fc9d4b123a731bf0603e82dd",
+    "base_before": "31948b0cd43a64527372bd090553847b59de1598",
+    "published_head": "0c34ceafe7f66561651b2cb2fe8aa66bbe68120e",
+    "original_local_feature": "b06a634c63782d89ef8128d72c9ffd68382b89dc",
+    "local_main_synchronized": true,
+    "clean": true,
+    "all_original_branch_heads_preserved": true,
+    "synchronized_at": "2026-11-02T07:30:44.536298+00:00"
+  },
+  "deployment": {
+    "id": 41406674180,
+    "head_sha": "44620a1f4a5d6ae58366cb392926961d0b8edf7c",
+    "head_branch": "main",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180",
+    "created_at": "2026-11-02T07:29:56Z",
+    "updated_at": "2026-11-02T07:30:55Z",
+    "deployment_id": 7486663880,
+    "environment": "github-pages",
+    "environment_url": "https://everydaydigitalbox.com/",
+    "deployment_status": "success",
+    "verified_at": "2026-11-02T07:32:11.71529+00:00",
+    "configuration": {
+      "branch": "main",
+      "source": ".",
+      "destination": "./_site",
+      "builder": "GitHub-managed Jekyll Pages",
+      "verified_build_job": 125150189209,
+      "log_evidence": [
+        "2026-11-02T07:30:07.4338908Z   ref: main",
+        "2026-11-02T07:30:08.9092598Z   source: .",
+        "2026-11-02T07:30:08.9092787Z   destination: ./_site",
+        "2026-11-02T07:30:17.3320606Z             Source: /github/workspace/.",
+        "2026-11-02T07:30:17.3320952Z        Destination: /github/workspace/./_site"
+      ],
+      "deploy_job": 125150313246,
+      "deploy_log_evidence": [
+        "2026-11-02T07:30:27.4982066Z Creating Pages deployment with payload:",
+        "2026-11-02T07:30:33.3834694Z Getting Pages deployment status...",
+        "2026-11-02T07:30:41.3856144Z Getting Pages deployment status...",
+        "2026-11-02T07:30:53.2746003Z Getting Pages deployment status...",
+        "2026-11-02T07:30:53.4543959Z Evaluated environment url: https://everydaydigitalbox.com/"
+      ]
+    }
+  },
+  "public_source": {
+    "path": "percentage-change-calculator/index.html",
+    "url": "https://everydaydigitalbox.com/percentage-change-calculator/",
+    "http_status": 200,
+    "source_sha256": "93da729c6c5abcde3ee31a46bb4b2ba31dadf24ba91bf18ee15885b355b3434e",
+    "live_sha256": "93da729c6c5abcde3ee31a46bb4b2ba31dadf24ba91bf18ee15885b355b3434e",
+    "source_matches": true,
+    "etag": "\"6ae83c29-4b5f\"",
+    "checked_at": "2026-11-02T07:32:30.258478+00:00"
+  },
+  "public_homepage_source": {
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "source_sha256": "48fd84c040d3c1781d0670ebec5115e09e71030f54de8cb7d52ffbb3f7dba1de",
+    "live_sha256": "48fd84c040d3c1781d0670ebec5115e09e71030f54de8cb7d52ffbb3f7dba1de",
+    "source_matches": true,
+    "etag": "\"6ae83c29-662c\"",
+    "checked_at": "2026-11-02T07:32:29.081927+00:00"
+  },
+  "live_browser": {
+    "framework": {
+      "status": "PASS",
+      "passed": 22,
+      "failed": 0,
+      "assertions": 49,
+      "failures": [],
+      "scope": "Actual public HTTPS DOM; normal TLS/external delivery enabled; clipboard/download APIs simulated.",
+      "browser": "Edg/156.0.4314.58"
+    },
+    "extended_browser": 13,
+    "hub_browser": 2,
+    "result": "PASS",
+    "contracts": {
+      "started_at": "2026-11-02T07:35:00.072Z",
+      "checks": [
+        {
+          "name": "Actual canonical HTTPS document and registered title",
+          "result": "PASS"
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-1",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-2",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-3",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-4",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-5",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-6",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-7",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-8",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-9",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-10",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-11",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-12",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-13",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-14",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-15",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-16",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-17",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-18",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-19",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-20",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-21",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-22",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-23",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-24",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-25",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-26",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-27",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-28",
+          "result": "PASS",
+          "expected_error": false
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-29",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-30",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-31",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-32",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-33",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-34",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-35",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-36",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-37",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-38",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-39",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-40",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-41",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-42",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-43",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-44",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-45",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-54",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-55",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Independent approved exact control-driven fixture: case-56",
+          "result": "PASS",
+          "expected_error": true
+        },
+        {
+          "name": "Direction follows unrounded change even when rounded percentage is zero",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual public layout 320px; no horizontal overflow",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual public layout 375px; no horizontal overflow",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual public layout 768px; no horizontal overflow",
+          "result": "PASS"
+        },
+        {
+          "name": "Actual public layout 1440px; no horizontal overflow",
+          "result": "PASS"
+        }
+      ],
+      "result": "PASS",
+      "failures": [],
+      "browser": "Edg/156.0.4314.58",
+      "finished_at": "2026-11-02T07:35:07.501Z"
+    },
+    "total_browser_cases": 91
+  },
+  "previous_evidence": "audit/PERCENTAGE_CHANGE_CALCULATOR_VERIFICATION.json",
+  "previous_13_public_sources": [
+    {
+      "path": "social-counter/index.html",
+      "url": "https://everydaydigitalbox.com/social-counter/",
+      "http_status": 200,
+      "source_sha256": "8703dcdc3a4f13c8597022f3338b750f67042f9d2782d996d55e95412844e47b",
+      "live_sha256": "8703dcdc3a4f13c8597022f3338b750f67042f9d2782d996d55e95412844e47b",
+      "source_matches": true,
+      "etag": "\"6ae83c29-4eac\"",
+      "checked_at": "2026-11-02T07:32:30.832961+00:00"
+    },
+    {
+      "path": "excel-sandbox/index.html",
+      "url": "https://everydaydigitalbox.com/excel-sandbox/",
+      "http_status": 200,
+      "source_sha256": "badb1ccd17302f8006397ff0553b483a3cdcf426bad61976477f4c77908c4191",
+      "live_sha256": "badb1ccd17302f8006397ff0553b483a3cdcf426bad61976477f4c77908c4191",
+      "source_matches": true,
+      "etag": "\"6ae83c29-4ced\"",
+      "checked_at": "2026-11-02T07:32:31.130976+00:00"
+    },
+    {
+      "path": "text-cleaner/index.html",
+      "url": "https://everydaydigitalbox.com/text-cleaner/",
+      "http_status": 200,
+      "source_sha256": "9c9e0e6a9a9796b73b26f21adb8cffa33a7aa6b2e669b64bfb9ab54972273443",
+      "live_sha256": "9c9e0e6a9a9796b73b26f21adb8cffa33a7aa6b2e669b64bfb9ab54972273443",
+      "source_matches": true,
+      "etag": "\"6ae83c29-4544\"",
+      "checked_at": "2026-11-02T07:32:31.415110+00:00"
+    },
+    {
+      "path": "streaming-roulette/index.html",
+      "url": "https://everydaydigitalbox.com/streaming-roulette/",
+      "http_status": 200,
+      "source_sha256": "6f9cb3b2c114e03f545034ef0b1065ae5d4c50b13d9576882cdb5cffe5aef761",
+      "live_sha256": "6f9cb3b2c114e03f545034ef0b1065ae5d4c50b13d9576882cdb5cffe5aef761",
+      "source_matches": true,
+      "etag": "\"6ae83c29-4177\"",
+      "checked_at": "2026-11-02T07:32:31.753489+00:00"
+    },
+    {
+      "path": "case-converter/index.html",
+      "url": "https://everydaydigitalbox.com/case-converter/",
+      "http_status": 200,
+      "source_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+      "live_sha256": "a72c78ed3dd52771f45aa3be0b1735fa6c36b582480282081d64e22c666f50c6",
+      "source_matches": true,
+      "etag": "\"6ae83c29-523c\"",
+      "checked_at": "2026-11-02T07:32:32.047355+00:00"
+    },
+    {
+      "path": "duplicate-line-remover/index.html",
+      "url": "https://everydaydigitalbox.com/duplicate-line-remover/",
+      "http_status": 200,
+      "source_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+      "live_sha256": "bf1ea35d9ddf0610f3003d3ce73ff1661275f9006d478e2a1b9f2d52fa28b9b6",
+      "source_matches": true,
+      "etag": "\"6ae83c29-4a68\"",
+      "checked_at": "2026-11-02T07:32:32.339743+00:00"
+    },
+    {
+      "path": "text-sorter/index.html",
+      "url": "https://everydaydigitalbox.com/text-sorter/",
+      "http_status": 200,
+      "source_sha256": "018f431ad20d178eb16b1b1d4782f6a31ca47f5b0ea2986c4d859c3d5529b3cf",
+      "live_sha256": "018f431ad20d178eb16b1b1d4782f6a31ca47f5b0ea2986c4d859c3d5529b3cf",
+      "source_matches": true,
+      "etag": "\"6ae83c29-4b02\"",
+      "checked_at": "2026-11-02T07:32:32.636219+00:00"
+    },
+    {
+      "path": "text-reverser/index.html",
+      "url": "https://everydaydigitalbox.com/text-reverser/",
+      "http_status": 200,
+      "source_sha256": "a554d2b208f2c7e8c454cadbfb6634a3104485ad5b1f14ab78151a9fbea34118",
+      "live_sha256": "a554d2b208f2c7e8c454cadbfb6634a3104485ad5b1f14ab78151a9fbea34118",
+      "source_matches": true,
+      "etag": "\"6ae83c29-46d7\"",
+      "checked_at": "2026-11-02T07:32:32.937114+00:00"
+    },
+    {
+      "path": "find-and-replace/index.html",
+      "url": "https://everydaydigitalbox.com/find-and-replace/",
+      "http_status": 200,
+      "source_sha256": "b6a0d254ee8de1047bec187c58e2aea71c67c00cc4734bc48f523cd347f9e058",
+      "live_sha256": "b6a0d254ee8de1047bec187c58e2aea71c67c00cc4734bc48f523cd347f9e058",
+      "source_matches": true,
+      "etag": "\"6ae83c29-4928\"",
+      "checked_at": "2026-11-02T07:32:33.245253+00:00"
+    },
+    {
+      "path": "slug-generator/index.html",
+      "url": "https://everydaydigitalbox.com/slug-generator/",
+      "http_status": 200,
+      "source_sha256": "682769f856e500f5db53dc6781eeedfb1486a3bec7f7c35fc4cb7119b0a90ea8",
+      "live_sha256": "682769f856e500f5db53dc6781eeedfb1486a3bec7f7c35fc4cb7119b0a90ea8",
+      "source_matches": true,
+      "etag": "\"6ae83c29-442d\"",
+      "checked_at": "2026-11-02T07:32:33.535930+00:00"
+    },
+    {
+      "path": "json-formatter/index.html",
+      "url": "https://everydaydigitalbox.com/json-formatter/",
+      "http_status": 200,
+      "source_sha256": "4039877d8d17aad63ae0f4c82c3fa4fb3101b3ddbb07917d124098267dda35c0",
+      "live_sha256": "4039877d8d17aad63ae0f4c82c3fa4fb3101b3ddbb07917d124098267dda35c0",
+      "source_matches": true,
+      "etag": "\"6ae83c29-4b16\"",
+      "checked_at": "2026-11-02T07:32:33.854564+00:00"
+    },
+    {
+      "path": "base64-encoder-decoder/index.html",
+      "url": "https://everydaydigitalbox.com/base64-encoder-decoder/",
+      "http_status": 200,
+      "source_sha256": "c04a7085c871afff35dd718963eb246710585cd7ade5e0e2cd65b9bd3c0d19de",
+      "live_sha256": "c04a7085c871afff35dd718963eb246710585cd7ade5e0e2cd65b9bd3c0d19de",
+      "source_matches": true,
+      "etag": "\"6ae83c29-4be5\"",
+      "checked_at": "2026-11-02T07:32:34.137769+00:00"
+    },
+    {
+      "path": "url-encoder-decoder/index.html",
+      "url": "https://everydaydigitalbox.com/url-encoder-decoder/",
+      "http_status": 200,
+      "source_sha256": "7c136f2043f1302909eac0445eafaaac27426d635698681a15146523781e89bd",
+      "live_sha256": "7c136f2043f1302909eac0445eafaaac27426d635698681a15146523781e89bd",
+      "source_matches": true,
+      "etag": "\"6ae83c29-45c6\"",
+      "checked_at": "2026-11-02T07:32:34.441284+00:00"
+    }
+  ],
+  "normalization": "scripts/tracking.py normalized_hash: CRLF to LF, rstrip trailing whitespace, UTF-8 SHA-256; exact whole public HTML including inline JavaScript/CSS matches reviewed source.",
+  "premerge_validation": {
+    "checked_at": "2026-11-02T07:29:15.121408+00:00",
+    "result": "PASS",
+    "all_26_scopes": true,
+    "python": 123,
+    "node": 375,
+    "combined_tree": "5868e564f783c369fc9d4b123a731bf0603e82dd",
+    "actual_github_merge_preview": "b8fcc3a02455e33914cd7583e2758bf7b9d2caaa",
+    "full_document_generation_workflow": "PASS in detached isolated exact-merge-preview checkout; active checkout remains clean",
+    "ci": "No functional GitHub CI results claimed"
+  },
+  "visual_scope": "Actual public 375/1440 screenshots reviewed for this tool; 320/375/768/1440 live no-overflow checks passed. Screenshots do not establish source identity.",
+  "limitations": [
+    "Installed Edge/Chromium only; emulated viewport widths are not physical-device or all-browser certification",
+    "No screen-reader, OS clipboard, native IME or Save-dialog certification; clipboard/composition/download APIs simulated/captured",
+    "Bounded host fixtures are not universal performance guarantees",
+    "User input processing stays local; page/CDN delivery still requests external styling",
+    "Publication evidence absent; TESTED, never RELEASED",
+    "Actual public HTTPS and installed Edge only; no physical-device/screen-reader/all-browser certification",
+    "Clipboard/composition and entropy failure fixtures simulated; download Blobs captured in memory, no OS clipboard/IME/Save-dialog certification",
+    "UUID production Web Crypto success is separate from explicitly deterministic entropy stubs; finite sampling is not cryptographic certification or guaranteed uniqueness",
+    "Timestamp local formatting depends on host Intl/timezone data; UTC/epoch semantics exact to integer milliseconds",
+    "Calculator native IEEE-754/toFixed rounding, not arbitrary-precision/accounting software"
+  ],
+  "metadata_publication": "The successful implementation deployment/live/source checks precede RELEASED. Release labels/registry require a further successful deployment and independent public agreement before completion.",
+  "final_regression": {
+    "checked_at": "2026-11-02T07:45:29.429945+00:00",
+    "python": 123,
+    "node": 375,
+    "failures": 0,
+    "skips": 0,
+    "tool_suites": {
+      "uuid-generator": {
+        "logic": 44,
+        "browser": 22,
+        "assertions": 60,
+        "combined_status": "PASS"
+      },
+      "timestamp-converter": {
+        "logic": 52,
+        "browser": 25,
+        "assertions": 52,
+        "combined_status": "PASS"
+      },
+      "percentage-calculator": {
+        "logic": 55,
+        "browser": 21,
+        "assertions": 48,
+        "combined_status": "PASS"
+      },
+      "percentage-change-calculator": {
+        "logic": 56,
+        "browser": 22,
+        "assertions": 49,
+        "combined_status": "PASS"
+      },
+      "discount-calculator": {
+        "logic": 52,
+        "browser": 22,
+        "assertions": 49,
+        "combined_status": "PASS"
+      },
+      "social-counter": {
+        "logic": 0,
+        "browser": 4,
+        "assertions": 14,
+        "combined_status": "PARTIAL"
+      },
+      "excel-sandbox": {
+        "logic": 0,
+        "browser": 3,
+        "assertions": 10,
+        "combined_status": "PARTIAL"
+      },
+      "text-cleaner": {
+        "logic": 0,
+        "browser": 3,
+        "assertions": 8,
+        "combined_status": "PARTIAL"
+      },
+      "streaming-roulette": {
+        "logic": 0,
+        "browser": 2,
+        "assertions": 9,
+        "combined_status": "PARTIAL"
+      },
+      "case-converter": {
+        "logic": 69,
+        "browser": 22,
+        "assertions": 89,
+        "combined_status": "PASS"
+      },
+      "duplicate-line-remover": {
+        "logic": 66,
+        "browser": 22,
+        "assertions": 112,
+        "combined_status": "PASS"
+      },
+      "text-sorter": {
+        "logic": 34,
+        "browser": 20,
+        "assertions": 47,
+        "combined_status": "PASS"
+      },
+      "text-reverser": {
+        "logic": 30,
+        "browser": 16,
+        "assertions": 33,
+        "combined_status": "PASS"
+      },
+      "find-and-replace": {
+        "logic": 33,
+        "browser": 18,
+        "assertions": 54,
+        "combined_status": "PASS"
+      },
+      "slug-generator": {
+        "logic": 33,
+        "browser": 17,
+        "assertions": 42,
+        "combined_status": "PASS"
+      },
+      "json-formatter": {
+        "logic": 35,
+        "browser": 19,
+        "assertions": 37,
+        "combined_status": "PASS"
+      },
+      "base64-encoder-decoder": {
+        "logic": 44,
+        "browser": 17,
+        "assertions": 33,
+        "combined_status": "PASS"
+      },
+      "url-encoder-decoder": {
+        "logic": 36,
+        "browser": 16,
+        "assertions": 31,
+        "combined_status": "PASS"
+      }
+    },
+    "prior_13": {
+      "logic": 380,
+      "browser": 179,
+      "assertions": 519
+    },
+    "templates": {
+      "logic": 6,
+      "browser": 12,
+      "assertions": 48
+    },
+    "project_status": "PASS; zero errors/warnings"
+  }
+}

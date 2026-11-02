@@ -1,5 +1,19 @@
 # Everyday Digital Box — WebUtils Hub
 
+## Task 9 — five independent public releases (2026-11-02)
+
+PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).
+
+| Utility | Public status / route |
+| --- | --- |
+| UUID Generator | [Live tool](https://everydaydigitalbox.com/uuid-generator/) · RELEASED |
+| Timestamp Converter | [Live tool](https://everydaydigitalbox.com/timestamp-converter/) · RELEASED |
+| Percentage Calculator | [Live tool](https://everydaydigitalbox.com/percentage-calculator/) · RELEASED |
+| Percentage Change Calculator | [Live tool](https://everydaydigitalbox.com/percentage-change-calculator/) · RELEASED |
+| Discount Calculator | [Live tool](https://everydaydigitalbox.com/discount-calculator/) · RELEASED |
+
+All 18 utility implementations remain unchanged. Each new release has independent actual public browser tests, exact deployed-source SHA-256 and separate release evidence. Existing 13 released cards/entries/evidence, CNAME, owner Analytics, framework/templates/dashboard/launcher and original branch heads are preserved. Earlier task sections below are historical checkpoints. Final release-metadata deployment and dashboard observations are recorded in the latest handoff; no Task 10.
+
 ## Task 9 — local five-utility batch (2026-11-02)
 
 Task 9 local development is complete on `feat/task-9-five-tool-batch`, based on synchronized Task 8 main `31948b0cd43a64527372bd090553847b59de1598` (tree `3694236221c04c3027341e02c8f9e138376e3e1f`). The actual proposal-only planner selected five existing READY/P1 entries at ranks 10–14; no eligible entry skipped, new registry entry, changed priority or unmet tool dependency. UUID Generator received separate cryptographic design/failure checks. Each independently progressed READY → IMPLEMENTED → TESTED / REQUIRED_PASSED after real tests and a source/test commit. Publication remains null.
