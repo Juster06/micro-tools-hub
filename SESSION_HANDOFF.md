@@ -1,6 +1,76 @@
 # Session handoff
 
-## Latest session — Task 9.5 Stage B: PR #14 open, hosted compatibility correction under verification
+## Latest session — Task 9.5 Stage B VERIFIED: PR #14 ready for review (2026-11-02)
+
+**Status:** [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) is open,
+non-draft, targets main, conflict-free, auto-merge off. Genuine [Functional CI
+run 41425207614](https://github.com/Juster06/micro-tools-hub/actions/runs/41425207614)
+for feature `858fc772833a2456931cd80a3ac2eeaf397fd979` completed successfully
+on pull_request: all three functional jobs and the aggregate passed. No merge,
+deployment, repository settings/ruleset/protection or lifecycle change; no Task 10.
+This documentation-only checkpoint records already verified evidence; the final
+delivery report identifies its exact local/published commit, tree and hosted run.
+
+**Identity/history:** main/origin-main remain `93867ed9d02b702eaff250288f58ca7abba7bbab`.
+Original local `0f4a1f31ac2036e15505a58196477f328554fb36` and initial published
+`6ab9a72ce0db09bd6ff52e0dae0cdde0a3b167be` have tree
+`1bbc130efb8fb43cd12d9c6cd9166fa4fa8527dd`. Separate local correction
+`aea2910ae433f05d1546f6594fc4e0c11ffa074b` and published correction
+`858fc772833a2456931cd80a3ac2eeaf397fd979` have tree
+`cd301498becbd98811a1338215fdb7bcb39ac133`. Normal Git push lacked local
+authentication; authorized connector published exact reviewed blobs/trees with
+expected-parent guard and force=false. Independent fetch verified all 224 files
+and zero committed-content differences at each checkpoint. Original commits,
+branches and active checkout preserved. Only the original 19-file scope changed.
+
+**Genuine failure/fix:** initial hosted [run 41423878108](https://github.com/Juster06/micro-tools-hub/actions/runs/41423878108)
+executed 141 Python tests, 135 passed/6 failed/0 skipped. Windows TEMP used an 8.3
+alias while production resolves the same directory to its long path. Node and
+real Linux Chromium passed; aggregate correctly failed on the Python failure.
+All original logs and failure artifact were retained/inspected. Fix only the CI
+unittest bootstrap's temporary root before discovery; add one guard and raise
+the floor to 142. Locally reproduced with a real distinct 8.3 TEMP alias, all
+12 unchanged launcher tests passed. No production or existing test assertions,
+browser flags, interaction waits, security model or mandatory scopes changed.
+
+**Actual hosted results:** Windows-2022 Python **142/142**, zero failures/skips;
+registry/lifecycle/source/audit/homepage/status and all 18 structural profiles PASS,
+zero validation errors/warnings. Ubuntu-24.04 Node **179/179** plus **639** JSON
+logic cases PASS. Ubuntu-22.04 real Chromium **196/196** extended/navigation tests,
+**291** fixture cases/**777** assertions and neutral templates **6 logic/12 browser/
+48 assertions** PASS. Python 3.14.4, Node 24.22.1, Playwright 1.64.1, actual
+Chromium 156.0.8078.4/revision1248. Browser preflight/acquisition/CDP launch and
+real local DOM/navigation execution confirmed from logs. Sandbox retained.
+Four specialist isolated-logic scopes remain explicitly NOT RUN; required
+structural/browser profiles passed. No invented dashboard functional totals.
+
+**Quality gate/artifacts:** actual first aggregate saw failure/success/success
+and failed; corrected aggregate saw success/success/success and passed. Hosted
+Python guards also tested missing/failed/cancelled/skipped aggregate inputs and
+child timeout behavior. All three real ZIP artifacts were downloaded, digest
+verified, contents allowlisted, counts matched against execution logs and coverage
+compared with that exact published commit. Only summary.json and coverage.json,
+seven-day retention, no credentials/personal paths/raw private logs/profiles.
+This proves hosted operation, not branch-protection enforcement or deployment gating.
+
+**Local/preservation:** fresh baseline 141 Python/375 Node then corrected full
+regression 142 Python/375 Node, logic/browser/templates, project workflow,
+actionlint/privacy/whitespace PASS. All 18 utility HTML, entire registry, homepage/
+Live cards/Analytics, CNAME, prior tests/audits/framework/templates, dashboard/
+launcher and Desktop/Start menu shortcut bytes/COM properties unchanged. Existing
+GitHub-managed main/root Pages workflow remains separate; no PR website deployment.
+Inventory unchanged: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED,
+18/25 (72%). Native installed-shortcut launch is not newly claimed in Stage B.
+
+**Next major task:** await owner review and separately authorized integration of
+PR #14. Verify the containing documentation checkpoint's hosted run/current PR
+head when resuming; final delivery records that independent check. Do not merge,
+change settings/protection/statuses, deploy or begin Task 10 without that scope.
+No remaining functional blocker; do not claim branch protection is configured.
+
+### Historical Task 9.5 Stage B failure investigation
+
+## Historical Task 9.5 Stage B: initial hosted compatibility investigation
 
 **Authorization:** owner authorized publishing, one PR to main, real hosted tests
 and narrow compatibility fixes. No merge/settings/protection/deployment/status
@@ -395,7 +465,7 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Profit Margin Calculator.
 - Git branch: feat/task-9-5-functional-ci.
-- Latest commit observed before generation: 0f4a1f31ac2036e15505a58196477f328554fb36.
+- Latest commit observed before generation: aea2910ae433f05d1546f6594fc4e0c11ffa074b.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -426,9 +496,6 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` README.md
 - ` M` SESSION_HANDOFF.md
 - ` M` scripts/ci/README.md
-- ` M` scripts/ci/coverage.json
-- ` M` scripts/ci/unittest_runner.py
-- ` M` tests/test_ci.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

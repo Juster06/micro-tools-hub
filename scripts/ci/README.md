@@ -1,6 +1,31 @@
 # Functional CI â€” Task 9.5 Stage A
 
-## Stage B hosted verification
+## Stage B: genuine hosted CI verified; PR #14 awaiting review
+
+[Functional CI run 41425207614](https://github.com/Juster06/micro-tools-hub/actions/runs/41425207614)
+completed successfully for published feature 858fc772833a2456931cd80a3ac2eeaf397fd979
+on pull_request. All four jobs passed: Windows Python **142/142**, Ubuntu Node
+**179/179** +**639** logic fixtures, actual Ubuntu Chromium **196/196** +**291**
+fixture cases/**777** assertions, templates **6 logic/12 browser/48 assertions**,
+and the aggregate. Runtime/action pins and test scopes below remain unchanged.
+All three actual artifacts were digest/contents/privacy/retention verified and
+counts matched against logs and that commit's coverage map. CI is operationally
+verified for this PR; this work does not configure or claim branch protection
+or deployment gating. [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) remains
+open, non-draft, targeting main, auto-merge off; no merge, deployment, lifecycle
+or settings change. Current final documentation checkpoint's exact identity/run
+is recorded separately in the delivery report.
+
+Initial run 41423878108 genuinely failed Windows short/long TEMP comparisons;
+the aggregate correctly rejected its failure. Canonicalizing only the CI fixture
+temporary parent and adding one guard fixed it. Existing assertions, mandatory
+scopes, production code, browser sandbox and timeouts are unchanged. Hosted
+guards and both actual aggregate outcomes were inspected. Remaining exclusions
+below still apply; CI success is not new public live/publication verification.
+
+### Historical Stage A and first hosted investigation
+
+## Historical Stage B compatibility investigation
 
 [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) publishes the approved
 Stage A content against main. Initial pull_request run 41423878108 genuinely ran

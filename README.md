@@ -1,5 +1,15 @@
 # Everyday Digital Box — WebUtils Hub
 
+## Task 9.5 — GitHub functional CI verified; pull request awaiting review
+
+[PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) targets main and remains
+open. Genuine [hosted run 41425207614](https://github.com/Juster06/micro-tools-hub/actions/runs/41425207614)
+passed all Python, Node, real Chromium and aggregate jobs after a narrow CI-only
+Windows temporary-root compatibility fix. See [CI coverage, setup and limits](scripts/ci/README.md).
+All 18 tools, registry, homepage, owner Analytics, domain, dashboard and shortcuts
+remain unchanged. CI does not claim branch-protection enforcement or block the
+separate Pages deployment. No merge, deployment, lifecycle/settings change or Task 10.
+
 ## Task 9.5 Stage B — pull request and hosted verification
 
 [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) targets main and remains

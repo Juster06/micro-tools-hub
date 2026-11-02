@@ -1,5 +1,21 @@
 # Changelog
 
+## Task 9.5 Stage B — GitHub functional CI verified; PR #14 open
+
+- Genuine pull_request run 41425207614 for published correction 858fc772833a2456931cd80a3ac2eeaf397fd979
+  passed Windows Python 142/142, Ubuntu Node 179/179 +639 logic fixtures, actual
+  Chromium 196/196 +291 browser cases/777 assertions, templates 6/12/48 and aggregate.
+- Initial run 41423878108 correctly failed six Windows 8.3/long TEMP path
+  comparisons and the aggregate; preserve failure evidence. CI-only canonical
+  temporary-root bootstrap plus one regression guard fixed it, no weakened tests.
+- Independently fetched complete 224-file trees match local checkpoints; original
+  commits retained. Actual artifacts/digests/coverage/counts/privacy/seven-day
+  retention verified against logs. Current PR scope remains 19 files.
+- This documentation-only checkpoint records completed verification; final current
+  commit/tree/hosted-run identity is in the delivery report. No production source,
+  registry/homepage/Analytics/domain/dashboard/shortcut changes, merge, deployment,
+  protection/settings/lifecycle changes or Task 10.
+
 ## Task 9.5 Stage B — hosted Windows fixture compatibility
 
 - Opened PR #14 against main with exact approved 19-file content; original local
