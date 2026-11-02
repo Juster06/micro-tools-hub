@@ -1,0 +1,460 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "case-1",
+      "input": "0",
+      "options": {},
+      "expected": {
+        "text": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z",
+        "milliseconds": 0,
+        "seconds": "0",
+        "iso": "1970-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-2",
+      "input": "-0.001",
+      "options": {},
+      "expected": {
+        "text": "Epoch seconds: -0.001\nEpoch milliseconds: -1\nUTC ISO: 1969-12-31T23:59:59.999Z",
+        "milliseconds": -1,
+        "seconds": "-0.001",
+        "iso": "1969-12-31T23:59:59.999Z"
+      }
+    },
+    {
+      "id": "case-3",
+      "input": "1.01",
+      "options": {},
+      "expected": {
+        "text": "Epoch seconds: 1.01\nEpoch milliseconds: 1010\nUTC ISO: 1970-01-01T00:00:01.010Z",
+        "milliseconds": 1010,
+        "seconds": "1.01",
+        "iso": "1970-01-01T00:00:01.010Z"
+      }
+    },
+    {
+      "id": "case-4",
+      "input": "+1.100",
+      "options": {},
+      "expected": {
+        "text": "Epoch seconds: 1.1\nEpoch milliseconds: 1100\nUTC ISO: 1970-01-01T00:00:01.100Z",
+        "milliseconds": 1100,
+        "seconds": "1.1",
+        "iso": "1970-01-01T00:00:01.100Z"
+      }
+    },
+    {
+      "id": "case-5",
+      "input": " 1704067200 ",
+      "options": {},
+      "expected": {
+        "text": "Epoch seconds: 1704067200\nEpoch milliseconds: 1704067200000\nUTC ISO: 2024-01-01T00:00:00.000Z",
+        "milliseconds": 1704067200000,
+        "seconds": "1704067200",
+        "iso": "2024-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-6",
+      "input": "0",
+      "options": {
+        "mode": "milliseconds"
+      },
+      "expected": {
+        "text": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z",
+        "milliseconds": 0,
+        "seconds": "0",
+        "iso": "1970-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-7",
+      "input": "-1",
+      "options": {
+        "mode": "milliseconds"
+      },
+      "expected": {
+        "text": "Epoch seconds: -0.001\nEpoch milliseconds: -1\nUTC ISO: 1969-12-31T23:59:59.999Z",
+        "milliseconds": -1,
+        "seconds": "-0.001",
+        "iso": "1969-12-31T23:59:59.999Z"
+      }
+    },
+    {
+      "id": "case-8",
+      "input": "8640000000000000",
+      "options": {
+        "mode": "milliseconds"
+      },
+      "expected": {
+        "text": "Epoch seconds: 8640000000000\nEpoch milliseconds: 8640000000000000\nUTC ISO: +275760-09-13T00:00:00.000Z",
+        "milliseconds": 8640000000000000,
+        "seconds": "8640000000000",
+        "iso": "+275760-09-13T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-9",
+      "input": "-8640000000000000",
+      "options": {
+        "mode": "milliseconds"
+      },
+      "expected": {
+        "text": "Epoch seconds: -8640000000000\nEpoch milliseconds: -8640000000000000\nUTC ISO: -271821-04-20T00:00:00.000Z",
+        "milliseconds": -8640000000000000,
+        "seconds": "-8640000000000",
+        "iso": "-271821-04-20T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-10",
+      "input": "8639999999999.999",
+      "options": {},
+      "expected": {
+        "text": "Epoch seconds: 8639999999999.999\nEpoch milliseconds: 8639999999999999\nUTC ISO: +275760-09-12T23:59:59.999Z",
+        "milliseconds": 8639999999999999,
+        "seconds": "8639999999999.999",
+        "iso": "+275760-09-12T23:59:59.999Z"
+      }
+    },
+    {
+      "id": "case-11",
+      "input": "-8639999999999.999",
+      "options": {},
+      "expected": {
+        "text": "Epoch seconds: -8639999999999.999\nEpoch milliseconds: -8639999999999999\nUTC ISO: -271821-04-20T00:00:00.001Z",
+        "milliseconds": -8639999999999999,
+        "seconds": "-8639999999999.999",
+        "iso": "-271821-04-20T00:00:00.001Z"
+      }
+    },
+    {
+      "id": "case-12",
+      "input": "2024-02-29T12:34:56.789Z",
+      "options": {
+        "mode": "iso"
+      },
+      "expected": {
+        "text": "Epoch seconds: 1709210096.789\nEpoch milliseconds: 1709210096789\nUTC ISO: 2024-02-29T12:34:56.789Z",
+        "milliseconds": 1709210096789,
+        "seconds": "1709210096.789",
+        "iso": "2024-02-29T12:34:56.789Z"
+      }
+    },
+    {
+      "id": "case-13",
+      "input": "2024-01-01T05:45:00+05:45",
+      "options": {
+        "mode": "iso"
+      },
+      "expected": {
+        "text": "Epoch seconds: 1704067200\nEpoch milliseconds: 1704067200000\nUTC ISO: 2024-01-01T00:00:00.000Z",
+        "milliseconds": 1704067200000,
+        "seconds": "1704067200",
+        "iso": "2024-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-14",
+      "input": "1969-12-31T23:59:59.999-00:00",
+      "options": {
+        "mode": "iso"
+      },
+      "expected": {
+        "text": "Epoch seconds: -0.001\nEpoch milliseconds: -1\nUTC ISO: 1969-12-31T23:59:59.999Z",
+        "milliseconds": -1,
+        "seconds": "-0.001",
+        "iso": "1969-12-31T23:59:59.999Z"
+      }
+    },
+    {
+      "id": "case-15",
+      "input": "2000-02-29T00:00:00+23:59",
+      "options": {
+        "mode": "iso"
+      },
+      "expected": {
+        "text": "Epoch seconds: 951696060\nEpoch milliseconds: 951696060000\nUTC ISO: 2000-02-28T00:01:00.000Z",
+        "milliseconds": 951696060000,
+        "seconds": "951696060",
+        "iso": "2000-02-28T00:01:00.000Z"
+      }
+    },
+    {
+      "id": "case-16",
+      "input": "1900-03-01T00:00:00-12:00",
+      "options": {
+        "mode": "iso"
+      },
+      "expected": {
+        "text": "Epoch seconds: -2203848000\nEpoch milliseconds: -2203848000000\nUTC ISO: 1900-03-01T12:00:00.000Z",
+        "milliseconds": -2203848000000,
+        "seconds": "-2203848000",
+        "iso": "1900-03-01T12:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-17",
+      "input": "0000-02-29T00:00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "expected": {
+        "text": "Epoch seconds: -62162121600\nEpoch milliseconds: -62162121600000\nUTC ISO: 0000-02-29T00:00:00.000Z",
+        "milliseconds": -62162121600000,
+        "seconds": "-62162121600",
+        "iso": "0000-02-29T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-18",
+      "input": "+275760-09-13T00:00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "expected": {
+        "text": "Epoch seconds: 8640000000000\nEpoch milliseconds: 8640000000000000\nUTC ISO: +275760-09-13T00:00:00.000Z",
+        "milliseconds": 8640000000000000,
+        "seconds": "8640000000000",
+        "iso": "+275760-09-13T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-19",
+      "input": "",
+      "error": "Enter an epoch"
+    },
+    {
+      "id": "case-20",
+      "input": "   ",
+      "error": "Enter an epoch"
+    },
+    {
+      "id": "case-21",
+      "input": "1e3",
+      "error": "Seconds require"
+    },
+    {
+      "id": "case-22",
+      "input": "1.0001",
+      "error": "Seconds require"
+    },
+    {
+      "id": "case-23",
+      "input": "12ms",
+      "error": "Seconds require"
+    },
+    {
+      "id": "case-24",
+      "input": "\u0661",
+      "error": "Seconds require"
+    },
+    {
+      "id": "case-25",
+      "input": "NaN",
+      "error": "Seconds require"
+    },
+    {
+      "id": "case-26",
+      "input": "Infinity",
+      "error": "Seconds require"
+    },
+    {
+      "id": "case-27",
+      "input": "1,000",
+      "error": "Seconds require"
+    },
+    {
+      "id": "case-28",
+      "input": "0x10",
+      "error": "Seconds require"
+    },
+    {
+      "id": "case-29",
+      "input": ".1",
+      "error": "Seconds require"
+    },
+    {
+      "id": "case-30",
+      "input": "1.1",
+      "options": {
+        "mode": "milliseconds"
+      },
+      "error": "Milliseconds require"
+    },
+    {
+      "id": "case-31",
+      "input": "1e3",
+      "options": {
+        "mode": "milliseconds"
+      },
+      "error": "Milliseconds require"
+    },
+    {
+      "id": "case-32",
+      "input": "8640000000000001",
+      "options": {
+        "mode": "milliseconds"
+      },
+      "error": "outside the Date range"
+    },
+    {
+      "id": "case-33",
+      "input": "-8640000000000001",
+      "options": {
+        "mode": "milliseconds"
+      },
+      "error": "outside the Date range"
+    },
+    {
+      "id": "case-34",
+      "input": "2023-02-29T00:00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "Invalid ISO calendar"
+    },
+    {
+      "id": "case-35",
+      "input": "1900-02-29T00:00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "Invalid ISO calendar"
+    },
+    {
+      "id": "case-36",
+      "input": "2024-04-31T00:00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "Invalid ISO calendar"
+    },
+    {
+      "id": "case-37",
+      "input": "2024-00-01T00:00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "Invalid ISO calendar"
+    },
+    {
+      "id": "case-38",
+      "input": "2024-01-00T00:00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "Invalid ISO calendar"
+    },
+    {
+      "id": "case-39",
+      "input": "2024-01-01T24:00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "Invalid ISO calendar"
+    },
+    {
+      "id": "case-40",
+      "input": "2024-01-01T00:00:60Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "Invalid ISO calendar"
+    },
+    {
+      "id": "case-41",
+      "input": "2024-01-01T00:00:00+24:00",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "Invalid ISO calendar"
+    },
+    {
+      "id": "case-42",
+      "input": "2024-01-01T00:00:00+01:60",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "Invalid ISO calendar"
+    },
+    {
+      "id": "case-43",
+      "input": "2024-01-01",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "full ISO"
+    },
+    {
+      "id": "case-44",
+      "input": "2024-01-01T00:00:00",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "full ISO"
+    },
+    {
+      "id": "case-45",
+      "input": "2024-01-01T00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "full ISO"
+    },
+    {
+      "id": "case-46",
+      "input": "-000000-01-01T00:00:00Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "full ISO"
+    },
+    {
+      "id": "case-47",
+      "input": "2024-01-01T00:00:00.0000Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "full ISO"
+    },
+    {
+      "id": "case-48",
+      "input": "+275760-09-13T00:00:00.001Z",
+      "options": {
+        "mode": "iso"
+      },
+      "error": "outside the Date range"
+    },
+    {
+      "id": "case-49",
+      "input": "0000000000000000000000000000000000000000000000000000000000000000",
+      "expected": {
+        "text": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z",
+        "milliseconds": 0,
+        "seconds": "0",
+        "iso": "1970-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "case-50",
+      "input": "00000000000000000000000000000000000000000000000000000000000000000",
+      "error": "64 UTF-16"
+    },
+    {
+      "id": "case-51",
+      "input": "0",
+      "options": {
+        "mode": "auto"
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-52",
+      "input": "\ud83d\ude00",
+      "error": "Seconds require"
+    }
+  ]
+}

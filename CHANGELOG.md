@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-02 — Task 9 local five-utility batch
+
+Task 9 local development is complete on `feat/task-9-five-tool-batch`, based on synchronized Task 8 main `31948b0cd43a64527372bd090553847b59de1598` (tree `3694236221c04c3027341e02c8f9e138376e3e1f`). The actual proposal-only planner selected five existing READY/P1 entries at ranks 10–14; no eligible entry skipped, new registry entry, changed priority or unmet tool dependency. UUID Generator received separate cryptographic design/failure checks. Each independently progressed READY → IMPLEMENTED → TESTED / REQUIRED_PASSED after real tests and a source/test commit. Publication remains null.
+
+The five local cards say **Tested · publication pending**. All 13 prior released cards remain unchanged; local hub has 18 cards. Inventory: 93 total, 13 RELEASED, 5 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED. Released milestone stays 13/25 (52%). No push, PR, merge, deployment, RELEASED transition or Task 10.
+
+Added UUID Generator, Timestamp Converter, Percentage Calculator, Percentage Change Calculator and Discount Calculator with independent pure adapters, logic/browser/hub tests, exact validation/limits/defaults, source-bound audits and local tested cards. Existing generator/test/integration gates used unchanged, with sequential canonical promotion. All 13 released sources/cards/entries/evidence, CNAME, owner analytics, shared framework/templates/dashboard/launcher, active checkout and existing shortcut identities preserved.
+
 ## Released — Task 8 four utilities (2026-11-02)
 
 PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%).

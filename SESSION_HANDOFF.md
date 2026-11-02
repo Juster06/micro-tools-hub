@@ -1,5 +1,60 @@
 # Session handoff
 
+## Task 9 — local five-utility delivery (2026-11-02, Europe/London)
+
+Task 9 local development is complete on `feat/task-9-five-tool-batch`, based on synchronized Task 8 main `31948b0cd43a64527372bd090553847b59de1598` (tree `3694236221c04c3027341e02c8f9e138376e3e1f`). The actual proposal-only planner selected five existing READY/P1 entries at ranks 10–14; no eligible entry skipped, new registry entry, changed priority or unmet tool dependency. UUID Generator received separate cryptographic design/failure checks. Each independently progressed READY → IMPLEMENTED → TESTED / REQUIRED_PASSED after real tests and a source/test commit. Publication remains null.
+
+The five local cards say **Tested · publication pending**. All 13 prior released cards remain unchanged; local hub has 18 cards. Inventory: 93 total, 13 RELEASED, 5 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED. Released milestone stays 13/25 (52%). No push, PR, merge, deployment, RELEASED transition or Task 10.
+
+| Utility / ID | Category / priority / rank | Canonical route | Default behavior |
+| --- | --- | --- | --- |
+| UUID Generator / `uuid-generator` | developer / P1 / 10 | `uuid-generator/index.html` | One lowercase UUID v4 on explicit Generate; batch/uppercase; fail closed without secure browser crypto |
+| Timestamp Converter / `timestamp-converter` | developer / P1 / 11 | `timestamp-converter/index.html` | Explicit epoch seconds; milliseconds/ISO modes; exact UTC report and separate device-local display |
+| Percentage Calculator / `percentage-calculator` | calculator / P1 / 12 | `percentage-calculator/index.html` | Percentage of value; part-as-percentage mode; two decimal places |
+| Percentage Change Calculator / `percentage-change-calculator` | calculator / P1 / 13 | `percentage-change-calculator/index.html` | Signed change using absolute starting-value denominator; two decimal places; zero-base error |
+| Discount Calculator / `discount-calculator` | calculator / P1 / 14 | `discount-calculator/index.html` | Savings/final price; nonnegative price and inclusive 0–100% discount; two decimal places |
+
+**Behavior and limits:** UUID: batch 1–1,000, at most 4 UTF-16 input units, 16,000 random bytes / 36,999 output units. Real browser Web Crypto acquisition is separate from deterministic byte-formatting tests; no Math.random fallback or global-uniqueness/security-token guarantee. Timestamp: 64 input units; exact integer milliseconds within ±8,640,000,000,000,000; strict calendar/zone/precision checks, no guessed units. Local time depends on host timezone/Intl/DST and stays outside the copied UTC report. Calculators: 64 units per field; finite ASCII decimal/exponent syntax, magnitude ≤1e12 and nonzero magnitude ≥1e-12; results ≤1e15, report below 1,000 units; native IEEE-754/toFixed at 0/2/4/6 decimals, not arbitrary-precision accounting. Negative bases in change use abs(start); discount range is inclusive 0–100%. See each README and source-bound audit for complete rules.
+
+**Source/test checkpoints:**
+
+* `uuid-generator`: source/test checkpoint `3d01647cd2845789858fadfe4a15ce452b105a43`; normalized SHA-256 `6a7aa06351d6170e76b0f1f000f7e43a23edfd941abb6c0cf9ffcffa230afe11`.
+* `timestamp-converter`: source/test checkpoint `9e6c9dead4994d979f9385fa2e091326c13f7233`; normalized SHA-256 `7b90f9a23bca3dfa62dc294ae143d3c9011864e57cce8c396493eafaf6d69834`.
+* `percentage-calculator`: source/test checkpoint `74f05f8851097b9d9f4a853013add17873ac646b`; normalized SHA-256 `cb10bb4c7700f9b9741d9acde4db5e503f7c3f1db0e0f165b53059f7acfa967b`.
+* `percentage-change-calculator`: source/test checkpoint `95a7f94dd29dd35c0bec87d6ed9508cfa1b547d3`; normalized SHA-256 `93da729c6c5abcde3ee31a46bb4b2ba31dadf24ba91bf18ee15885b355b3434e`.
+* `discount-calculator`: source/test checkpoint `3ac25346bb56a9bedbe1921975030c41a2bbeaa0`; normalized SHA-256 `474875ac6e4c698545da568e63b2c402a9034469b6985e44c842b58fddc04e8c`.
+
+**Verification:** actual independent source/logic/browser checks and screenshots at 320/375/768/1440 preceded each TESTED transition. Full regression/native observations follow after execution. Generated reports, screenshots, staging bundles and private machine snapshots remain ignored/outside Git. One timestamp test used an invalid floating-point multiply-back assertion and one new browser fixture had quoting/lexical-scope errors; fixtures were corrected and rerun before committing, without weakening shared assertions/timeouts.
+
+**Preservation:** the 13 existing released HTML/card blocks/registry entries/release evidence, owner Analytics script, CNAME, historical audits, shared framework/templates/dashboard/launcher, original branch heads and active checkout are intact. No shortcut reinstall, registry setting edit or new runtime dependency.
+
+**Known scope:** installed Edge and emulated viewport widths; simulated clipboard/composition and in-memory download Blobs, not physical devices, native clipboard/IME/Save dialogs, screen reader or all-browser certification. UUID actual crypto sampling is not cryptographic certification or proof of universal uniqueness. Timestamp local timezone data is host-dependent. Calculator arithmetic follows binary Number rounding.
+
+**Next major task:** Task 9 local development is complete. Await owner review of this local batch; wait for separately authorized GitHub preparation. Do not push, open a PR, merge, deploy, release these tools, begin Task 10 or build another utility. The containing delivery commit is available via `git log -1 --format="%H %s"` and the final report; this file cannot embed its own commit hash.
+
+## Final actual Task 9 verification — 2026-11-02
+
+Full Python **123/123** and complete sequential Node **375/375**, zero failures/skips. All existing assertions/timeouts/suites unchanged. Actual installed Edge engine Edg/156.0.4314.58.
+
+| ID | Exact JSON logic | Additional Node logic | Framework browser / assertions | Extended browser | Hub browser |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| uuid-generator | 44 | 10 | 22 / 60 | 14 | 2 |
+| timestamp-converter | 52 | 10 | 25 / 52 | 13 | 2 |
+| percentage-calculator | 55 | 10 | 21 / 48 | 13 | 2 |
+| percentage-change-calculator | 56 | 10 | 22 / 49 | 13 | 2 |
+| discount-calculator | 52 | 10 | 22 / 49 | 13 | 2 |
+
+
+Five new tools: 259 exact framework logic fixtures plus 50 additional independent Node logic cases = **309 logic cases**. 112 framework browser cases / 258 assertions, 66 additional browser and 10 real hub interaction cases = **188 browser cases**. UUID production browser random acquisition, known deterministic entropy formatting, no fallback/failure paths, controlled UTC/New York DST/Kathmandu display, calculator second-field/precision/range errors, current statistics, clipboard races, Blob bytes/MIME/name/revocation/failure, rapid edits, simulated composition, privacy/storage probes and labels/native Tab passed. All 20 actual screenshots at 320/375/768/1440 reviewed; fallback layout usable with external HTTP(S) blocked. Source/test checkpoints genuinely precede evidence; exact normalized source hashes match committed files. Individual tested cards were generated through unchanged integration gates; all five proposal reruns are empty/idempotent. Canonical routes, search, reset, all 18 cards and Back to Hub passed.
+
+The 13 prior released-tool regressions passed their required scopes: 380 existing isolated logic fixtures and 179 framework browser cases / 519 assertions, plus unchanged additional Node suites. The original four specialist tools have no isolated logic adapters: logic remains NOT RUN and combined subset profile PARTIAL, required structure/browser PASS; no fabricated full logic PASS. Neutral templates: 6 logic / 12 browser / 48 assertions. Registry, source/audit identities, homepage, consistency, full project status and whitespace PASS; zero errors/warnings.
+
+Both actual existing Windows Desktop and Start menu shortcuts launched separately from unrelated cwd and were directly observed. Each automatic workflow completed exit 0; Overview showed 93 total, 13 RELEASED, 5 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED, 13/25 (52%). Four current tracking reports PASS in Testing/Validation; functional totals explicitly unavailable under existing schema. Shortcut bytes/targets/arguments/cwd/AppID unchanged; no reinstall or registry setting edits. Final postcommit check-only/provenance and read-only saved-data reload preserve clean tracked state.
+
+Final changed scope: 46 added / 7 modified files, including five source/test directories, five audits, plan, local hub, registry and relevant docs. Review found no credentials, personal paths, temporary/generated reports, screenshots/bundles, machine settings, new input transport/storage or unsafe input HTML. All 13 released sources/card blocks/registry entries/release evidence, CNAME, owner Analytics, other 88 registry entries, historical audits, original branch heads, active checkout and shared framework/templates/dashboard/launcher preserved. Known scope: installed Edge/emulated viewports only; simulated clipboard/composition and in-memory download capture, not physical devices/native clipboard/IME/Save dialogs/screen reader/all-browser or cryptographic certification. UUID uniqueness remains probabilistic; timezone data is host-dependent; calculator binary rounding is disclosed. No remaining local blocker. Await owner review and separate GitHub preparation authorization; no push, PR, merge, deployment, RELEASED transition, Task 10 or another utility.
+
+### Historical Task 8 handoff (preserved)
+
 ## Latest session — Task 8 COMPLETE: four utilities released and live verified (2026-11-02, Europe/London)
 
 **Status:** PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%). Published PR head `0c54cad84c07809d311b8e6af6e894acde8a0360` and original local feature `98c1eb7eb7de18e8785a296daeb179e6fda25de9` share approved tree `7cee97a1d23963cd1f133a0998cfae2319799c0e`. All six original local commits are preserved. Local main safely fast-forwarded to the actual merge with exact reviewed combined tree `9d8442ff5afb83e53afb7121e8cb09ede7b5819e`; no reset, force push, history rewrite or active-checkout movement.
@@ -203,27 +258,27 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 25 released tools; 13 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 11; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 13; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 6; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 5; RELEASED: 13; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
-- Next ready tool: UUID Generator.
-- Git branch: main.
-- Latest commit observed before generation: 8df45b5ea2cce8dc6cd5a6ad303674ad9492425a.
+- Next ready tool: Profit Margin Calculator.
+- Git branch: feat/task-9-five-tool-batch.
+- Latest commit observed before generation: 3ac25346bb56a9bedbe1921975030c41a2bbeaa0.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
+- UUID Generator: TESTED, evidence dated 2026-11-02.
 - URL Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
+- Timestamp Converter: TESTED, evidence dated 2026-11-02.
 - Text Reverser: RELEASED, evidence dated 2026-11-02.
+- Percentage Change Calculator: TESTED, evidence dated 2026-11-02.
+- Percentage Calculator: TESTED, evidence dated 2026-11-02.
 - JSON Formatter: RELEASED, evidence dated 2026-11-02.
+- Discount Calculator: TESTED, evidence dated 2026-11-02.
 - Base64 Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
 - Text Sorter: RELEASED, evidence dated 2026-11-01.
-- Slug Generator: RELEASED, evidence dated 2026-11-01.
-- Find and Replace: RELEASED, evidence dated 2026-11-01.
-- Duplicate Line Remover: RELEASED, evidence dated 2026-11-01.
-- Case Converter: RELEASED, evidence dated 2026-11-01.
-- AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -234,7 +289,24 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
+- ` M` CHANGELOG.md
+- ` M` PROGRESS_TRACKER.md
+- ` M` README.md
+- ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
+- ` M` TOOL_REGISTRY.json
+- ` M` discount-calculator/README.md
+- ` M` index.html
+- ` M` percentage-calculator/README.md
+- ` M` percentage-change-calculator/README.md
+- ` M` timestamp-converter/README.md
+- ` M` uuid-generator/README.md
+- `??` audit/DISCOUNT_CALCULATOR_VERIFICATION.json
+- `??` audit/PERCENTAGE_CALCULATOR_VERIFICATION.json
+- `??` audit/PERCENTAGE_CHANGE_CALCULATOR_VERIFICATION.json
+- `??` audit/TASK_9_DEVELOPMENT_PLAN.md
+- `??` audit/TIMESTAMP_CONVERTER_VERIFICATION.json
+- `??` audit/UUID_GENERATOR_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

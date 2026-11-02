@@ -1,0 +1,178 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-02",
+  "source_revision": "3d01647cd2845789858fadfe4a15ce452b105a43",
+  "browser": "Edg/156.0.4314.58",
+  "scope": "Local independent tool verification. Actual Chromium DOM and screenshots at 320/375/768/1440; external HTTP(S) blocked. Clipboard/composition simulated; downloads captured in memory. No publication claim.",
+  "pages": [
+    {
+      "path": "uuid-generator/index.html",
+      "source_sha256": "6a7aa06351d6170e76b0f1f000f7e43a23edfd941abb6c0cf9ffcffa230afe11",
+      "checks": [
+        "44 independent exact JSON logic fixtures",
+        "22 real browser interaction cases / 60 assertions",
+        "10 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+        "14 additional real browser cases: input/options races, clipboard/download cleanup, composition, privacy, keyboard and tool-specific actual crypto/timezone/numeric behavior",
+        "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed"
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "uuid-generator",
+    "generated_at": "2026-11-02T03:35:54+00:00",
+    "input_hash": "0fe815ccb5b4f68c7ad1d78d4836463a5bceb872dabb24e60512bfda96a9e5d0",
+    "source_sha256": "6a7aa06351d6170e76b0f1f000f7e43a23edfd941abb6c0cf9ffcffa230afe11",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 44,
+        "failed": 0,
+        "assertions": 44,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 22,
+        "failed": 0,
+        "assertions": 60,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "status": "PASS"
+  },
+  "additional_node_result": {
+    "passed": 24,
+    "failed": 0,
+    "logic_tests": 10,
+    "browser_tests": 14
+  },
+  "visual_checks": [
+    {
+      "viewport": 320,
+      "browser": "Edg/156.0.4314.58",
+      "width": 320,
+      "scrollWidth": 305,
+      "height": 1880,
+      "output": "19752864-8c68-4e34-ad65-c388cf17f52c",
+      "status": "Generated 1 UUID using browser cryptographic randomness.",
+      "error": null
+    },
+    {
+      "viewport": 375,
+      "browser": "Edg/156.0.4314.58",
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 1781,
+      "output": "19752864-8c68-4e34-ad65-c388cf17f52c",
+      "status": "Generated 1 UUID using browser cryptographic randomness.",
+      "error": null
+    },
+    {
+      "viewport": 768,
+      "browser": "Edg/156.0.4314.58",
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 1417,
+      "output": "19752864-8c68-4e34-ad65-c388cf17f52c",
+      "status": "Generated 1 UUID using browser cryptographic randomness.",
+      "error": null
+    },
+    {
+      "viewport": 1440,
+      "browser": "Edg/156.0.4314.58",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 1358,
+      "output": "19752864-8c68-4e34-ad65-c388cf17f52c",
+      "status": "Generated 1 UUID using browser cryptographic randomness.",
+      "error": null
+    }
+  ],
+  "test_commands": [
+    "python scripts/test_tool.py --id uuid-generator --workspace canonical",
+    "node --test --test-concurrency=1 tests/tools/uuid-generator/logic.test.mjs tests/tools/uuid-generator/extended-browser.test.mjs"
+  ],
+  "limitations": [
+    "Installed Edge/Chromium only; emulated viewport widths are not physical-device or all-browser certification",
+    "No screen-reader, OS clipboard, native IME or Save-dialog certification; clipboard/composition/download APIs simulated/captured",
+    "Bounded host fixtures are not universal performance guarantees",
+    "User input processing stays local; page/CDN delivery still requests external styling",
+    "Publication evidence absent; TESTED, never RELEASED"
+  ],
+  "integration_strategy": "Sequential canonical promotion and gated homepage patch; existing framework/gates unchanged. Final full-batch integration/regression results are recorded in the Task 9 plan and handoff.",
+  "final_batch_regression": {
+    "python_passed": 123,
+    "node_passed": 375,
+    "failures": 0,
+    "prior_released_scopes": {
+      "logic": 380,
+      "browser": 179,
+      "assertions": 519
+    },
+    "templates": "6 logic / 12 browser / 48 assertions",
+    "project_status": "PASS; zero errors/warnings",
+    "native_shortcuts": {
+      "desktop": {
+        "actual_existing_shortcut": "desktop",
+        "checked_at": "2026-11-02T03:50:29.853463+00:00",
+        "unrelated_working_directory": true,
+        "workflow_exit_code": 0,
+        "workflow_status": "PASS",
+        "native_overview_counts": {
+          "total": 93,
+          "released": 13,
+          "tested": 5,
+          "ready": 6,
+          "planned": 68,
+          "blocked": 1
+        },
+        "native_milestone": "13/25 (52%)",
+        "native_validation": "Four current tracking reports PASS; functional totals unavailable under existing schema",
+        "shortcut_definitions": "Bytes/targets/arguments/cwd/AppID verified unchanged",
+        "report_generated_at": "2026-11-02T03:49:45+00:00",
+        "actual_native_observations": "Recorded after actual separate existing shortcut launch and direct Overview, Testing/Validation and completed command-output observations"
+      },
+      "start-menu": {
+        "actual_existing_shortcut": "start-menu",
+        "checked_at": "2026-11-02T03:51:14.962610+00:00",
+        "unrelated_working_directory": true,
+        "workflow_exit_code": 0,
+        "workflow_status": "PASS",
+        "native_overview_counts": {
+          "total": 93,
+          "released": 13,
+          "tested": 5,
+          "ready": 6,
+          "planned": 68,
+          "blocked": 1
+        },
+        "native_milestone": "13/25 (52%)",
+        "native_validation": "Four current tracking reports PASS; functional totals unavailable under existing schema",
+        "shortcut_definitions": "Bytes/targets/arguments/cwd/AppID verified unchanged",
+        "report_generated_at": "2026-11-02T03:50:51+00:00",
+        "actual_native_observations": "Recorded after actual separate existing shortcut launch and direct Overview, Testing/Validation and completed command-output observations"
+      }
+    },
+    "hub_integration_cases": 2,
+    "publication": null
+  },
+  "specialist_review": {
+    "design": "RFC 9562 version 4 bit layout; W3C crypto.getRandomValues in secure context; max 16,000 bytes; no alternative entropy source",
+    "deterministic_scope": "Byte validation/count/format/version/variant/uppercase/immutability, sparse-array and maximum-batch checks; pure formatter has no random-source claim",
+    "actual_browser_scope": "Production random source generated/repeated 1,000-ID samples with correct bits/count and no observed duplicates; independent missing/throwing/insecure-context tests fail closed; deterministic entropy stubs explicitly separate",
+    "limits": "Finite sampling is not cryptographic certification or proof of universal uniqueness; identifiers do not promise secret-token suitability"
+  }
+}

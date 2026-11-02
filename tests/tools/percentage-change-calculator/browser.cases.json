@@ -1,0 +1,759 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "initial-navigation-and-default",
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "header a",
+          "property": "href",
+          "endsWith": "/index.html"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "layout-320",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 320
+    },
+    {
+      "id": "layout-375",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 375
+    },
+    {
+      "id": "layout-768",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 768
+    },
+    {
+      "id": "layout-1440",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "id": "default-and-original",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "100"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-success",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "clipboard",
+          "mode": "success"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        }
+      ]
+    },
+    {
+      "id": "copy-denial",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "clipboard",
+          "mode": "failure"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolOutput"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Ctrl+C"
+        }
+      ]
+    },
+    {
+      "id": "download",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#downloadBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "count",
+          "equals": 1
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "text",
+          "equals": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        }
+      ]
+    },
+    {
+      "id": "clear-default-focus",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "invalid-10",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": ""
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "invalid-11",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "invalid"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "invalid"
+        }
+      ]
+    },
+    {
+      "id": "invalid-12",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\ud83d\ude00"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "\ud83d\ude00"
+        }
+      ]
+    },
+    {
+      "id": "invalid-13",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        }
+      ]
+    },
+    {
+      "id": "error-recovery",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "invalid"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "keyboard-tab",
+      "steps": [
+        {
+          "action": "focus",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "key",
+          "key": "Tab"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "precision-0",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "set",
+          "selector": "#precision",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25%\nDifference: 25\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        }
+      ]
+    },
+    {
+      "id": "precision-2",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "set",
+          "selector": "#precision",
+          "value": "2"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        }
+      ]
+    },
+    {
+      "id": "precision-4",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "set",
+          "selector": "#precision",
+          "value": "4"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25.0000%\nDifference: 25.0000\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        }
+      ]
+    },
+    {
+      "id": "precision-6",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "125"
+        },
+        {
+          "action": "set",
+          "selector": "#precision",
+          "value": "6"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 25.000000%\nDifference: 25.000000\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100"
+        }
+      ]
+    },
+    {
+      "id": "negative-base-policy",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "-100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "-50"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Percentage change: 50.00%\nDifference: 50.00\nDirection: Increase\nFormula: (-50 \u2212 -100) / abs(-100) \u00d7 100"
+        }
+      ]
+    },
+    {
+      "id": "zero-base-error",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "10"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Timestamp Converter
+
+Registry ID: `timestamp-converter`. Category: developer. P1 / rank 11. Canonical route: `timestamp-converter/index.html`. Task 9 local development; **publication pending**, no release claimed. Current lifecycle/evidence is authoritative in TOOL_REGISTRY.json.
+
+## Exact behavior, defaults and limits
+
+Default input is explicitly epoch seconds; choose milliseconds or ISO input. No unit inference. At most 64 UTF-16 units before surrounding whitespace is trimmed. Seconds accept signed decimal integers or 1–3 fractional digits; milliseconds accept signed decimal integers only. No grouping/exponent notation. Decimal components use BigInt before exact integer-millisecond conversion, including near the Date limits ±8,640,000,000,000,000 ms. ISO requires YYYY or signed-six-digit year, complete T time including seconds, optional 1–3 fractional digits and mandatory Z or ±HH:mm offset. Reject invalid calendar dates/rollover, leap seconds, 24:00, zone-free/date-only values and expanded negative-zero year. Offset hours 00–23/minutes 00–59; −00:00 is treated as zero offset. All valid inputs map to UTC ISO plus exact epoch seconds/milliseconds in the copied/downloaded report. Device-local time is shown separately with Gregorian era, time, offset and resolved IANA zone; it is not included in the explicitly labeled UTC export. Local display depends on host/Intl timezone data and DST; UTC conversion is deterministic. No timezone guessing, sub-millisecond precision or leap-second modeling. Empty, malformed or out-of-range input gives a clear error and preserves input.
+
+## Interface and privacy
+
+Standalone vanilla HTML/JS, existing Tailwind Play CDN and expanded fallback CSS, no build/backend/package dependencies. Native labeled fields, visible focus, keyboard buttons, explicit errors/status, original preservation, immediate obsolete-result/action/count invalidation and Clear/default/focus reset. Deterministic tools debounce live previews by 120 ms and defer composition; UUID generation is manual. Copy completion is revision-guarded; failure selects current output for manual copy. Fixed-name `timestamp-converter-output.txt` UTF-8 downloads release temporary URLs on success/failure. No user-input storage/transport/logging or unsafe DOM/evaluation. Hosting/CDN and the preserved owner homepage analytics are distinct from utility input processing.
+
+## Independent verification
+
+`python scripts/test_tool.py --id timestamp-converter` runs nonempty actual framework structure/logic/browser scopes. `node --test --test-concurrency=1 tests/tools/timestamp-converter/*.test.mjs` runs independent logic/boundary and extended browser/hub tests. Exact fixtures/oracles, all modes/options, empty/invalid/limits, statistics, original preservation, races, copy/UTF-8 Blob/revocation/failure, simulated composition, keyboard/labels and no input transport/storage probes are scoped in the individual audit. Screenshots and actual browser checks use 320/375/768/1440 viewports. Source revisions/hashes are recorded only after real tests and source checkpoint commits.
+
+Clipboard/composition fixtures are simulated; downloads captured in memory. No native clipboard/IME/Save-dialog, physical-device, screen-reader, cross-browser or general cryptographic certification. UTC conversion is deterministic; device-local display depends on host timezone/Intl data. No publication, push or deployment is authorized by these local tests.

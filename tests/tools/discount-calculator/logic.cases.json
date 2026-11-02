@@ -1,0 +1,592 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "case-1",
+      "input": "100",
+      "options": {
+        "b": "25",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Original price: 100\nDiscount: 25%\nSavings: 25\nFinal price: 75\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100",
+        "savings": "25",
+        "finalPrice": "75",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-2",
+      "input": "80",
+      "options": {
+        "b": "12.5",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Original price: 80\nDiscount: 12.5%\nSavings: 10\nFinal price: 70\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "80",
+        "savings": "10",
+        "finalPrice": "70",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-3",
+      "input": "0",
+      "options": {
+        "b": "25",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Original price: 0\nDiscount: 25%\nSavings: 0\nFinal price: 0\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "0",
+        "savings": "0",
+        "finalPrice": "0",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-4",
+      "input": "100",
+      "options": {
+        "b": "0",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Original price: 100\nDiscount: 0%\nSavings: 0\nFinal price: 100\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100",
+        "savings": "0",
+        "finalPrice": "100",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-5",
+      "input": "100",
+      "options": {
+        "b": "100",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Original price: 100\nDiscount: 100%\nSavings: 100\nFinal price: 0\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100",
+        "savings": "100",
+        "finalPrice": "0",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-6",
+      "input": "12",
+      "options": {
+        "b": "25",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Original price: 12\nDiscount: 25%\nSavings: 3\nFinal price: 9\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "12",
+        "savings": "3",
+        "finalPrice": "9",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-7",
+      "input": "100",
+      "options": {
+        "b": "25",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100.00",
+        "savings": "25.00",
+        "finalPrice": "75.00",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-8",
+      "input": "80",
+      "options": {
+        "b": "12.5",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Original price: 80.00\nDiscount: 12.5%\nSavings: 10.00\nFinal price: 70.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "80.00",
+        "savings": "10.00",
+        "finalPrice": "70.00",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-9",
+      "input": "0",
+      "options": {
+        "b": "25",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Original price: 0.00\nDiscount: 25%\nSavings: 0.00\nFinal price: 0.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "0.00",
+        "savings": "0.00",
+        "finalPrice": "0.00",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-10",
+      "input": "100",
+      "options": {
+        "b": "0",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Original price: 100.00\nDiscount: 0%\nSavings: 0.00\nFinal price: 100.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100.00",
+        "savings": "0.00",
+        "finalPrice": "100.00",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-11",
+      "input": "100",
+      "options": {
+        "b": "100",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Original price: 100.00\nDiscount: 100%\nSavings: 100.00\nFinal price: 0.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100.00",
+        "savings": "100.00",
+        "finalPrice": "0.00",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-12",
+      "input": "12",
+      "options": {
+        "b": "25",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Original price: 12.00\nDiscount: 25%\nSavings: 3.00\nFinal price: 9.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "12.00",
+        "savings": "3.00",
+        "finalPrice": "9.00",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-13",
+      "input": "100",
+      "options": {
+        "b": "25",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Original price: 100.0000\nDiscount: 25%\nSavings: 25.0000\nFinal price: 75.0000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100.0000",
+        "savings": "25.0000",
+        "finalPrice": "75.0000",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-14",
+      "input": "80",
+      "options": {
+        "b": "12.5",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Original price: 80.0000\nDiscount: 12.5%\nSavings: 10.0000\nFinal price: 70.0000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "80.0000",
+        "savings": "10.0000",
+        "finalPrice": "70.0000",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-15",
+      "input": "0",
+      "options": {
+        "b": "25",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Original price: 0.0000\nDiscount: 25%\nSavings: 0.0000\nFinal price: 0.0000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "0.0000",
+        "savings": "0.0000",
+        "finalPrice": "0.0000",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-16",
+      "input": "100",
+      "options": {
+        "b": "0",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Original price: 100.0000\nDiscount: 0%\nSavings: 0.0000\nFinal price: 100.0000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100.0000",
+        "savings": "0.0000",
+        "finalPrice": "100.0000",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-17",
+      "input": "100",
+      "options": {
+        "b": "100",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Original price: 100.0000\nDiscount: 100%\nSavings: 100.0000\nFinal price: 0.0000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100.0000",
+        "savings": "100.0000",
+        "finalPrice": "0.0000",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-18",
+      "input": "12",
+      "options": {
+        "b": "25",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Original price: 12.0000\nDiscount: 25%\nSavings: 3.0000\nFinal price: 9.0000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "12.0000",
+        "savings": "3.0000",
+        "finalPrice": "9.0000",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-19",
+      "input": "100",
+      "options": {
+        "b": "25",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Original price: 100.000000\nDiscount: 25%\nSavings: 25.000000\nFinal price: 75.000000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100.000000",
+        "savings": "25.000000",
+        "finalPrice": "75.000000",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-20",
+      "input": "80",
+      "options": {
+        "b": "12.5",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Original price: 80.000000\nDiscount: 12.5%\nSavings: 10.000000\nFinal price: 70.000000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "80.000000",
+        "savings": "10.000000",
+        "finalPrice": "70.000000",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-21",
+      "input": "0",
+      "options": {
+        "b": "25",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Original price: 0.000000\nDiscount: 25%\nSavings: 0.000000\nFinal price: 0.000000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "0.000000",
+        "savings": "0.000000",
+        "finalPrice": "0.000000",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-22",
+      "input": "100",
+      "options": {
+        "b": "0",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Original price: 100.000000\nDiscount: 0%\nSavings: 0.000000\nFinal price: 100.000000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100.000000",
+        "savings": "0.000000",
+        "finalPrice": "100.000000",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-23",
+      "input": "100",
+      "options": {
+        "b": "100",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Original price: 100.000000\nDiscount: 100%\nSavings: 100.000000\nFinal price: 0.000000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "100.000000",
+        "savings": "100.000000",
+        "finalPrice": "0.000000",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-24",
+      "input": "12",
+      "options": {
+        "b": "25",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Original price: 12.000000\nDiscount: 25%\nSavings: 3.000000\nFinal price: 9.000000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings",
+        "originalPrice": "12.000000",
+        "savings": "3.000000",
+        "finalPrice": "9.000000",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-25",
+      "input": "",
+      "options": {
+        "b": "10"
+      },
+      "error": "Enter "
+    },
+    {
+      "id": "case-26",
+      "input": "   ",
+      "options": {
+        "b": "10"
+      },
+      "error": "Enter "
+    },
+    {
+      "id": "case-27",
+      "input": "NaN",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-28",
+      "input": "Infinity",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-29",
+      "input": "1,000",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-30",
+      "input": "0x10",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-31",
+      "input": "12%",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-32",
+      "input": "\u00a310",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-33",
+      "input": "\u0661",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-34",
+      "input": "\ud83d\ude00",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-35",
+      "input": "1e999",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-36",
+      "input": "1e13",
+      "options": {
+        "b": "10"
+      },
+      "error": "magnitude"
+    },
+    {
+      "id": "case-37",
+      "input": "1e-13",
+      "options": {
+        "b": "10"
+      },
+      "error": "magnitude"
+    },
+    {
+      "id": "case-38",
+      "input": "1e-400",
+      "options": {
+        "b": "10"
+      },
+      "error": "magnitude"
+    },
+    {
+      "id": "case-39",
+      "input": "11111111111111111111111111111111111111111111111111111111111111111",
+      "options": {
+        "b": "1"
+      },
+      "error": "64 UTF-16"
+    },
+    {
+      "id": "case-40",
+      "input": "1",
+      "options": {
+        "b": "11111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "error": "64 UTF-16"
+    },
+    {
+      "id": "case-41",
+      "input": "1",
+      "options": {
+        "b": ""
+      },
+      "error": "Enter "
+    },
+    {
+      "id": "case-42",
+      "input": "1",
+      "options": {
+        "b": 3
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-43",
+      "input": "1",
+      "options": {
+        "b": "1",
+        "precision": 2
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-44",
+      "input": "1",
+      "options": {
+        "b": "1",
+        "precision": "3"
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-45",
+      "input": "1",
+      "options": {
+        "b": "1",
+        "unknown": true
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-46",
+      "input": null,
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-47",
+      "input": false,
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-48",
+      "input": {},
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-49",
+      "input": [],
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-50",
+      "input": "-1",
+      "options": {
+        "b": "10"
+      },
+      "error": "must be nonnegative"
+    },
+    {
+      "id": "case-51",
+      "input": "1",
+      "options": {
+        "b": "-1"
+      },
+      "error": "from 0 to 100"
+    },
+    {
+      "id": "case-52",
+      "input": "1",
+      "options": {
+        "b": "101"
+      },
+      "error": "from 0 to 100"
+    }
+  ]
+}

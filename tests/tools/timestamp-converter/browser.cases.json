@@ -1,0 +1,714 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "initial-navigation-and-default",
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "header a",
+          "property": "href",
+          "endsWith": "/index.html"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "layout-320",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 320
+    },
+    {
+      "id": "layout-375",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 375
+    },
+    {
+      "id": "layout-768",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 768
+    },
+    {
+      "id": "layout-1440",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "id": "default-and-original",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-success",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "clipboard",
+          "mode": "success"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "copy-denial",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "clipboard",
+          "mode": "failure"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolOutput"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Ctrl+C"
+        }
+      ]
+    },
+    {
+      "id": "download",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#downloadBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "count",
+          "equals": 1
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "text",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "clear-default-focus",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "invalid-10",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": ""
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "invalid-11",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "invalid"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "invalid"
+        }
+      ]
+    },
+    {
+      "id": "invalid-12",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\ud83d\ude00"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "\ud83d\ude00"
+        }
+      ]
+    },
+    {
+      "id": "invalid-13",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        }
+      ]
+    },
+    {
+      "id": "error-recovery",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "invalid"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "keyboard-tab",
+      "steps": [
+        {
+          "action": "focus",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "key",
+          "key": "Tab"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "format-0",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "format-1",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "-0.001"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: -0.001\nEpoch milliseconds: -1\nUTC ISO: 1969-12-31T23:59:59.999Z"
+        }
+      ]
+    },
+    {
+      "id": "format-2",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "1.01"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 1.01\nEpoch milliseconds: 1010\nUTC ISO: 1970-01-01T00:00:01.010Z"
+        }
+      ]
+    },
+    {
+      "id": "format-3",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "+1.100"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 1.1\nEpoch milliseconds: 1100\nUTC ISO: 1970-01-01T00:00:01.100Z"
+        }
+      ]
+    },
+    {
+      "id": "format-4",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": " 1704067200 "
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 1704067200\nEpoch milliseconds: 1704067200000\nUTC ISO: 2024-01-01T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "format-5",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "0"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "milliseconds"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 0\nEpoch milliseconds: 0\nUTC ISO: 1970-01-01T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "format-6",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "-1"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "milliseconds"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: -0.001\nEpoch milliseconds: -1\nUTC ISO: 1969-12-31T23:59:59.999Z"
+        }
+      ]
+    },
+    {
+      "id": "format-7",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2024-02-29T12:34:56.789Z"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "iso"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 1709210096.789\nEpoch milliseconds: 1709210096789\nUTC ISO: 2024-02-29T12:34:56.789Z"
+        }
+      ]
+    },
+    {
+      "id": "explicit-iso-offset",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2024-01-01T05:45:00+05:45"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "iso"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Epoch seconds: 1704067200\nEpoch milliseconds: 1704067200000\nUTC ISO: 2024-01-01T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}

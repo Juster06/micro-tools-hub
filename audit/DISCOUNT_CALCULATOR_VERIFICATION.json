@@ -1,0 +1,172 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-02",
+  "source_revision": "3ac25346bb56a9bedbe1921975030c41a2bbeaa0",
+  "browser": "Edg/156.0.4314.58",
+  "scope": "Local independent tool verification. Actual Chromium DOM and screenshots at 320/375/768/1440; external HTTP(S) blocked. Clipboard/composition simulated; downloads captured in memory. No publication claim.",
+  "pages": [
+    {
+      "path": "discount-calculator/index.html",
+      "source_sha256": "474875ac6e4c698545da568e63b2c402a9034469b6985e44c842b58fddc04e8c",
+      "checks": [
+        "52 independent exact JSON logic fixtures",
+        "22 real browser interaction cases / 49 assertions",
+        "10 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+        "13 additional real browser cases: input/options races, clipboard/download cleanup, composition, privacy, keyboard and tool-specific actual crypto/timezone/numeric behavior",
+        "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed"
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "discount-calculator",
+    "generated_at": "2026-11-02T03:41:14+00:00",
+    "input_hash": "d5f4911f20ef1080be9380c9db2137fada3366158a4b6ac0bc1c1a8d32c81e44",
+    "source_sha256": "474875ac6e4c698545da568e63b2c402a9034469b6985e44c842b58fddc04e8c",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 52,
+        "failed": 0,
+        "assertions": 52,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 22,
+        "failed": 0,
+        "assertions": 49,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "status": "PASS"
+  },
+  "additional_node_result": {
+    "passed": 23,
+    "failed": 0,
+    "logic_tests": 10,
+    "browser_tests": 13
+  },
+  "visual_checks": [
+    {
+      "viewport": 320,
+      "browser": "Edg/156.0.4314.58",
+      "width": 320,
+      "scrollWidth": 305,
+      "height": 2114,
+      "output": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price × discount / 100; final = price − savings",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    },
+    {
+      "viewport": 375,
+      "browser": "Edg/156.0.4314.58",
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 2039,
+      "output": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price × discount / 100; final = price − savings",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    },
+    {
+      "viewport": 768,
+      "browser": "Edg/156.0.4314.58",
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 1401,
+      "output": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price × discount / 100; final = price − savings",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    },
+    {
+      "viewport": 1440,
+      "browser": "Edg/156.0.4314.58",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 1409,
+      "output": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price × discount / 100; final = price − savings",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    }
+  ],
+  "test_commands": [
+    "python scripts/test_tool.py --id discount-calculator --workspace canonical",
+    "node --test --test-concurrency=1 tests/tools/discount-calculator/logic.test.mjs tests/tools/discount-calculator/extended-browser.test.mjs"
+  ],
+  "limitations": [
+    "Installed Edge/Chromium only; emulated viewport widths are not physical-device or all-browser certification",
+    "No screen-reader, OS clipboard, native IME or Save-dialog certification; clipboard/composition/download APIs simulated/captured",
+    "Bounded host fixtures are not universal performance guarantees",
+    "User input processing stays local; page/CDN delivery still requests external styling",
+    "Publication evidence absent; TESTED, never RELEASED"
+  ],
+  "integration_strategy": "Sequential canonical promotion and gated homepage patch; existing framework/gates unchanged. Final full-batch integration/regression results are recorded in the Task 9 plan and handoff.",
+  "final_batch_regression": {
+    "python_passed": 123,
+    "node_passed": 375,
+    "failures": 0,
+    "prior_released_scopes": {
+      "logic": 380,
+      "browser": 179,
+      "assertions": 519
+    },
+    "templates": "6 logic / 12 browser / 48 assertions",
+    "project_status": "PASS; zero errors/warnings",
+    "native_shortcuts": {
+      "desktop": {
+        "actual_existing_shortcut": "desktop",
+        "checked_at": "2026-11-02T03:50:29.853463+00:00",
+        "unrelated_working_directory": true,
+        "workflow_exit_code": 0,
+        "workflow_status": "PASS",
+        "native_overview_counts": {
+          "total": 93,
+          "released": 13,
+          "tested": 5,
+          "ready": 6,
+          "planned": 68,
+          "blocked": 1
+        },
+        "native_milestone": "13/25 (52%)",
+        "native_validation": "Four current tracking reports PASS; functional totals unavailable under existing schema",
+        "shortcut_definitions": "Bytes/targets/arguments/cwd/AppID verified unchanged",
+        "report_generated_at": "2026-11-02T03:49:45+00:00",
+        "actual_native_observations": "Recorded after actual separate existing shortcut launch and direct Overview, Testing/Validation and completed command-output observations"
+      },
+      "start-menu": {
+        "actual_existing_shortcut": "start-menu",
+        "checked_at": "2026-11-02T03:51:14.962610+00:00",
+        "unrelated_working_directory": true,
+        "workflow_exit_code": 0,
+        "workflow_status": "PASS",
+        "native_overview_counts": {
+          "total": 93,
+          "released": 13,
+          "tested": 5,
+          "ready": 6,
+          "planned": 68,
+          "blocked": 1
+        },
+        "native_milestone": "13/25 (52%)",
+        "native_validation": "Four current tracking reports PASS; functional totals unavailable under existing schema",
+        "shortcut_definitions": "Bytes/targets/arguments/cwd/AppID verified unchanged",
+        "report_generated_at": "2026-11-02T03:50:51+00:00",
+        "actual_native_observations": "Recorded after actual separate existing shortcut launch and direct Overview, Testing/Validation and completed command-output observations"
+      }
+    },
+    "hub_integration_cases": 2,
+    "publication": null
+  }
+}

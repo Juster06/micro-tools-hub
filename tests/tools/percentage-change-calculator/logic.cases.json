@@ -1,0 +1,652 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "case-1",
+      "input": "100",
+      "options": {
+        "b": "125",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Percentage change: 25%\nDifference: 25\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "25",
+        "percent": "25",
+        "direction": "Increase",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-2",
+      "input": "100",
+      "options": {
+        "b": "75",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Percentage change: -25%\nDifference: -25\nDirection: Decrease\nFormula: (75 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "-25",
+        "percent": "-25",
+        "direction": "Decrease",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-3",
+      "input": "-100",
+      "options": {
+        "b": "-50",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Percentage change: 50%\nDifference: 50\nDirection: Increase\nFormula: (-50 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "50",
+        "percent": "50",
+        "direction": "Increase",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-4",
+      "input": "-100",
+      "options": {
+        "b": "-150",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Percentage change: -50%\nDifference: -50\nDirection: Decrease\nFormula: (-150 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "-50",
+        "percent": "-50",
+        "direction": "Decrease",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-5",
+      "input": "-100",
+      "options": {
+        "b": "100",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Percentage change: 200%\nDifference: 200\nDirection: Increase\nFormula: (100 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "200",
+        "percent": "200",
+        "direction": "Increase",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-6",
+      "input": "25",
+      "options": {
+        "b": "25",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Percentage change: 0%\nDifference: 0\nDirection: No change\nFormula: (25 \u2212 25) / abs(25) \u00d7 100",
+        "difference": "0",
+        "percent": "0",
+        "direction": "No change",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-7",
+      "input": "100",
+      "options": {
+        "b": "0",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Percentage change: -100%\nDifference: -100\nDirection: Decrease\nFormula: (0 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "-100",
+        "percent": "-100",
+        "direction": "Decrease",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-8",
+      "input": "100",
+      "options": {
+        "b": "125",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Percentage change: 25.00%\nDifference: 25.00\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "25.00",
+        "percent": "25.00",
+        "direction": "Increase",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-9",
+      "input": "100",
+      "options": {
+        "b": "75",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Percentage change: -25.00%\nDifference: -25.00\nDirection: Decrease\nFormula: (75 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "-25.00",
+        "percent": "-25.00",
+        "direction": "Decrease",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-10",
+      "input": "-100",
+      "options": {
+        "b": "-50",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Percentage change: 50.00%\nDifference: 50.00\nDirection: Increase\nFormula: (-50 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "50.00",
+        "percent": "50.00",
+        "direction": "Increase",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-11",
+      "input": "-100",
+      "options": {
+        "b": "-150",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Percentage change: -50.00%\nDifference: -50.00\nDirection: Decrease\nFormula: (-150 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "-50.00",
+        "percent": "-50.00",
+        "direction": "Decrease",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-12",
+      "input": "-100",
+      "options": {
+        "b": "100",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Percentage change: 200.00%\nDifference: 200.00\nDirection: Increase\nFormula: (100 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "200.00",
+        "percent": "200.00",
+        "direction": "Increase",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-13",
+      "input": "25",
+      "options": {
+        "b": "25",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Percentage change: 0.00%\nDifference: 0.00\nDirection: No change\nFormula: (25 \u2212 25) / abs(25) \u00d7 100",
+        "difference": "0.00",
+        "percent": "0.00",
+        "direction": "No change",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-14",
+      "input": "100",
+      "options": {
+        "b": "0",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Percentage change: -100.00%\nDifference: -100.00\nDirection: Decrease\nFormula: (0 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "-100.00",
+        "percent": "-100.00",
+        "direction": "Decrease",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-15",
+      "input": "100",
+      "options": {
+        "b": "125",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Percentage change: 25.0000%\nDifference: 25.0000\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "25.0000",
+        "percent": "25.0000",
+        "direction": "Increase",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-16",
+      "input": "100",
+      "options": {
+        "b": "75",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Percentage change: -25.0000%\nDifference: -25.0000\nDirection: Decrease\nFormula: (75 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "-25.0000",
+        "percent": "-25.0000",
+        "direction": "Decrease",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-17",
+      "input": "-100",
+      "options": {
+        "b": "-50",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Percentage change: 50.0000%\nDifference: 50.0000\nDirection: Increase\nFormula: (-50 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "50.0000",
+        "percent": "50.0000",
+        "direction": "Increase",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-18",
+      "input": "-100",
+      "options": {
+        "b": "-150",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Percentage change: -50.0000%\nDifference: -50.0000\nDirection: Decrease\nFormula: (-150 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "-50.0000",
+        "percent": "-50.0000",
+        "direction": "Decrease",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-19",
+      "input": "-100",
+      "options": {
+        "b": "100",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Percentage change: 200.0000%\nDifference: 200.0000\nDirection: Increase\nFormula: (100 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "200.0000",
+        "percent": "200.0000",
+        "direction": "Increase",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-20",
+      "input": "25",
+      "options": {
+        "b": "25",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Percentage change: 0.0000%\nDifference: 0.0000\nDirection: No change\nFormula: (25 \u2212 25) / abs(25) \u00d7 100",
+        "difference": "0.0000",
+        "percent": "0.0000",
+        "direction": "No change",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-21",
+      "input": "100",
+      "options": {
+        "b": "0",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Percentage change: -100.0000%\nDifference: -100.0000\nDirection: Decrease\nFormula: (0 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "-100.0000",
+        "percent": "-100.0000",
+        "direction": "Decrease",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-22",
+      "input": "100",
+      "options": {
+        "b": "125",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Percentage change: 25.000000%\nDifference: 25.000000\nDirection: Increase\nFormula: (125 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "25.000000",
+        "percent": "25.000000",
+        "direction": "Increase",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-23",
+      "input": "100",
+      "options": {
+        "b": "75",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Percentage change: -25.000000%\nDifference: -25.000000\nDirection: Decrease\nFormula: (75 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "-25.000000",
+        "percent": "-25.000000",
+        "direction": "Decrease",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-24",
+      "input": "-100",
+      "options": {
+        "b": "-50",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Percentage change: 50.000000%\nDifference: 50.000000\nDirection: Increase\nFormula: (-50 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "50.000000",
+        "percent": "50.000000",
+        "direction": "Increase",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-25",
+      "input": "-100",
+      "options": {
+        "b": "-150",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Percentage change: -50.000000%\nDifference: -50.000000\nDirection: Decrease\nFormula: (-150 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "-50.000000",
+        "percent": "-50.000000",
+        "direction": "Decrease",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-26",
+      "input": "-100",
+      "options": {
+        "b": "100",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Percentage change: 200.000000%\nDifference: 200.000000\nDirection: Increase\nFormula: (100 \u2212 -100) / abs(-100) \u00d7 100",
+        "difference": "200.000000",
+        "percent": "200.000000",
+        "direction": "Increase",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-27",
+      "input": "25",
+      "options": {
+        "b": "25",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Percentage change: 0.000000%\nDifference: 0.000000\nDirection: No change\nFormula: (25 \u2212 25) / abs(25) \u00d7 100",
+        "difference": "0.000000",
+        "percent": "0.000000",
+        "direction": "No change",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-28",
+      "input": "100",
+      "options": {
+        "b": "0",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Percentage change: -100.000000%\nDifference: -100.000000\nDirection: Decrease\nFormula: (0 \u2212 100) / abs(100) \u00d7 100",
+        "difference": "-100.000000",
+        "percent": "-100.000000",
+        "direction": "Decrease",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-29",
+      "input": "",
+      "options": {
+        "b": "10"
+      },
+      "error": "Enter "
+    },
+    {
+      "id": "case-30",
+      "input": "   ",
+      "options": {
+        "b": "10"
+      },
+      "error": "Enter "
+    },
+    {
+      "id": "case-31",
+      "input": "NaN",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-32",
+      "input": "Infinity",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-33",
+      "input": "1,000",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-34",
+      "input": "0x10",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-35",
+      "input": "12%",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-36",
+      "input": "\u00a310",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-37",
+      "input": "\u0661",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-38",
+      "input": "\ud83d\ude00",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-39",
+      "input": "1e999",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-40",
+      "input": "1e13",
+      "options": {
+        "b": "10"
+      },
+      "error": "magnitude"
+    },
+    {
+      "id": "case-41",
+      "input": "1e-13",
+      "options": {
+        "b": "10"
+      },
+      "error": "magnitude"
+    },
+    {
+      "id": "case-42",
+      "input": "1e-400",
+      "options": {
+        "b": "10"
+      },
+      "error": "magnitude"
+    },
+    {
+      "id": "case-43",
+      "input": "11111111111111111111111111111111111111111111111111111111111111111",
+      "options": {
+        "b": "1"
+      },
+      "error": "64 UTF-16"
+    },
+    {
+      "id": "case-44",
+      "input": "1",
+      "options": {
+        "b": "11111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "error": "64 UTF-16"
+    },
+    {
+      "id": "case-45",
+      "input": "1",
+      "options": {
+        "b": ""
+      },
+      "error": "Enter "
+    },
+    {
+      "id": "case-46",
+      "input": "1",
+      "options": {
+        "b": 3
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-47",
+      "input": "1",
+      "options": {
+        "b": "1",
+        "precision": 2
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-48",
+      "input": "1",
+      "options": {
+        "b": "1",
+        "precision": "3"
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-49",
+      "input": "1",
+      "options": {
+        "b": "1",
+        "unknown": true
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-50",
+      "input": null,
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-51",
+      "input": false,
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-52",
+      "input": {},
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-53",
+      "input": [],
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-54",
+      "input": "0",
+      "options": {
+        "b": "0"
+      },
+      "error": "Starting value must not be zero"
+    },
+    {
+      "id": "case-55",
+      "input": "0",
+      "options": {
+        "b": "10"
+      },
+      "error": "Starting value must not be zero"
+    },
+    {
+      "id": "case-56",
+      "input": "1e-12",
+      "options": {
+        "b": "1e12"
+      },
+      "error": "Result exceeds"
+    }
+  ]
+}

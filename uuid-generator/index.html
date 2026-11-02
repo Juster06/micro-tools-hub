@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Generate version-4 UUIDs using browser cryptographic randomness."><meta name="color-scheme" content="dark">
+<title>UUID Generator — Everyday Digital Box</title><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+body { background:radial-gradient(ellipse at 85% 0%,#312e8126,transparent 45%),#020617; }
+.container { max-width:1200px; } .topbar { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.topbar .back-link { margin:0; text-decoration:none; font-size:.875rem; } .brand { font-size:.85rem; font-weight:600; color:#cbd5e1; }
+.hero { padding:22px 0 12px; } .eyebrow { color:#a5b4fc; font-weight:650; } h1 { font-size:clamp(2rem,5vw,3.1rem); letter-spacing:-.045em; line-height:1.15; }
+.description { margin-bottom:10px; } .privacy { color:#a5b4fc; font-size:.85rem; } .options { padding:18px 20px; margin:12px 0 20px; background:#0f172a; border-radius:16px; }
+.option-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 24px; }
+.option { display:flex; align-items:flex-start; gap:12px; padding:10px 6px; margin:0; cursor:pointer; font-size:.9rem; }
+.option input { width:20px; height:20px; flex:none; margin:2px 0; padding:0; accent-color:#818cf8; }
+.option small { display:block; margin-top:5px; font-weight:400; line-height:1.5; color:#94a3b8; }
+.toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:16px 0 22px; } .live { margin:0; font-size:.8rem; color:#94a3b8; }
+.editor { padding:0; overflow:hidden; } .editor-top { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:18px 20px; border-bottom:1px solid #334155; }
+.editor-top label { margin:0; font-size:.95rem; } .tag { color:#a5b4fc; font-size:.72rem; border:1px solid #334155; border-radius:6px; padding:4px 8px; }
+.editor textarea { border:0; border-radius:0; background:#080f21; min-height:300px; padding:20px; line-height:1.8; font-size:.95rem; }
+.editor-foot { padding:14px 20px; border-top:1px solid #334155; font-size:.8rem; color:#94a3b8; } .editor-foot.actions { margin:0; }
+.statistics { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin:20px 0; }
+.stat { padding:14px 16px; border:1px solid #334155; border-radius:12px; background:#0f172a; min-width:0; }
+.stat dt { font-size:.74rem; line-height:1.5; color:#94a3b8; } .stat dd { margin:7px 0 0; font-size:1.6rem; font-weight:650; color:#e2e8f0; overflow-wrap:anywhere; font-variant-numeric:tabular-nums; }
+.feedback { min-height:50px; } #toolStatus { color:#cbd5e1; } .rules { margin-top:20px; } .rules summary { cursor:pointer; font-weight:600; min-height:30px; }
+.rules-content { display:grid; grid-template-columns:1fr 1fr; gap:24px; padding-top:12px; color:#94a3b8; font-size:.85rem; line-height:1.8; }
+.rules-content h2 { color:#c7d2fe; font-size:.95rem; margin:14px 0 6px; } .rules-content p { margin:6px 0; }
+footer { border-top:1px solid #1e293b; margin-top:28px; } .skip-link { position:absolute; top:8px; left:18px; transform:translateY(-160%); background:#4338ca; color:white; padding:10px; z-index:10; } .skip-link:focus { transform:none; }
+@media(max-width:700px) { .option-grid,.rules-content { grid-template-columns:1fr; } .statistics { grid-template-columns:repeat(2,minmax(0,1fr)); } .stat:last-child { grid-column:1/-1; } .editor textarea { min-height:240px; } .brand { font-size:.7rem; } .hero { padding-top:12px; } }
+
+.statistics{grid-template-columns:repeat(4,minmax(0,1fr))}.settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.settings>div{min-width:0}.rule-text{color:#cbd5e1;line-height:1.8;overflow-wrap:anywhere}.disclosure{color:#c7d2fe;line-height:1.7}@media(max-width:700px){.settings{grid-template-columns:1fr}.statistics{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:last-child{grid-column:auto}}
+
+.field-stack{display:grid;gap:12px;padding:20px}.field-stack input[type=text]{width:100%;min-width:0;background:#080f21;color:#e2e8f0;border:1px solid #475569;border-radius:10px;padding:14px;font-size:1rem}.field-stack label{font-weight:600}.field-stack .guidance{margin:0}.formula-note{padding:0 20px 20px;color:#cbd5e1;line-height:1.7;overflow-wrap:anywhere}.local-display{font-size:.95rem;line-height:1.8;overflow-wrap:anywhere}.stat dd{font-size:1.15rem;line-height:1.5}.statistics{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:700px){.statistics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head>
+<body class="bg-slate-950 text-slate-200 antialiased"><a href="#toolInput" class="skip-link">Skip to input</a>
+<header class="border-b border-slate-800"><div class="container topbar"><a href="../index.html" class="back-link text-indigo-300">← Back to Hub</a><span class="brand">Everyday Digital Box</span></div></header>
+<main class="container"><section class="hero" aria-labelledby="pageTitle"><p class="eyebrow">Developer tools</p><h1 id="pageTitle">UUID Generator<span style="color:#818cf8">.</span></h1><p class="description">Generate bounded batches of version-4 UUIDs with your browser’s cryptographic random source.</p><p class="privacy">Your values are processed in your browser.</p></section>
+<fieldset class="options"><legend>Settings</legend><div class="settings"><label class="option" for="uppercase"><input type="checkbox" id="uppercase"><span>Uppercase hexadecimal<small>Lowercase by default. Change a setting, then generate a fresh batch.</small></span></label></div></fieldset>
+<div class="toolbar"><button id="runBtn" class="primary" type="button">Generate UUIDs</button><p class="live">Generate on demand; edits clear the previous batch</p></div>
+<div class="panels"><section class="panel editor" aria-label="Original input"><div class="editor-top"><span class="tag">Original input preserved</span></div><div class="field-stack"><label id="inputLabel" for="toolInput">Batch size</label><input id="toolInput" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="1" placeholder="1" aria-describedby="inputHelp"></div><div id="inputHelp" class="editor-foot"><span id="inputSize">0 / 4 UTF-16 input units</span> · No silent truncation</div></section>
+<section class="panel editor" aria-label="Result"><div class="editor-top"><label for="toolOutput">Generated UUIDs</label><span class="tag">Fresh batch</span></div><textarea id="toolOutput" rows="9" readonly spellcheck="false" aria-describedby="toolStatus" placeholder="Your result will appear here."></textarea><div class="editor-foot actions"><button id="copyBtn" class="primary" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled>Download .txt</button><button id="clearBtn" type="button">Clear all</button></div></section></div>
+<dl class="statistics" aria-label="Current result statistics"><div class="stat"><dt>UUIDs generated</dt><dd id="countCount">—</dd></div><div class="stat"><dt>Output characters</dt><dd id="charactersCount">—</dd></div><div class="stat"><dt>Random bytes used</dt><dd id="entropyBytesCount">—</dd></div></dl><div class="feedback"><p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready.</p></div>
+<details class="panel rules"><summary>Exact rules, limits &amp; privacy</summary><p class="rule-text">Default: manually generate one lowercase UUID v4; uppercase presentation is optional. Batch size 1–1,000, whole decimal digits, at most 4 UTF-16 units before surrounding whitespace is trimmed. Generation requires a secure browser context and crypto.getRandomValues. Missing/throwing APIs clear current results and report failure, with no alternative random source. Exactly 16 random bytes per UUID, with version 4 and RFC variant bits set; one UUID per LF-separated line, no trailing newline. Maximum 16,000 entropy bytes / 36,999 output characters. No automatic random generation on page load/typing. Settings changes invalidate output; Generate makes a fresh batch. Clear restores size 1/lowercase and empty output. Uniqueness is probabilistic, not a guarantee; UUIDs are identifiers, not a promise of secret-token suitability. Deterministic adapter tests validate count/byte-array formatting; browser tests separately cover actual Web Crypto, secure-context/failure paths and explicitly labeled deterministic entropy stubs. The UI never accepts a user seed.</p><p class="rule-text">No user-input uploads, tracking, saved drafts or external processing. Page/style delivery uses hosting and the existing Tailwind Play CDN; inline fallback keeps this page usable without the CDN. Existing homepage analytics is separate from this utility’s input processing. Clipboard availability depends on browser support/permission; denied/unavailable copy selects the current output with manual guidance. UTF-8 text export uses a fixed filename and releases temporary URLs even on failure.</p></details></main>
+<footer class="container">Everyday Digital Box · Small tools. Everyday wins.</footer><script id="edb-tool-metadata">window.EDB_META={"id": "uuid-generator", "name": "UUID Generator", "category": "developer"};</script><script id="edb-tool-logic">(() => {
+'use strict';
+  function guard(input,options,allowed,limit=64) {
+    if(typeof input!=='string')throw new TypeError('Input must be a string.');
+    if(input.length>limit)throw new RangeError('Input exceeds '+limit+' UTF-16 units. Nothing was truncated.');
+    if(!options||typeof options!=='object'||Array.isArray(options))throw new TypeError('Options must be an object.');
+    for(const key of Object.keys(options))if(!Object.hasOwn(allowed,key)||!allowed[key](options[key]))throw new TypeError('Unsupported setting: '+key+'.');
+  }
+  function quantity(input){
+    if(typeof input!=='string')throw new TypeError('Input must be a string.');
+    if(input.length>4)throw new RangeError('Batch input exceeds 4 UTF-16 units. Nothing was truncated.');
+    if(!/^[0-9]+$/.test(input.trim()))throw new Error('Enter a whole batch size from 1 to 1,000.');
+    const count=Number(input.trim());if(count<1||count>1000)throw new RangeError('Batch size must be from 1 to 1,000.');return count;
+  }
+  function run(input,options={}) {
+    guard(input,options,{uppercase:v=>typeof v==='boolean',entropy:v=>Array.isArray(v)},4);
+    const count=quantity(input),{uppercase=false,entropy}=options;
+    if(!Array.isArray(entropy)||entropy.length!==count*16||Array.from(entropy).some(v=>!Number.isInteger(v)||v<0||v>255))throw new Error('Provide exactly 16 validated entropy bytes per UUID; the browser supplies cryptographic randomness.');
+    const rows=[];
+    for(let i=0;i<count;i++){
+      const bytes=entropy.slice(i*16,i*16+16);bytes[6]=(bytes[6]&15)|64;bytes[8]=(bytes[8]&63)|128;
+      const hex=bytes.map(v=>v.toString(16).padStart(2,'0')).join('');let value=hex.slice(0,8)+'-'+hex.slice(8,12)+'-'+hex.slice(12,16)+'-'+hex.slice(16,20)+'-'+hex.slice(20);
+      rows.push(uppercase?value.toUpperCase():value);
+    }
+    const text=rows.join('\n');return {text,count,characters:text.length,entropyBytes:entropy.length};
+  }
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,limit:4,run,quantity};
+})();</script><script id="edb-tool-ui">(() => {
+ 'use strict';const get=id=>document.getElementById(id),input=get('toolInput'),output=get('toolOutput'),error=get('toolError'),status=get('toolStatus'),copy=get('copyBtn'),download=get('downloadBtn'),run=get('runBtn');
+ const keys=["count", "characters", "entropyBytes"],controls=["uppercase"].map(get),uuid=true,timestamp=false;let revision=0,timer,composing=false;
+ const tell=text=>status.textContent=text,options=()=>({uppercase:get('uppercase').checked});
+ function invalidate(){clearTimeout(timer);revision++;output.value='';copy.disabled=download.disabled=true;error.hidden=true;error.textContent='';keys.forEach(k=>get(k+'Count').textContent='—');get('inputSize').textContent=input.value.length+' / 4 UTF-16 input units';if(get('localDisplay'))get('localDisplay').textContent='Local device time appears after a valid conversion.';}
+ function process(){invalidate();if(composing){tell('Finish composing before processing.');return;}
+  try{let settings=options();if(uuid){const count=window.EDB_TOOL.quantity(input.value);if(window.isSecureContext!==true||typeof window.crypto?.getRandomValues!=='function')throw Error('A secure context and browser cryptographic randomness are required.');const bytes=new Uint8Array(count*16);try{window.crypto.getRandomValues(bytes);}catch{throw Error('Browser cryptographic random generation failed. No fallback was used.');}settings={...settings,entropy:Array.from(bytes)};}
+   const result=window.EDB_TOOL.run(input.value,settings);output.value=result.text;keys.forEach(k=>get(k+'Count').textContent=result[k].toLocaleString('en-US'));copy.disabled=download.disabled=!result.text.length;
+   if(timestamp){try{const zone=new Intl.DateTimeFormat().resolvedOptions().timeZone;const local=new Intl.DateTimeFormat('en-GB',{year:'numeric',month:'2-digit',day:'2-digit',era:'short',hour:'2-digit',minute:'2-digit',second:'2-digit',fractionalSecondDigits:3,timeZoneName:'longOffset',hourCycle:'h23'}).format(new Date(result.milliseconds));get('localDisplay').textContent='Device local ('+zone+'): '+local+' · Not included in the UTC report.';}catch{get('localDisplay').textContent='Local timezone display is unavailable. The exact UTC report remains usable.';}}
+   tell(uuid?'Generated '+result.count+' UUID'+(result.count===1?'':'s')+' using browser cryptographic randomness.':'Preview updated. Your original input is unchanged.');
+  }catch(problem){error.textContent=problem instanceof Error?problem.message:'Could not process these values.';error.hidden=false;tell('No current result. Original input is unchanged.');}}
+ function schedule(){invalidate();if(composing){tell('Finish composing before processing.');return;}if(uuid){tell('Settings changed. Generate a fresh batch.');return;}tell('Updating preview…');timer=setTimeout(process,120);}
+ input.addEventListener('input',event=>{if(event.isComposing){invalidate();tell('Finish composing before processing.');return;}schedule();});
+ controls.forEach(c=>c.addEventListener(c.type==='checkbox'||c.tagName==='SELECT'?'change':'input',schedule));
+ document.addEventListener('compositionstart',e=>{if(e.target===input||controls.includes(e.target)){composing=true;run.disabled=true;invalidate();}});
+ document.addEventListener('compositionend',e=>{if(e.target===input||controls.includes(e.target)){composing=false;run.disabled=false;if(uuid)schedule();else process();}});
+ run.addEventListener('click',process);
+ get('clearBtn').addEventListener('click',()=>{composing=false;run.disabled=false;input.value="1";get('uppercase').checked=false;invalidate();tell('Cleared. Defaults restored.');input.focus();});
+ copy.addEventListener('click',async()=>{if(copy.disabled)return;const version=revision,text=output.value;try{if(!navigator.clipboard?.writeText)throw Error('Clipboard unavailable');await navigator.clipboard.writeText(text);if(version===revision)tell('Result copied.');}catch{if(version===revision){output.focus();output.select();tell('Clipboard unavailable. Result selected; press Ctrl+C (or ⌘C).');}}});
+ download.addEventListener('click',()=>{if(download.disabled)return;let url,link;try{url=URL.createObjectURL(new Blob([output.value],{type:'text/plain;charset=utf-8'}));link=document.createElement('a');link.href=url;link.download=window.EDB_META.id+'-output.txt';document.body.append(link);link.click();tell('UTF-8 text download requested. Check your browser downloads.');}catch{tell('Download unavailable. Copy the result instead.');}finally{if(link)link.remove();if(url)setTimeout(()=>URL.revokeObjectURL(url),1000);}});
+ invalidate();tell(uuid?'Choose a batch size and generate UUIDs.':'Enter values to preview a result.');
+})();</script></body></html>
