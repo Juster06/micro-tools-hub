@@ -1,6 +1,6 @@
 # Session handoff
 
-## Latest session — Task 8 final integration and independent release (2026-11-02, Europe/London)
+## Latest session — Task 8 COMPLETE: four utilities released and live verified (2026-11-02, Europe/London)
 
 **Status:** PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%). Published PR head `0c54cad84c07809d311b8e6af6e894acde8a0360` and original local feature `98c1eb7eb7de18e8785a296daeb179e6fda25de9` share approved tree `7cee97a1d23963cd1f133a0998cfae2319799c0e`. All six original local commits are preserved. Local main safely fast-forwarded to the actual merge with exact reviewed combined tree `9d8442ff5afb83e53afb7121e8cb09ede7b5819e`; no reset, force push, history rewrite or active-checkout movement.
 
@@ -12,7 +12,13 @@
 
 **Release changes:** only independently qualified entries/card availability advance. All thirteen runtime utility HTML files, nine previous card blocks/registry entries/publication evidence, original audits/CNAME, owner analytics, shared framework/templates/dashboard/launcher and original local feature branches are unchanged. Eight strict lifecycle/global-count integration headers now account for the Task 8 releases; utility READMEs and relevant root docs reflect genuine release evidence. Release metadata publication requires exact reviewed blobs/tree, expected remote parent and force=false, followed by independent fetch/safe synchronization and actual deployment/public agreement. CLI credentials remain unavailable; connected GitHub publication is explicitly authorized.
 
-**Next major task:** finish only authorized Task 8 final release regression, guarded metadata publication, independent public agreement and native Desktop/Start menu verification, then clean synchronized main. No Task 9 or further utility work. The containing final documentation delivery commit is identified by `git log -1 --format="%H %s"` and the final report; this handoff cannot embed its own hash.
+**Next major task:** Task 8 is complete. Await separately authorized owner scope. Do not begin Task 9 or another utility. UUID Generator remains only a READY queue entry. The final documentation commit is identified by `git log -1 --format="%H %s"` and the delivery report; this handoff cannot embed its own commit hash.
+
+**Final public agreement:** reviewed 23-file release metadata published as `8df45b5ea2cce8dc6cd5a6ad303674ad9492425a`, tree `81b78a7be5a6b4a0f940ebd1feb632ae8f2910e5`, parent `5e6df5389455cf9d580d9985eaa504c43a1c1b69`, with expected-head guard and force=false. Actual [Pages metadata run 41380417624](https://github.com/Juster06/micro-tools-hub/actions/runs/41380417624) succeeded for that exact commit, main/root build and deploy jobs. Bounded propagation checks then independently confirmed the exact released homepage, all thirteen unchanged utility hashes and complete public registry equality (13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED, 52%). Four Live labels, routes, categories/descriptions, search/navigation and owner analytics agree with reviewed source. Final real public Edge reruns finished 2026-11-02T03:00:17.362Z: text-reverser 31/31, json-formatter 36/36, url-encoder-decoder 32/32, base64-encoder-decoder 32/32; nine previous routes remain accessible with unchanged source. No remaining source, functional or deployment blocker. Homepage analytics is separate from utility input processing; no site-wide no-analytics claim.
+
+**Native shortcuts:** both actual existing Desktop and Start menu shortcuts launched separately from an unrelated cwd after verified metadata deployment/public agreement. Each opened the native dashboard and completed project status exit 0. Overview showed 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED, 13/25 (52%). Testing/Validation showed four current PASS reports; existing schema correctly leaves functional totals unavailable. Bytes/targets/arguments/working directories/AppID are unchanged; no reinstall or registry edit. Scoped records are in the four release audits.
+
+**Delivery checkpoint:** this documentation-only update records already verified metadata deployment/live behavior and native launches. It modifies only this handoff and the four release audits; registry/public HTML/utility source/tests remain unchanged. Publish exact reviewed blobs/tree through expected-parent/force=false update, independently fetch/verify/synchronize and verify this final commit's Pages deployment/public agreement. Final postcommit check-only/provenance and read-only saved-data reload preserve clean synchronized main. All six original local Task 8 commits and original implementation audits are preserved. No Task 9.
 
 ### Historical Task 8 local implementation checkpoint
 
@@ -201,7 +207,7 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: UUID Generator.
 - Git branch: main.
-- Latest commit observed before generation: 5e6df5389455cf9d580d9985eaa504c43a1c1b69.
+- Latest commit observed before generation: 8df45b5ea2cce8dc6cd5a6ad303674ad9492425a.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -228,29 +234,7 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
-- ` M` CHANGELOG.md
-- ` M` PROGRESS_TRACKER.md
-- ` M` README.md
-- ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
-- ` M` TOOL_REGISTRY.json
-- ` M` base64-encoder-decoder/README.md
-- ` M` index.html
-- ` M` json-formatter/README.md
-- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
-- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
-- ` M` tests/tools/json-formatter/integration-browser.test.mjs
-- ` M` tests/tools/slug-generator/integration-browser.test.mjs
-- ` M` tests/tools/text-reverser/integration-browser.test.mjs
-- ` M` tests/tools/text-sorter/integration-browser.test.mjs
-- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
-- ` M` text-reverser/README.md
-- ` M` url-encoder-decoder/README.md
-- `??` audit/BASE64_ENCODER_DECODER_RELEASE_VERIFICATION.json
-- `??` audit/JSON_FORMATTER_RELEASE_VERIFICATION.json
-- `??` audit/TEXT_REVERSER_RELEASE_VERIFICATION.json
-- `??` audit/URL_ENCODER_DECODER_RELEASE_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->
