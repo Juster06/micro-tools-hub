@@ -1,0 +1,759 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "initial-navigation-and-default",
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "header a",
+          "property": "href",
+          "endsWith": "/index.html"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "layout-320",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 320
+    },
+    {
+      "id": "layout-375",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 375
+    },
+    {
+      "id": "layout-768",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 768
+    },
+    {
+      "id": "layout-1440",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "id": "default-and-original",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "100"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-success",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "clipboard",
+          "mode": "success"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        }
+      ]
+    },
+    {
+      "id": "copy-denial",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "clipboard",
+          "mode": "failure"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolOutput"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Ctrl+C"
+        }
+      ]
+    },
+    {
+      "id": "download",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#downloadBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "count",
+          "equals": 1
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "text",
+          "equals": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        }
+      ]
+    },
+    {
+      "id": "clear-default-focus",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "invalid-10",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": ""
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "invalid-11",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "invalid"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "invalid"
+        }
+      ]
+    },
+    {
+      "id": "invalid-12",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\ud83d\ude00"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "\ud83d\ude00"
+        }
+      ]
+    },
+    {
+      "id": "invalid-13",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        }
+      ]
+    },
+    {
+      "id": "error-recovery",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "invalid"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "keyboard-tab",
+      "steps": [
+        {
+          "action": "focus",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "key",
+          "key": "Tab"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "precision-0",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "set",
+          "selector": "#precision",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100\nDiscount: 25%\nSavings: 25\nFinal price: 75\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        }
+      ]
+    },
+    {
+      "id": "precision-2",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "set",
+          "selector": "#precision",
+          "value": "2"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.00\nDiscount: 25%\nSavings: 25.00\nFinal price: 75.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        }
+      ]
+    },
+    {
+      "id": "precision-4",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "set",
+          "selector": "#precision",
+          "value": "4"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.0000\nDiscount: 25%\nSavings: 25.0000\nFinal price: 75.0000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        }
+      ]
+    },
+    {
+      "id": "precision-6",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "25"
+        },
+        {
+          "action": "set",
+          "selector": "#precision",
+          "value": "6"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.000000\nDiscount: 25%\nSavings: 25.000000\nFinal price: 75.000000\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        }
+      ]
+    },
+    {
+      "id": "discount-boundary-0",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.00\nDiscount: 0%\nSavings: 0.00\nFinal price: 100.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        }
+      ]
+    },
+    {
+      "id": "discount-boundary-100",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#secondValue",
+          "value": "100"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Original price: 100.00\nDiscount: 100%\nSavings: 100.00\nFinal price: 0.00\nFormula: savings = price \u00d7 discount / 100; final = price \u2212 savings"
+        }
+      ]
+    }
+  ]
+}

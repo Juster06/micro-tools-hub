@@ -2302,7 +2302,7 @@
       "category": "developer",
       "description": "Generate version-4 UUIDs using browser cryptographic randomness.",
       "directory_path": "uuid-generator",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2315,12 +2315,33 @@
         "Copy and download",
         "No Math.random fallback"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-02",
+      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
       "sequence_rank": 10,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "3d01647cd2845789858fadfe4a15ce452b105a43",
+        "source_sha256": "6a7aa06351d6170e76b0f1f000f7e43a23edfd941abb6c0cf9ffcffa230afe11",
+        "evidence_path": "audit/UUID_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
+          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
+          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "toolError",
+        "toolStatus",
+        "uppercase"
+      ]
     },
     {
       "id": "sha256-hash-checker",
@@ -2458,7 +2479,7 @@
       "category": "developer",
       "description": "Convert epoch values and ISO dates with explicit timezone handling.",
       "directory_path": "timestamp-converter",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2470,12 +2491,33 @@
         "Invalid and out-of-range input",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-02",
+      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
       "sequence_rank": 11,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "9e6c9dead4994d979f9385fa2e091326c13f7233",
+        "source_sha256": "7b90f9a23bca3dfa62dc294ae143d3c9011864e57cce8c396493eafaf6d69834",
+        "evidence_path": "audit/TIMESTAMP_CONVERTER_VERIFICATION.json",
+        "test_scope": [
+          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
+          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
+          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "toolError",
+        "toolStatus",
+        "toolMode"
+      ]
     },
     {
       "id": "hashtag-organizer",
@@ -2740,7 +2782,7 @@
       "category": "calculator",
       "description": "Calculate a percentage of a value and one value as a percentage of another.",
       "directory_path": "percentage-calculator",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2752,12 +2794,35 @@
         "Zero-denominator handling",
         "Rounding disclosure"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-02",
+      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
       "sequence_rank": 12,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "74f05f8851097b9d9f4a853013add17873ac646b",
+        "source_sha256": "cb10bb4c7700f9b9741d9acde4db5e503f7c3f1db0e0f165b53059f7acfa967b",
+        "evidence_path": "audit/PERCENTAGE_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
+          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
+          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "toolError",
+        "toolStatus",
+        "toolMode",
+        "precision",
+        "secondValue"
+      ]
     },
     {
       "id": "percentage-change-calculator",
@@ -2765,7 +2830,7 @@
       "category": "calculator",
       "description": "Calculate increase or decrease from a starting value.",
       "directory_path": "percentage-change-calculator",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2777,12 +2842,34 @@
         "Negative-value policy",
         "Rounding"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-02",
+      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
       "sequence_rank": 13,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "95a7f94dd29dd35c0bec87d6ed9508cfa1b547d3",
+        "source_sha256": "93da729c6c5abcde3ee31a46bb4b2ba31dadf24ba91bf18ee15885b355b3434e",
+        "evidence_path": "audit/PERCENTAGE_CHANGE_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
+          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
+          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "toolError",
+        "toolStatus",
+        "precision",
+        "secondValue"
+      ]
     },
     {
       "id": "vat-calculator",
@@ -2815,7 +2902,7 @@
       "category": "calculator",
       "description": "Calculate a discounted price and savings.",
       "directory_path": "discount-calculator",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2827,12 +2914,34 @@
         "Savings breakdown",
         "Rounding"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-02",
+      "notes": "Task 9 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
       "sequence_rank": 14,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "3ac25346bb56a9bedbe1921975030c41a2bbeaa0",
+        "source_sha256": "474875ac6e4c698545da568e63b2c402a9034469b6985e44c842b58fddc04e8c",
+        "evidence_path": "audit/DISCOUNT_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
+          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
+          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "toolError",
+        "toolStatus",
+        "precision",
+        "secondValue"
+      ]
     },
     {
       "id": "age-calculator",

@@ -1,0 +1,17 @@
+# UUID Generator
+
+Registry ID: `uuid-generator`. Category: developer. P1 / rank 10. Canonical route: `uuid-generator/index.html`. Task 9 local development; **publication pending**, no release claimed. Current lifecycle/evidence is authoritative in TOOL_REGISTRY.json.
+
+## Exact behavior, defaults and limits
+
+Default: manually generate one lowercase UUID v4; uppercase presentation is optional. Batch size 1–1,000, whole decimal digits, at most 4 UTF-16 units before surrounding whitespace is trimmed. Generation requires a secure browser context and crypto.getRandomValues. Missing/throwing APIs clear current results and report failure, with no alternative random source. Exactly 16 random bytes per UUID, with version 4 and RFC variant bits set; one UUID per LF-separated line, no trailing newline. Maximum 16,000 entropy bytes / 36,999 output characters. No automatic random generation on page load/typing. Settings changes invalidate output; Generate makes a fresh batch. Clear restores size 1/lowercase and empty output. Uniqueness is probabilistic, not a guarantee; UUIDs are identifiers, not a promise of secret-token suitability. Deterministic adapter tests validate count/byte-array formatting; browser tests separately cover actual Web Crypto, secure-context/failure paths and explicitly labeled deterministic entropy stubs. The UI never accepts a user seed.
+
+## Interface and privacy
+
+Standalone vanilla HTML/JS, existing Tailwind Play CDN and expanded fallback CSS, no build/backend/package dependencies. Native labeled fields, visible focus, keyboard buttons, explicit errors/status, original preservation, immediate obsolete-result/action/count invalidation and Clear/default/focus reset. Deterministic tools debounce live previews by 120 ms and defer composition; UUID generation is manual. Copy completion is revision-guarded; failure selects current output for manual copy. Fixed-name `uuid-generator-output.txt` UTF-8 downloads release temporary URLs on success/failure. No user-input storage/transport/logging or unsafe DOM/evaluation. Hosting/CDN and the preserved owner homepage analytics are distinct from utility input processing.
+
+## Independent verification
+
+`python scripts/test_tool.py --id uuid-generator` runs nonempty actual framework structure/logic/browser scopes. `node --test --test-concurrency=1 tests/tools/uuid-generator/*.test.mjs` runs independent logic/boundary and extended browser/hub tests. Exact fixtures/oracles, all modes/options, empty/invalid/limits, statistics, original preservation, races, copy/UTF-8 Blob/revocation/failure, simulated composition, keyboard/labels and no input transport/storage probes are scoped in the individual audit. Screenshots and actual browser checks use 320/375/768/1440 viewports. Source revisions/hashes are recorded only after real tests and source checkpoint commits.
+
+Clipboard/composition and entropy-failure fixtures are simulated; downloads captured in memory. Actual production browser random acquisition is tested separately from deterministic UUID byte formatting. No native clipboard/IME/Save-dialog, physical-device, screen-reader, cross-browser or general cryptographic certification. No publication, push or deployment is authorized by these local tests.

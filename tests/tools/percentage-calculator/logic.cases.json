@@ -1,0 +1,646 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "case-1",
+      "input": "12.5",
+      "options": {
+        "b": "80",
+        "mode": "of",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Result: 10\nFormula: (12.5 / 100) \u00d7 80",
+        "result": "10",
+        "operation": "Percentage of value",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-2",
+      "input": "-25",
+      "options": {
+        "b": "200",
+        "mode": "of",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Result: -50\nFormula: (-25 / 100) \u00d7 200",
+        "result": "-50",
+        "operation": "Percentage of value",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-3",
+      "input": "150",
+      "options": {
+        "b": "-8",
+        "mode": "of",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Result: -12\nFormula: (150 / 100) \u00d7 -8",
+        "result": "-12",
+        "operation": "Percentage of value",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-4",
+      "input": "0",
+      "options": {
+        "b": "0",
+        "mode": "of",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Result: 0\nFormula: (0 / 100) \u00d7 0",
+        "result": "0",
+        "operation": "Percentage of value",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-5",
+      "input": "1",
+      "options": {
+        "b": "8",
+        "mode": "ratio",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Result: 13%\nFormula: 1 / 8 \u00d7 100",
+        "result": "13",
+        "operation": "Part as percentage",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-6",
+      "input": "-1",
+      "options": {
+        "b": "8",
+        "mode": "ratio",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Result: -13%\nFormula: -1 / 8 \u00d7 100",
+        "result": "-13",
+        "operation": "Part as percentage",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-7",
+      "input": "8",
+      "options": {
+        "b": "-4",
+        "mode": "ratio",
+        "precision": "0"
+      },
+      "expected": {
+        "text": "Result: -200%\nFormula: 8 / -4 \u00d7 100",
+        "result": "-200",
+        "operation": "Part as percentage",
+        "precision": 0
+      }
+    },
+    {
+      "id": "case-8",
+      "input": "12.5",
+      "options": {
+        "b": "80",
+        "mode": "of",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Result: 10.00\nFormula: (12.5 / 100) \u00d7 80",
+        "result": "10.00",
+        "operation": "Percentage of value",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-9",
+      "input": "-25",
+      "options": {
+        "b": "200",
+        "mode": "of",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Result: -50.00\nFormula: (-25 / 100) \u00d7 200",
+        "result": "-50.00",
+        "operation": "Percentage of value",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-10",
+      "input": "150",
+      "options": {
+        "b": "-8",
+        "mode": "of",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Result: -12.00\nFormula: (150 / 100) \u00d7 -8",
+        "result": "-12.00",
+        "operation": "Percentage of value",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-11",
+      "input": "0",
+      "options": {
+        "b": "0",
+        "mode": "of",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Result: 0.00\nFormula: (0 / 100) \u00d7 0",
+        "result": "0.00",
+        "operation": "Percentage of value",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-12",
+      "input": "1",
+      "options": {
+        "b": "8",
+        "mode": "ratio",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Result: 12.50%\nFormula: 1 / 8 \u00d7 100",
+        "result": "12.50",
+        "operation": "Part as percentage",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-13",
+      "input": "-1",
+      "options": {
+        "b": "8",
+        "mode": "ratio",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Result: -12.50%\nFormula: -1 / 8 \u00d7 100",
+        "result": "-12.50",
+        "operation": "Part as percentage",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-14",
+      "input": "8",
+      "options": {
+        "b": "-4",
+        "mode": "ratio",
+        "precision": "2"
+      },
+      "expected": {
+        "text": "Result: -200.00%\nFormula: 8 / -4 \u00d7 100",
+        "result": "-200.00",
+        "operation": "Part as percentage",
+        "precision": 2
+      }
+    },
+    {
+      "id": "case-15",
+      "input": "12.5",
+      "options": {
+        "b": "80",
+        "mode": "of",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Result: 10.0000\nFormula: (12.5 / 100) \u00d7 80",
+        "result": "10.0000",
+        "operation": "Percentage of value",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-16",
+      "input": "-25",
+      "options": {
+        "b": "200",
+        "mode": "of",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Result: -50.0000\nFormula: (-25 / 100) \u00d7 200",
+        "result": "-50.0000",
+        "operation": "Percentage of value",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-17",
+      "input": "150",
+      "options": {
+        "b": "-8",
+        "mode": "of",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Result: -12.0000\nFormula: (150 / 100) \u00d7 -8",
+        "result": "-12.0000",
+        "operation": "Percentage of value",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-18",
+      "input": "0",
+      "options": {
+        "b": "0",
+        "mode": "of",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Result: 0.0000\nFormula: (0 / 100) \u00d7 0",
+        "result": "0.0000",
+        "operation": "Percentage of value",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-19",
+      "input": "1",
+      "options": {
+        "b": "8",
+        "mode": "ratio",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Result: 12.5000%\nFormula: 1 / 8 \u00d7 100",
+        "result": "12.5000",
+        "operation": "Part as percentage",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-20",
+      "input": "-1",
+      "options": {
+        "b": "8",
+        "mode": "ratio",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Result: -12.5000%\nFormula: -1 / 8 \u00d7 100",
+        "result": "-12.5000",
+        "operation": "Part as percentage",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-21",
+      "input": "8",
+      "options": {
+        "b": "-4",
+        "mode": "ratio",
+        "precision": "4"
+      },
+      "expected": {
+        "text": "Result: -200.0000%\nFormula: 8 / -4 \u00d7 100",
+        "result": "-200.0000",
+        "operation": "Part as percentage",
+        "precision": 4
+      }
+    },
+    {
+      "id": "case-22",
+      "input": "12.5",
+      "options": {
+        "b": "80",
+        "mode": "of",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Result: 10.000000\nFormula: (12.5 / 100) \u00d7 80",
+        "result": "10.000000",
+        "operation": "Percentage of value",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-23",
+      "input": "-25",
+      "options": {
+        "b": "200",
+        "mode": "of",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Result: -50.000000\nFormula: (-25 / 100) \u00d7 200",
+        "result": "-50.000000",
+        "operation": "Percentage of value",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-24",
+      "input": "150",
+      "options": {
+        "b": "-8",
+        "mode": "of",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Result: -12.000000\nFormula: (150 / 100) \u00d7 -8",
+        "result": "-12.000000",
+        "operation": "Percentage of value",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-25",
+      "input": "0",
+      "options": {
+        "b": "0",
+        "mode": "of",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Result: 0.000000\nFormula: (0 / 100) \u00d7 0",
+        "result": "0.000000",
+        "operation": "Percentage of value",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-26",
+      "input": "1",
+      "options": {
+        "b": "8",
+        "mode": "ratio",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Result: 12.500000%\nFormula: 1 / 8 \u00d7 100",
+        "result": "12.500000",
+        "operation": "Part as percentage",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-27",
+      "input": "-1",
+      "options": {
+        "b": "8",
+        "mode": "ratio",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Result: -12.500000%\nFormula: -1 / 8 \u00d7 100",
+        "result": "-12.500000",
+        "operation": "Part as percentage",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-28",
+      "input": "8",
+      "options": {
+        "b": "-4",
+        "mode": "ratio",
+        "precision": "6"
+      },
+      "expected": {
+        "text": "Result: -200.000000%\nFormula: 8 / -4 \u00d7 100",
+        "result": "-200.000000",
+        "operation": "Part as percentage",
+        "precision": 6
+      }
+    },
+    {
+      "id": "case-29",
+      "input": "",
+      "options": {
+        "b": "10"
+      },
+      "error": "Enter "
+    },
+    {
+      "id": "case-30",
+      "input": "   ",
+      "options": {
+        "b": "10"
+      },
+      "error": "Enter "
+    },
+    {
+      "id": "case-31",
+      "input": "NaN",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-32",
+      "input": "Infinity",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-33",
+      "input": "1,000",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-34",
+      "input": "0x10",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-35",
+      "input": "12%",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-36",
+      "input": "\u00a310",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-37",
+      "input": "\u0661",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-38",
+      "input": "\ud83d\ude00",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-39",
+      "input": "1e999",
+      "options": {
+        "b": "10"
+      },
+      "error": "complete finite decimal"
+    },
+    {
+      "id": "case-40",
+      "input": "1e13",
+      "options": {
+        "b": "10"
+      },
+      "error": "magnitude"
+    },
+    {
+      "id": "case-41",
+      "input": "1e-13",
+      "options": {
+        "b": "10"
+      },
+      "error": "magnitude"
+    },
+    {
+      "id": "case-42",
+      "input": "1e-400",
+      "options": {
+        "b": "10"
+      },
+      "error": "magnitude"
+    },
+    {
+      "id": "case-43",
+      "input": "11111111111111111111111111111111111111111111111111111111111111111",
+      "options": {
+        "b": "1"
+      },
+      "error": "64 UTF-16"
+    },
+    {
+      "id": "case-44",
+      "input": "1",
+      "options": {
+        "b": "11111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "error": "64 UTF-16"
+    },
+    {
+      "id": "case-45",
+      "input": "1",
+      "options": {
+        "b": ""
+      },
+      "error": "Enter "
+    },
+    {
+      "id": "case-46",
+      "input": "1",
+      "options": {
+        "b": 3
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-47",
+      "input": "1",
+      "options": {
+        "b": "1",
+        "precision": 2
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-48",
+      "input": "1",
+      "options": {
+        "b": "1",
+        "precision": "3"
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-49",
+      "input": "1",
+      "options": {
+        "b": "1",
+        "unknown": true
+      },
+      "error": "Unsupported setting"
+    },
+    {
+      "id": "case-50",
+      "input": null,
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-51",
+      "input": false,
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-52",
+      "input": {},
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-53",
+      "input": [],
+      "options": {
+        "b": "1"
+      },
+      "error": "Input must be a string"
+    },
+    {
+      "id": "case-54",
+      "input": "1",
+      "options": {
+        "b": "0",
+        "mode": "ratio"
+      },
+      "error": "Whole must not be zero"
+    },
+    {
+      "id": "case-55",
+      "input": "1e12",
+      "options": {
+        "b": "1e-12",
+        "mode": "ratio"
+      },
+      "error": "Result exceeds"
+    }
+  ]
+}

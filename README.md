@@ -1,5 +1,23 @@
 # Everyday Digital Box — WebUtils Hub
 
+## Task 9 — local five-utility batch (2026-11-02)
+
+Task 9 local development is complete on `feat/task-9-five-tool-batch`, based on synchronized Task 8 main `31948b0cd43a64527372bd090553847b59de1598` (tree `3694236221c04c3027341e02c8f9e138376e3e1f`). The actual proposal-only planner selected five existing READY/P1 entries at ranks 10–14; no eligible entry skipped, new registry entry, changed priority or unmet tool dependency. UUID Generator received separate cryptographic design/failure checks. Each independently progressed READY → IMPLEMENTED → TESTED / REQUIRED_PASSED after real tests and a source/test commit. Publication remains null.
+
+The five local cards say **Tested · publication pending**. All 13 prior released cards remain unchanged; local hub has 18 cards. Inventory: 93 total, 13 RELEASED, 5 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED. Released milestone stays 13/25 (52%). No push, PR, merge, deployment, RELEASED transition or Task 10.
+
+| Utility / ID | Category / priority / rank | Canonical route | Default behavior |
+| --- | --- | --- | --- |
+| UUID Generator / `uuid-generator` | developer / P1 / 10 | `uuid-generator/index.html` | One lowercase UUID v4 on explicit Generate; batch/uppercase; fail closed without secure browser crypto |
+| Timestamp Converter / `timestamp-converter` | developer / P1 / 11 | `timestamp-converter/index.html` | Explicit epoch seconds; milliseconds/ISO modes; exact UTC report and separate device-local display |
+| Percentage Calculator / `percentage-calculator` | calculator / P1 / 12 | `percentage-calculator/index.html` | Percentage of value; part-as-percentage mode; two decimal places |
+| Percentage Change Calculator / `percentage-change-calculator` | calculator / P1 / 13 | `percentage-change-calculator/index.html` | Signed change using absolute starting-value denominator; two decimal places; zero-base error |
+| Discount Calculator / `discount-calculator` | calculator / P1 / 14 | `discount-calculator/index.html` | Savings/final price; nonnegative price and inclusive 0–100% discount; two decimal places |
+
+UUID: batch 1–1,000, at most 4 UTF-16 input units, 16,000 random bytes / 36,999 output units. Real browser Web Crypto acquisition is separate from deterministic byte-formatting tests; no Math.random fallback or global-uniqueness/security-token guarantee. Timestamp: 64 input units; exact integer milliseconds within ±8,640,000,000,000,000; strict calendar/zone/precision checks, no guessed units. Local time depends on host timezone/Intl/DST and stays outside the copied UTC report. Calculators: 64 units per field; finite ASCII decimal/exponent syntax, magnitude ≤1e12 and nonzero magnitude ≥1e-12; results ≤1e15, report below 1,000 units; native IEEE-754/toFixed at 0/2/4/6 decimals, not arbitrary-precision accounting. Negative bases in change use abs(start); discount range is inclusive 0–100%. See each README and source-bound audit for complete rules.
+
+See [Task 9 development plan](audit/TASK_9_DEVELOPMENT_PLAN.md), tool READMEs and individual audits for actual tests, source hashes and limitations. Browser processing has no input uploads or persistence; existing Tailwind styling and owner homepage analytics are separate.
+
 ## Task 8 — four verified public releases (2026-11-02)
 
 PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%).
