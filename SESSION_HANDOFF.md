@@ -1,5 +1,77 @@
 # Session handoff
 
+## Latest session — Task 9.5 Stage A COMPLETE locally; GitHub verification pending (2026-11-02)
+
+**Status:** Local functional CI implementation only, on `feat/task-9-5-functional-ci`.
+Base main `93867ed9d02b702eaff250288f58ca7abba7bbab`, tree
+`9e3974eff435b7ece6b1bc8387343e6956c78241`, fetched and verified clean before
+branching. Inventory unchanged: 93 total, 18 RELEASED, 0 TESTED, 6 READY,
+68 PLANNED, 1 BLOCKED, 18/25 (72%). The containing local commit/tree are resolved
+with `git log -1 --format="%H %T %s"`; this handoff cannot contain its own hash.
+
+**Implementation:** `.github/workflows/functional-ci.yml` uses PRs targeting main,
+pushes to main and manual dispatch; contents:read, no secrets/privileged PR event,
+no persisted checkout credentials, official Actions pinned to verified SHAs,
+PR-specific cancellation, and three required jobs plus aggregate. Python/native
+fixtures use windows-2022; pure Node uses ubuntu-24.04; actual browser uses
+ubuntu-22.04 to retain Chromium sandboxing without Ubuntu 23.10+ AppArmor overrides.
+Python 3.14.4, Node 24.22.1, locked CI-only Playwright 1.64.1 supplies full
+Chromium 156.0.8078.4 revision 1248. Existing harness/source/assertions/timeouts
+unchanged. Read `scripts/ci/README.md`, `DESIGN.md`, `coverage.json`, runners and
+`tests/test_ci.py` before modifying CI. No website runtime/build migration.
+
+**Local validation:** Python 141/141 (all original 123 plus 18 CI guards), Node
+179 logic +196 browser =375/375, zero failures/skips; fourteen JSON logic profiles
+639 cases, eighteen JSON browser profiles 291 cases/777 assertions, both neutral
+templates 6 logic/12 browser/48 assertions PASS. Complete browser partitions passed
+independently in Edge 156.0.4314.58 and pinned Windows Chromium 156.0.8078.4.
+All eighteen structural profiles, registry/lifecycle/source/audits/homepage/status
+and whitespace checks passed. actionlint 1.7.12 passed. Existing specialist pages
+still have NOT RUN isolated logic; their structural/browser profiles are required.
+Dashboard functional-test counts remain unavailable, not inferred from CI.
+
+**Negative evidence:** 26 initial and 17 final controlled command invocations in
+disposable copies; all expected outcomes observed, 24 deliberate nonzero controls.
+Python/Node/browser assertions, browser expectation timeout, registry error,
+source-hash mismatch, missing browser/file, empty fixtures, Python/Node mandatory
+skip, zero-real-test Node file/count floor, child timeout and failed/cancelled/
+skipped/missing aggregate jobs were detected. Restored baselines passed. Original
+approved production source/evidence was never mutated. Failing command logs remain
+outside Git. Node skip returned zero natively but CI correctly failed and reported
+the skip; failure counts remain visible in sanitized summaries.
+
+**Browser setup finding:** first pinned Windows preflight failed before assertions
+because downloaded binaries lacked AppContainer read/execute access. Original
+failure retained; standard package SIDs received RX only on the disposable owned
+public browser cache. No home/project/user-data permissions, system registry,
+existing shortcuts, sandbox flags, assertions or interaction waits changed. Native
+Edge and pinned-browser behavior passed after repair. Linux OS/dependency/hosted
+behavior remains pending actual GitHub execution; no local suitable emulator was
+available or installed. No CI operational claim.
+
+**Preservation/deployment:** all eighteen runtime HTML files, complete registry,
+homepage cards/owner Analytics, CNAME, previous tests/implementation and release
+audits, shared framework/templates and dashboard/launcher implementations remain
+byte-identical to base. Existing Desktop/Start menu link bytes and COM properties
+verified unchanged; native Tk/COM fixture tests passed. No new actual installed
+shortcut launch is claimed in Stage A. Original branches and active checkout
+remain. Only CI files/guards, dependency ignore and relevant docs changed.
+GitHub-managed Pages remains active at dynamic/pages/pages-build-deployment;
+last inspected successful baseline run 41410170246, main/root Jekyll to ./_site.
+No deployment workflow/configuration edit, new deploy, lifecycle or protection
+change. Main pushes can still deploy independently of functional checks.
+
+**Next major task:** Task 9.5 Stage A is complete locally. Await separately
+authorized GitHub preparation: re-fetch/review main and full diff, rerun relevant
+gates, publish exact reviewed branch, create PR, inspect actual three hosted jobs,
+summaries/artifacts and aggregate result. Only a genuine successful hosted run may
+establish operational CI; protection/deployment enforcement requires separate
+authorization. Do not publish, create a PR, merge, deploy, change settings/statuses
+or begin Task 10 under Stage A. No remaining local blocker; GitHub verification is
+pending by scope. The delivery report gives final local commit/tree and clean state.
+
+### Historical Task 9 final release handoff
+
 ## Latest session — Task 9 COMPLETE: five utilities released and live verified (2026-11-02, Europe/London)
 
 **Status:** PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).
@@ -283,8 +355,8 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Tool status counts: IDEA: 0; PLANNED: 68; READY: 6; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 18; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Profit Margin Calculator.
-- Git branch: main.
-- Latest commit observed before generation: e8d6cb326ba8d4a3c73a3ccc8bdc000389086bff.
+- Git branch: feat/task-9-5-functional-ci.
+- Latest commit observed before generation: 93867ed9d02b702eaff250288f58ca7abba7bbab.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -311,7 +383,16 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
+- ` M` .gitignore
+- ` M` ARCHITECTURE.md
+- ` M` CHANGELOG.md
+- ` M` DECISIONS.md
+- ` M` README.md
 - ` M` SESSION_HANDOFF.md
+- ` M` scripts/README.md
+- `??` .github/
+- `??` scripts/ci/
+- `??` tests/test_ci.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

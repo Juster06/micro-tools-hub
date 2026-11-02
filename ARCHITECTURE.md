@@ -1,5 +1,20 @@
 # Architecture
 
+## Task 9.5 — local CI infrastructure
+
+`scripts/ci/` separates read-only quality gates from website runtime/deployment.
+An explicit executable coverage map drives Windows Python/native fixtures,
+Linux Node logic and sequential real Chromium jobs; an aggregate check requires
+all three to succeed. CI-only locked Playwright acquires a full browser for the
+unchanged built-in CDP harness. No frontend build/framework or production package
+dependency is introduced. See [CI design and reporting contract](scripts/ci/README.md).
+
+All released HTML, registry/publication data, homepage, CNAME, Analytics,
+dashboard/launcher, templates and prior tests/audits remain unchanged. Stage A is
+local only. The existing GitHub-managed Pages main/root deployment stays separate
+and is not gated by this workflow. No protection/settings change or GitHub-hosted
+functional success is claimed.
+
 ## Task 4 development framework
 
 The framework is development-only and leaves the existing public homepage, four released pages, registry and dashboard implementation unchanged. `TOOL_CONTRACT.md` defines new-tool requirements and legacy/specialist exceptions; `TOOL_DEVELOPMENT_GUIDE.md` gives the full workflow.

@@ -1,5 +1,27 @@
 # Changelog
 
+## Local only — Task 9.5 functional CI and quality gates (2026-11-02)
+
+- Added SHA-pinned read-only PR-to-main/main-push/manual workflow, three genuine
+  test partitions and aggregate failure gate. Runtime pins: Python 3.14.4,
+  Node 24.22.1, Playwright 1.64.1 / Chromium 156.0.8078.4 revision 1248.
+- Added explicit coverage map, strict nonempty/count/skip/layer/timeout checks,
+  safe diagnostic summaries, locked development-only browser acquisition,
+  platform classification and maintenance/deployment documentation.
+- Local Python 141/141 (123 existing + 18 CI guards), Node 179 logic + 196 browser
+  = 375/375, fourteen JSON logic profiles (639 cases), eighteen browser profiles
+  (291 cases /777 assertions) and templates (6 logic /12 browser /48 assertions)
+  passed. Complete browser partitions passed separately in Windows Edge and the
+  pinned Windows Chromium; no Linux/hosted pass is inferred.
+- Forty-three controlled baseline/failure/restoration invocations passed their
+  expected outcomes, including 24 deliberately nonzero controls. Initial pinned
+  Windows browser preflight failure was retained and fixed by read/execute ACLs
+  only on its disposable public binary cache; no sandbox, assertion or timeout
+  weakening. actionlint 1.7.12 passed.
+- Production HTML/registry/homepage/Analytics/CNAME, previous tests/evidence,
+  framework/templates/dashboard/launcher and shortcut properties remain unchanged.
+  No push, PR, merge, deployment, protection/settings changes or Task 10.
+
 ## Released — Task 9 five utilities (2026-11-02)
 
 PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).

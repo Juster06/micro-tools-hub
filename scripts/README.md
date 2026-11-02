@@ -1,5 +1,18 @@
 # Automated project tracking
 
+## Local functional CI (Task 9.5 Stage A)
+
+See [CI documentation](ci/README.md), [design](ci/DESIGN.md) and [coverage map](ci/coverage.json).
+Run `python scripts/ci/run.py python-project`, `node-regression` or `browser-tests`
+from repository root with the documented runtimes/browser setup. These partitions
+execute actual existing suites and reject missing/empty/skipped required scopes.
+The Python job uses Windows for native Tk/COM fixtures; Node uses Ubuntu 24.04
+and browser CI uses Ubuntu 22.04 with pinned Chromium and enabled sandbox. The
+existing browser harness is unchanged; only optional CI browser acquisition uses
+the nested locked npm package. Reports stay ignored and do not populate invented
+dashboard test totals. GitHub-hosted execution remains pending; deployment and
+publication verification are separate.
+
 ## Reusable tool framework commands
 
 These development commands are separate from the existing tracking workflow below. They never promote registry statuses or publish tools. See `../TOOL_DEVELOPMENT_GUIDE.md` for schemas, promotion/evidence gates and a dry-run example.

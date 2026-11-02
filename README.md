@@ -1,5 +1,15 @@
 # Everyday Digital Box — WebUtils Hub
 
+## Task 9.5 — functional CI implemented locally; GitHub verification pending
+
+The dedicated local branch `feat/task-9-5-functional-ci` adds genuine Python,
+Node and real Chromium quality gates, explicit coverage and failure propagation.
+Read [CI commands, setup, platform audit and limitations](scripts/ci/README.md).
+The website needs no new build/runtime dependency. All 18 released implementations,
+registry entries, homepage cards, owner Analytics, domain and dashboard/shortcuts
+remain unchanged. Stage A does not publish, open a PR, merge, deploy or configure
+protection; no GitHub-hosted functional pass or Task 10 is claimed.
+
 ## Task 9 — five independent public releases (2026-11-02)
 
 PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).
