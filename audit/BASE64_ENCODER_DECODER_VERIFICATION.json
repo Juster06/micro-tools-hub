@@ -1,0 +1,127 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-02",
+  "source_revision": "68fd1a09891e3b33cf25018ed8b541691fc3b99f",
+  "browser": "Edg/156.0.4314.58",
+  "scope": "Local independent tool verification. Actual Chromium DOM and screenshots at 320/375/768/1440; external HTTP(S) blocked. Clipboard/composition simulated; downloads captured in memory. No publication claim.",
+  "pages": [
+    {
+      "path": "base64-encoder-decoder/index.html",
+      "source_sha256": "c04a7085c871afff35dd718963eb246710585cd7ade5e0e2cd65b9bd3c0d19de",
+      "checks": [
+        "44 independent exact JSON logic fixtures",
+        "17 real browser interaction cases / 33 assertions",
+        "9 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+        "11 additional real browser cases: rapid input/options, stale copy success/denial, UTF-8 Blob bytes/MIME/filename/revocation/failure, oversized recovery, simulated composition, no transport/storage probes, labels/native Tab",
+        "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed"
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "base64-encoder-decoder",
+    "generated_at": "2026-11-02T00:58:41+00:00",
+    "input_hash": "0c08b1579afe2ac2ea3d085a018cead56bb1ce9fa2552269ec49423c1a5cd684",
+    "source_sha256": "c04a7085c871afff35dd718963eb246710585cd7ade5e0e2cd65b9bd3c0d19de",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 44,
+        "failed": 0,
+        "assertions": 44,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 17,
+        "failed": 0,
+        "assertions": 33,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "status": "PASS"
+  },
+  "additional_node_result": {
+    "passed": 20,
+    "failed": 0,
+    "logic_tests": 9,
+    "browser_tests": 11
+  },
+  "visual_checks": [
+    {
+      "viewport": 320,
+      "browser": "Edg/156.0.4314.58",
+      "width": 320,
+      "scrollWidth": 305,
+      "height": 2431,
+      "output": "SGVsbG8g8J+YgCBjYWbDqSDigJQgeW91ciB0ZXh0IHN0YXlzIGhlcmUu",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    },
+    {
+      "viewport": 375,
+      "browser": "Edg/156.0.4314.58",
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 2315,
+      "output": "SGVsbG8g8J+YgCBjYWbDqSDigJQgeW91ciB0ZXh0IHN0YXlzIGhlcmUu",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    },
+    {
+      "viewport": 768,
+      "browser": "Edg/156.0.4314.58",
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 1551,
+      "output": "SGVsbG8g8J+YgCBjYWbDqSDigJQgeW91ciB0ZXh0IHN0YXlzIGhlcmUu",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    },
+    {
+      "viewport": 1440,
+      "browser": "Edg/156.0.4314.58",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 1510,
+      "output": "SGVsbG8g8J+YgCBjYWbDqSDigJQgeW91ciB0ZXh0IHN0YXlzIGhlcmUu",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    }
+  ],
+  "test_commands": [
+    "python scripts/test_tool.py --id base64-encoder-decoder --workspace canonical",
+    "node --test --test-concurrency=1 tests/tools/base64-encoder-decoder/logic.test.mjs tests/tools/base64-encoder-decoder/extended-browser.test.mjs"
+  ],
+  "limitations": [
+    "Installed Edge/Chromium only; emulated viewport widths are not physical-device or all-browser certification",
+    "No screen-reader, OS clipboard, native IME or Save-dialog certification; clipboard/composition/download APIs simulated/captured",
+    "Bounded host fixtures are not universal performance guarantees",
+    "User input processing stays local; page/CDN delivery still requests external styling",
+    "Publication evidence absent; TESTED, never RELEASED"
+  ],
+  "integration_strategy": "Sequential canonical promotion and gated homepage patch; existing framework/gates unchanged. Final full-batch integration/regression results are recorded in the Task 8 plan and handoff.",
+  "final_batch_regression": {
+    "python_passed": 123,
+    "node_passed": 249,
+    "failures": 0,
+    "released_browser_cases": 111,
+    "released_browser_assertions": 385,
+    "templates": "6 logic / 12 browser / 48 assertions",
+    "project_validation": "PASS; 0 errors/warnings",
+    "native_shortcuts": "Both existing Desktop and Start menu shortcuts launched and observed; current 93/9 released/4 tested/11 ready/68 planned/1 blocked, 36%; definitions unchanged",
+    "publication": null
+  }
+}

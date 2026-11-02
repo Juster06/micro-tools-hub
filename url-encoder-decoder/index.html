@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Encode or decode URI components with explicit mode selection."><meta name="color-scheme" content="dark">
+  <title>URL Encoder and Decoder — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+body { background:radial-gradient(ellipse at 85% 0%,#312e8126,transparent 45%),#020617; }
+.container { max-width:1200px; } .topbar { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.topbar .back-link { margin:0; text-decoration:none; font-size:.875rem; } .brand { font-size:.85rem; font-weight:600; color:#cbd5e1; }
+.hero { padding:22px 0 12px; } .eyebrow { color:#a5b4fc; font-weight:650; } h1 { font-size:clamp(2rem,5vw,3.1rem); letter-spacing:-.045em; line-height:1.15; }
+.description { margin-bottom:10px; } .privacy { color:#a5b4fc; font-size:.85rem; } .options { padding:18px 20px; margin:12px 0 20px; background:#0f172a; border-radius:16px; }
+.option-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 24px; }
+.option { display:flex; align-items:flex-start; gap:12px; padding:10px 6px; margin:0; cursor:pointer; font-size:.9rem; }
+.option input { width:20px; height:20px; flex:none; margin:2px 0; padding:0; accent-color:#818cf8; }
+.option small { display:block; margin-top:5px; font-weight:400; line-height:1.5; color:#94a3b8; }
+.toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:16px 0 22px; } .live { margin:0; font-size:.8rem; color:#94a3b8; }
+.editor { padding:0; overflow:hidden; } .editor-top { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:18px 20px; border-bottom:1px solid #334155; }
+.editor-top label { margin:0; font-size:.95rem; } .tag { color:#a5b4fc; font-size:.72rem; border:1px solid #334155; border-radius:6px; padding:4px 8px; }
+.editor textarea { border:0; border-radius:0; background:#080f21; min-height:300px; padding:20px; line-height:1.8; font-size:.95rem; }
+.editor-foot { padding:14px 20px; border-top:1px solid #334155; font-size:.8rem; color:#94a3b8; } .editor-foot.actions { margin:0; }
+.statistics { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin:20px 0; }
+.stat { padding:14px 16px; border:1px solid #334155; border-radius:12px; background:#0f172a; min-width:0; }
+.stat dt { font-size:.74rem; line-height:1.5; color:#94a3b8; } .stat dd { margin:7px 0 0; font-size:1.6rem; font-weight:650; color:#e2e8f0; overflow-wrap:anywhere; font-variant-numeric:tabular-nums; }
+.feedback { min-height:50px; } #toolStatus { color:#cbd5e1; } .rules { margin-top:20px; } .rules summary { cursor:pointer; font-weight:600; min-height:30px; }
+.rules-content { display:grid; grid-template-columns:1fr 1fr; gap:24px; padding-top:12px; color:#94a3b8; font-size:.85rem; line-height:1.8; }
+.rules-content h2 { color:#c7d2fe; font-size:.95rem; margin:14px 0 6px; } .rules-content p { margin:6px 0; }
+footer { border-top:1px solid #1e293b; margin-top:28px; } .skip-link { position:absolute; top:8px; left:18px; transform:translateY(-160%); background:#4338ca; color:white; padding:10px; z-index:10; } .skip-link:focus { transform:none; }
+@media(max-width:700px) { .option-grid,.rules-content { grid-template-columns:1fr; } .statistics { grid-template-columns:repeat(2,minmax(0,1fr)); } .stat:last-child { grid-column:1/-1; } .editor textarea { min-height:240px; } .brand { font-size:.7rem; } .hero { padding-top:12px; } }
+
+.statistics{grid-template-columns:repeat(4,minmax(0,1fr))}.settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.settings>div{min-width:0}.rule-text{color:#cbd5e1;line-height:1.8;overflow-wrap:anywhere}.disclosure{color:#c7d2fe;line-height:1.7}@media(max-width:700px){.settings{grid-template-columns:1fr}.statistics{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:last-child{grid-column:auto}}
+</style>
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased">
+  <a href="#toolInput" class="skip-link">Skip to text input</a>
+  <header class="border-b border-slate-800"><div class="container topbar"><a href="../index.html" class="back-link text-indigo-300">← Back to Hub</a><span class="brand">Everyday Digital Box</span></div></header>
+  <main class="container">
+    <section class="hero" aria-labelledby="pageTitle"><p class="eyebrow">Developer tools</p><h1 id="pageTitle">URL Encoder and Decoder<span style="color:#818cf8">.</span></h1><p class="description">Encode or decode components and full URIs without leaving this page.</p><p class="privacy">Your text is processed in your browser.</p></section>
+    <fieldset class="options"><legend>Preview settings</legend><div class="settings"><div><label for="toolMode">Operation</label><select id="toolMode"><option value="encode-component">Encode component</option><option value="decode-component">Decode component</option><option value="encode-uri">Encode full URI</option><option value="decode-uri">Decode full URI</option></select></div><p class="disclosure">A + sign is literal, never a space. These are URI codecs, not form-data decoding.</p></div></fieldset>
+    <div class="toolbar"><button id="runBtn" type="button" class="primary">Process URL text</button><p class="live">Updates as you type or change a setting</p></div>
+    <div class="panels">
+      <section class="panel editor" aria-label="Original input"><div class="editor-top"><label for="toolInput">Your original text</label><span class="tag">Original preserved</span></div><textarea id="toolInput" rows="11" spellcheck="false" placeholder="hello world + café" aria-describedby="inputHelp"></textarea><div class="editor-foot" id="inputHelp"><span id="inputSize">0 / 100,000 UTF-16 units</span> · No silent truncation</div></section>
+      <section class="panel editor" aria-label="Result"><div class="editor-top"><label for="toolOutput">Encoded or decoded text</label><span class="tag">Live preview</span></div><textarea id="toolOutput" rows="11" readonly spellcheck="false" aria-describedby="toolStatus" placeholder="Your result will appear here."></textarea><div class="editor-foot actions"><button id="copyBtn" type="button" class="primary" disabled>Copy result</button><button id="downloadBtn" type="button" disabled>Download .txt</button><button id="clearBtn" type="button">Clear all</button></div></section>
+    </div>
+    <dl class="statistics" aria-label="Current preview statistics"><div class="stat"><dt>Input UTF-16 units</dt><dd id="inputUnitsCount">—</dd></div><div class="stat"><dt>Output UTF-16 units</dt><dd id="outputUnitsCount">—</dd></div></dl>
+    <div class="feedback"><p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready.</p></div>
+    <details class="panel rules"><summary>Exact rules, limits &amp; privacy</summary><p class="rule-text">Default: encodeURIComponent. Component decoding uses decodeURIComponent; full-URI modes use encodeURI/decodeURI. Full-URI encoding preserves reserved syntax such as :/?#&amp;=+, while component encoding escapes it. Native component encoding leaves A–Z a–z 0–9 - _ . ! ~ * apostrophe and parentheses unchanged. decodeURI preserves percent escapes for reserved characters; component decoding decodes them. Plus signs stay plus on decode; encode-component produces %2B for plus. This is not application/x-www-form-urlencoded, a URL parser/validator, navigation or normalization. Malformed percent escapes/invalid encoded UTF-8 fail clearly; encoding rejects lone UTF-16 surrogates. Empty text produces empty output. No trimming or Unicode normalization. Output cap is 1,000,000 UTF-16 units; the 100,000 input-unit cap bounds native codec expansion below it. Export .txt.</p><p class="rule-text">Input limit: 100,000 UTF-16 code units. Larger text remains intact and current results are cleared with an error. Counts use UTF-16 units, not visual characters. No uploads, input tracking, saved drafts or external text processing. Page delivery and Tailwind Play CDN styling make ordinary network requests; inline CSS keeps the page usable without the CDN. Copy requires browser support/permission. Downloads are UTF-8 text. Empty results cannot be copied or downloaded.</p></details>
+  </main><footer class="container">Everyday Digital Box · Small tools. Everyday wins.</footer>
+  <script id="edb-tool-metadata">window.EDB_META = {"id": "url-encoder-decoder", "name": "URL Encoder and Decoder", "category": "developer"};</script>
+  <script id="edb-tool-logic">(() => {
+'use strict';
+  const LIMIT = 100000;
+  function validate(input, options, allowed) {
+    if (typeof input !== 'string') throw new TypeError('Text must be a string.');
+    if (input.length > LIMIT) throw new RangeError('Input exceeds 100,000 UTF-16 units. Nothing was truncated.');
+    if (!options || typeof options !== 'object' || Array.isArray(options)) throw new TypeError('Options must be an object.');
+    for (const key of Object.keys(options)) if (!Object.hasOwn(allowed,key) || !allowed[key](options[key])) throw new TypeError('Unsupported setting: ' + key + '.');
+  }
+  function run(input,options={}) {
+    validate(input,options,{mode:v=>['encode-component','decode-component','encode-uri','decode-uri'].includes(v)});
+    const {mode='encode-component'}=options;
+    const codecs={'encode-component':encodeURIComponent,'decode-component':decodeURIComponent,'encode-uri':encodeURI,'decode-uri':decodeURI};
+    let text;
+    try{text=codecs[mode](input);}catch{throw new Error('Cannot '+(mode.startsWith('decode')?'decode: malformed escape or invalid UTF-8.':'encode: unpaired UTF-16 surrogate.'));}
+    if(text.length>1000000)throw new RangeError('Result exceeds 1,000,000 UTF-16 units. Nothing was truncated.');
+    return {text,inputUnits:input.length,outputUnits:text.length};
+  }
+window.EDB_TOOL={isScaffold:false,allowEmpty:true,limit:LIMIT,run};
+})();</script>
+  <script id="edb-tool-ui">(() => {
+  'use strict';
+  const get = id => document.getElementById(id);
+  const input=get('toolInput'), output=get('toolOutput'), error=get('toolError'), status=get('toolStatus');
+  const copy=get('copyBtn'), download=get('downloadBtn'), run=get('runBtn');
+  const controls=["toolMode"].map(get), stats=["inputUnits", "outputUnits"];
+  let revision=0, timer, composing=false, undo=null, currentResult=null;
+  const tell=message=>status.textContent=message;
+  const options=()=>({mode:get('toolMode').value});
+  function invalidate() {
+if(get('indentStyle'))get('indentStyle').disabled=get('toolMode').value!=='pretty';if(get('ignoreWhitespace'))get('ignoreWhitespace').disabled=get('toolMode').value!=='decode';
+    clearTimeout(timer); revision++; currentResult=null; output.value=''; copy.disabled=download.disabled=true;
+    error.hidden=true; error.textContent=''; stats.forEach(key=>get(key+'Count').textContent='—');
+    if(get('applyBtn')) get('applyBtn').disabled=true;
+    get('inputSize').textContent=input.value.length.toLocaleString('en-US')+' / 100,000 UTF-16 units';
+  }
+  function process() {
+    invalidate();
+    if(composing) {tell('Finish composing to update the preview.');return;}
+    try {
+      const result=window.EDB_TOOL.run(input.value,options());
+      currentResult=result; output.value=result.text;
+      stats.forEach(key=>get(key+'Count').textContent=result[key].toLocaleString('en-US'));
+      copy.disabled=download.disabled=!result.text.length;
+      if(get('applyBtn'))get('applyBtn').disabled=result.text===input.value || result.text.length>window.EDB_TOOL.limit;
+      let message=result.text.length?'Preview updated. Your original input is unchanged.':'Preview has no characters to copy or download.';
+      if(result.invalidNumeric)message+=' '+result.invalidNumeric.toLocaleString('en-US')+' invalid numeric lines kept last in original order.';
+      if(get('applyBtn') && result.text.length>window.EDB_TOOL.limit)message+=' Result exceeds the input limit; copy/download it instead of applying.';
+      if(result.policy?.startsWith('Code-point'))message+=' '+result.policy+'.';
+      if(get('indentStyle'))message=get('toolMode').value==='validate'?'Valid JSON. Original text preserved.':message;
+      tell(message);
+    } catch(problem) {
+      error.textContent=problem instanceof Error?problem.message:'Could not process this input.'; error.hidden=false;
+      tell('No current preview. Your original text is unchanged.');
+    }
+  }
+  function schedule() {
+    invalidate();
+    if(composing) {tell('Finish composing to update the preview.'); return;}
+    if(!input.value.length || input.value.length>window.EDB_TOOL.limit) {process();return;}
+    tell('Updating preview…'); timer=setTimeout(process,120);
+  }
+  input.addEventListener('input',event=>{
+    undo=null;if(get('undoBtn'))get('undoBtn').disabled=true;
+    if(event.isComposing){invalidate();tell('Finish composing to update the preview.');return;}schedule();
+  });
+  document.addEventListener('compositionstart',event=>{
+    if(event.target===input || controls.includes(event.target)){composing=true;run.disabled=true;invalidate();}
+  });
+  document.addEventListener('compositionend',event=>{
+    if(event.target===input || controls.includes(event.target)){composing=false;run.disabled=false;process();}
+  });
+  for(const control of controls)control.addEventListener(control.type==='checkbox'||control.tagName==='SELECT'?'change':'input',schedule);
+  run.addEventListener('click',process);
+  get('clearBtn').addEventListener('click',()=>{
+    composing=false;run.disabled=false;undo=null;input.value='';get('toolMode').value='encode-component';
+    if(get('undoBtn'))get('undoBtn').disabled=true;
+    process();tell('Cleared. Defaults restored.');input.focus();
+  });
+  if(get('applyBtn')){
+    get('applyBtn').addEventListener('click',()=>{
+      if(get('applyBtn').disabled || !currentResult)return;
+      undo=input.value;input.value=currentResult.text;get('undoBtn').disabled=false;
+      process();tell('Result applied to input. Undo is available.');
+    });
+    get('undoBtn').addEventListener('click',()=>{
+      if(undo===null)return;
+      input.value=undo;undo=null;get('undoBtn').disabled=true;
+      process();tell('Previous input restored.');input.focus();
+    });
+  }
+  copy.addEventListener('click',async()=>{
+    if(copy.disabled)return;
+    const version=revision,text=output.value;
+    try {
+      if(!navigator.clipboard?.writeText)throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if(version===revision)tell('Result copied.');
+    }catch{
+      if(version===revision){output.focus();output.select();tell('Clipboard unavailable. Result selected; press Ctrl+C (or ⌘C).');}
+    }
+  });
+  download.addEventListener('click',()=>{
+    if(download.disabled)return;
+    for(const character of output.value) {
+      const code=character.charCodeAt(0);
+      if(character.length===1 && code>=0xD800 && code<=0xDFFF) {
+        tell('UTF-8 download unavailable: result contains an unpaired UTF-16 surrogate. Original and result are unchanged.');
+        return;
+      }
+    }
+    let url,link;
+    try {
+      url=URL.createObjectURL(new Blob([output.value],{type:'text/plain;charset=utf-8'}));
+      link=document.createElement('a');link.href=url;link.download=window.EDB_META.id+'-output.txt';
+      document.body.append(link);link.click();tell('UTF-8 text download requested. Check your browser downloads.');
+    }catch{tell('Download unavailable. Copy the result instead.');}
+    finally {if(link)link.remove();if(url)setTimeout(()=>URL.revokeObjectURL(url),1000);}
+  });
+  process();
+})();</script>
+</body>
+</html>

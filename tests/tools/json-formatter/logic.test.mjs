@@ -1,0 +1,17 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import {fileURLToPath} from 'node:url';
+import {loadLogic} from '../../../scripts/tool-tests/runner.mjs';
+const adapter=loadLogic(fileURLToPath(new URL('../../../json-formatter/index.html',import.meta.url)));
+function invoke(input,options={}){adapter.context.__input=input;adapter.context.__options=options;return JSON.parse(JSON.stringify(vm.runInContext('EDB_TOOL.run(__input,__options)',adapter.context,{timeout:1000})));}
+const valid='{"a":1}';
+test('reject invalid input types without coercion',()=>{for(const input of [null,undefined,true,0,{},[]])assert.throws(()=>invoke(input),/Text must be a string/);});
+test('reject invalid option containers and unknown keys',()=>{for(const options of [null,[],false,3,'x'])assert.throws(()=>invoke(valid,options),/Options must be an object/);assert.throws(()=>invoke(valid,{unknown:true}),/Unsupported setting/);});
+test('oversized inputs fail before content processing and are never truncated',()=>{for(const input of [' '.repeat(100001),'😀'.repeat(50001)])assert.throws(()=>invoke(input),/100,000 UTF-16/);});
+test('options and repeated results are immutable and deterministic',()=>{const options=Object.freeze({});const a=invoke(valid,options);assert.deepEqual(invoke(valid,options),a);assert.deepEqual(options,{});assert.equal(a.outputUnits,a.text.length);assert.equal(a.inputUnits,valid.length);});
+test('input limit is exact for valid JSON and source retained by validate',()=>{const input='"'+'😀'.repeat(49999)+'"';assert.equal(input.length,100000);assert.equal(invoke(input,{mode:'validate'}).text,input);assert.equal(invoke(input).text,input);});
+test('all nine mode/indent combinations match native oracle or preserve validated input',()=>{const input=' {"a":[1,true,null,{"é":"😀"}]} ';for(const mode of ['pretty','compact','validate'])for(const indent of ['2','4','tab']){const expected=mode==='validate'?input:JSON.stringify(JSON.parse(input),null,mode==='pretty'?(indent==='tab'?'\t':Number(indent)):undefined);assert.equal(invoke(input,{mode,indent}).text,expected);}});
+test('output exactly one million is accepted; next unit fails without truncation',()=>{const make=n=>'['.repeat(100)+'0,'.repeat(2300)+JSON.stringify('x'.repeat(n))+']'.repeat(100);const base=JSON.stringify(JSON.parse(make(0)),null,4).length,pad=1000000-base;assert.ok(pad>0&&make(pad).length<100000);const expected=JSON.stringify(JSON.parse(make(pad)),null,4);assert.equal(expected.length,1000000);assert.equal(invoke(make(pad),{indent:'4'}).text,expected);assert.throws(()=>invoke(make(pad+1),{indent:'4'}),/1,000,000 UTF-16/);});
+test('depth boundary, escaped quotes/brackets, duplicate keys and nonfinite values',()=>{assert.equal(invoke('['.repeat(100)+'0'+']'.repeat(100),{mode:'compact'}).nodes,101);assert.throws(()=>invoke('['.repeat(101)+'0'+']'.repeat(101)),/nesting exceeds/);assert.equal(invoke(JSON.stringify('\\"[{'.repeat(500))).text,JSON.stringify('\\"[{'.repeat(500)));assert.equal(invoke('{"x":1,"x":2}').nodes,2);assert.throws(()=>invoke('[1e400]'),/nonfinite/);});
+test('invalid syntax never executes JavaScript; prototype keys remain data',()=>{assert.throws(()=>invoke('(()=>{throw 1})()'),/Invalid JSON/);assert.equal(invoke('{"__proto__":{"x":1}}',{mode:'compact'}).text,'{"__proto__":{"x":1}}');for(const options of [{mode:null},{indent:2},{indent:'8'}])assert.throws(()=>invoke('{}',options),/Unsupported setting/);});

@@ -1,0 +1,129 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-02",
+  "source_revision": "54fec53eecb57496a8852ff4658be133c70f5926",
+  "browser": "Edg/156.0.4314.58",
+  "scope": "Local independent tool verification. Actual Chromium DOM and screenshots at 320/375/768/1440; external HTTP(S) blocked. Clipboard/composition simulated; downloads captured in memory. No publication claim.",
+  "pages": [
+    {
+      "path": "json-formatter/index.html",
+      "source_sha256": "4039877d8d17aad63ae0f4c82c3fa4fb3101b3ddbb07917d124098267dda35c0",
+      "checks": [
+        "35 independent exact JSON logic fixtures",
+        "19 real browser interaction cases / 37 assertions",
+        "9 additional independent Node logic tests, exact boundaries and tool-specific oracle/error semantics",
+        "12 additional real browser cases: rapid input/options, stale copy success/denial, UTF-8 Blob bytes/MIME/filename/revocation/failure, oversized recovery, simulated composition, no transport/storage probes, labels/native Tab; isolated-surrogate UTF-8 export refusal preserves input/result",
+        "Actual screenshots at all four specified widths reviewed; no horizontal overflow and exact output/error guards passed"
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "json-formatter",
+    "generated_at": "2026-11-02T01:00:50+00:00",
+    "input_hash": "d7861ffa607b9cc4c4e944eed6b8cf979d86d0af00e50755fbe994226863cbe3",
+    "source_sha256": "4039877d8d17aad63ae0f4c82c3fa4fb3101b3ddbb07917d124098267dda35c0",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 35,
+        "failed": 0,
+        "assertions": 35,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 19,
+        "failed": 0,
+        "assertions": 37,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "status": "PASS"
+  },
+  "additional_node_result": {
+    "passed": 21,
+    "failed": 0,
+    "logic_tests": 9,
+    "browser_tests": 12
+  },
+  "visual_checks": [
+    {
+      "viewport": 320,
+      "browser": "Edg/156.0.4314.58",
+      "width": 320,
+      "scrollWidth": 305,
+      "height": 2312,
+      "output": "{\n  \"project\": \"Everyday Digital Box\",\n  \"tools\": 13,\n  \"local\": true,\n  \"examples\": [\n    \"café\",\n    \"😀\"\n  ]\n}",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    },
+    {
+      "viewport": 375,
+      "browser": "Edg/156.0.4314.58",
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 2215,
+      "output": "{\n  \"project\": \"Everyday Digital Box\",\n  \"tools\": 13,\n  \"local\": true,\n  \"examples\": [\n    \"café\",\n    \"😀\"\n  ]\n}",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    },
+    {
+      "viewport": 768,
+      "browser": "Edg/156.0.4314.58",
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 1505,
+      "output": "{\n  \"project\": \"Everyday Digital Box\",\n  \"tools\": 13,\n  \"local\": true,\n  \"examples\": [\n    \"café\",\n    \"😀\"\n  ]\n}",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    },
+    {
+      "viewport": 1440,
+      "browser": "Edg/156.0.4314.58",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 1464,
+      "output": "{\n  \"project\": \"Everyday Digital Box\",\n  \"tools\": 13,\n  \"local\": true,\n  \"examples\": [\n    \"café\",\n    \"😀\"\n  ]\n}",
+      "status": "Preview updated. Your original input is unchanged.",
+      "error": null
+    }
+  ],
+  "test_commands": [
+    "python scripts/test_tool.py --id json-formatter --workspace canonical",
+    "node --test --test-concurrency=1 tests/tools/json-formatter/logic.test.mjs tests/tools/json-formatter/extended-browser.test.mjs"
+  ],
+  "limitations": [
+    "Installed Edge/Chromium only; emulated viewport widths are not physical-device or all-browser certification",
+    "No screen-reader, OS clipboard, native IME or Save-dialog certification; clipboard/composition/download APIs simulated/captured",
+    "Bounded host fixtures are not universal performance guarantees",
+    "User input processing stays local; page/CDN delivery still requests external styling",
+    "Publication evidence absent; TESTED, never RELEASED"
+  ],
+  "integration_strategy": "Sequential canonical promotion and gated homepage patch; existing framework/gates unchanged. Final full-batch integration/regression results are recorded in the Task 8 plan and handoff.",
+  "export_guard_checkpoint": "54fec53eecb57496a8852ff4658be133c70f5926",
+  "export_guard_result": "PASS: 21 independent Node logic/browser tests including lossless export refusal; original 4 independent source checkpoints remain preserved.",
+  "final_batch_regression": {
+    "python_passed": 123,
+    "node_passed": 249,
+    "failures": 0,
+    "released_browser_cases": 111,
+    "released_browser_assertions": 385,
+    "templates": "6 logic / 12 browser / 48 assertions",
+    "project_validation": "PASS; 0 errors/warnings",
+    "native_shortcuts": "Both existing Desktop and Start menu shortcuts launched and observed; current 93/9 released/4 tested/11 ready/68 planned/1 blocked, 36%; definitions unchanged",
+    "publication": null
+  }
+}

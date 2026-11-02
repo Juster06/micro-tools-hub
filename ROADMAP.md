@@ -1,5 +1,11 @@
 # Development roadmap
 
+## Task 8 — local tested batch, publication pending
+
+Task 8 is local only on `feat/task-8-four-tool-batch`, based on synchronized Task 7 main `a6ea73b24ceeeca4e6f695ad2840fd720dfb36ce`. Four existing READY/P1 entries at ranks 6–9 were selected by the actual proposal-only planner, no skipped eligible entry, unmet tool prerequisite, new registry entry or changed priority. Independent READY → IMPLEMENTED → TESTED transitions use source-bound scoped evidence; publication remains null. New cards say **Tested · publication pending**; local hub contains 13 cards, with all nine released cards unchanged. Inventory: 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED. Released milestone remains 9/25 (36%). No push, PR, merge, deployment, RELEASED transition or Task 9.
+
+The selected canonical tools are Text Reverser, JSON Formatter, URL Encoder and Decoder, and Base64 Encoder and Decoder. The prior release sections below are historical. Await owner review and separate GitHub preparation authorization; do not start Task 9.
+
 ## Task 7 — independent releases after live verification
 
 PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%).
@@ -42,10 +48,10 @@ Execute in order unless the user steers the project or a dependency/regression j
 | 3 | text-sorter | Text Sorter | Text and Writing Tools | S | RELEASED |
 | 4 | slug-generator | Slug Generator | Text and Writing Tools | S | RELEASED |
 | 5 | find-and-replace | Find and Replace | Text and Writing Tools | S | RELEASED |
-| 6 | text-reverser | Text Reverser | Text and Writing Tools | S | READY |
-| 7 | json-formatter | JSON Formatter | Excel and Data Tools | S | READY |
-| 8 | url-encoder-decoder | URL Encoder and Decoder | Developer Tools | S | READY |
-| 9 | base64-encoder-decoder | Base64 Encoder and Decoder | Developer Tools | S | READY |
+| 6 | text-reverser | Text Reverser | Text and Writing Tools | S | TESTED |
+| 7 | json-formatter | JSON Formatter | Excel and Data Tools | S | TESTED |
+| 8 | url-encoder-decoder | URL Encoder and Decoder | Developer Tools | S | TESTED |
+| 9 | base64-encoder-decoder | Base64 Encoder and Decoder | Developer Tools | S | TESTED |
 | 10 | uuid-generator | UUID Generator | Developer Tools | S | READY |
 | 11 | timestamp-converter | Timestamp Converter | Developer Tools | S | READY |
 | 12 | percentage-calculator | Percentage Calculator | Calculators | S | READY |
@@ -112,7 +118,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | duplicate-line-remover | Duplicate Line Remover | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | text-difference-checker | Text Difference Checker | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | text-sorter | Text Sorter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| text-reverser | Text Reverser | READY | P1 | S | Browser-native approach; scope review before implementation |
+| text-reverser | Text Reverser | TESTED | P1 | S | Browser-native approach; scope review before implementation |
 | find-and-replace | Find and Replace | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | slug-generator | Slug Generator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 
@@ -127,7 +133,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | duplicate-row-finder | Duplicate Row Finder | PLANNED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-data-cleaner | CSV Data Cleaner | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-merger | CSV Merger | PLANNED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
-| json-formatter | JSON Formatter | READY | P1 | S | Native JSON.parse and JSON.stringify |
+| json-formatter | JSON Formatter | TESTED | P1 | S | Native JSON.parse and JSON.stringify |
 | csv-viewer | CSV Viewer | PLANNED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | excel-formula-generator | Excel Formula Generator | PLANNED | P2 | L | Browser-native deterministic templates; no parser or AI service |
 
@@ -135,8 +141,8 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
-| base64-encoder-decoder | Base64 Encoder and Decoder | READY | P1 | S | Browser-native approach; scope review before implementation |
-| url-encoder-decoder | URL Encoder and Decoder | READY | P1 | S | Browser-native approach; scope review before implementation |
+| base64-encoder-decoder | Base64 Encoder and Decoder | TESTED | P1 | S | Browser-native approach; scope review before implementation |
+| url-encoder-decoder | URL Encoder and Decoder | TESTED | P1 | S | Browser-native approach; scope review before implementation |
 | uuid-generator | UUID Generator | READY | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | sha256-hash-checker | SHA-256 Text & File Hash Checker | PLANNED | P2 | M | Browser Web Crypto SHA-256; bounded file reads |
 | regex-tester | Regex Tester | PLANNED | P2 | L | Browser Worker with termination timeout; bounded input |
