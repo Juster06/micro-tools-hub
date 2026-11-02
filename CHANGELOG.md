@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-02 — Task 8 local four-utility batch
+
+Task 8 is local only on `feat/task-8-four-tool-batch`, based on synchronized Task 7 main `a6ea73b24ceeeca4e6f695ad2840fd720dfb36ce`. Four existing READY/P1 entries at ranks 6–9 were selected by the actual proposal-only planner, no skipped eligible entry, unmet tool prerequisite, new registry entry or changed priority. Independent READY → IMPLEMENTED → TESTED transitions use source-bound scoped evidence; publication remains null. New cards say **Tested · publication pending**; local hub contains 13 cards, with all nine released cards unchanged. Inventory: 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED. Released milestone remains 9/25 (36%). No push, PR, merge, deployment, RELEASED transition or Task 9.
+
+Added standalone Text Reverser, JSON Formatter, URL Encoder and Decoder, and Base64 Encoder and Decoder, independent logic/browser/integration tests, exact policies/limits, four source-bound audits and the scoped development plan. Existing generation/testing/integration gates were used unchanged. Added a tested export guard against native Blob replacement of isolated UTF-16 surrogates. Preserved original source checkpoints, released pages/cards/evidence/CNAME, framework/dashboard/launcher and shortcut definitions. Final executed results and native launch scope are recorded in the latest handoff and development plan.
+
 ## Released — Task 7 verified text utilities (2026-11-01)
 
 - PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%).

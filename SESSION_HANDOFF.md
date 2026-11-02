@@ -1,5 +1,52 @@
 # Session handoff
 
+## Latest session — Task 8 local four-utility batch (2026-11-02, Europe/London)
+
+Task 8 is local only on `feat/task-8-four-tool-batch`, based on synchronized Task 7 main `a6ea73b24ceeeca4e6f695ad2840fd720dfb36ce`. Four existing READY/P1 entries at ranks 6–9 were selected by the actual proposal-only planner, no skipped eligible entry, unmet tool prerequisite, new registry entry or changed priority. Independent READY → IMPLEMENTED → TESTED transitions use source-bound scoped evidence; publication remains null. New cards say **Tested · publication pending**; local hub contains 13 cards, with all nine released cards unchanged. Inventory: 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED. Released milestone remains 9/25 (36%). No push, PR, merge, deployment, RELEASED transition or Task 9.
+
+| Utility / ID | Category / priority / rank | Route | Defaults / scope |
+| --- | --- | --- | --- |
+| Text Reverser / `text-reverser` | text / P1 / 6 | [text-reverser/index.html](text-reverser/index.html) | Whole-input grapheme reversal; word/line modes, disclosed code-point fallback |
+| JSON Formatter / `json-formatter` | data / P1 / 7 | [json-formatter/index.html](json-formatter/index.html) | Pretty-print with two spaces; four spaces/tab, compact and validate; bounded native JSON |
+| URL Encoder and Decoder / `url-encoder-decoder` | developer / P1 / 8 | [url-encoder-decoder/index.html](url-encoder-decoder/index.html) | Encode component; explicit component/full-URI encode/decode, literal plus semantics |
+| Base64 Encoder and Decoder / `base64-encoder-decoder` | developer / P1 / 9 | [base64-encoder-decoder/index.html](base64-encoder-decoder/index.html) | Strict UTF-8 to padded standard Base64; decode and optional ASCII-whitespace removal; not encryption |
+
+**Source history:**
+
+* `text-reverser`: initial independent source/test checkpoint `f75b445ea114028883f9a178aea828f6718d3308`; current audited source revision `54fec53eecb57496a8852ff4658be133c70f5926`.
+* `json-formatter`: initial independent source/test checkpoint `eaf30ff434d2afd8d7701d016e20abeab37a9965`; current audited source revision `54fec53eecb57496a8852ff4658be133c70f5926`.
+* `url-encoder-decoder`: initial independent source/test checkpoint `5e834031498f533e74c57337ddecae552eb8e599`; current audited source revision `54fec53eecb57496a8852ff4658be133c70f5926`.
+* `base64-encoder-decoder`: initial independent source/test checkpoint `68fd1a09891e3b33cf25018ed8b541691fc3b99f`; current audited source revision `68fd1a09891e3b33cf25018ed8b541691fc3b99f`.
+
+**Exact policies:** see tool READMEs and `audit/TASK_8_DEVELOPMENT_PLAN.md`. All four expose real pure adapters and live previews, explicit errors, stale-result/action invalidation, original preservation, labeled keyboard controls, Clear/defaults/focus and safe copy/export. Final UTF-8 export guard source checkpoint `54fec53eecb57496a8852ff4658be133c70f5926` preserves the initial checkpoints. Integration used sequential canonical promotion; reviewed patches passed git apply --check and subsequent empty-patch idempotence without weakening the existing gate.
+
+**Verification:** four independent canonical framework suites and additional Node logic/browser suites passed before lifecycle evidence. Final full-suite totals and native shortcut observations follow, recorded after actual completion. Screenshots at 320/375/768/1440 were reviewed with external CDN blocked, fallback CSS usable. Clipboard/composition/download capture are simulated/in-memory, not OS clipboard/IME/Save-dialog, screen-reader, physical-device or universal browser certification. JSON uses native IEEE-754 precision/key rules, not lossless arbitrary-precision/schema validation. Base64 is strict UTF-8 text, not binary files or encryption; reversal fallback can split emoji clusters. No input transport/storage or runtime dependency beyond existing Tailwind styling.
+
+**Preservation:** all nine released HTML pages/cards/registry entries/publication evidence, earlier audits, CNAME, shared framework/templates/dashboard/launcher and existing Desktop/Start menu shortcut bytes/properties/AppID remain protected. Original local branches and active checkout are preserved. Generated reports/bundles/screenshots/private shortcut snapshots stay ignored/outside Git.
+
+**Next major task:** Task 8 local delivery and owner review. Await separate authorization for GitHub preparation. Do not push, open a PR, merge, deploy, release any Task 8 tool, begin Task 9 or implement another utility. The containing final delivery commit is identified by `git log -1 --format="%H %s"` and the final report; this handoff cannot contain its own commit hash.
+
+## Final executed verification — 2026-11-02
+
+Python **123/123** and complete sequential Node **249/249**, zero failures/skips. Assertions/timeouts and all existing suites unchanged. Actual Edge engine: Edg/156.0.4314.58.
+
+| Tool | Exact JSON logic | Additional Node logic | Framework browser / assertions | Extended browser | Hub integration |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| text-reverser | 30 | 9 | 16 / 33 | 12 | 2 |
+| json-formatter | 35 | 9 | 19 / 37 | 12 | 2 |
+| url-encoder-decoder | 36 | 9 | 16 / 31 | 12 | 2 |
+| base64-encoder-decoder | 44 | 9 | 17 / 33 | 11 | 2 |
+
+New tool totals: 145 exact JSON logic fixtures plus 36 independent Node logic tests; 68 framework browser cases plus 47 extended and 8 real hub integration cases = 123 browser cases. Independent source/option/limit/error/oracle checks, captured download bytes/MIME/filenames/revocation/failures, stale clipboard/input/settings, simulated composition, labels/keyboard and transport/storage probes passed. Final source hashes match actual committed revisions.
+
+Nine released-tool regressions: 235 existing isolated logic fixtures; 111 framework browser cases / 385 assertions, plus their unchanged Node suites. Four original specialist tools have no isolated logic adapters: logic stays NOT RUN and combined subset status PARTIAL, with required structural/browser PASS; no fabricated complete PASS. Neutral templates: 6 logic / 12 browser / 48 assertions. Registry, consistency, structural source/navigation/evidence verification, full project status and whitespace checks PASS with zero errors/warnings. Homepage route/card/search/back navigation passed; all four proposal reruns produced empty patches. Actual screenshots at 320/375/768/1440 were reviewed. Original nine source/card blocks/registry entries/release audits/CNAME unchanged; no framework/dashboard/launcher modifications.
+
+Both actual existing Windows Desktop and Start menu shortcuts were launched separately from an unrelated working directory and directly observed in the native dashboard. Each automatic project status workflow completed exit 0; Overview showed 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED, 9/25 (36%). Testing/Validation showed four current PASS reports and explicit unavailable functional totals. Shortcut bytes/target/arguments/cwd/AppID verified unchanged, no reinstall or registry edit. Final postcommit check-only/provenance and read-only saved-data reload are performed without altering tracked documentation.
+
+Changed-file privacy/allowlist/source-history review: 37 added / 7 modified files; no credentials, personal Windows paths, generated reports/bundles/screenshots, temporary files, local settings or machine artifacts included. All 89 other registry entries, previous audits and original local branch heads preserved. No push, PR, merge or deployment. Known scope: installed Edge only, emulated viewports; simulated clipboard/composition and in-memory downloads, not physical devices, screen reader, OS clipboard/IME/Save dialogs or universal performance. JSON numeric precision follows native IEEE-754; Base64 is UTF-8 text only and not encryption; absent Segmenter uses disclosed code-point fallback. Existing Tailwind styling delivery remains external. No remaining local blocker; await owner review and separate GitHub preparation authorization, do not start Task 9.
+
+### Historical Task 7 handoff (preserved)
+
 ## Latest session — Task 7 COMPLETE: three utilities released and live verified (2026-11-01, Europe/London)
 
 **Status:** PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%). Reviewed published feature `2434104f0b0f7b1b66e2041370c77700c6f1508e` and original local feature `6ceb3288fcad6eb10d3d1d5b8e7af1774c43d16d` share full tree `361cc2cf355e27c773bb1ff55593292b5f59dc30`. All four local commits remain intact. Local main safely fast-forwarded to the merge; no reset, force update, checkout move/replacement/deletion or history rewrite.
@@ -132,26 +179,27 @@
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 25 released tools; 9 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 15; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 9; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 11; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 4; RELEASED: 9; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
-- Next ready tool: Text Reverser.
-- Git branch: main.
-- Latest commit observed before generation: 0734bd97ceaa3395ea52d78162c14a76c7c63356.
+- Next ready tool: UUID Generator.
+- Git branch: feat/task-8-four-tool-batch.
+- Latest commit observed before generation: 54fec53eecb57496a8852ff4658be133c70f5926.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
+- URL Encoder and Decoder: TESTED, evidence dated 2026-11-02.
+- Text Reverser: TESTED, evidence dated 2026-11-02.
+- JSON Formatter: TESTED, evidence dated 2026-11-02.
+- Base64 Encoder and Decoder: TESTED, evidence dated 2026-11-02.
 - Text Sorter: RELEASED, evidence dated 2026-11-01.
 - Slug Generator: RELEASED, evidence dated 2026-11-01.
 - Find and Replace: RELEASED, evidence dated 2026-11-01.
 - Duplicate Line Remover: RELEASED, evidence dated 2026-11-01.
 - Case Converter: RELEASED, evidence dated 2026-11-01.
 - AI Text Footprint Cleanser: RELEASED, evidence dated 2026-10-31.
-- Free Stream Roulette: RELEASED, evidence dated 2026-10-31.
-- Social Media Character Counter & Live Previewer: RELEASED, evidence dated 2026-10-31.
-- Excel Formula Sandbox & Analyzer: RELEASED, evidence dated 2026-10-31.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -162,10 +210,18 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
+- ` M` CHANGELOG.md
+- ` M` PROGRESS_TRACKER.md
+- ` M` README.md
+- ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
-- ` M` audit/FIND_AND_REPLACE_RELEASE_VERIFICATION.json
-- ` M` audit/SLUG_GENERATOR_RELEASE_VERIFICATION.json
-- ` M` audit/TEXT_SORTER_RELEASE_VERIFICATION.json
+- ` M` TOOL_REGISTRY.json
+- ` M` index.html
+- `??` audit/BASE64_ENCODER_DECODER_VERIFICATION.json
+- `??` audit/JSON_FORMATTER_VERIFICATION.json
+- `??` audit/TASK_8_DEVELOPMENT_PLAN.md
+- `??` audit/TEXT_REVERSER_VERIFICATION.json
+- `??` audit/URL_ENCODER_DECODER_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

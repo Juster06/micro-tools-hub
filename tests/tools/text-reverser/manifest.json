@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "text-reverser",
+  "canonical_path": "text-reverser/index.html",
+  "template": "text",
+  "requires_specialized_implementation": false,
+  "purpose": "Independent tool identity/test adapter; lifecycle only in TOOL_REGISTRY.json."
+}

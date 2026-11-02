@@ -1,5 +1,18 @@
 # Everyday Digital Box — WebUtils Hub
 
+## Task 8 — four locally tested utilities (2026-11-02)
+
+Task 8 is local only on `feat/task-8-four-tool-batch`, based on synchronized Task 7 main `a6ea73b24ceeeca4e6f695ad2840fd720dfb36ce`. Four existing READY/P1 entries at ranks 6–9 were selected by the actual proposal-only planner, no skipped eligible entry, unmet tool prerequisite, new registry entry or changed priority. Independent READY → IMPLEMENTED → TESTED transitions use source-bound scoped evidence; publication remains null. New cards say **Tested · publication pending**; local hub contains 13 cards, with all nine released cards unchanged. Inventory: 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED. Released milestone remains 9/25 (36%). No push, PR, merge, deployment, RELEASED transition or Task 9.
+
+| Utility / ID | Category / priority / rank | Route | Defaults / scope |
+| --- | --- | --- | --- |
+| Text Reverser / `text-reverser` | text / P1 / 6 | [text-reverser/index.html](text-reverser/index.html) | Whole-input grapheme reversal; word/line modes, disclosed code-point fallback |
+| JSON Formatter / `json-formatter` | data / P1 / 7 | [json-formatter/index.html](json-formatter/index.html) | Pretty-print with two spaces; four spaces/tab, compact and validate; bounded native JSON |
+| URL Encoder and Decoder / `url-encoder-decoder` | developer / P1 / 8 | [url-encoder-decoder/index.html](url-encoder-decoder/index.html) | Encode component; explicit component/full-URI encode/decode, literal plus semantics |
+| Base64 Encoder and Decoder / `base64-encoder-decoder` | developer / P1 / 9 | [base64-encoder-decoder/index.html](base64-encoder-decoder/index.html) | Strict UTF-8 to padded standard Base64; decode and optional ASCII-whitespace removal; not encryption |
+
+See each tool README, [development plan](audit/TASK_8_DEVELOPMENT_PLAN.md) and independent verification audits for exact behavior, limits and executed scope. Input limit 100,000 UTF-16 units. JSON: nesting 100 / output 1,000,000 units; Base64: output 400,000 units; URI output bounded below 1,000,000; reversal does not expand. Lossy UTF-8 exports of isolated surrogates are refused while preserving input/result. Browser clipboard/composition are simulated; download Blobs captured in memory. External style delivery still uses the existing Tailwind CDN, with inline fallback. All processing is local without input transport or persistence.
+
 ## Reusable utility development
 
 Task 4 provides development-only scaffolding, templates, functional checks, homepage patch previews and ordered batch proposals. Read the [utility contract](TOOL_CONTRACT.md) and [developer guide](TOOL_DEVELOPMENT_GUIDE.md) before implementing a tool. Use `python scripts/plan_tool_batch.py --count 10` to inspect READY work; scaffold generation accepts existing READY entries only, and an inspected dry run precedes implementation. Select work only within the latest owner-authorized scope.

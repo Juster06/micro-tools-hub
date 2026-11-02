@@ -1,5 +1,11 @@
 # Progress tracker
 
+## Task 8 local checkpoint
+
+Task 8 is local only on `feat/task-8-four-tool-batch`, based on synchronized Task 7 main `a6ea73b24ceeeca4e6f695ad2840fd720dfb36ce`. Four existing READY/P1 entries at ranks 6–9 were selected by the actual proposal-only planner, no skipped eligible entry, unmet tool prerequisite, new registry entry or changed priority. Independent READY → IMPLEMENTED → TESTED transitions use source-bound scoped evidence; publication remains null. New cards say **Tested · publication pending**; local hub contains 13 cards, with all nine released cards unchanged. Inventory: 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED. Released milestone remains 9/25 (36%). No push, PR, merge, deployment, RELEASED transition or Task 9.
+
+Independent functional results and limitations are in each audit; the tracking reports remain structural validation rather than functional-test totals.
+
 Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` for the full tracking workflow, or `python scripts/generate_progress.py` to refresh only registry-derived documents. Existing Node commands delegate to the same Python engine. Counts are not separate manually maintained totals. Original four-tool baseline audit: 2026-10-31. Case Converter live behavior/source verification: 2026-11-01; static tracking checks do not refresh either date.
 
 ## Inventory and current milestone
@@ -10,14 +16,14 @@ Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` f
 | Total registered utilities | 93 |
 | IDEA | 0 |
 | PLANNED | 68 |
-| READY | 15 |
+| READY | 11 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 0 |
+| TESTED | 4 |
 | RELEASED | 9 |
 | DEPRECATED | 0 |
-| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 84 |
+| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 80 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
@@ -49,21 +55,22 @@ Current growth milestone: **25 released tools**. Progress: 9/25 (36.0%); remaini
 
 Current registered tool task: **none**. Session infrastructure work is recorded in the manual handoff.
 
-Next ready tool: **Text Reverser**.
+Next ready tool: **UUID Generator**.
 
 ### Recently verified tools (registry evidence dates)
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
+| URL Encoder and Decoder | TESTED | 2026-11-02 |
+| Text Reverser | TESTED | 2026-11-02 |
+| JSON Formatter | TESTED | 2026-11-02 |
+| Base64 Encoder and Decoder | TESTED | 2026-11-02 |
 | Text Sorter | RELEASED | 2026-11-01 |
 | Slug Generator | RELEASED | 2026-11-01 |
 | Find and Replace | RELEASED | 2026-11-01 |
 | Duplicate Line Remover | RELEASED | 2026-11-01 |
 | Case Converter | RELEASED | 2026-11-01 |
 | AI Text Footprint Cleanser | RELEASED | 2026-10-31 |
-| Free Stream Roulette | RELEASED | 2026-10-31 |
-| Social Media Character Counter & Live Previewer | RELEASED | 2026-10-31 |
-| Excel Formula Sandbox & Analyzer | RELEASED | 2026-10-31 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.
@@ -91,11 +98,11 @@ PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-
 ## Next recommended tasks
 
 <!-- GENERATED:NEXT:START -->
-6. **Text Reverser** — Reverse text by line, word, or grapheme unit.
-7. **JSON Formatter** — Validate, pretty-print and compact JSON locally.
-8. **URL Encoder and Decoder** — Encode or decode URI components with explicit mode selection.
-9. **Base64 Encoder and Decoder** — Encode and decode Unicode text with clear Base64 validation.
 10. **UUID Generator** — Generate version-4 UUIDs using browser cryptographic randomness.
+11. **Timestamp Converter** — Convert epoch values and ISO dates with explicit timezone handling.
+12. **Percentage Calculator** — Calculate a percentage of a value and one value as a percentage of another.
+13. **Percentage Change Calculator** — Calculate increase or decrease from a starting value.
+14. **Discount Calculator** — Calculate a discounted price and savings.
 <!-- GENERATED:NEXT:END -->
 
 Start only after reviewing/synchronizing the management branch. For each utility, finish planning, implementation, testing, homepage integration, and evidence before selecting the next item.

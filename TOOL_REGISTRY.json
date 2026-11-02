@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-01",
+  "updated_on": "2026-11-02",
   "project": {
     "name": "Everyday Digital Box — WebUtils Hub",
     "repository": "https://github.com/Juster06/micro-tools-hub",
@@ -1568,7 +1568,7 @@
       "category": "text",
       "description": "Reverse text by line, word, or grapheme unit.",
       "directory_path": "text-reverser",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -1580,12 +1580,33 @@
         "Document fallback",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-02",
+      "notes": "Task 8 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
       "sequence_rank": 6,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "54fec53eecb57496a8852ff4658be133c70f5926",
+        "source_sha256": "a554d2b208f2c7e8c454cadbfb6634a3104485ad5b1f14ab78151a9fbea34118",
+        "evidence_path": "audit/TEXT_REVERSER_VERIFICATION.json",
+        "test_scope": [
+          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
+          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
+          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "toolMode",
+        "runBtn",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "find-and-replace",
@@ -1925,7 +1946,7 @@
       "category": "data",
       "description": "Validate, pretty-print and compact JSON locally.",
       "directory_path": "json-formatter",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -1938,12 +1959,34 @@
         "Indent selection and compact mode",
         "Copy and input size cap"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-02",
+      "notes": "Task 8 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
       "sequence_rank": 7,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "54fec53eecb57496a8852ff4658be133c70f5926",
+        "source_sha256": "4039877d8d17aad63ae0f4c82c3fa4fb3101b3ddbb07917d124098267dda35c0",
+        "evidence_path": "audit/JSON_FORMATTER_VERIFICATION.json",
+        "test_scope": [
+          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
+          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
+          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "toolMode",
+        "runBtn",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "toolError",
+        "toolStatus",
+        "indentStyle"
+      ]
     },
     {
       "id": "csv-viewer",
@@ -2007,7 +2050,7 @@
       "category": "developer",
       "description": "Encode and decode Unicode text with clear Base64 validation.",
       "directory_path": "base64-encoder-decoder",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2019,12 +2062,34 @@
         "Copy",
         "Base64 is not encryption disclosure"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-02",
+      "notes": "Task 8 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
       "sequence_rank": 9,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "68fd1a09891e3b33cf25018ed8b541691fc3b99f",
+        "source_sha256": "c04a7085c871afff35dd718963eb246710585cd7ade5e0e2cd65b9bd3c0d19de",
+        "evidence_path": "audit/BASE64_ENCODER_DECODER_VERIFICATION.json",
+        "test_scope": [
+          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
+          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
+          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "toolMode",
+        "runBtn",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "toolError",
+        "toolStatus",
+        "ignoreWhitespace"
+      ]
     },
     {
       "id": "url-encoder-decoder",
@@ -2032,7 +2097,7 @@
       "category": "developer",
       "description": "Encode or decode URI components with explicit mode selection.",
       "directory_path": "url-encoder-decoder",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2044,12 +2109,33 @@
         "Plus-sign behavior explained",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-02",
+      "notes": "Task 8 locally tested utility; exact rules/defaults/limits in tool README and independent source-bound audit. Publication pending.",
       "sequence_rank": 8,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "54fec53eecb57496a8852ff4658be133c70f5926",
+        "source_sha256": "7c136f2043f1302909eac0445eafaaac27426d635698681a15146523781e89bd",
+        "evidence_path": "audit/URL_ENCODER_DECODER_VERIFICATION.json",
+        "test_scope": [
+          "Independent exact logic, boundary, invalid-input and tool-specific oracle checks",
+          "Real Edge interactions, privacy/stale-state/download checks and keyboard",
+          "320/375/768/1440 screenshots reviewed; clipboard/composition/downloads simulated"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "toolMode",
+        "runBtn",
+        "copyBtn",
+        "downloadBtn",
+        "clearBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "uuid-generator",
