@@ -17,8 +17,9 @@ else {
   assert.equal(publication.url,'https://everydaydigitalbox.com/text-reverser/');
   assert.ok(Number.isFinite(Date.parse(publication.checked_at)));
 }
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,9);
-assert.equal(caseStatus,'TESTED');
+const task8Ids=['text-reverser','json-formatter','url-encoder-decoder','base64-encoder-decoder'];
+const task8Released=registry.tools.filter(t=>task8Ids.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,9+task8Released);
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

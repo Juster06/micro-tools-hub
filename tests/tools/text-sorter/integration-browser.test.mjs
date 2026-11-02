@@ -19,7 +19,9 @@ else {
 }
 const batchIds=['text-sorter','slug-generator','find-and-replace'];
 const batchReleased=registry.tools.filter(t=>batchIds.includes(t.id)&&t.status==='RELEASED').length;
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,6+batchReleased);
+const task8Ids=['text-reverser','json-formatter','url-encoder-decoder','base64-encoder-decoder'];
+const task8Released=registry.tools.filter(t=>task8Ids.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,6+batchReleased+task8Released);
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

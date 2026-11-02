@@ -1,17 +1,17 @@
 # Everyday Digital Box — WebUtils Hub
 
-## Task 8 — four locally tested utilities (2026-11-02)
+## Task 8 — four verified public releases (2026-11-02)
 
-Task 8 is local only on `feat/task-8-four-tool-batch`, based on synchronized Task 7 main `a6ea73b24ceeeca4e6f695ad2840fd720dfb36ce`. Four existing READY/P1 entries at ranks 6–9 were selected by the actual proposal-only planner, no skipped eligible entry, unmet tool prerequisite, new registry entry or changed priority. Independent READY → IMPLEMENTED → TESTED transitions use source-bound scoped evidence; publication remains null. New cards say **Tested · publication pending**; local hub contains 13 cards, with all nine released cards unchanged. Inventory: 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED. Released milestone remains 9/25 (36%). No push, PR, merge, deployment, RELEASED transition or Task 9.
+PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%).
 
-| Utility / ID | Category / priority / rank | Route | Defaults / scope |
-| --- | --- | --- | --- |
-| Text Reverser / `text-reverser` | text / P1 / 6 | [text-reverser/index.html](text-reverser/index.html) | Whole-input grapheme reversal; word/line modes, disclosed code-point fallback |
-| JSON Formatter / `json-formatter` | data / P1 / 7 | [json-formatter/index.html](json-formatter/index.html) | Pretty-print with two spaces; four spaces/tab, compact and validate; bounded native JSON |
-| URL Encoder and Decoder / `url-encoder-decoder` | developer / P1 / 8 | [url-encoder-decoder/index.html](url-encoder-decoder/index.html) | Encode component; explicit component/full-URI encode/decode, literal plus semantics |
-| Base64 Encoder and Decoder / `base64-encoder-decoder` | developer / P1 / 9 | [base64-encoder-decoder/index.html](base64-encoder-decoder/index.html) | Strict UTF-8 to padded standard Base64; decode and optional ASCII-whitespace removal; not encryption |
+| Utility | Public release and exact rules |
+| --- | --- |
+| Text Reverser | [Live tool](https://everydaydigitalbox.com/text-reverser/) · RELEASED · [Rules/tests](text-reverser/README.md) |
+| JSON Formatter | [Live tool](https://everydaydigitalbox.com/json-formatter/) · RELEASED · [Rules/tests](json-formatter/README.md) |
+| URL Encoder and Decoder | [Live tool](https://everydaydigitalbox.com/url-encoder-decoder/) · RELEASED · [Rules/tests](url-encoder-decoder/README.md) |
+| Base64 Encoder and Decoder | [Live tool](https://everydaydigitalbox.com/base64-encoder-decoder/) · RELEASED · [Rules/tests](base64-encoder-decoder/README.md) |
 
-See each tool README, [development plan](audit/TASK_8_DEVELOPMENT_PLAN.md) and independent verification audits for exact behavior, limits and executed scope. Input limit 100,000 UTF-16 units. JSON: nesting 100 / output 1,000,000 units; Base64: output 400,000 units; URI output bounded below 1,000,000; reversal does not expand. Lossy UTF-8 exports of isolated surrogates are refused while preserving input/result. Browser clipboard/composition are simulated; download Blobs captured in memory. External style delivery still uses the existing Tailwind CDN, with inline fallback. All processing is local without input transport or persistence.
+Original implementation audits, all nine previous release source/card/evidence sets and CNAME remain unchanged. Owner-added homepage Google Analytics remains intact; input processing on these four utility pages is local without transport or persistence. Final release-metadata deployment/native checks are recorded in the latest handoff. Do not begin Task 9.
 
 ## Reusable utility development
 
@@ -23,7 +23,7 @@ Python 3.10+ standard library runs the generator/planner/structural checks; Node
 
 Everyday Digital Box is a collection of free, focused browser utilities for everyday writing, spreadsheet work, social content, and entertainment discovery. The website is branded **WebUtils Hub**, and its GitHub repository is named **micro-tools-hub**.
 
-The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It currently contains nine released standalone tools, linked from a searchable dashboard.
+The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It currently contains thirteen released standalone tools, linked from a searchable dashboard.
 
 ## Project links
 
@@ -53,7 +53,7 @@ Future development sessions should begin with [AGENTS.md](AGENTS.md) and [SESSIO
 | [Backlog reconciliation](audit/BACKLOG_RECONCILIATION.md) | Each initial proposed utility mapped to its canonical tool |
 | [Management commands](scripts/README.md) | Python status workflow, reports, synchronization, and tests; existing Node compatibility |
 
-Tool development is the current priority. Growth milestones are aspirations; new tools are built one at a time with scoped validation. Analytics, advertising integration, traffic generation, and SEO automation are deferred. The future 9–11-day SEO observation idea is recorded in the master plan only.
+Tool development is the current priority. Growth milestones are aspirations; new tools are built one at a time with scoped validation. Owner-configured homepage analytics is preserved. Additional analytics, advertising integration, traffic generation, and SEO automation remain deferred. The future 9–11-day SEO observation idea is recorded in the master plan only.
 
 On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu launcher now opens the [local Project Control Dashboard](scripts/DASHBOARD.md), with overview/milestones, registry exploration, queue, validation, activity, blockers and Quick Actions. It reuses the existing tracking workflow and stays separate from the website. Create/recreate shortcuts with `python scripts/install_status_shortcut.py`; existing targets remain valid. See [Windows launcher instructions](scripts/WINDOWS_LAUNCHER.md) for manual taskbar pinning, requirements and limitations.
 
@@ -71,11 +71,11 @@ On Windows, the **Everyday Digital Box — Project Status** desktop/Start menu l
 
 [Case Converter](case-converter/index.html) offers uppercase, lowercase, Title Case, Sentence case, Capitalize Words, Alternating Case and Inverse Case, with live character/word/line counts, unchanged original input, Copy, UTF-8 download and Clear. Read [its rules and test scope](case-converter/README.md) before relying on language-specific casing. Input stays in the browser; the limit is 100,000 UTF-16 units.
 
-Task 5 was merged through [PR #9](https://github.com/Juster06/micro-tools-hub/pull/9). [Live Case Converter](https://everydaydigitalbox.com/case-converter/) behavior and deployed source identity were verified on 2026-11-01 before its RELEASED transition. See [release evidence](audit/CASE_CONVERTER_RELEASE_VERIFICATION.json) for deployment, source hash and actual test scope. The hub uses the released “Live” presentation; current inventory is **nine released tools**, 9/25 (36%). Use `python scripts/test_tool.py --id case-converter` for scoped regression tests.
+Task 5 was merged through [PR #9](https://github.com/Juster06/micro-tools-hub/pull/9). [Live Case Converter](https://everydaydigitalbox.com/case-converter/) behavior and deployed source identity were verified on 2026-11-01 before its RELEASED transition. See [release evidence](audit/CASE_CONVERTER_RELEASE_VERIFICATION.json) for deployment, source hash and actual test scope. The hub uses the released “Live” presentation; current inventory is **thirteen released tools**, 13/25 (52%). Use `python scripts/test_tool.py --id case-converter` for scoped regression tests.
 
 ## Duplicate Line Remover — released and live verified
 
-[Duplicate Line Remover](duplicate-line-remover/index.html) keeps the first unique line with optional case-insensitive matching, surrounding-whitespace comparison, blank removal and deterministic sorting. It preserves original retained text, shows five actual line statistics, updates live, and supports copy/UTF-8 download/Clear. See [rules, limits and tests](duplicate-line-remover/README.md) and [release audit](audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json), with original local evidence retained. [PR #10](https://github.com/Juster06/micro-tools-hub/pull/10) was merged, and actual public behavior plus exact deployed source identity passed on 2026-11-01 before the RELEASED transition. [Open the live tool](https://everydaydigitalbox.com/duplicate-line-remover/). Its hub card uses the established Live presentation. Nine tools are released; milestone 9/25 (36%).
+[Duplicate Line Remover](duplicate-line-remover/index.html) keeps the first unique line with optional case-insensitive matching, surrounding-whitespace comparison, blank removal and deterministic sorting. It preserves original retained text, shows five actual line statistics, updates live, and supports copy/UTF-8 download/Clear. See [rules, limits and tests](duplicate-line-remover/README.md) and [release audit](audit/DUPLICATE_LINE_REMOVER_RELEASE_VERIFICATION.json), with original local evidence retained. [PR #10](https://github.com/Juster06/micro-tools-hub/pull/10) was merged, and actual public behavior plus exact deployed source identity passed on 2026-11-01 before the RELEASED transition. [Open the live tool](https://everydaydigitalbox.com/duplicate-line-remover/). Its hub card uses the established Live presentation. Thirteen tools are released; milestone 13/25 (52%).
 
 ## Task 7 — verified public releases
 
@@ -93,6 +93,10 @@ Each entry has independent implementation/live/source evidence. Six prior releas
 
 | Tool | Purpose | Open the tool |
 | --- | --- | --- |
+| Base64 Encoder and Decoder | Encode and decode Unicode text with clear Base64 validation. | [Live tool](https://everydaydigitalbox.com/base64-encoder-decoder/) · [Source](base64-encoder-decoder/index.html) |
+| URL Encoder and Decoder | Encode or decode URI components with explicit mode selection. | [Live tool](https://everydaydigitalbox.com/url-encoder-decoder/) · [Source](url-encoder-decoder/index.html) |
+| JSON Formatter | Validate, pretty-print and compact JSON locally. | [Live tool](https://everydaydigitalbox.com/json-formatter/) · [Source](json-formatter/index.html) |
+| Text Reverser | Reverse text by line, word, or grapheme unit. | [Live tool](https://everydaydigitalbox.com/text-reverser/) · [Source](text-reverser/index.html) |
 | Find and Replace | Preview and apply literal text replacements safely. | [Live tool](https://everydaydigitalbox.com/find-and-replace/) · [Source](find-and-replace/index.html) |
 | Slug Generator | Create URL-friendly slugs from text with documented Unicode rules. | [Live tool](https://everydaydigitalbox.com/slug-generator/) · [Source](slug-generator/index.html) |
 | Text Sorter | Sort text lines using explicit ordering rules. | [Live tool](https://everydaydigitalbox.com/text-sorter/) · [Source](text-sorter/index.html) |
@@ -249,9 +253,9 @@ The current application code processes captions, text, and formulas in the brows
 - Tailwind's styling script loads from the external CDN.
 - Following a streaming-provider link loads a separate third-party website.
 
-The current source contains no application analytics or caption/formula logging. Hosting and CDN providers can still receive ordinary request information such as IP addresses and browser headers. Clipboard actions place the copied content on the user's system clipboard.
+The homepage includes the owner-configured Google Analytics tag. The four Task 8 utility pages process input locally without input uploads, tracking or persistence; this is separate from homepage analytics. Hosting and CDN providers can receive ordinary request information such as IP addresses and browser headers. Clipboard actions place the copied content on the user's system clipboard.
 
-The dashed **ADSENSE BANNER PLACEMENT** containers are visual placeholders. They do not load Google AdSense code or serve ads in the current implementation. Adding real ad scripts or analytics would change the site's network and privacy behavior and should be reflected in this documentation.
+The dashed **ADSENSE BANNER PLACEMENT** containers are visual placeholders. They do not load Google AdSense code or serve ads in the current implementation. The homepage analytics addition is documented above; adding real advertising or further analytics would change network/privacy behavior and requires separate authorization.
 
 ## Hosting and the custom domain
 

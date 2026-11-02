@@ -1,6 +1,6 @@
 # Base64 Encoder and Decoder
 
-Registry ID: `base64-encoder-decoder`. Category: developer. Canonical route: `base64-encoder-decoder/index.html`. Task 8 local development only; publication pending. Current lifecycle/evidence: TOOL_REGISTRY.json and the independent audit.
+Registry ID: `base64-encoder-decoder`. Category: developer. Canonical route: `base64-encoder-decoder/index.html`. Task 8 public release verified 2026-11-02; [Live tool](https://everydaydigitalbox.com/base64-encoder-decoder/). Separate publication evidence: audit/BASE64_ENCODER_DECODER_RELEASE_VERIFICATION.json. Current lifecycle/evidence: TOOL_REGISTRY.json and the independent audit.
 
 ## Behavior and defaults
 
@@ -16,4 +16,4 @@ Standalone HTML, vanilla JavaScript, existing Tailwind Play CDN v4 and expanded 
 
 `python scripts/test_tool.py --id base64-encoder-decoder` runs nonempty exact logic fixtures and real Edge/Chromium browser cases through the existing framework. `node --test --test-concurrency=1 tests/tools/base64-encoder-decoder/*.test.mjs` adds independent boundary/error/oracle checks, stale-state/clipboard-race tests, download bytes/MIME/filename/revocation/failure, no transport/storage probes, simulated composition, labels/keyboard and hub navigation/search.
 
-Viewport checks at 320/375/768/1440 use real Chromium and actual screenshots. Clipboard APIs, composition and download capture are simulated/in-memory. This does not certify native OS clipboard/IME/Save dialogs, physical devices, screen readers, every browser or universal performance. Exact executed totals, source revision and normalized hash are recorded in audit evidence after testing. No release/publication claim.
+Viewport checks at 320/375/768/1440 use real Chromium and actual screenshots. Clipboard APIs, composition and download capture are simulated/in-memory. This does not certify native OS clipboard/IME/Save dialogs, physical devices, screen readers, every browser or universal performance. Exact executed totals, source revision and normalized hash are recorded in audit evidence after testing. Actual deployment/public-source/behavior evidence is recorded in the separate release audit.

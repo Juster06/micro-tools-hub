@@ -1,5 +1,23 @@
 # Session handoff
 
+## Latest session — Task 8 final integration and independent release (2026-11-02, Europe/London)
+
+**Status:** PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%). Published PR head `0c54cad84c07809d311b8e6af6e894acde8a0360` and original local feature `98c1eb7eb7de18e8785a296daeb179e6fda25de9` share approved tree `7cee97a1d23963cd1f133a0998cfae2319799c0e`. All six original local commits are preserved. Local main safely fast-forwarded to the actual merge with exact reviewed combined tree `9d8442ff5afb83e53afb7121e8cb09ede7b5819e`; no reset, force push, history rewrite or active-checkout movement.
+
+**Deployment and source:** actual Pages build/deploy success binds merge commit, main branch, root source and _site destination from current build logs. Each new canonical public URL returned HTTP 200 and the approved normalized whole HTML/inline CSS/JS hash. All nine prior public source hashes match. Public implementation registry/homepage matched merged source before release transitions. Four separate release audits retain actual run/job/Pages deployment IDs, source timestamps and independent live results; original Task 8 implementation and older release audits remain untouched.
+
+**Live public verification:** Text Reverser 31, JSON Formatter 36, URL Encoder/Decoder 32, Base64 Encoder/Decoder 32 passing checks, zero failures. Committed browser fixtures and additional exact public boundary/Unicode/codec/error/statistics/export/navigation/privacy scenarios ran independently per tool. Desktop/mobile screenshots reviewed, 320/375/768/1440 layouts passed. Clipboard/composition/download capture are simulated/in-memory, not native OS clipboard/IME/Save dialogs, screen-reader, physical-device or all-browser certification. Intl.Segmenter absence was simulated in the actual public page. Hosting/Tailwind requests and owner homepage analytics are separate from utility input-processing probes; no site-wide no-analytics claim.
+
+**Premerge checks:** fresh full Python 123/123, Node 249/249, four new independent suites, all nine old tool regressions (235 isolated logic, 111 framework browser / 385 assertions), templates 6 logic / 12 browser / 48 assertions, exact source/44-file/privacy review, combined 8-case hub check and project validation passed. No GitHub CI results were claimed. Final release-state regression passed: Python 123/123 and complete sequential Node 249/249, zero failures/skips, all four new scopes, nine prior regressions, templates 6/12/48 and complete project validation with zero errors/warnings. All strict publication/header checks passed without changing utility behavior, assertions or timeouts. Actual release-metadata deployment/public agreement and native launches are recorded after completion.
+
+**Release changes:** only independently qualified entries/card availability advance. All thirteen runtime utility HTML files, nine previous card blocks/registry entries/publication evidence, original audits/CNAME, owner analytics, shared framework/templates/dashboard/launcher and original local feature branches are unchanged. Eight strict lifecycle/global-count integration headers now account for the Task 8 releases; utility READMEs and relevant root docs reflect genuine release evidence. Release metadata publication requires exact reviewed blobs/tree, expected remote parent and force=false, followed by independent fetch/safe synchronization and actual deployment/public agreement. CLI credentials remain unavailable; connected GitHub publication is explicitly authorized.
+
+**Next major task:** finish only authorized Task 8 final release regression, guarded metadata publication, independent public agreement and native Desktop/Start menu verification, then clean synchronized main. No Task 9 or further utility work. The containing final documentation delivery commit is identified by `git log -1 --format="%H %s"` and the final report; this handoff cannot embed its own hash.
+
+### Historical Task 8 local implementation checkpoint
+
+# Session handoff
+
 ## Latest session — Task 8 local four-utility batch (2026-11-02, Europe/London)
 
 Task 8 is local only on `feat/task-8-four-tool-batch`, based on synchronized Task 7 main `a6ea73b24ceeeca4e6f695ad2840fd720dfb36ce`. Four existing READY/P1 entries at ranks 6–9 were selected by the actual proposal-only planner, no skipped eligible entry, unmet tool prerequisite, new registry entry or changed priority. Independent READY → IMPLEMENTED → TESTED transitions use source-bound scoped evidence; publication remains null. New cards say **Tested · publication pending**; local hub contains 13 cards, with all nine released cards unchanged. Inventory: 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED. Released milestone remains 9/25 (36%). No push, PR, merge, deployment, RELEASED transition or Task 9.
@@ -178,22 +196,22 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 25 released tools; 9 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 11; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 4; RELEASED: 9; DEPRECATED: 0.
+- Milestone: 25 released tools; 13 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 11; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 13; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: UUID Generator.
-- Git branch: feat/task-8-four-tool-batch.
-- Latest commit observed before generation: 54fec53eecb57496a8852ff4658be133c70f5926.
+- Git branch: main.
+- Latest commit observed before generation: 5e6df5389455cf9d580d9985eaa504c43a1c1b69.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
-- URL Encoder and Decoder: TESTED, evidence dated 2026-11-02.
-- Text Reverser: TESTED, evidence dated 2026-11-02.
-- JSON Formatter: TESTED, evidence dated 2026-11-02.
-- Base64 Encoder and Decoder: TESTED, evidence dated 2026-11-02.
+- URL Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
+- Text Reverser: RELEASED, evidence dated 2026-11-02.
+- JSON Formatter: RELEASED, evidence dated 2026-11-02.
+- Base64 Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
 - Text Sorter: RELEASED, evidence dated 2026-11-01.
 - Slug Generator: RELEASED, evidence dated 2026-11-01.
 - Find and Replace: RELEASED, evidence dated 2026-11-01.
@@ -216,12 +234,23 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
+- ` M` base64-encoder-decoder/README.md
 - ` M` index.html
-- `??` audit/BASE64_ENCODER_DECODER_VERIFICATION.json
-- `??` audit/JSON_FORMATTER_VERIFICATION.json
-- `??` audit/TASK_8_DEVELOPMENT_PLAN.md
-- `??` audit/TEXT_REVERSER_VERIFICATION.json
-- `??` audit/URL_ENCODER_DECODER_VERIFICATION.json
+- ` M` json-formatter/README.md
+- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
+- ` M` tests/tools/json-formatter/integration-browser.test.mjs
+- ` M` tests/tools/slug-generator/integration-browser.test.mjs
+- ` M` tests/tools/text-reverser/integration-browser.test.mjs
+- ` M` tests/tools/text-sorter/integration-browser.test.mjs
+- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
+- ` M` text-reverser/README.md
+- ` M` url-encoder-decoder/README.md
+- `??` audit/BASE64_ENCODER_DECODER_RELEASE_VERIFICATION.json
+- `??` audit/JSON_FORMATTER_RELEASE_VERIFICATION.json
+- `??` audit/TEXT_REVERSER_RELEASE_VERIFICATION.json
+- `??` audit/URL_ENCODER_DECODER_RELEASE_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

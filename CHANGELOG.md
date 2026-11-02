@@ -1,5 +1,14 @@
 # Changelog
 
+## Released — Task 8 four utilities (2026-11-02)
+
+PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%).
+
+- Per-tool real public behavior and exact whole-HTML source checks precede RELEASED. Separate release audits preserve original implementation evidence.
+- Preserved all thirteen utility implementations, nine previous cards/release entries/evidence/CNAME and owner homepage analytics. Only the four qualifying availability labels change via existing gated proposals.
+- Eight lifecycle-aware integration headers retain strict publication/navigation checks and include independently released Task 8 entries in global inventory assertions. No assertion/timeout or utility behavior was weakened.
+- Final regression, release-metadata deployment/public agreement and native Desktop/Start menu verification are recorded in the latest handoff. No Task 9.
+
 ## 2026-11-02 — Task 8 local four-utility batch
 
 Task 8 is local only on `feat/task-8-four-tool-batch`, based on synchronized Task 7 main `a6ea73b24ceeeca4e6f695ad2840fd720dfb36ce`. Four existing READY/P1 entries at ranks 6–9 were selected by the actual proposal-only planner, no skipped eligible entry, unmet tool prerequisite, new registry entry or changed priority. Independent READY → IMPLEMENTED → TESTED transitions use source-bound scoped evidence; publication remains null. New cards say **Tested · publication pending**; local hub contains 13 cards, with all nine released cards unchanged. Inventory: 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED. Released milestone remains 9/25 (36%). No push, PR, merge, deployment, RELEASED transition or Task 9.

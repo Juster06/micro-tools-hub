@@ -1,12 +1,10 @@
 # Progress tracker
 
-## Task 8 local checkpoint
+## Task 8 — independent public releases
 
-Task 8 is local only on `feat/task-8-four-tool-batch`, based on synchronized Task 7 main `a6ea73b24ceeeca4e6f695ad2840fd720dfb36ce`. Four existing READY/P1 entries at ranks 6–9 were selected by the actual proposal-only planner, no skipped eligible entry, unmet tool prerequisite, new registry entry or changed priority. Independent READY → IMPLEMENTED → TESTED transitions use source-bound scoped evidence; publication remains null. New cards say **Tested · publication pending**; local hub contains 13 cards, with all nine released cards unchanged. Inventory: 93 total, 9 RELEASED, 4 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED. Released milestone remains 9/25 (36%). No push, PR, merge, deployment, RELEASED transition or Task 9.
+PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%).
 
-Independent functional results and limitations are in each audit; the tracking reports remain structural validation rather than functional-test totals.
-
-Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` for the full tracking workflow, or `python scripts/generate_progress.py` to refresh only registry-derived documents. Existing Node commands delegate to the same Python engine. Counts are not separate manually maintained totals. Original four-tool baseline audit: 2026-10-31. Case Converter live behavior/source verification: 2026-11-01; static tracking checks do not refresh either date.
+Actual per-tool publication/source/live results are in separate release audits; original audits remain unchanged. Final metadata deployment and Windows shortcut checks precede completion. Homepage analytics is preserved; utility input privacy is scoped separately. No Task 9.
 
 ## Inventory and current milestone
 
@@ -20,14 +18,14 @@ Inventory source: `TOOL_REGISTRY.json`. Run `python scripts/project_status.py` f
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 4 |
-| RELEASED | 9 |
+| TESTED | 0 |
+| RELEASED | 13 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 80 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **25 released tools**. Progress: 9/25 (36.0%); remaining: 16.
+Current growth milestone: **25 released tools**. Progress: 13/25 (52.0%); remaining: 12.
 
 ### Tools by category
 
@@ -61,10 +59,10 @@ Next ready tool: **UUID Generator**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| URL Encoder and Decoder | TESTED | 2026-11-02 |
-| Text Reverser | TESTED | 2026-11-02 |
-| JSON Formatter | TESTED | 2026-11-02 |
-| Base64 Encoder and Decoder | TESTED | 2026-11-02 |
+| URL Encoder and Decoder | RELEASED | 2026-11-02 |
+| Text Reverser | RELEASED | 2026-11-02 |
+| JSON Formatter | RELEASED | 2026-11-02 |
+| Base64 Encoder and Decoder | RELEASED | 2026-11-02 |
 | Text Sorter | RELEASED | 2026-11-01 |
 | Slug Generator | RELEASED | 2026-11-01 |
 | Find and Replace | RELEASED | 2026-11-01 |
@@ -77,7 +75,7 @@ The backlog total includes READY and BLOCKED; those rows must not be added again
 
 ## Current development task
 
-PR #11 merged normally as `d3ddb6de807913c05832e24a77797f033b353497` at 2026-11-01T22:51:53Z. Actual successful [Pages implementation run 41359251674](https://github.com/Juster06/micro-tools-hub/actions/runs/41359251674), independent live browser behavior and exact approved public source hashes passed before each RELEASED transition. Original local audits/source checkpoints remain preserved. Current inventory: 93 total, 9 RELEASED, 0 TESTED, 15 READY, 68 PLANNED, 1 BLOCKED; milestone 9/25 (36%). Final release-state regression, independently verified metadata deployment, native Desktop/Start menu launches and clean synchronized main precede completion. Do not begin Task 8.
+PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%). Final release-state regression, metadata publication/public agreement and native dashboard verification are recorded in the latest handoff. Await owner scope; no Task 9.
 
 ## Recently completed work
 
