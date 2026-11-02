@@ -1,5 +1,186 @@
 # Session handoff
 
+## Latest session — Task 9.5 Stage B VERIFIED: PR #14 ready for review (2026-11-02)
+
+**Status:** [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) is open,
+non-draft, targets main, conflict-free, auto-merge off. Genuine [Functional CI
+run 41425207614](https://github.com/Juster06/micro-tools-hub/actions/runs/41425207614)
+for feature `858fc772833a2456931cd80a3ac2eeaf397fd979` completed successfully
+on pull_request: all three functional jobs and the aggregate passed. No merge,
+deployment, repository settings/ruleset/protection or lifecycle change; no Task 10.
+This documentation-only checkpoint records already verified evidence; the final
+delivery report identifies its exact local/published commit, tree and hosted run.
+
+**Identity/history:** main/origin-main remain `93867ed9d02b702eaff250288f58ca7abba7bbab`.
+Original local `0f4a1f31ac2036e15505a58196477f328554fb36` and initial published
+`6ab9a72ce0db09bd6ff52e0dae0cdde0a3b167be` have tree
+`1bbc130efb8fb43cd12d9c6cd9166fa4fa8527dd`. Separate local correction
+`aea2910ae433f05d1546f6594fc4e0c11ffa074b` and published correction
+`858fc772833a2456931cd80a3ac2eeaf397fd979` have tree
+`cd301498becbd98811a1338215fdb7bcb39ac133`. Normal Git push lacked local
+authentication; authorized connector published exact reviewed blobs/trees with
+expected-parent guard and force=false. Independent fetch verified all 224 files
+and zero committed-content differences at each checkpoint. Original commits,
+branches and active checkout preserved. Only the original 19-file scope changed.
+
+**Genuine failure/fix:** initial hosted [run 41423878108](https://github.com/Juster06/micro-tools-hub/actions/runs/41423878108)
+executed 141 Python tests, 135 passed/6 failed/0 skipped. Windows TEMP used an 8.3
+alias while production resolves the same directory to its long path. Node and
+real Linux Chromium passed; aggregate correctly failed on the Python failure.
+All original logs and failure artifact were retained/inspected. Fix only the CI
+unittest bootstrap's temporary root before discovery; add one guard and raise
+the floor to 142. Locally reproduced with a real distinct 8.3 TEMP alias, all
+12 unchanged launcher tests passed. No production or existing test assertions,
+browser flags, interaction waits, security model or mandatory scopes changed.
+
+**Actual hosted results:** Windows-2022 Python **142/142**, zero failures/skips;
+registry/lifecycle/source/audit/homepage/status and all 18 structural profiles PASS,
+zero validation errors/warnings. Ubuntu-24.04 Node **179/179** plus **639** JSON
+logic cases PASS. Ubuntu-22.04 real Chromium **196/196** extended/navigation tests,
+**291** fixture cases/**777** assertions and neutral templates **6 logic/12 browser/
+48 assertions** PASS. Python 3.14.4, Node 24.22.1, Playwright 1.64.1, actual
+Chromium 156.0.8078.4/revision1248. Browser preflight/acquisition/CDP launch and
+real local DOM/navigation execution confirmed from logs. Sandbox retained.
+Four specialist isolated-logic scopes remain explicitly NOT RUN; required
+structural/browser profiles passed. No invented dashboard functional totals.
+
+**Quality gate/artifacts:** actual first aggregate saw failure/success/success
+and failed; corrected aggregate saw success/success/success and passed. Hosted
+Python guards also tested missing/failed/cancelled/skipped aggregate inputs and
+child timeout behavior. All three real ZIP artifacts were downloaded, digest
+verified, contents allowlisted, counts matched against execution logs and coverage
+compared with that exact published commit. Only summary.json and coverage.json,
+seven-day retention, no credentials/personal paths/raw private logs/profiles.
+This proves hosted operation, not branch-protection enforcement or deployment gating.
+
+**Local/preservation:** fresh baseline 141 Python/375 Node then corrected full
+regression 142 Python/375 Node, logic/browser/templates, project workflow,
+actionlint/privacy/whitespace PASS. All 18 utility HTML, entire registry, homepage/
+Live cards/Analytics, CNAME, prior tests/audits/framework/templates, dashboard/
+launcher and Desktop/Start menu shortcut bytes/COM properties unchanged. Existing
+GitHub-managed main/root Pages workflow remains separate; no PR website deployment.
+Inventory unchanged: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED,
+18/25 (72%). Native installed-shortcut launch is not newly claimed in Stage B.
+
+**Next major task:** await owner review and separately authorized integration of
+PR #14. Verify the containing documentation checkpoint's hosted run/current PR
+head when resuming; final delivery records that independent check. Do not merge,
+change settings/protection/statuses, deploy or begin Task 10 without that scope.
+No remaining functional blocker; do not claim branch protection is configured.
+
+### Historical Task 9.5 Stage B failure investigation
+
+## Historical Task 9.5 Stage B: initial hosted compatibility investigation
+
+**Authorization:** owner authorized publishing, one PR to main, real hosted tests
+and narrow compatibility fixes. No merge/settings/protection/deployment/status
+changes or Task 10. Base remains main `93867ed9d02b702eaff250288f58ca7abba7bbab`.
+
+**Initial publication:** preserved original local `0f4a1f31ac2036e15505a58196477f328554fb36`.
+Normal noninteractive Git push lacked authentication. Connected account published
+`6ab9a72ce0db09bd6ff52e0dae0cdde0a3b167be`, exact tree
+`1bbc130efb8fb43cd12d9c6cd9166fa4fa8527dd`. All 19 changed blobs and all 224
+complete-tree files independently fetched/verified, zero content differences.
+[PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) targets main, is open,
+non-draft, auto-merge off and conflict-free. Fresh prepublication local baseline
+passed 141 Python, 375 Node, 639 logic cases, 291 browser cases/777 assertions,
+templates, registry/source/homepage/status, lint/privacy/whitespace and preservation.
+
+**Actual hosted finding:** [run 41423878108](https://github.com/Juster06/micro-tools-hub/actions/runs/41423878108)
+is a genuine pull_request event for the published commit. Ubuntu Node passed
+179 tests plus 639 logic fixtures. Windows executed 141 Python tests: 135 passed,
+6 failed, zero skipped. Every failure compared the same temporary directory's
+Windows 8.3 alias against the resolved long name. Logs and uploaded failure
+summary are preserved outside Git; CI correctly returned nonzero. This is a
+fixture-root portability issue, not a production behavior defect.
+
+**Narrow correction:** the CI unittest bootstrap resolves Windows tempfile's root
+before discovery. Add one CI-only regression guard and increase the coverage
+floor to 142; existing 123 Python tests, all Node/browser assertions, timeouts,
+runtime/action pins and production/dashboard/launcher code remain unchanged.
+No skipped tests, error suppression, sandbox bypass or broad timeout changes.
+Final local regression and a new genuine hosted run are required before success.
+
+**Next major task:** finish this authorized Stage B correction/verification,
+inspect all genuine hosted jobs and actual sanitized artifacts, record final PR
+and source identities, leave PR open for review. Preserve both local/published
+histories and all website/runtime/registry/Analytics/domain/shortcut content.
+Do not merge, change settings/protection/statuses, deploy or begin Task 10.
+
+### Historical Task 9.5 Stage A delivery
+
+## Latest session — Task 9.5 Stage A COMPLETE locally; GitHub verification pending (2026-11-02)
+
+**Status:** Local functional CI implementation only, on `feat/task-9-5-functional-ci`.
+Base main `93867ed9d02b702eaff250288f58ca7abba7bbab`, tree
+`9e3974eff435b7ece6b1bc8387343e6956c78241`, fetched and verified clean before
+branching. Inventory unchanged: 93 total, 18 RELEASED, 0 TESTED, 6 READY,
+68 PLANNED, 1 BLOCKED, 18/25 (72%). The containing local commit/tree are resolved
+with `git log -1 --format="%H %T %s"`; this handoff cannot contain its own hash.
+
+**Implementation:** `.github/workflows/functional-ci.yml` uses PRs targeting main,
+pushes to main and manual dispatch; contents:read, no secrets/privileged PR event,
+no persisted checkout credentials, official Actions pinned to verified SHAs,
+PR-specific cancellation, and three required jobs plus aggregate. Python/native
+fixtures use windows-2022; pure Node uses ubuntu-24.04; actual browser uses
+ubuntu-22.04 to retain Chromium sandboxing without Ubuntu 23.10+ AppArmor overrides.
+Python 3.14.4, Node 24.22.1, locked CI-only Playwright 1.64.1 supplies full
+Chromium 156.0.8078.4 revision 1248. Existing harness/source/assertions/timeouts
+unchanged. Read `scripts/ci/README.md`, `DESIGN.md`, `coverage.json`, runners and
+`tests/test_ci.py` before modifying CI. No website runtime/build migration.
+
+**Local validation:** Python 141/141 (all original 123 plus 18 CI guards), Node
+179 logic +196 browser =375/375, zero failures/skips; fourteen JSON logic profiles
+639 cases, eighteen JSON browser profiles 291 cases/777 assertions, both neutral
+templates 6 logic/12 browser/48 assertions PASS. Complete browser partitions passed
+independently in Edge 156.0.4314.58 and pinned Windows Chromium 156.0.8078.4.
+All eighteen structural profiles, registry/lifecycle/source/audits/homepage/status
+and whitespace checks passed. actionlint 1.7.12 passed. Existing specialist pages
+still have NOT RUN isolated logic; their structural/browser profiles are required.
+Dashboard functional-test counts remain unavailable, not inferred from CI.
+
+**Negative evidence:** 26 initial and 17 final controlled command invocations in
+disposable copies; all expected outcomes observed, 24 deliberate nonzero controls.
+Python/Node/browser assertions, browser expectation timeout, registry error,
+source-hash mismatch, missing browser/file, empty fixtures, Python/Node mandatory
+skip, zero-real-test Node file/count floor, child timeout and failed/cancelled/
+skipped/missing aggregate jobs were detected. Restored baselines passed. Original
+approved production source/evidence was never mutated. Failing command logs remain
+outside Git. Node skip returned zero natively but CI correctly failed and reported
+the skip; failure counts remain visible in sanitized summaries.
+
+**Browser setup finding:** first pinned Windows preflight failed before assertions
+because downloaded binaries lacked AppContainer read/execute access. Original
+failure retained; standard package SIDs received RX only on the disposable owned
+public browser cache. No home/project/user-data permissions, system registry,
+existing shortcuts, sandbox flags, assertions or interaction waits changed. Native
+Edge and pinned-browser behavior passed after repair. Linux OS/dependency/hosted
+behavior remains pending actual GitHub execution; no local suitable emulator was
+available or installed. No CI operational claim.
+
+**Preservation/deployment:** all eighteen runtime HTML files, complete registry,
+homepage cards/owner Analytics, CNAME, previous tests/implementation and release
+audits, shared framework/templates and dashboard/launcher implementations remain
+byte-identical to base. Existing Desktop/Start menu link bytes and COM properties
+verified unchanged; native Tk/COM fixture tests passed. No new actual installed
+shortcut launch is claimed in Stage A. Original branches and active checkout
+remain. Only CI files/guards, dependency ignore and relevant docs changed.
+GitHub-managed Pages remains active at dynamic/pages/pages-build-deployment;
+last inspected successful baseline run 41410170246, main/root Jekyll to ./_site.
+No deployment workflow/configuration edit, new deploy, lifecycle or protection
+change. Main pushes can still deploy independently of functional checks.
+
+**Next major task:** Task 9.5 Stage A is complete locally. Await separately
+authorized GitHub preparation: re-fetch/review main and full diff, rerun relevant
+gates, publish exact reviewed branch, create PR, inspect actual three hosted jobs,
+summaries/artifacts and aggregate result. Only a genuine successful hosted run may
+establish operational CI; protection/deployment enforcement requires separate
+authorization. Do not publish, create a PR, merge, deploy, change settings/statuses
+or begin Task 10 under Stage A. No remaining local blocker; GitHub verification is
+pending by scope. The delivery report gives final local commit/tree and clean state.
+
+### Historical Task 9 final release handoff
+
 ## Latest session — Task 9 COMPLETE: five utilities released and live verified (2026-11-02, Europe/London)
 
 **Status:** PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).
@@ -283,8 +464,8 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Tool status counts: IDEA: 0; PLANNED: 68; READY: 6; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 18; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Profit Margin Calculator.
-- Git branch: main.
-- Latest commit observed before generation: e8d6cb326ba8d4a3c73a3ccc8bdc000389086bff.
+- Git branch: feat/task-9-5-functional-ci.
+- Latest commit observed before generation: aea2910ae433f05d1546f6594fc4e0c11ffa074b.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -311,7 +492,10 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
+- ` M` CHANGELOG.md
+- ` M` README.md
 - ` M` SESSION_HANDOFF.md
+- ` M` scripts/ci/README.md
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

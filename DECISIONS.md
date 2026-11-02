@@ -1,5 +1,26 @@
 # Decision log
 
+## 2026-11-02 — Execute existing functional suites through independent CI gates
+
+**Decision:** Explicit coverage map, Windows full Python regression for native
+Tk/COM tests, Ubuntu Node logic and sequential real Chromium partitions, strict
+executed-count/exit/skip gates and an always-evaluated aggregate. Pin runtime,
+official action commit SHAs and CI-only browser-acquisition lock. Reuse the
+unchanged CDP harness; no production/build migration. Use supported Ubuntu 22.04
+for the browser job to avoid Ubuntu 23.10+ AppArmor overrides while keeping the
+sandbox enabled; Node/aggregate use Ubuntu 24.04.
+
+**Reason:** Pages build success and static validators do not prove functionality.
+Required tests must execute with real failures and missing evidence failing CI.
+Windows-only tests must not be silently skipped on Linux, nor the entire suite
+duplicated unnecessarily across runner platforms.
+
+**Consequences:** Hosted CI still requires an authorized branch/PR publication and
+actual successful run. No status/publication/deployment/protection changes. The
+four specialist isolated-logic scopes remain unavailable; public/native release
+checks remain separate. Only sanitized count/status summaries and coverage map
+are retained seven days. See [CI documentation](scripts/ci/README.md).
+
 ## 2026-11-01 — Stage tools and expand UI fragments at generation time
 
 **Decision:** Generate six-file bundles only under ignored `development/scaffolds/<id>/`; use a nested real page and development preview hub. Expand shared CSS/HTML/JS fragments into standalone pages. Promote source/tests manually after real implementation.

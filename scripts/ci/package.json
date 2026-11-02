@@ -1,0 +1,8 @@
+{
+  "name": "everyday-digital-box-ci-browser",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development-only pinned Chromium acquisition; not a website build dependency",
+  "engines": {"node": "24.22.1"},
+  "devDependencies": {"playwright": "1.64.1"}
+}

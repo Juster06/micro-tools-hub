@@ -1,5 +1,34 @@
 # Everyday Digital Box — WebUtils Hub
 
+## Task 9.5 — GitHub functional CI verified; pull request awaiting review
+
+[PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) targets main and remains
+open. Genuine [hosted run 41425207614](https://github.com/Juster06/micro-tools-hub/actions/runs/41425207614)
+passed all Python, Node, real Chromium and aggregate jobs after a narrow CI-only
+Windows temporary-root compatibility fix. See [CI coverage, setup and limits](scripts/ci/README.md).
+All 18 tools, registry, homepage, owner Analytics, domain, dashboard and shortcuts
+remain unchanged. CI does not claim branch-protection enforcement or block the
+separate Pages deployment. No merge, deployment, lifecycle/settings change or Task 10.
+
+## Task 9.5 Stage B — pull request and hosted verification
+
+[PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) targets main and remains
+open. The approved original local commit is preserved with exact published tree
+identity. Real hosted verification exposed a Windows temporary-directory alias
+issue; a CI-only bootstrap correction and regression guard are being verified.
+See [CI documentation](scripts/ci/README.md) and the latest handoff for actual
+results. No merge, deployment, repository settings or lifecycle change; no Task 10.
+
+## Task 9.5 — functional CI implemented locally; GitHub verification pending
+
+The dedicated local branch `feat/task-9-5-functional-ci` adds genuine Python,
+Node and real Chromium quality gates, explicit coverage and failure propagation.
+Read [CI commands, setup, platform audit and limitations](scripts/ci/README.md).
+The website needs no new build/runtime dependency. All 18 released implementations,
+registry entries, homepage cards, owner Analytics, domain and dashboard/shortcuts
+remain unchanged. Stage A does not publish, open a PR, merge, deploy or configure
+protection; no GitHub-hosted functional pass or Task 10 is claimed.
+
 ## Task 9 — five independent public releases (2026-11-02)
 
 PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).

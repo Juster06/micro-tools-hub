@@ -1,5 +1,55 @@
 # Changelog
 
+## Task 9.5 Stage B — GitHub functional CI verified; PR #14 open
+
+- Genuine pull_request run 41425207614 for published correction 858fc772833a2456931cd80a3ac2eeaf397fd979
+  passed Windows Python 142/142, Ubuntu Node 179/179 +639 logic fixtures, actual
+  Chromium 196/196 +291 browser cases/777 assertions, templates 6/12/48 and aggregate.
+- Initial run 41423878108 correctly failed six Windows 8.3/long TEMP path
+  comparisons and the aggregate; preserve failure evidence. CI-only canonical
+  temporary-root bootstrap plus one regression guard fixed it, no weakened tests.
+- Independently fetched complete 224-file trees match local checkpoints; original
+  commits retained. Actual artifacts/digests/coverage/counts/privacy/seven-day
+  retention verified against logs. Current PR scope remains 19 files.
+- This documentation-only checkpoint records completed verification; final current
+  commit/tree/hosted-run identity is in the delivery report. No production source,
+  registry/homepage/Analytics/domain/dashboard/shortcut changes, merge, deployment,
+  protection/settings/lifecycle changes or Task 10.
+
+## Task 9.5 Stage B — hosted Windows fixture compatibility
+
+- Opened PR #14 against main with exact approved 19-file content; original local
+  commit preserved, independent fetched tree equality verified.
+- Genuine hosted run 41423878108 exposed six Windows short/long temporary-root
+  path comparisons (135/141 Python pass, zero skips). Failure evidence retained.
+- Canonicalize only the CI unittest temporary root before fixture discovery;
+  add one regression guard and raise the reviewed floor to 142 Python tests.
+  Existing tests/assertions and production/dashboard/launcher code stay unchanged.
+- Full local and subsequent hosted verification remain required. No merge,
+  deployment, settings/protection/lifecycle changes or Task 10.
+
+## Local only — Task 9.5 functional CI and quality gates (2026-11-02)
+
+- Added SHA-pinned read-only PR-to-main/main-push/manual workflow, three genuine
+  test partitions and aggregate failure gate. Runtime pins: Python 3.14.4,
+  Node 24.22.1, Playwright 1.64.1 / Chromium 156.0.8078.4 revision 1248.
+- Added explicit coverage map, strict nonempty/count/skip/layer/timeout checks,
+  safe diagnostic summaries, locked development-only browser acquisition,
+  platform classification and maintenance/deployment documentation.
+- Local Python 141/141 (123 existing + 18 CI guards), Node 179 logic + 196 browser
+  = 375/375, fourteen JSON logic profiles (639 cases), eighteen browser profiles
+  (291 cases /777 assertions) and templates (6 logic /12 browser /48 assertions)
+  passed. Complete browser partitions passed separately in Windows Edge and the
+  pinned Windows Chromium; no Linux/hosted pass is inferred.
+- Forty-three controlled baseline/failure/restoration invocations passed their
+  expected outcomes, including 24 deliberately nonzero controls. Initial pinned
+  Windows browser preflight failure was retained and fixed by read/execute ACLs
+  only on its disposable public binary cache; no sandbox, assertion or timeout
+  weakening. actionlint 1.7.12 passed.
+- Production HTML/registry/homepage/Analytics/CNAME, previous tests/evidence,
+  framework/templates/dashboard/launcher and shortcut properties remain unchanged.
+  No push, PR, merge, deployment, protection/settings changes or Task 10.
+
 ## Released — Task 9 five utilities (2026-11-02)
 
 PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).

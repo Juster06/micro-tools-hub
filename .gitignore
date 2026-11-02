@@ -4,3 +4,5 @@ __pycache__/
 *.py[cod]
 # Scaffolds are development artifacts, never part of a website publication.
 /development/
+# CI-only browser installer dependencies; never website assets.
+/scripts/ci/node_modules/

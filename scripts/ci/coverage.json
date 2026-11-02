@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "python_files": [
+    "tests/test_ci.py",
+    "tests/test_dashboard.py",
+    "tests/test_status_launcher.py",
+    "tests/test_tool_framework.py",
+    "tests/test_tracking.py"
+  ],
+  "node_files": [
+    "scripts/project.test.mjs",
+    "scripts/tool-framework.test.mjs",
+    "tests/tools/base64-encoder-decoder/logic.test.mjs",
+    "tests/tools/case-converter/logic.test.mjs",
+    "tests/tools/discount-calculator/logic.test.mjs",
+    "tests/tools/duplicate-line-remover/logic.test.mjs",
+    "tests/tools/find-and-replace/logic.test.mjs",
+    "tests/tools/json-formatter/logic.test.mjs",
+    "tests/tools/percentage-calculator/logic.test.mjs",
+    "tests/tools/percentage-change-calculator/logic.test.mjs",
+    "tests/tools/slug-generator/logic.test.mjs",
+    "tests/tools/text-reverser/logic.test.mjs",
+    "tests/tools/text-sorter/logic.test.mjs",
+    "tests/tools/timestamp-converter/logic.test.mjs",
+    "tests/tools/url-encoder-decoder/logic.test.mjs",
+    "tests/tools/uuid-generator/logic.test.mjs"
+  ],
+  "browser_files": [
+    "tests/tools/base64-encoder-decoder/extended-browser.test.mjs",
+    "tests/tools/base64-encoder-decoder/integration-browser.test.mjs",
+    "tests/tools/case-converter/extended-browser.test.mjs",
+    "tests/tools/case-converter/integration-browser.test.mjs",
+    "tests/tools/discount-calculator/extended-browser.test.mjs",
+    "tests/tools/discount-calculator/integration-browser.test.mjs",
+    "tests/tools/duplicate-line-remover/extended-browser.test.mjs",
+    "tests/tools/duplicate-line-remover/integration-browser.test.mjs",
+    "tests/tools/find-and-replace/extended-browser.test.mjs",
+    "tests/tools/find-and-replace/integration-browser.test.mjs",
+    "tests/tools/json-formatter/extended-browser.test.mjs",
+    "tests/tools/json-formatter/integration-browser.test.mjs",
+    "tests/tools/percentage-calculator/extended-browser.test.mjs",
+    "tests/tools/percentage-calculator/integration-browser.test.mjs",
+    "tests/tools/percentage-change-calculator/extended-browser.test.mjs",
+    "tests/tools/percentage-change-calculator/integration-browser.test.mjs",
+    "tests/tools/slug-generator/extended-browser.test.mjs",
+    "tests/tools/slug-generator/integration-browser.test.mjs",
+    "tests/tools/text-reverser/extended-browser.test.mjs",
+    "tests/tools/text-reverser/integration-browser.test.mjs",
+    "tests/tools/text-sorter/extended-browser.test.mjs",
+    "tests/tools/text-sorter/integration-browser.test.mjs",
+    "tests/tools/timestamp-converter/extended-browser.test.mjs",
+    "tests/tools/timestamp-converter/integration-browser.test.mjs",
+    "tests/tools/url-encoder-decoder/extended-browser.test.mjs",
+    "tests/tools/url-encoder-decoder/integration-browser.test.mjs",
+    "tests/tools/uuid-generator/extended-browser.test.mjs",
+    "tests/tools/uuid-generator/integration-browser.test.mjs"
+  ],
+  "tools": {
+    "social-counter": {
+      "structural_job": "python-project",
+      "logic_job": null,
+      "browser_job": "browser-tests",
+      "unavailable_reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+    },
+    "excel-sandbox": {
+      "structural_job": "python-project",
+      "logic_job": null,
+      "browser_job": "browser-tests",
+      "unavailable_reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+    },
+    "text-cleaner": {
+      "structural_job": "python-project",
+      "logic_job": null,
+      "browser_job": "browser-tests",
+      "unavailable_reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+    },
+    "streaming-roulette": {
+      "structural_job": "python-project",
+      "logic_job": null,
+      "browser_job": "browser-tests",
+      "unavailable_reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+    },
+    "case-converter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "duplicate-line-remover": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "text-sorter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "text-reverser": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "find-and-replace": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "slug-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "json-formatter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "base64-encoder-decoder": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "url-encoder-decoder": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "uuid-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "timestamp-converter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "percentage-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "percentage-change-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "discount-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    }
+  },
+  "templates": {
+    "job": "browser-tests",
+    "command": "python scripts/verify_tool_templates.py",
+    "required_layers": [
+      "structural",
+      "logic",
+      "browser"
+    ]
+  },
+  "validation": {
+    "job": "python-project",
+    "commands": [
+      "python scripts/validate_registry.py --json --no-report",
+      "python scripts/check_project.py --json --no-report",
+      "python scripts/verify_tools.py --json --no-report",
+      "python scripts/project_status.py --check-only --no-report --json",
+      "git diff --check",
+      "git diff --check <validated-event-base> HEAD"
+    ]
+  },
+  "jobs": {
+    "python-project": {
+      "runner": "windows-2022",
+      "command": "python scripts/ci/run.py python-project"
+    },
+    "node-regression": {
+      "runner": "ubuntu-24.04",
+      "command": "python scripts/ci/run.py node-regression"
+    },
+    "browser-tests": {
+      "runner": "ubuntu-22.04",
+      "command": "python scripts/ci/run.py browser-tests"
+    }
+  },
+  "runtimes": {
+    "python": "3.14.4",
+    "node": "24.22.1",
+    "playwright": "1.64.1"
+  },
+  "exclusions": [
+    {
+      "scope": "public-live-publication",
+      "reason": "CI is isolated/offline; requires separate genuine deployment and canonical public source/live checks."
+    },
+    {
+      "scope": "installed-native-shortcuts-and-OS-dialogs",
+      "reason": "Only temporary Windows COM/Tk fixtures run in CI; actual owner shortcuts, clipboard, Save dialog, IME, physical devices and screen reader remain manual."
+    }
+  ],
+  "minimum_tests": {
+    "python-project": 142,
+    "node-regression": 179,
+    "browser-tests": 196
+  },
+  "aggregate": {
+    "job": "required-checks",
+    "runner": "ubuntu-24.04",
+    "command": "python scripts/ci/required_checks.py",
+    "requires": [
+      "python-project",
+      "node-regression",
+      "browser-tests"
+    ]
+  }
+}

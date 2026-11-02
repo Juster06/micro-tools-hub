@@ -1,0 +1,149 @@
+name: Functional CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  PYTHONUTF8: '1'
+  PYTHONIOENCODING: utf-8
+
+jobs:
+  python-project:
+    name: Python and project validation
+    runs-on: windows-2022
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.4'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.22.1'
+          package-manager-cache: false
+      - name: Execute required python-project scopes
+        env:
+          EDB_CI_DIFF_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: python scripts/ci/run.py python-project
+      - name: Retain sanitized counts and coverage map
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: functional-ci-python-project
+          path: |
+            reports/ci/python-project/summary.json
+            scripts/ci/coverage.json
+          if-no-files-found: error
+          retention-days: 7
+  node-regression:
+    name: Node logic regression
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.4'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.22.1'
+          package-manager-cache: false
+      - name: Execute required node-regression scopes
+        env:
+          EDB_CI_DIFF_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: python scripts/ci/run.py node-regression
+      - name: Retain sanitized counts and coverage map
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: functional-ci-node-regression
+          path: |
+            reports/ci/node-regression/summary.json
+            scripts/ci/coverage.json
+          if-no-files-found: error
+          retention-days: 7
+  browser-tests:
+    name: Real Chromium browser tests
+    # Keep Chromium's sandbox enabled without Ubuntu 23.10+ AppArmor overrides.
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.4'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.22.1'
+          package-manager-cache: false
+      - name: Install locked browser acquisition dependency
+        run: npm ci --prefix scripts/ci --ignore-scripts --no-audit --no-fund
+      - name: Install pinned full Chromium and Linux system dependencies
+        working-directory: scripts/ci
+        run: npx --no-install playwright install --with-deps --no-shell chromium
+      - name: Select pinned executable for the existing CDP harness
+        run: node scripts/ci/browser-path.cjs --github-env
+      - name: Execute required browser-tests scopes
+        env:
+          EDB_CI_DIFF_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: python scripts/ci/run.py browser-tests
+      - name: Retain sanitized counts and coverage map
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: functional-ci-browser-tests
+          path: |
+            reports/ci/browser-tests/summary.json
+            scripts/ci/coverage.json
+          if-no-files-found: error
+          retention-days: 7
+
+  required-checks:
+    name: Required functional checks
+    if: ${{ always() }}
+    needs: [python-project, node-regression, browser-tests]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.4'
+      - name: Require every functional job to succeed
+        env:
+          PYTHON_RESULT: ${{ needs.python-project.result }}
+          NODE_RESULT: ${{ needs.node-regression.result }}
+          BROWSER_RESULT: ${{ needs.browser-tests.result }}
+        shell: bash
+        run: python scripts/ci/required_checks.py
