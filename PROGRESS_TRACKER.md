@@ -1,5 +1,34 @@
 # Progress tracker
 
+## Task 10 — tested batch awaiting owner review
+
+Task 10 implements the last six READY entries (ranks 15–20), each now
+**TESTED / REQUIRED_PASSED**, with `publication: null`. Branch
+`feat/task-10-six-tool-batch` targets protected `main`. The PR must remain open
+for owner review; no merge, bypass, deployment or RELEASED transition is authorized.
+The branch hub has 24 unique cards, including six **Tested · publication pending**
+labels. Existing 18 released pages/entries/cards/evidence, CNAME, owner Analytics,
+framework/runtime/workflow pins and the dashboard/launcher are preserved.
+
+Inventory: **93 registered, 18 RELEASED, 6 TESTED, 0 READY, 68 PLANNED, 1 BLOCKED**.
+Before development: 18 RELEASED, 0 TESTED, 6 READY. Released milestone remains
+**18/25 (72%)**; implementation/testing/PR completion is not public release.
+
+Local CI partitions passed: Python **142/142**, Node **225/225** plus **791**
+inline logic fixtures, real Chromium **268/268** plus **338** browser fixtures /
+**987** assertions. Both neutral templates passed (6 logic / 12 browser / 48
+assertions). No mandatory failure, skip, cancellation or timeout in the final
+run. Registry, source/evidence, all 24 structural profiles and full project status
+passed with **zero errors and warnings**. Four legacy isolated-logic adapters
+remain explicitly unavailable; their structural/browser checks still run.
+
+Owner review of the Task 10 PR, followed only on explicit approval by ordinary
+integration and independent deployment/public-source/behavior verification.
+Submit eventual release evidence through another ordinary protected-main PR.
+Then review readiness of the 68 PLANNED entries; no READY tools remain. Releasing
+these six would produce 24 released tools, so one additional reviewed distinct
+tool is still needed for the first milestone. Do not begin another utility now.
+
 ## Task 9 — independently verified public releases
 
 PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).
@@ -28,14 +57,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | Total registered utilities | 93 |
 | IDEA | 0 |
 | PLANNED | 68 |
-| READY | 6 |
+| READY | 0 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 0 |
+| TESTED | 6 |
 | RELEASED | 18 |
 | DEPRECATED | 0 |
-| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 75 |
+| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 69 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
@@ -67,29 +96,46 @@ Current growth milestone: **25 released tools**. Progress: 18/25 (72.0%); remain
 
 Current registered tool task: **none**. Session infrastructure work is recorded in the manual handoff.
 
-Next ready tool: **Profit Margin Calculator**.
+Next ready tool: **REQUIRES REVIEW**.
 
 ### Recently verified tools (registry evidence dates)
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
+| Secure Random Number Generator | TESTED | 2026-11-03 |
+| Random Name Picker | TESTED | 2026-11-03 |
+| Profit Margin Calculator | TESTED | 2026-11-03 |
+| Hashtag Organizer | TESTED | 2026-11-03 |
+| Date Difference Calculator | TESTED | 2026-11-03 |
+| Countdown Timer | TESTED | 2026-11-03 |
 | UUID Generator | RELEASED | 2026-11-02 |
 | URL Encoder and Decoder | RELEASED | 2026-11-02 |
 | Timestamp Converter | RELEASED | 2026-11-02 |
 | Text Reverser | RELEASED | 2026-11-02 |
-| Percentage Change Calculator | RELEASED | 2026-11-02 |
-| Percentage Calculator | RELEASED | 2026-11-02 |
-| JSON Formatter | RELEASED | 2026-11-02 |
-| Discount Calculator | RELEASED | 2026-11-02 |
-| Base64 Encoder and Decoder | RELEASED | 2026-11-02 |
-| Text Sorter | RELEASED | 2026-11-01 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.
 
 ## Current development task
 
-PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-02T02:45:09Z. Actual successful [Pages run 41379385778](https://github.com/Juster06/micro-tools-hub/actions/runs/41379385778) and independent public browser/approved-source checks qualified each released utility. Current inventory: 93 total, 13 RELEASED, 0 TESTED, 11 READY, 68 PLANNED, 1 BLOCKED; milestone 13/25 (52%). Final release-state regression, metadata publication/public agreement and native dashboard verification are recorded in the latest handoff. Await owner scope; no Task 9.
+Task 10 implements the last six READY entries (ranks 15–20), each now
+**TESTED / REQUIRED_PASSED**, with `publication: null`. Branch
+`feat/task-10-six-tool-batch` targets protected `main`. The PR must remain open
+for owner review; no merge, bypass, deployment or RELEASED transition is authorized.
+The branch hub has 24 unique cards, including six **Tested · publication pending**
+labels. Existing 18 released pages/entries/cards/evidence, CNAME, owner Analytics,
+framework/runtime/workflow pins and the dashboard/launcher are preserved.
+
+Inventory: **93 registered, 18 RELEASED, 6 TESTED, 0 READY, 68 PLANNED, 1 BLOCKED**.
+Before development: 18 RELEASED, 0 TESTED, 6 READY. Released milestone remains
+**18/25 (72%)**; implementation/testing/PR completion is not public release.
+
+Owner review of the Task 10 PR, followed only on explicit approval by ordinary
+integration and independent deployment/public-source/behavior verification.
+Submit eventual release evidence through another ordinary protected-main PR.
+Then review readiness of the 68 PLANNED entries; no READY tools remain. Releasing
+these six would produce 24 released tools, so one additional reviewed distinct
+tool is still needed for the first milestone. Do not begin another utility now.
 
 ## Recently completed work
 
@@ -110,11 +156,7 @@ PR #12 merged normally as `5e6df5389455cf9d580d9985eaa504c43a1c1b69` at 2026-11-
 ## Next recommended tasks
 
 <!-- GENERATED:NEXT:START -->
-15. **Profit Margin Calculator** — Calculate profit, margin and markup with distinct labels.
-16. **Date Difference Calculator** — Compare two calendar dates without daylight-saving drift.
-17. **Countdown Timer** — Run a duration timer using an actual deadline rather than interval ticks.
-18. **Random Name Picker** — Draw from a local list with an explicit replacement policy.
-19. **Hashtag Organizer** — Normalize and group hashtag lists without platform account access.
+No sequenced READY tool; review the handoff.
 <!-- GENERATED:NEXT:END -->
 
 Start only after reviewing/synchronizing the management branch. For each utility, finish planning, implementation, testing, homepage integration, and evidence before selecting the next item.

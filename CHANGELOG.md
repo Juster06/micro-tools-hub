@@ -1,5 +1,23 @@
 # Changelog
 
+## Task 10 — six additional utilities, publication pending (2026-11-03)
+
+- Added Profit Margin Calculator, Date Difference Calculator, Countdown Timer, Random Name Picker, Hashtag Organizer and Secure Random Number Generator as standalone browser-local utilities with validation, copy/export/reset and accessible responsive controls.
+- Added source-bound verification, manifests, explicit fixtures, independent Node/browser and hub navigation/search regression checks. Reviewed cryptographic rejection sampling before implementation; no insecure fallback.
+- Qualified each canonical tool and reviewed/applied its existing gated homepage patch. Six TESTED entries retain null publication; released count stays 18.
+- Extended the existing CI coverage map and raised test floors to actual counts. Fixed two legacy management tests to construct a READY fixture after the real READY queue was exhausted; retained all assertions and production logic.
+- Preserved all 18 released tools, CNAME, owner homepage Analytics, dashboard and existing shortcuts.
+
+Local CI partitions passed: Python **142/142**, Node **225/225** plus **791**
+inline logic fixtures, real Chromium **268/268** plus **338** browser fixtures /
+**987** assertions. Both neutral templates passed (6 logic / 12 browser / 48
+assertions). No mandatory failure, skip, cancellation or timeout in the final
+run. Registry, source/evidence, all 24 structural profiles and full project status
+passed with **zero errors and warnings**. Four legacy isolated-logic adapters
+remain explicitly unavailable; their structural/browser checks still run.
+
+No merge, deployment, release, settings change or administrator bypass. Await owner PR review.
+
 ## Task 9.5 — final active-ruleset documentation and handoff
 
 - Corrected the superseded unprotected/classic-rule proposal to verified Active

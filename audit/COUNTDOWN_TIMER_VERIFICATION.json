@@ -1,0 +1,70 @@
+{
+  "result": "PASS",
+  "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+  "verified_on": "2026-11-03",
+  "tool_id": "countdown-timer",
+  "pages": [
+    {
+      "path": "countdown-timer/index.html",
+      "source_sha256": "9cff9b26284213f4c9c5c8845edf054ba3120624c94b76baa0df6b9310074d66",
+      "publication": null
+    }
+  ],
+  "scope": [
+    "Canonical structural checks",
+    "Deterministic inline logic fixtures and independent Node boundary tests",
+    "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
+    "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions",
+    "Deterministic deadline/pause/resume/late-tick state tests; real one-second browser completion and visibility catch-up"
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 15,
+      "failed": 0,
+      "assertions": 15,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 7,
+      "failed": 0,
+      "assertions": 30,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "extended_browser_tests": 10,
+  "logic_node_tests": 7,
+  "limits_and_behavior": "Use exactly HH:MM:SS with minutes/seconds 00–59; maximum 24 hours. Start uses an actual Date.now deadline; displayed seconds round up. Pause preserves fractional milliseconds and Resume creates a new deadline. Delayed background callbacks reconcile on visibility/focus/pageshow, rather than subtracting interval ticks. System-clock changes affect this wall-clock deadline. A suspended/closed browser cannot guarantee an on-time alarm; no sound, notifications, storage or device wake-up. Reset stops the timer and restores five minutes; it does not start automatically. Copy/export captures the displayed remaining time at click.",
+  "visual_review": {
+    "browser": "Chrome/156.0.8078.4",
+    "widths": [
+      375,
+      1440
+    ],
+    "regions": [
+      "top",
+      "bottom"
+    ],
+    "result": "PASS: readable headings, fields, results, controls and feedback; no clipping observed. Screenshots are private ignored development artifacts."
+  },
+  "limitations": [
+    "Headless Chromium on Windows; not physical mobile, Safari, Firefox, screen-reader or native IME certification.",
+    "Clipboard/download mocked; no native clipboard or Save-dialog claim.",
+    "External HTTP(S) blocked; fallback CSS reviewed. Hosting/CDN delivery is separate from local input processing.",
+    "Implementation remains TESTED, not merged, deployed or publicly verified.",
+    "Installed dashboard and shortcuts are preserved; this audit makes no new native GUI launch claim."
+  ],
+  "original_local_source_revision": "7887c31b480b741a23f3f24f54146ca112d59009",
+  "source_tree_sha": "bbed4f5a806d452aa569cc814848f462824bbfd9",
+  "source_identity": "Connected GitHub source checkpoint and original preserved local source checkpoint have identical complete Git trees; each blob SHA was independently matched before tree creation."
+}

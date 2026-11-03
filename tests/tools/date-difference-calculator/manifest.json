@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "date-difference-calculator",
+  "canonical_path": "date-difference-calculator/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": false,
+  "purpose": "Task 10 canonical implementation; source-bound tests establish TESTED, never publication."
+}

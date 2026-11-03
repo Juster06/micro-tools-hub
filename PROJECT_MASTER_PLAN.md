@@ -1,5 +1,28 @@
 # Project master plan
 
+## Current checkpoint — Task 10 (2026-11-03)
+
+Task 10 implements the last six READY entries (ranks 15–20), each now
+**TESTED / REQUIRED_PASSED**, with `publication: null`. Branch
+`feat/task-10-six-tool-batch` targets protected `main`. The PR must remain open
+for owner review; no merge, bypass, deployment or RELEASED transition is authorized.
+The branch hub has 24 unique cards, including six **Tested · publication pending**
+labels. Existing 18 released pages/entries/cards/evidence, CNAME, owner Analytics,
+framework/runtime/workflow pins and the dashboard/launcher are preserved.
+
+Inventory: **93 registered, 18 RELEASED, 6 TESTED, 0 READY, 68 PLANNED, 1 BLOCKED**.
+Before development: 18 RELEASED, 0 TESTED, 6 READY. Released milestone remains
+**18/25 (72%)**; implementation/testing/PR completion is not public release.
+
+The owner authorized this bounded six-tool batch and its PR. Earlier Task 4 setup instructions below are historical; the latest handoff governs resumption.
+
+Owner review of the Task 10 PR, followed only on explicit approval by ordinary
+integration and independent deployment/public-source/behavior verification.
+Submit eventual release evidence through another ordinary protected-main PR.
+Then review readiness of the 68 PLANNED entries; no READY tools remain. Releasing
+these six would produce 24 released tools, so one additional reviewed distinct
+tool is still needed for the first milestone. Do not begin another utility now.
+
 ## Task 4 infrastructure checkpoint (2026-11-01)
 
 The reusable development framework is implemented locally on `feat/reusable-tool-framework`, based on synchronized Task 3 main `73f5eea1c4d3b67490894cc2fe2855b9bc6c46d4`. Contract, standalone templates, safe staged generation, gated homepage proposals, actual logic/browser testing and ordered batch planning are documented in `TOOL_DEVELOPMENT_GUIDE.md`. Registry lifecycle remains manual and evidence-based; no public utility was added and growth targets are unchanged.

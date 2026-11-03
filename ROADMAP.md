@@ -1,5 +1,35 @@
 # Development roadmap
 
+## Task 10 — six TESTED utilities, publication pending
+
+Task 10 implements the last six READY entries (ranks 15–20), each now
+**TESTED / REQUIRED_PASSED**, with `publication: null`. Branch
+`feat/task-10-six-tool-batch` targets protected `main`. The PR must remain open
+for owner review; no merge, bypass, deployment or RELEASED transition is authorized.
+The branch hub has 24 unique cards, including six **Tested · publication pending**
+labels. Existing 18 released pages/entries/cards/evidence, CNAME, owner Analytics,
+framework/runtime/workflow pins and the dashboard/launcher are preserved.
+
+Inventory: **93 registered, 18 RELEASED, 6 TESTED, 0 READY, 68 PLANNED, 1 BLOCKED**.
+Before development: 18 RELEASED, 0 TESTED, 6 READY. Released milestone remains
+**18/25 (72%)**; implementation/testing/PR completion is not public release.
+
+| Tool | Canonical branch route | Behavior |
+| --- | --- | --- |
+| Hashtag Organizer | `hashtag-organizer/index.html` | Normalize and group hashtag lists without platform account access. |
+| Date Difference Calculator | `date-difference-calculator/index.html` | Compare two calendar dates without daylight-saving drift. |
+| Profit Margin Calculator | `profit-margin-calculator/index.html` | Calculate profit, margin and markup with distinct labels. |
+| Secure Random Number Generator | `secure-random-number-generator/index.html` | Generate unbiased integers within a validated safe-integer interval. |
+| Countdown Timer | `countdown-timer/index.html` | Run a duration timer using an actual deadline rather than interval ticks. |
+| Random Name Picker | `random-name-picker/index.html` | Draw from a local list with an explicit replacement policy. |
+
+Owner review of the Task 10 PR, followed only on explicit approval by ordinary
+integration and independent deployment/public-source/behavior verification.
+Submit eventual release evidence through another ordinary protected-main PR.
+Then review readiness of the 68 PLANNED entries; no READY tools remain. Releasing
+these six would produce 24 released tools, so one additional reviewed distinct
+tool is still needed for the first milestone. Do not begin another utility now.
+
 ## Task 9 — independently verified public releases
 
 PR #13 merged normally as `44620a1f4a5d6ae58366cb392926961d0b8edf7c` at 2026-11-02T07:29:53Z. Actual successful [Pages run 41406674180](https://github.com/Juster06/micro-tools-hub/actions/runs/41406674180) and independent public browser/whole-source checks qualified each released tool. Inventory: 93 total, 18 RELEASED, 0 TESTED, 6 READY, 68 PLANNED, 1 BLOCKED; milestone 18/25 (72%).
@@ -79,12 +109,12 @@ Execute in order unless the user steers the project or a dependency/regression j
 | 12 | percentage-calculator | Percentage Calculator | Calculators | S | RELEASED |
 | 13 | percentage-change-calculator | Percentage Change Calculator | Calculators | S | RELEASED |
 | 14 | discount-calculator | Discount Calculator | Calculators | S | RELEASED |
-| 15 | profit-margin-calculator | Profit Margin Calculator | Calculators | S | READY |
-| 16 | date-difference-calculator | Date Difference Calculator | Calculators | S | READY |
-| 17 | countdown-timer | Countdown Timer | Everyday Productivity Tools | S | READY |
-| 18 | random-name-picker | Random Name Picker | Everyday Productivity Tools | S | READY |
-| 19 | hashtag-organizer | Hashtag Organizer | Social Media Tools | S | READY |
-| 20 | secure-random-number-generator | Secure Random Number Generator | Security and Privacy Tools | S | READY |
+| 15 | profit-margin-calculator | Profit Margin Calculator | Calculators | S | TESTED |
+| 16 | date-difference-calculator | Date Difference Calculator | Calculators | S | TESTED |
+| 17 | countdown-timer | Countdown Timer | Everyday Productivity Tools | S | TESTED |
+| 18 | random-name-picker | Random Name Picker | Everyday Productivity Tools | S | TESTED |
+| 19 | hashtag-organizer | Hashtag Organizer | Social Media Tools | S | TESTED |
+| 20 | secure-random-number-generator | Secure Random Number Generator | Security and Privacy Tools | S | TESTED |
 <!-- GENERATED:SEQUENCE:END -->
 
 ## Practical delivery sequence
@@ -178,7 +208,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
 | social-counter | Social Media Character Counter & Live Previewer | RELEASED | P2 | M | Modern browser DOM APIs |
-| hashtag-organizer | Hashtag Organizer | READY | P1 | S | Browser-native approach; scope review before implementation |
+| hashtag-organizer | Hashtag Organizer | TESTED | P1 | S | Browser-native approach; scope review before implementation |
 | youtube-title-checker | YouTube Title Checker | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | youtube-description-formatter | YouTube Description Formatter | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | instagram-bio-formatter | Instagram Bio Formatter | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
@@ -198,10 +228,10 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | vat-calculator | VAT Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | discount-calculator | Discount Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | age-calculator | Age Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
-| date-difference-calculator | Date Difference Calculator | READY | P1 | S | Browser-native approach; scope review before implementation |
+| date-difference-calculator | Date Difference Calculator | TESTED | P1 | S | Browser-native approach; scope review before implementation |
 | working-days-calculator | Working Days Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | loan-repayment-calculator | Loan Repayment Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
-| profit-margin-calculator | Profit Margin Calculator | READY | P1 | S | Browser-native approach; scope review before implementation |
+| profit-margin-calculator | Profit Margin Calculator | TESTED | P1 | S | Browser-native approach; scope review before implementation |
 | compound-interest-calculator | Compound Interest Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 
 ### Security and Privacy Tools
@@ -210,7 +240,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | --- | --- | --- | --- | --- | --- |
 | password-generator | Password Generator | PLANNED | P2 | M | Browser Web Crypto where cryptographic randomness or hashing is required |
 | password-strength-checker | Password Strength Checker | PLANNED | P2 | L | Reviewed locally bundled password-strength estimator and license |
-| secure-random-number-generator | Secure Random Number Generator | READY | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
+| secure-random-number-generator | Secure Random Number Generator | TESTED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | local-text-encryption | Local Text Encryption | PLANNED | P3 | XL | Web Crypto authenticated encryption and password derivation; Separate reviewed threat model and versioned format |
 | exif-metadata-viewer | EXIF Metadata Viewer | PLANNED | P2 | L | Reviewed format-specific metadata parser |
 | exif-metadata-remover | EXIF Metadata Remover | PLANNED | P2 | L | Reviewed metadata parser/removal method and exported-metadata verifier |
@@ -237,8 +267,8 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
 | pomodoro-timer | Pomodoro Timer | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
-| countdown-timer | Countdown Timer | READY | P1 | S | Browser-native approach; scope review before implementation |
-| random-name-picker | Random Name Picker | READY | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
+| countdown-timer | Countdown Timer | TESTED | P1 | S | Browser-native approach; scope review before implementation |
+| random-name-picker | Random Name Picker | TESTED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | decision-wheel | Decision Wheel | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | local-to-do-list | Local To-Do List | PLANNED | P2 | M | Explicit opt-in localStorage, export format and clear-all behavior |
 | invoice-generator | Invoice Generator | PLANNED | P2 | L | Browser-native approach; scope review before implementation |

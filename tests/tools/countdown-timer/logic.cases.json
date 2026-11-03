@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "duration-00:00:01",
+      "input": "00:00:01",
+      "options": {},
+      "expected": "00:00:01"
+    },
+    {
+      "id": "duration-01:02:03",
+      "input": "01:02:03",
+      "options": {},
+      "expected": "01:02:03"
+    },
+    {
+      "id": "duration-24:00:00",
+      "input": "24:00:00",
+      "options": {},
+      "expected": "24:00:00"
+    },
+    {
+      "id": "duration-00:59:59",
+      "input": "00:59:59",
+      "options": {},
+      "expected": "00:59:59"
+    },
+    {
+      "id": "invalid-0",
+      "input": "",
+      "options": {},
+      "error": "duration"
+    },
+    {
+      "id": "invalid-1",
+      "input": "00:00:00",
+      "options": {},
+      "error": "greater than zero"
+    },
+    {
+      "id": "invalid-2",
+      "input": "24:00:01",
+      "options": {},
+      "error": "greater than zero"
+    },
+    {
+      "id": "invalid-3",
+      "input": "99:59:59",
+      "options": {},
+      "error": "greater than zero"
+    },
+    {
+      "id": "invalid-4",
+      "input": "00:60:00",
+      "options": {},
+      "error": "HH:MM:SS"
+    },
+    {
+      "id": "invalid-5",
+      "input": "00:00:60",
+      "options": {},
+      "error": "HH:MM:SS"
+    },
+    {
+      "id": "invalid-6",
+      "input": "1:00:00",
+      "options": {},
+      "error": "HH:MM:SS"
+    },
+    {
+      "id": "invalid-7",
+      "input": " 00:01:00",
+      "options": {},
+      "error": "UTF-16"
+    },
+    {
+      "id": "invalid-8",
+      "input": "00:01:00 ",
+      "options": {},
+      "error": "UTF-16"
+    },
+    {
+      "id": "invalid-9",
+      "input": "😀",
+      "options": {},
+      "error": "HH:MM:SS"
+    },
+    {
+      "id": "invalid-10",
+      "input": "-1:00:00",
+      "options": {},
+      "error": "HH:MM:SS"
+    }
+  ]
+}

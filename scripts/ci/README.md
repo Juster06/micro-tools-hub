@@ -1,5 +1,17 @@
 # Functional CI — Task 9.5
 
+## Task 10 coverage extension
+
+Local CI partitions passed: Python **142/142**, Node **225/225** plus **791**
+inline logic fixtures, real Chromium **268/268** plus **338** browser fixtures /
+**987** assertions. Both neutral templates passed (6 logic / 12 browser / 48
+assertions). No mandatory failure, skip, cancellation or timeout in the final
+run. Registry, source/evidence, all 24 structural profiles and full project status
+passed with **zero errors and warnings**. Four legacy isolated-logic adapters
+remain explicitly unavailable; their structural/browser checks still run.
+
+The existing coverage map now selects 5 Python files, 22 Node files, 40 browser files and 24 canonical tools. Twenty tools have isolated logic adapters; the four legacy exceptions remain explicit. The six new suites use existing inline adapters and real-browser harnesses; helper modules contain only test logic. All old assertions remain, including the two management tests now seeded with their own READY fixture. No workflow, runner/action/runtime pins, permissions, artifact policy, aggregate context or branch protection changes. Hosted results must be read from the actual Task 10 PR run, separately from these local results.
+
 ## Current Task 9.5 status: CI operational; ruleset enforcement active
 
 The owner activated [Main Branch Protection - Required Functional CI](https://github.com/Juster06/micro-tools-hub/rules/26413762),
@@ -276,7 +288,7 @@ Each required child exit must be zero, and each supported report must prove
 nonempty execution and clean PASS. Python skips/expected failures/unexpected
 successes are failures. Node cancellations/skips/todos, empty or missing/ambiguous
 TAP totals are failures even if Node itself exits zero. Reviewed test-count floors
-are 142 Python, 179 Node logic and 196 Node browser. JSON layers need PASS and
+are 142 Python, 225 Node logic and 268 Node browser. JSON layers need PASS and
 nonzero functional cases; template verification must include both templates and
 all layers. Registry/source/status warnings also fail the clean validation gate.
 There is no continue-on-error, suppressed exit, empty selection PASS or placeholder

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "hashtag-organizer",
+  "canonical_path": "hashtag-organizer/index.html",
+  "template": "text",
+  "requires_specialized_implementation": false,
+  "purpose": "Task 10 canonical implementation; source-bound tests establish TESTED, never publication."
+}

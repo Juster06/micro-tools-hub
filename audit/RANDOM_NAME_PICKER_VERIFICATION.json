@@ -1,0 +1,70 @@
+{
+  "result": "PASS",
+  "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+  "verified_on": "2026-11-03",
+  "tool_id": "random-name-picker",
+  "pages": [
+    {
+      "path": "random-name-picker/index.html",
+      "source_sha256": "d89f129611d89824a8a34cd4130be221ff5eb3bee181778d346efe27ad6aea41",
+      "publication": null
+    }
+  ],
+  "scope": [
+    "Canonical structural checks",
+    "Deterministic inline logic fixtures and independent Node boundary tests",
+    "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
+    "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions",
+    "Real Web Crypto generation; unavailable/failing/insecure provider handling; exact bounded rejection-sampling fixtures"
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 22,
+      "failed": 0,
+      "assertions": 22,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 8,
+      "failed": 0,
+      "assertions": 36,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "extended_browser_tests": 12,
+  "logic_node_tests": 10,
+  "limits_and_behavior": "At most 100,000 UTF-16 input units, 10,000 nonblank names and 256 units per name. CR/LF lines are trimmed and NFC-normalized; blank lines are ignored. Default duplicate removal is exact and case-sensitive after normalization. Keeping duplicates gives those entries additional chances and can produce identical names even without replacement. Draw 1–100 names; without replacement cannot exceed available entries. Each click starts a fresh pool. Unbiased 32-bit rejection sampling and partial Fisher–Yates use only crypto.getRandomValues in a secure context; at most 128 attempts per pick, failure aborts the whole result. No insecure fallback, saved history or server draw. This is not a certification for regulated lotteries.",
+  "visual_review": {
+    "browser": "Chrome/156.0.8078.4",
+    "widths": [
+      375,
+      1440
+    ],
+    "regions": [
+      "top",
+      "bottom"
+    ],
+    "result": "PASS: readable headings, fields, results, controls and feedback; no clipping observed. Screenshots are private ignored development artifacts."
+  },
+  "limitations": [
+    "Headless Chromium on Windows; not physical mobile, Safari, Firefox, screen-reader or native IME certification.",
+    "Clipboard/download mocked; no native clipboard or Save-dialog claim.",
+    "External HTTP(S) blocked; fallback CSS reviewed. Hosting/CDN delivery is separate from local input processing.",
+    "Implementation remains TESTED, not merged, deployed or publicly verified.",
+    "Installed dashboard and shortcuts are preserved; this audit makes no new native GUI launch claim."
+  ],
+  "original_local_source_revision": "7887c31b480b741a23f3f24f54146ca112d59009",
+  "source_tree_sha": "bbed4f5a806d452aa569cc814848f462824bbfd9",
+  "source_identity": "Connected GitHub source checkpoint and original preserved local source checkpoint have identical complete Git trees; each blob SHA was independently matched before tree creation."
+}

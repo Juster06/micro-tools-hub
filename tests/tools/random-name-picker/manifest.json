@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "random-name-picker",
+  "canonical_path": "random-name-picker/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Task 10 canonical implementation; source-bound tests establish TESTED, never publication."
+}

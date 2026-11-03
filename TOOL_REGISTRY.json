@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-02",
+  "updated_on": "2026-11-03",
   "project": {
     "name": "Everyday Digital Box — WebUtils Hub",
     "repository": "https://github.com/Juster06/micro-tools-hub",
@@ -2545,7 +2545,7 @@
       "category": "social",
       "description": "Normalize and group hashtag lists without platform account access.",
       "directory_path": "hashtag-organizer",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2557,14 +2557,40 @@
         "Counts and optional sorting",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 10 source-bound scoped verification passed. Canonical route hashtag-organizer/index.html; publication pending. Separate tags with whitespace or commas. One leading # is optional. Unsupported punctuation fails the whole result instead of silently dropping tags.",
       "sequence_rank": 19,
       "related_tools": [
         "hashtag-counter"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_sha256": "80a4dc10ca2c9a6ddab1f6c25022487daac7950c34150960e30c1973ba9511b0",
+        "evidence_path": "audit/HASHTAG_ORGANIZER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "Deterministic inline logic fixtures and independent Node boundary tests",
+          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
+          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "toolSummary",
+        "casePolicy",
+        "casing",
+        "sort",
+        "layout"
+      ]
     },
     {
       "id": "youtube-title-checker",
@@ -3024,7 +3050,7 @@
       "category": "calculator",
       "description": "Compare two calendar dates without daylight-saving drift.",
       "directory_path": "date-difference-calculator",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3036,12 +3062,37 @@
         "Inclusive toggle",
         "Signed or absolute result choice"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 10 source-bound scoped verification passed. Canonical route date-difference-calculator/index.html; publication pending. Use calendar dates from 0001-01-01 through 9999-12-31. Exclusive counting reports elapsed days; inclusive counting adds the endpoint.",
       "sequence_rank": 16,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_sha256": "059d267d6e0c6e98bc57465ab96f86041932c26360c9145c5b93f929788a808c",
+        "evidence_path": "audit/DATE_DIFFERENCE_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "Deterministic inline logic fixtures and independent Node boundary tests",
+          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
+          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "toolSummary",
+        "secondValue",
+        "inclusive",
+        "order"
+      ]
     },
     {
       "id": "working-days-calculator",
@@ -3099,7 +3150,7 @@
       "category": "calculator",
       "description": "Calculate profit, margin and markup with distinct labels.",
       "directory_path": "profit-margin-calculator",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3111,12 +3162,36 @@
         "Negative values policy",
         "Formula explanation"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 10 source-bound scoped verification passed. Canonical route profit-margin-calculator/index.html; publication pending. Cost and revenue must be nonnegative. Margin uses revenue; markup uses cost. Zero denominators are shown as N/A.",
       "sequence_rank": 15,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_sha256": "4b65d3a777499bcd2429e2d3c8c5388281ea069897e37be83bc9c188543cf653",
+        "evidence_path": "audit/PROFIT_MARGIN_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "Deterministic inline logic fixtures and independent Node boundary tests",
+          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
+          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "toolSummary",
+        "secondValue",
+        "precision"
+      ]
     },
     {
       "id": "compound-interest-calculator",
@@ -3201,7 +3276,7 @@
       "category": "security",
       "description": "Generate unbiased integers within a validated safe-integer interval.",
       "directory_path": "secure-random-number-generator",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3214,12 +3289,37 @@
         "Inclusive bounds and bounded batch",
         "No insecure fallback"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 10 source-bound scoped verification passed. Canonical route secure-random-number-generator/index.html; publication pending. Both bounds are inclusive safe integers. Generate 1–1,000 numbers; repeated values are possible.",
       "sequence_rank": 20,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_sha256": "3fed89add76004b5e658f7f3160bf010b1bbed59ecd5ff0a8121312af6b8b8d5",
+        "evidence_path": "audit/SECURE_RANDOM_NUMBER_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "Deterministic inline logic fixtures and independent Node boundary tests",
+          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
+          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions",
+          "Real Web Crypto generation; unavailable/failing/insecure provider handling; exact bounded rejection-sampling fixtures"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "toolSummary",
+        "secondValue",
+        "count"
+      ]
     },
     {
       "id": "local-text-encryption",
@@ -3647,7 +3747,7 @@
       "category": "productivity",
       "description": "Run a duration timer using an actual deadline rather than interval ticks.",
       "directory_path": "countdown-timer",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3659,14 +3759,38 @@
         "Reconcile background-tab delays",
         "Accessible completion state"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 10 source-bound scoped verification passed. Canonical route countdown-timer/index.html; publication pending. Greater than zero and at most 24:00:00. Keep this page open; this timer cannot notify you after the page is closed.",
       "sequence_rank": 17,
       "related_tools": [
         "pomodoro-timer"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_sha256": "9cff9b26284213f4c9c5c8845edf054ba3120624c94b76baa0df6b9310074d66",
+        "evidence_path": "audit/COUNTDOWN_TIMER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "Deterministic inline logic fixtures and independent Node boundary tests",
+          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
+          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions",
+          "Deterministic deadline/pause/resume/late-tick state tests; real one-second browser completion and visibility catch-up"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "toolSummary",
+        "pauseBtn"
+      ]
     },
     {
       "id": "random-name-picker",
@@ -3674,7 +3798,7 @@
       "category": "productivity",
       "description": "Draw from a local list with an explicit replacement policy.",
       "directory_path": "random-name-picker",
-      "status": "READY",
+      "status": "TESTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3687,12 +3811,38 @@
         "Crypto-backed draw",
         "Reset and copy result"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 10 source-bound scoped verification passed. Canonical route random-name-picker/index.html; publication pending. A fresh pool is used for each click. Without replacement means no entry repeats within one batch; retained duplicate names are separate entries.",
       "sequence_rank": 18,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_sha256": "d89f129611d89824a8a34cd4130be221ff5eb3bee181778d346efe27ad6aea41",
+        "evidence_path": "audit/RANDOM_NAME_PICKER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "Deterministic inline logic fixtures and independent Node boundary tests",
+          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
+          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions",
+          "Real Web Crypto generation; unavailable/failing/insecure provider handling; exact bounded rejection-sampling fixtures"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "toolSummary",
+        "count",
+        "duplicates",
+        "replacement"
+      ]
     },
     {
       "id": "decision-wheel",
