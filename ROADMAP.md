@@ -1,6 +1,14 @@
 # Development roadmap
 
-## Task 12 — six tested utilities, publication pending
+## Task 12.1 — six-tool public verification, release PR pending
+
+PR #20 merged as `5340f1e006bc07f8913f875505e8ee3b20a4aacc`. The [Pages deployment 41727865909](https://github.com/Juster06/micro-tools-hub/actions/runs/41727865909) and [post-merge functional CI 41727866241](https://github.com/Juster06/micro-tools-hub/actions/runs/41727866241) succeeded for that commit. Public HTTPS checks matched the merged homepage and all 31 tool page sources; all 31 canonical links, the custom domain and Analytics identifier were confirmed. The previous 25 pages were checked through public HTTP/source identity and post-merge CI, without new individual public interaction tests.
+
+The six Task 12 utilities passed 26 public Chromium interaction tests plus additional public checks for age, rounding, calendar boundaries, empty input, title, JavaScript and dependencies. Clipboard, download and printing were simulated. Separate release audits record timestamps, normalized hashes, results and limitations. Image Rotator accepts static PNG only; SHA-256 needs a secure context and Web Crypto. No cross-browser, physical-device or native-dialog certification is claimed.
+
+This release-verification branch proposes 93 registered, 31 RELEASED, 0 TESTED, 0 READY, 61 PLANNED, 1 BLOCKED; milestone 31/50 (62%). Main and public release metadata remain at 25 RELEASED until this PR receives separate owner approval, merges and deploys. Do not bypass branch protection.
+
+## Historical Task 12 — six tested utilities before release verification
 
 The Task 12 branch implements six utilities as **TESTED**, with publication evidence pending: Age Calculator (`age-calculator/index.html`), VAT Calculator (`vat-calculator/index.html`), Working Days Calculator (`working-days-calculator/index.html`), Meeting Agenda Generator (`meeting-agenda-generator/index.html`), Image Rotator (`image-rotator/index.html`) and SHA-256 Text & File Hash Checker (`sha-256-hash-checker/index.html`; registry ID `sha256-hash-checker`). The homepage cards explicitly state “Tested · publication pending”. No new utility is RELEASED.
 
@@ -194,7 +202,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | image-resizer | Image Resizer | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-format-converter | Image Format Converter | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-cropper | Image Cropper | PLANNED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
-| image-rotator | Image Rotator | TESTED | P2 | S | Browser image decoding and Canvas; format support and memory limits must be tested |
+| image-rotator | Image Rotator | RELEASED | P2 | S | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-watermark | Image Watermark | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-color-picker | Image Color Picker | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | passport-photo-layout-maker | Passport Photo Layout Maker | PLANNED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
@@ -234,7 +242,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | base64-encoder-decoder | Base64 Encoder and Decoder | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | url-encoder-decoder | URL Encoder and Decoder | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | uuid-generator | UUID Generator | RELEASED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
-| sha256-hash-checker | SHA-256 Text & File Hash Checker | TESTED | P2 | M | Browser Web Crypto SHA-256; bounded file reads |
+| sha256-hash-checker | SHA-256 Text & File Hash Checker | RELEASED | P2 | M | Browser Web Crypto SHA-256; bounded file reads |
 | regex-tester | Regex Tester | PLANNED | P2 | L | Browser Worker with termination timeout; bounded input |
 | html-formatter | HTML Formatter | PLANNED | P2 | L | Reviewed non-executing HTML parser and whitespace-preservation policy |
 | css-minifier | CSS Minifier | PLANNED | P2 | L | Reviewed CSS parser/minifier and license |
@@ -263,11 +271,11 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | --- | --- | --- | --- | --- | --- |
 | percentage-calculator | Percentage Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | percentage-change-calculator | Percentage Change Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| vat-calculator | VAT Calculator | TESTED | P2 | M | Browser-native approach; scope review before implementation |
+| vat-calculator | VAT Calculator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | discount-calculator | Discount Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| age-calculator | Age Calculator | TESTED | P2 | M | Browser-native approach; scope review before implementation |
+| age-calculator | Age Calculator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | date-difference-calculator | Date Difference Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| working-days-calculator | Working Days Calculator | TESTED | P2 | M | Browser-native approach; scope review before implementation |
+| working-days-calculator | Working Days Calculator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | loan-repayment-calculator | Loan Repayment Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | profit-margin-calculator | Profit Margin Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | compound-interest-calculator | Compound Interest Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
@@ -311,7 +319,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | local-to-do-list | Local To-Do List | PLANNED | P2 | M | Explicit opt-in localStorage, export format and clear-all behavior |
 | invoice-generator | Invoice Generator | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | resume-builder | Resume Builder | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
-| meeting-agenda-generator | Meeting Agenda Generator | TESTED | P2 | M | Browser-native approach; scope review before implementation |
+| meeting-agenda-generator | Meeting Agenda Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | printable-calendar-generator | Printable Calendar Generator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 
 ### Entertainment Tools

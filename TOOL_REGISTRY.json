@@ -1184,7 +1184,7 @@
       "category": "image",
       "description": "Rotate or flip local raster images.",
       "directory_path": "image-rotator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
@@ -1198,22 +1198,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 12 scoped local verification passed; publication pending.",
+      "notes": "Task 12 PR #20 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_revision": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
         "source_sha256": "c4834f55c5c5ea0dfdebdee6267f10258abb6f48d8dab61c175a72e078a353e8",
-        "evidence_path": "audit/IMAGE_ROTATOR_VERIFICATION.json",
+        "evidence_path": "audit/IMAGE_ROTATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "13 synchronous image transformation-parameter validation fixtures (not image decoding)",
-          "5 real Chromium browser fixtures / 18 assertions",
-          "4 independent Node logic tests and 6 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked",
-          "Actual Chromium PNG pixel rotations, flips, transparency/export and pre-decode limits tested separately."
+          "Public full HTML normalized SHA-256 matches approved merge",
+          "Public Chromium interactions: actual PNG pixels rotate 90, 180 and 270 degrees without losing transparency; horizontal and vertical flips transform actual source pixels correctly; PNG export produces transformed image with retained alpha and reset releases state; invalid, excessive and unavailable image decoding fail clearly; oversized PNG headers and animation are rejected before decoding; narrow layouts and missing input remain accessible",
+          "Public browser extra: Correct public route, title, required JavaScript and expected styling CDN",
+          "Public homepage has 31 correct routes; 25 previously released pages returned HTTP 200 with matching source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/image-rotator/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T22:20:17.892061+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2386,7 +2389,7 @@
       "category": "developer",
       "description": "Hash text or a bounded local file and compare a known digest.",
       "directory_path": "sha-256-hash-checker",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2401,22 +2404,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 12 scoped local verification passed; publication pending.",
+      "notes": "Task 12 PR #20 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_revision": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
         "source_sha256": "283feb3b2635e2dbfaf8f46009b0879130b893a52fd9e6e67784b3b76a3d9e9d",
-        "evidence_path": "audit/SHA256_HASH_CHECKER_VERIFICATION.json",
+        "evidence_path": "audit/SHA256_HASH_CHECKER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "14 synchronous text/file input-validation fixtures (not digest computation)",
-          "7 real Chromium browser fixtures / 15 assertions",
-          "4 independent Node logic tests and 7 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked",
-          "Real Chromium Web Crypto SHA-256 known text and file vectors, provider errors and stale-result handling tested separately."
+          "Public full HTML normalized SHA-256 matches approved merge",
+          "Public Chromium interactions: Web Crypto hashes empty, ASCII and Unicode text to independent known values; real file bytes including empty file produce known SHA-256 values; expected hashes compare case-insensitively, copy and reset work; missing file, oversized file and invalid expected digest fail clearly; unavailable and failed Web Crypto show errors without fallback; late digest cannot overwrite reset state; responsive widths preserve labeled controls",
+          "Public browser extra: Correct public route, title, required JavaScript and expected styling CDN",
+          "Public homepage has 31 correct routes; 25 previously released pages returned HTTP 200 with matching source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/sha-256-hash-checker/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T22:20:17.938659+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "mode",
@@ -3000,7 +3006,7 @@
       "category": "calculator",
       "description": "Add or remove a user-entered VAT rate.",
       "directory_path": "vat-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3014,21 +3020,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 12 scoped local verification passed; publication pending.",
+      "notes": "Task 12 PR #20 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_revision": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
         "source_sha256": "9794b30aabe338ad25dbff3fe065fe1cc7026c5bf4b3abe6c4a297631f6a4b9c",
-        "evidence_path": "audit/VAT_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/VAT_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "21 deterministic inline logic fixtures",
-          "7 real Chromium browser fixtures / 17 assertions",
-          "4 independent Node logic tests and 3 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public full HTML normalized SHA-256 matches approved merge",
+          "Public Chromium interactions: add/remove modes and copy preserve the reconciled breakdown; invalid input clears stale output and reset restores values; all responsive widths and keyboard activation work",
+          "Public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Zero and custom rates; decimal input and half-up rounding",
+          "Public homepage has 31 correct routes; 25 previously released pages returned HTTP 200 with matching source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/vat-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T22:20:17.905022+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3106,7 +3116,7 @@
       "category": "calculator",
       "description": "Calculate calendar age between user-selected dates.",
       "directory_path": "age-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3120,21 +3130,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 12 scoped local verification passed; publication pending.",
+      "notes": "Task 12 PR #20 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_revision": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
         "source_sha256": "24fbc45d101b85b09facadf08a2d0c05b0a044cda66db4ac4969fd171225a87f",
-        "evidence_path": "audit/AGE_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/AGE_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "15 deterministic inline logic fixtures",
-          "6 real Chromium browser fixtures / 15 assertions",
-          "4 independent Node logic tests and 3 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public full HTML normalized SHA-256 matches approved merge",
+          "Public Chromium interactions: leap birthday, copy, clipboard failure and reset; future date fails without losing input and stale output; keyboard and responsive layouts have no horizontal overflow",
+          "Public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Empty input rejected; ordinary birthday/reference produced 25 years 7 months 3 days",
+          "Public homepage has 31 correct routes; 25 previously released pages returned HTTP 200 with matching source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/age-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T22:20:17.898925+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3208,7 +3222,7 @@
       "category": "calculator",
       "description": "Count weekdays with user-defined exclusions.",
       "directory_path": "working-days-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3222,21 +3236,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 12 scoped local verification passed; publication pending.",
+      "notes": "Task 12 PR #20 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_revision": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
         "source_sha256": "bf736d72af6a91fc53103108f7fad988c61dfbecf2f7dbad4b55d4510de82723",
-        "evidence_path": "audit/WORKING_DAYS_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/WORKING_DAYS_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "17 deterministic inline logic fixtures",
-          "6 real Chromium browser fixtures / 18 assertions",
-          "4 independent Node logic tests and 3 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public full HTML normalized SHA-256 matches approved merge",
+          "Public Chromium interactions: holiday exclusion and custom weekend update the working total; copy, denied clipboard, invalid input and reset are safe; responsive widths and keyboard activation remain usable",
+          "Public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Leap-day interval inclusive (3) and end-exclusive (2)",
+          "Public homepage has 31 correct routes; 25 previously released pages returned HTTP 200 with matching source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/working-days-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T22:20:18.213312+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4133,7 +4151,7 @@
       "category": "productivity",
       "description": "Build a structured agenda with time allocations.",
       "directory_path": "meeting-agenda-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4147,21 +4165,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 12 scoped local verification passed; publication pending.",
+      "notes": "Task 12 PR #20 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_revision": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
         "source_sha256": "ca1001d108d00d729006335a684533bd79231a1059bdf66b7c2267e2028767d3",
-        "evidence_path": "audit/MEETING_AGENDA_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/MEETING_AGENDA_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "18 deterministic inline logic fixtures",
-          "6 real Chromium browser fixtures / 15 assertions",
-          "4 independent Node logic tests and 4 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public full HTML normalized SHA-256 matches approved merge",
+          "Public Chromium interactions: add, reorder, remove and duration totals are reflected in output; copy, print, error and reset are explicit and never execute agenda text; responsive width and keyboard controls remain usable; composition and late clipboard failures cannot publish stale agenda or steal focus",
+          "Public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Empty meeting rejected with visible error",
+          "Public homepage has 31 correct routes; 25 previously released pages returned HTTP 200 with matching source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/meeting-agenda-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T22:20:18.229254+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",

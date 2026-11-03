@@ -1,0 +1,108 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-03",
+  "source_revision": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
+  "pages": [
+    {
+      "path": "age-calculator/index.html",
+      "source_sha256": "24fbc45d101b85b09facadf08a2d0c05b0a044cda66db4ac4969fd171225a87f",
+      "checks": [
+        "Public full HTML normalized SHA-256 matches approved merge",
+        "Public Chromium interactions: leap birthday, copy, clipboard failure and reset; future date fails without losing input and stale output; keyboard and responsive layouts have no horizontal overflow",
+        "Public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Empty input rejected; ordinary birthday/reference produced 25 years 7 months 3 days",
+        "Public homepage has 31 correct routes; 25 previously released pages returned HTTP 200 with matching source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/age-calculator/",
+        "http_status": 200,
+        "checked_at": "2026-11-03T22:20:17.898925+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41727865909,
+    "commit": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41727866241,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "age-calculator",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/age-calculator/index.html",
+    "http_status": 200,
+    "source_sha256": "24fbc45d101b85b09facadf08a2d0c05b0a044cda66db4ac4969fd171225a87f",
+    "live_sha256": "24fbc45d101b85b09facadf08a2d0c05b0a044cda66db4ac4969fd171225a87f",
+    "source_matches": true,
+    "checked_at": "2026-11-03T22:17:30.267858+00:00"
+  },
+  "canonical_public_url": {
+    "id": "age-calculator",
+    "url": "https://everydaydigitalbox.com/age-calculator/",
+    "http_status": 200,
+    "checked_at": "2026-11-03T22:20:17.898925+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "url": "https://everydaydigitalbox.com/age-calculator/",
+    "tests": [
+      "leap birthday, copy, clipboard failure and reset",
+      "future date fails without losing input and stale output",
+      "keyboard and responsive layouts have no horizontal overflow"
+    ],
+    "extra_checks": [
+      "Correct public route, title, required JavaScript and expected styling CDN",
+      "Empty input rejected; ordinary birthday/reference produced 25 years 7 months 3 days"
+    ],
+    "console_errors": 0,
+    "scope": "Public HTTPS in isolated headless Chromium on Windows; simulated clipboard, print and download; simulated viewports; no physical device or native dialogs.",
+    "extra_checks_started_at": "2026-11-03T22:19:31.091Z",
+    "extra_checks_finished_at": "2026-11-03T22:19:33.708Z",
+    "interaction_test_time_window": {
+      "after": "2026-11-03T22:17:59.818Z",
+      "before": "2026-11-03T22:19:31.091Z",
+      "note": "26-test run completed between the homepage and extra-check timestamps."
+    }
+  },
+  "homepage": {
+    "result": "PASS",
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 31,
+    "converter_tested_link": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "checked_at": "2026-11-03T22:17:59.818Z"
+  },
+  "previous_evidence": "audit/AGE_CALCULATOR_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows; simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, print invocation and downloads simulated; native OS clipboard, print and save dialogs not tested.",
+    "Existing 25 pages verified through public HTTP/source identity and successful post-merge CI, without individual new public interaction tests.",
+    "The source hashes normalize CRLF and strip trailing whitespace as in the project verification framework; separate raw SHA-256 hashes also match exactly.",
+    "Release metadata and Live labels require separate owner-authorized merge and deployment."
+  ],
+  "raw_public_source": {
+    "id": "age-calculator",
+    "path": "age-calculator/index.html",
+    "url": "https://everydaydigitalbox.com/age-calculator/index.html",
+    "http_status": 200,
+    "approved_raw_sha256": "dfb4e1feac50a89e3453d5aa0a41599f31e67d0dc2e839b15f7a4bc5e17a9df6",
+    "public_raw_sha256": "dfb4e1feac50a89e3453d5aa0a41599f31e67d0dc2e839b15f7a4bc5e17a9df6",
+    "raw_match": true,
+    "checked_at": "2026-11-03T22:24:15.083506+00:00"
+  },
+  "homepage_raw_source": {
+    "id": "homepage",
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "approved_raw_sha256": "b3fe54b15d3220d419265fdfb9015aa403ecd29859304476fa41b98432471ec9",
+    "public_raw_sha256": "b3fe54b15d3220d419265fdfb9015aa403ecd29859304476fa41b98432471ec9",
+    "raw_match": true,
+    "checked_at": "2026-11-03T22:24:15.642227+00:00"
+  }
+}

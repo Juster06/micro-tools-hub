@@ -1,6 +1,16 @@
 # Session handoff
 
-## Task 12 — six tested utilities, publication pending
+## Task 12.1 — six-tool public verification, release PR pending
+
+PR #20 merged as `5340f1e006bc07f8913f875505e8ee3b20a4aacc`. The [Pages deployment 41727865909](https://github.com/Juster06/micro-tools-hub/actions/runs/41727865909) and [post-merge functional CI 41727866241](https://github.com/Juster06/micro-tools-hub/actions/runs/41727866241) succeeded for that commit. Public HTTPS checks matched the merged homepage and all 31 tool page sources; all 31 canonical links, the custom domain and Analytics identifier were confirmed. The previous 25 pages were checked through public HTTP/source identity and post-merge CI, without new individual public interaction tests.
+
+The six Task 12 utilities passed 26 public Chromium interaction tests plus additional public checks for age, rounding, calendar boundaries, empty input, title, JavaScript and dependencies. Clipboard, download and printing were simulated. Separate release audits record timestamps, normalized hashes, results and limitations. Image Rotator accepts static PNG only; SHA-256 needs a secure context and Web Crypto. No cross-browser, physical-device or native-dialog certification is claimed.
+
+This release-verification branch proposes 93 registered, 31 RELEASED, 0 TESTED, 0 READY, 61 PLANNED, 1 BLOCKED; milestone 31/50 (62%). Main and public release metadata remain at 25 RELEASED until this PR receives separate owner approval, merges and deploys. Do not bypass branch protection.
+
+**Next major task:** Review the Task 12.1 release-verification PR. Await explicit owner approval before any merge; after an approved merge, verify deployment of release metadata.
+
+## Historical Task 12 — six tested utilities before release verification
 
 Local validation passed: Python project suite **142/142**, Node regression **254/254** plus **1,030** inline logic fixtures, and Chromium interaction suite **312/312** plus **395** browser fixtures / **1,154** assertions (including neutral templates). Project status reported zero errors and warnings. Clipboard/download are simulated in the harness; no public deployment or publication is claimed.
 

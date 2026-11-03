@@ -24,7 +24,9 @@ const task9Released=registry.tools.filter(t=>task9Ids.includes(t.id)&&t.status==
 const task10Ids=["profit-margin-calculator","date-difference-calculator","countdown-timer","random-name-picker","hashtag-organizer","secure-random-number-generator"];
 const task10Released=registry.tools.filter(t=>task10Ids.includes(t.id)&&t.status==='RELEASED').length;
 const task11Released=registry.tools.filter(t=>t.id==='file-size-converter'&&t.status==='RELEASED').length;
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,9+task8Released+task9Released+task10Released+task11Released);
+const task12Ids=["age-calculator","vat-calculator","working-days-calculator","meeting-agenda-generator","image-rotator","sha256-hash-checker"];
+const task12Released=registry.tools.filter(t=>task12Ids.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,9+task8Released+task9Released+task10Released+task11Released+task12Released);
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});
