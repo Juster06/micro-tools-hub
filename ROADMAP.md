@@ -1,5 +1,9 @@
 # Development roadmap
 
+## Task 10 completed; Task 11 development (2026-11-03)
+
+Task 10 and PR #17 were merged as `4fe2a8a9096bdf5286c172378c3f636d88a43264`; [Pages deployment 41575470412](https://github.com/Juster06/micro-tools-hub/actions/runs/41575470412) and [post-merge CI 41575471095](https://github.com/Juster06/micro-tools-hub/actions/runs/41575471095) succeeded. The public homepage, registry, all 24 canonical sources and the six new tools were independently checked. Inventory: 93 registered, 24 RELEASED, 0 TESTED, 0 READY, 68 PLANNED, 1 BLOCKED; milestone 24/25 (96%). Previous pending-PR notes below are historical. Task 11 is authorized on a feature branch; implementation is not a public release.
+
 ## Task 10.1 — publication verification, PR pending (2026-11-03)
 
 PR #16 merged as `f7a7553e7fb085302c6f2e24f927a031e234c6e0`. GitHub Pages run [41572786907](https://github.com/Juster06/micro-tools-hub/actions/runs/41572786907) and post-merge functional CI run [41572787293](https://github.com/Juster06/micro-tools-hub/actions/runs/41572787293) succeeded on that commit. Independent HTTPS checks matched the homepage and all 24 tool pages to the approved source; the custom domain and owner Analytics were preserved. The public homepage displayed 24 cards and all six tested links.
@@ -267,7 +271,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | json-to-txt | JSON to TXT | PLANNED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | svg-to-png | SVG to PNG | PLANNED | P2 | L | Reviewed SVG sanitization and external-resource blocking; Canvas rasterization with tested dimension limits |
 | png-to-ico | PNG to ICO | PLANNED | P2 | L | Reviewed local ICO encoder |
-| file-size-converter | File Size Converter | PLANNED | P2 | S | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
+| file-size-converter | File Size Converter | READY | P2 | S | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | html-previewer | HTML Previewer | PLANNED | P2 | L | Sandboxed iframe with restrictive CSP and no script/same-origin privileges |
 
 ### Everyday Productivity Tools

@@ -3683,7 +3683,7 @@
       "category": "conversion",
       "description": "Convert byte quantities using explicitly labeled units.",
       "directory_path": "file-size-converter",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3698,10 +3698,22 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 11 implementation is present; scoped testing and publication are pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": null,
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "fromUnit",
+        "toUnit"
+      ]
     },
     {
       "id": "html-previewer",
