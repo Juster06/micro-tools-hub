@@ -1,5 +1,15 @@
 # Session handoff
 
+## Task 10.1 — publication verification, PR pending (2026-11-03)
+
+PR #16 merged as `f7a7553e7fb085302c6f2e24f927a031e234c6e0`. GitHub Pages run [41572786907](https://github.com/Juster06/micro-tools-hub/actions/runs/41572786907) and post-merge functional CI run [41572787293](https://github.com/Juster06/micro-tools-hub/actions/runs/41572787293) succeeded on that commit. Independent HTTPS checks matched the homepage and all 24 tool pages to the approved source; the custom domain and owner Analytics were preserved. The public homepage displayed 24 cards and all six tested links.
+
+Actual public Chromium interactions passed for Profit Margin Calculator, Date Difference Calculator, Countdown Timer, Random Name Picker, Hashtag Organizer and Secure Random Number Generator: normal, empty, invalid, selected edge input, primary action, reset, simulated clipboard and uncaught-error checks; timer pause/resume also passed. Separate per-tool release audits preserve exact timestamps, source hashes, deployment commit and limitations. The existing 18 tools were checked for HTTP/source identity and by post-merge automated CI; no new public browser interactions for those 18 are claimed.
+
+This release-verification branch proposes 93 registered, 24 RELEASED, 0 TESTED, 0 READY, 68 PLANNED and 1 BLOCKED; milestone 24/25 (96%). The public registry and card labels remain at the previous state until this metadata PR is separately reviewed, merged and deployed. This PR requires ordinary protected-main review and CI, with no administrator bypass. Do not merge without owner approval.
+
+**Next major task:** Review the Task 10.1 release-verification PR and wait for explicit owner approval before any merge. After an approved merge, independently verify release-metadata deployment.
+
 ## Latest session — Task 10 six-tool batch (2026-11-03)
 
 Task 10 implements the last six READY entries (ranks 15–20), each now
@@ -703,24 +713,24 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 25 released tools; 18 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 6; RELEASED: 18; DEPRECATED: 0.
+- Milestone: 25 released tools; 24 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 24; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: feat/task-10-six-tool-batch.
-- Latest commit observed before generation: 7887c31b480b741a23f3f24f54146ca112d59009.
+- Git branch: release/task-10-1-publication-verification.
+- Latest commit observed before generation: f7a7553e7fb085302c6f2e24f927a031e234c6e0.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
-- Secure Random Number Generator: TESTED, evidence dated 2026-11-03.
-- Random Name Picker: TESTED, evidence dated 2026-11-03.
-- Profit Margin Calculator: TESTED, evidence dated 2026-11-03.
-- Hashtag Organizer: TESTED, evidence dated 2026-11-03.
-- Date Difference Calculator: TESTED, evidence dated 2026-11-03.
-- Countdown Timer: TESTED, evidence dated 2026-11-03.
+- Secure Random Number Generator: RELEASED, evidence dated 2026-11-03.
+- Random Name Picker: RELEASED, evidence dated 2026-11-03.
+- Profit Margin Calculator: RELEASED, evidence dated 2026-11-03.
+- Hashtag Organizer: RELEASED, evidence dated 2026-11-03.
+- Date Difference Calculator: RELEASED, evidence dated 2026-11-03.
+- Countdown Timer: RELEASED, evidence dated 2026-11-03.
 - UUID Generator: RELEASED, evidence dated 2026-11-02.
 - URL Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
 - Timestamp Converter: RELEASED, evidence dated 2026-11-02.
@@ -737,28 +747,36 @@ These are registry verification records, not new tests or tasks executed by this
 ### Uncommitted changes (repository-relative)
 - ` M` CHANGELOG.md
 - ` M` PROGRESS_TRACKER.md
-- ` M` PROJECT_MASTER_PLAN.md
 - ` M` README.md
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
-- ` M` audit/TASK_10_DEVELOPMENT_PLAN.md
 - ` M` index.html
-- ` M` scripts/ci/README.md
-- ` M` scripts/project.test.mjs
+- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
 - ` M` tests/tools/countdown-timer/integration-browser.test.mjs
 - ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
+- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
 - ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
+- ` M` tests/tools/json-formatter/integration-browser.test.mjs
+- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
+- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
 - ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
 - ` M` tests/tools/random-name-picker/integration-browser.test.mjs
 - ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
-- `??` audit/COUNTDOWN_TIMER_VERIFICATION.json
-- `??` audit/DATE_DIFFERENCE_CALCULATOR_VERIFICATION.json
-- `??` audit/HASHTAG_ORGANIZER_VERIFICATION.json
-- `??` audit/PROFIT_MARGIN_CALCULATOR_VERIFICATION.json
-- `??` audit/RANDOM_NAME_PICKER_VERIFICATION.json
-- `??` audit/SECURE_RANDOM_NUMBER_GENERATOR_VERIFICATION.json
-- `??` audit/TASK_10_DELIVERY.md
+- ` M` tests/tools/slug-generator/integration-browser.test.mjs
+- ` M` tests/tools/text-reverser/integration-browser.test.mjs
+- ` M` tests/tools/text-sorter/integration-browser.test.mjs
+- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
+- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
+- `??` audit/COUNTDOWN_TIMER_RELEASE_VERIFICATION.json
+- `??` audit/DATE_DIFFERENCE_CALCULATOR_RELEASE_VERIFICATION.json
+- `??` audit/HASHTAG_ORGANIZER_RELEASE_VERIFICATION.json
+- `??` audit/PROFIT_MARGIN_CALCULATOR_RELEASE_VERIFICATION.json
+- `??` audit/RANDOM_NAME_PICKER_RELEASE_VERIFICATION.json
+- `??` audit/SECURE_RANDOM_NUMBER_GENERATOR_RELEASE_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

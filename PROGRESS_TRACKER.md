@@ -1,5 +1,13 @@
 # Progress tracker
 
+## Task 10.1 — publication verification, PR pending (2026-11-03)
+
+PR #16 merged as `f7a7553e7fb085302c6f2e24f927a031e234c6e0`. GitHub Pages run [41572786907](https://github.com/Juster06/micro-tools-hub/actions/runs/41572786907) and post-merge functional CI run [41572787293](https://github.com/Juster06/micro-tools-hub/actions/runs/41572787293) succeeded on that commit. Independent HTTPS checks matched the homepage and all 24 tool pages to the approved source; the custom domain and owner Analytics were preserved. The public homepage displayed 24 cards and all six tested links.
+
+Actual public Chromium interactions passed for Profit Margin Calculator, Date Difference Calculator, Countdown Timer, Random Name Picker, Hashtag Organizer and Secure Random Number Generator: normal, empty, invalid, selected edge input, primary action, reset, simulated clipboard and uncaught-error checks; timer pause/resume also passed. Separate per-tool release audits preserve exact timestamps, source hashes, deployment commit and limitations. The existing 18 tools were checked for HTTP/source identity and by post-merge automated CI; no new public browser interactions for those 18 are claimed.
+
+This release-verification branch proposes 93 registered, 24 RELEASED, 0 TESTED, 0 READY, 68 PLANNED and 1 BLOCKED; milestone 24/25 (96%). The public registry and card labels remain at the previous state until this metadata PR is separately reviewed, merged and deployed. This PR requires ordinary protected-main review and CI, with no administrator bypass. Do not merge without owner approval.
+
 ## Task 10 — tested batch awaiting owner review
 
 Task 10 implements the last six READY entries (ranks 15–20), each now
@@ -61,14 +69,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 6 |
-| RELEASED | 18 |
+| TESTED | 0 |
+| RELEASED | 24 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 69 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **25 released tools**. Progress: 18/25 (72.0%); remaining: 7.
+Current growth milestone: **25 released tools**. Progress: 24/25 (96.0%); remaining: 1.
 
 ### Tools by category
 
@@ -102,12 +110,12 @@ Next ready tool: **REQUIRES REVIEW**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| Secure Random Number Generator | TESTED | 2026-11-03 |
-| Random Name Picker | TESTED | 2026-11-03 |
-| Profit Margin Calculator | TESTED | 2026-11-03 |
-| Hashtag Organizer | TESTED | 2026-11-03 |
-| Date Difference Calculator | TESTED | 2026-11-03 |
-| Countdown Timer | TESTED | 2026-11-03 |
+| Secure Random Number Generator | RELEASED | 2026-11-03 |
+| Random Name Picker | RELEASED | 2026-11-03 |
+| Profit Margin Calculator | RELEASED | 2026-11-03 |
+| Hashtag Organizer | RELEASED | 2026-11-03 |
+| Date Difference Calculator | RELEASED | 2026-11-03 |
+| Countdown Timer | RELEASED | 2026-11-03 |
 | UUID Generator | RELEASED | 2026-11-02 |
 | URL Encoder and Decoder | RELEASED | 2026-11-02 |
 | Timestamp Converter | RELEASED | 2026-11-02 |

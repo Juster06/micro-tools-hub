@@ -22,7 +22,9 @@ const task8Ids=['text-reverser','json-formatter','url-encoder-decoder','base64-e
 const task8Released=registry.tools.filter(t=>task8Ids.includes(t.id)&&t.status==='RELEASED').length;
 const task9Ids=["uuid-generator","timestamp-converter","percentage-calculator","percentage-change-calculator","discount-calculator"];
 const task9Released=registry.tools.filter(t=>task9Ids.includes(t.id)&&t.status==='RELEASED').length;
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,(toolStatus==='RELEASED'?6:5)+task7Released+task8Released+task9Released);
+const task10Ids=["profit-margin-calculator","date-difference-calculator","countdown-timer","random-name-picker","hashtag-organizer","secure-random-number-generator"];
+const task10Released=registry.tools.filter(t=>task10Ids.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,(toolStatus==='RELEASED'?6:5)+task7Released+task8Released+task9Released+task10Released);
 const availability=toolStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});
