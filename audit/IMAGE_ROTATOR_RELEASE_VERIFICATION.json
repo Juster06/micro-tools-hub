@@ -1,0 +1,111 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-03",
+  "source_revision": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
+  "pages": [
+    {
+      "path": "image-rotator/index.html",
+      "source_sha256": "c4834f55c5c5ea0dfdebdee6267f10258abb6f48d8dab61c175a72e078a353e8",
+      "checks": [
+        "Public full HTML normalized SHA-256 matches approved merge",
+        "Public Chromium interactions: actual PNG pixels rotate 90, 180 and 270 degrees without losing transparency; horizontal and vertical flips transform actual source pixels correctly; PNG export produces transformed image with retained alpha and reset releases state; invalid, excessive and unavailable image decoding fail clearly; oversized PNG headers and animation are rejected before decoding; narrow layouts and missing input remain accessible",
+        "Public browser extra: Correct public route, title, required JavaScript and expected styling CDN",
+        "Public homepage has 31 correct routes; 25 previously released pages returned HTTP 200 with matching source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/image-rotator/",
+        "http_status": 200,
+        "checked_at": "2026-11-03T22:20:17.892061+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41727865909,
+    "commit": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41727866241,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "image-rotator",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/image-rotator/index.html",
+    "http_status": 200,
+    "source_sha256": "c4834f55c5c5ea0dfdebdee6267f10258abb6f48d8dab61c175a72e078a353e8",
+    "live_sha256": "c4834f55c5c5ea0dfdebdee6267f10258abb6f48d8dab61c175a72e078a353e8",
+    "source_matches": true,
+    "checked_at": "2026-11-03T22:17:28.920599+00:00"
+  },
+  "canonical_public_url": {
+    "id": "image-rotator",
+    "url": "https://everydaydigitalbox.com/image-rotator/",
+    "http_status": 200,
+    "checked_at": "2026-11-03T22:20:17.892061+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "url": "https://everydaydigitalbox.com/image-rotator/",
+    "tests": [
+      "actual PNG pixels rotate 90, 180 and 270 degrees without losing transparency",
+      "horizontal and vertical flips transform actual source pixels correctly",
+      "PNG export produces transformed image with retained alpha and reset releases state",
+      "invalid, excessive and unavailable image decoding fail clearly",
+      "oversized PNG headers and animation are rejected before decoding",
+      "narrow layouts and missing input remain accessible"
+    ],
+    "extra_checks": [
+      "Correct public route, title, required JavaScript and expected styling CDN"
+    ],
+    "console_errors": 0,
+    "scope": "Public HTTPS in isolated headless Chromium on Windows; simulated clipboard, print and download; simulated viewports; no physical device or native dialogs.",
+    "extra_checks_started_at": "2026-11-03T22:19:31.091Z",
+    "extra_checks_finished_at": "2026-11-03T22:19:33.708Z",
+    "interaction_test_time_window": {
+      "after": "2026-11-03T22:17:59.818Z",
+      "before": "2026-11-03T22:19:31.091Z",
+      "note": "26-test run completed between the homepage and extra-check timestamps."
+    }
+  },
+  "homepage": {
+    "result": "PASS",
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 31,
+    "converter_tested_link": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "checked_at": "2026-11-03T22:17:59.818Z"
+  },
+  "previous_evidence": "audit/IMAGE_ROTATOR_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows; simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, print invocation and downloads simulated; native OS clipboard, print and save dialogs not tested.",
+    "Existing 25 pages verified through public HTTP/source identity and successful post-merge CI, without individual new public interaction tests.",
+    "The source hashes normalize CRLF and strip trailing whitespace as in the project verification framework; separate raw SHA-256 hashes also match exactly.",
+    "Release metadata and Live labels require separate owner-authorized merge and deployment.",
+    "Static PNG only; encoded input at most 5 MiB and at most 8 million pixels; actual transformed pixels and transparent PNG blob checked, native download UI simulated."
+  ],
+  "raw_public_source": {
+    "id": "image-rotator",
+    "path": "image-rotator/index.html",
+    "url": "https://everydaydigitalbox.com/image-rotator/index.html",
+    "http_status": 200,
+    "approved_raw_sha256": "c4834f55c5c5ea0dfdebdee6267f10258abb6f48d8dab61c175a72e078a353e8",
+    "public_raw_sha256": "c4834f55c5c5ea0dfdebdee6267f10258abb6f48d8dab61c175a72e078a353e8",
+    "raw_match": true,
+    "checked_at": "2026-11-03T22:24:13.798263+00:00"
+  },
+  "homepage_raw_source": {
+    "id": "homepage",
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "approved_raw_sha256": "b3fe54b15d3220d419265fdfb9015aa403ecd29859304476fa41b98432471ec9",
+    "public_raw_sha256": "b3fe54b15d3220d419265fdfb9015aa403ecd29859304476fa41b98432471ec9",
+    "raw_match": true,
+    "checked_at": "2026-11-03T22:24:15.642227+00:00"
+  }
+}

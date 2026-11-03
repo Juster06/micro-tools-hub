@@ -1,0 +1,108 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-03",
+  "source_revision": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
+  "pages": [
+    {
+      "path": "vat-calculator/index.html",
+      "source_sha256": "9794b30aabe338ad25dbff3fe065fe1cc7026c5bf4b3abe6c4a297631f6a4b9c",
+      "checks": [
+        "Public full HTML normalized SHA-256 matches approved merge",
+        "Public Chromium interactions: add/remove modes and copy preserve the reconciled breakdown; invalid input clears stale output and reset restores values; all responsive widths and keyboard activation work",
+        "Public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Zero and custom rates; decimal input and half-up rounding",
+        "Public homepage has 31 correct routes; 25 previously released pages returned HTTP 200 with matching source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/vat-calculator/",
+        "http_status": 200,
+        "checked_at": "2026-11-03T22:20:17.905022+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41727865909,
+    "commit": "5340f1e006bc07f8913f875505e8ee3b20a4aacc",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41727866241,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "vat-calculator",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/vat-calculator/index.html",
+    "http_status": 200,
+    "source_sha256": "9794b30aabe338ad25dbff3fe065fe1cc7026c5bf4b3abe6c4a297631f6a4b9c",
+    "live_sha256": "9794b30aabe338ad25dbff3fe065fe1cc7026c5bf4b3abe6c4a297631f6a4b9c",
+    "source_matches": true,
+    "checked_at": "2026-11-03T22:17:30.154489+00:00"
+  },
+  "canonical_public_url": {
+    "id": "vat-calculator",
+    "url": "https://everydaydigitalbox.com/vat-calculator/",
+    "http_status": 200,
+    "checked_at": "2026-11-03T22:20:17.905022+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "url": "https://everydaydigitalbox.com/vat-calculator/",
+    "tests": [
+      "add/remove modes and copy preserve the reconciled breakdown",
+      "invalid input clears stale output and reset restores values",
+      "all responsive widths and keyboard activation work"
+    ],
+    "extra_checks": [
+      "Correct public route, title, required JavaScript and expected styling CDN",
+      "Zero and custom rates; decimal input and half-up rounding"
+    ],
+    "console_errors": 0,
+    "scope": "Public HTTPS in isolated headless Chromium on Windows; simulated clipboard, print and download; simulated viewports; no physical device or native dialogs.",
+    "extra_checks_started_at": "2026-11-03T22:19:31.091Z",
+    "extra_checks_finished_at": "2026-11-03T22:19:33.708Z",
+    "interaction_test_time_window": {
+      "after": "2026-11-03T22:17:59.818Z",
+      "before": "2026-11-03T22:19:31.091Z",
+      "note": "26-test run completed between the homepage and extra-check timestamps."
+    }
+  },
+  "homepage": {
+    "result": "PASS",
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 31,
+    "converter_tested_link": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "checked_at": "2026-11-03T22:17:59.818Z"
+  },
+  "previous_evidence": "audit/VAT_CALCULATOR_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows; simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, print invocation and downloads simulated; native OS clipboard, print and save dialogs not tested.",
+    "Existing 25 pages verified through public HTTP/source identity and successful post-merge CI, without individual new public interaction tests.",
+    "The source hashes normalize CRLF and strip trailing whitespace as in the project verification framework; separate raw SHA-256 hashes also match exactly.",
+    "Release metadata and Live labels require separate owner-authorized merge and deployment."
+  ],
+  "raw_public_source": {
+    "id": "vat-calculator",
+    "path": "vat-calculator/index.html",
+    "url": "https://everydaydigitalbox.com/vat-calculator/index.html",
+    "http_status": 200,
+    "approved_raw_sha256": "ba1f304eb05d2f4206315090c61179dadaa4eb90a2f646fd0c6eaf1c1847299f",
+    "public_raw_sha256": "ba1f304eb05d2f4206315090c61179dadaa4eb90a2f646fd0c6eaf1c1847299f",
+    "raw_match": true,
+    "checked_at": "2026-11-03T22:24:14.953778+00:00"
+  },
+  "homepage_raw_source": {
+    "id": "homepage",
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "approved_raw_sha256": "b3fe54b15d3220d419265fdfb9015aa403ecd29859304476fa41b98432471ec9",
+    "public_raw_sha256": "b3fe54b15d3220d419265fdfb9015aa403ecd29859304476fa41b98432471ec9",
+    "raw_match": true,
+    "checked_at": "2026-11-03T22:24:15.642227+00:00"
+  }
+}
