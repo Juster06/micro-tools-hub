@@ -1,0 +1,64 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-03",
+  "source_revision": "f7a7553e7fb085302c6f2e24f927a031e234c6e0",
+  "pages": [
+    {
+      "path": "random-name-picker/index.html",
+      "source_sha256": "d89f129611d89824a8a34cd4130be221ff5eb3bee181778d346efe27ad6aea41",
+      "checks": [
+        "Deployed full HTML source hash matched approved merged implementation",
+        "Actual public HTTPS Chromium: canonical HTTPS page loaded, normal input and primary action, copy via simulated clipboard, boundary or Unicode edge, empty input, invalid input, reset and stale-output clearing, no uncaught JavaScript errors",
+        "Public homepage: 24 canonical links and six tested availability labels"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/random-name-picker/",
+        "http_status": 200,
+        "checked_at": "2026-11-03T03:37:05.781441+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41572786907,
+    "commit": "f7a7553e7fb085302c6f2e24f927a031e234c6e0",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41572787293,
+    "conclusion": "success"
+  },
+  "public_source": {
+    "id": "random-name-picker",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/random-name-picker/",
+    "http_status": 200,
+    "source_sha256": "d89f129611d89824a8a34cd4130be221ff5eb3bee181778d346efe27ad6aea41",
+    "live_sha256": "d89f129611d89824a8a34cd4130be221ff5eb3bee181778d346efe27ad6aea41",
+    "source_matches": true,
+    "checked_at": "2026-11-03T03:37:05.781441+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "checks": [
+      "canonical HTTPS page loaded",
+      "normal input and primary action",
+      "copy via simulated clipboard",
+      "boundary or Unicode edge",
+      "empty input",
+      "invalid input",
+      "reset and stale-output clearing",
+      "no uncaught JavaScript errors"
+    ],
+    "checked_at": "2026-11-03T03:37:33.665Z"
+  },
+  "browser": "Chrome/156.0.8078.4",
+  "previous_evidence": "audit/RANDOM_NAME_PICKER_VERIFICATION.json",
+  "limitations": [
+    "Headless Chromium on Windows; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard mocked; no native OS clipboard or save-dialog claim.",
+    "Existing 18 pages verified by public source identity and post-merge CI; no new individual public interactions claimed for them.",
+    "Timer needs an open page and depends on the system clock.",
+    "Release metadata and Live labels are pending this PR and separate deployment."
+  ]
+}

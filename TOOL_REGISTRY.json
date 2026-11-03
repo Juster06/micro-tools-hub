@@ -2545,7 +2545,7 @@
       "category": "social",
       "description": "Normalize and group hashtag lists without platform account access.",
       "directory_path": "hashtag-organizer",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2559,22 +2559,26 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 10 source-bound scoped verification passed. Canonical route hashtag-organizer/index.html; publication pending. Separate tags with whitespace or commas. One leading # is optional. Unsupported punctuation fails the whole result instead of silently dropping tags.",
+      "notes": "Task 10 PR #16 merged; independently verified public source and scoped live browser behavior. Release metadata PR is pending.",
       "sequence_rank": 19,
       "related_tools": [
         "hashtag-counter"
       ],
       "verification": {
-        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_revision": "f7a7553e7fb085302c6f2e24f927a031e234c6e0",
         "source_sha256": "80a4dc10ca2c9a6ddab1f6c25022487daac7950c34150960e30c1973ba9511b0",
-        "evidence_path": "audit/HASHTAG_ORGANIZER_VERIFICATION.json",
+        "evidence_path": "audit/HASHTAG_ORGANIZER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "Deterministic inline logic fixtures and independent Node boundary tests",
-          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
-          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions"
+          "Deployed full HTML source hash matched approved merged implementation",
+          "Actual public HTTPS Chromium: canonical HTTPS page loaded, normal input and primary action, copy via simulated clipboard, boundary or Unicode edge, empty input, invalid input, reset and stale-output clearing, no uncaught JavaScript errors",
+          "Public homepage: 24 canonical links and six tested availability labels"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/hashtag-organizer/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T03:37:05.363733+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3050,7 +3054,7 @@
       "category": "calculator",
       "description": "Compare two calendar dates without daylight-saving drift.",
       "directory_path": "date-difference-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3064,20 +3068,24 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 10 source-bound scoped verification passed. Canonical route date-difference-calculator/index.html; publication pending. Use calendar dates from 0001-01-01 through 9999-12-31. Exclusive counting reports elapsed days; inclusive counting adds the endpoint.",
+      "notes": "Task 10 PR #16 merged; independently verified public source and scoped live browser behavior. Release metadata PR is pending.",
       "sequence_rank": 16,
       "related_tools": [],
       "verification": {
-        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_revision": "f7a7553e7fb085302c6f2e24f927a031e234c6e0",
         "source_sha256": "059d267d6e0c6e98bc57465ab96f86041932c26360c9145c5b93f929788a808c",
-        "evidence_path": "audit/DATE_DIFFERENCE_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/DATE_DIFFERENCE_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "Deterministic inline logic fixtures and independent Node boundary tests",
-          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
-          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions"
+          "Deployed full HTML source hash matched approved merged implementation",
+          "Actual public HTTPS Chromium: canonical HTTPS page loaded, normal input and primary action, copy via simulated clipboard, boundary or Unicode edge, empty input, invalid input, reset and stale-output clearing, no uncaught JavaScript errors",
+          "Public homepage: 24 canonical links and six tested availability labels"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/date-difference-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T03:37:05.564158+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3150,7 +3158,7 @@
       "category": "calculator",
       "description": "Calculate profit, margin and markup with distinct labels.",
       "directory_path": "profit-margin-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3164,20 +3172,24 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 10 source-bound scoped verification passed. Canonical route profit-margin-calculator/index.html; publication pending. Cost and revenue must be nonnegative. Margin uses revenue; markup uses cost. Zero denominators are shown as N/A.",
+      "notes": "Task 10 PR #16 merged; independently verified public source and scoped live browser behavior. Release metadata PR is pending.",
       "sequence_rank": 15,
       "related_tools": [],
       "verification": {
-        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_revision": "f7a7553e7fb085302c6f2e24f927a031e234c6e0",
         "source_sha256": "4b65d3a777499bcd2429e2d3c8c5388281ea069897e37be83bc9c188543cf653",
-        "evidence_path": "audit/PROFIT_MARGIN_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/PROFIT_MARGIN_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "Deterministic inline logic fixtures and independent Node boundary tests",
-          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
-          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions"
+          "Deployed full HTML source hash matched approved merged implementation",
+          "Actual public HTTPS Chromium: canonical HTTPS page loaded, normal input and primary action, copy via simulated clipboard, boundary or Unicode edge, empty input, invalid input, reset and stale-output clearing, no uncaught JavaScript errors",
+          "Public homepage: 24 canonical links and six tested availability labels"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/profit-margin-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T03:37:05.722391+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3276,7 +3288,7 @@
       "category": "security",
       "description": "Generate unbiased integers within a validated safe-integer interval.",
       "directory_path": "secure-random-number-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3291,21 +3303,24 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 10 source-bound scoped verification passed. Canonical route secure-random-number-generator/index.html; publication pending. Both bounds are inclusive safe integers. Generate 1–1,000 numbers; repeated values are possible.",
+      "notes": "Task 10 PR #16 merged; independently verified public source and scoped live browser behavior. Release metadata PR is pending.",
       "sequence_rank": 20,
       "related_tools": [],
       "verification": {
-        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_revision": "f7a7553e7fb085302c6f2e24f927a031e234c6e0",
         "source_sha256": "3fed89add76004b5e658f7f3160bf010b1bbed59ecd5ff0a8121312af6b8b8d5",
-        "evidence_path": "audit/SECURE_RANDOM_NUMBER_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/SECURE_RANDOM_NUMBER_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "Deterministic inline logic fixtures and independent Node boundary tests",
-          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
-          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions",
-          "Real Web Crypto generation; unavailable/failing/insecure provider handling; exact bounded rejection-sampling fixtures"
+          "Deployed full HTML source hash matched approved merged implementation",
+          "Actual public HTTPS Chromium: canonical HTTPS page loaded, normal input and primary action, copy via simulated clipboard, boundary or Unicode edge, empty input, invalid input, reset and stale-output clearing, no uncaught JavaScript errors",
+          "Public homepage: 24 canonical links and six tested availability labels"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/secure-random-number-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T03:37:05.787856+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3747,7 +3762,7 @@
       "category": "productivity",
       "description": "Run a duration timer using an actual deadline rather than interval ticks.",
       "directory_path": "countdown-timer",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3761,23 +3776,26 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 10 source-bound scoped verification passed. Canonical route countdown-timer/index.html; publication pending. Greater than zero and at most 24:00:00. Keep this page open; this timer cannot notify you after the page is closed.",
+      "notes": "Task 10 PR #16 merged; independently verified public source and scoped live browser behavior. Release metadata PR is pending.",
       "sequence_rank": 17,
       "related_tools": [
         "pomodoro-timer"
       ],
       "verification": {
-        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_revision": "f7a7553e7fb085302c6f2e24f927a031e234c6e0",
         "source_sha256": "9cff9b26284213f4c9c5c8845edf054ba3120624c94b76baa0df6b9310074d66",
-        "evidence_path": "audit/COUNTDOWN_TIMER_VERIFICATION.json",
+        "evidence_path": "audit/COUNTDOWN_TIMER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "Deterministic inline logic fixtures and independent Node boundary tests",
-          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
-          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions",
-          "Deterministic deadline/pause/resume/late-tick state tests; real one-second browser completion and visibility catch-up"
+          "Deployed full HTML source hash matched approved merged implementation",
+          "Actual public HTTPS Chromium: canonical HTTPS page loaded, normal input and primary action, copy via simulated clipboard, pause and resume, boundary or Unicode edge, empty input, invalid input, reset and stale-output clearing, no uncaught JavaScript errors",
+          "Public homepage: 24 canonical links and six tested availability labels"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/countdown-timer/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T03:37:05.787539+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3798,7 +3816,7 @@
       "category": "productivity",
       "description": "Draw from a local list with an explicit replacement policy.",
       "directory_path": "random-name-picker",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3813,21 +3831,24 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-03",
-      "notes": "Task 10 source-bound scoped verification passed. Canonical route random-name-picker/index.html; publication pending. A fresh pool is used for each click. Without replacement means no entry repeats within one batch; retained duplicate names are separate entries.",
+      "notes": "Task 10 PR #16 merged; independently verified public source and scoped live browser behavior. Release metadata PR is pending.",
       "sequence_rank": 18,
       "related_tools": [],
       "verification": {
-        "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+        "source_revision": "f7a7553e7fb085302c6f2e24f927a031e234c6e0",
         "source_sha256": "d89f129611d89824a8a34cd4130be221ff5eb3bee181778d346efe27ad6aea41",
-        "evidence_path": "audit/RANDOM_NAME_PICKER_VERIFICATION.json",
+        "evidence_path": "audit/RANDOM_NAME_PICKER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "Deterministic inline logic fixtures and independent Node boundary tests",
-          "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
-          "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions",
-          "Real Web Crypto generation; unavailable/failing/insecure provider handling; exact bounded rejection-sampling fixtures"
+          "Deployed full HTML source hash matched approved merged implementation",
+          "Actual public HTTPS Chromium: canonical HTTPS page loaded, normal input and primary action, copy via simulated clipboard, boundary or Unicode edge, empty input, invalid input, reset and stale-output clearing, no uncaught JavaScript errors",
+          "Public homepage: 24 canonical links and six tested availability labels"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/random-name-picker/",
+          "http_status": 200,
+          "checked_at": "2026-11-03T03:37:05.781441+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
