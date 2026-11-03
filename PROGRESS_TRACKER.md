@@ -1,5 +1,13 @@
 # Progress tracker
 
+## Task 11.1 — publication verification, release PR pending
+
+PR #18 merged as `c97c2d0b2a6d7377df3915b9fcebb0bc758f63ad`. The [Pages deployment 41577979484](https://github.com/Juster06/micro-tools-hub/actions/runs/41577979484) and [post-merge CI 41577980047](https://github.com/Juster06/micro-tools-hub/actions/runs/41577980047) succeeded on that commit. Independent public HTTPS source verification matched all 25 pages and the homepage to the merged source; all 25 homepage routes were verified, and owner Analytics and custom domain remained available. The original 24 utilities were checked by source identity and post-merge CI; no new individual live interactions for those tools are claimed.
+
+The File Size Converter passed 33 actual public Chromium checks covering SI, IEC, cross-system conversions, input limits, rounding, selectors, reset, keyboard, responsive widths and uncaught/console errors. Clipboard was simulated. The separate source-bound release audit records timestamps, hashes, deployment, scope and limitations.
+
+This release-verification branch proposes 93 registered, 25 RELEASED, 0 TESTED, 0 READY, 67 PLANNED, 1 BLOCKED: milestone 25/25 (100%). Main and the public registry remain at 24 RELEASED until this metadata PR is separately authorized, merged and deployed. No administrator bypass or deployment is authorized by this preparation.
+
 ## Task 11 — File Size Converter, publication pending
 
 File Size Converter is implemented and **TESTED** on `feat/file-size-converter`; the canonical route is `file-size-converter/index.html`. The branch homepage card reads **Tested · publication pending**. Its bounded BigInt rational arithmetic distinguishes SI powers of 1000 from IEC powers of 1024, handles plain nonnegative decimals, marks rounding and reports positive values below its display threshold without silently returning zero. No external processing or API is used.
@@ -79,14 +87,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 1 |
-| RELEASED | 24 |
+| TESTED | 0 |
+| RELEASED | 25 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 68 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **25 released tools**. Progress: 24/25 (96.0%); remaining: 1.
+Current growth milestone: **50 released tools**. Progress: 25/50 (50.0%); remaining: 25.
 
 ### Tools by category
 
@@ -124,7 +132,7 @@ Next ready tool: **REQUIRES REVIEW**.
 | Random Name Picker | RELEASED | 2026-11-03 |
 | Profit Margin Calculator | RELEASED | 2026-11-03 |
 | Hashtag Organizer | RELEASED | 2026-11-03 |
-| File Size Converter | TESTED | 2026-11-03 |
+| File Size Converter | RELEASED | 2026-11-03 |
 | Date Difference Calculator | RELEASED | 2026-11-03 |
 | Countdown Timer | RELEASED | 2026-11-03 |
 | UUID Generator | RELEASED | 2026-11-02 |
