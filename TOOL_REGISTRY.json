@@ -3683,7 +3683,7 @@
       "category": "conversion",
       "description": "Convert byte quantities using explicitly labeled units.",
       "directory_path": "file-size-converter",
-      "status": "IMPLEMENTED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3696,12 +3696,22 @@
         "Rounding",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Task 11 implementation is present; scoped testing and publication are pending.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 11 source-bound local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null,
+      "verification": {
+        "source_revision": "37274f8a96f1c454902940dede019ca08004df55",
+        "source_sha256": "46ee3d813639238f9b55dd0efd1356031bb1556507e3d005e833a0d232155775",
+        "evidence_path": "audit/FILE_SIZE_CONVERTER_VERIFICATION.json",
+        "test_scope": [
+          "141 independent exact rational SI/IEC fixtures and five Node logic tests",
+          "Eight real Chromium fixture cases / 21 assertions and four extended interaction tests",
+          "Responsive widths 320, 375, 768 and 1440; simulated clipboard/download; no input transport or storage"
+        ],
+        "publication": null
+      },
       "expected_interface_ids": [
         "toolInput",
         "runBtn",
