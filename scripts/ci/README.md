@@ -1,6 +1,47 @@
 # Functional CI — Task 9.5
 
-## Stage C: integrated on main, independently verified
+## Current Task 9.5 status: CI operational; ruleset enforcement active
+
+The owner activated [Main Branch Protection - Required Functional CI](https://github.com/Juster06/micro-tools-hub/rules/26413762),
+repository ruleset **26413762**. Actual authenticated and effective-main readback
+verify PRs, zero approvals, conversation resolution, exactly **Required functional
+checks** from GitHub Actions App 15368, strict current-main checking, blocked force
+pushes/deletion and RepositoryRole 5 **always** emergency admin bypass. Includes
+explicit main and the current default main. Bypass was inspected, not exercised.
+No protection/settings change was performed by this documentation task.
+
+Read [the verified active policy and PR/release/recovery procedures](MAIN_BRANCH_PROTECTION.md).
+Use ordinary reviewed PRs and current passing checks for code, release metadata
+and final documentation; no direct protected-main update or routine admin bypass.
+The original classic-rule proposal is superseded, not a rule to create now.
+
+Main 41544609839 and original PR 41550495523 passed all four jobs. Updated PR 15
+and final main identities/results are recorded after actual completion in the
+[linked final delivery record](https://github.com/Juster06/micro-tools-hub/pull/15).
+Pages remains active and independently deployed; public/source preservation is
+verified separately. Direct saved Pages configuration is unavailable: do not
+claim its source/HTTPS/domain/build-type fields were directly read or that CI
+gates Pages. Task 10 is next and awaits separate scope; do not begin it here.
+Earlier stage notes below are historical and do not describe current protection.
+
+## Historical Stage D preparation — superseded by active ruleset
+
+CI remains operational on main; actual main is still **unprotected**, with no
+rulesets/active rules. The connected account is admin, but exposed connector tools
+cannot edit protection/rulesets; no authenticated local GitHub CLI is available.
+The connector's Administration-write grant is not exposed or tested. No settings
+were applied, so ordinary merge enforcement is **not verified**.
+
+Read [the exact main-only policy, owner setup and recovery guide](MAIN_BRANCH_PROTECTION.md).
+It specifies required PRs, zero mandatory human approvals, strict current-main
+**Required functional checks** from GitHub Actions, conversation resolution,
+blocked force pushes/deletion and retained emergency admin bypass. It includes
+the future Codex and release-metadata PR workflow; do not push those changes
+directly to main or use admin bypass routinely. No Pages check, deployment
+configuration/lifecycle change or Task 10. Applying the rule and actual readback
+are required before calling Task 9.5 protected/enforced.
+
+## Historical Stage C: integrated on main, independently verified
 
 PR #14 merged normally as `3f08b910a70f105b91d26e6df8eca7c0477d504d` at
 2026-11-02T23:14:09Z, with expected reviewed head

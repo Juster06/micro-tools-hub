@@ -1,5 +1,35 @@
 # Changelog
 
+## Task 9.5 — final active-ruleset documentation and handoff
+
+- Corrected the superseded unprotected/classic-rule proposal to verified Active
+  repository ruleset 26413762, Main Branch Protection - Required Functional CI.
+  Recorded actual main targets, PR/zero-approval/conversation requirements,
+  Required functional checks from GitHub Actions App15368, strict policy, force-push/
+  deletion restrictions and administrator Always allow emergency bypass.
+- Preserved historical pre-activation evidence. Documented ordinary Codex and
+  release-metadata PR workflows, recovery, emergency limits and the durable PR 15
+  final continuation record for exact merge/main CI/public verification results.
+- Preserved the Pages direct-configuration-readback limitation; workflow/public
+  observations do not certify every saved setting or establish deployment gating.
+- Final corrections are submitted through PR 15 with current passing checks and
+  normal expected-head merge; no admin bypass, setting/test/utility/registry/
+  lifecycle/dashboard/shortcut changes. Task 10 is next, not started.
+
+## Historical Task 9.5 Stage D — proposal before owner activation
+
+- Verified expected main, successful four-job main CI and independent Pages.
+  Actual aggregate context/source is Required functional checks / GitHub Actions.
+- Actual main remains unprotected with no rulesets/active rules. Connected
+  account is admin, but available tools have no administration endpoint and
+  no authenticated local GitHub CLI is available; no scope denial is invented.
+- Documented the exact classic main-only PR/strict-check/conversation policy,
+  zero mandatory approvals, retained admin emergency bypass, disabled force
+  pushes/deletion, owner setup/readback, future PR/release-metadata and recovery.
+- Documentation uses a feature PR. No settings/permission/deployment/workflow,
+  utility/registry/lifecycle/dashboard/shortcut change or Task 10. Enforcement
+  remains NOT VERIFIED until owner applies and reads back actual settings.
+
 ## Task 9.5 Stage C — functional CI integrated and verified on main
 
 - Merged PR #14 normally at the reviewed head as

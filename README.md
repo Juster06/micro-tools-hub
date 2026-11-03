@@ -1,20 +1,22 @@
 # Everyday Digital Box — WebUtils Hub
 
-## Task 9.5 — functional CI integrated and verified on main
+## Task 9.5 — functional CI and active main protection
 
-[PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) merged as
-`3f08b910a70f105b91d26e6df8eca7c0477d504d`. Both the final PR workflow and
-genuine main push [run 41543825503](https://github.com/Juster06/micro-tools-hub/actions/runs/41543825503)
-passed Python, Node, real Chromium and the aggregate functional check. Actual
-counts, commands, artifacts, limits and protection options are in the
-[CI documentation](scripts/ci/README.md) and latest handoff.
+Functional CI is integrated on main through PR 14. The owner activated repository
+ruleset **26413762**, [Main Branch Protection - Required Functional CI](https://github.com/Juster06/micro-tools-hub/rules/26413762).
+Verified ordinary changes require PRs, zero mandatory approvals, resolved
+conversations, current main and the **Required functional checks** aggregate
+from GitHub Actions. Force pushes/deletion are blocked; administrators retain
+Always allow emergency bypass, which agents must not use routinely.
 
-Existing Pages automatically deployed the merge; deployment remains separate
-from functional tests. All 18 utilities, registry, homepage/owner Analytics,
-domain, dashboard and shortcuts remain unchanged. Read-only inspection found
-main unprotected with no rulesets; no settings or lifecycle changes were made.
-Branch-protection enforcement and deployment gating are not enabled or claimed.
-No Task 10. Earlier task checkpoints below are historical.
+See [CI documentation](scripts/ci/README.md), [active protection procedures](scripts/ci/MAIN_BRANCH_PROTECTION.md)
+and [PR 15's final delivery record](https://github.com/Juster06/micro-tools-hub/pull/15)
+for actual source identities, current PR/main CI, final merge and public checks.
+All 18 tools, registry/homepage/owner Analytics, domain and dashboard/shortcuts
+remain unchanged. Pages deploys independently; its saved configuration could
+not be directly read, so no claim is made that every setting was verified.
+Task 10 is the next development task and awaits separate authorization.
+Earlier stage checkpoints below are historical.
 
 ## Historical Stage B — GitHub CI verified; PR awaiting review
 
