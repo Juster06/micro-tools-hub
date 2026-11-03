@@ -1,0 +1,1237 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "B-to-B",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "B"
+      },
+      "expected": "1 B"
+    },
+    {
+      "id": "B-to-kB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "kB"
+      },
+      "expected": "0.001 kB"
+    },
+    {
+      "id": "B-to-MB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "MB"
+      },
+      "expected": "0.000001 MB"
+    },
+    {
+      "id": "B-to-GB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "GB"
+      },
+      "expected": "0.000000001 GB"
+    },
+    {
+      "id": "B-to-TB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "TB"
+      },
+      "expected": "0.000000000001 TB"
+    },
+    {
+      "id": "B-to-PB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "PB"
+      },
+      "expected": "< 0.000000000001 PB"
+    },
+    {
+      "id": "B-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "KiB"
+      },
+      "expected": "0.0009765625 KiB"
+    },
+    {
+      "id": "B-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "MiB"
+      },
+      "expected": "≈ 0.000000953674 MiB"
+    },
+    {
+      "id": "B-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "GiB"
+      },
+      "expected": "≈ 0.000000000931 GiB"
+    },
+    {
+      "id": "B-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "TiB"
+      },
+      "expected": "< 0.000000000001 TiB"
+    },
+    {
+      "id": "B-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "B",
+        "to": "PiB"
+      },
+      "expected": "< 0.000000000001 PiB"
+    },
+    {
+      "id": "kB-to-B",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "B"
+      },
+      "expected": "1000 B"
+    },
+    {
+      "id": "kB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "kB"
+      },
+      "expected": "1 kB"
+    },
+    {
+      "id": "kB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "MB"
+      },
+      "expected": "0.001 MB"
+    },
+    {
+      "id": "kB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "GB"
+      },
+      "expected": "0.000001 GB"
+    },
+    {
+      "id": "kB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "TB"
+      },
+      "expected": "0.000000001 TB"
+    },
+    {
+      "id": "kB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "PB"
+      },
+      "expected": "0.000000000001 PB"
+    },
+    {
+      "id": "kB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "KiB"
+      },
+      "expected": "0.9765625 KiB"
+    },
+    {
+      "id": "kB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "MiB"
+      },
+      "expected": "≈ 0.000953674316 MiB"
+    },
+    {
+      "id": "kB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "GiB"
+      },
+      "expected": "≈ 0.000000931323 GiB"
+    },
+    {
+      "id": "kB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "TiB"
+      },
+      "expected": "≈ 0.000000000909 TiB"
+    },
+    {
+      "id": "kB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "kB",
+        "to": "PiB"
+      },
+      "expected": "< 0.000000000001 PiB"
+    },
+    {
+      "id": "MB-to-B",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "B"
+      },
+      "expected": "1000000 B"
+    },
+    {
+      "id": "MB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "kB"
+      },
+      "expected": "1000 kB"
+    },
+    {
+      "id": "MB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "MB"
+      },
+      "expected": "1 MB"
+    },
+    {
+      "id": "MB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "GB"
+      },
+      "expected": "0.001 GB"
+    },
+    {
+      "id": "MB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "TB"
+      },
+      "expected": "0.000001 TB"
+    },
+    {
+      "id": "MB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "PB"
+      },
+      "expected": "0.000000001 PB"
+    },
+    {
+      "id": "MB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "KiB"
+      },
+      "expected": "976.5625 KiB"
+    },
+    {
+      "id": "MB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "MiB"
+      },
+      "expected": "≈ 0.953674316406 MiB"
+    },
+    {
+      "id": "MB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "GiB"
+      },
+      "expected": "≈ 0.000931322575 GiB"
+    },
+    {
+      "id": "MB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "TiB"
+      },
+      "expected": "≈ 0.000000909495 TiB"
+    },
+    {
+      "id": "MB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "MB",
+        "to": "PiB"
+      },
+      "expected": "≈ 0.000000000888 PiB"
+    },
+    {
+      "id": "GB-to-B",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "B"
+      },
+      "expected": "1000000000 B"
+    },
+    {
+      "id": "GB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "kB"
+      },
+      "expected": "1000000 kB"
+    },
+    {
+      "id": "GB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "MB"
+      },
+      "expected": "1000 MB"
+    },
+    {
+      "id": "GB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "GB"
+      },
+      "expected": "1 GB"
+    },
+    {
+      "id": "GB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "TB"
+      },
+      "expected": "0.001 TB"
+    },
+    {
+      "id": "GB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "PB"
+      },
+      "expected": "0.000001 PB"
+    },
+    {
+      "id": "GB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "KiB"
+      },
+      "expected": "976562.5 KiB"
+    },
+    {
+      "id": "GB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "MiB"
+      },
+      "expected": "953.67431640625 MiB"
+    },
+    {
+      "id": "GB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "GiB"
+      },
+      "expected": "≈ 0.931322574615 GiB"
+    },
+    {
+      "id": "GB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "TiB"
+      },
+      "expected": "≈ 0.000909494702 TiB"
+    },
+    {
+      "id": "GB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "GB",
+        "to": "PiB"
+      },
+      "expected": "≈ 0.000000888178 PiB"
+    },
+    {
+      "id": "TB-to-B",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "B"
+      },
+      "expected": "1000000000000 B"
+    },
+    {
+      "id": "TB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "kB"
+      },
+      "expected": "1000000000 kB"
+    },
+    {
+      "id": "TB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "MB"
+      },
+      "expected": "1000000 MB"
+    },
+    {
+      "id": "TB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "GB"
+      },
+      "expected": "1000 GB"
+    },
+    {
+      "id": "TB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "TB"
+      },
+      "expected": "1 TB"
+    },
+    {
+      "id": "TB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "PB"
+      },
+      "expected": "0.001 PB"
+    },
+    {
+      "id": "TB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "KiB"
+      },
+      "expected": "976562500 KiB"
+    },
+    {
+      "id": "TB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "MiB"
+      },
+      "expected": "953674.31640625 MiB"
+    },
+    {
+      "id": "TB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "GiB"
+      },
+      "expected": "≈ 931.322574615479 GiB"
+    },
+    {
+      "id": "TB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "TiB"
+      },
+      "expected": "≈ 0.909494701773 TiB"
+    },
+    {
+      "id": "TB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "TB",
+        "to": "PiB"
+      },
+      "expected": "≈ 0.00088817842 PiB"
+    },
+    {
+      "id": "PB-to-B",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "B"
+      },
+      "expected": "1000000000000000 B"
+    },
+    {
+      "id": "PB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "kB"
+      },
+      "expected": "1000000000000 kB"
+    },
+    {
+      "id": "PB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "MB"
+      },
+      "expected": "1000000000 MB"
+    },
+    {
+      "id": "PB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "GB"
+      },
+      "expected": "1000000 GB"
+    },
+    {
+      "id": "PB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "TB"
+      },
+      "expected": "1000 TB"
+    },
+    {
+      "id": "PB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "PB"
+      },
+      "expected": "1 PB"
+    },
+    {
+      "id": "PB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "KiB"
+      },
+      "expected": "976562500000 KiB"
+    },
+    {
+      "id": "PB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "MiB"
+      },
+      "expected": "953674316.40625 MiB"
+    },
+    {
+      "id": "PB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "GiB"
+      },
+      "expected": "≈ 931322.574615478516 GiB"
+    },
+    {
+      "id": "PB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "TiB"
+      },
+      "expected": "≈ 909.494701772928 TiB"
+    },
+    {
+      "id": "PB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "PB",
+        "to": "PiB"
+      },
+      "expected": "≈ 0.8881784197 PiB"
+    },
+    {
+      "id": "KiB-to-B",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "B"
+      },
+      "expected": "1024 B"
+    },
+    {
+      "id": "KiB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "kB"
+      },
+      "expected": "1.024 kB"
+    },
+    {
+      "id": "KiB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "MB"
+      },
+      "expected": "0.001024 MB"
+    },
+    {
+      "id": "KiB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "GB"
+      },
+      "expected": "0.000001024 GB"
+    },
+    {
+      "id": "KiB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "TB"
+      },
+      "expected": "0.000000001024 TB"
+    },
+    {
+      "id": "KiB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "PB"
+      },
+      "expected": "≈ 0.000000000001 PB"
+    },
+    {
+      "id": "KiB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "KiB"
+      },
+      "expected": "1 KiB"
+    },
+    {
+      "id": "KiB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "MiB"
+      },
+      "expected": "0.0009765625 MiB"
+    },
+    {
+      "id": "KiB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "GiB"
+      },
+      "expected": "≈ 0.000000953674 GiB"
+    },
+    {
+      "id": "KiB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "TiB"
+      },
+      "expected": "≈ 0.000000000931 TiB"
+    },
+    {
+      "id": "KiB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "KiB",
+        "to": "PiB"
+      },
+      "expected": "< 0.000000000001 PiB"
+    },
+    {
+      "id": "MiB-to-B",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "B"
+      },
+      "expected": "1048576 B"
+    },
+    {
+      "id": "MiB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "kB"
+      },
+      "expected": "1048.576 kB"
+    },
+    {
+      "id": "MiB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "MB"
+      },
+      "expected": "1.048576 MB"
+    },
+    {
+      "id": "MiB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "GB"
+      },
+      "expected": "0.001048576 GB"
+    },
+    {
+      "id": "MiB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "TB"
+      },
+      "expected": "0.000001048576 TB"
+    },
+    {
+      "id": "MiB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "PB"
+      },
+      "expected": "≈ 0.000000001049 PB"
+    },
+    {
+      "id": "MiB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "KiB"
+      },
+      "expected": "1024 KiB"
+    },
+    {
+      "id": "MiB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "MiB"
+      },
+      "expected": "1 MiB"
+    },
+    {
+      "id": "MiB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "GiB"
+      },
+      "expected": "0.0009765625 GiB"
+    },
+    {
+      "id": "MiB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "TiB"
+      },
+      "expected": "≈ 0.000000953674 TiB"
+    },
+    {
+      "id": "MiB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "MiB",
+        "to": "PiB"
+      },
+      "expected": "≈ 0.000000000931 PiB"
+    },
+    {
+      "id": "GiB-to-B",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "B"
+      },
+      "expected": "1073741824 B"
+    },
+    {
+      "id": "GiB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "kB"
+      },
+      "expected": "1073741.824 kB"
+    },
+    {
+      "id": "GiB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "MB"
+      },
+      "expected": "1073.741824 MB"
+    },
+    {
+      "id": "GiB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "GB"
+      },
+      "expected": "1.073741824 GB"
+    },
+    {
+      "id": "GiB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "TB"
+      },
+      "expected": "0.001073741824 TB"
+    },
+    {
+      "id": "GiB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "PB"
+      },
+      "expected": "≈ 0.000001073742 PB"
+    },
+    {
+      "id": "GiB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "KiB"
+      },
+      "expected": "1048576 KiB"
+    },
+    {
+      "id": "GiB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "MiB"
+      },
+      "expected": "1024 MiB"
+    },
+    {
+      "id": "GiB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "GiB"
+      },
+      "expected": "1 GiB"
+    },
+    {
+      "id": "GiB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "TiB"
+      },
+      "expected": "0.0009765625 TiB"
+    },
+    {
+      "id": "GiB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "GiB",
+        "to": "PiB"
+      },
+      "expected": "≈ 0.000000953674 PiB"
+    },
+    {
+      "id": "TiB-to-B",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "B"
+      },
+      "expected": "1099511627776 B"
+    },
+    {
+      "id": "TiB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "kB"
+      },
+      "expected": "1099511627.776 kB"
+    },
+    {
+      "id": "TiB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "MB"
+      },
+      "expected": "1099511.627776 MB"
+    },
+    {
+      "id": "TiB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "GB"
+      },
+      "expected": "1099.511627776 GB"
+    },
+    {
+      "id": "TiB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "TB"
+      },
+      "expected": "1.099511627776 TB"
+    },
+    {
+      "id": "TiB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "PB"
+      },
+      "expected": "≈ 0.001099511628 PB"
+    },
+    {
+      "id": "TiB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "KiB"
+      },
+      "expected": "1073741824 KiB"
+    },
+    {
+      "id": "TiB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "MiB"
+      },
+      "expected": "1048576 MiB"
+    },
+    {
+      "id": "TiB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "GiB"
+      },
+      "expected": "1024 GiB"
+    },
+    {
+      "id": "TiB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "TiB"
+      },
+      "expected": "1 TiB"
+    },
+    {
+      "id": "TiB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "TiB",
+        "to": "PiB"
+      },
+      "expected": "0.0009765625 PiB"
+    },
+    {
+      "id": "PiB-to-B",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "B"
+      },
+      "expected": "1125899906842624 B"
+    },
+    {
+      "id": "PiB-to-kB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "kB"
+      },
+      "expected": "1125899906842.624 kB"
+    },
+    {
+      "id": "PiB-to-MB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "MB"
+      },
+      "expected": "1125899906.842624 MB"
+    },
+    {
+      "id": "PiB-to-GB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "GB"
+      },
+      "expected": "1125899.906842624 GB"
+    },
+    {
+      "id": "PiB-to-TB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "TB"
+      },
+      "expected": "1125.899906842624 TB"
+    },
+    {
+      "id": "PiB-to-PB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "PB"
+      },
+      "expected": "≈ 1.125899906843 PB"
+    },
+    {
+      "id": "PiB-to-KiB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "KiB"
+      },
+      "expected": "1099511627776 KiB"
+    },
+    {
+      "id": "PiB-to-MiB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "MiB"
+      },
+      "expected": "1073741824 MiB"
+    },
+    {
+      "id": "PiB-to-GiB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "GiB"
+      },
+      "expected": "1048576 GiB"
+    },
+    {
+      "id": "PiB-to-TiB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "TiB"
+      },
+      "expected": "1024 TiB"
+    },
+    {
+      "id": "PiB-to-PiB",
+      "input": "1",
+      "options": {
+        "from": "PiB",
+        "to": "PiB"
+      },
+      "expected": "1 PiB"
+    },
+    {
+      "id": "decimal-0",
+      "input": "0",
+      "options": {
+        "from": "MB",
+        "to": "MiB"
+      },
+      "expected": "0 MiB"
+    },
+    {
+      "id": "decimal-1",
+      "input": "0.5",
+      "options": {
+        "from": "MB",
+        "to": "MiB"
+      },
+      "expected": "≈ 0.476837158203 MiB"
+    },
+    {
+      "id": "decimal-2",
+      "input": ".125",
+      "options": {
+        "from": "MB",
+        "to": "MiB"
+      },
+      "expected": "≈ 0.119209289551 MiB"
+    },
+    {
+      "id": "decimal-3",
+      "input": "1.000000000001",
+      "options": {
+        "from": "MB",
+        "to": "MiB"
+      },
+      "expected": "≈ 0.953674316407 MiB"
+    },
+    {
+      "id": "decimal-4",
+      "input": "999999999999999999999999999999",
+      "options": {
+        "from": "MB",
+        "to": "MiB"
+      },
+      "expected": "≈ 953674316406249999999999999999.046325683594 MiB"
+    },
+    {
+      "id": "decimal-5",
+      "input": "0.000000000000000000000000000001",
+      "options": {
+        "from": "MB",
+        "to": "MiB"
+      },
+      "expected": "< 0.000000000001 MiB"
+    },
+    {
+      "id": "decimal-6",
+      "input": "000001.00",
+      "options": {
+        "from": "MB",
+        "to": "MiB"
+      },
+      "expected": "≈ 0.953674316406 MiB"
+    },
+    {
+      "id": "invalid-0",
+      "input": "",
+      "options": {},
+      "error": "Enter"
+    },
+    {
+      "id": "invalid-1",
+      "input": " ",
+      "options": {},
+      "error": "Enter"
+    },
+    {
+      "id": "invalid-2",
+      "input": "-1",
+      "options": {},
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-3",
+      "input": "+1",
+      "options": {},
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-4",
+      "input": "1e2",
+      "options": {},
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-5",
+      "input": "1,000",
+      "options": {},
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-6",
+      "input": "1x",
+      "options": {},
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-7",
+      "input": "NaN",
+      "options": {},
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-8",
+      "input": "Infinity",
+      "options": {},
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-9",
+      "input": "😀",
+      "options": {},
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-10",
+      "input": "1111111111111111111111111111111111111111111111111111111111111",
+      "options": {},
+      "error": "UTF-16"
+    },
+    {
+      "id": "invalid-11",
+      "input": "0.1111111111111111111111111111111",
+      "options": {},
+      "error": "fractional"
+    },
+    {
+      "id": "bad-unit",
+      "input": "1",
+      "options": {
+        "from": "kb"
+      },
+      "error": "supported"
+    }
+  ]
+}

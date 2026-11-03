@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-03",
+  "source_revision": "37274f8a96f1c454902940dede019ca08004df55",
+  "original_local_source_revision": "27ab3ed",
+  "source_tree_sha": "08047150f2089c7557a47718d422e89f257d3053",
+  "pages": [
+    {
+      "path": "file-size-converter/index.html",
+      "source_sha256": "46ee3d813639238f9b55dd0efd1356031bb1556507e3d005e833a0d232155775",
+      "checks": [
+        "141 independent exact rational SI/IEC fixtures and five Node logic tests",
+        "Eight real Chromium fixture cases / 21 assertions and four extended interaction tests",
+        "Responsive widths 320, 375, 768 and 1440; simulated clipboard/download; no input transport or storage"
+      ]
+    }
+  ],
+  "limitations": [
+    "Headless Chromium only; native clipboard and downloads simulated.",
+    "BigInt is required; plain decimals limited to 60 UTF-16 units and 30 fractional digits.",
+    "Rounded results marked approximately; very small nonzero results displayed as below threshold.",
+    "No public publication, release or deployment has been verified."
+  ]
+}

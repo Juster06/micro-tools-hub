@@ -1,6 +1,16 @@
 # Everyday Digital Box — WebUtils Hub
 
-## Task 10.1 — publication verification, PR pending (2026-11-03)
+## Task 11 — File Size Converter, publication pending
+
+File Size Converter is implemented and **TESTED** on `feat/file-size-converter`; the canonical route is `file-size-converter/index.html`. The branch homepage card reads **Tested · publication pending**. Its bounded BigInt rational arithmetic distinguishes SI powers of 1000 from IEC powers of 1024, handles plain nonnegative decimals, marks rounding and reports positive values below its display threshold without silently returning zero. No external processing or API is used.
+
+Branch inventory: 93 registered, 24 RELEASED, 1 TESTED, 0 READY, 67 PLANNED, 1 BLOCKED. The release milestone remains 24/25 (96%). Main and the live site remain at 24 RELEASED until separate authorized integration, successful deployment and independent public verification. See `audit/FILE_SIZE_CONVERTER_VERIFICATION.json` for local source-bound scope and limits.
+
+## Task 10 completed; Task 11 development (2026-11-03)
+
+Task 10 and PR #17 were merged as `4fe2a8a9096bdf5286c172378c3f636d88a43264`; [Pages deployment 41575470412](https://github.com/Juster06/micro-tools-hub/actions/runs/41575470412) and [post-merge CI 41575471095](https://github.com/Juster06/micro-tools-hub/actions/runs/41575471095) succeeded. The public homepage, registry, all 24 canonical sources and the six new tools were independently checked. At Task 10 completion the inventory was 93 registered, 24 RELEASED, 0 TESTED, 0 READY, 68 PLANNED, 1 BLOCKED; milestone 24/25 (96%). Previous pending-PR notes below are historical. Task 11 is authorized on a feature branch; implementation is not a public release.
+
+## Historical Task 10.1 — publication verification before merge (2026-11-03)
 
 PR #16 merged as `f7a7553e7fb085302c6f2e24f927a031e234c6e0`. GitHub Pages run [41572786907](https://github.com/Juster06/micro-tools-hub/actions/runs/41572786907) and post-merge functional CI run [41572787293](https://github.com/Juster06/micro-tools-hub/actions/runs/41572787293) succeeded on that commit. Independent HTTPS checks matched the homepage and all 24 tool pages to the approved source; the custom domain and owner Analytics were preserved. The public homepage displayed 24 cards and all six tested links.
 
@@ -8,7 +18,7 @@ Actual public Chromium interactions passed for Profit Margin Calculator, Date Di
 
 This release-verification branch proposes 93 registered, 24 RELEASED, 0 TESTED, 0 READY, 68 PLANNED and 1 BLOCKED; milestone 24/25 (96%). The public registry and card labels remain at the previous state until this metadata PR is separately reviewed, merged and deployed. This PR requires ordinary protected-main review and CI, with no administrator bypass. Do not merge without owner approval.
 
-## Task 10 — six tested tools, PR review pending
+## Historical Task 10 — six tested tools before integration
 
 Task 10 implements the last six READY entries (ranks 15–20), each now
 **TESTED / REQUIRED_PASSED**, with `publication: null`. Branch

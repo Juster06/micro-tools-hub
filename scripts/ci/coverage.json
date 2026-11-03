@@ -16,6 +16,7 @@
     "tests/tools/date-difference-calculator/logic.test.mjs",
     "tests/tools/discount-calculator/logic.test.mjs",
     "tests/tools/duplicate-line-remover/logic.test.mjs",
+    "tests/tools/file-size-converter/logic.test.mjs",
     "tests/tools/find-and-replace/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
     "tests/tools/json-formatter/logic.test.mjs",
@@ -44,6 +45,8 @@
     "tests/tools/discount-calculator/integration-browser.test.mjs",
     "tests/tools/duplicate-line-remover/extended-browser.test.mjs",
     "tests/tools/duplicate-line-remover/integration-browser.test.mjs",
+    "tests/tools/file-size-converter/extended-browser.test.mjs",
+    "tests/tools/file-size-converter/integration-browser.test.mjs",
     "tests/tools/find-and-replace/extended-browser.test.mjs",
     "tests/tools/find-and-replace/integration-browser.test.mjs",
     "tests/tools/hashtag-organizer/extended-browser.test.mjs",
@@ -197,6 +200,11 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "file-size-converter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -250,8 +258,8 @@
   ],
   "minimum_tests": {
     "python-project": 142,
-    "node-regression": 225,
-    "browser-tests": 268
+    "node-regression": 230,
+    "browser-tests": 274
   },
   "aggregate": {
     "job": "required-checks",
