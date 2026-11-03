@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "gain",
+      "input": "80",
+      "options": {
+        "b": "100",
+        "precision": "2"
+      },
+      "expected": "Profit: 20.00\nMargin: 20.00%\nMarkup: 25.00%\nCost: 80.00\nRevenue: 100.00\nFormulas: profit = revenue − cost; margin = profit / revenue × 100; markup = profit / cost × 100"
+    },
+    {
+      "id": "loss",
+      "input": "100",
+      "options": {
+        "b": "80",
+        "precision": "2"
+      },
+      "expected": "Profit: -20.00\nMargin: -25.00%\nMarkup: -20.00%\nCost: 100.00\nRevenue: 80.00\nFormulas: profit = revenue − cost; margin = profit / revenue × 100; markup = profit / cost × 100"
+    },
+    {
+      "id": "both-zero",
+      "input": "0",
+      "options": {
+        "b": "0",
+        "precision": "2"
+      },
+      "expected": "Profit: 0.00\nMargin: N/A (revenue is zero)\nMarkup: N/A (cost is zero)\nCost: 0.00\nRevenue: 0.00\nFormulas: profit = revenue − cost; margin = profit / revenue × 100; markup = profit / cost × 100"
+    },
+    {
+      "id": "free-cost",
+      "input": "0",
+      "options": {
+        "b": "100",
+        "precision": "2"
+      },
+      "expected": "Profit: 100.00\nMargin: 100.00%\nMarkup: N/A (cost is zero)\nCost: 0.00\nRevenue: 100.00\nFormulas: profit = revenue − cost; margin = profit / revenue × 100; markup = profit / cost × 100"
+    },
+    {
+      "id": "no-revenue",
+      "input": "100",
+      "options": {
+        "b": "0",
+        "precision": "2"
+      },
+      "expected": "Profit: -100.00\nMargin: N/A (revenue is zero)\nMarkup: -100.00%\nCost: 100.00\nRevenue: 0.00\nFormulas: profit = revenue − cost; margin = profit / revenue × 100; markup = profit / cost × 100"
+    },
+    {
+      "id": "precision-0",
+      "input": "8e1",
+      "options": {
+        "b": "1e2",
+        "precision": "0"
+      },
+      "expected": "Profit: 20\nMargin: 20%\nMarkup: 25%\nCost: 80\nRevenue: 100\nFormulas: profit = revenue − cost; margin = profit / revenue × 100; markup = profit / cost × 100"
+    },
+    {
+      "id": "precision-2",
+      "input": "8e1",
+      "options": {
+        "b": "1e2",
+        "precision": "2"
+      },
+      "expected": "Profit: 20.00\nMargin: 20.00%\nMarkup: 25.00%\nCost: 80.00\nRevenue: 100.00\nFormulas: profit = revenue − cost; margin = profit / revenue × 100; markup = profit / cost × 100"
+    },
+    {
+      "id": "precision-4",
+      "input": "8e1",
+      "options": {
+        "b": "1e2",
+        "precision": "4"
+      },
+      "expected": "Profit: 20.0000\nMargin: 20.0000%\nMarkup: 25.0000%\nCost: 80.0000\nRevenue: 100.0000\nFormulas: profit = revenue − cost; margin = profit / revenue × 100; markup = profit / cost × 100"
+    },
+    {
+      "id": "precision-6",
+      "input": "8e1",
+      "options": {
+        "b": "1e2",
+        "precision": "6"
+      },
+      "expected": "Profit: 20.000000\nMargin: 20.000000%\nMarkup: 25.000000%\nCost: 80.000000\nRevenue: 100.000000\nFormulas: profit = revenue − cost; margin = profit / revenue × 100; markup = profit / cost × 100"
+    },
+    {
+      "id": "bad-cost-0",
+      "input": "",
+      "options": {
+        "b": "100"
+      },
+      "error": "cost"
+    },
+    {
+      "id": "bad-cost-1",
+      "input": " ",
+      "options": {
+        "b": "100"
+      },
+      "error": "cost"
+    },
+    {
+      "id": "bad-cost-2",
+      "input": "abc",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-3",
+      "input": "NaN",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-4",
+      "input": "Infinity",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-5",
+      "input": "0x10",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-6",
+      "input": "1,000",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-7",
+      "input": "1%",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-8",
+      "input": "١",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-9",
+      "input": "😀",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-10",
+      "input": "1e-400",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-11",
+      "input": "1e13",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-12",
+      "input": "1e-13",
+      "options": {
+        "b": "100"
+      },
+      "error": "Cost"
+    },
+    {
+      "id": "bad-cost-13",
+      "input": "11111111111111111111111111111111111111111111111111111111111111111",
+      "options": {
+        "b": "100"
+      },
+      "error": "UTF-16"
+    },
+    {
+      "id": "bad-cost-14",
+      "input": "-1",
+      "options": {
+        "b": "100"
+      },
+      "error": "nonnegative"
+    },
+    {
+      "id": "bad-revenue-'-1'",
+      "input": "100",
+      "options": {
+        "b": "-1"
+      },
+      "error": "nonnegative"
+    },
+    {
+      "id": "bad-revenue-'NaN'",
+      "input": "100",
+      "options": {
+        "b": "NaN"
+      },
+      "error": "Revenue"
+    },
+    {
+      "id": "bad-revenue-'1e13'",
+      "input": "100",
+      "options": {
+        "b": "1e13"
+      },
+      "error": "Revenue"
+    },
+    {
+      "id": "bad-revenue-' '",
+      "input": "100",
+      "options": {
+        "b": " "
+      },
+      "error": "revenue"
+    },
+    {
+      "id": "ratio-overflow",
+      "input": "1e-12",
+      "options": {
+        "b": "1e12"
+      },
+      "error": "Result exceeds"
+    }
+  ]
+}

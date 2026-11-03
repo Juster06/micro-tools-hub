@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "countdown-timer",
+  "canonical_path": "countdown-timer/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": false,
+  "purpose": "Task 10 canonical implementation; source-bound tests establish TESTED, never publication."
+}

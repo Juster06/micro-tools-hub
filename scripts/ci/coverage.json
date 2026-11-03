@@ -12,12 +12,18 @@
     "scripts/tool-framework.test.mjs",
     "tests/tools/base64-encoder-decoder/logic.test.mjs",
     "tests/tools/case-converter/logic.test.mjs",
+    "tests/tools/countdown-timer/logic.test.mjs",
+    "tests/tools/date-difference-calculator/logic.test.mjs",
     "tests/tools/discount-calculator/logic.test.mjs",
     "tests/tools/duplicate-line-remover/logic.test.mjs",
     "tests/tools/find-and-replace/logic.test.mjs",
+    "tests/tools/hashtag-organizer/logic.test.mjs",
     "tests/tools/json-formatter/logic.test.mjs",
     "tests/tools/percentage-calculator/logic.test.mjs",
     "tests/tools/percentage-change-calculator/logic.test.mjs",
+    "tests/tools/profit-margin-calculator/logic.test.mjs",
+    "tests/tools/random-name-picker/logic.test.mjs",
+    "tests/tools/secure-random-number-generator/logic.test.mjs",
     "tests/tools/slug-generator/logic.test.mjs",
     "tests/tools/text-reverser/logic.test.mjs",
     "tests/tools/text-sorter/logic.test.mjs",
@@ -30,18 +36,30 @@
     "tests/tools/base64-encoder-decoder/integration-browser.test.mjs",
     "tests/tools/case-converter/extended-browser.test.mjs",
     "tests/tools/case-converter/integration-browser.test.mjs",
+    "tests/tools/countdown-timer/extended-browser.test.mjs",
+    "tests/tools/countdown-timer/integration-browser.test.mjs",
+    "tests/tools/date-difference-calculator/extended-browser.test.mjs",
+    "tests/tools/date-difference-calculator/integration-browser.test.mjs",
     "tests/tools/discount-calculator/extended-browser.test.mjs",
     "tests/tools/discount-calculator/integration-browser.test.mjs",
     "tests/tools/duplicate-line-remover/extended-browser.test.mjs",
     "tests/tools/duplicate-line-remover/integration-browser.test.mjs",
     "tests/tools/find-and-replace/extended-browser.test.mjs",
     "tests/tools/find-and-replace/integration-browser.test.mjs",
+    "tests/tools/hashtag-organizer/extended-browser.test.mjs",
+    "tests/tools/hashtag-organizer/integration-browser.test.mjs",
     "tests/tools/json-formatter/extended-browser.test.mjs",
     "tests/tools/json-formatter/integration-browser.test.mjs",
     "tests/tools/percentage-calculator/extended-browser.test.mjs",
     "tests/tools/percentage-calculator/integration-browser.test.mjs",
     "tests/tools/percentage-change-calculator/extended-browser.test.mjs",
     "tests/tools/percentage-change-calculator/integration-browser.test.mjs",
+    "tests/tools/profit-margin-calculator/extended-browser.test.mjs",
+    "tests/tools/profit-margin-calculator/integration-browser.test.mjs",
+    "tests/tools/random-name-picker/extended-browser.test.mjs",
+    "tests/tools/random-name-picker/integration-browser.test.mjs",
+    "tests/tools/secure-random-number-generator/extended-browser.test.mjs",
+    "tests/tools/secure-random-number-generator/integration-browser.test.mjs",
     "tests/tools/slug-generator/extended-browser.test.mjs",
     "tests/tools/slug-generator/integration-browser.test.mjs",
     "tests/tools/text-reverser/extended-browser.test.mjs",
@@ -149,6 +167,36 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "profit-margin-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "date-difference-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "countdown-timer": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "random-name-picker": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "hashtag-organizer": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "secure-random-number-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -202,8 +250,8 @@
   ],
   "minimum_tests": {
     "python-project": 142,
-    "node-regression": 179,
-    "browser-tests": 196
+    "node-regression": 225,
+    "browser-tests": 268
   },
   "aggregate": {
     "job": "required-checks",

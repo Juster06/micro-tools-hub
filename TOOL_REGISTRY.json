@@ -2545,7 +2545,7 @@
       "category": "social",
       "description": "Normalize and group hashtag lists without platform account access.",
       "directory_path": "hashtag-organizer",
-      "status": "READY",
+      "status": "IMPLEMENTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2559,7 +2559,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 10 implementation exists at the canonical route. Scoped testing is in progress; not merged, deployed or publicly verified.",
       "sequence_rank": 19,
       "related_tools": [
         "hashtag-counter"
@@ -3024,7 +3024,7 @@
       "category": "calculator",
       "description": "Compare two calendar dates without daylight-saving drift.",
       "directory_path": "date-difference-calculator",
-      "status": "READY",
+      "status": "IMPLEMENTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3038,7 +3038,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 10 implementation exists at the canonical route. Scoped testing is in progress; not merged, deployed or publicly verified.",
       "sequence_rank": 16,
       "related_tools": [],
       "verification": null
@@ -3099,7 +3099,7 @@
       "category": "calculator",
       "description": "Calculate profit, margin and markup with distinct labels.",
       "directory_path": "profit-margin-calculator",
-      "status": "READY",
+      "status": "IMPLEMENTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3113,7 +3113,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 10 implementation exists at the canonical route. Scoped testing is in progress; not merged, deployed or publicly verified.",
       "sequence_rank": 15,
       "related_tools": [],
       "verification": null
@@ -3201,7 +3201,7 @@
       "category": "security",
       "description": "Generate unbiased integers within a validated safe-integer interval.",
       "directory_path": "secure-random-number-generator",
-      "status": "READY",
+      "status": "IMPLEMENTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3216,7 +3216,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 10 implementation exists at the canonical route. Scoped testing is in progress; not merged, deployed or publicly verified.",
       "sequence_rank": 20,
       "related_tools": [],
       "verification": null
@@ -3647,7 +3647,7 @@
       "category": "productivity",
       "description": "Run a duration timer using an actual deadline rather than interval ticks.",
       "directory_path": "countdown-timer",
-      "status": "READY",
+      "status": "IMPLEMENTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3661,7 +3661,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 10 implementation exists at the canonical route. Scoped testing is in progress; not merged, deployed or publicly verified.",
       "sequence_rank": 17,
       "related_tools": [
         "pomodoro-timer"
@@ -3674,7 +3674,7 @@
       "category": "productivity",
       "description": "Draw from a local list with an explicit replacement policy.",
       "directory_path": "random-name-picker",
-      "status": "READY",
+      "status": "IMPLEMENTED",
       "priority": "P1",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3689,7 +3689,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 10 implementation exists at the canonical route. Scoped testing is in progress; not merged, deployed or publicly verified.",
       "sequence_rank": 18,
       "related_tools": [],
       "verification": null

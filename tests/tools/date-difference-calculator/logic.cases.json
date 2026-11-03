@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "2026-01-01-2026-01-03-False-signed",
+      "input": "2026-01-01",
+      "options": {
+        "b": "2026-01-03",
+        "inclusive": false,
+        "order": "signed"
+      },
+      "expected": "Days: 2\nCounting: Exclusive (elapsed days)\nOrder: Signed (end − start)\nDates: 2026-01-01 → 2026-01-03\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "2026-01-01-2026-01-03-False-absolute",
+      "input": "2026-01-01",
+      "options": {
+        "b": "2026-01-03",
+        "inclusive": false,
+        "order": "absolute"
+      },
+      "expected": "Days: 2\nCounting: Exclusive (elapsed days)\nOrder: Absolute\nDates: 2026-01-01 → 2026-01-03\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "2026-01-01-2026-01-03-True-signed",
+      "input": "2026-01-01",
+      "options": {
+        "b": "2026-01-03",
+        "inclusive": true,
+        "order": "signed"
+      },
+      "expected": "Days: 3\nCounting: Inclusive (both dates)\nOrder: Signed (end − start)\nDates: 2026-01-01 → 2026-01-03\nWeeks and days: 0 weeks, 3 days"
+    },
+    {
+      "id": "2026-01-01-2026-01-03-True-absolute",
+      "input": "2026-01-01",
+      "options": {
+        "b": "2026-01-03",
+        "inclusive": true,
+        "order": "absolute"
+      },
+      "expected": "Days: 3\nCounting: Inclusive (both dates)\nOrder: Absolute\nDates: 2026-01-01 → 2026-01-03\nWeeks and days: 0 weeks, 3 days"
+    },
+    {
+      "id": "2026-03-28-2026-03-30-False-signed",
+      "input": "2026-03-28",
+      "options": {
+        "b": "2026-03-30",
+        "inclusive": false,
+        "order": "signed"
+      },
+      "expected": "Days: 2\nCounting: Exclusive (elapsed days)\nOrder: Signed (end − start)\nDates: 2026-03-28 → 2026-03-30\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "2026-03-28-2026-03-30-False-absolute",
+      "input": "2026-03-28",
+      "options": {
+        "b": "2026-03-30",
+        "inclusive": false,
+        "order": "absolute"
+      },
+      "expected": "Days: 2\nCounting: Exclusive (elapsed days)\nOrder: Absolute\nDates: 2026-03-28 → 2026-03-30\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "2026-03-28-2026-03-30-True-signed",
+      "input": "2026-03-28",
+      "options": {
+        "b": "2026-03-30",
+        "inclusive": true,
+        "order": "signed"
+      },
+      "expected": "Days: 3\nCounting: Inclusive (both dates)\nOrder: Signed (end − start)\nDates: 2026-03-28 → 2026-03-30\nWeeks and days: 0 weeks, 3 days"
+    },
+    {
+      "id": "2026-03-28-2026-03-30-True-absolute",
+      "input": "2026-03-28",
+      "options": {
+        "b": "2026-03-30",
+        "inclusive": true,
+        "order": "absolute"
+      },
+      "expected": "Days: 3\nCounting: Inclusive (both dates)\nOrder: Absolute\nDates: 2026-03-28 → 2026-03-30\nWeeks and days: 0 weeks, 3 days"
+    },
+    {
+      "id": "2000-02-28-2000-03-01-False-signed",
+      "input": "2000-02-28",
+      "options": {
+        "b": "2000-03-01",
+        "inclusive": false,
+        "order": "signed"
+      },
+      "expected": "Days: 2\nCounting: Exclusive (elapsed days)\nOrder: Signed (end − start)\nDates: 2000-02-28 → 2000-03-01\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "2000-02-28-2000-03-01-False-absolute",
+      "input": "2000-02-28",
+      "options": {
+        "b": "2000-03-01",
+        "inclusive": false,
+        "order": "absolute"
+      },
+      "expected": "Days: 2\nCounting: Exclusive (elapsed days)\nOrder: Absolute\nDates: 2000-02-28 → 2000-03-01\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "2000-02-28-2000-03-01-True-signed",
+      "input": "2000-02-28",
+      "options": {
+        "b": "2000-03-01",
+        "inclusive": true,
+        "order": "signed"
+      },
+      "expected": "Days: 3\nCounting: Inclusive (both dates)\nOrder: Signed (end − start)\nDates: 2000-02-28 → 2000-03-01\nWeeks and days: 0 weeks, 3 days"
+    },
+    {
+      "id": "2000-02-28-2000-03-01-True-absolute",
+      "input": "2000-02-28",
+      "options": {
+        "b": "2000-03-01",
+        "inclusive": true,
+        "order": "absolute"
+      },
+      "expected": "Days: 3\nCounting: Inclusive (both dates)\nOrder: Absolute\nDates: 2000-02-28 → 2000-03-01\nWeeks and days: 0 weeks, 3 days"
+    },
+    {
+      "id": "1900-02-28-1900-03-01-False-signed",
+      "input": "1900-02-28",
+      "options": {
+        "b": "1900-03-01",
+        "inclusive": false,
+        "order": "signed"
+      },
+      "expected": "Days: 1\nCounting: Exclusive (elapsed days)\nOrder: Signed (end − start)\nDates: 1900-02-28 → 1900-03-01\nWeeks and days: 0 weeks, 1 days"
+    },
+    {
+      "id": "1900-02-28-1900-03-01-False-absolute",
+      "input": "1900-02-28",
+      "options": {
+        "b": "1900-03-01",
+        "inclusive": false,
+        "order": "absolute"
+      },
+      "expected": "Days: 1\nCounting: Exclusive (elapsed days)\nOrder: Absolute\nDates: 1900-02-28 → 1900-03-01\nWeeks and days: 0 weeks, 1 days"
+    },
+    {
+      "id": "1900-02-28-1900-03-01-True-signed",
+      "input": "1900-02-28",
+      "options": {
+        "b": "1900-03-01",
+        "inclusive": true,
+        "order": "signed"
+      },
+      "expected": "Days: 2\nCounting: Inclusive (both dates)\nOrder: Signed (end − start)\nDates: 1900-02-28 → 1900-03-01\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "1900-02-28-1900-03-01-True-absolute",
+      "input": "1900-02-28",
+      "options": {
+        "b": "1900-03-01",
+        "inclusive": true,
+        "order": "absolute"
+      },
+      "expected": "Days: 2\nCounting: Inclusive (both dates)\nOrder: Absolute\nDates: 1900-02-28 → 1900-03-01\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "0001-01-01-9999-12-31-False-signed",
+      "input": "0001-01-01",
+      "options": {
+        "b": "9999-12-31",
+        "inclusive": false,
+        "order": "signed"
+      },
+      "expected": "Days: 3652058\nCounting: Exclusive (elapsed days)\nOrder: Signed (end − start)\nDates: 0001-01-01 → 9999-12-31\nWeeks and days: 521722 weeks, 4 days"
+    },
+    {
+      "id": "0001-01-01-9999-12-31-False-absolute",
+      "input": "0001-01-01",
+      "options": {
+        "b": "9999-12-31",
+        "inclusive": false,
+        "order": "absolute"
+      },
+      "expected": "Days: 3652058\nCounting: Exclusive (elapsed days)\nOrder: Absolute\nDates: 0001-01-01 → 9999-12-31\nWeeks and days: 521722 weeks, 4 days"
+    },
+    {
+      "id": "0001-01-01-9999-12-31-True-signed",
+      "input": "0001-01-01",
+      "options": {
+        "b": "9999-12-31",
+        "inclusive": true,
+        "order": "signed"
+      },
+      "expected": "Days: 3652059\nCounting: Inclusive (both dates)\nOrder: Signed (end − start)\nDates: 0001-01-01 → 9999-12-31\nWeeks and days: 521722 weeks, 5 days"
+    },
+    {
+      "id": "0001-01-01-9999-12-31-True-absolute",
+      "input": "0001-01-01",
+      "options": {
+        "b": "9999-12-31",
+        "inclusive": true,
+        "order": "absolute"
+      },
+      "expected": "Days: 3652059\nCounting: Inclusive (both dates)\nOrder: Absolute\nDates: 0001-01-01 → 9999-12-31\nWeeks and days: 521722 weeks, 5 days"
+    },
+    {
+      "id": "2024-12-31-2025-01-01-False-signed",
+      "input": "2024-12-31",
+      "options": {
+        "b": "2025-01-01",
+        "inclusive": false,
+        "order": "signed"
+      },
+      "expected": "Days: 1\nCounting: Exclusive (elapsed days)\nOrder: Signed (end − start)\nDates: 2024-12-31 → 2025-01-01\nWeeks and days: 0 weeks, 1 days"
+    },
+    {
+      "id": "2024-12-31-2025-01-01-False-absolute",
+      "input": "2024-12-31",
+      "options": {
+        "b": "2025-01-01",
+        "inclusive": false,
+        "order": "absolute"
+      },
+      "expected": "Days: 1\nCounting: Exclusive (elapsed days)\nOrder: Absolute\nDates: 2024-12-31 → 2025-01-01\nWeeks and days: 0 weeks, 1 days"
+    },
+    {
+      "id": "2024-12-31-2025-01-01-True-signed",
+      "input": "2024-12-31",
+      "options": {
+        "b": "2025-01-01",
+        "inclusive": true,
+        "order": "signed"
+      },
+      "expected": "Days: 2\nCounting: Inclusive (both dates)\nOrder: Signed (end − start)\nDates: 2024-12-31 → 2025-01-01\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "2024-12-31-2025-01-01-True-absolute",
+      "input": "2024-12-31",
+      "options": {
+        "b": "2025-01-01",
+        "inclusive": true,
+        "order": "absolute"
+      },
+      "expected": "Days: 2\nCounting: Inclusive (both dates)\nOrder: Absolute\nDates: 2024-12-31 → 2025-01-01\nWeeks and days: 0 weeks, 2 days"
+    },
+    {
+      "id": "2026-01-01-2026-01-01-False-signed",
+      "input": "2026-01-01",
+      "options": {
+        "b": "2026-01-01",
+        "inclusive": false,
+        "order": "signed"
+      },
+      "expected": "Days: 0\nCounting: Exclusive (elapsed days)\nOrder: Signed (end − start)\nDates: 2026-01-01 → 2026-01-01\nWeeks and days: 0 weeks, 0 days"
+    },
+    {
+      "id": "2026-01-01-2026-01-01-False-absolute",
+      "input": "2026-01-01",
+      "options": {
+        "b": "2026-01-01",
+        "inclusive": false,
+        "order": "absolute"
+      },
+      "expected": "Days: 0\nCounting: Exclusive (elapsed days)\nOrder: Absolute\nDates: 2026-01-01 → 2026-01-01\nWeeks and days: 0 weeks, 0 days"
+    },
+    {
+      "id": "2026-01-01-2026-01-01-True-signed",
+      "input": "2026-01-01",
+      "options": {
+        "b": "2026-01-01",
+        "inclusive": true,
+        "order": "signed"
+      },
+      "expected": "Days: 1\nCounting: Inclusive (both dates)\nOrder: Signed (end − start)\nDates: 2026-01-01 → 2026-01-01\nWeeks and days: 0 weeks, 1 days"
+    },
+    {
+      "id": "2026-01-01-2026-01-01-True-absolute",
+      "input": "2026-01-01",
+      "options": {
+        "b": "2026-01-01",
+        "inclusive": true,
+        "order": "absolute"
+      },
+      "expected": "Days: 1\nCounting: Inclusive (both dates)\nOrder: Absolute\nDates: 2026-01-01 → 2026-01-01\nWeeks and days: 0 weeks, 1 days"
+    },
+    {
+      "id": "2026-01-08-2026-01-01-False-signed",
+      "input": "2026-01-08",
+      "options": {
+        "b": "2026-01-01",
+        "inclusive": false,
+        "order": "signed"
+      },
+      "expected": "Days: -7\nCounting: Exclusive (elapsed days)\nOrder: Signed (end − start)\nDates: 2026-01-08 → 2026-01-01\nWeeks and days: 1 weeks, 0 days"
+    },
+    {
+      "id": "2026-01-08-2026-01-01-False-absolute",
+      "input": "2026-01-08",
+      "options": {
+        "b": "2026-01-01",
+        "inclusive": false,
+        "order": "absolute"
+      },
+      "expected": "Days: 7\nCounting: Exclusive (elapsed days)\nOrder: Absolute\nDates: 2026-01-08 → 2026-01-01\nWeeks and days: 1 weeks, 0 days"
+    },
+    {
+      "id": "2026-01-08-2026-01-01-True-signed",
+      "input": "2026-01-08",
+      "options": {
+        "b": "2026-01-01",
+        "inclusive": true,
+        "order": "signed"
+      },
+      "expected": "Days: -8\nCounting: Inclusive (both dates)\nOrder: Signed (end − start)\nDates: 2026-01-08 → 2026-01-01\nWeeks and days: 1 weeks, 1 days"
+    },
+    {
+      "id": "2026-01-08-2026-01-01-True-absolute",
+      "input": "2026-01-08",
+      "options": {
+        "b": "2026-01-01",
+        "inclusive": true,
+        "order": "absolute"
+      },
+      "expected": "Days: 8\nCounting: Inclusive (both dates)\nOrder: Absolute\nDates: 2026-01-08 → 2026-01-01\nWeeks and days: 1 weeks, 1 days"
+    },
+    {
+      "id": "bad-date-0",
+      "input": "",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "date"
+    },
+    {
+      "id": "bad-date-1",
+      "input": "2025-02-29",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "date"
+    },
+    {
+      "id": "bad-date-2",
+      "input": "1900-02-29",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "date"
+    },
+    {
+      "id": "bad-date-3",
+      "input": "0000-01-01",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "date"
+    },
+    {
+      "id": "bad-date-4",
+      "input": "2026-13-01",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "date"
+    },
+    {
+      "id": "bad-date-5",
+      "input": "2026-04-31",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "date"
+    },
+    {
+      "id": "bad-date-6",
+      "input": "2026-1-01",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "YYYY-MM-DD"
+    },
+    {
+      "id": "bad-date-7",
+      "input": " 2026-01-01",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "UTF-16"
+    },
+    {
+      "id": "bad-date-8",
+      "input": "2026-01-01T00:00:00Z",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "UTF-16"
+    },
+    {
+      "id": "bad-date-9",
+      "input": "😀",
+      "options": {
+        "b": "2026-01-01"
+      },
+      "error": "YYYY-MM-DD"
+    }
+  ]
+}
