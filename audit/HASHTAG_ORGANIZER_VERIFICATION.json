@@ -1,0 +1,69 @@
+{
+  "result": "PASS",
+  "source_revision": "5ffa4eb188c7270825bc2ce577a4add6b765df45",
+  "verified_on": "2026-11-03",
+  "tool_id": "hashtag-organizer",
+  "pages": [
+    {
+      "path": "hashtag-organizer/index.html",
+      "source_sha256": "80a4dc10ca2c9a6ddab1f6c25022487daac7950c34150960e30c1973ba9511b0",
+      "publication": null
+    }
+  ],
+  "scope": [
+    "Canonical structural checks",
+    "Deterministic inline logic fixtures and independent Node boundary tests",
+    "Real headless Chromium DOM, keyboard, clipboard/export mocks, errors, responsive widths 320/375/768/1440",
+    "Screenshot visual review at 375 and 1440 pixels, upper and lower page regions"
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 20,
+      "failed": 0,
+      "assertions": 20,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 8,
+      "failed": 0,
+      "assertions": 36,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "extended_browser_tests": 9,
+  "logic_node_tests": 7,
+  "limits_and_behavior": "At most 100,000 UTF-16 input units, 1,000 tokens and 100 Unicode code points per tag. NFC normalization; letters/numbers/underscore may start a tag, with combining marks allowed thereafter. Whitespace and commas separate tokens; punctuation/emoji/extra # inside a tag are rejected. Output casing is applied before duplicate comparison. Ignore-case uses Unicode lowercase, not full case folding. Sort is deterministic JavaScript UTF-16 lexical order, not locale-aware collation or popularity. No platform tag-limit/account-access or performance/promotion claim.",
+  "visual_review": {
+    "browser": "Chrome/156.0.8078.4",
+    "widths": [
+      375,
+      1440
+    ],
+    "regions": [
+      "top",
+      "bottom"
+    ],
+    "result": "PASS: readable headings, fields, results, controls and feedback; no clipping observed. Screenshots are private ignored development artifacts."
+  },
+  "limitations": [
+    "Headless Chromium on Windows; not physical mobile, Safari, Firefox, screen-reader or native IME certification.",
+    "Clipboard/download mocked; no native clipboard or Save-dialog claim.",
+    "External HTTP(S) blocked; fallback CSS reviewed. Hosting/CDN delivery is separate from local input processing.",
+    "Implementation remains TESTED, not merged, deployed or publicly verified.",
+    "Installed dashboard and shortcuts are preserved; this audit makes no new native GUI launch claim."
+  ],
+  "original_local_source_revision": "7887c31b480b741a23f3f24f54146ca112d59009",
+  "source_tree_sha": "bbed4f5a806d452aa569cc814848f462824bbfd9",
+  "source_identity": "Connected GitHub source checkpoint and original preserved local source checkpoint have identical complete Git trees; each blob SHA was independently matched before tree creation."
+}

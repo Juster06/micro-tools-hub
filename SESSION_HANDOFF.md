@@ -1,5 +1,83 @@
 # Session handoff
 
+## Latest session — Task 10 six-tool batch (2026-11-03)
+
+Task 10 implements the last six READY entries (ranks 15–20), each now
+**TESTED / REQUIRED_PASSED**, with `publication: null`. Branch
+`feat/task-10-six-tool-batch` targets protected `main`. The PR must remain open
+for owner review; no merge, bypass, deployment or RELEASED transition is authorized.
+The branch hub has 24 unique cards, including six **Tested · publication pending**
+labels. Existing 18 released pages/entries/cards/evidence, CNAME, owner Analytics,
+framework/runtime/workflow pins and the dashboard/launcher are preserved.
+
+Inventory: **93 registered, 18 RELEASED, 6 TESTED, 0 READY, 68 PLANNED, 1 BLOCKED**.
+Before development: 18 RELEASED, 0 TESTED, 6 READY. Released milestone remains
+**18/25 (72%)**; implementation/testing/PR completion is not public release.
+
+Baseline main: `37882847910116466cccb1f57f05b93023d343ec` (merged PR 15),
+clean before development; main CI 41560372500 passed all four jobs. Original local
+source/test commit `7887c31b480b741a23f3f24f54146ca112d59009` is preserved.
+Connected GitHub source/test checkpoint `5ffa4eb188c7270825bc2ce577a4add6b765df45`
+has the identical complete tree `bbed4f5a806d452aa569cc814848f462824bbfd9`;
+every published blob SHA and the tree SHA were matched before creating it.
+The six audits bind to that GitHub source revision and exact normalized HTML.
+Final branch identities and hosted checks are recorded in the PR/delivery report;
+a handoff cannot embed its own containing commit or future CI result.
+
+| Tool | Canonical branch route | Behavior |
+| --- | --- | --- |
+| Hashtag Organizer | `hashtag-organizer/index.html` | Normalize and group hashtag lists without platform account access. |
+| Date Difference Calculator | `date-difference-calculator/index.html` | Compare two calendar dates without daylight-saving drift. |
+| Profit Margin Calculator | `profit-margin-calculator/index.html` | Calculate profit, margin and markup with distinct labels. |
+| Secure Random Number Generator | `secure-random-number-generator/index.html` | Generate unbiased integers within a validated safe-integer interval. |
+| Countdown Timer | `countdown-timer/index.html` | Run a duration timer using an actual deadline rather than interval ticks. |
+| Random Name Picker | `random-name-picker/index.html` | Draw from a local list with an explicit replacement policy. |
+
+Local CI partitions passed: Python **142/142**, Node **225/225** plus **791**
+inline logic fixtures, real Chromium **268/268** plus **338** browser fixtures /
+**987** assertions. Both neutral templates passed (6 logic / 12 browser / 48
+assertions). No mandatory failure, skip, cancellation or timeout in the final
+run. Registry, source/evidence, all 24 structural profiles and full project status
+passed with **zero errors and warnings**. Four legacy isolated-logic adapters
+remain explicitly unavailable; their structural/browser checks still run.
+
+**PR:** creation and final hosted checks are recorded in the linked Task 10 delivery record.
+
+**Preservation:** Read-only HTTP/source checks matched the public homepage and all 18 released pages against baseline main. Both installed shortcut bytes, targets, arguments, working directories and AppIDs matched the saved baseline. No new native dashboard launch is claimed.
+
+**Known limitations:** Only headless Chromium on Windows and simulated responsive widths were tested;
+no new Safari/Firefox, physical-device, screen-reader, native clipboard/Save-dialog
+or IME certification. Clipboard/download operations use controlled mocks. Actual
+Web Crypto and real one-second timer completion are tested separately. The timer
+depends on the wall clock and an open page; suspension/closing cannot guarantee
+an on-time alarm. Numeric rounding, duplicate policies, Unicode rules and bounded
+input/draw limits are explicit in each tool README and verification audit.
+
+**Files:** six canonical pages/READMEs; six manifest/fixture/Node/browser/integration test groups and two test helpers; six dated source-bound audits; registry/interface IDs; six gated hub cards; CI coverage map; existing project-test fixtures; tracking, README, changelog and handoff. No runtime/template/workflow/shortcut/settings changes.
+
+**Next major task:** Owner review of the Task 10 PR, followed only on explicit approval by ordinary
+integration and independent deployment/public-source/behavior verification.
+Submit eventual release evidence through another ordinary protected-main PR.
+Then review readiness of the 68 PLANNED entries; no READY tools remain. Releasing
+these six would produce 24 released tools, so one additional reviewed distinct
+tool is still needed for the first milestone. Do not begin another utility now.
+
+## In-progress Task 10 continuation (2026-11-03)
+
+Branch `feat/task-10-six-tool-batch` contains the six requested tools. Their source
+checkpoint is local `7887c31b480b741a23f3f24f54146ca112d59009`; the connected
+GitHub source checkpoint `5ffa4eb188c7270825bc2ce577a4add6b765df45` has the
+same complete tree. All six have local TESTED evidence and publication null;
+homepage cards are present. The public main and 18 released pages remain intact.
+Python 142/142 and Node 225/225 passed. The full browser suite found errors in
+the six new integration fixtures; those fixtures have been corrected and the
+targeted and complete browser checks are being rerun. Finish those checks, update
+documentation with actual results, review and commit all remaining changes,
+publish the exact reviewed feature tree and open the authorized PR to main. Verify
+GitHub Actions on the PR. Do not merge, deploy, use bypass, or mark RELEASED.
+
+**Next major task:** Complete Task 10 verification, documentation and the authorized unmerged PR.
+
 ## Latest session — Task 9.5: verified CI, active ruleset and final delivery (2026-11-03)
 
 **Status:** Functional CI is operational and ordinary-actor enforcement is
@@ -642,27 +720,27 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 25 released tools; 18 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 68; READY: 6; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 18; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 68; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 6; RELEASED: 18; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
-- Next ready tool: Profit Margin Calculator.
-- Git branch: docs/task-9-5-main-protection.
-- Latest commit observed before generation: 29796bd8de8a2eaef8410a42d28cd3b392326722.
+- Next ready tool: REQUIRES REVIEW.
+- Git branch: feat/task-10-six-tool-batch.
+- Latest commit observed before generation: 7887c31b480b741a23f3f24f54146ca112d59009.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
+- Secure Random Number Generator: TESTED, evidence dated 2026-11-03.
+- Random Name Picker: TESTED, evidence dated 2026-11-03.
+- Profit Margin Calculator: TESTED, evidence dated 2026-11-03.
+- Hashtag Organizer: TESTED, evidence dated 2026-11-03.
+- Date Difference Calculator: TESTED, evidence dated 2026-11-03.
+- Countdown Timer: TESTED, evidence dated 2026-11-03.
 - UUID Generator: RELEASED, evidence dated 2026-11-02.
 - URL Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
 - Timestamp Converter: RELEASED, evidence dated 2026-11-02.
 - Text Reverser: RELEASED, evidence dated 2026-11-02.
-- Percentage Change Calculator: RELEASED, evidence dated 2026-11-02.
-- Percentage Calculator: RELEASED, evidence dated 2026-11-02.
-- JSON Formatter: RELEASED, evidence dated 2026-11-02.
-- Discount Calculator: RELEASED, evidence dated 2026-11-02.
-- Base64 Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
-- Text Sorter: RELEASED, evidence dated 2026-11-01.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -674,10 +752,29 @@ These are registry verification records, not new tests or tasks executed by this
 
 ### Uncommitted changes (repository-relative)
 - ` M` CHANGELOG.md
+- ` M` PROGRESS_TRACKER.md
+- ` M` PROJECT_MASTER_PLAN.md
 - ` M` README.md
+- ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
-- ` M` scripts/ci/MAIN_BRANCH_PROTECTION.md
+- ` M` TOOL_REGISTRY.json
+- ` M` audit/TASK_10_DEVELOPMENT_PLAN.md
+- ` M` index.html
 - ` M` scripts/ci/README.md
+- ` M` scripts/project.test.mjs
+- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
+- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
+- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
+- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
+- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
+- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
+- `??` audit/COUNTDOWN_TIMER_VERIFICATION.json
+- `??` audit/DATE_DIFFERENCE_CALCULATOR_VERIFICATION.json
+- `??` audit/HASHTAG_ORGANIZER_VERIFICATION.json
+- `??` audit/PROFIT_MARGIN_CALCULATOR_VERIFICATION.json
+- `??` audit/RANDOM_NAME_PICKER_VERIFICATION.json
+- `??` audit/SECURE_RANDOM_NUMBER_GENERATOR_VERIFICATION.json
+- `??` audit/TASK_10_DELIVERY.md
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

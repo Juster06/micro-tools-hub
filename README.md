@@ -1,5 +1,43 @@
 # Everyday Digital Box — WebUtils Hub
 
+## Task 10 — six tested tools, PR review pending
+
+Task 10 implements the last six READY entries (ranks 15–20), each now
+**TESTED / REQUIRED_PASSED**, with `publication: null`. Branch
+`feat/task-10-six-tool-batch` targets protected `main`. The PR must remain open
+for owner review; no merge, bypass, deployment or RELEASED transition is authorized.
+The branch hub has 24 unique cards, including six **Tested · publication pending**
+labels. Existing 18 released pages/entries/cards/evidence, CNAME, owner Analytics,
+framework/runtime/workflow pins and the dashboard/launcher are preserved.
+
+Inventory: **93 registered, 18 RELEASED, 6 TESTED, 0 READY, 68 PLANNED, 1 BLOCKED**.
+Before development: 18 RELEASED, 0 TESTED, 6 READY. Released milestone remains
+**18/25 (72%)**; implementation/testing/PR completion is not public release.
+
+| Tool | Canonical branch route | Behavior |
+| --- | --- | --- |
+| Hashtag Organizer | `hashtag-organizer/index.html` | Normalize and group hashtag lists without platform account access. |
+| Date Difference Calculator | `date-difference-calculator/index.html` | Compare two calendar dates without daylight-saving drift. |
+| Profit Margin Calculator | `profit-margin-calculator/index.html` | Calculate profit, margin and markup with distinct labels. |
+| Secure Random Number Generator | `secure-random-number-generator/index.html` | Generate unbiased integers within a validated safe-integer interval. |
+| Countdown Timer | `countdown-timer/index.html` | Run a duration timer using an actual deadline rather than interval ticks. |
+| Random Name Picker | `random-name-picker/index.html` | Draw from a local list with an explicit replacement policy. |
+
+Local CI partitions passed: Python **142/142**, Node **225/225** plus **791**
+inline logic fixtures, real Chromium **268/268** plus **338** browser fixtures /
+**987** assertions. Both neutral templates passed (6 logic / 12 browser / 48
+assertions). No mandatory failure, skip, cancellation or timeout in the final
+run. Registry, source/evidence, all 24 structural profiles and full project status
+passed with **zero errors and warnings**. Four legacy isolated-logic adapters
+remain explicitly unavailable; their structural/browser checks still run.
+
+See [Task 10 delivery and limitations](audit/TASK_10_DELIVERY.md). Owner review of the Task 10 PR, followed only on explicit approval by ordinary
+integration and independent deployment/public-source/behavior verification.
+Submit eventual release evidence through another ordinary protected-main PR.
+Then review readiness of the 68 PLANNED entries; no READY tools remain. Releasing
+these six would produce 24 released tools, so one additional reviewed distinct
+tool is still needed for the first milestone. Do not begin another utility now.
+
 ## Task 9.5 — functional CI and active main protection
 
 Functional CI is integrated on main through PR 14. The owner activated repository
@@ -102,7 +140,7 @@ Python 3.10+ standard library runs the generator/planner/structural checks; Node
 
 Everyday Digital Box is a collection of free, focused browser utilities for everyday writing, spreadsheet work, social content, and entertainment discovery. The website is branded **WebUtils Hub**, and its GitHub repository is named **micro-tools-hub**.
 
-The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It currently contains thirteen released standalone tools, linked from a searchable dashboard.
+The project is intended for creators, writers, students, developers, and office workers who want to finish a small task without installing software or creating an account. It contains eighteen released standalone tools; the Task 10 branch adds six TESTED tools pending publication, linked from the searchable hub.
 
 ## Project links
 

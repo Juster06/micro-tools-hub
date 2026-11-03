@@ -17,7 +17,7 @@ else {
   assert.equal(publication.url,'https://everydaydigitalbox.com/countdown-timer/');
   assert.ok(Number.isFinite(Date.parse(publication.checked_at)));
 }
-const task9Ids=["uuid-generator","timestamp-converter","percentage-calculator","percentage-change-calculator","countdown-timer"];
+const task9Ids=["uuid-generator","timestamp-converter","percentage-calculator","percentage-change-calculator","discount-calculator"];
 const task9Released=registry.tools.filter(t=>task9Ids.includes(t.id)&&t.status==='RELEASED').length;
 assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,13+task9Released);
 const availability=caseStatus.toLowerCase();
