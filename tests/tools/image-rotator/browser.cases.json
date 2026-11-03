@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "layout-320",
+      "width": 320,
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "#imageCanvas",
+          "property": "hidden",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-375",
+      "width": 375,
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "#imageCanvas",
+          "property": "hidden",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-768",
+      "width": 768,
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "#imageCanvas",
+          "property": "hidden",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-1440",
+      "width": 1440,
+      "steps": [
+        {
+          "action": "expect",
+          "selector": "#imageCanvas",
+          "property": "hidden",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "no-image-error-reset",
+      "steps": [
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#rotation",
+          "property": "value",
+          "equals": "0"
+        },
+        {
+          "action": "expect",
+          "selector": "#flipX",
+          "property": "checked",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        }
+      ]
+    }
+  ]
+}

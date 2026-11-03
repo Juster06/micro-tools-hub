@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "expected": {
+        "mode": "text",
+        "expected": "",
+        "inputLength": 0,
+        "fileSize": null
+      }
+    },
+    {
+      "id": "abc",
+      "input": "abc",
+      "options": {},
+      "expected": {
+        "mode": "text",
+        "expected": "",
+        "inputLength": 3,
+        "fileSize": null
+      }
+    },
+    {
+      "id": "unicode",
+      "input": "\ud83d\ude00",
+      "options": {},
+      "expected": {
+        "mode": "text",
+        "expected": "",
+        "inputLength": 2,
+        "fileSize": null
+      }
+    },
+    {
+      "id": "expected",
+      "input": "x",
+      "options": {
+        "expected": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      "expected": {
+        "mode": "text",
+        "expected": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "inputLength": 1,
+        "fileSize": null
+      }
+    },
+    {
+      "id": "empty-file",
+      "input": "",
+      "options": {
+        "mode": "file",
+        "fileSize": 0
+      },
+      "expected": {
+        "mode": "file",
+        "expected": "",
+        "inputLength": 0,
+        "fileSize": 0
+      }
+    },
+    {
+      "id": "max-file",
+      "input": "",
+      "options": {
+        "mode": "file",
+        "fileSize": 16777216
+      },
+      "expected": {
+        "mode": "file",
+        "expected": "",
+        "inputLength": 0,
+        "fileSize": 16777216
+      }
+    },
+    {
+      "id": "invalid-0",
+      "input": "x",
+      "options": {
+        "expected": "abc"
+      },
+      "error": "64 hexadecimal"
+    },
+    {
+      "id": "invalid-1",
+      "input": "x",
+      "options": {
+        "expected": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+      },
+      "error": "64 hexadecimal"
+    },
+    {
+      "id": "invalid-2",
+      "input": "\ud800",
+      "options": {},
+      "error": "unpaired"
+    },
+    {
+      "id": "invalid-3",
+      "input": "",
+      "options": {
+        "mode": "file",
+        "fileSize": 16777217
+      },
+      "error": "16 MiB"
+    },
+    {
+      "id": "invalid-4",
+      "input": "x",
+      "options": {
+        "mode": "file",
+        "fileSize": 1
+      },
+      "error": "does not accept text"
+    },
+    {
+      "id": "invalid-5",
+      "input": "",
+      "options": {
+        "mode": "file"
+      },
+      "error": "16 MiB"
+    },
+    {
+      "id": "invalid-6",
+      "input": "x",
+      "options": {
+        "mode": "bad"
+      },
+      "error": "Unsupported"
+    },
+    {
+      "id": "invalid-7",
+      "input": "x",
+      "options": {
+        "extra": true
+      },
+      "error": "Unsupported"
+    }
+  ]
+}

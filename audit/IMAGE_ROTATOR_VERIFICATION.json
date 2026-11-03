@@ -1,0 +1,54 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-03",
+  "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+  "pages": [
+    {
+      "path": "image-rotator/index.html",
+      "source_sha256": "c4834f55c5c5ea0dfdebdee6267f10258abb6f48d8dab61c175a72e078a353e8",
+      "checks": [
+        "Canonical structural checks",
+        "13 synchronous image transformation-parameter validation fixtures (not image decoding)",
+        "5 real Chromium browser fixtures / 18 assertions",
+        "4 independent Node logic tests and 6 extended browser tests",
+        "Responsive widths 320/375/768/1440; clipboard and download mocked",
+        "Actual Chromium PNG pixel rotations, flips, transparency/export and pre-decode limits tested separately."
+      ]
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 13,
+      "failed": 0,
+      "assertions": 13,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 5,
+      "failed": 0,
+      "assertions": 18,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "browser": "Chrome/156.0.8078.4",
+  "limitations": [
+    "Local headless Chromium; no Safari, Firefox, physical-device, native clipboard, screen-reader or full accessibility certification.",
+    "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
+    "No public deployment or publication has been verified.",
+    "Static PNG only; 5 MiB encoded-file limit; no animated PNG."
+  ],
+  "contract": "audit/TASK_12_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "1e62dfdb8d1d6af196108568a485ee7ee0ab5826",
+  "source_tree_sha": "561cdfc09fbbdf4e954d39ce714424cdd7b3416a"
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "sha256-hash-checker",
+  "canonical_path": "sha-256-hash-checker/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

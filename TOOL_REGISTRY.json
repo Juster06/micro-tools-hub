@@ -1184,7 +1184,7 @@
       "category": "image",
       "description": "Rotate or flip local raster images.",
       "directory_path": "image-rotator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
@@ -1196,12 +1196,39 @@
         "Horizontal and vertical flips",
         "Download result"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 12 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_sha256": "c4834f55c5c5ea0dfdebdee6267f10258abb6f48d8dab61c175a72e078a353e8",
+        "evidence_path": "audit/IMAGE_ROTATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "13 synchronous image transformation-parameter validation fixtures (not image decoding)",
+          "5 real Chromium browser fixtures / 18 assertions",
+          "4 independent Node logic tests and 6 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked",
+          "Actual Chromium PNG pixel rotations, flips, transparency/export and pre-decode limits tested separately."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "rotation",
+        "flipX",
+        "flipY",
+        "imageCanvas",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "image-watermark",
@@ -2358,8 +2385,8 @@
       "name": "SHA-256 Text & File Hash Checker",
       "category": "developer",
       "description": "Hash text or a bounded local file and compare a known digest.",
-      "directory_path": "sha256-hash-checker",
-      "status": "PLANNED",
+      "directory_path": "sha-256-hash-checker",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2372,12 +2399,38 @@
         "File memory limit",
         "Expected-digest comparison"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 12 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_sha256": "283feb3b2635e2dbfaf8f46009b0879130b893a52fd9e6e67784b3b76a3d9e9d",
+        "evidence_path": "audit/SHA256_HASH_CHECKER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "14 synchronous text/file input-validation fixtures (not digest computation)",
+          "7 real Chromium browser fixtures / 15 assertions",
+          "4 independent Node logic tests and 7 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked",
+          "Real Chromium Web Crypto SHA-256 known text and file vectors, provider errors and stale-result handling tested separately."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "mode",
+        "toolInput",
+        "fileInput",
+        "expectedHash",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "regex-tester",
@@ -2947,7 +3000,7 @@
       "category": "calculator",
       "description": "Add or remove a user-entered VAT rate.",
       "directory_path": "vat-calculator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2959,12 +3012,36 @@
         "Currency rounding",
         "No claim of current legal rates"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 12 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_sha256": "9794b30aabe338ad25dbff3fe065fe1cc7026c5bf4b3abe6c4a297631f6a4b9c",
+        "evidence_path": "audit/VAT_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "21 deterministic inline logic fixtures",
+          "7 real Chromium browser fixtures / 17 assertions",
+          "4 independent Node logic tests and 3 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "rate",
+        "mode"
+      ]
     },
     {
       "id": "discount-calculator",
@@ -3029,7 +3106,7 @@
       "category": "calculator",
       "description": "Calculate calendar age between user-selected dates.",
       "directory_path": "age-calculator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3041,12 +3118,35 @@
         "Years months and days",
         "Date-only semantics"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 12 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_sha256": "24fbc45d101b85b09facadf08a2d0c05b0a044cda66db4ac4969fd171225a87f",
+        "evidence_path": "audit/AGE_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "15 deterministic inline logic fixtures",
+          "6 real Chromium browser fixtures / 15 assertions",
+          "4 independent Node logic tests and 3 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "reference"
+      ]
     },
     {
       "id": "date-difference-calculator",
@@ -3108,7 +3208,7 @@
       "category": "calculator",
       "description": "Count weekdays with user-defined exclusions.",
       "directory_path": "working-days-calculator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3120,12 +3220,44 @@
         "Inclusive policy",
         "No automatic official-holiday claim"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 12 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_sha256": "bf736d72af6a91fc53103108f7fad988c61dfbecf2f7dbad4b55d4510de82723",
+        "evidence_path": "audit/WORKING_DAYS_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "17 deterministic inline logic fixtures",
+          "6 real Chromium browser fixtures / 18 assertions",
+          "4 independent Node logic tests and 3 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "end",
+        "inclusive",
+        "sun",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "holidays"
+      ]
     },
     {
       "id": "loan-repayment-calculator",
@@ -4001,7 +4133,7 @@
       "category": "productivity",
       "description": "Build a structured agenda with time allocations.",
       "directory_path": "meeting-agenda-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4013,12 +4145,38 @@
         "Printable output",
         "Copy or download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 12 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
+        "source_sha256": "ca1001d108d00d729006335a684533bd79231a1059bdf66b7c2267e2028767d3",
+        "evidence_path": "audit/MEETING_AGENDA_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "18 deterministic inline logic fixtures",
+          "6 real Chromium browser fixtures / 15 assertions",
+          "4 independent Node logic tests and 4 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "meetingDate",
+        "agendaItems",
+        "addBtn",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "printBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "printable-calendar-generator",

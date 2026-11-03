@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "layout-320",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "20"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Net: 100.00\nVAT: 20.00\nGross: 120.00\nMode: Add VAT to net\nVAT rate: 20%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-375",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "20"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Net: 100.00\nVAT: 20.00\nGross: 120.00\nMode: Add VAT to net\nVAT rate: 20%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-768",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "20"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Net: 100.00\nVAT: 20.00\nGross: 120.00\nMode: Add VAT to net\nVAT rate: 20%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-1440",
+      "width": 1440,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "20"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Net: 100.00\nVAT: 20.00\nGross: 120.00\nMode: Add VAT to net\nVAT rate: 20%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "remove",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "20"
+        },
+        {
+          "action": "set",
+          "selector": "#mode",
+          "value": "remove"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Net: 83.33\nVAT: 16.67\nGross: 100.00\nMode: Remove VAT from gross\nVAT rate: 20%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+        }
+      ]
+    },
+    {
+      "id": "copy-reset",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "20"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Net: 100.00\nVAT: 20.00\nGross: 120.00\nMode: Add VAT to net\nVAT rate: 20%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "Net: 100.00\nVAT: 20.00\nGross: 120.00\nMode: Add VAT to net\nVAT rate: 20%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#rate",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#mode",
+          "property": "value",
+          "equals": "add"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "invalid",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "-1"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "20"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    }
+  ]
+}

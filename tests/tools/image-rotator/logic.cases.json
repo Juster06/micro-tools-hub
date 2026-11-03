@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "valid-0",
+      "input": "{\"width\": 2, \"height\": 3, \"rotation\": \"0\", \"flipX\": false, \"flipY\": false}",
+      "options": {},
+      "expected": {
+        "width": 2,
+        "height": 3,
+        "rotation": "0",
+        "flipX": false,
+        "flipY": false
+      }
+    },
+    {
+      "id": "valid-1",
+      "input": "{\"width\": 2, \"height\": 3, \"rotation\": \"90\", \"flipX\": false, \"flipY\": false}",
+      "options": {},
+      "expected": {
+        "width": 3,
+        "height": 2,
+        "rotation": "90",
+        "flipX": false,
+        "flipY": false
+      }
+    },
+    {
+      "id": "valid-2",
+      "input": "{\"width\": 2, \"height\": 3, \"rotation\": \"180\", \"flipX\": true, \"flipY\": false}",
+      "options": {},
+      "expected": {
+        "width": 2,
+        "height": 3,
+        "rotation": "180",
+        "flipX": true,
+        "flipY": false
+      }
+    },
+    {
+      "id": "valid-3",
+      "input": "{\"width\": 2, \"height\": 3, \"rotation\": \"270\", \"flipX\": false, \"flipY\": true}",
+      "options": {},
+      "expected": {
+        "width": 3,
+        "height": 2,
+        "rotation": "270",
+        "flipX": false,
+        "flipY": true
+      }
+    },
+    {
+      "id": "valid-4",
+      "input": "{\"width\": 4000, \"height\": 2000, \"rotation\": \"90\", \"flipX\": false, \"flipY\": false}",
+      "options": {},
+      "expected": {
+        "width": 2000,
+        "height": 4000,
+        "rotation": "90",
+        "flipX": false,
+        "flipY": false
+      }
+    },
+    {
+      "id": "valid-5",
+      "input": "{\"width\": 4096, \"height\": 1, \"rotation\": \"270\", \"flipX\": true, \"flipY\": true}",
+      "options": {},
+      "expected": {
+        "width": 1,
+        "height": 4096,
+        "rotation": "270",
+        "flipX": true,
+        "flipY": true
+      }
+    },
+    {
+      "id": "invalid-0",
+      "input": "",
+      "options": {},
+      "error": "valid JSON"
+    },
+    {
+      "id": "invalid-1",
+      "input": "{",
+      "options": {},
+      "error": "valid JSON"
+    },
+    {
+      "id": "invalid-2",
+      "input": "{\"width\": 0, \"height\": 3, \"rotation\": \"0\", \"flipX\": false, \"flipY\": false}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "invalid-3",
+      "input": "{\"width\": 4097, \"height\": 1, \"rotation\": \"0\", \"flipX\": false, \"flipY\": false}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "invalid-4",
+      "input": "{\"width\": 4000, \"height\": 2001, \"rotation\": \"0\", \"flipX\": false, \"flipY\": false}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "invalid-5",
+      "input": "{\"width\": 2, \"height\": 3, \"rotation\": \"45\", \"flipX\": false, \"flipY\": false}",
+      "options": {},
+      "error": "supported"
+    },
+    {
+      "id": "invalid-6",
+      "input": "{\"width\": 2, \"height\": 3, \"rotation\": \"0\", \"flipX\": \"yes\", \"flipY\": false}",
+      "options": {},
+      "error": "supported"
+    }
+  ]
+}
