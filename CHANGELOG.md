@@ -1,5 +1,19 @@
 # Changelog
 
+## Task 9.5 Stage D — protection policy prepared; owner action required
+
+- Verified expected main, successful four-job main CI and independent Pages.
+  Actual aggregate context/source is Required functional checks / GitHub Actions.
+- Actual main remains unprotected with no rulesets/active rules. Connected
+  account is admin, but available tools have no administration endpoint and
+  no authenticated local GitHub CLI is available; no scope denial is invented.
+- Documented the exact classic main-only PR/strict-check/conversation policy,
+  zero mandatory approvals, retained admin emergency bypass, disabled force
+  pushes/deletion, owner setup/readback, future PR/release-metadata and recovery.
+- Documentation uses a feature PR. No settings/permission/deployment/workflow,
+  utility/registry/lifecycle/dashboard/shortcut change or Task 10. Enforcement
+  remains NOT VERIFIED until owner applies and reads back actual settings.
+
 ## Task 9.5 Stage C — functional CI integrated and verified on main
 
 - Merged PR #14 normally at the reviewed head as

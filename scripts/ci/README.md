@@ -1,5 +1,22 @@
 # Functional CI — Task 9.5
 
+## Stage D: main protection requires owner action
+
+CI remains operational on main; actual main is still **unprotected**, with no
+rulesets/active rules. The connected account is admin, but exposed connector tools
+cannot edit protection/rulesets; no authenticated local GitHub CLI is available.
+The connector's Administration-write grant is not exposed or tested. No settings
+were applied, so ordinary merge enforcement is **not verified**.
+
+Read [the exact main-only policy, owner setup and recovery guide](MAIN_BRANCH_PROTECTION.md).
+It specifies required PRs, zero mandatory human approvals, strict current-main
+**Required functional checks** from GitHub Actions, conversation resolution,
+blocked force pushes/deletion and retained emergency admin bypass. It includes
+the future Codex and release-metadata PR workflow; do not push those changes
+directly to main or use admin bypass routinely. No Pages check, deployment
+configuration/lifecycle change or Task 10. Applying the rule and actual readback
+are required before calling Task 9.5 protected/enforced.
+
 ## Stage C: integrated on main, independently verified
 
 PR #14 merged normally as `3f08b910a70f105b91d26e6df8eca7c0477d504d` at

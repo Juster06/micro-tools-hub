@@ -1,6 +1,48 @@
 # Session handoff
 
-## Latest session — Task 9.5 Stage C: CI integrated on main (2026-11-02)
+## Latest session — Task 9.5 Stage D: owner action required (2026-11-03)
+
+**Status:** CI is operational; main branch protection is **not configured**.
+Verified unchanged main `6f86ead99c1e7183b625349ca4d4e2f9da804186`, clean checkout,
+successful main push run 41544609839 (all four jobs), successful independent Pages
+run 41544608686 and exact actual **Required functional checks** context from
+GitHub Actions App 15368. Actual branch API reports protected=false, required
+checks off/empty; repository rulesets and active main rules are empty.
+
+**Capability limitation:** connected Juster06 account is admin, but exposed
+GitHub tools have no protection/ruleset administration endpoint. Installation
+metadata does not expose Administration-write scope; no permission denial was
+invented. GitHub CLI and standard GitHub auth environment variables are absent.
+Plugin discovery found the existing GitHub connector, no supported alternative
+for this missing operation. No credential extraction, scope/permission expansion,
+undocumented API, settings write or bypass was attempted.
+
+**Prepared policy/docs:** [exact main protection and owner setup](scripts/ci/MAIN_BRANCH_PROTECTION.md)
+describes one classic main-only rule: require PRs, zero mandatory approvals,
+**Required functional checks** from GitHub Actions, strict up-to-date branches,
+conversation resolution, force pushes/deletion disabled and emergency admin
+bypass retained. No Pages merge check or unrelated restrictions. The guide
+includes exact documented API body, UI setup/readback, future Codex PR and release
+metadata workflow, safe enforcement observations, recovery and access limits.
+Docs are submitted on a feature PR, not pushed directly to main or merged using
+bypass. Its final PR identity/source tree and actual CI are in the delivery report.
+
+**Enforcement:** NOT RUN/NOT VERIFIED because protection is not applied. No
+failing PR merged, destructive probe or admin bypass used. Passing CI does not
+prove merge blocking. A passing documentation PR only confirms continuing CI.
+Existing 18 released utilities, registry/homepage/Analytics/CNAME, tests/workflow,
+Pages configuration, dashboard/launcher and shortcut identities remain unchanged.
+Inventory remains 93 total /18 RELEASED /0 TESTED /6 READY /68 PLANNED /1 BLOCKED.
+
+**Next major task:** owner applies the exact reviewed rule using a supported
+authenticated administration interface, then read back settings and verify the
+ordinary PR requirements without using emergency bypass. Stage D remains
+incomplete until that evidence exists. Review the documentation PR separately;
+do not merge without authorization. No utility/lifecycle changes or Task 10.
+
+### Historical Stage C integration
+
+## Task 9.5 Stage C: CI integrated on main (2026-11-02)
 
 **Status:** [PR #14](https://github.com/Juster06/micro-tools-hub/pull/14) merged
 normally with the reviewed expected-head guard at 2026-11-02T23:14:09Z as
@@ -544,8 +586,8 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Tool status counts: IDEA: 0; PLANNED: 68; READY: 6; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 18; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Profit Margin Calculator.
-- Git branch: main.
-- Latest commit observed before generation: 3f08b910a70f105b91d26e6df8eca7c0477d504d.
+- Git branch: docs/task-9-5-main-protection.
+- Latest commit observed before generation: 6f86ead99c1e7183b625349ca4d4e2f9da804186.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -573,9 +615,9 @@ These are registry verification records, not new tests or tasks executed by this
 
 ### Uncommitted changes (repository-relative)
 - ` M` CHANGELOG.md
-- ` M` README.md
 - ` M` SESSION_HANDOFF.md
 - ` M` scripts/ci/README.md
+- `??` scripts/ci/MAIN_BRANCH_PROTECTION.md
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->
