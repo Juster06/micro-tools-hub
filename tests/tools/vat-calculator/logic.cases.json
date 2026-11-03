@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "valid-0",
+      "input": "100",
+      "options": {
+        "rate": "20",
+        "mode": "add"
+      },
+      "expected": "Net: 100.00\nVAT: 20.00\nGross: 120.00\nMode: Add VAT to net\nVAT rate: 20%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "valid-1",
+      "input": "100",
+      "options": {
+        "rate": "20",
+        "mode": "remove"
+      },
+      "expected": "Net: 83.33\nVAT: 16.67\nGross: 100.00\nMode: Remove VAT from gross\nVAT rate: 20%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "valid-2",
+      "input": "0",
+      "options": {
+        "rate": "0",
+        "mode": "add"
+      },
+      "expected": "Net: 0.00\nVAT: 0.00\nGross: 0.00\nMode: Add VAT to net\nVAT rate: 0%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "valid-3",
+      "input": "0.025",
+      "options": {
+        "rate": "0",
+        "mode": "add"
+      },
+      "expected": "Net: 0.03\nVAT: 0.00\nGross: 0.03\nMode: Add VAT to net\nVAT rate: 0%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "valid-4",
+      "input": "0.05",
+      "options": {
+        "rate": "10",
+        "mode": "add"
+      },
+      "expected": "Net: 0.05\nVAT: 0.01\nGross: 0.06\nMode: Add VAT to net\nVAT rate: 10%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "valid-5",
+      "input": "0.05",
+      "options": {
+        "rate": "10",
+        "mode": "remove"
+      },
+      "expected": "Net: 0.05\nVAT: 0.00\nGross: 0.05\nMode: Remove VAT from gross\nVAT rate: 10%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "valid-6",
+      "input": "1000000000000",
+      "options": {
+        "rate": "1000",
+        "mode": "add"
+      },
+      "expected": "Net: 1000000000000.00\nVAT: 10000000000000.00\nGross: 11000000000000.00\nMode: Add VAT to net\nVAT rate: 1000%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "valid-7",
+      "input": "1.234567",
+      "options": {
+        "rate": "7.125",
+        "mode": "add"
+      },
+      "expected": "Net: 1.23\nVAT: 0.09\nGross: 1.32\nMode: Add VAT to net\nVAT rate: 7.125%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "valid-8",
+      "input": "1.234567",
+      "options": {
+        "rate": "7.125",
+        "mode": "remove"
+      },
+      "expected": "Net: 1.15\nVAT: 0.08\nGross: 1.23\nMode: Remove VAT from gross\nVAT rate: 7.125%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "valid-9",
+      "input": "100",
+      "options": {
+        "rate": "0",
+        "mode": "remove"
+      },
+      "expected": "Net: 100.00\nVAT: 0.00\nGross: 100.00\nMode: Remove VAT from gross\nVAT rate: 0%\nRounding: half up to 2 decimals; VAT is rounded gross minus rounded net."
+    },
+    {
+      "id": "invalid-0",
+      "input": "",
+      "options": {
+        "rate": "20"
+      },
+      "error": "Enter"
+    },
+    {
+      "id": "invalid-1",
+      "input": "-1",
+      "options": {
+        "rate": "20"
+      },
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-2",
+      "input": "NaN",
+      "options": {
+        "rate": "20"
+      },
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-3",
+      "input": "1e3",
+      "options": {
+        "rate": "20"
+      },
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-4",
+      "input": "😀",
+      "options": {
+        "rate": "20"
+      },
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-5",
+      "input": "11111111111111111111111111111111111111111111111111111111111111111",
+      "options": {
+        "rate": "20"
+      },
+      "error": "UTF-16"
+    },
+    {
+      "id": "invalid-6",
+      "input": "1.1234567",
+      "options": {
+        "rate": "20"
+      },
+      "error": "fractional"
+    },
+    {
+      "id": "invalid-7",
+      "input": "100",
+      "options": {
+        "rate": "-1"
+      },
+      "error": "nonnegative"
+    },
+    {
+      "id": "invalid-8",
+      "input": "100",
+      "options": {
+        "rate": "1000.1"
+      },
+      "error": "maximum"
+    },
+    {
+      "id": "invalid-9",
+      "input": "100",
+      "options": {
+        "rate": ""
+      },
+      "error": "Enter"
+    },
+    {
+      "id": "invalid-10",
+      "input": "1000000000001",
+      "options": {
+        "rate": "20"
+      },
+      "error": "maximum"
+    }
+  ]
+}

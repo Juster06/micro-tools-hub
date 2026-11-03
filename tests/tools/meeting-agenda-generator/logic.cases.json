@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "normal",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"Welcome\", \"duration\": \"10\", \"presenter\": \"Ada\"}, {\"name\": \"Discuss\", \"duration\": \"25\", \"presenter\": \"\"}]}",
+      "options": {},
+      "expected": "Meeting: Planning ☕\nDate: 2026-03-01\nAgenda:\n1. Welcome (10 min) — Ada\n2. Discuss (25 min)\nTotal: 35 minutes"
+    },
+    {
+      "id": "unicode",
+      "input": "{\"title\": \"中文\", \"date\": \"2024-02-29\", \"items\": [{\"name\": \"café\", \"duration\": \"1\", \"presenter\": \"李\"}]}",
+      "options": {},
+      "expected": "Meeting: 中文\nDate: 2024-02-29\nAgenda:\n1. café (1 min) — 李\nTotal: 1 minutes"
+    },
+    {
+      "id": "literal-html",
+      "input": "{\"title\": \"<img>\", \"date\": \"2026-01-01\", \"items\": [{\"name\": \"<b>\", \"duration\": \"1\", \"presenter\": \"\"}]}",
+      "options": {},
+      "expected": "Meeting: <img>\nDate: 2026-01-01\nAgenda:\n1. <b> (1 min)\nTotal: 1 minutes"
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "valid JSON"
+    },
+    {
+      "id": "bad-json",
+      "input": "{",
+      "options": {},
+      "error": "valid JSON"
+    },
+    {
+      "id": "empty-title",
+      "input": "{\"title\": \"\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"Welcome\", \"duration\": \"10\", \"presenter\": \"Ada\"}, {\"name\": \"Discuss\", \"duration\": \"25\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "title"
+    },
+    {
+      "id": "long-title",
+      "input": "{\"title\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"Welcome\", \"duration\": \"10\", \"presenter\": \"Ada\"}, {\"name\": \"Discuss\", \"duration\": \"25\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "title"
+    },
+    {
+      "id": "invalid-date",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2025-02-29\", \"items\": [{\"name\": \"Welcome\", \"duration\": \"10\", \"presenter\": \"Ada\"}, {\"name\": \"Discuss\", \"duration\": \"25\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "Gregorian"
+    },
+    {
+      "id": "no-items",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": []}",
+      "options": {},
+      "error": "1 to 50"
+    },
+    {
+      "id": "too-many",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "1 to 50"
+    },
+    {
+      "id": "empty-item",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \" \", \"duration\": \"1\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "needs a name"
+    },
+    {
+      "id": "long-item",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\", \"duration\": \"1\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "200"
+    },
+    {
+      "id": "long-presenter",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"x\", \"duration\": \"1\", \"presenter\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}]}",
+      "options": {},
+      "error": "80"
+    },
+    {
+      "id": "zero-duration",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"x\", \"duration\": \"0\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "whole minutes"
+    },
+    {
+      "id": "fraction-duration",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"x\", \"duration\": \"1.5\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "whole minutes"
+    },
+    {
+      "id": "max-duration",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"x\", \"duration\": \"1441\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "whole minutes"
+    },
+    {
+      "id": "total-duration",
+      "input": "{\"title\": \"Planning ☕\", \"date\": \"2026-03-01\", \"items\": [{\"name\": \"x\", \"duration\": \"1440\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1440\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1440\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1440\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1440\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1440\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1440\", \"presenter\": \"\"}, {\"name\": \"x\", \"duration\": \"1440\", \"presenter\": \"\"}]}",
+      "options": {},
+      "error": "10,080"
+    },
+    {
+      "id": "unknown-field",
+      "input": "{\"title\": \"a\", \"date\": \"2026-01-01\", \"items\": [], \"x\": 1}",
+      "options": {},
+      "error": "Invalid agenda"
+    }
+  ]
+}

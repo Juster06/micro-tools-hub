@@ -10,6 +10,7 @@
   "node_files": [
     "scripts/project.test.mjs",
     "scripts/tool-framework.test.mjs",
+    "tests/tools/age-calculator/logic.test.mjs",
     "tests/tools/base64-encoder-decoder/logic.test.mjs",
     "tests/tools/case-converter/logic.test.mjs",
     "tests/tools/countdown-timer/logic.test.mjs",
@@ -19,20 +20,27 @@
     "tests/tools/file-size-converter/logic.test.mjs",
     "tests/tools/find-and-replace/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
+    "tests/tools/image-rotator/logic.test.mjs",
     "tests/tools/json-formatter/logic.test.mjs",
+    "tests/tools/meeting-agenda-generator/logic.test.mjs",
     "tests/tools/percentage-calculator/logic.test.mjs",
     "tests/tools/percentage-change-calculator/logic.test.mjs",
     "tests/tools/profit-margin-calculator/logic.test.mjs",
     "tests/tools/random-name-picker/logic.test.mjs",
     "tests/tools/secure-random-number-generator/logic.test.mjs",
+    "tests/tools/sha256-hash-checker/logic.test.mjs",
     "tests/tools/slug-generator/logic.test.mjs",
     "tests/tools/text-reverser/logic.test.mjs",
     "tests/tools/text-sorter/logic.test.mjs",
     "tests/tools/timestamp-converter/logic.test.mjs",
     "tests/tools/url-encoder-decoder/logic.test.mjs",
-    "tests/tools/uuid-generator/logic.test.mjs"
+    "tests/tools/uuid-generator/logic.test.mjs",
+    "tests/tools/vat-calculator/logic.test.mjs",
+    "tests/tools/working-days-calculator/logic.test.mjs"
   ],
   "browser_files": [
+    "tests/tools/age-calculator/extended-browser.test.mjs",
+    "tests/tools/age-calculator/integration-browser.test.mjs",
     "tests/tools/base64-encoder-decoder/extended-browser.test.mjs",
     "tests/tools/base64-encoder-decoder/integration-browser.test.mjs",
     "tests/tools/case-converter/extended-browser.test.mjs",
@@ -51,8 +59,12 @@
     "tests/tools/find-and-replace/integration-browser.test.mjs",
     "tests/tools/hashtag-organizer/extended-browser.test.mjs",
     "tests/tools/hashtag-organizer/integration-browser.test.mjs",
+    "tests/tools/image-rotator/extended-browser.test.mjs",
+    "tests/tools/image-rotator/integration-browser.test.mjs",
     "tests/tools/json-formatter/extended-browser.test.mjs",
     "tests/tools/json-formatter/integration-browser.test.mjs",
+    "tests/tools/meeting-agenda-generator/extended-browser.test.mjs",
+    "tests/tools/meeting-agenda-generator/integration-browser.test.mjs",
     "tests/tools/percentage-calculator/extended-browser.test.mjs",
     "tests/tools/percentage-calculator/integration-browser.test.mjs",
     "tests/tools/percentage-change-calculator/extended-browser.test.mjs",
@@ -63,6 +75,8 @@
     "tests/tools/random-name-picker/integration-browser.test.mjs",
     "tests/tools/secure-random-number-generator/extended-browser.test.mjs",
     "tests/tools/secure-random-number-generator/integration-browser.test.mjs",
+    "tests/tools/sha256-hash-checker/extended-browser.test.mjs",
+    "tests/tools/sha256-hash-checker/integration-browser.test.mjs",
     "tests/tools/slug-generator/extended-browser.test.mjs",
     "tests/tools/slug-generator/integration-browser.test.mjs",
     "tests/tools/text-reverser/extended-browser.test.mjs",
@@ -74,7 +88,11 @@
     "tests/tools/url-encoder-decoder/extended-browser.test.mjs",
     "tests/tools/url-encoder-decoder/integration-browser.test.mjs",
     "tests/tools/uuid-generator/extended-browser.test.mjs",
-    "tests/tools/uuid-generator/integration-browser.test.mjs"
+    "tests/tools/uuid-generator/integration-browser.test.mjs",
+    "tests/tools/vat-calculator/extended-browser.test.mjs",
+    "tests/tools/vat-calculator/integration-browser.test.mjs",
+    "tests/tools/working-days-calculator/extended-browser.test.mjs",
+    "tests/tools/working-days-calculator/integration-browser.test.mjs"
   ],
   "tools": {
     "social-counter": {
@@ -205,6 +223,36 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "age-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "vat-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "working-days-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "meeting-agenda-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "image-rotator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "sha256-hash-checker": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -258,8 +306,8 @@
   ],
   "minimum_tests": {
     "python-project": 142,
-    "node-regression": 230,
-    "browser-tests": 274
+    "node-regression": 254,
+    "browser-tests": 312
   },
   "aggregate": {
     "job": "required-checks",

@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "layout-320",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2026-01-05"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2026-01-11"
+        },
+        {
+          "action": "set",
+          "selector": "#holidays",
+          "value": "2026-01-06"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Working days: 4\nCalendar days considered: 7\nNon-working weekdays: 2\nHolidays excluded: 1\nUnique holiday dates supplied: 1\nCounting: Both dates included\nNon-working days: Sunday, Saturday\nDates: 2026-01-05 \u2192 2026-01-11"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-375",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2026-01-05"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2026-01-11"
+        },
+        {
+          "action": "set",
+          "selector": "#holidays",
+          "value": "2026-01-06"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Working days: 4\nCalendar days considered: 7\nNon-working weekdays: 2\nHolidays excluded: 1\nUnique holiday dates supplied: 1\nCounting: Both dates included\nNon-working days: Sunday, Saturday\nDates: 2026-01-05 \u2192 2026-01-11"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-768",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2026-01-05"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2026-01-11"
+        },
+        {
+          "action": "set",
+          "selector": "#holidays",
+          "value": "2026-01-06"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Working days: 4\nCalendar days considered: 7\nNon-working weekdays: 2\nHolidays excluded: 1\nUnique holiday dates supplied: 1\nCounting: Both dates included\nNon-working days: Sunday, Saturday\nDates: 2026-01-05 \u2192 2026-01-11"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-1440",
+      "width": 1440,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2026-01-05"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2026-01-11"
+        },
+        {
+          "action": "set",
+          "selector": "#holidays",
+          "value": "2026-01-06"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Working days: 4\nCalendar days considered: 7\nNon-working weekdays: 2\nHolidays excluded: 1\nUnique holiday dates supplied: 1\nCounting: Both dates included\nNon-working days: Sunday, Saturday\nDates: 2026-01-05 \u2192 2026-01-11"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-reset",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2026-01-05"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2026-01-11"
+        },
+        {
+          "action": "set",
+          "selector": "#holidays",
+          "value": "2026-01-06"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Working days: 4\nCalendar days considered: 7\nNon-working weekdays: 2\nHolidays excluded: 1\nUnique holiday dates supplied: 1\nCounting: Both dates included\nNon-working days: Sunday, Saturday\nDates: 2026-01-05 \u2192 2026-01-11"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "Working days: 4\nCalendar days considered: 7\nNon-working weekdays: 2\nHolidays excluded: 1\nUnique holiday dates supplied: 1\nCounting: Both dates included\nNon-working days: Sunday, Saturday\nDates: 2026-01-05 \u2192 2026-01-11"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#end",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#holidays",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#sun",
+          "property": "checked",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#sat",
+          "property": "checked",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "invalid",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2025-02-29"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2026-01-01"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    }
+  ]
+}

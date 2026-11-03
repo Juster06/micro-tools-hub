@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "layout-320",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Planning ☕"
+        },
+        {
+          "action": "set",
+          "selector": "#meetingDate",
+          "value": "2026-03-01"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-0",
+          "value": "Welcome"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-0",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#item-presenter-0",
+          "value": "Ada"
+        },
+        {
+          "action": "click",
+          "selector": "#addBtn"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-1",
+          "value": "Discuss"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-1",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Meeting: Planning ☕\nDate: 2026-03-01\nAgenda:\n1. Welcome (10 min) — Ada\n2. Discuss (25 min)\nTotal: 35 minutes"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-375",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Planning ☕"
+        },
+        {
+          "action": "set",
+          "selector": "#meetingDate",
+          "value": "2026-03-01"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-0",
+          "value": "Welcome"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-0",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#item-presenter-0",
+          "value": "Ada"
+        },
+        {
+          "action": "click",
+          "selector": "#addBtn"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-1",
+          "value": "Discuss"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-1",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Meeting: Planning ☕\nDate: 2026-03-01\nAgenda:\n1. Welcome (10 min) — Ada\n2. Discuss (25 min)\nTotal: 35 minutes"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-768",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Planning ☕"
+        },
+        {
+          "action": "set",
+          "selector": "#meetingDate",
+          "value": "2026-03-01"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-0",
+          "value": "Welcome"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-0",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#item-presenter-0",
+          "value": "Ada"
+        },
+        {
+          "action": "click",
+          "selector": "#addBtn"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-1",
+          "value": "Discuss"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-1",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Meeting: Planning ☕\nDate: 2026-03-01\nAgenda:\n1. Welcome (10 min) — Ada\n2. Discuss (25 min)\nTotal: 35 minutes"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-1440",
+      "width": 1440,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Planning ☕"
+        },
+        {
+          "action": "set",
+          "selector": "#meetingDate",
+          "value": "2026-03-01"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-0",
+          "value": "Welcome"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-0",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#item-presenter-0",
+          "value": "Ada"
+        },
+        {
+          "action": "click",
+          "selector": "#addBtn"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-1",
+          "value": "Discuss"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-1",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Meeting: Planning ☕\nDate: 2026-03-01\nAgenda:\n1. Welcome (10 min) — Ada\n2. Discuss (25 min)\nTotal: 35 minutes"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-reset",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Planning ☕"
+        },
+        {
+          "action": "set",
+          "selector": "#meetingDate",
+          "value": "2026-03-01"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-0",
+          "value": "Welcome"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-0",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#item-presenter-0",
+          "value": "Ada"
+        },
+        {
+          "action": "click",
+          "selector": "#addBtn"
+        },
+        {
+          "action": "set",
+          "selector": "#item-name-1",
+          "value": "Discuss"
+        },
+        {
+          "action": "set",
+          "selector": "#item-duration-1",
+          "value": "25"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Meeting: Planning ☕\nDate: 2026-03-01\nAgenda:\n1. Welcome (10 min) — Ada\n2. Discuss (25 min)\nTotal: 35 minutes"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "Meeting: Planning ☕\nDate: 2026-03-01\nAgenda:\n1. Welcome (10 min) — Ada\n2. Discuss (25 min)\nTotal: 35 minutes"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#meetingDate",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "invalid",
+      "steps": [
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    }
+  ]
+}
