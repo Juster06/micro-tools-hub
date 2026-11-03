@@ -1,5 +1,15 @@
 # Session handoff
 
+## Task 11.1 — publication verification, release PR pending
+
+PR #18 merged as `c97c2d0b2a6d7377df3915b9fcebb0bc758f63ad`. The [Pages deployment 41577979484](https://github.com/Juster06/micro-tools-hub/actions/runs/41577979484) and [post-merge CI 41577980047](https://github.com/Juster06/micro-tools-hub/actions/runs/41577980047) succeeded on that commit. Independent public HTTPS source verification matched all 25 pages and the homepage to the merged source; all 25 homepage routes were verified, and owner Analytics and custom domain remained available. The original 24 utilities were checked by source identity and post-merge CI; no new individual live interactions for those tools are claimed.
+
+The File Size Converter passed 33 actual public Chromium checks covering SI, IEC, cross-system conversions, input limits, rounding, selectors, reset, keyboard, responsive widths and uncaught/console errors. Clipboard was simulated. The separate source-bound release audit records timestamps, hashes, deployment, scope and limitations.
+
+This release-verification branch proposes 93 registered, 25 RELEASED, 0 TESTED, 0 READY, 67 PLANNED, 1 BLOCKED: milestone 25/25 (100%). Main and the public registry remain at 24 RELEASED until this metadata PR is separately authorized, merged and deployed. No administrator bypass or deployment is authorized by this preparation.
+
+**Next major task:** Review the Task 11.1 release-verification PR and wait for explicit owner approval before any merge. After an approved merge, independently verify release-metadata deployment.
+
 ## Task 11 — File Size Converter, publication pending
 
 File Size Converter is implemented and **TESTED** on `feat/file-size-converter`; the canonical route is `file-size-converter/index.html`. The branch homepage card reads **Tested · publication pending**. Its bounded BigInt rational arithmetic distinguishes SI powers of 1000 from IEC powers of 1024, handles plain nonnegative decimals, marks rounding and reports positive values below its display threshold without silently returning zero. No external processing or API is used.
@@ -727,12 +737,12 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 25 released tools; 24 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 67; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 1; RELEASED: 24; DEPRECATED: 0.
+- Milestone: 50 released tools; 25 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 67; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 25; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: feat/file-size-converter.
-- Latest commit observed before generation: 27ab3ed18578a109154d79bcbccec35df13a92a2.
+- Git branch: release/file-size-converter-verification.
+- Latest commit observed before generation: c97c2d0b2a6d7377df3915b9fcebb0bc758f63ad.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -743,7 +753,7 @@ These are registry verification records, not new tests or tasks executed by this
 - Random Name Picker: RELEASED, evidence dated 2026-11-03.
 - Profit Margin Calculator: RELEASED, evidence dated 2026-11-03.
 - Hashtag Organizer: RELEASED, evidence dated 2026-11-03.
-- File Size Converter: TESTED, evidence dated 2026-11-03.
+- File Size Converter: RELEASED, evidence dated 2026-11-03.
 - Date Difference Calculator: RELEASED, evidence dated 2026-11-03.
 - Countdown Timer: RELEASED, evidence dated 2026-11-03.
 - UUID Generator: RELEASED, evidence dated 2026-11-02.
@@ -766,8 +776,27 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
 - ` M` index.html
-- ` M` scripts/ci/coverage.json
-- `??` audit/FILE_SIZE_CONVERTER_VERIFICATION.json
+- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
+- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
+- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
+- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
+- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
+- ` M` tests/tools/json-formatter/integration-browser.test.mjs
+- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
+- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
+- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
+- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
+- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
+- ` M` tests/tools/slug-generator/integration-browser.test.mjs
+- ` M` tests/tools/text-reverser/integration-browser.test.mjs
+- ` M` tests/tools/text-sorter/integration-browser.test.mjs
+- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
+- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
+- `??` audit/FILE_SIZE_CONVERTER_RELEASE_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

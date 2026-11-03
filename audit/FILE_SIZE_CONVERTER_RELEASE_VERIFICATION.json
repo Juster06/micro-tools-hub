@@ -1,0 +1,102 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-03",
+  "source_revision": "c97c2d0b2a6d7377df3915b9fcebb0bc758f63ad",
+  "pages": [
+    {
+      "path": "file-size-converter/index.html",
+      "source_sha256": "46ee3d813639238f9b55dd0efd1356031bb1556507e3d005e833a0d232155775",
+      "checks": [
+        "Full public HTML source hash matches approved merge",
+        "Actual public HTTPS Chromium: 33 independent behavior checks covering SI, IEC, cross-system, input boundaries, clipboard simulation, keyboard, reset and responsive widths",
+        "Public homepage: 25 correct routes; 24 previously released source identities matched"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/file-size-converter/",
+        "http_status": 200,
+        "checked_at": "2026-11-03T04:29:34.397132+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41577979484,
+    "commit": "c97c2d0b2a6d7377df3915b9fcebb0bc758f63ad",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41577980047,
+    "conclusion": "success"
+  },
+  "public_source": {
+    "id": "file-size-converter",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/file-size-converter/",
+    "http_status": 200,
+    "source_sha256": "46ee3d813639238f9b55dd0efd1356031bb1556507e3d005e833a0d232155775",
+    "live_sha256": "46ee3d813639238f9b55dd0efd1356031bb1556507e3d005e833a0d232155775",
+    "source_matches": true,
+    "checked_at": "2026-11-03T04:29:34.397132+00:00"
+  },
+  "explicit_index_url": "https://everydaydigitalbox.com/file-size-converter/index.html",
+  "explicit_index_http": 200,
+  "live_browser": {
+    "started_at": "2026-11-03T04:29:50.442Z",
+    "browser": "Chrome/156.0.8078.4",
+    "url": "https://everydaydigitalbox.com/file-size-converter/",
+    "scope": "Actual public HTTPS Chromium; clipboard mocked by isolated test harness; no native clipboard or physical-device claim.",
+    "checks": [
+      "Canonical HTTPS, title, JavaScript adapter and expected CDN dependency",
+      "1000 B to kB: 1 kB",
+      "1000 kB to MB: 1 MB",
+      "1000 MB to GB: 1 GB",
+      "1000 GB to TB: 1 TB",
+      "1000 TB to PB: 1 PB",
+      "1024 B to KiB: 1 KiB",
+      "1024 KiB to MiB: 1 MiB",
+      "1024 MiB to GiB: 1 GiB",
+      "1024 GiB to TiB: 1 TiB",
+      "1024 TiB to PiB: 1 PiB",
+      "1 MB to MiB: ≈ 0.953674316406 MiB",
+      "1 MiB to MB: 1.048576 MB",
+      "1 GB to GiB: ≈ 0.931322574615 GiB",
+      "1 GiB to GB: 1.073741824 GB",
+      "0 B to PB: 0 PB",
+      "0.5 KiB to B: 512 B",
+      "999999999999999999999999999999 PB to B: 999999999999999999999999999999000000000000000 B",
+      "1 B to PiB: < 0.000000000001 PiB",
+      "Rejected invalid input: empty",
+      "Rejected invalid input: -1",
+      "Rejected invalid input: 1x",
+      "Rejected invalid input: 1e3",
+      "Rejected invalid input: boundary 61 units",
+      "Rejected invalid input: 0.1111111111111111111111111111111",
+      "Copy button with simulated clipboard",
+      "Keyboard Enter activates conversion",
+      "No horizontal overflow at 320px",
+      "No horizontal overflow at 375px",
+      "No horizontal overflow at 768px",
+      "No horizontal overflow at 1440px",
+      "Clear restores defaults and clears output",
+      "No uncaught errors, unhandled rejections or console.error during tested interactions"
+    ],
+    "result": "PASS",
+    "finished_at": "2026-11-03T04:29:54.798Z"
+  },
+  "homepage": {
+    "result": "PASS",
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 25,
+    "converter_tested_link": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "checked_at": "2026-11-03T04:30:12.886Z"
+  },
+  "previous_evidence": "audit/FILE_SIZE_CONVERTER_VERIFICATION.json",
+  "limitations": [
+    "Headless Chromium on Windows and simulated viewports; no physical-device, screen-reader, Safari or Firefox certification.",
+    "Clipboard simulated; native clipboard and operating-system dialogs not tested.",
+    "Previous 24 tools verified by HTTP/source identity and post-merge CI; no new individual public interactions claimed.",
+    "60 UTF-16 input units, 30 fractional digits, plain nonnegative decimals and BigInt required; rounding is disclosed.",
+    "This metadata and Live-label change requires separate owner-approved merge and deployment."
+  ]
+}
