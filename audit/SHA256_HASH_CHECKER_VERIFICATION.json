@@ -1,17 +1,18 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-03",
-  "source_revision": "1e62dfdb8d1d6af196108568a485ee7ee0ab5826",
+  "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
   "pages": [
     {
       "path": "sha-256-hash-checker/index.html",
       "source_sha256": "283feb3b2635e2dbfaf8f46009b0879130b893a52fd9e6e67784b3b76a3d9e9d",
       "checks": [
         "Canonical structural checks",
-        "14 deterministic inline logic fixtures",
+        "14 synchronous text/file input-validation fixtures (not digest computation)",
         "7 real Chromium browser fixtures / 15 assertions",
         "4 independent Node logic tests and 7 extended browser tests",
-        "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        "Responsive widths 320/375/768/1440; clipboard and download mocked",
+        "Real Chromium Web Crypto SHA-256 known text and file vectors, provider errors and stale-result handling tested separately."
       ]
     }
   ],
@@ -44,7 +45,10 @@
   "limitations": [
     "Local headless Chromium; no Safari, Firefox, physical-device, native clipboard, screen-reader or full accessibility certification.",
     "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
-    "No public deployment or publication has been verified."
+    "No public deployment or publication has been verified.",
+    "Requires secure context and Web Crypto SHA-256; whole-file reads limited to 16 MiB."
   ],
-  "contract": "audit/TASK_12_DEVELOPMENT_PLAN.md"
+  "contract": "audit/TASK_12_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "3b21a2f5ee67a5a21077f9a11665bed5dd196691",
+  "source_tree_sha": "561cdfc09fbbdf4e954d39ce714424cdd7b3416a"
 }

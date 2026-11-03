@@ -1,5 +1,13 @@
 # Development roadmap
 
+## Task 12 — six tested utilities, publication pending
+
+The Task 12 branch implements six utilities as **TESTED**, with publication evidence pending: Age Calculator (`age-calculator/index.html`), VAT Calculator (`vat-calculator/index.html`), Working Days Calculator (`working-days-calculator/index.html`), Meeting Agenda Generator (`meeting-agenda-generator/index.html`), Image Rotator (`image-rotator/index.html`) and SHA-256 Text & File Hash Checker (`sha-256-hash-checker/index.html`; registry ID `sha256-hash-checker`). The homepage cards explicitly state “Tested · publication pending”. No new utility is RELEASED.
+
+Branch inventory: 93 registered, 25 RELEASED, 6 TESTED, 0 READY, 61 PLANNED, 1 BLOCKED. The first milestone is complete; the next target is 50 released tools. See `audit/TASK_12_DEVELOPMENT_PLAN.md` and the six source-bound verification records for limits, local test scope and outstanding publication evidence. Image Rotator accepts static PNG only (up to 5 MiB and 8 million pixels); SHA-256 requires a secure context with Web Crypto and limits files to 16 MiB. User-provided inputs stay local; hosting and the existing styling CDN remain network requests.
+
+The branch targets `main` for ordinary protected-branch review. Do not merge or deploy without separate owner authorization. After an authorized merge and successful deployment, independently verify the public pages and only then prepare a separate release-evidence update for eligible tools.
+
 ## Task 12 — first milestone completed; six-tool batch
 
 The first milestone is complete: PR #19 merged as `9b969e23c8bdb19b50f738f14e367288446ef798`, [Pages run 41588981491](https://github.com/Juster06/micro-tools-hub/actions/runs/41588981491) and [post-merge functional CI 41588982142](https://github.com/Juster06/micro-tools-hub/actions/runs/41588982142) passed. The public homepage, 25 unique routes, public registry, exact deployed source and a scoped File Size Converter interaction check were independently verified. The baseline is 93 registered, 25 RELEASED, 0 TESTED, 0 READY, 67 PLANNED and 1 BLOCKED; milestone 25/25 complete, next target 50. Task 12 development is authorized on a feature branch. Earlier pending-PR notes are historical.

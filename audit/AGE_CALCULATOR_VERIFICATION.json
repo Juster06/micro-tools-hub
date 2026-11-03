@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-03",
-  "source_revision": "1e2b0ebe8e4604c7a4ce8824c6a2323418ab9b78",
+  "source_revision": "fb39cf77ccee88ff7985a59b99222f82c08c60ff",
   "pages": [
     {
       "path": "age-calculator/index.html",
@@ -46,5 +46,7 @@
     "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
     "No public deployment or publication has been verified."
   ],
-  "contract": "audit/TASK_12_DEVELOPMENT_PLAN.md"
+  "contract": "audit/TASK_12_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "1e2b0ebe8e4604c7a4ce8824c6a2323418ab9b78",
+  "source_tree_sha": "561cdfc09fbbdf4e954d39ce714424cdd7b3416a"
 }
