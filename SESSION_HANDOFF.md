@@ -1,6 +1,65 @@
 # Session handoff
 
-## Latest session — Task 9.5 Stage D: owner action required (2026-11-03)
+## Latest session — Task 9.5: verified CI, active ruleset and final delivery (2026-11-03)
+
+**Status:** Functional CI is operational and ordinary-actor enforcement is
+verified. The owner activated **Main Branch Protection - Required Functional CI**,
+repository ruleset **26413762**, on 2026-11-03T00:58:27Z. Authenticated readback
+and effective-main-rules independently confirm Active, protected main, PRs,
+zero approvals, conversation resolution, exactly **Required functional checks**
+from GitHub Actions App 15368, strict up-to-date branches, blocked force pushes
+and deletion. RepositoryRole 5 administrator bypass is **always**; verified by
+readback, never exercised. Includes main and current default main; no exclusions.
+No protection, permission or deployment setting changed in this integration.
+
+**Final continuation record:** [PR 15 final documentation delivery](https://github.com/Juster06/micro-tools-hub/pull/15)
+is the durable linked continuation mechanism for this checkpoint. After its
+ordinary guarded merge and actual final verification, its description records
+Task 9.5 completion, exact merge timestamp/SHA/tree, final main SHA, current
+PR/main CI and Pages results, preservation and remaining limits. Read that
+completed record and the final integration report when resuming. This handoff's
+own merge SHA/subsequent run cannot be embedded before it exists; any further
+tracked correction must use an ordinary PR, never a direct protected-main update.
+
+**Baseline/source identity:** before final PR 15 corrections, main was
+`6f86ead99c1e7183b625349ca4d4e2f9da804186`, published PR head
+`b4d330e754507e4a83d639632168522317e10308`, local original
+`29796bd8de8a2eaef8410a42d28cd3b392326722`, identical tree
+`7e6efdd7e6b11563a183fcbbf9254838ded6660e`. Main push41544609839 and PR 41550495523
+passed all four jobs; updated PR/main runs must independently pass on their
+exact new commits. Local history and active checkout are preserved; connected
+publication identities are independently fetched and complete-tree verified.
+
+**Documentation:** [active policy and procedures](scripts/ci/MAIN_BRANCH_PROTECTION.md)
+replace the superseded classic-rule proposal. Routine code/docs and release
+metadata require reviewed PRs, current main, resolved conversations and passing
+aggregate before an owner-authorized normal expected-head merge. Stop on rule
+violations/missing checks; do not bypass or weaken requirements. Emergency admin
+bypass requires separate incident-specific authorization, never routine use.
+Historical unprotected-state evidence remains below, clearly historical.
+
+**Pages limitation:** managed workflow active, successful baseline deployment
+41544608686/main-root build, public homepage/source and owner Analytics verified.
+Final automatic deployment/public checks are recorded in the linked delivery
+record. Saved Pages source/domain/HTTPS/build-type settings could not be directly
+read; do not claim every saved setting verified. No Pages configuration change.
+Pages is independent of CI; required merge checks do not gate main deployment.
+
+**Preservation/limits:** all 18 utilities, registry/homepage/Live cards/Analytics,
+CNAME, original tests/release audits, framework and dashboard/launcher/shortcuts
+remain unchanged. Inventory 93:18 RELEASED,0 TESTED,6 READY,68 PLANNED,1 BLOCKED;
+18/25=72%. Four specialist isolated-logic adapters remain NOT RUN; mandatory
+structure/browser scopes pass. Dashboard structural freshness is distinct from
+unavailable functional totals; native installed-shortcut launch is not newly
+claimed. No deliberately failing merge, destructive probe or admin bypass test.
+
+**Next major task:** Task 10 — ready for separately authorized development scope
+after confirming the linked final delivery's completed merge/main CI. Do not
+begin Task 10, implement another utility or change lifecycle statuses now.
+
+### Historical Stage D preparation before owner activation
+
+## Historical Stage D: owner action required before ruleset activation (2026-11-03)
 
 **Status:** CI is operational; main branch protection is **not configured**.
 Verified unchanged main `6f86ead99c1e7183b625349ca4d4e2f9da804186`, clean checkout,
@@ -587,7 +646,7 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: Profit Margin Calculator.
 - Git branch: docs/task-9-5-main-protection.
-- Latest commit observed before generation: 6f86ead99c1e7183b625349ca4d4e2f9da804186.
+- Latest commit observed before generation: 29796bd8de8a2eaef8410a42d28cd3b392326722.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -615,9 +674,10 @@ These are registry verification records, not new tests or tasks executed by this
 
 ### Uncommitted changes (repository-relative)
 - ` M` CHANGELOG.md
+- ` M` README.md
 - ` M` SESSION_HANDOFF.md
+- ` M` scripts/ci/MAIN_BRANCH_PROTECTION.md
 - ` M` scripts/ci/README.md
-- `??` scripts/ci/MAIN_BRANCH_PROTECTION.md
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

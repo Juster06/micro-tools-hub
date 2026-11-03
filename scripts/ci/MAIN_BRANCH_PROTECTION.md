@@ -1,200 +1,167 @@
-# Main branch protection — requested policy and owner setup
+# Main branch protection — active repository ruleset
 
-## Current state: NOT CONFIGURED (2026-11-03)
+## Verified current policy (2026-11-03)
 
-Task 9.5 Stage D authorizes the policy below. It has **not been applied**.
-Actual main `6f86ead99c1e7183b625349ca4d4e2f9da804186` is unprotected;
-required-check enforcement is off/empty, repository rulesets and active main rules
-are empty. Functional CI is operational: main push run **41544609839** passed all
-four jobs on that exact commit; Pages run **41544608686** succeeded separately.
+The owner manually activated [Main Branch Protection - Required Functional CI](https://github.com/Juster06/micro-tools-hub/rules/26413762),
+repository ruleset **26413762**, at 2026-11-03T00:58:27Z. Authenticated ruleset
+readback and the effective-main-rules endpoint independently verify Active
+enforcement. Main reports protected=true. The legacy classic-protection object
+is disabled; that does not disable the active ruleset. Do not create an overlapping
+classic rule or change repository protection/settings as routine development.
 
-The connected Juster06 account has repository admin permission. However, the
-available GitHub connector exposes no branch-protection/ruleset administration
-endpoint. Installation metadata does not disclose its Administration-write grant;
-account admin rights do not establish that grant. No denial response or missing
-scope is invented. The local GitHub CLI is unavailable and standard GH_TOKEN /
-GITHUB_TOKEN authentication is absent. Plugin discovery found only the already
-installed GitHub integration for this capability. No credentials were extracted,
-permissions expanded, undocumented API called or security boundary bypassed.
-An owner action or a supported authenticated administration interface is required.
-
-This guide is a proposed configuration, not executable enforcement. A merged
-Markdown file cannot configure GitHub settings. Do not report Stage D complete
-until actual settings have been applied and read back.
-
-## Exact policy
-
-Use **one classic branch protection rule matching exactly `main`**. This is the
-simplest supported method and preserves the requested emergency admin bypass.
-Do not add an overlapping ruleset or match unrelated branches.
-
-| Setting | Requested value |
+| Actual setting | Saved value |
 | --- | --- |
-| Require a pull request before merging | Enabled |
-| Required human approvals | Zero; Require approvals disabled |
-| Require status checks before merging | Enabled |
-| Required check | `Required functional checks`, source GitHub Actions |
-| Require branches to be up to date | Enabled / strict=true |
-| Require conversation resolution | Enabled |
-| Allow force pushes | Disabled |
-| Allow deletions | Disabled |
-| Apply requirements to administrators / disallow bypass | Disabled; retain emergency admin bypass |
-| Require Pages deployment | Disabled; no Pages job is a required check |
-| Additional signing, linear-history or merge-queue requirements | Not added |
+| Target | Branch; includes `refs/heads/main` and `~DEFAULT_BRANCH`, excludes none |
+| Current default branch | `main`; the two current targets resolve to the same branch |
+| Pull requests | Required for ordinary non-bypass contributors |
+| Mandatory approvals | `0`; no code-owner/last-push approval requirement or reviewer list |
+| Conversation resolution | `required_review_thread_resolution: true` |
+| Required check | Exactly **Required functional checks** |
+| Check provider | GitHub Actions, `integration_id: 15368` |
+| Up-to-date requirement | `strict_required_status_checks_policy: true` |
+| Force pushes | Blocked by `non_fast_forward` |
+| Branch deletion | Blocked by `deletion` |
+| Emergency bypass | Repository administrator role (`actor_id: 5`), `bypass_mode: always` |
+| Pages merge requirement | None; Pages is not a required status/deployment check |
 
-The actual current check-run API reports the exact context above with GitHub
-Actions App ID **15368** (`github-actions`); do not confuse it with the installation
-ID or require the individual Pages build/deploy contexts. Repository admin bypass
-is intentional: this policy constrains the ordinary path, not the emergency admin
-path. Agents must still use ordinary PRs and passing CI; do not exercise bypass
-merely to test availability.
+Authenticated readback also returns current_user_can_bypass=always for the
+connected administrator. Availability was inspected without exercising bypass.
+Always allow is an intentional emergency exception, not a routine agent path.
+The extra-approval-for-unattributed-changes flag is true but only affects a
+nonzero approval requirement; the current requirement remains zero.
 
-## Owner setup in GitHub
+`~DEFAULT_BRANCH` follows any future default-branch change as well as the explicit
+main target. It is currently redundant, not an extra protected branch. A future
+rename/default change needs an explicit review of the intended scope.
 
-1. Open [repository branch settings](https://github.com/Juster06/micro-tools-hub/settings/branches)
-   while signed in as the repository owner/admin.
-2. Inspect existing protection and rulesets first. If another actor has configured
-   a rule since this snapshot, compare it and reconcile deliberately; do not
-   overwrite legitimate newer settings or create overlap.
-3. Add a classic protection rule for the literal branch pattern `main`.
-4. Enable Require a pull request before merging. Leave Require approvals and
-   other review-count requirements unchecked (zero mandatory approvals).
-5. Enable Require status checks to pass before merging and Require branches to
-   be up to date before merging. Select **Required functional checks** from
-   **GitHub Actions**. Do not select Pages/deploy/build.
-6. Enable Require conversation resolution before merging. Leave Allow force
-   pushes, Allow deletions and Do not allow bypassing the above settings unchecked.
-   Do not add unrelated optional restrictions.
-7. Save, reopen the rule and compare every requested setting. If an option cannot
-   be represented, stop instead of substituting a weaker/different policy.
+## Verification and evidence
 
-An owner with an already authenticated administration client may alternatively
-use the documented `PUT /repos/Juster06/micro-tools-hub/branches/main/protection`
-endpoint with the reviewed body below. It requires Administration-write. Read
-current settings first and avoid replacing newly configured rules. No API token
-belongs in this repository, documentation, issue, PR or chat.
-
-```json
-{
-  "required_status_checks": {
-    "strict": true,
-    "contexts": [],
-    "checks": [
-      {
-        "context": "Required functional checks",
-        "app_id": 15368
-      }
-    ]
-  },
-  "enforce_admins": false,
-  "required_pull_request_reviews": {
-    "dismiss_stale_reviews": false,
-    "require_code_owner_reviews": false,
-    "required_approving_review_count": 0,
-    "require_last_push_approval": false
-  },
-  "restrictions": null,
-  "required_conversation_resolution": true,
-  "allow_force_pushes": false,
-  "allow_deletions": false
-}
-```
-
-The non-null pull-request-review configuration with approval count zero retains
-the PR requirement. `restrictions: null` adds no organization-specific push
-allowlist. Administrator enforcement is false by explicit owner policy.
-
-## Required readback and safe enforcement verification
-
-Use the actual GitHub UI or documented authenticated GET endpoints:
+Use documented GET-only readback before work:
 
 ```text
-GET /repos/Juster06/micro-tools-hub/branches/main
-GET /repos/Juster06/micro-tools-hub/branches/main/protection
-GET /repos/Juster06/micro-tools-hub/rulesets?includes_parents=true
+GET /repos/Juster06/micro-tools-hub/rulesets/26413762
 GET /repos/Juster06/micro-tools-hub/rules/branches/main
+GET /repos/Juster06/micro-tools-hub/branches/main
 GET /repos/Juster06/micro-tools-hub/commits/HEAD_SHA/check-runs
 ```
 
-Confirm protected=true; a non-null PR requirement with zero approvals;
-required_status_checks.strict=true; exactly the named aggregate check from App
-15368; conversation resolution enabled; force pushes/deletion disabled;
-enforce_admins.enabled=false. Verify that no unrelated rule was created. Save a
-dated sanitized settings readback; an API success response alone is insufficient.
+The active-main response lists deletion, non_fast_forward, pull_request and
+required_status_checks from this exact ruleset, with matching parameters. The
+aggregate check's actual check-run provider is GitHub Actions App 15368. Saved
+readback establishes effective enforcement for ordinary actors. It does not
+pretend that a rejected merge, destructive push/deletion or bypass experiment
+was performed. None was performed for this task.
 
-For a harmless documentation PR, inspect the ordinary merge requirements while
-the aggregate is pending and again after it succeeds. Resolve conversation
-threads and ensure the head is current with main. Do not merge a failing PR,
-make intentionally failing utility changes, force-push/delete a branch, or click
-an administrator bypass button. A signed-in admin's ability to override is not
-proof of ordinary enforcement. If no non-bypass identity or ordinary merge-state
-view is available, report that observation limit rather than changing account
-permissions to manufacture a test. Preserve any actual pending/blocked and
-passing/eligible readbacks that are available. Existing main/PR test runs prove
-CI execution, not policy enforcement.
+Bypass actors are omitted from unauthenticated readback. The authenticated
+readback did expose exactly RepositoryRole 5 /always; absence in a public response
+must not be interpreted as no bypass. Check actual current settings rather than
+assuming a historical screenshot or passing CI proves enforcement.
 
-At the Stage D preparation checkpoint, enforcement testing is **NOT RUN** because
-no protection has been applied through the available interface. No failing PR,
-bypass operation or destructive test was performed. A passing documentation PR
-only demonstrates continuing functional CI; it cannot establish required-check
-enforcement while main is unprotected.
+Before this final correction, main push run **41544609839** and PR 15 run
+**41550495523** succeeded with Python 142/142, Node 179 logic +196 browser,
+additional 639 logic cases,291 browser cases/777 assertions and templates 6/12/48.
+These baseline runs predate ruleset activation. Updated PR 15 and merged-main
+workflow identities/results are recorded in the [final PR delivery record](https://github.com/Juster06/micro-tools-hub/pull/15).
+Only a completed run for the exact current head establishes current CI success.
 
-## Future Codex PR workflow
+## Routine Codex PR workflow
 
-- Fetch origin and read the current handoff plus actual main protection before
-  work. Use a feature branch; keep production scope bounded and private/generated
-  artifacts out of commits. Do not assume account admin means bypass is intended.
-- Run relevant local tests and project validation; publish reviewed exact content
-  without force pushes. If publishing identities differ, independently fetch and
-  verify complete tree equality while preserving original commits.
-- Open a PR targeting current main. Wait for the exact current head's Python,
-  Node, real Chromium and **Required functional checks** jobs. Inspect actual
-  results/counts/artifacts; resolve conversations.
-- If behind main, merge current origin/main into the feature branch, resolve and
-  review conflicts, push normally and rerun CI. Do not rewrite original history
-  or rely on an earlier head's passing checks. An update-to-main requirement is
-  not satisfied by an old run on a different commit.
-- Merge only with owner authorization, an expected-head guard, no blocking
-  requirements and the ordinary path. Verify resulting main-push CI and the
-  independent automatic Pages behavior. Never use emergency admin bypass merely
-  because it is available. Do not silently lower requirements to unblock a PR.
+1. Read the latest handoff and actual effective rules. Fetch main and inspect
+   unexpected advances. Preserve the existing checkout, original branches and
+   unrelated user changes. Start a bounded feature branch.
+2. Review the complete diff and relevant local regression, registry/source/
+   homepage/status, whitespace and privacy checks. Keep credentials, personal
+   paths, generated reports/caches and machine settings out of committed files.
+3. Publish reviewed exact content without force-push/history rewriting. When
+   connected publication produces a different commit SHA, preserve original
+   local commits and independently fetch/verify complete Git-tree equality.
+4. Open/update the PR against current main. Wait for its exact current head's
+   Python, Node, real Chromium and **Required functional checks** jobs. Inspect
+   actual outcomes/counts and permitted summary artifacts. Resolve conversations.
+5. Confirm the PR is current with main. If main advanced, merge origin/main into
+   the feature branch, resolve/review conflicts and push normally. Rerun CI;
+   an earlier head's success cannot satisfy the new head.
+6. With owner merge authorization, all ordinary requirements satisfied and a
+   clean merge state, use a normal merge with the expected-head guard. No admin
+   bypass, force merge, requirement reduction or direct main update. If GitHub
+   reports a ruleset violation/missing check, stop and report it.
+7. Safely fast-forward local main. Verify actual main-push CI and independent
+   Pages behavior/public preservation. Record exact commit/tree/run identities
+   in the durable linked delivery record and final report. Do not claim success
+   while a mandatory run is pending.
 
-## Release metadata
+No mandatory human review count was configured, but owner authorization for
+agent merge actions remains necessary. A caller's administrator role is not
+authorization to ignore ordinary PR requirements or use emergency bypass.
 
-Publication/lifecycle evidence still requires separate owner-authorized release
-verification. Submit registry, release-audit, homepage availability and derived
-tracking updates through a reviewed feature PR with current passing CI, even
-when the release consists only of metadata/docs. Do not push release metadata
-directly to main, treat a merged tool as RELEASED, or equate Pages/structural PASS
-with public functional publication evidence. Verify main CI, automatic Pages and
-actual expected public source/behavior separately after the authorized merge.
-This task does not authorize a new utility or lifecycle change.
+## Release metadata and handoffs
 
-## Recovery and emergency bypass
+Submit registry status/publication evidence, release audits, homepage availability
+and derived tracking updates through normal reviewed PRs with passing current CI.
+Do not push release metadata or final documentation directly to protected main.
+Public source/behavior and a matching Pages deployment must be independently
+verified before a RELEASED transition; merged code, structural PASS or CI success
+alone does not establish publication. No lifecycle change is authorized here.
 
-For a stuck required check, inspect the exact head, context spelling/App source,
-workflow triggers and logs; fix the cause on a feature branch and rerun. Bring
-the PR current with main, resolve discussions and verify again. Do not remove
-the check, weaken tests or enable force pushes/deletions as a routine workaround.
+Record completed merge/main identities in [PR 15's linked delivery record](https://github.com/Juster06/micro-tools-hub/pull/15)
+and the final integration report after actual verification. SESSION_HANDOFF.md
+links to this durable continuation mechanism because its own containing merge
+SHA and subsequent hosted run cannot be embedded before that merge exists.
+Any further tracked-file correction after merge must use a new ordinary PR;
+updating the linked PR delivery record does not mutate protected main.
 
-If legitimate emergency recovery is needed, the existing repository admin may
-use its retained bypass only with explicit incident-specific owner authorization.
-Record the reason, affected commit and readbacks; restore ordinary operation and
-verify CI and Pages afterward. Do not test bypass by using it now. Rule edits,
-removal, added bypass actors, permission expansion and materially different policy
-require separate authorization. No permanent credential should be created or
-shared merely to complete this setup.
+## Recovery and emergency procedure
 
-## Limits and references
+For a blocked PR, inspect the exact head, context spelling, GitHub Actions source,
+strict current-main condition, workflow triggers, conversation state and logs.
+Fix the cause on a feature branch, merge current main if needed and rerun checks.
+Do not remove the aggregate, skip mandatory tests, lower policy requirements,
+enable force pushes/deletion or routinely push directly to main.
 
-Classic protection and branch rulesets are supported on public repositories with
-GitHub Free; no paid upgrade is required for this requested branch policy.
-The exact subscription and connector Administration-write grant were not exposed.
-Pages deployment remains independently triggered by main; protection alone does
-not make Pages wait for main's functional CI. No utility, CI workflow, deployment
-configuration, registry/lifecycle, dashboard or shortcut changes are included.
-Task 10 remains unstarted.
+Existing repository administrators retain Always allow solely for separately
+authorized incident recovery. Record the incident-specific authorization, reason,
+affected commit and settings readbacks; restore ordinary operation and verify
+CI and Pages afterward. Do not use bypass to prove it exists. No bypass or
+protection/permission change is authorized for this documentation integration.
 
-Official references: [protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches),
-[documented update/readback API](https://docs.github.com/en/rest/branches/branch-protection),
-[managing a protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule).
+## Pages observation and direct-settings limitation
+
+The managed Pages workflow remains active. Before final integration, successful
+deployment run **41544608686** for main 6f86ead and its actual main/root build logs,
+custom-domain URL, public homepage/source and owner Analytics were independently
+verified. Automatic deployments caused by this documentation merge are recorded
+accurately in the final delivery record, with all 18 released pages and registry
+checked for accessibility and unchanged source.
+
+The saved Pages configuration could not be directly inspected: unauthenticated
+GET /pages returned404, and the connector did not expose that endpoint. Therefore
+current saved source-branch/path, build-type, HTTPS and domain-setting fields are
+**unverified as saved settings**. Do not claim every Pages field was checked.
+Workflow/deployment/public evidence is separate and does not imply that direct
+configuration readback succeeded. No Pages setting was modified. Pages remains
+independent of functional CI; branch protection is not main-deployment gating.
+
+## Historical preparation, superseded by the owner's ruleset
+
+Before 2026-11-03T00:58:27Z, the readback for main 6f86ead showed protected=false,
+required checks off and no rulesets/active rules. The original PR 15 proposed a
+classic main rule because the connector could not configure administration
+settings. Local authentication was unavailable; no credential extraction, scope
+expansion or settings mutation was attempted. That earlier observation/proposal
+is retained in the historical handoff/changelog and original commits. The owner
+then created the current repository ruleset. The classic setup proposal is no
+longer a pending action; do not apply it on top of the verified active ruleset.
+
+## Remaining scope
+
+Four original specialist tools have explicitly NOT RUN isolated-logic adapters;
+their mandatory structure/browser scopes pass. Native installed-shortcut GUI
+launch is not newly certified by this documentation task. Structural dashboard
+reports are not functional test totals. Existing 18 utilities, registry/lifecycle,
+homepage/Analytics/CNAME, tests/workflow, release audits and dashboard/shortcuts
+remain unchanged. Task 10 is the next development task and awaits separate scope;
+do not begin it automatically.
+
+References: [active ruleset](https://github.com/Juster06/micro-tools-hub/rules/26413762),
+[ruleset/effective-rules API](https://docs.github.com/en/rest/repos/rules),
+[available rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets).
