@@ -41,7 +41,7 @@ run. Registry, source/evidence, all 24 structural profiles and full project stat
 passed with **zero errors and warnings**. Four legacy isolated-logic adapters
 remain explicitly unavailable; their structural/browser checks still run.
 
-**PR:** creation and final hosted checks are recorded in the linked Task 10 delivery record.
+**PR:** [Task 10 PR #16](https://github.com/Juster06/micro-tools-hub/pull/16) targets main and remains open; check its latest hosted CI before any future integration.
 
 **Preservation:** Read-only HTTP/source checks matched the public homepage and all 18 released pages against baseline main. Both installed shortcut bytes, targets, arguments, working directories and AppIDs matched the saved baseline. No new native dashboard launch is claimed.
 
@@ -61,22 +61,6 @@ Submit eventual release evidence through another ordinary protected-main PR.
 Then review readiness of the 68 PLANNED entries; no READY tools remain. Releasing
 these six would produce 24 released tools, so one additional reviewed distinct
 tool is still needed for the first milestone. Do not begin another utility now.
-
-## In-progress Task 10 continuation (2026-11-03)
-
-Branch `feat/task-10-six-tool-batch` contains the six requested tools. Their source
-checkpoint is local `7887c31b480b741a23f3f24f54146ca112d59009`; the connected
-GitHub source checkpoint `5ffa4eb188c7270825bc2ce577a4add6b765df45` has the
-same complete tree. All six have local TESTED evidence and publication null;
-homepage cards are present. The public main and 18 released pages remain intact.
-Python 142/142 and Node 225/225 passed. The full browser suite found errors in
-the six new integration fixtures; those fixtures have been corrected and the
-targeted and complete browser checks are being rerun. Finish those checks, update
-documentation with actual results, review and commit all remaining changes,
-publish the exact reviewed feature tree and open the authorized PR to main. Verify
-GitHub Actions on the PR. Do not merge, deploy, use bypass, or mark RELEASED.
-
-**Next major task:** Complete Task 10 verification, documentation and the authorized unmerged PR.
 
 ## Latest session — Task 9.5: verified CI, active ruleset and final delivery (2026-11-03)
 

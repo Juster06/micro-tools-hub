@@ -53,7 +53,7 @@ No credentials, personal Windows paths, generated reports, screenshots, caches, 
 
 ## Pull request and next action
 
-PR_PENDING — the authorized Task 10 PR targets main and must not be merged. Hosted CI status is recorded only after the actual run. Active ruleset 26413762 requires the exact GitHub Actions Required functional checks aggregate, current main, PRs and conversation resolution. No administrator bypass is authorized.
+[PR #16](https://github.com/Juster06/micro-tools-hub/pull/16) — the authorized Task 10 PR targets main and must not be merged. Hosted CI status is recorded only after the actual run. Active ruleset 26413762 requires the exact GitHub Actions Required functional checks aggregate, current main, PRs and conversation resolution. No administrator bypass is authorized.
 
 Owner review of the Task 10 PR, followed only on explicit approval by ordinary
 integration and independent deployment/public-source/behavior verification.
