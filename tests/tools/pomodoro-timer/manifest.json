@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "pomodoro-timer",
+  "canonical_path": "pomodoro-timer/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

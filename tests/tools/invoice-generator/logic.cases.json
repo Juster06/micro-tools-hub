@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "normal",
+      "input": "{\"number\": \"INV-1\", \"date\": \"2026-11-04\", \"seller\": \"Zoë\", \"customer\": \"Client\", \"tax\": \"20\", \"items\": [{\"description\": \"Work\", \"quantity\": \"2.5\", \"price\": \"19.99\"}]}",
+      "expected": "INVOICE INV-1\nDate: 2026-11-04\n\nSELLER\nZoë\n\nCUSTOMER\nClient\n\nITEM | QUANTITY × PRICE | AMOUNT\nWork | 2.5 × 19.99 | 49.98\n\nSubtotal: 49.98\nTax (20%): 10.00\nTotal: 59.98\n\nAmounts are estimates; review tax and accounting requirements."
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "invalid"
+    },
+    {
+      "id": "no-number",
+      "input": "{\"number\": \"\", \"date\": \"2026-11-04\", \"seller\": \"Zoë\", \"customer\": \"Client\", \"tax\": \"20\", \"items\": [{\"description\": \"Work\", \"quantity\": \"2.5\", \"price\": \"19.99\"}]}",
+      "error": "Invoice number"
+    },
+    {
+      "id": "bad-date",
+      "input": "{\"number\": \"INV-1\", \"date\": \"2026-02-29\", \"seller\": \"Zoë\", \"customer\": \"Client\", \"tax\": \"20\", \"items\": [{\"description\": \"Work\", \"quantity\": \"2.5\", \"price\": \"19.99\"}]}",
+      "error": "date"
+    },
+    {
+      "id": "bad-rate",
+      "input": "{\"number\": \"INV-1\", \"date\": \"2026-11-04\", \"seller\": \"Zoë\", \"customer\": \"Client\", \"tax\": \"101\", \"items\": [{\"description\": \"Work\", \"quantity\": \"2.5\", \"price\": \"19.99\"}]}",
+      "error": "Tax rate"
+    },
+    {
+      "id": "no-items",
+      "input": "{\"number\": \"INV-1\", \"date\": \"2026-11-04\", \"seller\": \"Zoë\", \"customer\": \"Client\", \"tax\": \"20\", \"items\": []}",
+      "error": "line items"
+    }
+  ]
+}

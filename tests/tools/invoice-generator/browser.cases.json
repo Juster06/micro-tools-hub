@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "calculate-reset",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "INV-1"
+        },
+        {
+          "action": "set",
+          "selector": "#invoiceDate",
+          "value": "2026-11-04"
+        },
+        {
+          "action": "set",
+          "selector": "#seller",
+          "value": "Zoë"
+        },
+        {
+          "action": "set",
+          "selector": "#customer",
+          "value": "Client"
+        },
+        {
+          "action": "set",
+          "selector": "#taxRate",
+          "value": "20"
+        },
+        {
+          "action": "set",
+          "selector": "#item-1-description",
+          "value": "Work"
+        },
+        {
+          "action": "set",
+          "selector": "#item-1-quantity",
+          "value": "2.5"
+        },
+        {
+          "action": "set",
+          "selector": "#item-1-price",
+          "value": "19.99"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "Total: 59.98"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "empty-invalid",
+      "steps": [
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

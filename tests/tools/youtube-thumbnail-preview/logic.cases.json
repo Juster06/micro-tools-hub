@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "16-by-9",
+      "input": "{\"width\":1600,\"height\":900}",
+      "expected": {
+        "width": 1600,
+        "height": 900,
+        "ratio": "1.778",
+        "target": "16:9"
+      }
+    },
+    {
+      "id": "square",
+      "input": "{\"width\":100,\"height\":100}",
+      "expected": {
+        "width": 100,
+        "height": 100,
+        "ratio": "1.000",
+        "target": "16:9"
+      }
+    },
+    {
+      "id": "zero",
+      "input": "{\"width\":0,\"height\":100}",
+      "error": "dimensions"
+    },
+    {
+      "id": "large",
+      "input": "{\"width\":4096,\"height\":4096}",
+      "error": "dimensions"
+    },
+    {
+      "id": "malformed",
+      "input": "bad",
+      "error": "JSON"
+    },
+    {
+      "id": "unexpected",
+      "input": "{\"width\":1,\"height\":1,\"x\":1}",
+      "error": "Invalid"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "case-and-trim",
+      "input": "name,qty\nAda,1\n ada ,2\nZoe,3",
+      "options": {
+        "columns": "1",
+        "ignoreCase": true,
+        "trimSpace": true
+      },
+      "expected": "name,qty\r\nAda,1\r\nZoe,3"
+    },
+    {
+      "id": "exact",
+      "input": "name\nAda\nada",
+      "options": {},
+      "expected": "name\r\nAda\r\nada"
+    },
+    {
+      "id": "multiline",
+      "input": "name,note\nAda,\"a,\nb\"\nAda,\"x\"",
+      "options": {
+        "columns": "1"
+      },
+      "expected": "name,note\r\nAda,\"a,\nb\""
+    },
+    {
+      "id": "formula",
+      "input": "name,note\nA,=1+1",
+      "options": {},
+      "expected": "name,note\r\nA,'=1+1"
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "Enter CSV"
+    },
+    {
+      "id": "bad-column",
+      "input": "a,b",
+      "options": {
+        "columns": "3"
+      },
+      "error": "unique"
+    },
+    {
+      "id": "quote",
+      "input": "a,\"b",
+      "options": {},
+      "error": "not closed"
+    }
+  ]
+}
