@@ -2189,15 +2189,16 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "bf4a7008c7ebce909636269de91fe1fbfba0a2ee",
-        "source_sha256": "c243bfe942aeab853821daa35172e2f63fe56f70fc997b6e96caadd3adddd5ce",
+        "source_revision": "6326a37de9830c5d695f83ee503dde88d1b11671",
+        "source_sha256": "83f941454a0372d14bc8d0c6dff4cff6c279d03660797c057ed12e0eb39ff330",
         "evidence_path": "audit/CSV_MERGER_VERIFICATION.json",
         "test_scope": [
           "Canonical structural checks",
           "13 deterministic inline logic fixtures",
           "2 real Chromium browser fixtures / 5 assertions",
-          "9 independent Node logic tests and 6 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "9 independent Node logic tests and 7 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked",
+          "Long filename wrapping verified at narrow viewport."
         ],
         "publication": null
       },
