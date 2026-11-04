@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "root",
+      "input": "{\"a\":1}",
+      "options": {},
+      "expected": "{\"a\":1}"
+    },
+    {
+      "id": "array",
+      "input": "{\"users\":[{\"name\":\"Ada\"},{\"name\":\"林\"},{}]}",
+      "options": {
+        "path": "users[*].name"
+      },
+      "expected": "Ada\n林\n[Missing fields: 1]"
+    },
+    {
+      "id": "index",
+      "input": "{\"users\":[{\"name\":\"Ada\"}]}",
+      "options": {
+        "path": "$.users[0].name"
+      },
+      "expected": "Ada"
+    },
+    {
+      "id": "missing",
+      "input": "{\"a\":1}",
+      "options": {
+        "path": "b"
+      },
+      "expected": "[Missing fields: 1]"
+    },
+    {
+      "id": "invalid",
+      "input": "{",
+      "options": {},
+      "error": "valid JSON"
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "Enter JSON"
+    },
+    {
+      "id": "unsafe",
+      "input": "{}",
+      "options": {
+        "path": "__proto__"
+      },
+      "error": "Unsupported"
+    },
+    {
+      "id": "nonfinite",
+      "input": "{\"a\":1e400}",
+      "options": {},
+      "error": "Non-finite"
+    },
+    {
+      "id": "depth",
+      "input": "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[0]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]",
+      "options": {},
+      "error": "nesting"
+    }
+  ]
+}

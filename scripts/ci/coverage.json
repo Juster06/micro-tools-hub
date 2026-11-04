@@ -20,23 +20,29 @@
     "tests/tools/file-size-converter/logic.test.mjs",
     "tests/tools/find-and-replace/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
+    "tests/tools/image-resizer/logic.test.mjs",
     "tests/tools/image-rotator/logic.test.mjs",
     "tests/tools/json-formatter/logic.test.mjs",
+    "tests/tools/json-to-txt/logic.test.mjs",
     "tests/tools/meeting-agenda-generator/logic.test.mjs",
     "tests/tools/percentage-calculator/logic.test.mjs",
     "tests/tools/percentage-change-calculator/logic.test.mjs",
+    "tests/tools/printable-calendar-generator/logic.test.mjs",
     "tests/tools/profit-margin-calculator/logic.test.mjs",
     "tests/tools/random-name-picker/logic.test.mjs",
     "tests/tools/secure-random-number-generator/logic.test.mjs",
     "tests/tools/sha256-hash-checker/logic.test.mjs",
     "tests/tools/slug-generator/logic.test.mjs",
+    "tests/tools/text-difference-checker/logic.test.mjs",
     "tests/tools/text-reverser/logic.test.mjs",
     "tests/tools/text-sorter/logic.test.mjs",
     "tests/tools/timestamp-converter/logic.test.mjs",
     "tests/tools/url-encoder-decoder/logic.test.mjs",
+    "tests/tools/username-generator/logic.test.mjs",
     "tests/tools/uuid-generator/logic.test.mjs",
     "tests/tools/vat-calculator/logic.test.mjs",
-    "tests/tools/working-days-calculator/logic.test.mjs"
+    "tests/tools/working-days-calculator/logic.test.mjs",
+    "tests/tools/youtube-description-formatter/logic.test.mjs"
   ],
   "browser_files": [
     "tests/tools/age-calculator/extended-browser.test.mjs",
@@ -59,16 +65,22 @@
     "tests/tools/find-and-replace/integration-browser.test.mjs",
     "tests/tools/hashtag-organizer/extended-browser.test.mjs",
     "tests/tools/hashtag-organizer/integration-browser.test.mjs",
+    "tests/tools/image-resizer/extended-browser.test.mjs",
+    "tests/tools/image-resizer/integration-browser.test.mjs",
     "tests/tools/image-rotator/extended-browser.test.mjs",
     "tests/tools/image-rotator/integration-browser.test.mjs",
     "tests/tools/json-formatter/extended-browser.test.mjs",
     "tests/tools/json-formatter/integration-browser.test.mjs",
+    "tests/tools/json-to-txt/extended-browser.test.mjs",
+    "tests/tools/json-to-txt/integration-browser.test.mjs",
     "tests/tools/meeting-agenda-generator/extended-browser.test.mjs",
     "tests/tools/meeting-agenda-generator/integration-browser.test.mjs",
     "tests/tools/percentage-calculator/extended-browser.test.mjs",
     "tests/tools/percentage-calculator/integration-browser.test.mjs",
     "tests/tools/percentage-change-calculator/extended-browser.test.mjs",
     "tests/tools/percentage-change-calculator/integration-browser.test.mjs",
+    "tests/tools/printable-calendar-generator/extended-browser.test.mjs",
+    "tests/tools/printable-calendar-generator/integration-browser.test.mjs",
     "tests/tools/profit-margin-calculator/extended-browser.test.mjs",
     "tests/tools/profit-margin-calculator/integration-browser.test.mjs",
     "tests/tools/random-name-picker/extended-browser.test.mjs",
@@ -79,6 +91,8 @@
     "tests/tools/sha256-hash-checker/integration-browser.test.mjs",
     "tests/tools/slug-generator/extended-browser.test.mjs",
     "tests/tools/slug-generator/integration-browser.test.mjs",
+    "tests/tools/text-difference-checker/extended-browser.test.mjs",
+    "tests/tools/text-difference-checker/integration-browser.test.mjs",
     "tests/tools/text-reverser/extended-browser.test.mjs",
     "tests/tools/text-reverser/integration-browser.test.mjs",
     "tests/tools/text-sorter/extended-browser.test.mjs",
@@ -87,12 +101,16 @@
     "tests/tools/timestamp-converter/integration-browser.test.mjs",
     "tests/tools/url-encoder-decoder/extended-browser.test.mjs",
     "tests/tools/url-encoder-decoder/integration-browser.test.mjs",
+    "tests/tools/username-generator/extended-browser.test.mjs",
+    "tests/tools/username-generator/integration-browser.test.mjs",
     "tests/tools/uuid-generator/extended-browser.test.mjs",
     "tests/tools/uuid-generator/integration-browser.test.mjs",
     "tests/tools/vat-calculator/extended-browser.test.mjs",
     "tests/tools/vat-calculator/integration-browser.test.mjs",
     "tests/tools/working-days-calculator/extended-browser.test.mjs",
-    "tests/tools/working-days-calculator/integration-browser.test.mjs"
+    "tests/tools/working-days-calculator/integration-browser.test.mjs",
+    "tests/tools/youtube-description-formatter/extended-browser.test.mjs",
+    "tests/tools/youtube-description-formatter/integration-browser.test.mjs"
   ],
   "tools": {
     "social-counter": {
@@ -253,6 +271,36 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "printable-calendar-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "username-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "youtube-description-formatter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "json-to-txt": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "image-resizer": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "text-difference-checker": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -306,8 +354,8 @@
   ],
   "minimum_tests": {
     "python-project": 142,
-    "node-regression": 254,
-    "browser-tests": 312
+    "node-regression": 273,
+    "browser-tests": 339
   },
   "aggregate": {
     "job": "required-checks",

@@ -1,6 +1,18 @@
 # Project master plan
 
-## Current checkpoint — Task 10 (2026-11-03)
+## Task 13 — six tools tested, publication pending
+
+The Task 13 branch implements Printable Calendar Generator, Username Generator, YouTube Description Formatter, JSON to TXT, Image Resizer and Text Difference Checker as **TESTED**, with publication pending. Their gated homepage cards say Tested · publication pending. Branch inventory: 93 registered, 31 RELEASED, 6 TESTED, 0 READY, 55 PLANNED and 1 BLOCKED; the live released milestone remains 31/50 (62%).
+
+See `audit/TASK_13_DEVELOPMENT_PLAN.md` and the source-bound per-tool audits for limits and validation scope. The resizer supports static PNG only (5 MiB, 4096 per dimension, 8 million pixels). JSON extraction accepts the documented bounded safe path syntax. The diff checker limits input and comparison work. The username tool does not check availability or generate secure passwords. All tool data stays in the browser; hosting and the existing styling CDN are separate requests.
+
+The feature branch requires ordinary protected-main review and CI. Do not merge or deploy without separate owner authorization; after any authorized integration, independent public verification is needed before a separate release update. Historical administrator-bypass use for PR #21 was not independently verifiable because audit information was unavailable.
+
+## Task 13 — six-tool development checkpoint
+
+PR #21 merged as `e6e3ba3497cf92e6d17754ec4d0f3c1d3a614080`; Pages run 41741393234 and post-merge Functional CI run 41741393883 succeeded. The 31 public tool pages and homepage matched merged source, all canonical links and release counts were independently checked, and scoped public smoke tests passed for the six Task 12 tools. Task 12 is complete. The milestone is 31/50 released, with 19 releases remaining. Task 13 development is authorized on a feature branch. No claim is made that historical administrator-bypass use was independently verified; relevant audit information was unavailable.
+
+## Historical checkpoint — Task 10 (2026-11-03)
 
 Task 10 implements the last six READY entries (ranks 15–20), each now
 **TESTED / REQUIRED_PASSED**, with `publication: null`. Branch
@@ -94,7 +106,7 @@ Related but distinct tasks retain separate entries where their input, output, or
 - **Advertising:** existing layout placeholders may remain. Real AdSense integration, consent handling, and monetization are not current development priorities and need authorization.
 - **Discovery at scale:** category filters, better search, related-tool links, and pagination/virtualization should follow measured needs. Do not replace the homepage preemptively.
 - **Styling delivery:** a compiled Tailwind stylesheet could reduce runtime/CDN dependency; evaluate later as a separate scoped change, preserving visual design.
-- **Broader QA:** reusable browser tests, additional engines, screen-reader checks, and automated release verification can be introduced incrementally. No CI pipeline is currently configured by this setup.
+- **Broader QA:** reusable browser tests, additional engines, screen-reader checks, and automated release verification can be introduced incrementally. At that earlier checkpoint, no CI pipeline was configured; functional CI is now active on protected main.
 
 ## Decisions requiring a future gate
 
