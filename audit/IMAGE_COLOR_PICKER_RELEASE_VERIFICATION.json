@@ -1,0 +1,111 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "130a18045022dfaadec330d13f89b8316c5ccf74",
+  "pages": [
+    {
+      "path": "image-color-picker/index.html",
+      "source_sha256": "08fb25c53c6be6abd8a5fa160a6ef9e79752bcd281f016df3fc98f02c3106ba7",
+      "checks": [
+        "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+        "Fresh public Chromium interactions: actual PNG colors, scaled pointer mapping and keyboard transparency; invalid coordinates, file, size and reset fail safely; responsive widths do not overflow; oversized PNG header and animation are rejected before decoding",
+        "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Known synthetic PNG: red HEX/RGB and transparent alpha via numeric coordinates; scaled pointer, keyboard, copy, size limits and reset in separate tests.",
+        "Public homepage: 43 distinct visible canonical routes; prior 37 released pages returned HTTP 200 with matching raw source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/image-color-picker/",
+        "http_status": 200,
+        "checked_at": "2026-11-04T02:26:37.038568+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41759841983,
+    "commit": "130a18045022dfaadec330d13f89b8316c5ccf74",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41759840731,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "image-color-picker",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/image-color-picker/index.html",
+    "http_status": 200,
+    "source_sha256": "08fb25c53c6be6abd8a5fa160a6ef9e79752bcd281f016df3fc98f02c3106ba7",
+    "live_sha256": "08fb25c53c6be6abd8a5fa160a6ef9e79752bcd281f016df3fc98f02c3106ba7",
+    "source_matches": true,
+    "checked_at": "2026-11-04T02:23:52.949746+00:00"
+  },
+  "canonical_public_url": {
+    "id": "image-color-picker",
+    "url": "https://everydaydigitalbox.com/image-color-picker/",
+    "http_status": 200,
+    "checked_at": "2026-11-04T02:26:37.038568+00:00"
+  },
+  "raw_public_source": {
+    "id": "image-color-picker",
+    "path": "image-color-picker/index.html",
+    "url": "https://everydaydigitalbox.com/image-color-picker/index.html",
+    "http_status": 200,
+    "approved_raw_sha256": "08fb25c53c6be6abd8a5fa160a6ef9e79752bcd281f016df3fc98f02c3106ba7",
+    "public_raw_sha256": "08fb25c53c6be6abd8a5fa160a6ef9e79752bcd281f016df3fc98f02c3106ba7",
+    "raw_match": true,
+    "checked_at": "2026-11-04T02:24:06.067014+00:00"
+  },
+  "homepage_raw_source": {
+    "id": "homepage",
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "approved_raw_sha256": "44b2490c6ccc53f7d3ac762040b8310925bedcb908b6bf5cbc32f3626bd51be3",
+    "public_raw_sha256": "44b2490c6ccc53f7d3ac762040b8310925bedcb908b6bf5cbc32f3626bd51be3",
+    "raw_match": true,
+    "checked_at": "2026-11-04T02:24:08.088818+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "extra_checks_started_at": "2026-11-04T02:26:24.116Z",
+    "extra_checks_finished_at": "2026-11-04T02:26:26.240Z",
+    "interaction_test_time_window": {
+      "after": "2026-11-04T02:24:34.379Z",
+      "before": "2026-11-04T02:26:24.116Z",
+      "note": "The 20-test run completed between these observed timestamps."
+    },
+    "url": "https://everydaydigitalbox.com/image-color-picker/",
+    "tests": [
+      "actual PNG colors, scaled pointer mapping and keyboard transparency",
+      "invalid coordinates, file, size and reset fail safely",
+      "responsive widths do not overflow",
+      "oversized PNG header and animation are rejected before decoding"
+    ],
+    "extra_checks": [
+      "Correct public route, title, required JavaScript and expected styling CDN",
+      "Known synthetic PNG: red HEX/RGB and transparent alpha via numeric coordinates; scaled pointer, keyboard, copy, size limits and reset in separate tests."
+    ],
+    "unexpected_errors": 0,
+    "scope": "Actual public HTTPS, isolated headless Chromium on Windows. Clipboard, download and storage failure cases simulated; viewports emulated. Synthetic task content only."
+  },
+  "homepage": {
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 43,
+    "all_visible": true,
+    "canonical_routes_match": true,
+    "analytics_preserved": true,
+    "cname": "everydaydigitalbox.com",
+    "checked_at": "2026-11-04T02:24:34.379Z"
+  },
+  "previous_evidence": "audit/IMAGE_COLOR_PICKER_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows with simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, downloads and storage failure cases simulated; native OS clipboard and save dialogs not tested.",
+    "Previous 37 pages verified through public HTTP/source identity and successful post-merge CI; no new individual public interactions claimed.",
+    "Framework source hashes normalize CRLF and strip trailing whitespace; separate raw SHA-256 hashes also match exactly.",
+    "Release metadata and Live labels require separate owner-authorized merge and deployment.",
+    "Static PNG only; file input up to 5 MiB, 4096 pixels per dimension and 8 million pixels. Actual pixel and transparency behavior tested; image upload remains local."
+  ]
+}
