@@ -2,12 +2,14 @@
   "schema_version": 1,
   "python_files": [
     "tests/test_ci.py",
+    "tests/test_consent_overlay.py",
     "tests/test_dashboard.py",
     "tests/test_status_launcher.py",
     "tests/test_tool_framework.py",
     "tests/test_tracking.py"
   ],
   "node_files": [
+    "scripts/consent-static.test.mjs",
     "scripts/project.test.mjs",
     "scripts/tool-framework.test.mjs",
     "tests/tools/age-calculator/logic.test.mjs",
@@ -58,6 +60,7 @@
     "tests/tools/youtube-thumbnail-preview/logic.test.mjs"
   ],
   "browser_files": [
+    "scripts/consent-browser.test.mjs",
     "tests/tools/age-calculator/extended-browser.test.mjs",
     "tests/tools/age-calculator/integration-browser.test.mjs",
     "tests/tools/base64-encoder-decoder/extended-browser.test.mjs",
@@ -457,9 +460,9 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 142,
-    "node-regression": 322,
-    "browser-tests": 404
+    "python-project": 146,
+    "node-regression": 327,
+    "browser-tests": 418
   },
   "aggregate": {
     "job": "required-checks",

@@ -1,6 +1,12 @@
 # Project master plan
 
-## Task 16.1 — CSV Merger public verification; release PR pending
+## Task 17 — consent-aware analytics candidate
+
+PR #29 merged as `8441c3202a5f23c5e2afd8cb8b89901fc21ffad3`; Pages deployment 41805143697 and post-merge Functional CI 41805144759 succeeded. The public registry records 93 registered, 50 RELEASED, 42 PLANNED and 1 BLOCKED. All 50 tool pages and the homepage were accessible with matching approved source. The 50-tool milestone is complete; the next generated target is 100.
+
+This unmerged branch proposes a shared consent component for the homepage and all 50 tools, with no Google tag before affirmative consent, an accessible choice and withdrawal control, and a privacy notice. The existing public homepage consent concern remains unresolved until any separately authorized merge, deployment and independent verification. The three publicly accessible templates remain unchanged. Prior publication evidence is retained; `audit/TASK_17_CANDIDATE.json` binds only reversible consent-related changes to local candidate source and does not claim public deployment. See `audit/TASK_17_CONSENT_REVIEW.md` for baseline, testing scope, legal questions and limitations. No legal compliance certification is claimed.
+
+## Historical Task 16.1 — public verification before release merge
 
 PR #28 merged as `55589d67807387a71ec9d0d407f1b37dfe6b79f3`. Pages deployment 41802029972 and post-merge Functional CI 41802030797 succeeded. The public homepage and all 50 tool routes returned HTTP 200 and matched approved source; 50 distinct visible cards and canonical links were checked. The previous 49 tools were checked by HTTP/source identity and post-merge CI, without new individual public interaction tests.
 

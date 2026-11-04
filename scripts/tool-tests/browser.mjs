@@ -21,8 +21,9 @@ export async function launchBrowser(executable) {
   const child = spawn(executable, ['--headless=new', '--remote-debugging-port=0', '--remote-debugging-address=127.0.0.1', '--user-data-dir=' + directory, '--no-first-run', '--no-default-browser-check', '--disable-extensions', '--disable-background-networking', 'about:blank'], {windowsHide:true, stdio:'ignore'});
   let launchError = false, socket, serial = 0;
   child.on('error', () => { launchError = true; });
-  const pending = new Map();
+  const pending = new Map(), eventListeners = new Set();
   const client = {
+    onEvent(listener) { eventListeners.add(listener); return () => eventListeners.delete(listener); },
     async close() {
       try { if (socket?.readyState === WebSocket.OPEN) await client.call('Browser.close'); } catch { /* Closing terminates the socket too. */ }
       socket?.close();
@@ -84,7 +85,7 @@ export async function launchBrowser(executable) {
     await new Promise((resolve,reject)=>{socket.addEventListener('open',resolve,{once:true});socket.addEventListener('error',reject,{once:true});});
     socket.addEventListener('message',event=>{
       const message=JSON.parse(event.data), request=pending.get(message.id);
-      if(!request)return;
+      if(!request){ if(message.method) for(const listener of eventListeners) listener(message); return; }
       pending.delete(message.id);clearTimeout(request.timeout);
       message.error?request.reject(Error('Browser protocol rejected command')):request.resolve(message.result);
     });
