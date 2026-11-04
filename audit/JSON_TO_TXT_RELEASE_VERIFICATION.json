@@ -1,0 +1,109 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
+  "pages": [
+    {
+      "path": "json-to-txt/index.html",
+      "source_sha256": "b1273bc30a4011786ba38603b2e8c987ab93dcf181d040c6c14375d81ff139f7",
+      "checks": [
+        "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+        "Fresh public Chromium interactions: extract array, copy, show missing and reset; invalid JSON and responsive widths",
+        "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Nested wildcard/index paths, Unicode, missing/unsafe fields, empty and oversized input, large valid output 439979 units; output cap error exercised with simulated oversized serializer result.",
+        "Public homepage: 37 distinct visible canonical routes; prior 31 released pages returned HTTP 200 with matching raw source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/json-to-txt/",
+        "http_status": 200,
+        "checked_at": "2026-11-04T00:52:27.709181+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41748440143,
+    "commit": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41748440628,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "json-to-txt",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/json-to-txt/index.html",
+    "http_status": 200,
+    "source_sha256": "b1273bc30a4011786ba38603b2e8c987ab93dcf181d040c6c14375d81ff139f7",
+    "live_sha256": "b1273bc30a4011786ba38603b2e8c987ab93dcf181d040c6c14375d81ff139f7",
+    "source_matches": true,
+    "checked_at": "2026-11-04T00:49:57.021703+00:00"
+  },
+  "canonical_public_url": {
+    "id": "json-to-txt",
+    "url": "https://everydaydigitalbox.com/json-to-txt/",
+    "http_status": 200,
+    "checked_at": "2026-11-04T00:52:27.709181+00:00"
+  },
+  "raw_public_source": {
+    "id": "json-to-txt",
+    "path": "json-to-txt/index.html",
+    "url": "https://everydaydigitalbox.com/json-to-txt/index.html",
+    "http_status": 200,
+    "approved_raw_sha256": "433b670f88cd86ed5dce1f532c79000135295cf7397df18d948edd0ee55f7d17",
+    "public_raw_sha256": "433b670f88cd86ed5dce1f532c79000135295cf7397df18d948edd0ee55f7d17",
+    "raw_match": true,
+    "checked_at": "2026-11-04T00:50:11.797734+00:00"
+  },
+  "homepage_raw_source": {
+    "id": "homepage",
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "approved_raw_sha256": "d07d8b57d2d675ed51fd621ad52d0d4d98022fc0c1237f0405b1843e32f59e06",
+    "public_raw_sha256": "d07d8b57d2d675ed51fd621ad52d0d4d98022fc0c1237f0405b1843e32f59e06",
+    "raw_match": true,
+    "checked_at": "2026-11-04T00:50:12.139673+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "extra_checks_started_at": "2026-11-04T00:52:13.989Z",
+    "extra_checks_finished_at": "2026-11-04T00:52:16.894Z",
+    "interaction_test_time_window": {
+      "after": "2026-11-04T00:50:57.375Z",
+      "before": "2026-11-04T00:52:13.989Z",
+      "note": "The 15-test run completed between these observed timestamps."
+    },
+    "url": "https://everydaydigitalbox.com/json-to-txt/",
+    "tests": [
+      "extract array, copy, show missing and reset",
+      "invalid JSON and responsive widths"
+    ],
+    "extra_checks": [
+      "Correct public route, title, required JavaScript and expected styling CDN",
+      "Nested wildcard/index paths, Unicode, missing/unsafe fields, empty and oversized input, large valid output 439979 units; output cap error exercised with simulated oversized serializer result."
+    ],
+    "unexpected_errors": 0,
+    "scope": "Actual public HTTPS, isolated headless Chromium on Windows. Clipboard, download and print dialogs simulated. Viewports emulated. Output-cap failure uses a simulated oversized serializer result."
+  },
+  "homepage": {
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 37,
+    "all_visible": true,
+    "canonical_routes_match": true,
+    "analytics_preserved": true,
+    "cname": "everydaydigitalbox.com",
+    "checked_at": "2026-11-04T00:50:57.375Z"
+  },
+  "previous_evidence": "audit/JSON_TO_TXT_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows with simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, print invocation and downloads simulated; native OS clipboard, print and save dialogs not tested.",
+    "Previous 31 pages verified through public HTTP/source identity and successful post-merge CI; no new individual public interactions claimed.",
+    "Framework source hashes normalize CRLF and strip trailing whitespace; separate raw SHA-256 hashes also match exactly.",
+    "Release metadata and Live labels require separate owner-authorized merge and deployment.",
+    "Safe documented path syntax and bounded native JSON only; output-cap rejection was exercised with a simulated oversized serializer result, not a naturally generated output."
+  ]
+}

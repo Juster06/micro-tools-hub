@@ -1,6 +1,14 @@
 # Development roadmap
 
-## Task 13 — six tools tested, publication pending
+## Task 13.1 — six-tool public verification, release PR pending
+
+PR #22 merged as `bc749fecdd7e801d4ab75505d71f469918f4eba4`. The [Pages deployment 41748440143](https://github.com/Juster06/micro-tools-hub/actions/runs/41748440143) and [post-merge functional CI 41748440628](https://github.com/Juster06/micro-tools-hub/actions/runs/41748440628) succeeded for that commit. Public HTTPS checks matched the merged homepage and all 37 tool pages byte for byte; all 37 canonical links, custom domain and Analytics identifier were confirmed. The previous 31 pages were checked by public HTTP/source identity and post-merge CI, without new individual public interaction tests.
+
+The six Task 13 utilities passed 15 focused public Chromium interaction tests and additional public edge-case checks. Clipboard, download and print invocation were simulated; the JSON output-cap error was exercised using a simulated oversized serializer result. Separate release audits record timestamps, exact raw and framework-normalized hashes, results and limitations. Image Resizer accepts static PNG only. No cross-browser, physical-device, screen-reader or native-dialog certification is claimed.
+
+This release-verification branch proposes 93 registered, 37 RELEASED, 0 TESTED, 0 READY, 55 PLANNED and 1 BLOCKED; milestone 37/50 (74%). Main and public release metadata remain at 31 RELEASED until this PR receives separate owner approval, merges and deploys. Do not bypass branch protection. The historical administrator-bypass question concerning PR #21 remains unverified because audit information was unavailable.
+
+## Historical Task 13 — six tested tools before release verification
 
 The Task 13 branch implements Printable Calendar Generator, Username Generator, YouTube Description Formatter, JSON to TXT, Image Resizer and Text Difference Checker as **TESTED**, with publication pending. Their gated homepage cards say Tested · publication pending. Branch inventory: 93 registered, 31 RELEASED, 6 TESTED, 0 READY, 55 PLANNED and 1 BLOCKED; the live released milestone remains 31/50 (62%).
 
@@ -211,7 +219,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
 | image-compressor | Image Compressor | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
-| image-resizer | Image Resizer | TESTED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
+| image-resizer | Image Resizer | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-format-converter | Image Format Converter | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-cropper | Image Cropper | PLANNED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-rotator | Image Rotator | RELEASED | P2 | S | Browser image decoding and Canvas; format support and memory limits must be tested |
@@ -226,7 +234,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | text-cleaner | AI Text Footprint Cleanser | RELEASED | P2 | M | Modern browser DOM APIs |
 | case-converter | Case Converter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | duplicate-line-remover | Duplicate Line Remover | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| text-difference-checker | Text Difference Checker | TESTED | P2 | L | Browser-native approach; scope review before implementation |
+| text-difference-checker | Text Difference Checker | RELEASED | P2 | L | Browser-native approach; scope review before implementation |
 | text-sorter | Text Sorter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | text-reverser | Text Reverser | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | find-and-replace | Find and Replace | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
@@ -268,14 +276,14 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | social-counter | Social Media Character Counter & Live Previewer | RELEASED | P2 | M | Modern browser DOM APIs |
 | hashtag-organizer | Hashtag Organizer | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | youtube-title-checker | YouTube Title Checker | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
-| youtube-description-formatter | YouTube Description Formatter | TESTED | P2 | M | Browser-native approach; scope review before implementation |
+| youtube-description-formatter | YouTube Description Formatter | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | instagram-bio-formatter | Instagram Bio Formatter | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | social-media-line-break-tool | Social Media Line Break Tool | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | emoji-picker | Emoji Picker | PLANNED | P2 | M | Reviewed local emoji dataset and usage license |
 | hashtag-counter | Hashtag Counter | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | youtube-thumbnail-preview | YouTube Thumbnail Preview | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | posting-calendar-generator | Posting Calendar Generator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
-| username-generator | Username Generator | TESTED | P2 | S | Browser-native approach; scope review before implementation |
+| username-generator | Username Generator | RELEASED | P2 | S | Browser-native approach; scope review before implementation |
 
 ### Calculators
 
@@ -314,7 +322,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | markdown-converter-previewer | Markdown Converter & Previewer | PLANNED | P2 | L | Reviewed Markdown parser and sanitizer; local bundled assets preferred |
 | html-to-markdown | HTML to Markdown | PLANNED | P2 | L | Reviewed non-executing HTML-to-Markdown conversion library |
 | csv-to-txt | CSV to TXT | PLANNED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
-| json-to-txt | JSON to TXT | TESTED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
+| json-to-txt | JSON to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | svg-to-png | SVG to PNG | PLANNED | P2 | L | Reviewed SVG sanitization and external-resource blocking; Canvas rasterization with tested dimension limits |
 | png-to-ico | PNG to ICO | PLANNED | P2 | L | Reviewed local ICO encoder |
 | file-size-converter | File Size Converter | RELEASED | P2 | S | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
@@ -332,7 +340,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | invoice-generator | Invoice Generator | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | resume-builder | Resume Builder | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | meeting-agenda-generator | Meeting Agenda Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
-| printable-calendar-generator | Printable Calendar Generator | TESTED | P2 | M | Browser-native approach; scope review before implementation |
+| printable-calendar-generator | Printable Calendar Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 
 ### Entertainment Tools
 

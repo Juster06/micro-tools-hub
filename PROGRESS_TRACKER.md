@@ -1,6 +1,14 @@
 # Progress tracker
 
-## Task 13 — six tools tested, publication pending
+## Task 13.1 — six-tool public verification, release PR pending
+
+PR #22 merged as `bc749fecdd7e801d4ab75505d71f469918f4eba4`. The [Pages deployment 41748440143](https://github.com/Juster06/micro-tools-hub/actions/runs/41748440143) and [post-merge functional CI 41748440628](https://github.com/Juster06/micro-tools-hub/actions/runs/41748440628) succeeded for that commit. Public HTTPS checks matched the merged homepage and all 37 tool pages byte for byte; all 37 canonical links, custom domain and Analytics identifier were confirmed. The previous 31 pages were checked by public HTTP/source identity and post-merge CI, without new individual public interaction tests.
+
+The six Task 13 utilities passed 15 focused public Chromium interaction tests and additional public edge-case checks. Clipboard, download and print invocation were simulated; the JSON output-cap error was exercised using a simulated oversized serializer result. Separate release audits record timestamps, exact raw and framework-normalized hashes, results and limitations. Image Resizer accepts static PNG only. No cross-browser, physical-device, screen-reader or native-dialog certification is claimed.
+
+This release-verification branch proposes 93 registered, 37 RELEASED, 0 TESTED, 0 READY, 55 PLANNED and 1 BLOCKED; milestone 37/50 (74%). Main and public release metadata remain at 31 RELEASED until this PR receives separate owner approval, merges and deploys. Do not bypass branch protection. The historical administrator-bypass question concerning PR #21 remains unverified because audit information was unavailable.
+
+## Historical Task 13 — six tested tools before release verification
 
 The Task 13 branch implements Printable Calendar Generator, Username Generator, YouTube Description Formatter, JSON to TXT, Image Resizer and Text Difference Checker as **TESTED**, with publication pending. Their gated homepage cards say Tested · publication pending. Branch inventory: 93 registered, 31 RELEASED, 6 TESTED, 0 READY, 55 PLANNED and 1 BLOCKED; the live released milestone remains 31/50 (62%).
 
@@ -119,14 +127,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 6 |
-| RELEASED | 31 |
+| TESTED | 0 |
+| RELEASED | 37 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 56 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **50 released tools**. Progress: 31/50 (62.0%); remaining: 19.
+Current growth milestone: **50 released tools**. Progress: 37/50 (74.0%); remaining: 13.
 
 ### Tools by category
 
@@ -160,27 +168,27 @@ Next ready tool: **REQUIRES REVIEW**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| YouTube Description Formatter | TESTED | 2026-11-04 |
-| Text Difference Checker | TESTED | 2026-11-04 |
-| JSON to TXT | TESTED | 2026-11-04 |
-| Image Resizer | TESTED | 2026-11-04 |
+| YouTube Description Formatter | RELEASED | 2026-11-04 |
+| Username Generator | RELEASED | 2026-11-04 |
+| Text Difference Checker | RELEASED | 2026-11-04 |
+| Printable Calendar Generator | RELEASED | 2026-11-04 |
+| JSON to TXT | RELEASED | 2026-11-04 |
+| Image Resizer | RELEASED | 2026-11-04 |
 | Working Days Calculator | RELEASED | 2026-11-03 |
 | VAT Calculator | RELEASED | 2026-11-03 |
-| Username Generator | TESTED | 2026-11-03 |
 | SHA-256 Text & File Hash Checker | RELEASED | 2026-11-03 |
 | Secure Random Number Generator | RELEASED | 2026-11-03 |
-| Random Name Picker | RELEASED | 2026-11-03 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.
 
 ## Current development task
 
-The Task 13 branch implements Printable Calendar Generator, Username Generator, YouTube Description Formatter, JSON to TXT, Image Resizer and Text Difference Checker as **TESTED**, with publication pending. Their gated homepage cards say Tested · publication pending. Branch inventory: 93 registered, 31 RELEASED, 6 TESTED, 0 READY, 55 PLANNED and 1 BLOCKED; the live released milestone remains 31/50 (62%).
+PR #22 merged as `bc749fecdd7e801d4ab75505d71f469918f4eba4`. The [Pages deployment 41748440143](https://github.com/Juster06/micro-tools-hub/actions/runs/41748440143) and [post-merge functional CI 41748440628](https://github.com/Juster06/micro-tools-hub/actions/runs/41748440628) succeeded for that commit. Public HTTPS checks matched the merged homepage and all 37 tool pages byte for byte; all 37 canonical links, custom domain and Analytics identifier were confirmed. The previous 31 pages were checked by public HTTP/source identity and post-merge CI, without new individual public interaction tests.
 
-See `audit/TASK_13_DEVELOPMENT_PLAN.md` and the source-bound per-tool audits for limits and validation scope. The resizer supports static PNG only (5 MiB, 4096 per dimension, 8 million pixels). JSON extraction accepts the documented bounded safe path syntax. The diff checker limits input and comparison work. The username tool does not check availability or generate secure passwords. All tool data stays in the browser; hosting and the existing styling CDN are separate requests.
+The six Task 13 utilities passed 15 focused public Chromium interaction tests and additional public edge-case checks. Clipboard, download and print invocation were simulated; the JSON output-cap error was exercised using a simulated oversized serializer result. Separate release audits record timestamps, exact raw and framework-normalized hashes, results and limitations. Image Resizer accepts static PNG only. No cross-browser, physical-device, screen-reader or native-dialog certification is claimed.
 
-The feature branch requires ordinary protected-main review and CI. Do not merge or deploy without separate owner authorization; after any authorized integration, independent public verification is needed before a separate release update. Historical administrator-bypass use for PR #21 was not independently verifiable because audit information was unavailable.
+This release-verification branch proposes 93 registered, 37 RELEASED, 0 TESTED, 0 READY, 55 PLANNED and 1 BLOCKED; milestone 37/50 (74%). Main and public release metadata remain at 31 RELEASED until this PR receives separate owner approval, merges and deploys. Do not bypass branch protection. The historical administrator-bypass question concerning PR #21 remains unverified because audit information was unavailable.
 
 ## Recently completed work
 

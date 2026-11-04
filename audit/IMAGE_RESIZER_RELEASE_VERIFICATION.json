@@ -1,0 +1,112 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
+  "pages": [
+    {
+      "path": "image-resizer/index.html",
+      "source_sha256": "fe6550ee67414d58ac332baf1c6ae65cb120d22fb70f309d317d19c9cdbf20e6",
+      "checks": [
+        "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+        "Fresh public Chromium interactions: actual PNG resizing maintains dimensions and transparent export; percentage, unlocked sizing, copy and reset work; invalid PNG, oversized file and missing decoder fail safely; responsive widths do not overflow; oversized dimensions and animated PNG are rejected before decoding",
+        "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Static PNG-only and local-image privacy disclosures verified; actual decoded pixel/alpha, limits and simulated download tested in the 15 interaction tests.",
+        "Public homepage: 37 distinct visible canonical routes; prior 31 released pages returned HTTP 200 with matching raw source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/image-resizer/",
+        "http_status": 200,
+        "checked_at": "2026-11-04T00:52:27.223571+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41748440143,
+    "commit": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41748440628,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "image-resizer",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/image-resizer/index.html",
+    "http_status": 200,
+    "source_sha256": "fe6550ee67414d58ac332baf1c6ae65cb120d22fb70f309d317d19c9cdbf20e6",
+    "live_sha256": "fe6550ee67414d58ac332baf1c6ae65cb120d22fb70f309d317d19c9cdbf20e6",
+    "source_matches": true,
+    "checked_at": "2026-11-04T00:49:55.071425+00:00"
+  },
+  "canonical_public_url": {
+    "id": "image-resizer",
+    "url": "https://everydaydigitalbox.com/image-resizer/",
+    "http_status": 200,
+    "checked_at": "2026-11-04T00:52:27.223571+00:00"
+  },
+  "raw_public_source": {
+    "id": "image-resizer",
+    "path": "image-resizer/index.html",
+    "url": "https://everydaydigitalbox.com/image-resizer/index.html",
+    "http_status": 200,
+    "approved_raw_sha256": "fe6550ee67414d58ac332baf1c6ae65cb120d22fb70f309d317d19c9cdbf20e6",
+    "public_raw_sha256": "fe6550ee67414d58ac332baf1c6ae65cb120d22fb70f309d317d19c9cdbf20e6",
+    "raw_match": true,
+    "checked_at": "2026-11-04T00:50:10.038861+00:00"
+  },
+  "homepage_raw_source": {
+    "id": "homepage",
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "approved_raw_sha256": "d07d8b57d2d675ed51fd621ad52d0d4d98022fc0c1237f0405b1843e32f59e06",
+    "public_raw_sha256": "d07d8b57d2d675ed51fd621ad52d0d4d98022fc0c1237f0405b1843e32f59e06",
+    "raw_match": true,
+    "checked_at": "2026-11-04T00:50:12.139673+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "extra_checks_started_at": "2026-11-04T00:52:13.989Z",
+    "extra_checks_finished_at": "2026-11-04T00:52:16.894Z",
+    "interaction_test_time_window": {
+      "after": "2026-11-04T00:50:57.375Z",
+      "before": "2026-11-04T00:52:13.989Z",
+      "note": "The 15-test run completed between these observed timestamps."
+    },
+    "url": "https://everydaydigitalbox.com/image-resizer/",
+    "tests": [
+      "actual PNG resizing maintains dimensions and transparent export",
+      "percentage, unlocked sizing, copy and reset work",
+      "invalid PNG, oversized file and missing decoder fail safely",
+      "responsive widths do not overflow",
+      "oversized dimensions and animated PNG are rejected before decoding"
+    ],
+    "extra_checks": [
+      "Correct public route, title, required JavaScript and expected styling CDN",
+      "Static PNG-only and local-image privacy disclosures verified; actual decoded pixel/alpha, limits and simulated download tested in the 15 interaction tests."
+    ],
+    "unexpected_errors": 0,
+    "scope": "Actual public HTTPS, isolated headless Chromium on Windows. Clipboard, download and print dialogs simulated. Viewports emulated. Output-cap failure uses a simulated oversized serializer result."
+  },
+  "homepage": {
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 37,
+    "all_visible": true,
+    "canonical_routes_match": true,
+    "analytics_preserved": true,
+    "cname": "everydaydigitalbox.com",
+    "checked_at": "2026-11-04T00:50:57.375Z"
+  },
+  "previous_evidence": "audit/IMAGE_RESIZER_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows with simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, print invocation and downloads simulated; native OS clipboard, print and save dialogs not tested.",
+    "Previous 31 pages verified through public HTTP/source identity and successful post-merge CI; no new individual public interactions claimed.",
+    "Framework source hashes normalize CRLF and strip trailing whitespace; separate raw SHA-256 hashes also match exactly.",
+    "Release metadata and Live labels require separate owner-authorized merge and deployment.",
+    "Static PNG only, file input up to 5 MiB, 4096 pixels per dimension and 8 million pixels; actual resized PNG pixels/transparency were tested, native download UI simulated."
+  ]
+}

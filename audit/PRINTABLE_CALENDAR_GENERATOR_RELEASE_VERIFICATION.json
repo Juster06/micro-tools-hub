@@ -1,0 +1,108 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
+  "pages": [
+    {
+      "path": "printable-calendar-generator/index.html",
+      "source_sha256": "ab872283823544808d6e11cc356cdd4a44aba7e8de29c63cff30dc2e113610f1",
+      "checks": [
+        "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+        "Fresh public Chromium interactions: calendar controls, previous and next cross year boundaries, copy and print; boundaries and responsive layouts",
+        "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Selected February 2024; French locale and Sunday week start; leap day and reset verified.",
+        "Public homepage: 37 distinct visible canonical routes; prior 31 released pages returned HTTP 200 with matching raw source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/printable-calendar-generator/",
+        "http_status": 200,
+        "checked_at": "2026-11-04T00:52:27.498601+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41748440143,
+    "commit": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41748440628,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "printable-calendar-generator",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/printable-calendar-generator/index.html",
+    "http_status": 200,
+    "source_sha256": "ab872283823544808d6e11cc356cdd4a44aba7e8de29c63cff30dc2e113610f1",
+    "live_sha256": "ab872283823544808d6e11cc356cdd4a44aba7e8de29c63cff30dc2e113610f1",
+    "source_matches": true,
+    "checked_at": "2026-11-04T00:49:57.639843+00:00"
+  },
+  "canonical_public_url": {
+    "id": "printable-calendar-generator",
+    "url": "https://everydaydigitalbox.com/printable-calendar-generator/",
+    "http_status": 200,
+    "checked_at": "2026-11-04T00:52:27.498601+00:00"
+  },
+  "raw_public_source": {
+    "id": "printable-calendar-generator",
+    "path": "printable-calendar-generator/index.html",
+    "url": "https://everydaydigitalbox.com/printable-calendar-generator/index.html",
+    "http_status": 200,
+    "approved_raw_sha256": "d0830004f933fb6957b844efe924f46cf84244d6cf8ba47367881fd7fb6d976d",
+    "public_raw_sha256": "d0830004f933fb6957b844efe924f46cf84244d6cf8ba47367881fd7fb6d976d",
+    "raw_match": true,
+    "checked_at": "2026-11-04T00:50:12.059292+00:00"
+  },
+  "homepage_raw_source": {
+    "id": "homepage",
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "approved_raw_sha256": "d07d8b57d2d675ed51fd621ad52d0d4d98022fc0c1237f0405b1843e32f59e06",
+    "public_raw_sha256": "d07d8b57d2d675ed51fd621ad52d0d4d98022fc0c1237f0405b1843e32f59e06",
+    "raw_match": true,
+    "checked_at": "2026-11-04T00:50:12.139673+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "extra_checks_started_at": "2026-11-04T00:52:13.989Z",
+    "extra_checks_finished_at": "2026-11-04T00:52:16.894Z",
+    "interaction_test_time_window": {
+      "after": "2026-11-04T00:50:57.375Z",
+      "before": "2026-11-04T00:52:13.989Z",
+      "note": "The 15-test run completed between these observed timestamps."
+    },
+    "url": "https://everydaydigitalbox.com/printable-calendar-generator/",
+    "tests": [
+      "calendar controls, previous and next cross year boundaries, copy and print",
+      "boundaries and responsive layouts"
+    ],
+    "extra_checks": [
+      "Correct public route, title, required JavaScript and expected styling CDN",
+      "Selected February 2024; French locale and Sunday week start; leap day and reset verified."
+    ],
+    "unexpected_errors": 0,
+    "scope": "Actual public HTTPS, isolated headless Chromium on Windows. Clipboard, download and print dialogs simulated. Viewports emulated. Output-cap failure uses a simulated oversized serializer result."
+  },
+  "homepage": {
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 37,
+    "all_visible": true,
+    "canonical_routes_match": true,
+    "analytics_preserved": true,
+    "cname": "everydaydigitalbox.com",
+    "checked_at": "2026-11-04T00:50:57.375Z"
+  },
+  "previous_evidence": "audit/PRINTABLE_CALENDAR_GENERATOR_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows with simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, print invocation and downloads simulated; native OS clipboard, print and save dialogs not tested.",
+    "Previous 31 pages verified through public HTTP/source identity and successful post-merge CI; no new individual public interactions claimed.",
+    "Framework source hashes normalize CRLF and strip trailing whitespace; separate raw SHA-256 hashes also match exactly.",
+    "Release metadata and Live labels require separate owner-authorized merge and deployment."
+  ]
+}
