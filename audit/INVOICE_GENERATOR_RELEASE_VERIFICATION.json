@@ -1,0 +1,93 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
+  "pages": [
+    {
+      "path": "invoice-generator/index.html",
+      "source_sha256": "dbe6ec29fbccc0694f62055c85608241e1493d88ce09d1fdafd881a6b49d4fb3",
+      "checks": [
+        "Public canonical and index pages HTTP 200; deployed HTML bytes and framework-normalized hash match approved merged source",
+        "Fresh public Chromium interaction checks: items, safe text rendering, independent totals, copy, print and reset; invalid fields and responsive widths",
+        "Additional public checks: Add/remove line item, empty validation and reset.",
+        "Public homepage: 49 distinct visible cards and canonical routes; previous 43 tools HTTP 200 and matching raw source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/invoice-generator/",
+        "http_status": 200,
+        "checked_at": "2026-11-04T03:49:39.072643+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41768704851,
+    "commit": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41768704972,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "invoice-generator",
+    "url": "https://everydaydigitalbox.com/invoice-generator/",
+    "http_status": 200,
+    "source_sha256": "dbe6ec29fbccc0694f62055c85608241e1493d88ce09d1fdafd881a6b49d4fb3",
+    "live_sha256": "dbe6ec29fbccc0694f62055c85608241e1493d88ce09d1fdafd881a6b49d4fb3",
+    "source_matches": true,
+    "checked_at": "2026-11-04T03:49:39.072643+00:00",
+    "raw_sha256": "dbe6ec29fbccc0694f62055c85608241e1493d88ce09d1fdafd881a6b49d4fb3"
+  },
+  "index_http_evidence": {
+    "path": "invoice-generator/index.html",
+    "status": 200,
+    "match": true,
+    "ga": false,
+    "ids": [],
+    "config_count": 0,
+    "external_scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+    ],
+    "checked_at": "2026-11-04T03:47:32.302781+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "interaction_window": {
+      "after": "2026-11-04T03:48:13.868Z",
+      "before": "2026-11-04T03:51:08.225Z"
+    },
+    "tests": [
+      "items, safe text rendering, independent totals, copy, print and reset",
+      "invalid fields and responsive widths"
+    ],
+    "extra_started_at": "2026-11-04T03:51:08.225Z",
+    "extra_finished_at": "2026-11-04T03:51:12.093Z",
+    "extra_checks": [
+      "Add/remove line item, empty validation and reset."
+    ],
+    "unexpected_errors": 0,
+    "scope": "Actual public HTTPS. Isolated headless Chromium; synthetic files and data. Clipboard/download/print simulated."
+  },
+  "homepage": {
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 49,
+    "all_visible": true,
+    "canonical_routes_match": true,
+    "routes_checked_at": "2026-11-04T03:48:13.868Z",
+    "visibility_check_window": {
+      "after": "2026-11-04T03:51:12.093Z",
+      "before": "2026-11-04T03:54:29.367702+00:00"
+    }
+  },
+  "previous_evidence": "audit/INVOICE_GENERATOR_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows with simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, download and print invocations are simulated; native OS clipboard, print and save dialogs were not tested.",
+    "Previous 43 pages verified through public HTTP/source identity and post-merge CI; no new individual public interactions claimed.",
+    "Release metadata and Live labels require a separately authorized merge and deployment.",
+    "Values are estimates with documented half-up rounding; no financial, accounting or tax compliance claim."
+  ]
+}

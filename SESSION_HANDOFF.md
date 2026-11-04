@@ -1,5 +1,15 @@
 # Session handoff
 
+## Task 15.1 — public verification; release PR pending
+
+PR #26 merged as `4bbdf90f14f33066ab9bcd2db1a31132b800b62c`. Pages deployment 41768704851 and post-merge Functional CI 41768704972 succeeded. The public homepage and 49 tool routes returned HTTP 200 with exact source identity; 49 visible canonical cards were verified. The previous 43 tools were checked through source identity and post-merge CI, without new individual public interaction tests.
+
+The six Task 15 tools passed 12 focused public Chromium tests and extra validation checks. Separate source-bound release audits record dates, deployed hashes, results and limits. Clipboard, downloads and print invocations were simulated. Thumbnail preview supports static PNG only; timer notifications may be delayed by sleep or throttling; CSV formula-risk exports are prefixed; financial results are estimates. No cross-browser, physical-device, screen-reader or native-dialog certification is claimed.
+
+This release-verification branch proposes 93 registered, 49 RELEASED, 0 TESTED, 0 READY, 43 PLANNED and 1 BLOCKED: 49/50 (98%). Main release metadata remains at 43 RELEASED until this PR is separately authorized, merged and deployed. No administrator bypass is authorized. Historical PR #21 administrator-bypass use remains unverified.
+
+**Next major task:** Review the Task 15.1 release-verification PR and await separate owner authorization before merge; independently verify the release metadata deployment afterward.
+
 ## Task 15 — development in progress
 
 Task 14 is complete and publicly verified. PR #24 merged as `130a18045022dfaadec330d13f89b8316c5ccf74`; PR #25 merged as `11fb4b46b235da6f61bb558360decf3bbb946f4c`. Pages deployment 41763445983 and post-merge Functional CI 41763446668 succeeded. The public homepage, all 43 canonical routes and source identity were verified. The registry records 43 RELEASED tools; the current milestone is 50, with seven releases remaining.

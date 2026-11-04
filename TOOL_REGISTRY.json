@@ -2028,7 +2028,7 @@
       "category": "data",
       "description": "Select named or numbered columns from CSV data.",
       "directory_path": "csv-column-extractor",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2043,21 +2043,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 15 scoped local verification passed; publication pending.",
+      "notes": "Task 15 PR #26 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
+        "source_revision": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
         "source_sha256": "4768acd893a0eb428fe640f60f5fc3731ec9105b0a02589e60dedb81e2657994",
-        "evidence_path": "audit/CSV_COLUMN_EXTRACTOR_VERIFICATION.json",
+        "evidence_path": "audit/CSV_COLUMN_EXTRACTOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "8 deterministic inline logic fixtures",
-          "2 real Chromium browser fixtures / 4 assertions",
-          "4 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public canonical and index pages HTTP 200; deployed HTML bytes and framework-normalized hash match approved merged source",
+          "Fresh public Chromium interaction checks: local file, CSV injection protection, export and reset; invalid UTF-8 and responsive viewport handling",
+          "Additional public checks: Duplicate headers by ordinal, reordered quoted multiline output, malformed quote and reset.",
+          "Public homepage: 49 distinct visible cards and canonical routes; previous 43 tools HTTP 200 and matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/csv-column-extractor/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T03:49:38.675237+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2080,7 +2084,7 @@
       "category": "data",
       "description": "Find or remove repeated CSV records.",
       "directory_path": "duplicate-row-finder",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2095,21 +2099,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 15 scoped local verification passed; publication pending.",
+      "notes": "Task 15 PR #26 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
+        "source_revision": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
         "source_sha256": "602b89fd79b59506cd1c16a49528afb4f9f38ebd4a3dbfaeaf7df71757fd5e46",
-        "evidence_path": "audit/DUPLICATE_ROW_FINDER_VERIFICATION.json",
+        "evidence_path": "audit/DUPLICATE_ROW_FINDER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "7 deterministic inline logic fixtures",
-          "2 real Chromium browser fixtures / 5 assertions",
-          "4 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public canonical and index pages HTTP 200; deployed HTML bytes and framework-normalized hash match approved merged source",
+          "Fresh public Chromium interaction checks: local file, matching options, statistics, export and reset; bad file and responsive layout",
+          "Additional public checks: Quoted multiline records, case/whitespace duplicate matching, invalid repeated key and reset.",
+          "Public homepage: 49 distinct visible cards and canonical routes; previous 43 tools HTTP 200 and matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/duplicate-row-finder/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T03:49:38.675185+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3056,7 +3064,7 @@
       "category": "social",
       "description": "Preview a local thumbnail at typical feed sizes.",
       "directory_path": "youtube-thumbnail-preview",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3070,21 +3078,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 15 scoped local verification passed; publication pending.",
+      "notes": "Task 15 PR #26 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
+        "source_revision": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
         "source_sha256": "d8e62e04de8a81baf0c29067c2cc011cf2ee8ef0f2d94e59ce84864d677ace90",
-        "evidence_path": "audit/YOUTUBE_THUMBNAIL_PREVIEW_VERIFICATION.json",
+        "evidence_path": "audit/YOUTUBE_THUMBNAIL_PREVIEW_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "6 deterministic inline logic fixtures",
-          "2 real Chromium browser fixtures / 4 assertions",
-          "2 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public canonical and index pages HTTP 200; deployed HTML bytes and framework-normalized hash match approved merged source",
+          "Fresh public Chromium interaction checks: local image produces dimensions and actual desktop and mobile previews; invalid image and responsive viewport",
+          "Additional public checks: Oversize PNG rejected and reset clears both frames.",
+          "Public homepage: 49 distinct visible cards and canonical routes; previous 43 tools HTTP 200 and matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/youtube-thumbnail-preview/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T03:49:38.676430+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3616,7 +3628,7 @@
       "category": "calculator",
       "description": "Estimate fixed-rate loan payments from explicit assumptions.",
       "directory_path": "loan-repayment-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3630,21 +3642,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 15 scoped local verification passed; publication pending.",
+      "notes": "Task 15 PR #26 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
+        "source_revision": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
         "source_sha256": "0c91db643a1a26ad46026be1699a50cb3b96a28d11edd74b6ede209e98c88916",
-        "evidence_path": "audit/LOAN_REPAYMENT_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/LOAN_REPAYMENT_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "9 deterministic inline logic fixtures",
-          "2 real Chromium browser fixtures / 4 assertions",
-          "5 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public canonical and index pages HTTP 200; deployed HTML bytes and framework-normalized hash match approved merged source",
+          "Fresh public Chromium interaction checks: calculator reports independent example, copy and reset; invalid input is announced and responsive layout fits",
+          "Additional public checks: Zero-interest quarterly schedule and invalid rate; reset.",
+          "Public homepage: 49 distinct visible cards and canonical routes; previous 43 tools HTTP 200 and matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/loan-repayment-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T03:49:38.675327+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4327,7 +4343,7 @@
       "category": "productivity",
       "description": "Run a work and break timer with user-selected durations.",
       "directory_path": "pomodoro-timer",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4341,23 +4357,27 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 15 scoped local verification passed; publication pending.",
+      "notes": "Task 15 PR #26 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [
         "countdown-timer"
       ],
       "verification": {
-        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
+        "source_revision": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
         "source_sha256": "dbed29eb960ad17a28ad15dcc53f94f65639e0f610d432c7ec265b633338b2a3",
-        "evidence_path": "audit/POMODORO_TIMER_VERIFICATION.json",
+        "evidence_path": "audit/POMODORO_TIMER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "8 deterministic inline logic fixtures",
-          "2 real Chromium browser fixtures / 5 assertions",
-          "3 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public canonical and index pages HTTP 200; deployed HTML bytes and framework-normalized hash match approved merged source",
+          "Fresh public Chromium interaction checks: start, pause, resume, copy and reset; invalid values and responsive widths",
+          "Additional public checks: Clock-based work, short and long phases and completion; invalid maximum and reset.",
+          "Public homepage: 49 distinct visible cards and canonical routes; previous 43 tools HTTP 200 and matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/pomodoro-timer/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T03:49:39.057946+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4577,7 +4597,7 @@
       "category": "productivity",
       "description": "Create a printable invoice from user-entered business details.",
       "directory_path": "invoice-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4591,21 +4611,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 15 scoped local verification passed; publication pending.",
+      "notes": "Task 15 PR #26 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
+        "source_revision": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
         "source_sha256": "dbe6ec29fbccc0694f62055c85608241e1493d88ce09d1fdafd881a6b49d4fb3",
-        "evidence_path": "audit/INVOICE_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/INVOICE_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "6 deterministic inline logic fixtures",
-          "2 real Chromium browser fixtures / 4 assertions",
-          "4 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public canonical and index pages HTTP 200; deployed HTML bytes and framework-normalized hash match approved merged source",
+          "Fresh public Chromium interaction checks: items, safe text rendering, independent totals, copy, print and reset; invalid fields and responsive widths",
+          "Additional public checks: Add/remove line item, empty validation and reset.",
+          "Public homepage: 49 distinct visible cards and canonical routes; previous 43 tools HTTP 200 and matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/invoice-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T03:49:39.072643+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",

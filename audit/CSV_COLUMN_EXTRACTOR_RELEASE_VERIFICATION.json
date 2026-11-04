@@ -1,0 +1,93 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
+  "pages": [
+    {
+      "path": "csv-column-extractor/index.html",
+      "source_sha256": "4768acd893a0eb428fe640f60f5fc3731ec9105b0a02589e60dedb81e2657994",
+      "checks": [
+        "Public canonical and index pages HTTP 200; deployed HTML bytes and framework-normalized hash match approved merged source",
+        "Fresh public Chromium interaction checks: local file, CSV injection protection, export and reset; invalid UTF-8 and responsive viewport handling",
+        "Additional public checks: Duplicate headers by ordinal, reordered quoted multiline output, malformed quote and reset.",
+        "Public homepage: 49 distinct visible cards and canonical routes; previous 43 tools HTTP 200 and matching raw source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/csv-column-extractor/",
+        "http_status": 200,
+        "checked_at": "2026-11-04T03:49:38.675237+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41768704851,
+    "commit": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41768704972,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "csv-column-extractor",
+    "url": "https://everydaydigitalbox.com/csv-column-extractor/",
+    "http_status": 200,
+    "source_sha256": "4768acd893a0eb428fe640f60f5fc3731ec9105b0a02589e60dedb81e2657994",
+    "live_sha256": "4768acd893a0eb428fe640f60f5fc3731ec9105b0a02589e60dedb81e2657994",
+    "source_matches": true,
+    "checked_at": "2026-11-04T03:49:38.675237+00:00",
+    "raw_sha256": "4768acd893a0eb428fe640f60f5fc3731ec9105b0a02589e60dedb81e2657994"
+  },
+  "index_http_evidence": {
+    "path": "csv-column-extractor/index.html",
+    "status": 200,
+    "match": true,
+    "ga": false,
+    "ids": [],
+    "config_count": 0,
+    "external_scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+    ],
+    "checked_at": "2026-11-04T03:47:30.961918+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "interaction_window": {
+      "after": "2026-11-04T03:48:13.868Z",
+      "before": "2026-11-04T03:51:08.225Z"
+    },
+    "tests": [
+      "local file, CSV injection protection, export and reset",
+      "invalid UTF-8 and responsive viewport handling"
+    ],
+    "extra_started_at": "2026-11-04T03:51:08.225Z",
+    "extra_finished_at": "2026-11-04T03:51:12.093Z",
+    "extra_checks": [
+      "Duplicate headers by ordinal, reordered quoted multiline output, malformed quote and reset."
+    ],
+    "unexpected_errors": 0,
+    "scope": "Actual public HTTPS. Isolated headless Chromium; synthetic files and data. Clipboard/download/print simulated."
+  },
+  "homepage": {
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 49,
+    "all_visible": true,
+    "canonical_routes_match": true,
+    "routes_checked_at": "2026-11-04T03:48:13.868Z",
+    "visibility_check_window": {
+      "after": "2026-11-04T03:51:12.093Z",
+      "before": "2026-11-04T03:54:29.367702+00:00"
+    }
+  },
+  "previous_evidence": "audit/CSV_COLUMN_EXTRACTOR_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows with simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, download and print invocations are simulated; native OS clipboard, print and save dialogs were not tested.",
+    "Previous 43 pages verified through public HTTP/source identity and post-merge CI; no new individual public interactions claimed.",
+    "Release metadata and Live labels require a separately authorized merge and deployment.",
+    "Formula-risk spreadsheet cells are deliberately prefixed with an apostrophe. CSV inputs are local and bounded."
+  ]
+}

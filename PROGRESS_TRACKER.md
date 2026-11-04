@@ -1,5 +1,13 @@
 # Progress tracker
 
+## Task 15.1 — public verification; release PR pending
+
+PR #26 merged as `4bbdf90f14f33066ab9bcd2db1a31132b800b62c`. Pages deployment 41768704851 and post-merge Functional CI 41768704972 succeeded. The public homepage and 49 tool routes returned HTTP 200 with exact source identity; 49 visible canonical cards were verified. The previous 43 tools were checked through source identity and post-merge CI, without new individual public interaction tests.
+
+The six Task 15 tools passed 12 focused public Chromium tests and extra validation checks. Separate source-bound release audits record dates, deployed hashes, results and limits. Clipboard, downloads and print invocations were simulated. Thumbnail preview supports static PNG only; timer notifications may be delayed by sleep or throttling; CSV formula-risk exports are prefixed; financial results are estimates. No cross-browser, physical-device, screen-reader or native-dialog certification is claimed.
+
+This release-verification branch proposes 93 registered, 49 RELEASED, 0 TESTED, 0 READY, 43 PLANNED and 1 BLOCKED: 49/50 (98%). Main release metadata remains at 43 RELEASED until this PR is separately authorized, merged and deployed. No administrator bypass is authorized. Historical PR #21 administrator-bypass use remains unverified.
+
 ## Task 15 — development in progress
 
 Task 14 is complete and publicly verified. PR #24 merged as `130a18045022dfaadec330d13f89b8316c5ccf74`; PR #25 merged as `11fb4b46b235da6f61bb558360decf3bbb946f4c`. Pages deployment 41763445983 and post-merge Functional CI 41763446668 succeeded. The public homepage, all 43 canonical routes and source identity were verified. The registry records 43 RELEASED tools; the current milestone is 50, with seven releases remaining.
@@ -153,14 +161,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 6 |
-| RELEASED | 43 |
+| TESTED | 0 |
+| RELEASED | 49 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 44 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **50 released tools**. Progress: 43/50 (86.0%); remaining: 7.
+Current growth milestone: **50 released tools**. Progress: 49/50 (98.0%); remaining: 1.
 
 ### Tools by category
 
@@ -194,15 +202,15 @@ Next ready tool: **REQUIRES REVIEW**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| YouTube Thumbnail Preview | TESTED | 2026-11-04 |
+| YouTube Thumbnail Preview | RELEASED | 2026-11-04 |
 | YouTube Description Formatter | RELEASED | 2026-11-04 |
 | Username Generator | RELEASED | 2026-11-04 |
 | Text Difference Checker | RELEASED | 2026-11-04 |
 | Printable Calendar Generator | RELEASED | 2026-11-04 |
 | Posting Calendar Generator | RELEASED | 2026-11-04 |
-| Pomodoro Timer | TESTED | 2026-11-04 |
+| Pomodoro Timer | RELEASED | 2026-11-04 |
 | Local To-Do List | RELEASED | 2026-11-04 |
-| Loan Repayment Calculator | TESTED | 2026-11-04 |
+| Loan Repayment Calculator | RELEASED | 2026-11-04 |
 | JSON to TXT | RELEASED | 2026-11-04 |
 <!-- GENERATED:COUNTS:END -->
 
