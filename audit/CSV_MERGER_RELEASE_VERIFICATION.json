@@ -1,0 +1,108 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "55589d67807387a71ec9d0d407f1b37dfe6b79f3",
+  "pages": [
+    {
+      "path": "csv-merger/index.html",
+      "source_sha256": "83f941454a0372d14bc8d0c6dff4cff6c279d03660797c057ed12e0eb39ff330",
+      "checks": [
+        "Public canonical and index pages HTTP 200; public and approved Git-blob SHA-256 hashes match",
+        "Fresh public Chromium interactions: local upload, reorder, merge, download, copy and reset; remove a selected file and reject reordered, duplicate and empty headers; invalid UTF-8, oversize and too few files fail safely; reset during pending file read cannot restore stale output; bounded preview, responsive widths and keyboard-operable reordering; merging never invokes probed network APIs; long filenames wrap at a narrow viewport",
+        "Additional public checks: Two compatible files: Unicode, empty cells, quoted commas, escaped quotes, multiline data and exact CRLF download.; Missing, extra, reordered, duplicate and empty headers; empty files, malformed quotes and ragged rows rejected without output.; A binary PNG file is rejected as invalid UTF-8; filename/MIME is not strictly enforced.; Three files, keyboard reorder, file removal, stale-output invalidation and reset.; Correct public route, title, expected Tailwind CDN, required script and zero captured browser errors.",
+        "Public homepage has 50 distinct visible canonical routes; previous 49 tool pages returned HTTP 200 with matching raw source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/csv-merger/",
+        "http_status": 200,
+        "checked_at": "2026-11-04T08:51:06.245672+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41802029972,
+    "commit": "55589d67807387a71ec9d0d407f1b37dfe6b79f3",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41802030797,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_index": {
+    "id": "csv-merger",
+    "status": "TESTED",
+    "path": "csv-merger/index.html",
+    "url": "https://everydaydigitalbox.com/csv-merger/index.html",
+    "http_status": 200,
+    "raw_public_sha256": "83f941454a0372d14bc8d0c6dff4cff6c279d03660797c057ed12e0eb39ff330",
+    "raw_approved_sha256": "83f941454a0372d14bc8d0c6dff4cff6c279d03660797c057ed12e0eb39ff330",
+    "raw_match": true,
+    "source_sha256": "83f941454a0372d14bc8d0c6dff4cff6c279d03660797c057ed12e0eb39ff330",
+    "checked_at": "2026-11-04T08:49:28.884920+00:00"
+  },
+  "canonical_public_url": {
+    "url": "https://everydaydigitalbox.com/csv-merger/",
+    "http_status": 200,
+    "checked_at": "2026-11-04T08:51:06.245672+00:00",
+    "public_sha256": "83f941454a0372d14bc8d0c6dff4cff6c279d03660797c057ed12e0eb39ff330",
+    "approved_sha256": "83f941454a0372d14bc8d0c6dff4cff6c279d03660797c057ed12e0eb39ff330",
+    "source_matches": true
+  },
+  "homepage_raw_source": {
+    "status": 200,
+    "match": true,
+    "raw_public_sha256": "8b8daa3559f3b6d902b16233ef918d21c4fd6bc2c3ab2772babf3bfc4474561c",
+    "raw_approved_sha256": "8b8daa3559f3b6d902b16233ef918d21c4fd6bc2c3ab2772babf3bfc4474561c",
+    "analytics": true,
+    "cname": "everydaydigitalbox.com",
+    "checked_at": "2026-11-04T08:49:32.370829+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "interaction_window": {
+      "after": "2026-11-04T08:49:51.005Z",
+      "before": "2026-11-04T08:50:45.877Z"
+    },
+    "tests": [
+      "local upload, reorder, merge, download, copy and reset",
+      "remove a selected file and reject reordered, duplicate and empty headers",
+      "invalid UTF-8, oversize and too few files fail safely",
+      "reset during pending file read cannot restore stale output",
+      "bounded preview, responsive widths and keyboard-operable reordering",
+      "merging never invokes probed network APIs",
+      "long filenames wrap at a narrow viewport"
+    ],
+    "extra_started_at": "2026-11-04T08:50:45.877Z",
+    "extra_finished_at": "2026-11-04T08:50:48.187Z",
+    "extra_checks": [
+      "Two compatible files: Unicode, empty cells, quoted commas, escaped quotes, multiline data and exact CRLF download.",
+      "Missing, extra, reordered, duplicate and empty headers; empty files, malformed quotes and ragged rows rejected without output.",
+      "A binary PNG file is rejected as invalid UTF-8; filename/MIME is not strictly enforced.",
+      "Three files, keyboard reorder, file removal, stale-output invalidation and reset.",
+      "Correct public route, title, expected Tailwind CDN, required script and zero captured browser errors."
+    ],
+    "unexpected_errors": 0,
+    "scope": "Actual public HTTPS; isolated headless Chromium; synthetic files; clipboard and download simulated."
+  },
+  "homepage": {
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 50,
+    "all_visible": true,
+    "canonical_routes_match": true,
+    "routes_checked_at": "2026-11-04T08:49:51.005Z",
+    "analytics_preserved": true,
+    "cname": "everydaydigitalbox.com"
+  },
+  "previous_evidence": "audit/CSV_MERGER_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows with simulated viewport widths; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard and download APIs were simulated; native OS clipboard and download dialog were not tested.",
+    "A binary PNG was rejected as invalid UTF-8; file selection accepts text/plain and validates decoded CSV content, not filename extension or MIME type.",
+    "Formula-risk fields are deliberately prefixed with an apostrophe in output; review exports before spreadsheet use.",
+    "Previous 49 tool pages checked through public HTTP/source identity and post-merge CI; no new individual public interactions claimed.",
+    "Release metadata and Live label require a separately authorized merge and deployment."
+  ]
+}

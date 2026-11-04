@@ -32,7 +32,8 @@ const task14Ids=["image-color-picker","csv-viewer","image-watermark","local-to-d
 const task14Released=registry.tools.filter(t=>task14Ids.includes(t.id)&&t.status==='RELEASED').length;
 const task15Ids=["youtube-thumbnail-preview","pomodoro-timer","csv-column-extractor","duplicate-row-finder","loan-repayment-calculator","invoice-generator"];
 const task15Released=registry.tools.filter(t=>task15Ids.includes(t.id)&&t.status==='RELEASED').length;
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,9+task8Released+task9Released+task10Released+task11Released+task12Released+task13Released+task14Released+task15Released);
+const task16Released=registry.tools.filter(t=>t.id==='csv-merger'&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,9+task8Released+task9Released+task10Released+task11Released+task12Released+task13Released+task14Released+task15Released+task16Released);
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

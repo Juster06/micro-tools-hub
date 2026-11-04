@@ -1,5 +1,13 @@
 # Development roadmap
 
+## Task 16.1 — CSV Merger public verification; release PR pending
+
+PR #28 merged as `55589d67807387a71ec9d0d407f1b37dfe6b79f3`. Pages deployment 41802029972 and post-merge Functional CI 41802030797 succeeded. The public homepage and all 50 tool routes returned HTTP 200 and matched approved source; 50 distinct visible cards and canonical links were checked. The previous 49 tools were checked by HTTP/source identity and post-merge CI, without new individual public interaction tests.
+
+CSV Merger passed seven focused public Chromium tests and additional live parsing, header, file-handling and keyboard checks. Its source-bound release audit records the deployed hashes, timestamp, results and limitations. Clipboard and download were simulated; no physical-device, screen-reader or cross-browser certification is claimed. A binary PNG was rejected by UTF-8 validation, but filename extension and MIME type are not strictly enforced.
+
+This release-verification branch proposes 93 registered, 50 RELEASED, 0 TESTED, 0 READY, 42 PLANNED and 1 BLOCKED; milestone 50/50 (100%). Main release metadata remains at 49 RELEASED until this PR is separately authorized, merged and deployed. The Google Analytics consent concern remains unresolved; analytics configuration is unchanged. Historical PR #21 administrator-bypass use remains unverified.
+
 ## Task 16 — CSV Merger development in progress
 
 Task 15 is complete and publicly verified. PR #26 merged as `4bbdf90f14f33066ab9bcd2db1a31132b800b62c`; PR #27 merged as `61135c1111360a4867446bb3649996713460b44c`. Pages deployment 41773888585 and post-merge Functional CI 41773888536 succeeded. Public source identity, 49 routes and the six Task 15 utilities were verified. The registry has 49 RELEASED tools, with one release remaining to the milestone of 50.
@@ -290,7 +298,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | csv-column-extractor | CSV Column Extractor | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | duplicate-row-finder | Duplicate Row Finder | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-data-cleaner | CSV Data Cleaner | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
-| csv-merger | CSV Merger | TESTED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
+| csv-merger | CSV Merger | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | json-formatter | JSON Formatter | RELEASED | P1 | S | Native JSON.parse and JSON.stringify |
 | csv-viewer | CSV Viewer | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | excel-formula-generator | Excel Formula Generator | PLANNED | P2 | L | Browser-native deterministic templates; no parser or AI service |
