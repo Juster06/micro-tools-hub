@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "local-to-do-list",
+  "canonical_path": "local-to-do-list/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

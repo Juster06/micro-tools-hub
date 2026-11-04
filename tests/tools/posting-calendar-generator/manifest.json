@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "posting-calendar-generator",
+  "canonical_path": "posting-calendar-generator/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "leap",
+      "input": "2024-02-28",
+      "options": {
+        "end": "2024-03-01"
+      },
+      "expected": "Date,Time,Timezone\n\"2024-02-28\",\"09:00\",\"UTC\"\n\"2024-02-29\",\"09:00\",\"UTC\"\n\"2024-03-01\",\"09:00\",\"UTC\""
+    },
+    {
+      "id": "one",
+      "input": "2026-01-05",
+      "options": {
+        "end": "2026-01-05",
+        "time": "12:30",
+        "timezone": "UTC"
+      },
+      "expected": "Date,Time,Timezone\n\"2026-01-05\",\"12:30\",\"UTC\""
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {
+        "end": "2026-01-01"
+      },
+      "error": "YYYY-MM-DD"
+    },
+    {
+      "id": "reverse",
+      "input": "2026-01-02",
+      "options": {
+        "end": "2026-01-01"
+      },
+      "error": "before"
+    },
+    {
+      "id": "range",
+      "input": "2024-01-01",
+      "options": {
+        "end": "2025-01-01"
+      },
+      "error": "366"
+    },
+    {
+      "id": "bad-zone",
+      "input": "2026-01-01",
+      "options": {
+        "end": "2026-01-02",
+        "timezone": "Not/AZone"
+      },
+      "error": "timezone"
+    },
+    {
+      "id": "bad-time",
+      "input": "2026-01-01",
+      "options": {
+        "end": "2026-01-02",
+        "time": "24:00"
+      },
+      "error": "HH:MM"
+    },
+    {
+      "id": "no-days",
+      "input": "2026-01-01",
+      "options": {
+        "end": "2026-01-02",
+        "sun": false,
+        "mon": false,
+        "tue": false,
+        "wed": false,
+        "thu": false,
+        "fri": false,
+        "sat": false
+      },
+      "error": "posting day"
+    },
+    {
+      "id": "no-match",
+      "input": "2026-01-03",
+      "options": {
+        "end": "2026-01-03"
+      },
+      "error": "No selected"
+    }
+  ]
+}

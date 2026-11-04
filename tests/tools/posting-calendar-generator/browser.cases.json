@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "layout-320",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2024-02-28"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2024-03-01"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Date,Time,Timezone\n\"2024-02-28\",\"09:00\",\"UTC\"\n\"2024-02-29\",\"09:00\",\"UTC\"\n\"2024-03-01\",\"09:00\",\"UTC\""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-375",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2024-02-28"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2024-03-01"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Date,Time,Timezone\n\"2024-02-28\",\"09:00\",\"UTC\"\n\"2024-02-29\",\"09:00\",\"UTC\"\n\"2024-03-01\",\"09:00\",\"UTC\""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-768",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2024-02-28"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2024-03-01"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Date,Time,Timezone\n\"2024-02-28\",\"09:00\",\"UTC\"\n\"2024-02-29\",\"09:00\",\"UTC\"\n\"2024-03-01\",\"09:00\",\"UTC\""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-1440",
+      "width": 1440,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2024-02-28"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2024-03-01"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Date,Time,Timezone\n\"2024-02-28\",\"09:00\",\"UTC\"\n\"2024-02-29\",\"09:00\",\"UTC\"\n\"2024-03-01\",\"09:00\",\"UTC\""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-reset",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2024-02-28"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2024-03-01"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Date,Time,Timezone\n\"2024-02-28\",\"09:00\",\"UTC\"\n\"2024-02-29\",\"09:00\",\"UTC\"\n\"2024-03-01\",\"09:00\",\"UTC\""
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "Date,Time,Timezone\n\"2024-02-28\",\"09:00\",\"UTC\"\n\"2024-02-29\",\"09:00\",\"UTC\"\n\"2024-03-01\",\"09:00\",\"UTC\""
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#timezone",
+          "property": "value",
+          "equals": "UTC"
+        }
+      ]
+    },
+    {
+      "id": "invalid",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "2024-02-30"
+        },
+        {
+          "action": "set",
+          "selector": "#end",
+          "value": "2024-03-01"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

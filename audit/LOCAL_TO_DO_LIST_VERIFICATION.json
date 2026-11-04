@@ -1,0 +1,51 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "4fed720866b6f3ee2647dcdc233c02efb74df80e",
+  "pages": [
+    {
+      "path": "local-to-do-list/index.html",
+      "source_sha256": "9b51f243f2cc9a70952d53122b54a7388db7fd5a60e11d35e4c6f8e18cfdf2ee",
+      "checks": [
+        "Canonical structural checks",
+        "10 synchronous task import-validation fixtures",
+        "6 real Chromium browser fixtures / 12 assertions",
+        "2 independent Node logic tests and 5 extended browser tests",
+        "Responsive widths 320/375/768/1440; clipboard and download mocked",
+        "Real Chromium task editing, opt-in storage, restore, denial/quota and validated file import/export tested separately; storage APIs simulated."
+      ]
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 10,
+      "failed": 0,
+      "assertions": 10,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 6,
+      "failed": 0,
+      "assertions": 12,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "browser": "Chrome/156.0.8078.4",
+  "limitations": [
+    "Local headless Chromium; no Safari, Firefox, physical-device, native clipboard, screen-reader or full accessibility certification.",
+    "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
+    "No public deployment or publication has been verified."
+  ],
+  "contract": "audit/TASK_14_DEVELOPMENT_PLAN.md"
+}

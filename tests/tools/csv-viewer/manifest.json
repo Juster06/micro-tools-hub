@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "csv-viewer",
+  "canonical_path": "csv-viewer/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

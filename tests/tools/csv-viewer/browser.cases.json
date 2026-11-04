@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "layout-320",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "name,note\nAda,\"hi, there\""
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#tableStats",
+          "property": "textContent",
+          "equals": "2 records · 2 columns · 1 data rows"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-375",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "name,note\nAda,\"hi, there\""
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#tableStats",
+          "property": "textContent",
+          "equals": "2 records · 2 columns · 1 data rows"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-768",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "name,note\nAda,\"hi, there\""
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#tableStats",
+          "property": "textContent",
+          "equals": "2 records · 2 columns · 1 data rows"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-1440",
+      "width": 1440,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "name,note\nAda,\"hi, there\""
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#tableStats",
+          "property": "textContent",
+          "equals": "2 records · 2 columns · 1 data rows"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "reset",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "name,note\nAda,\"hi, there\""
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#tableStats",
+          "property": "textContent",
+          "equals": "2 records · 2 columns · 1 data rows"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#pageLabel",
+          "property": "textContent",
+          "equals": "Page 0 of 0"
+        }
+      ]
+    },
+    {
+      "id": "invalid",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\"oops"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        }
+      ]
+    }
+  ]
+}
