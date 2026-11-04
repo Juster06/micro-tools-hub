@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "annual",
+      "input": "1000",
+      "options": {
+        "contribution": "100",
+        "rate": "10",
+        "frequency": "1",
+        "years": "2"
+      },
+      "expected": "Estimated balance: 1420.00\nTotal contributions: 1200.00\nEstimated interest earned: 220.00\nPeriods: 2\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+    },
+    {
+      "id": "monthly",
+      "input": "1000",
+      "options": {
+        "contribution": "10",
+        "rate": "12",
+        "frequency": "12",
+        "years": "1"
+      },
+      "expected": "Estimated balance: 1253.64\nTotal contributions: 1120.00\nEstimated interest earned: 133.64\nPeriods: 12\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+    },
+    {
+      "id": "zero-rate",
+      "input": "100",
+      "options": {
+        "contribution": "5",
+        "rate": "0",
+        "frequency": "4",
+        "years": "2"
+      },
+      "expected": "Estimated balance: 140.00\nTotal contributions: 140.00\nEstimated interest earned: 0.00\nPeriods: 8\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+    },
+    {
+      "id": "round-half",
+      "input": "0.05",
+      "options": {
+        "contribution": "0",
+        "rate": "10",
+        "frequency": "1",
+        "years": "1"
+      },
+      "expected": "Estimated balance: 0.06\nTotal contributions: 0.05\nEstimated interest earned: 0.01\nPeriods: 1\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+    },
+    {
+      "id": "zero-years",
+      "input": "5",
+      "options": {
+        "years": "0"
+      },
+      "expected": "Estimated balance: 5.00\nTotal contributions: 5.00\nEstimated interest earned: 0.00\nPeriods: 0\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "Principal"
+    },
+    {
+      "id": "negative",
+      "input": "-1",
+      "options": {},
+      "error": "Principal"
+    },
+    {
+      "id": "fraction",
+      "input": "1.001",
+      "options": {},
+      "error": "2 decimals"
+    },
+    {
+      "id": "bad-rate",
+      "input": "1",
+      "options": {
+        "rate": "101"
+      },
+      "error": "0–100"
+    },
+    {
+      "id": "bad-years",
+      "input": "1",
+      "options": {
+        "years": "51"
+      },
+      "error": "0–50"
+    },
+    {
+      "id": "overflow",
+      "input": "1000000000000",
+      "options": {
+        "rate": "100",
+        "frequency": "1",
+        "years": "10"
+      },
+      "error": "Result exceeds"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
+  "pages": [
+    {
+      "path": "compound-interest-calculator/index.html",
+      "source_sha256": "1e5a195d1d099471aacc6b544aa505ca3750b79513bd9d9595fcc4028c27ceb1",
+      "checks": [
+        "Canonical structural checks",
+        "11 deterministic inline logic fixtures",
+        "6 real Chromium browser fixtures / 13 assertions",
+        "4 independent Node logic tests and 2 extended browser tests",
+        "Responsive widths 320/375/768/1440; clipboard and download mocked"
+      ]
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 11,
+      "failed": 0,
+      "assertions": 11,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 6,
+      "failed": 0,
+      "assertions": 13,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "browser": "Chrome/156.0.8078.4",
+  "limitations": [
+    "Local headless Chromium; no Safari, Firefox, physical-device, native clipboard, screen-reader or full accessibility certification.",
+    "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
+    "No public deployment or publication has been verified."
+  ],
+  "contract": "audit/TASK_14_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "f73bf341fa2c817fb6fc37425f93be670da0c800",
+  "source_tree_sha": "2c39da10c066f4d69cb69559abcc3e5a9fdc1d35"
+}

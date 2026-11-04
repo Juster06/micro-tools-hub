@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "layout-320",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Task A"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#taskStats",
+          "property": "textContent",
+          "equals": "1 tasks · 0 completed"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-375",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Task A"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#taskStats",
+          "property": "textContent",
+          "equals": "1 tasks · 0 completed"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-768",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Task A"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#taskStats",
+          "property": "textContent",
+          "equals": "1 tasks · 0 completed"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-1440",
+      "width": 1440,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Task A"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#taskStats",
+          "property": "textContent",
+          "equals": "1 tasks · 0 completed"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "reset",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "Task A"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#taskStats",
+          "property": "textContent",
+          "equals": "1 tasks · 0 completed"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#taskStats",
+          "property": "textContent",
+          "equals": "0 tasks · 0 completed"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "steps": [
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

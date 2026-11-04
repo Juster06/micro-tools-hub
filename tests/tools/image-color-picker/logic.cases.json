@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "valid-0",
+      "input": "{\"width\": 2, \"height\": 3, \"x\": 0, \"y\": 0}",
+      "options": {},
+      "expected": {
+        "width": 2,
+        "height": 3,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "valid-1",
+      "input": "{\"width\": 2, \"height\": 3, \"x\": 1, \"y\": 2}",
+      "options": {},
+      "expected": {
+        "width": 2,
+        "height": 3,
+        "x": 1,
+        "y": 2
+      }
+    },
+    {
+      "id": "valid-2",
+      "input": "{\"width\": 4000, \"height\": 2000, \"x\": 3999, \"y\": 1999}",
+      "options": {},
+      "expected": {
+        "width": 4000,
+        "height": 2000,
+        "x": 3999,
+        "y": 1999
+      }
+    },
+    {
+      "id": "bad-0",
+      "input": "",
+      "options": {},
+      "error": "valid JSON"
+    },
+    {
+      "id": "bad-1",
+      "input": "{\"width\": 0, \"height\": 1, \"x\": 0, \"y\": 0}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "bad-2",
+      "input": "{\"width\": 4097, \"height\": 1, \"x\": 0, \"y\": 0}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "bad-3",
+      "input": "{\"width\": 4000, \"height\": 2001, \"x\": 0, \"y\": 0}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "bad-4",
+      "input": "{\"width\": 2, \"height\": 3, \"x\": 2, \"y\": 0}",
+      "options": {},
+      "error": "coordinates"
+    },
+    {
+      "id": "bad-5",
+      "input": "{\"width\": 2, \"height\": 3, \"x\": 0.1, \"y\": 0}",
+      "options": {},
+      "error": "coordinates"
+    }
+  ]
+}

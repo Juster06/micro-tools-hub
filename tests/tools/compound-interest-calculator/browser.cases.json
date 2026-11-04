@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "layout-320",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "1000"
+        },
+        {
+          "action": "set",
+          "selector": "#contribution",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#frequency",
+          "value": "1"
+        },
+        {
+          "action": "set",
+          "selector": "#years",
+          "value": "2"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Estimated balance: 1420.00\nTotal contributions: 1200.00\nEstimated interest earned: 220.00\nPeriods: 2\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-375",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "1000"
+        },
+        {
+          "action": "set",
+          "selector": "#contribution",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#frequency",
+          "value": "1"
+        },
+        {
+          "action": "set",
+          "selector": "#years",
+          "value": "2"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Estimated balance: 1420.00\nTotal contributions: 1200.00\nEstimated interest earned: 220.00\nPeriods: 2\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-768",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "1000"
+        },
+        {
+          "action": "set",
+          "selector": "#contribution",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#frequency",
+          "value": "1"
+        },
+        {
+          "action": "set",
+          "selector": "#years",
+          "value": "2"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Estimated balance: 1420.00\nTotal contributions: 1200.00\nEstimated interest earned: 220.00\nPeriods: 2\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "layout-1440",
+      "width": 1440,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "1000"
+        },
+        {
+          "action": "set",
+          "selector": "#contribution",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#frequency",
+          "value": "1"
+        },
+        {
+          "action": "set",
+          "selector": "#years",
+          "value": "2"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Estimated balance: 1420.00\nTotal contributions: 1200.00\nEstimated interest earned: 220.00\nPeriods: 2\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-reset",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "1000"
+        },
+        {
+          "action": "set",
+          "selector": "#contribution",
+          "value": "100"
+        },
+        {
+          "action": "set",
+          "selector": "#rate",
+          "value": "10"
+        },
+        {
+          "action": "set",
+          "selector": "#frequency",
+          "value": "1"
+        },
+        {
+          "action": "set",
+          "selector": "#years",
+          "value": "2"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "Estimated balance: 1420.00\nTotal contributions: 1200.00\nEstimated interest earned: 220.00\nPeriods: 2\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "Estimated balance: 1420.00\nTotal contributions: 1200.00\nEstimated interest earned: 220.00\nPeriods: 2\nContribution timing: end of each period\nRounding: interest half-up to cents each period"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#rate",
+          "property": "value",
+          "equals": "0"
+        }
+      ]
+    },
+    {
+      "id": "invalid",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "-1"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

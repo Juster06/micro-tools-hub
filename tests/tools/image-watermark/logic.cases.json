@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "valid-0",
+      "input": "{\"width\": 80, \"height\": 40, \"text\": \"X\", \"position\": \"top-left\", \"opacity\": \"50\", \"fontSize\": \"16\", \"color\": \"white\"}",
+      "options": {},
+      "expected": {
+        "width": 80,
+        "height": 40,
+        "text": "X",
+        "position": "top-left",
+        "opacity": 50,
+        "fontSize": 16,
+        "color": "white"
+      }
+    },
+    {
+      "id": "valid-1",
+      "input": "{\"width\": 80, \"height\": 40, \"text\": \"X\", \"position\": \"center\", \"opacity\": \"0\", \"fontSize\": \"16\", \"color\": \"black\"}",
+      "options": {},
+      "expected": {
+        "width": 80,
+        "height": 40,
+        "text": "X",
+        "position": "center",
+        "opacity": 0,
+        "fontSize": 16,
+        "color": "black"
+      }
+    },
+    {
+      "id": "valid-2",
+      "input": "{\"width\": 80, \"height\": 40, \"text\": \"X\", \"position\": \"bottom-right\", \"opacity\": \"100\", \"fontSize\": \"256\", \"color\": \"white\"}",
+      "options": {},
+      "expected": {
+        "width": 80,
+        "height": 40,
+        "text": "X",
+        "position": "bottom-right",
+        "opacity": 100,
+        "fontSize": 256,
+        "color": "white"
+      }
+    },
+    {
+      "id": "bad-0",
+      "input": "",
+      "options": {},
+      "error": "valid JSON"
+    },
+    {
+      "id": "bad-1",
+      "input": "{\"width\": 4097, \"height\": 40, \"text\": \"X\", \"position\": \"top-left\", \"opacity\": \"50\", \"fontSize\": \"16\", \"color\": \"white\"}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "bad-2",
+      "input": "{\"width\": 80, \"height\": 40, \"text\": \"\", \"position\": \"top-left\", \"opacity\": \"50\", \"fontSize\": \"16\", \"color\": \"white\"}",
+      "options": {},
+      "error": "text"
+    },
+    {
+      "id": "bad-3",
+      "input": "{\"width\": 80, \"height\": 40, \"text\": \"a\\nb\", \"position\": \"top-left\", \"opacity\": \"50\", \"fontSize\": \"16\", \"color\": \"white\"}",
+      "options": {},
+      "error": "one line"
+    },
+    {
+      "id": "bad-4",
+      "input": "{\"width\": 80, \"height\": 40, \"text\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\", \"position\": \"top-left\", \"opacity\": \"50\", \"fontSize\": \"16\", \"color\": \"white\"}",
+      "options": {},
+      "error": "100"
+    },
+    {
+      "id": "bad-5",
+      "input": "{\"width\": 80, \"height\": 40, \"text\": \"X\", \"position\": \"invalid\", \"opacity\": \"50\", \"fontSize\": \"16\", \"color\": \"white\"}",
+      "options": {},
+      "error": "placement"
+    },
+    {
+      "id": "bad-6",
+      "input": "{\"width\": 80, \"height\": 40, \"text\": \"X\", \"position\": \"top-left\", \"opacity\": \"101\", \"fontSize\": \"16\", \"color\": \"white\"}",
+      "options": {},
+      "error": "Opacity"
+    },
+    {
+      "id": "bad-7",
+      "input": "{\"width\": 80, \"height\": 40, \"text\": \"X\", \"position\": \"top-left\", \"opacity\": \"50\", \"fontSize\": \"7\", \"color\": \"white\"}",
+      "options": {},
+      "error": "Font size"
+    }
+  ]
+}

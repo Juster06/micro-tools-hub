@@ -1,6 +1,18 @@
 # Development roadmap
 
-## Task 13.1 — six-tool public verification, release PR pending
+## Task 14 — six tools tested, publication pending
+
+The Task 14 branch implements Image Color Picker, CSV Viewer, Image Watermark, Local To-Do List, Posting Calendar Generator and Compound Interest Calculator as **TESTED**, with publication pending. Their gated homepage cards say Tested · publication pending. Branch inventory: 93 registered, 37 RELEASED, 6 TESTED, 0 READY, 49 PLANNED and 1 BLOCKED; the live released milestone remains 37/50 (74%).
+
+See `audit/TASK_14_DEVELOPMENT_PLAN.md` and the source-bound per-tool audits for scope and validation. Image tools accept static PNG only (5 MiB, 4096 per dimension, 8 million pixels). CSV Viewer uses a bounded local state-machine parser with no third-party parser dependency; cells are text. To-do persistence is opt-in. Posting Calendar records wall-clock dates, times and a supported IANA timezone label without resolving DST or converting to UTC. Compound interest uses end-of-period contributions and per-period half-up cent rounding; results are estimates. User input stays in the browser; hosting and the existing styling CDN are separate requests.
+
+The feature branch requires ordinary protected-main review and CI. Do not merge or deploy without separate owner authorization; after authorized integration, independent public verification is needed before a separate release update. Historical administrator-bypass use for PR #21 was not independently verifiable because audit information was unavailable.
+
+## Task 14 — development checkpoint
+
+PR #22 merged as `bc749fecdd7e801d4ab75505d71f469918f4eba4` and PR #23 merged as `54f2db946a1cd947733b3ee77039cf9aba7d5fa3`. Pages run 41752171931 and post-merge Functional CI run 41752172545 succeeded for the latter commit. All 37 public tool sources and homepage matched main, canonical links and registry counts were verified, and the six Task 13 tools passed fresh public smoke tests. Task 13 is complete; the next milestone is 37/50 released, with 13 remaining. Task 14 development is authorized on a feature branch. Historical administrator-bypass use for PR #21 was not independently verified because audit information was unavailable.
+
+## Historical Task 13.1 — public verification before release metadata merge
 
 PR #22 merged as `bc749fecdd7e801d4ab75505d71f469918f4eba4`. The [Pages deployment 41748440143](https://github.com/Juster06/micro-tools-hub/actions/runs/41748440143) and [post-merge functional CI 41748440628](https://github.com/Juster06/micro-tools-hub/actions/runs/41748440628) succeeded for that commit. Public HTTPS checks matched the merged homepage and all 37 tool pages byte for byte; all 37 canonical links, custom domain and Analytics identifier were confirmed. The previous 31 pages were checked by public HTTP/source identity and post-merge CI, without new individual public interaction tests.
 
@@ -223,8 +235,8 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | image-format-converter | Image Format Converter | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-cropper | Image Cropper | PLANNED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-rotator | Image Rotator | RELEASED | P2 | S | Browser image decoding and Canvas; format support and memory limits must be tested |
-| image-watermark | Image Watermark | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
-| image-color-picker | Image Color Picker | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
+| image-watermark | Image Watermark | TESTED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
+| image-color-picker | Image Color Picker | TESTED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | passport-photo-layout-maker | Passport Photo Layout Maker | PLANNED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
 
 ### Text and Writing Tools
@@ -252,7 +264,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | csv-data-cleaner | CSV Data Cleaner | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-merger | CSV Merger | PLANNED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | json-formatter | JSON Formatter | RELEASED | P1 | S | Native JSON.parse and JSON.stringify |
-| csv-viewer | CSV Viewer | PLANNED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
+| csv-viewer | CSV Viewer | TESTED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | excel-formula-generator | Excel Formula Generator | PLANNED | P2 | L | Browser-native deterministic templates; no parser or AI service |
 
 ### Developer Tools
@@ -282,7 +294,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | emoji-picker | Emoji Picker | PLANNED | P2 | M | Reviewed local emoji dataset and usage license |
 | hashtag-counter | Hashtag Counter | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | youtube-thumbnail-preview | YouTube Thumbnail Preview | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
-| posting-calendar-generator | Posting Calendar Generator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
+| posting-calendar-generator | Posting Calendar Generator | TESTED | P2 | M | Browser-native approach; scope review before implementation |
 | username-generator | Username Generator | RELEASED | P2 | S | Browser-native approach; scope review before implementation |
 
 ### Calculators
@@ -298,7 +310,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | working-days-calculator | Working Days Calculator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | loan-repayment-calculator | Loan Repayment Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | profit-margin-calculator | Profit Margin Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| compound-interest-calculator | Compound Interest Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
+| compound-interest-calculator | Compound Interest Calculator | TESTED | P2 | M | Browser-native approach; scope review before implementation |
 
 ### Security and Privacy Tools
 
@@ -336,7 +348,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | countdown-timer | Countdown Timer | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | random-name-picker | Random Name Picker | RELEASED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | decision-wheel | Decision Wheel | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
-| local-to-do-list | Local To-Do List | PLANNED | P2 | M | Explicit opt-in localStorage, export format and clear-all behavior |
+| local-to-do-list | Local To-Do List | TESTED | P2 | M | Explicit opt-in localStorage, export format and clear-all behavior |
 | invoice-generator | Invoice Generator | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | resume-builder | Resume Builder | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | meeting-agenda-generator | Meeting Agenda Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
