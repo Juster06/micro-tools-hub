@@ -1,0 +1,93 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
+  "pages": [
+    {
+      "path": "loan-repayment-calculator/index.html",
+      "source_sha256": "0c91db643a1a26ad46026be1699a50cb3b96a28d11edd74b6ede209e98c88916",
+      "checks": [
+        "Public canonical and index pages HTTP 200; deployed HTML bytes and framework-normalized hash match approved merged source",
+        "Fresh public Chromium interaction checks: calculator reports independent example, copy and reset; invalid input is announced and responsive layout fits",
+        "Additional public checks: Zero-interest quarterly schedule and invalid rate; reset.",
+        "Public homepage: 49 distinct visible cards and canonical routes; previous 43 tools HTTP 200 and matching raw source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/loan-repayment-calculator/",
+        "http_status": 200,
+        "checked_at": "2026-11-04T03:49:38.675327+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41768704851,
+    "commit": "4bbdf90f14f33066ab9bcd2db1a31132b800b62c",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41768704972,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "loan-repayment-calculator",
+    "url": "https://everydaydigitalbox.com/loan-repayment-calculator/",
+    "http_status": 200,
+    "source_sha256": "0c91db643a1a26ad46026be1699a50cb3b96a28d11edd74b6ede209e98c88916",
+    "live_sha256": "0c91db643a1a26ad46026be1699a50cb3b96a28d11edd74b6ede209e98c88916",
+    "source_matches": true,
+    "checked_at": "2026-11-04T03:49:38.675327+00:00",
+    "raw_sha256": "05697da1baea9ee147a2f27abe956652cea5fe3251d8d9860be2778643680d98"
+  },
+  "index_http_evidence": {
+    "path": "loan-repayment-calculator/index.html",
+    "status": 200,
+    "match": true,
+    "ga": false,
+    "ids": [],
+    "config_count": 0,
+    "external_scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+    ],
+    "checked_at": "2026-11-04T03:47:32.398873+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "interaction_window": {
+      "after": "2026-11-04T03:48:13.868Z",
+      "before": "2026-11-04T03:51:08.225Z"
+    },
+    "tests": [
+      "calculator reports independent example, copy and reset",
+      "invalid input is announced and responsive layout fits"
+    ],
+    "extra_started_at": "2026-11-04T03:51:08.225Z",
+    "extra_finished_at": "2026-11-04T03:51:12.093Z",
+    "extra_checks": [
+      "Zero-interest quarterly schedule and invalid rate; reset."
+    ],
+    "unexpected_errors": 0,
+    "scope": "Actual public HTTPS. Isolated headless Chromium; synthetic files and data. Clipboard/download/print simulated."
+  },
+  "homepage": {
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 49,
+    "all_visible": true,
+    "canonical_routes_match": true,
+    "routes_checked_at": "2026-11-04T03:48:13.868Z",
+    "visibility_check_window": {
+      "after": "2026-11-04T03:51:12.093Z",
+      "before": "2026-11-04T03:54:29.367702+00:00"
+    }
+  },
+  "previous_evidence": "audit/LOAN_REPAYMENT_CALCULATOR_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows with simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, download and print invocations are simulated; native OS clipboard, print and save dialogs were not tested.",
+    "Previous 43 pages verified through public HTTP/source identity and post-merge CI; no new individual public interactions claimed.",
+    "Release metadata and Live labels require a separately authorized merge and deployment.",
+    "Values are estimates with documented half-up rounding; no financial, accounting or tax compliance claim."
+  ]
+}
