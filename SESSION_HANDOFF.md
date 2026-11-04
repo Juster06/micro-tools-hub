@@ -1,12 +1,12 @@
 # Session handoff
 
-## Task 17 — consent-aware analytics candidate
+## Task 17 — deployed consent-aware analytics
 
-PR #29 merged as `8441c3202a5f23c5e2afd8cb8b89901fc21ffad3`; Pages deployment 41805143697 and post-merge Functional CI 41805144759 succeeded. The public registry records 93 registered, 50 RELEASED, 42 PLANNED and 1 BLOCKED. All 50 tool pages and the homepage were accessible with matching approved source. The 50-tool milestone is complete; the next generated target is 100.
+PR #30 merged as `c1c050c8594795dcab25d0e2362c0bfb472a5165`; Pages run 41811430121 and post-merge Functional CI 41811430196 succeeded. The homepage, privacy notice, consent script and all 50 released tools were independently verified against deployed source. Fresh isolated Chromium tests verified first-visit choice, rejection, acceptance, navigation and withdrawal. GA4 browser collection requests were verified; property-level reporting remains unverified. Task 17.1 finalizes documentation and source-bound deployment evidence; see `audit/TASK_17_DEPLOYMENT.json` and `audit/TASK_17_CONSENT_REVIEW.md`. No legal compliance certification is claimed.
 
-This unmerged branch proposes a shared consent component for the homepage and all 50 tools, with no Google tag before affirmative consent, an accessible choice and withdrawal control, and a privacy notice. The existing public homepage consent concern remains unresolved until any separately authorized merge, deployment and independent verification. The three publicly accessible templates remain unchanged. Prior publication evidence is retained; `audit/TASK_17_CANDIDATE.json` binds only reversible consent-related changes to local candidate source and does not claim public deployment. See `audit/TASK_17_CONSENT_REVIEW.md` for baseline, testing scope, legal questions and limitations. No legal compliance certification is claimed.
+The registry remains 93 registered, 50 RELEASED, 0 TESTED, 0 READY, 42 PLANNED and 1 BLOCKED. The next planning checkpoint is 75 released tools (50/75); the registry's existing generated growth target remains 100. The three public development templates remain unchanged. Prior per-tool publication records and the pre-deployment candidate snapshot are retained as historical evidence.
 
-**Next major task:** Complete Task 17 tests and protected-branch PR review. Await separate authorization before merge or deployment. After any approved deployment, independently verify consent behavior and reconcile the candidate evidence with actual public source.
+**Next major task:** Plan Task 18 toward the 75-tool planning checkpoint when authorized. Task 17.1 is documentation and evidence only; its pull request requires separate authorization to merge.
 
 ## Historical Task 16.1 — public verification before release merge
 
