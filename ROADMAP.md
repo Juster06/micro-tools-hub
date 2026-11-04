@@ -1,6 +1,12 @@
 # Development roadmap
 
-## Task 14.1 — six-tool public verification, release PR pending
+## Task 15 — development in progress
+
+Task 14 is complete and publicly verified. PR #24 merged as `130a18045022dfaadec330d13f89b8316c5ccf74`; PR #25 merged as `11fb4b46b235da6f61bb558360decf3bbb946f4c`. Pages deployment 41763445983 and post-merge Functional CI 41763446668 succeeded. The public homepage, all 43 canonical routes and source identity were verified. The registry records 43 RELEASED tools; the current milestone is 50, with seven releases remaining.
+
+Task 15 development on `feat/task-15-six-tools` implements YouTube Thumbnail Preview, Pomodoro Timer, CSV Column Extractor, Duplicate Row Finder, Loan Repayment Calculator and Invoice Generator. Local inventory: 93 registered, 43 RELEASED, 6 TESTED, 0 READY, 43 PLANNED and 1 BLOCKED. The six new homepage cards read Tested · publication pending; their publication evidence is null. The released milestone remains 43/50. Source-bound local audits record test scope and limits. The six utilities cannot be marked RELEASED until independently verified after a separately authorized merge and deployment. Historical administrator-bypass use for PR #21 remains unverified.
+
+## Historical Task 14.1 — six-tool public verification before merge
 
 PR #24 merged as `130a18045022dfaadec330d13f89b8316c5ccf74`. The [Pages deployment 41759841983](https://github.com/Juster06/micro-tools-hub/actions/runs/41759841983) and [post-merge functional CI 41759840731](https://github.com/Juster06/micro-tools-hub/actions/runs/41759840731) succeeded for that commit. Public HTTPS checks matched the merged homepage and all 43 tool pages byte for byte; all 43 canonical links, custom domain and Analytics identifier were confirmed. The previous 37 pages were checked by public HTTP/source identity and post-merge CI, without new individual public interaction tests.
 
@@ -267,8 +273,8 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | excel-sandbox | Excel Formula Sandbox & Analyzer | RELEASED | P2 | M | Modern browser DOM APIs |
 | csv-json-converter | CSV ↔ JSON Converter | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | excel-to-csv | Excel to CSV | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
-| csv-column-extractor | CSV Column Extractor | PLANNED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
-| duplicate-row-finder | Duplicate Row Finder | PLANNED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
+| csv-column-extractor | CSV Column Extractor | TESTED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
+| duplicate-row-finder | Duplicate Row Finder | TESTED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-data-cleaner | CSV Data Cleaner | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-merger | CSV Merger | PLANNED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | json-formatter | JSON Formatter | RELEASED | P1 | S | Native JSON.parse and JSON.stringify |
@@ -301,7 +307,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | social-media-line-break-tool | Social Media Line Break Tool | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | emoji-picker | Emoji Picker | PLANNED | P2 | M | Reviewed local emoji dataset and usage license |
 | hashtag-counter | Hashtag Counter | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
-| youtube-thumbnail-preview | YouTube Thumbnail Preview | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
+| youtube-thumbnail-preview | YouTube Thumbnail Preview | TESTED | P2 | M | Browser-native approach; scope review before implementation |
 | posting-calendar-generator | Posting Calendar Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | username-generator | Username Generator | RELEASED | P2 | S | Browser-native approach; scope review before implementation |
 
@@ -316,7 +322,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | age-calculator | Age Calculator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | date-difference-calculator | Date Difference Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | working-days-calculator | Working Days Calculator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
-| loan-repayment-calculator | Loan Repayment Calculator | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
+| loan-repayment-calculator | Loan Repayment Calculator | TESTED | P2 | M | Browser-native approach; scope review before implementation |
 | profit-margin-calculator | Profit Margin Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | compound-interest-calculator | Compound Interest Calculator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 
@@ -352,12 +358,12 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
-| pomodoro-timer | Pomodoro Timer | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
+| pomodoro-timer | Pomodoro Timer | TESTED | P2 | M | Browser-native approach; scope review before implementation |
 | countdown-timer | Countdown Timer | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | random-name-picker | Random Name Picker | RELEASED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | decision-wheel | Decision Wheel | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | local-to-do-list | Local To-Do List | RELEASED | P2 | M | Explicit opt-in localStorage, export format and clear-all behavior |
-| invoice-generator | Invoice Generator | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
+| invoice-generator | Invoice Generator | TESTED | P2 | L | Browser-native approach; scope review before implementation |
 | resume-builder | Resume Builder | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
 | meeting-agenda-generator | Meeting Agenda Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | printable-calendar-generator | Printable Calendar Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "annual",
+      "input": "1000",
+      "options": {
+        "rate": "10",
+        "frequency": "1",
+        "years": "2"
+      },
+      "expected": "Estimated periodic payment: 576.19\nTotal repayment: 1152.38\nTotal interest: 152.38\nPayments per year: 1\nPeriod | Payment | Interest | Remaining balance\n1 | 576.19 | 100.00 | 523.81\n2 | 576.19 | 52.38 | 0.00\nRounding: half-up to cents each period; final payment adjusted."
+    },
+    {
+      "id": "zero-rate",
+      "input": "100",
+      "options": {
+        "rate": "0",
+        "frequency": "4",
+        "years": "1"
+      },
+      "expected": "Estimated periodic payment: 25.00\nTotal repayment: 100.00\nTotal interest: 0.00\nPayments per year: 4\nPeriod | Payment | Interest | Remaining balance\n1 | 25.00 | 0.00 | 75.00\n2 | 25.00 | 0.00 | 50.00\n3 | 25.00 | 0.00 | 25.00\n4 | 25.00 | 0.00 | 0.00\nRounding: half-up to cents each period; final payment adjusted."
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "Principal"
+    },
+    {
+      "id": "negative",
+      "input": "-1",
+      "options": {},
+      "error": "Principal"
+    },
+    {
+      "id": "zero",
+      "input": "0",
+      "options": {},
+      "error": "Principal"
+    },
+    {
+      "id": "too-precise",
+      "input": "0.001",
+      "options": {},
+      "error": "Principal"
+    },
+    {
+      "id": "invalid-rate",
+      "input": "1",
+      "options": {
+        "rate": "101"
+      },
+      "error": "Rate"
+    },
+    {
+      "id": "invalid-term",
+      "input": "1",
+      "options": {
+        "years": "0"
+      },
+      "error": "years"
+    },
+    {
+      "id": "zero-rounded",
+      "input": "0.01",
+      "options": {
+        "years": "50",
+        "frequency": "12"
+      },
+      "error": "zero"
+    }
+  ]
+}

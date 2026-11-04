@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "reorder",
+      "input": "name,name,note\nAda,Bee,\"hello,\nworld\"",
+      "options": {
+        "columns": "3,1"
+      },
+      "expected": "note,name\r\n\"hello,\nworld\",Ada"
+    },
+    {
+      "id": "formula",
+      "input": "safe,risk\nfirst,\"  =1+1\"\nsecond,+SUM(A1)",
+      "options": {
+        "columns": "2"
+      },
+      "expected": "risk\r\n'  =1+1\r\n'+SUM(A1)"
+    },
+    {
+      "id": "pad",
+      "input": "a,b\nx",
+      "options": {
+        "columns": "2,1"
+      },
+      "expected": "b,a\r\n,x"
+    },
+    {
+      "id": "duplicate-selection",
+      "input": "a,b",
+      "options": {
+        "columns": "1,1"
+      },
+      "error": "unique"
+    },
+    {
+      "id": "bad-index",
+      "input": "a,b",
+      "options": {
+        "columns": "3"
+      },
+      "error": "unique"
+    },
+    {
+      "id": "unclosed",
+      "input": "a,\"b",
+      "options": {
+        "columns": "1"
+      },
+      "error": "not closed"
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "Enter CSV"
+    },
+    {
+      "id": "quotes",
+      "input": "a,b\n1,\"x\"\"y\"",
+      "options": {
+        "columns": "2"
+      },
+      "expected": "b\r\n\"x\"\"y\""
+    }
+  ]
+}

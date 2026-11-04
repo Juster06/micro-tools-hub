@@ -15,10 +15,12 @@
     "tests/tools/case-converter/logic.test.mjs",
     "tests/tools/compound-interest-calculator/logic.test.mjs",
     "tests/tools/countdown-timer/logic.test.mjs",
+    "tests/tools/csv-column-extractor/logic.test.mjs",
     "tests/tools/csv-viewer/logic.test.mjs",
     "tests/tools/date-difference-calculator/logic.test.mjs",
     "tests/tools/discount-calculator/logic.test.mjs",
     "tests/tools/duplicate-line-remover/logic.test.mjs",
+    "tests/tools/duplicate-row-finder/logic.test.mjs",
     "tests/tools/file-size-converter/logic.test.mjs",
     "tests/tools/find-and-replace/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
@@ -26,12 +28,15 @@
     "tests/tools/image-resizer/logic.test.mjs",
     "tests/tools/image-rotator/logic.test.mjs",
     "tests/tools/image-watermark/logic.test.mjs",
+    "tests/tools/invoice-generator/logic.test.mjs",
     "tests/tools/json-formatter/logic.test.mjs",
     "tests/tools/json-to-txt/logic.test.mjs",
+    "tests/tools/loan-repayment-calculator/logic.test.mjs",
     "tests/tools/local-to-do-list/logic.test.mjs",
     "tests/tools/meeting-agenda-generator/logic.test.mjs",
     "tests/tools/percentage-calculator/logic.test.mjs",
     "tests/tools/percentage-change-calculator/logic.test.mjs",
+    "tests/tools/pomodoro-timer/logic.test.mjs",
     "tests/tools/posting-calendar-generator/logic.test.mjs",
     "tests/tools/printable-calendar-generator/logic.test.mjs",
     "tests/tools/profit-margin-calculator/logic.test.mjs",
@@ -48,7 +53,8 @@
     "tests/tools/uuid-generator/logic.test.mjs",
     "tests/tools/vat-calculator/logic.test.mjs",
     "tests/tools/working-days-calculator/logic.test.mjs",
-    "tests/tools/youtube-description-formatter/logic.test.mjs"
+    "tests/tools/youtube-description-formatter/logic.test.mjs",
+    "tests/tools/youtube-thumbnail-preview/logic.test.mjs"
   ],
   "browser_files": [
     "tests/tools/age-calculator/extended-browser.test.mjs",
@@ -61,6 +67,8 @@
     "tests/tools/compound-interest-calculator/integration-browser.test.mjs",
     "tests/tools/countdown-timer/extended-browser.test.mjs",
     "tests/tools/countdown-timer/integration-browser.test.mjs",
+    "tests/tools/csv-column-extractor/extended-browser.test.mjs",
+    "tests/tools/csv-column-extractor/integration-browser.test.mjs",
     "tests/tools/csv-viewer/extended-browser.test.mjs",
     "tests/tools/csv-viewer/integration-browser.test.mjs",
     "tests/tools/date-difference-calculator/extended-browser.test.mjs",
@@ -69,6 +77,8 @@
     "tests/tools/discount-calculator/integration-browser.test.mjs",
     "tests/tools/duplicate-line-remover/extended-browser.test.mjs",
     "tests/tools/duplicate-line-remover/integration-browser.test.mjs",
+    "tests/tools/duplicate-row-finder/extended-browser.test.mjs",
+    "tests/tools/duplicate-row-finder/integration-browser.test.mjs",
     "tests/tools/file-size-converter/extended-browser.test.mjs",
     "tests/tools/file-size-converter/integration-browser.test.mjs",
     "tests/tools/find-and-replace/extended-browser.test.mjs",
@@ -83,10 +93,14 @@
     "tests/tools/image-rotator/integration-browser.test.mjs",
     "tests/tools/image-watermark/extended-browser.test.mjs",
     "tests/tools/image-watermark/integration-browser.test.mjs",
+    "tests/tools/invoice-generator/extended-browser.test.mjs",
+    "tests/tools/invoice-generator/integration-browser.test.mjs",
     "tests/tools/json-formatter/extended-browser.test.mjs",
     "tests/tools/json-formatter/integration-browser.test.mjs",
     "tests/tools/json-to-txt/extended-browser.test.mjs",
     "tests/tools/json-to-txt/integration-browser.test.mjs",
+    "tests/tools/loan-repayment-calculator/extended-browser.test.mjs",
+    "tests/tools/loan-repayment-calculator/integration-browser.test.mjs",
     "tests/tools/local-to-do-list/extended-browser.test.mjs",
     "tests/tools/local-to-do-list/integration-browser.test.mjs",
     "tests/tools/meeting-agenda-generator/extended-browser.test.mjs",
@@ -95,6 +109,8 @@
     "tests/tools/percentage-calculator/integration-browser.test.mjs",
     "tests/tools/percentage-change-calculator/extended-browser.test.mjs",
     "tests/tools/percentage-change-calculator/integration-browser.test.mjs",
+    "tests/tools/pomodoro-timer/extended-browser.test.mjs",
+    "tests/tools/pomodoro-timer/integration-browser.test.mjs",
     "tests/tools/posting-calendar-generator/extended-browser.test.mjs",
     "tests/tools/posting-calendar-generator/integration-browser.test.mjs",
     "tests/tools/printable-calendar-generator/extended-browser.test.mjs",
@@ -128,7 +144,9 @@
     "tests/tools/working-days-calculator/extended-browser.test.mjs",
     "tests/tools/working-days-calculator/integration-browser.test.mjs",
     "tests/tools/youtube-description-formatter/extended-browser.test.mjs",
-    "tests/tools/youtube-description-formatter/integration-browser.test.mjs"
+    "tests/tools/youtube-description-formatter/integration-browser.test.mjs",
+    "tests/tools/youtube-thumbnail-preview/extended-browser.test.mjs",
+    "tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs"
   ],
   "tools": {
     "social-counter": {
@@ -349,6 +367,36 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "loan-repayment-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "csv-column-extractor": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "duplicate-row-finder": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "youtube-thumbnail-preview": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "pomodoro-timer": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "invoice-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -402,8 +450,8 @@
   ],
   "minimum_tests": {
     "python-project": 142,
-    "node-regression": 291,
-    "browser-tests": 371
+    "node-regression": 313,
+    "browser-tests": 395
   },
   "aggregate": {
     "job": "required-checks",

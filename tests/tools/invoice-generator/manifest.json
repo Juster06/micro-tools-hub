@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "invoice-generator",
+  "canonical_path": "invoice-generator/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

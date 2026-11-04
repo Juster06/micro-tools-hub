@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "defaults",
+      "input": "25",
+      "expected": {
+        "work": 25,
+        "shortBreak": 5,
+        "longBreak": 15,
+        "sessions": 4
+      }
+    },
+    {
+      "id": "custom",
+      "input": "1",
+      "options": {
+        "shortBreak": "2",
+        "longBreak": "3",
+        "sessions": "2"
+      },
+      "expected": {
+        "work": 1,
+        "shortBreak": 2,
+        "longBreak": 3,
+        "sessions": 2
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "Work"
+    },
+    {
+      "id": "zero",
+      "input": "0",
+      "error": "Work"
+    },
+    {
+      "id": "too-big",
+      "input": "241",
+      "error": "Work"
+    },
+    {
+      "id": "fraction",
+      "input": "1.5",
+      "error": "Work"
+    },
+    {
+      "id": "bad-sessions",
+      "input": "1",
+      "options": {
+        "sessions": "13"
+      },
+      "error": "Sessions"
+    },
+    {
+      "id": "bad-break",
+      "input": "1",
+      "options": {
+        "shortBreak": "0"
+      },
+      "error": "Short"
+    }
+  ]
+}

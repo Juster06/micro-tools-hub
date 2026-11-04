@@ -1,0 +1,6 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import vm from 'node:vm';import {fileURLToPath} from 'node:url';import {loadLogic} from '../../../scripts/tool-tests/runner.mjs';
+const c=loadLogic(fileURLToPath(new URL('../../../csv-column-extractor/index.html',import.meta.url))).context;function run(input,options={}){c.input=input;c.options=options;return vm.runInContext('EDB_TOOL.run(input,options)',c,{timeout:1000})}
+test('quoted multiline, repeated headers, ordering and padding',()=>assert.equal(run('x,x,c\nA,B,"one,\ntwo"\nonly',{columns:'3,2,1'}),'c,x,x\r\n"one,\ntwo",B,A\r\n,,only'));
+test('formula markers after spaces or control characters are prefixed',()=>{for(const s of ['=1','+1','-1','@cmd','  =1','\tvalue',' \t=1'])assert.equal(run('head\n"'+s+'"',{columns:'1'}),'head\r\n\''+s)});
+test('malformed or oversized CSV and invalid choices fail',()=>{for(const [s,o] of [['',{}],['a,"b',{}],['a,b',{columns:'0'}],['a,b',{columns:'1,1'}],['x'.repeat(10001),{}],['x\n'.repeat(2001),{}]])assert.throws(()=>run(s,o))});
+test('unicode, escaped quotes and custom delimiter preserve text',()=>assert.equal(run('first;second\nZoë;"λ""x"',{delimiter:'semicolon',columns:'2,1'}),'second,first\r\n"λ""x",Zoë'));

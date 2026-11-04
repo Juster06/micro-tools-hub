@@ -1,0 +1,4 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import vm from 'node:vm';import {fileURLToPath} from 'node:url';import {loadLogic} from '../../../scripts/tool-tests/runner.mjs';
+const c=loadLogic(fileURLToPath(new URL('../../../youtube-thumbnail-preview/index.html',import.meta.url))).context;function run(input){c.input=input;return vm.runInContext('EDB_TOOL.run(input)',c,{timeout:1000})}
+test('aspect ratio and dimensions are reported',()=>{const v=run('{"width":1600,"height":900}');assert.equal(v.ratio,'1.778');assert.equal(v.target,'16:9');assert.equal(run('{"width":100,"height":100}').ratio,'1.000')});
+test('invalid and out of range dimensions fail',()=>{for(const x of ['','{}','{"width":0,"height":1}','{"width":4096,"height":4096}','{"width":1.1,"height":1}'])assert.throws(()=>run(x))});

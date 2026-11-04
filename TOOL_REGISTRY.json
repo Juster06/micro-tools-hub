@@ -2028,7 +2028,7 @@
       "category": "data",
       "description": "Select named or numbered columns from CSV data.",
       "directory_path": "csv-column-extractor",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2041,12 +2041,38 @@
         "Column reorder",
         "Download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 15 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "afcbdc9165be4eb7f756c5fcc95360b95b462307",
+        "source_sha256": "4768acd893a0eb428fe640f60f5fc3731ec9105b0a02589e60dedb81e2657994",
+        "evidence_path": "audit/CSV_COLUMN_EXTRACTOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "8 deterministic inline logic fixtures",
+          "2 real Chromium browser fixtures / 4 assertions",
+          "4 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolFile",
+        "delimiter",
+        "columns",
+        "tableStats",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "duplicate-row-finder",
@@ -2054,7 +2080,7 @@
       "category": "data",
       "description": "Find or remove repeated CSV records.",
       "directory_path": "duplicate-row-finder",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2067,12 +2093,40 @@
         "Keep-first option",
         "Download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 15 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "0022edd3853a2efc8aaa760e593180c9269a08fd",
+        "source_sha256": "602b89fd79b59506cd1c16a49528afb4f9f38ebd4a3dbfaeaf7df71757fd5e46",
+        "evidence_path": "audit/DUPLICATE_ROW_FINDER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "7 deterministic inline logic fixtures",
+          "2 real Chromium browser fixtures / 5 assertions",
+          "4 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolFile",
+        "delimiter",
+        "columns",
+        "ignoreCase",
+        "trimSpace",
+        "tableStats",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "csv-data-cleaner",
@@ -3002,7 +3056,7 @@
       "category": "social",
       "description": "Preview a local thumbnail at typical feed sizes.",
       "directory_path": "youtube-thumbnail-preview",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3014,12 +3068,37 @@
         "Mobile and desktop frames",
         "No upload or performance prediction"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 15 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "0341c8c603a70c0099a9510483a02711e92c9d4f",
+        "source_sha256": "d8e62e04de8a81baf0c29067c2cc011cf2ee8ef0f2d94e59ce84864d677ace90",
+        "evidence_path": "audit/YOUTUBE_THUMBNAIL_PREVIEW_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "6 deterministic inline logic fixtures",
+          "2 real Chromium browser fixtures / 4 assertions",
+          "2 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "imageInfo",
+        "desktopPreview",
+        "mobilePreview",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "posting-calendar-generator",
@@ -3537,7 +3616,7 @@
       "category": "calculator",
       "description": "Estimate fixed-rate loan payments from explicit assumptions.",
       "directory_path": "loan-repayment-calculator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3549,12 +3628,37 @@
         "Payment schedule",
         "Exclude unprovided fees and variable rates"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 15 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "a92818fdaabb1a048b0f44c32cb3ed79e57eff09",
+        "source_sha256": "0c91db643a1a26ad46026be1699a50cb3b96a28d11edd74b6ede209e98c88916",
+        "evidence_path": "audit/LOAN_REPAYMENT_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "9 deterministic inline logic fixtures",
+          "2 real Chromium browser fixtures / 4 assertions",
+          "5 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "rate",
+        "frequency",
+        "years"
+      ]
     },
     {
       "id": "profit-margin-calculator",
@@ -4223,7 +4327,7 @@
       "category": "productivity",
       "description": "Run a work and break timer with user-selected durations.",
       "directory_path": "pomodoro-timer",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4235,14 +4339,44 @@
         "Background-tab behavior",
         "Optional sound initiated by user"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 15 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [
         "countdown-timer"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "a7e53cb2c4a046ef03e641c14668b07619fe4747",
+        "source_sha256": "dbed29eb960ad17a28ad15dcc53f94f65639e0f610d432c7ec265b633338b2a3",
+        "evidence_path": "audit/POMODORO_TIMER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "8 deterministic inline logic fixtures",
+          "2 real Chromium browser fixtures / 5 assertions",
+          "3 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "shortBreak",
+        "longBreak",
+        "sessions",
+        "sound",
+        "pauseBtn",
+        "timerPhase",
+        "timerDisplay",
+        "cycleInfo",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "countdown-timer",
@@ -4443,7 +4577,7 @@
       "category": "productivity",
       "description": "Create a printable invoice from user-entered business details.",
       "directory_path": "invoice-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4455,12 +4589,42 @@
         "Print layout",
         "No official accounting-compliance claim"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 15 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "01727c84d67277f15baf78e507b8213bf161469d",
+        "source_sha256": "dbe6ec29fbccc0694f62055c85608241e1493d88ce09d1fdafd881a6b49d4fb3",
+        "evidence_path": "audit/INVOICE_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "6 deterministic inline logic fixtures",
+          "2 real Chromium browser fixtures / 4 assertions",
+          "4 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "invoiceDate",
+        "seller",
+        "customer",
+        "taxRate",
+        "itemList",
+        "addItem",
+        "invoicePaper",
+        "printBtn",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "resume-builder",

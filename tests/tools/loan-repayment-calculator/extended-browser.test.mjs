@@ -1,0 +1,8 @@
+import {test,before,beforeEach,after} from 'node:test';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+import {launchBrowser,findBrowser} from '../../../scripts/tool-tests/browser.mjs';
+let b;before(async()=>{b=await launchBrowser(findBrowser())});beforeEach(async()=>b.load(fileURLToPath(new URL('../../../loan-repayment-calculator/index.html',import.meta.url))));after(async()=>b?.close());
+async function set(id,v){await b.evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)});e.value=${JSON.stringify(v)};e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}));return true})()`)}
+test('calculator reports independent example, copy and reset',async()=>{await set('toolInput','1000');await set('rate','10');await set('frequency','1');await set('years','2');await b.evaluate('runBtn.click();true');assert.match(await b.evaluate('toolOutput.value'),/Total repayment: 1152.38/);await b.evaluate('copyBtn.click();true');assert.match(await b.evaluate('window.__edbClipboard.value'),/Total interest: 152.38/);await b.evaluate('clearBtn.click();true');assert.equal(await b.evaluate('toolInput.value'), '');assert.equal(await b.evaluate('toolOutput.value'),'')});
+test('invalid input is announced and responsive layout fits',async()=>{await set('toolInput','-1');await b.evaluate('runBtn.click();true');assert.equal(await b.evaluate('toolError.hidden'),false);for(const width of [320,375,768,1440]){await b.call('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<500});assert.equal(await b.evaluate('document.documentElement.scrollWidth>innerWidth'),false)}});
