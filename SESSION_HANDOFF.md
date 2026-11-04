@@ -1,6 +1,14 @@
 # Session handoff
 
-## Task 15.1 — public verification; release PR pending
+## Task 16 — CSV Merger development in progress
+
+Task 15 is complete and publicly verified. PR #26 merged as `4bbdf90f14f33066ab9bcd2db1a31132b800b62c`; PR #27 merged as `61135c1111360a4867446bb3649996713460b44c`. Pages deployment 41773888585 and post-merge Functional CI 41773888536 succeeded. Public source identity, 49 routes and the six Task 15 utilities were verified. The registry has 49 RELEASED tools, with one release remaining to the milestone of 50.
+
+Task 16 CSV Merger is implemented and locally TESTED on `feat/csv-merger`; publication is pending. The branch inventory is 93 registered, 49 RELEASED, 1 TESTED, 0 READY, 42 PLANNED and 1 BLOCKED. The released milestone remains 49/50 (98%). Files are processed locally with bounded UTF-8 input, exact ordered headers, bounded preview and formula-risk export safeguards. See `audit/TASK_16_DEVELOPMENT_PLAN.md` and `audit/CSV_MERGER_VERIFICATION.json` for limits and test scope. It must not be marked RELEASED until separately authorized integration and independent public verification. The previously identified Google Analytics consent concern remains unresolved; analytics configuration is outside this task. Historical administrator-bypass use for PR #21 remains unverified.
+
+**Next major task:** Complete Task 16 regression checks and owner review of its pull request. Await separate authorization before merge or deployment, then independently verify the public utility before any RELEASED update.
+
+## Historical Task 15.1 — public verification before release merge
 
 PR #26 merged as `4bbdf90f14f33066ab9bcd2db1a31132b800b62c`. Pages deployment 41768704851 and post-merge Functional CI 41768704972 succeeded. The public homepage and 49 tool routes returned HTTP 200 with exact source identity; 49 visible canonical cards were verified. The previous 43 tools were checked through source identity and post-merge CI, without new individual public interaction tests.
 
