@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-04",
-  "source_revision": "a92818fdaabb1a048b0f44c32cb3ed79e57eff09",
+  "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
   "pages": [
     {
       "path": "loan-repayment-calculator/index.html",
@@ -46,5 +46,7 @@
     "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
     "No public deployment or publication has been verified."
   ],
-  "contract": "audit/TASK_15_DEVELOPMENT_PLAN.md"
+  "contract": "audit/TASK_15_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "a92818fdaabb1a048b0f44c32cb3ed79e57eff09",
+  "source_tree_sha": "5c7a34fe0f2873d1075d4c998da3e8290eeb7a2c"
 }

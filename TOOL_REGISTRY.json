@@ -2047,7 +2047,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "afcbdc9165be4eb7f756c5fcc95360b95b462307",
+        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
         "source_sha256": "4768acd893a0eb428fe640f60f5fc3731ec9105b0a02589e60dedb81e2657994",
         "evidence_path": "audit/CSV_COLUMN_EXTRACTOR_VERIFICATION.json",
         "test_scope": [
@@ -2099,7 +2099,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "0022edd3853a2efc8aaa760e593180c9269a08fd",
+        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
         "source_sha256": "602b89fd79b59506cd1c16a49528afb4f9f38ebd4a3dbfaeaf7df71757fd5e46",
         "evidence_path": "audit/DUPLICATE_ROW_FINDER_VERIFICATION.json",
         "test_scope": [
@@ -3074,7 +3074,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "0341c8c603a70c0099a9510483a02711e92c9d4f",
+        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
         "source_sha256": "d8e62e04de8a81baf0c29067c2cc011cf2ee8ef0f2d94e59ce84864d677ace90",
         "evidence_path": "audit/YOUTUBE_THUMBNAIL_PREVIEW_VERIFICATION.json",
         "test_scope": [
@@ -3634,7 +3634,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "a92818fdaabb1a048b0f44c32cb3ed79e57eff09",
+        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
         "source_sha256": "0c91db643a1a26ad46026be1699a50cb3b96a28d11edd74b6ede209e98c88916",
         "evidence_path": "audit/LOAN_REPAYMENT_CALCULATOR_VERIFICATION.json",
         "test_scope": [
@@ -4347,7 +4347,7 @@
         "countdown-timer"
       ],
       "verification": {
-        "source_revision": "a7e53cb2c4a046ef03e641c14668b07619fe4747",
+        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
         "source_sha256": "dbed29eb960ad17a28ad15dcc53f94f65639e0f610d432c7ec265b633338b2a3",
         "evidence_path": "audit/POMODORO_TIMER_VERIFICATION.json",
         "test_scope": [
@@ -4595,7 +4595,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "01727c84d67277f15baf78e507b8213bf161469d",
+        "source_revision": "dc9f77c5831bc3f83af8dc465ad73021d60ff7a9",
         "source_sha256": "dbe6ec29fbccc0694f62055c85608241e1493d88ce09d1fdafd881a6b49d4fb3",
         "evidence_path": "audit/INVOICE_GENERATOR_VERIFICATION.json",
         "test_scope": [
