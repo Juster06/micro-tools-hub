@@ -3,7 +3,7 @@
   "state": "PENDING_DEPLOYMENT",
   "verified_on": "2026-11-04",
   "base_revision": "8441c3202a5f23c5e2afd8cb8b89901fc21ffad3",
-  "description": "Consent-only local candidate. Previous publication evidence remains bound to previously deployed source; candidate is not yet deployed or publicly verified.",
+  "description": "Historical pre-deployment candidate snapshot: PENDING_DEPLOYMENT was the state at that time. Independent verification of the deployed bytes is recorded in audit/TASK_17_DEPLOYMENT.json; original previous-source evidence and candidate hashes remain preserved.",
   "assets": {
     "assets/consent.js": "83d76f2a1cbe5b7cc7ec1827e8a78dd6a63f6739f2a000ca8d52d5aa8021bfa8",
     "privacy.html": "2f827a73285cde7a2449b77364a0aeec30bcf29e244d976162d4200fb97ab9ab"
