@@ -1,0 +1,109 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "130a18045022dfaadec330d13f89b8316c5ccf74",
+  "pages": [
+    {
+      "path": "compound-interest-calculator/index.html",
+      "source_sha256": "1e5a195d1d099471aacc6b544aa505ca3750b79513bd9d9595fcc4028c27ceb1",
+      "checks": [
+        "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+        "Fresh public Chromium interactions: estimate, contribution timing, copy and reset; invalid input and responsive widths",
+        "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Independently derived monthly example, zero-rate contributions, half-up cent rounding, overflow rejection and estimate disclosure.",
+        "Public homepage: 43 distinct visible canonical routes; prior 37 released pages returned HTTP 200 with matching raw source"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/compound-interest-calculator/",
+        "http_status": 200,
+        "checked_at": "2026-11-04T02:26:37.367235+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "run_id": 41759841983,
+    "commit": "130a18045022dfaadec330d13f89b8316c5ccf74",
+    "conclusion": "success"
+  },
+  "post_merge_ci": {
+    "run_id": 41759840731,
+    "conclusion": "success",
+    "required_jobs": 4
+  },
+  "public_source": {
+    "id": "compound-interest-calculator",
+    "status": "TESTED",
+    "url": "https://everydaydigitalbox.com/compound-interest-calculator/index.html",
+    "http_status": 200,
+    "source_sha256": "1e5a195d1d099471aacc6b544aa505ca3750b79513bd9d9595fcc4028c27ceb1",
+    "live_sha256": "1e5a195d1d099471aacc6b544aa505ca3750b79513bd9d9595fcc4028c27ceb1",
+    "source_matches": true,
+    "checked_at": "2026-11-04T02:23:55.251826+00:00"
+  },
+  "canonical_public_url": {
+    "id": "compound-interest-calculator",
+    "url": "https://everydaydigitalbox.com/compound-interest-calculator/",
+    "http_status": 200,
+    "checked_at": "2026-11-04T02:26:37.367235+00:00"
+  },
+  "raw_public_source": {
+    "id": "compound-interest-calculator",
+    "path": "compound-interest-calculator/index.html",
+    "url": "https://everydaydigitalbox.com/compound-interest-calculator/index.html",
+    "http_status": 200,
+    "approved_raw_sha256": "3d6c470b5d276cf43e8aac5244663a77a34ab87a4e43bd59a20f1d7701e47a2c",
+    "public_raw_sha256": "3d6c470b5d276cf43e8aac5244663a77a34ab87a4e43bd59a20f1d7701e47a2c",
+    "raw_match": true,
+    "checked_at": "2026-11-04T02:24:07.500139+00:00"
+  },
+  "homepage_raw_source": {
+    "id": "homepage",
+    "path": "index.html",
+    "url": "https://everydaydigitalbox.com/",
+    "http_status": 200,
+    "approved_raw_sha256": "44b2490c6ccc53f7d3ac762040b8310925bedcb908b6bf5cbc32f3626bd51be3",
+    "public_raw_sha256": "44b2490c6ccc53f7d3ac762040b8310925bedcb908b6bf5cbc32f3626bd51be3",
+    "raw_match": true,
+    "checked_at": "2026-11-04T02:24:08.088818+00:00"
+  },
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "extra_checks_started_at": "2026-11-04T02:26:24.116Z",
+    "extra_checks_finished_at": "2026-11-04T02:26:26.240Z",
+    "interaction_test_time_window": {
+      "after": "2026-11-04T02:24:34.379Z",
+      "before": "2026-11-04T02:26:24.116Z",
+      "note": "The 20-test run completed between these observed timestamps."
+    },
+    "url": "https://everydaydigitalbox.com/compound-interest-calculator/",
+    "tests": [
+      "estimate, contribution timing, copy and reset",
+      "invalid input and responsive widths"
+    ],
+    "extra_checks": [
+      "Correct public route, title, required JavaScript and expected styling CDN",
+      "Independently derived monthly example, zero-rate contributions, half-up cent rounding, overflow rejection and estimate disclosure."
+    ],
+    "unexpected_errors": 0,
+    "scope": "Actual public HTTPS, isolated headless Chromium on Windows. Clipboard, download and storage failure cases simulated; viewports emulated. Synthetic task content only."
+  },
+  "homepage": {
+    "url": "https://everydaydigitalbox.com/",
+    "cards": 43,
+    "all_visible": true,
+    "canonical_routes_match": true,
+    "analytics_preserved": true,
+    "cname": "everydaydigitalbox.com",
+    "checked_at": "2026-11-04T02:24:34.379Z"
+  },
+  "previous_evidence": "audit/COMPOUND_INTEREST_CALCULATOR_VERIFICATION.json",
+  "limitations": [
+    "Isolated headless Chromium on Windows with simulated viewport sizes; no physical device, screen-reader, Safari or Firefox certification.",
+    "Clipboard, downloads and storage failure cases simulated; native OS clipboard and save dialogs not tested.",
+    "Previous 37 pages verified through public HTTP/source identity and successful post-merge CI; no new individual public interactions claimed.",
+    "Framework source hashes normalize CRLF and strip trailing whitespace; separate raw SHA-256 hashes also match exactly.",
+    "Release metadata and Live labels require separate owner-authorized merge and deployment.",
+    "Integer-cent estimates round interest half-up per period, add contribution at period end, and omit taxes, fees and variable rates; no guaranteed return."
+  ]
+}
