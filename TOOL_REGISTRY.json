@@ -2170,7 +2170,7 @@
       "category": "data",
       "description": "Append compatible CSV files while validating headers.",
       "directory_path": "csv-merger",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2185,22 +2185,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 16 scoped local verification passed; publication pending.",
+      "notes": "Task 16 PR #28 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "6326a37de9830c5d695f83ee503dde88d1b11671",
+        "source_revision": "55589d67807387a71ec9d0d407f1b37dfe6b79f3",
         "source_sha256": "83f941454a0372d14bc8d0c6dff4cff6c279d03660797c057ed12e0eb39ff330",
-        "evidence_path": "audit/CSV_MERGER_VERIFICATION.json",
+        "evidence_path": "audit/CSV_MERGER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "13 deterministic inline logic fixtures",
-          "2 real Chromium browser fixtures / 5 assertions",
-          "9 independent Node logic tests and 7 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked",
-          "Long filename wrapping verified at narrow viewport."
+          "Public canonical and index pages HTTP 200; public and approved Git-blob SHA-256 hashes match",
+          "Fresh public Chromium interactions: local upload, reorder, merge, download, copy and reset; remove a selected file and reject reordered, duplicate and empty headers; invalid UTF-8, oversize and too few files fail safely; reset during pending file read cannot restore stale output; bounded preview, responsive widths and keyboard-operable reordering; merging never invokes probed network APIs; long filenames wrap at a narrow viewport",
+          "Additional public checks: Two compatible files: Unicode, empty cells, quoted commas, escaped quotes, multiline data and exact CRLF download.; Missing, extra, reordered, duplicate and empty headers; empty files, malformed quotes and ragged rows rejected without output.; A binary PNG file is rejected as invalid UTF-8; filename/MIME is not strictly enforced.; Three files, keyboard reorder, file removal, stale-output invalidation and reset.; Correct public route, title, expected Tailwind CDN, required script and zero captured browser errors.",
+          "Public homepage has 50 distinct visible canonical routes; previous 49 tool pages returned HTTP 200 with matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/csv-merger/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T08:51:06.245672+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
