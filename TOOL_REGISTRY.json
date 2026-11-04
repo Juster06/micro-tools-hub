@@ -1103,7 +1103,7 @@
       "category": "image",
       "description": "Resize raster images by dimensions or percentage.",
       "directory_path": "image-resizer",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -1117,24 +1117,27 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 13 scoped local verification passed; publication pending.",
+      "notes": "Task 13 PR #22 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [
         "image-cropper"
       ],
       "verification": {
-        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_revision": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
         "source_sha256": "fe6550ee67414d58ac332baf1c6ae65cb120d22fb70f309d317d19c9cdbf20e6",
-        "evidence_path": "audit/IMAGE_RESIZER_VERIFICATION.json",
+        "evidence_path": "audit/IMAGE_RESIZER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "14 synchronous image-parameter validation fixtures (not pixel transformation)",
-          "5 real Chromium browser fixtures / 16 assertions",
-          "3 independent Node logic tests and 5 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked",
-          "Real Chromium PNG resize dimensions, transparency/export and pre-decode file/dimension/APNG limits tested separately."
+          "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+          "Fresh public Chromium interactions: actual PNG resizing maintains dimensions and transparent export; percentage, unlocked sizing, copy and reset work; invalid PNG, oversized file and missing decoder fail safely; responsive widths do not overflow; oversized dimensions and animated PNG are rejected before decoding",
+          "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Static PNG-only and local-image privacy disclosures verified; actual decoded pixel/alpha, limits and simulated download tested in the 15 interaction tests.",
+          "Public homepage: 37 distinct visible canonical routes; prior 31 released pages returned HTTP 200 with matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/image-resizer/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T00:52:27.223571+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -1511,7 +1514,7 @@
       "category": "text",
       "description": "Compare two texts and explain line-level differences.",
       "directory_path": "text-difference-checker",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -1525,21 +1528,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 13 scoped local verification passed; publication pending.",
+      "notes": "Task 13 PR #22 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_revision": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
         "source_sha256": "e0ad2f25102bdb80bf8f89974f2bfc73ff0fb331c2d6b1a69f4d6b7a2d2370a7",
-        "evidence_path": "audit/TEXT_DIFFERENCE_CHECKER_VERIFICATION.json",
+        "evidence_path": "audit/TEXT_DIFFERENCE_CHECKER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "9 deterministic inline logic fixtures",
-          "6 real Chromium browser fixtures / 13 assertions",
-          "4 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+          "Fresh public Chromium interactions: diff labels, safe rendering, copy and reset; comparison work limits and responsive widths",
+          "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Identical, added/removed/unchanged labels, repeated lines, Unicode, empty input, length and line caps; near-limit 79,806 comparisons completed in 3.9 ms.",
+          "Public homepage: 37 distinct visible canonical routes; prior 31 released pages returned HTTP 200 with matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/text-difference-checker/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T00:52:27.219910+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2738,7 +2745,7 @@
       "category": "social",
       "description": "Assemble structured descriptions from user-provided sections.",
       "directory_path": "youtube-description-formatter",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2752,21 +2759,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 13 scoped local verification passed; publication pending.",
+      "notes": "Task 13 PR #22 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_revision": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
         "source_sha256": "ef3ad7284b401f5aac701f13eacd662c4dc969617b25df062c4a3d81a4009e16",
-        "evidence_path": "audit/YOUTUBE_DESCRIPTION_FORMATTER_VERIFICATION.json",
+        "evidence_path": "audit/YOUTUBE_DESCRIPTION_FORMATTER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "7 deterministic inline logic fixtures",
-          "6 real Chromium browser fixtures / 13 assertions",
-          "3 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+          "Fresh public Chromium interactions: section reorder, plain-text links, copy and reset; empty title and responsive widths",
+          "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Title, introduction, multiple description sections, reordered plain-text links, timestamps and hashtags.",
+          "Public homepage: 37 distinct visible canonical routes; prior 31 released pages returned HTTP 200 with matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/youtube-description-formatter/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T00:52:27.224286+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2946,7 +2957,7 @@
       "category": "social",
       "description": "Generate candidate usernames from local user-supplied words.",
       "directory_path": "username-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2959,22 +2970,26 @@
         "No availability guarantee"
       ],
       "testing_status": "REQUIRED_PASSED",
-      "last_verification_date": "2026-11-03",
-      "notes": "Task 13 scoped local verification passed; publication pending.",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 13 PR #22 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_revision": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
         "source_sha256": "4315bff28849572f26e34c8db0558819775d8c4b1507af938e42262cae61dcf4",
-        "evidence_path": "audit/USERNAME_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/USERNAME_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "9 deterministic inline logic fixtures",
-          "6 real Chromium browser fixtures / 13 assertions",
-          "3 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+          "Fresh public Chromium interactions: generate, copy and reset; empty input and responsive layout",
+          "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Unicode, case, separators, numbered variants, length bounds, uniqueness, invalid input and availability/password caveats.",
+          "Public homepage: 37 distinct visible canonical routes; prior 31 released pages returned HTTP 200 with matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/username-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T00:52:27.229185+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3861,7 +3876,7 @@
       "category": "conversion",
       "description": "Extract readable text from selected JSON values.",
       "directory_path": "json-to-txt",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3876,21 +3891,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-04",
-      "notes": "Task 13 scoped local verification passed; publication pending.",
+      "notes": "Task 13 PR #22 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_revision": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
         "source_sha256": "b1273bc30a4011786ba38603b2e8c987ab93dcf181d040c6c14375d81ff139f7",
-        "evidence_path": "audit/JSON_TO_TXT_VERIFICATION.json",
+        "evidence_path": "audit/JSON_TO_TXT_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "9 deterministic inline logic fixtures",
-          "6 real Chromium browser fixtures / 13 assertions",
-          "3 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+          "Fresh public Chromium interactions: extract array, copy, show missing and reset; invalid JSON and responsive widths",
+          "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Nested wildcard/index paths, Unicode, missing/unsafe fields, empty and oversized input, large valid output 439979 units; output cap error exercised with simulated oversized serializer result.",
+          "Public homepage: 37 distinct visible canonical routes; prior 31 released pages returned HTTP 200 with matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/json-to-txt/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T00:52:27.709181+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4336,7 +4355,7 @@
       "category": "productivity",
       "description": "Create monthly calendars with explicit locale choices.",
       "directory_path": "printable-calendar-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4349,22 +4368,26 @@
         "No automatic holiday accuracy claim"
       ],
       "testing_status": "REQUIRED_PASSED",
-      "last_verification_date": "2026-11-03",
-      "notes": "Task 13 scoped local verification passed; publication pending.",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 13 PR #22 merged; independently verified public source and scoped live browser behavior. Release metadata PR pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_revision": "bc749fecdd7e801d4ab75505d71f469918f4eba4",
         "source_sha256": "ab872283823544808d6e11cc356cdd4a44aba7e8de29c63cff30dc2e113610f1",
-        "evidence_path": "audit/PRINTABLE_CALENDAR_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/PRINTABLE_CALENDAR_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural checks",
-          "7 deterministic inline logic fixtures",
-          "6 real Chromium browser fixtures / 14 assertions",
-          "3 independent Node logic tests and 2 extended browser tests",
-          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+          "Public HTML raw SHA-256 matches approved Git blob; framework-normalized SHA-256 matches too",
+          "Fresh public Chromium interactions: calendar controls, previous and next cross year boundaries, copy and print; boundaries and responsive layouts",
+          "Fresh public browser extra: Correct public route, title, required JavaScript and expected styling CDN; Selected February 2024; French locale and Sunday week start; leap day and reset verified.",
+          "Public homepage: 37 distinct visible canonical routes; prior 31 released pages returned HTTP 200 with matching raw source"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/printable-calendar-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-04T00:52:27.498601+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
