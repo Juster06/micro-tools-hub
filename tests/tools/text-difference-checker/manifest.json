@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "text-difference-checker",
+  "canonical_path": "text-difference-checker/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

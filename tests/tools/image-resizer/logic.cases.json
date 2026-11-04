@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "valid-0",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"dimensions\", \"width\": \"4\", \"height\": \"6\", \"percent\": \"100\", \"lock\": true, \"edited\": \"width\"}",
+      "options": {},
+      "expected": {
+        "width": 4,
+        "height": 6
+      }
+    },
+    {
+      "id": "valid-1",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"dimensions\", \"width\": \"4\", \"height\": \"2\", \"percent\": \"100\", \"lock\": false, \"edited\": \"width\"}",
+      "options": {},
+      "expected": {
+        "width": 4,
+        "height": 2
+      }
+    },
+    {
+      "id": "valid-2",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"percent\", \"width\": \"4\", \"height\": \"6\", \"percent\": \"50\", \"lock\": true, \"edited\": \"width\"}",
+      "options": {},
+      "expected": {
+        "width": 1,
+        "height": 2
+      }
+    },
+    {
+      "id": "valid-3",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"dimensions\", \"width\": \"1\", \"height\": \"3\", \"percent\": \"100\", \"lock\": true, \"edited\": \"height\"}",
+      "options": {},
+      "expected": {
+        "width": 2,
+        "height": 3
+      }
+    },
+    {
+      "id": "valid-4",
+      "input": "{\"sourceWidth\": 4000, \"sourceHeight\": 2000, \"mode\": \"dimensions\", \"width\": \"4000\", \"height\": \"2000\", \"percent\": \"100\", \"lock\": true, \"edited\": \"width\"}",
+      "options": {},
+      "expected": {
+        "width": 4000,
+        "height": 2000
+      }
+    },
+    {
+      "id": "invalid-0",
+      "input": "",
+      "options": {},
+      "error": "valid JSON"
+    },
+    {
+      "id": "invalid-1",
+      "input": "{",
+      "options": {},
+      "error": "valid JSON"
+    },
+    {
+      "id": "invalid-2",
+      "input": "{\"sourceWidth\": 4097, \"sourceHeight\": 3, \"mode\": \"dimensions\", \"width\": \"4\", \"height\": \"6\", \"percent\": \"100\", \"lock\": true, \"edited\": \"width\"}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "invalid-3",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"dimensions\", \"width\": \"0\", \"height\": \"6\", \"percent\": \"100\", \"lock\": true, \"edited\": \"width\"}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "invalid-4",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"dimensions\", \"width\": \"4000\", \"height\": \"4000\", \"percent\": \"100\", \"lock\": false, \"edited\": \"width\"}",
+      "options": {},
+      "error": "dimensions"
+    },
+    {
+      "id": "invalid-5",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"percent\", \"width\": \"4\", \"height\": \"6\", \"percent\": \"401\", \"lock\": true, \"edited\": \"width\"}",
+      "options": {},
+      "error": "Percentage"
+    },
+    {
+      "id": "invalid-6",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"percent\", \"width\": \"4\", \"height\": \"6\", \"percent\": \"0\", \"lock\": true, \"edited\": \"width\"}",
+      "options": {},
+      "error": "Percentage"
+    },
+    {
+      "id": "invalid-7",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"dimensions\", \"width\": \"-1\", \"height\": \"6\", \"percent\": \"100\", \"lock\": true, \"edited\": \"width\"}",
+      "options": {},
+      "error": "whole"
+    },
+    {
+      "id": "invalid-8",
+      "input": "{\"sourceWidth\": 2, \"sourceHeight\": 3, \"mode\": \"dimensions\", \"width\": \"4\", \"height\": \"6\", \"percent\": \"100\", \"lock\": \"yes\", \"edited\": \"width\"}",
+      "options": {},
+      "error": "settings"
+    }
+  ]
+}

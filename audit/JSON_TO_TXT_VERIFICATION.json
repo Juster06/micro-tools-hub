@@ -1,0 +1,52 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-04",
+  "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+  "pages": [
+    {
+      "path": "json-to-txt/index.html",
+      "source_sha256": "b1273bc30a4011786ba38603b2e8c987ab93dcf181d040c6c14375d81ff139f7",
+      "checks": [
+        "Canonical structural checks",
+        "9 deterministic inline logic fixtures",
+        "6 real Chromium browser fixtures / 13 assertions",
+        "3 independent Node logic tests and 2 extended browser tests",
+        "Responsive widths 320/375/768/1440; clipboard and download mocked"
+      ]
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 9,
+      "failed": 0,
+      "assertions": 9,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 6,
+      "failed": 0,
+      "assertions": 13,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "browser": "Chrome/156.0.8078.4",
+  "limitations": [
+    "Local headless Chromium; no Safari, Firefox, physical-device, native clipboard, screen-reader or full accessibility certification.",
+    "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
+    "No public deployment or publication has been verified."
+  ],
+  "contract": "audit/TASK_13_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "baecb94b6ddae8153d66136bd929e063efcb44ce",
+  "source_tree_sha": "8b39592aeebe23c2c2c11208912bdafceefc87ba"
+}

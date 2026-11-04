@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "username-generator",
+  "canonical_path": "username-generator/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": false,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

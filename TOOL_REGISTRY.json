@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-03",
+  "updated_on": "2026-11-04",
   "project": {
     "name": "Everyday Digital Box — WebUtils Hub",
     "repository": "https://github.com/Juster06/micro-tools-hub",
@@ -1103,7 +1103,7 @@
       "category": "image",
       "description": "Resize raster images by dimensions or percentage.",
       "directory_path": "image-resizer",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -1115,14 +1115,43 @@
         "Dimension limits",
         "Download resized image"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 13 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [
         "image-cropper"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_sha256": "fe6550ee67414d58ac332baf1c6ae65cb120d22fb70f309d317d19c9cdbf20e6",
+        "evidence_path": "audit/IMAGE_RESIZER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "14 synchronous image-parameter validation fixtures (not pixel transformation)",
+          "5 real Chromium browser fixtures / 16 assertions",
+          "3 independent Node logic tests and 5 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked",
+          "Real Chromium PNG resize dimensions, transparency/export and pre-decode file/dimension/APNG limits tested separately."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "sizeMode",
+        "targetWidth",
+        "targetHeight",
+        "percent",
+        "lockAspect",
+        "imageCanvas",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "image-format-converter",
@@ -1482,7 +1511,7 @@
       "category": "text",
       "description": "Compare two texts and explain line-level differences.",
       "directory_path": "text-difference-checker",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -1494,12 +1523,35 @@
         "Large-input cap",
         "Accessible non-color-only differences"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 13 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_sha256": "e0ad2f25102bdb80bf8f89974f2bfc73ff0fb331c2d6b1a69f4d6b7a2d2370a7",
+        "evidence_path": "audit/TEXT_DIFFERENCE_CHECKER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "9 deterministic inline logic fixtures",
+          "6 real Chromium browser fixtures / 13 assertions",
+          "4 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "other"
+      ]
     },
     {
       "id": "text-sorter",
@@ -2686,7 +2738,7 @@
       "category": "social",
       "description": "Assemble structured descriptions from user-provided sections.",
       "directory_path": "youtube-description-formatter",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2698,12 +2750,40 @@
         "Copy",
         "No automatic publishing"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 13 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_sha256": "ef3ad7284b401f5aac701f13eacd662c4dc969617b25df062c4a3d81a4009e16",
+        "evidence_path": "audit/YOUTUBE_DESCRIPTION_FORMATTER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "7 deterministic inline logic fixtures",
+          "6 real Chromium browser fixtures / 13 assertions",
+          "3 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "intro",
+        "sections",
+        "links",
+        "timestamps",
+        "hashtags",
+        "sectionOrder"
+      ]
     },
     {
       "id": "instagram-bio-formatter",
@@ -2866,7 +2946,7 @@
       "category": "social",
       "description": "Generate candidate usernames from local user-supplied words.",
       "directory_path": "username-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2878,12 +2958,39 @@
         "Copy",
         "No availability guarantee"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 13 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_sha256": "4315bff28849572f26e34c8db0558819775d8c4b1507af938e42262cae61dcf4",
+        "evidence_path": "audit/USERNAME_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "9 deterministic inline logic fixtures",
+          "6 real Chromium browser fixtures / 13 assertions",
+          "3 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "separator",
+        "letterCase",
+        "minimum",
+        "maximum",
+        "digits"
+      ]
     },
     {
       "id": "percentage-calculator",
@@ -3754,7 +3861,7 @@
       "category": "conversion",
       "description": "Extract readable text from selected JSON values.",
       "directory_path": "json-to-txt",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3767,12 +3874,35 @@
         "Missing-value handling",
         "Download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 13 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_sha256": "b1273bc30a4011786ba38603b2e8c987ab93dcf181d040c6c14375d81ff139f7",
+        "evidence_path": "audit/JSON_TO_TXT_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "9 deterministic inline logic fixtures",
+          "6 real Chromium browser fixtures / 13 assertions",
+          "3 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "path"
+      ]
     },
     {
       "id": "svg-to-png",
@@ -4206,7 +4336,7 @@
       "category": "productivity",
       "description": "Create monthly calendars with explicit locale choices.",
       "directory_path": "printable-calendar-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4218,12 +4348,37 @@
         "Print margins",
         "No automatic holiday accuracy claim"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-03",
+      "notes": "Task 13 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
+        "source_sha256": "ab872283823544808d6e11cc356cdd4a44aba7e8de29c63cff30dc2e113610f1",
+        "evidence_path": "audit/PRINTABLE_CALENDAR_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "7 deterministic inline logic fixtures",
+          "6 real Chromium browser fixtures / 14 assertions",
+          "3 independent Node logic tests and 2 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "month",
+        "weekStart",
+        "locale"
+      ]
     }
   ],
   "milestones": [

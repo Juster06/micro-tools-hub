@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "one",
+      "input": "Bright",
+      "options": {},
+      "expected": "bright"
+    },
+    {
+      "id": "pair",
+      "input": "Red Blue",
+      "options": {
+        "separator": "_"
+      },
+      "expected": "red\nblue\nred_blue\nblue_red"
+    },
+    {
+      "id": "numbered",
+      "input": "Cat",
+      "options": {
+        "digits": true
+      },
+      "expected": "cat\ncat1\ncat2\ncat3"
+    },
+    {
+      "id": "unicode",
+      "input": "Été",
+      "options": {},
+      "expected": "été"
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "Enter"
+    },
+    {
+      "id": "punctuation",
+      "input": "hello!",
+      "options": {},
+      "error": "letters and digits"
+    },
+    {
+      "id": "minmax",
+      "input": "cat",
+      "options": {
+        "minimum": "8",
+        "maximum": "3"
+      },
+      "error": "Length"
+    },
+    {
+      "id": "none-fit",
+      "input": "cat",
+      "options": {
+        "minimum": "9"
+      },
+      "error": "No suggestions"
+    },
+    {
+      "id": "too-many",
+      "input": "x x x x x x x x x x x x x x x x x x x x x",
+      "options": {},
+      "error": "20 words"
+    }
+  ]
+}

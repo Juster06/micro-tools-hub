@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "json-to-txt",
+  "canonical_path": "json-to-txt/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}
