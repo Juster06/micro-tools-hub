@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-04",
-  "source_revision": "dfc7b24bfb2914512782db3cdb70150407bc544f",
+  "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
   "pages": [
     {
       "path": "posting-calendar-generator/index.html",
@@ -44,7 +44,10 @@
   "limitations": [
     "Local headless Chromium; no Safari, Firefox, physical-device, native clipboard, screen-reader or full accessibility certification.",
     "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
-    "No public deployment or publication has been verified."
+    "No public deployment or publication has been verified.",
+    "Wall-clock date and time labels only; no DST resolution or UTC conversion is performed."
   ],
-  "contract": "audit/TASK_14_DEVELOPMENT_PLAN.md"
+  "contract": "audit/TASK_14_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "dfc7b24bfb2914512782db3cdb70150407bc544f",
+  "source_tree_sha": "2c39da10c066f4d69cb69559abcc3e5a9fdc1d35"
 }

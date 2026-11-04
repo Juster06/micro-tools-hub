@@ -1289,7 +1289,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "b1d6dd7412f664c8e02e5ea6d937bb7c3e08f768",
+        "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
         "source_sha256": "18c7da4379a3c9ebd6cb8ec9b9e979f0baa2b71ac9b1d52c2653c7851c84014a",
         "evidence_path": "audit/IMAGE_WATERMARK_VERIFICATION.json",
         "test_scope": [
@@ -1343,7 +1343,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "812859b9b81ca527c393d74e2b816a10d5fe0ec4",
+        "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
         "source_sha256": "08fb25c53c6be6abd8a5fa160a6ef9e79752bcd281f016df3fc98f02c3106ba7",
         "evidence_path": "audit/IMAGE_COLOR_PICKER_VERIFICATION.json",
         "test_scope": [
@@ -2240,7 +2240,7 @@
         "csv-data-cleaner"
       ],
       "verification": {
-        "source_revision": "dcd0ae03db4ce8bda583a786c64b3f86c2a14a6b",
+        "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
         "source_sha256": "fbce4cbca0dfb48946b59236bc9228eeb42275e41aca8ea0153a6ecc4fd165b9",
         "evidence_path": "audit/CSV_VIEWER_VERIFICATION.json",
         "test_scope": [
@@ -3035,7 +3035,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "dfc7b24bfb2914512782db3cdb70150407bc544f",
+        "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
         "source_sha256": "f1e9b6a9bf6d46f5a56947028a0c7524ba3beedc183a228a44d0362bcd86f077",
         "evidence_path": "audit/POSTING_CALENDAR_GENERATOR_VERIFICATION.json",
         "test_scope": [
@@ -3619,7 +3619,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "f73bf341fa2c817fb6fc37425f93be670da0c800",
+        "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
         "source_sha256": "1e5a195d1d099471aacc6b544aa505ca3750b79513bd9d9595fcc4028c27ceb1",
         "evidence_path": "audit/COMPOUND_INTEREST_CALCULATOR_VERIFICATION.json",
         "test_scope": [
@@ -4387,7 +4387,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "4fed720866b6f3ee2647dcdc233c02efb74df80e",
+        "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
         "source_sha256": "9b51f243f2cc9a70952d53122b54a7388db7fd5a60e11d35e4c6f8e18cfdf2ee",
         "evidence_path": "audit/LOCAL_TO_DO_LIST_VERIFICATION.json",
         "test_scope": [

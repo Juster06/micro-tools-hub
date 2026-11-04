@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-04",
-  "source_revision": "b1d6dd7412f664c8e02e5ea6d937bb7c3e08f768",
+  "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
   "pages": [
     {
       "path": "image-watermark/index.html",
@@ -45,7 +45,10 @@
   "limitations": [
     "Local headless Chromium; no Safari, Firefox, physical-device, native clipboard, screen-reader or full accessibility certification.",
     "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
-    "No public deployment or publication has been verified."
+    "No public deployment or publication has been verified.",
+    "Static PNG only, up to 5 MiB, 4096 per dimension and 8 million pixels; real Chromium pixel checks are separate from parameter fixtures."
   ],
-  "contract": "audit/TASK_14_DEVELOPMENT_PLAN.md"
+  "contract": "audit/TASK_14_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "b1d6dd7412f664c8e02e5ea6d937bb7c3e08f768",
+  "source_tree_sha": "2c39da10c066f4d69cb69559abcc3e5a9fdc1d35"
 }

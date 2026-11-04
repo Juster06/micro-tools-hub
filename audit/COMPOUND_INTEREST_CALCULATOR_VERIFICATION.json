@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-04",
-  "source_revision": "f73bf341fa2c817fb6fc37425f93be670da0c800",
+  "source_revision": "c585b5b9365fba68b0f37849726bc5219b0e9033",
   "pages": [
     {
       "path": "compound-interest-calculator/index.html",
@@ -46,5 +46,7 @@
     "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
     "No public deployment or publication has been verified."
   ],
-  "contract": "audit/TASK_14_DEVELOPMENT_PLAN.md"
+  "contract": "audit/TASK_14_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "f73bf341fa2c817fb6fc37425f93be670da0c800",
+  "source_tree_sha": "2c39da10c066f4d69cb69559abcc3e5a9fdc1d35"
 }
