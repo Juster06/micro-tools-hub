@@ -16,6 +16,7 @@
     "tests/tools/compound-interest-calculator/logic.test.mjs",
     "tests/tools/countdown-timer/logic.test.mjs",
     "tests/tools/csv-column-extractor/logic.test.mjs",
+    "tests/tools/csv-merger/logic.test.mjs",
     "tests/tools/csv-viewer/logic.test.mjs",
     "tests/tools/date-difference-calculator/logic.test.mjs",
     "tests/tools/discount-calculator/logic.test.mjs",
@@ -69,6 +70,8 @@
     "tests/tools/countdown-timer/integration-browser.test.mjs",
     "tests/tools/csv-column-extractor/extended-browser.test.mjs",
     "tests/tools/csv-column-extractor/integration-browser.test.mjs",
+    "tests/tools/csv-merger/extended-browser.test.mjs",
+    "tests/tools/csv-merger/integration-browser.test.mjs",
     "tests/tools/csv-viewer/extended-browser.test.mjs",
     "tests/tools/csv-viewer/integration-browser.test.mjs",
     "tests/tools/date-difference-calculator/extended-browser.test.mjs",
@@ -397,6 +400,11 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "csv-merger": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -450,8 +458,8 @@
   ],
   "minimum_tests": {
     "python-project": 142,
-    "node-regression": 313,
-    "browser-tests": 395
+    "node-regression": 322,
+    "browser-tests": 404
   },
   "aggregate": {
     "job": "required-checks",

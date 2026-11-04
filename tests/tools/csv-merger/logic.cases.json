@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "two",
+      "input": "[\"a,b\\n1,2\", \"a,b\\n3,4\"]",
+      "expected": {
+        "csv": "a,b\r\n1,2\r\n3,4",
+        "preview": "a,b\r\n1,2\r\n3,4",
+        "rows": 2,
+        "columns": 2,
+        "files": 2
+      }
+    },
+    {
+      "id": "three-quoted",
+      "input": "[\"a,b\\r\\nZoë,\\\"one,\\r\\ntwo\\\"\", \"a,b\\nλ,\\\"x\\\"\\\"y\\\"\", \"a,b\\n,tail\"]",
+      "expected": {
+        "csv": "a,b\r\nZoë,\"one,\ntwo\"\r\nλ,\"x\"\"y\"\r\n,tail",
+        "preview": "a,b\r\nZoë,\"one,\ntwo\"\r\nλ,\"x\"\"y\"\r\n,tail",
+        "rows": 3,
+        "columns": 2,
+        "files": 3
+      }
+    },
+    {
+      "id": "formula",
+      "input": "[\"a,b\\nnormal,=1\", \"a,b\\n\\\"  +x\\\",-1\"]",
+      "expected": {
+        "csv": "a,b\r\nnormal,'=1\r\n'  +x,'-1",
+        "preview": "a,b\r\nnormal,'=1\r\n'  +x,'-1",
+        "rows": 2,
+        "columns": 2,
+        "files": 2
+      }
+    },
+    {
+      "id": "empty-one-column",
+      "input": "[\"a\\n\\n\", \"a\\nx\"]",
+      "expected": {
+        "csv": "a\r\n\r\nx",
+        "preview": "a\r\n\r\nx",
+        "rows": 2,
+        "columns": 1,
+        "files": 2
+      }
+    },
+    {
+      "id": "one",
+      "input": "[\"a\"]",
+      "error": "2–8"
+    },
+    {
+      "id": "empty",
+      "input": "[\"a\", \"\"]",
+      "error": "File 2"
+    },
+    {
+      "id": "duplicate",
+      "input": "[\"a,a\\n1,2\", \"a,a\\n3,4\"]",
+      "error": "duplicate"
+    },
+    {
+      "id": "empty-header",
+      "input": "[\"a,\\n1,2\", \"a,\\n2,3\"]",
+      "error": "empty header"
+    },
+    {
+      "id": "reordered",
+      "input": "[\"a,b\\n1,2\", \"b,a\\n3,4\"]",
+      "error": "reordered"
+    },
+    {
+      "id": "missing",
+      "input": "[\"a,b\\n1,2\", \"a\\n3\"]",
+      "error": "headers differ"
+    },
+    {
+      "id": "extra",
+      "input": "[\"a\\n1\", \"a,b\\n2,3\"]",
+      "error": "headers differ"
+    },
+    {
+      "id": "ragged",
+      "input": "[\"a,b\\n1\", \"a,b\\n2,3\"]",
+      "error": "expected 2"
+    },
+    {
+      "id": "bad-quote",
+      "input": "[\"a,b\\n\\\"x,1\", \"a,b\\n2,3\"]",
+      "error": "not closed"
+    }
+  ]
+}

@@ -2170,7 +2170,7 @@
       "category": "data",
       "description": "Append compatible CSV files while validating headers.",
       "directory_path": "csv-merger",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -2183,12 +2183,37 @@
         "Input order",
         "Quoted fields"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-04",
+      "notes": "Task 16 scoped local verification passed; publication pending.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "6326a37de9830c5d695f83ee503dde88d1b11671",
+        "source_sha256": "83f941454a0372d14bc8d0c6dff4cff6c279d03660797c057ed12e0eb39ff330",
+        "evidence_path": "audit/CSV_MERGER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural checks",
+          "13 deterministic inline logic fixtures",
+          "2 real Chromium browser fixtures / 5 assertions",
+          "9 independent Node logic tests and 7 extended browser tests",
+          "Responsive widths 320/375/768/1440; clipboard and download mocked",
+          "Long filename wrapping verified at narrow viewport."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "fileList",
+        "tableStats",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "json-formatter",
