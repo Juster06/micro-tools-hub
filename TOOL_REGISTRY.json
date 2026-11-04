@@ -1123,7 +1123,7 @@
         "image-cropper"
       ],
       "verification": {
-        "source_revision": "6b20b7199422605907e5f57a349d6a2515f1ee7a",
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
         "source_sha256": "fe6550ee67414d58ac332baf1c6ae65cb120d22fb70f309d317d19c9cdbf20e6",
         "evidence_path": "audit/IMAGE_RESIZER_VERIFICATION.json",
         "test_scope": [
@@ -1529,7 +1529,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "488e74b0df21547f1245c26715d67670d0ff22df",
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
         "source_sha256": "e0ad2f25102bdb80bf8f89974f2bfc73ff0fb331c2d6b1a69f4d6b7a2d2370a7",
         "evidence_path": "audit/TEXT_DIFFERENCE_CHECKER_VERIFICATION.json",
         "test_scope": [
@@ -2756,7 +2756,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "fe487139ebbf662c072ee58ffa506a2446d29372",
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
         "source_sha256": "ef3ad7284b401f5aac701f13eacd662c4dc969617b25df062c4a3d81a4009e16",
         "evidence_path": "audit/YOUTUBE_DESCRIPTION_FORMATTER_VERIFICATION.json",
         "test_scope": [
@@ -2964,7 +2964,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "d98b3f7ba567d1a9824fa9a8a8f7163b0f92b34d",
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
         "source_sha256": "4315bff28849572f26e34c8db0558819775d8c4b1507af938e42262cae61dcf4",
         "evidence_path": "audit/USERNAME_GENERATOR_VERIFICATION.json",
         "test_scope": [
@@ -3880,7 +3880,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "baecb94b6ddae8153d66136bd929e063efcb44ce",
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
         "source_sha256": "b1273bc30a4011786ba38603b2e8c987ab93dcf181d040c6c14375d81ff139f7",
         "evidence_path": "audit/JSON_TO_TXT_VERIFICATION.json",
         "test_scope": [
@@ -4354,7 +4354,7 @@
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "ed40241c36673cb9c2ebf81478f79aca0a5d1c72",
+        "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
         "source_sha256": "ab872283823544808d6e11cc356cdd4a44aba7e8de29c63cff30dc2e113610f1",
         "evidence_path": "audit/PRINTABLE_CALENDAR_GENERATOR_VERIFICATION.json",
         "test_scope": [

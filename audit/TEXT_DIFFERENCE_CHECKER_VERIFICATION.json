@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-04",
-  "source_revision": "488e74b0df21547f1245c26715d67670d0ff22df",
+  "source_revision": "77f5c1f99c09d156346b42d9e6db6bfeef79491f",
   "pages": [
     {
       "path": "text-difference-checker/index.html",
@@ -44,7 +44,10 @@
   "limitations": [
     "Local headless Chromium; no Safari, Firefox, physical-device, native clipboard, screen-reader or full accessibility certification.",
     "Hosting and existing Tailwind CDN can receive network requests; user inputs are processed locally.",
-    "No public deployment or publication has been verified."
+    "No public deployment or publication has been verified.",
+    "Line-level output only; each text up to 20,000 UTF-16 units, 400 lines and 80,000 line comparisons."
   ],
-  "contract": "audit/TASK_13_DEVELOPMENT_PLAN.md"
+  "contract": "audit/TASK_13_DEVELOPMENT_PLAN.md",
+  "original_local_source_revision": "488e74b0df21547f1245c26715d67670d0ff22df",
+  "source_tree_sha": "8b39592aeebe23c2c2c11208912bdafceefc87ba"
 }
