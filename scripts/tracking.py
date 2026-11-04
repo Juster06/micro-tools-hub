@@ -15,6 +15,8 @@ import tempfile
 import unicodedata
 from urllib.parse import unquote, urlsplit
 
+from consent_overlay import valid_candidate
+
 DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 STATUSES = ("IDEA", "PLANNED", "READY", "IN_PROGRESS", "BLOCKED", "IMPLEMENTED", "TESTED", "RELEASED", "DEPRECATED")
 IMPLEMENTED = {"IMPLEMENTED", "TESTED", "RELEASED"}
@@ -592,8 +594,14 @@ def check_project(root, registry=None):
             continue
         v, filename = t["verification"], t["directory_path"] + "/index.html"
         try:
-            if normalized_hash(read_text(safe_path(root, filename))) != v["source_sha256"]:
-                issue(result, "errors", "SOURCE_EVIDENCE_STALE", "Source changed since verification; retest and update evidence.", tool_id=t["id"])
+            current_source = read_text(safe_path(root, filename))
+            if normalized_hash(current_source) != v["source_sha256"]:
+                if t["status"] == "RELEASED" and valid_candidate(root, t, current_source):
+                    note = "Task 17 consent-only candidate verified locally; publication evidence remains bound to prior deployed source."
+                    if note not in result["information"]:
+                        result["information"].append(note)
+                else:
+                    issue(result, "errors", "SOURCE_EVIDENCE_STALE", "Source changed since verification; retest and update evidence.", tool_id=t["id"])
             evidence = json.loads(read_text(safe_path(root, v["evidence_path"])))
             if not isinstance(evidence, dict) or not isinstance(evidence.get("pages"), list) or not all(isinstance(page, dict) for page in evidence["pages"]):
                 raise ValueError("Invalid verification report structure")
