@@ -8,9 +8,9 @@ Task 18 starts from `f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a` on
 `feat/task-18-six-tools` in a separate worktree. Owner authorization covers
 development, tests, commits and a PR; merge/deployment/bypass are not authorized.
 
-Locally TESTED, publication pending: YouTube Title Checker.
-Inventory: 93 registered, 50 RELEASED, 1 TESTED, 0 READY,
-41 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
+Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter.
+Inventory: 93 registered, 50 RELEASED, 2 TESTED, 0 READY,
+40 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
 existing 100-release generated target are unchanged. See
 `audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
 verification audits for features, resource limits, actual test scope and omissions.
@@ -354,7 +354,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | hashtag-organizer | Hashtag Organizer | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | youtube-title-checker | YouTube Title Checker | TESTED | P2 | S | Browser-native approach; scope review before implementation |
 | youtube-description-formatter | YouTube Description Formatter | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
-| instagram-bio-formatter | Instagram Bio Formatter | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
+| instagram-bio-formatter | Instagram Bio Formatter | TESTED | P2 | M | Browser-native approach; scope review before implementation |
 | social-media-line-break-tool | Social Media Line Break Tool | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | emoji-picker | Emoji Picker | PLANNED | P2 | M | Reviewed local emoji dataset and usage license |
 | hashtag-counter | Hashtag Counter | PLANNED | P2 | S | Browser-native approach; scope review before implementation |

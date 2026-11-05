@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "file-signature-inspector",
+  "canonical_path": "file-signature-inspector/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

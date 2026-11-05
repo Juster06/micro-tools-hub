@@ -8,9 +8,9 @@ Task 18 starts from `f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a` on
 `feat/task-18-six-tools` in a separate worktree. Owner authorization covers
 development, tests, commits and a PR; merge/deployment/bypass are not authorized.
 
-Locally TESTED, publication pending: YouTube Title Checker.
-Inventory: 93 registered, 50 RELEASED, 1 TESTED, 0 READY,
-41 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
+Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter.
+Inventory: 93 registered, 50 RELEASED, 2 TESTED, 0 READY,
+40 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
 existing 100-release generated target are unchanged. See
 `audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
 verification audits for features, resource limits, actual test scope and omissions.
@@ -881,11 +881,11 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 100 released tools; 50 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 41; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 1; RELEASED: 50; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 40; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 2; RELEASED: 50; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
 - Git branch: feat/task-18-six-tools.
-- Latest commit observed before generation: 5fa88947ad40786e693879333544386a212b7c07.
+- Latest commit observed before generation: ebefc51a62e5a5e1acf72faf8879a87f2789525e.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -893,6 +893,7 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 
 These are registry verification records, not new tests or tasks executed by this generator.
 - YouTube Title Checker: TESTED, evidence dated 2026-11-05.
+- Instagram Bio Formatter: TESTED, evidence dated 2026-11-05.
 - YouTube Thumbnail Preview: RELEASED, evidence dated 2026-11-04.
 - YouTube Description Formatter: RELEASED, evidence dated 2026-11-04.
 - Username Generator: RELEASED, evidence dated 2026-11-04.
@@ -901,7 +902,6 @@ These are registry verification records, not new tests or tasks executed by this
 - Posting Calendar Generator: RELEASED, evidence dated 2026-11-04.
 - Pomodoro Timer: RELEASED, evidence dated 2026-11-04.
 - Local To-Do List: RELEASED, evidence dated 2026-11-04.
-- Loan Repayment Calculator: RELEASED, evidence dated 2026-11-04.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -920,10 +920,7 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
 - ` M` index.html
-- ` M` scripts/consent-static.test.mjs
-- ` M` tests/test_consent_overlay.py
-- `??` audit/YOUTUBE_TITLE_CHECKER_VERIFICATION.json
-- `??` tests/test_task18_preservation.py
+- `??` audit/INSTAGRAM_BIO_FORMATTER_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

@@ -25,6 +25,7 @@
     "tests/tools/discount-calculator/logic.test.mjs",
     "tests/tools/duplicate-line-remover/logic.test.mjs",
     "tests/tools/duplicate-row-finder/logic.test.mjs",
+    "tests/tools/file-signature-inspector/logic.test.mjs",
     "tests/tools/file-size-converter/logic.test.mjs",
     "tests/tools/find-and-replace/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
@@ -88,6 +89,8 @@
     "tests/tools/duplicate-line-remover/integration-browser.test.mjs",
     "tests/tools/duplicate-row-finder/extended-browser.test.mjs",
     "tests/tools/duplicate-row-finder/integration-browser.test.mjs",
+    "tests/tools/file-signature-inspector/extended-browser.test.mjs",
+    "tests/tools/file-signature-inspector/integration-browser.test.mjs",
     "tests/tools/file-size-converter/extended-browser.test.mjs",
     "tests/tools/file-size-converter/integration-browser.test.mjs",
     "tests/tools/find-and-replace/extended-browser.test.mjs",
@@ -422,6 +425,11 @@
       "browser_job": "browser-tests"
     },
     "instagram-bio-formatter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "file-signature-inspector": {
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"

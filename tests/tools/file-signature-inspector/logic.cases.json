@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "empty",
+      "input": {
+        "name": "empty",
+        "bytes": []
+      },
+      "expected": {
+        "name": "empty",
+        "headerBytes": 0,
+        "likelyFormat": "Unknown",
+        "extension": "(none)",
+        "comparison": "Unknown signature; extension cannot be verified.",
+        "headerHex": "",
+        "notice": "Signature hints only. A header can be forged; this is not malware detection or a file safety certification."
+      }
+    },
+    {
+      "id": "truncated",
+      "input": {
+        "name": "truncated.png",
+        "bytes": [
+          137,
+          80
+        ]
+      },
+      "expected": {
+        "name": "truncated.png",
+        "headerBytes": 2,
+        "likelyFormat": "Unknown",
+        "extension": "png",
+        "comparison": "Unknown signature; extension cannot be verified.",
+        "headerHex": "89 50",
+        "notice": "Signature hints only. A header can be forged; this is not malware detection or a file safety certification."
+      }
+    },
+    {
+      "id": "invalid-byte",
+      "input": {
+        "name": "x",
+        "bytes": [
+          256
+        ]
+      },
+      "error": "4,096"
+    },
+    {
+      "id": "missing-array",
+      "input": {
+        "name": "x",
+        "bytes": null
+      },
+      "error": "4,096"
+    },
+    {
+      "id": "invalid-name",
+      "input": {
+        "name": null,
+        "bytes": []
+      },
+      "error": "Filename"
+    }
+  ]
+}

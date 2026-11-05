@@ -8,9 +8,9 @@ Task 18 starts from `f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a` on
 `feat/task-18-six-tools` in a separate worktree. Owner authorization covers
 development, tests, commits and a PR; merge/deployment/bypass are not authorized.
 
-Locally TESTED, publication pending: YouTube Title Checker.
-Inventory: 93 registered, 50 RELEASED, 1 TESTED, 0 READY,
-41 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
+Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter.
+Inventory: 93 registered, 50 RELEASED, 2 TESTED, 0 READY,
+40 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
 existing 100-release generated target are unchanged. See
 `audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
 verification audits for features, resource limits, actual test scope and omissions.
@@ -199,15 +199,15 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | --- | ---: |
 | Total registered utilities | 93 |
 | IDEA | 0 |
-| PLANNED | 41 |
+| PLANNED | 40 |
 | READY | 0 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 1 |
+| TESTED | 2 |
 | RELEASED | 50 |
 | DEPRECATED | 0 |
-| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 42 |
+| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 41 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
@@ -246,6 +246,7 @@ Next ready tool: **REQUIRES REVIEW**.
 | Tool | Status | Last verification |
 | --- | --- | --- |
 | YouTube Title Checker | TESTED | 2026-11-05 |
+| Instagram Bio Formatter | TESTED | 2026-11-05 |
 | YouTube Thumbnail Preview | RELEASED | 2026-11-04 |
 | YouTube Description Formatter | RELEASED | 2026-11-04 |
 | Username Generator | RELEASED | 2026-11-04 |
@@ -254,7 +255,6 @@ Next ready tool: **REQUIRES REVIEW**.
 | Posting Calendar Generator | RELEASED | 2026-11-04 |
 | Pomodoro Timer | RELEASED | 2026-11-04 |
 | Local To-Do List | RELEASED | 2026-11-04 |
-| Loan Repayment Calculator | RELEASED | 2026-11-04 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.
