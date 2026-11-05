@@ -1,15 +1,15 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-05",
-  "source_revision": "bd8fc8f4358d86af89a5e4977b0a0b6e48abf8b6",
+  "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
   "pages": [
     {
       "path": "passphrase-generator/index.html",
-      "source_sha256": "7697d4aa2623447ec729df4329d4631254391eb258ff6214207d133ab7a20bc9",
+      "source_sha256": "cb209580582a7bc27a4d4fd570c95fdbddfe4755dd7acafa220202e8d0aa9b64",
       "checks": [
-        "Canonical structural PASS; 9 deterministic logic fixtures; 2 real Chromium fixtures / 6 assertions",
-        "Focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and supported output-action checks. See tests/tools/passphrase-generator.",
-        "Local verification only; clipboard/download simulated; no public release claim."
+        "Canonical structural PASS; 9 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 6 assertions.",
+        "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
+        "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
       ]
     }
   ],
@@ -39,6 +39,7 @@
     }
   },
   "browser": "Edg/156.0.4314.58",
+  "contract": "audit/TASK_19_DEVELOPMENT_PLAN.md",
   "dependencies": {
     "qrcodegen": {
       "version": "1.8.0",
@@ -46,11 +47,14 @@
       "source_url": "https://github.com/nayuki/QR-Code-generator/tree/720f62bddb7226106071d4728c292cb1df519ceb/typescript-javascript",
       "license": "MIT",
       "use": "Local QR encoding only. No transport/storage calls; no service or production build dependency.",
-      "source_sha256": "c4749095a91bf9696e3a303998b9905e467094f53041e64393e65e6d887737fd",
+      "source_sha256": "c8e5f5696f770d02b68d5b32a2d3c5091c3d6e0c34e5e1479cb25c6a627a69c5",
       "build": "TypeScript 5.9.3: tsc qrcodegen.ts --target es2015 --lib es2015,dom --outFile qrcodegen.js --removeComments false",
       "path": "assets/vendor/qrcodegen-1.8.0.js",
-      "bytes": 45380,
-      "sha256": "6e200897a80ff15a652a5d601667856d807cec60cfc81a3a351305d69cc9dbbd"
+      "bytes": 45375,
+      "sha256": "d72f8315af5a7f7d3f91743a27f951b1e6d9cf22bfac4f3e4a0f6122289d24af",
+      "pre_normalization_compiled_sha256": "6e200897a80ff15a652a5d601667856d807cec60cfc81a3a351305d69cc9dbbd",
+      "upstream_source_sha256": "c4749095a91bf9696e3a303998b9905e467094f53041e64393e65e6d887737fd",
+      "normalization": "End-of-line whitespace removed from upstream TypeScript and generated JavaScript; no licence wording or algorithm changes. Original digests retained."
     },
     "wordlist": {
       "version": "EFF large English list dated 2016-07-18; pinned by SHA-256",
@@ -66,10 +70,19 @@
       "wrapper_sha256": "30f4337649cc987075e65aff08d9e7786deafc67ff1917809c165ba259756577"
     }
   },
-  "contract": "audit/TASK_19_DEVELOPMENT_PLAN.md",
   "limitations": [
-    "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
-    "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
-    "Publication pending."
-  ]
+    "Local headless Edge/Chromium only; no physical-device, screen-reader, native clipboard/save-dialog or cross-engine certification.",
+    "Canonical logic fixtures for browser-dependent tools cover validation; specialized Node/browser suites execute actual cryptographic selection, QR generation/decoding and image operations.",
+    "Publication pending; Google requests are intercepted in consent regression tests and no real measurements are sent."
+  ],
+  "previous_local_source_revisions": [
+    "bd8fc8f4358d86af89a5e4977b0a0b6e48abf8b6"
+  ],
+  "original_local_source_checkpoint": "80c0a52be03e9a2a4da473d0be89f780f45d942f",
+  "publication_status": "TESTED; publication pending. No public Task 19 verification performed.",
+  "formatting_checkpoint": {
+    "previous_source": "139d87f76d16fd22c4aabfba570b94bb2d348202",
+    "local_revision": "c60edf469d4c8a7c9be378fdbf4666bf43069ffd",
+    "scope": "Vendored QR/source whitespace and licence EOF normalization only; original hashes retained; 10 QR Node/Chromium tests passed afterward."
+  }
 }

@@ -1,5 +1,18 @@
 # Functional CI — Task 9.5
 
+## Task 19 coverage extension
+
+Coverage now maps 62 implemented/tested/released tools, nine Python files,
+61 Node files and 117 Chromium files. Reviewed floors increase to 161 Python,
+403 Node and 537 Chromium tests; no required workflow/runtime/deadline changes.
+All 62 canonical browser profiles and both neutral templates remain mandatory;
+four legacy isolated-logic adapters remain explicitly unavailable. New randomness,
+wordlist integrity, independent QR decoding, crop pixels, CSV raw-value/expansion,
+keyboard/layout and six-page consent tests execute in their declared jobs.
+The Task 19 focused browser helper additionally verifies fresh documents and
+zero uncaught JavaScript exceptions/unexpected HTTP requests. Dependencies are
+locally vendored/pinned; jsQR is test-only. See the Task 19 development audit.
+
 ## Task 18.1 release-evidence regression
 
 Eight Python files now include two additional checks binding six release records

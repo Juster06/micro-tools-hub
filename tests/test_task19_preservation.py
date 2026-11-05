@@ -68,6 +68,13 @@ class Task19Preservation(unittest.TestCase):
             self.assertEqual(hashlib.sha256(content).hexdigest(),item['sha256'])
             self.assertEqual(len(content),item['bytes'])
         self.assertEqual(manifest['runtime']['qrcodegen']['license'],'MIT')
+        self.assertEqual(hashlib.sha256(text('audit/vendor-source/qrcodegen-1.8.0.ts').encode()).hexdigest(),manifest['runtime']['qrcodegen']['source_sha256'])
+        self.assertEqual(manifest['runtime']['qrcodegen']['upstream_source_sha256'],'c4749095a91bf9696e3a303998b9905e467094f53041e64393e65e6d887737fd')
+        for path,key in [('audit/vendor-source/qrcodegen-1.8.0.ts','upstream_source_sha256'),('assets/vendor/qrcodegen-1.8.0.js','pre_normalization_compiled_sha256')]:
+            original=raw(path,'139d87f76d16fd22c4aabfba570b94bb2d348202')
+            self.assertEqual(hashlib.sha256(original).hexdigest(),manifest['runtime']['qrcodegen'][key])
+            cleaned='\n'.join(line.rstrip(' \t') for line in original.decode('utf8').splitlines()).rstrip()+'\n'
+            self.assertEqual(cleaned,text(path))
         self.assertEqual(manifest['test_only']['jsqr']['license'],'Apache-2.0')
         self.assertIn('Creative Commons Attribution 4.0',text('assets/data/EFF-WORDLIST-LICENSE.txt'))
         pairs=[line.split('\t') for line in text('assets/data/eff-large-wordlist.txt').splitlines()]

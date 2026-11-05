@@ -91,3 +91,5 @@ no real Google measurements or public availability claims for these unpublished 
 Preserve all 56 released HTML sources/records/evidence and shared consent/privacy.
 Full Python/Node/Chromium required CI scopes and templates remain mandatory.
 TESTED requires actual matching-source evidence; publication remains null.
+
+Final dependency formatting: remove trailing line whitespace from the copied TypeScript and compiled JavaScript, and extra licence EOF blank lines. No licence wording or algorithm changes. Preserve upstream/raw digests alongside normalized delivered hashes; ten QR tests passed again after normalization.

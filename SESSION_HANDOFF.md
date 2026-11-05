@@ -1,30 +1,66 @@
 # Session handoff
 
-## Task 19 — authorized development; Task 18 complete
+## Task 19 — six implemented and TESTED utilities; publication pending
 
-Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged;
-current approved main is `3178f70802a96f181fd82251d417abd1dd0ad76b`. Pages
+Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged.
+Approved main: `3178f70802a96f181fd82251d417abd1dd0ad76b`; Pages
 [41979618835](https://github.com/Juster06/micro-tools-hub/actions/runs/41979618835)
 and post-merge Functional CI
 [41979619839](https://github.com/Juster06/micro-tools-hub/actions/runs/41979619839)
-succeeded, including Required functional checks (153 Python / 363 Node / 478 Chromium).
-Task 18.2 verified actual public source identity, all 56 Live cards, all 56 pages,
-seven fresh smoke/navigation tests and isolated consent acceptance/rejection/
-withdrawal. GA4 collection returned HTTP 204; property-level reporting remains
-unverified. Prior audits remain historical and unchanged.
+succeeded for that exact commit. Task 18.2's actual public source, seven smoke/
+navigation tests and consent-network results are retained in
+`audit/TASK_18_FINAL_PUBLIC_STATE.json`; earlier audits remain unchanged.
+GA4 collection was verified; authenticated property-level reporting remains unverified.
 
-Task 19 is authorized on `feat/task-19-six-tools`: Password Generator, CSV to TXT,
-Passphrase Generator, QR Code Generator, Image Cropper and CSV Data Cleaner.
-See `audit/TASK_19_DEVELOPMENT_PLAN.md` for scope, dependency/security review,
-resource limits and tests. Starting inventory: 93 registered, 56 RELEASED,
-0 TESTED, 0 READY, 36 PLANNED, 1 BLOCKED. Development/testing does not establish
-publication; the six tools may become TESTED with publication pending after tests.
-The next planning checkpoint is 75 releases; generated milestone remains 100.
+Task 19 implements Password Generator, CSV to TXT, Passphrase Generator,
+QR Code Generator, Image Cropper and CSV Data Cleaner on `feat/task-19-six-tools`.
+All six are **TESTED / REQUIRED_PASSED**, with `publication: null`.
+Inventory: **93 registered, 56 RELEASED, 6 TESTED, 0 READY, 30 PLANNED, 1 BLOCKED**.
+The branch homepage has 62 canonical cards; six explicitly say
+**Tested · publication pending**. The existing 56 pages, registry records,
+homepage cards, historical audits, consent/privacy code, CNAME, templates,
+workflow/runtime pins, dashboard/launchers and original 17 worktrees are preserved.
 
-**Next major task:** Finish this authorized six-tool development batch, run all
-required checks and open the Task 19 development PR. Await separate owner
-authorization before merge/deployment. Preserve consent `G-XDHPQYJ5CH`, all
-56 released tools, earlier audits and both unrelated local handoff edits.
+Source checkpoint: `6d162305c35a60da25bf2f22e14d901b8dc41801`. Its tree matches local source checkpoint
+`c60edf469d4c8a7c9be378fdbf4666bf43069ffd` exactly. Six separate development
+audits bind canonical source hashes to the published Git source checkpoint.
+See `audit/TASK_19_DEVELOPMENT_PLAN.md`, `audit/TASK_19_DEPENDENCIES.json`,
+`audit/TASK_19_DEVELOPMENT_VERIFICATION.json` and each tool README.
+
+Local results: **161/161 Python**, **403/403 Node** plus **1,308** logic fixtures,
+**537/537 pinned Chromium tests**, all **62** canonical browser profiles
+(487 fixtures / 1372 assertions), and both neutral templates
+(12 browser fixtures / 48 assertions).
+The six new tools also passed **81** focused Node/Edge tests and all canonical
+layers (56 logic fixtures; 11 browser fixtures / 41 assertions). Project validation
+passed with zero errors/warnings. Initial browser preflight required explicit
+EDB_TEST_BROWSER selection; the complete unchanged rerun passed. No failed scope
+is hidden and no assertion/deadline was weakened. Vendored whitespace was normalized with original digests retained; all 10 QR
+checks passed again. The wordlist pin check also validates exact committed bytes
+and portable working text. Exact-head hosted PR checks
+remain mandatory; their actual result is reported on the PR and final delivery.
+
+Consent regression: **26/26** passed, including every new page before choice,
+rejection, acceptance/reacceptance, navigation and withdrawal. Google endpoints
+were intercepted; no real measurements were sent in Task 19. Shared consent and
+measurement ID `G-XDHPQYJ5CH` are unchanged. Clipboard/download actions were
+captured in memory; no native-dialog, physical-device, screen-reader or cross-engine
+certification. Secret tools provide explicit copy, with no download/persistence.
+CSV uploads retain quoted CRLF data until manual edits; automatic copy/export
+uses the complete computed result despite textarea display normalization.
+
+The next planning checkpoint remains **75 released tools** (19 remaining);
+the existing generated milestone remains **100** (56/100, 44 remaining).
+PDF Compressor remains blocked on local feasibility, fidelity and memory use.
+Two unrelated uncommitted handoff edits remain intact. Historical administrator-
+bypass use remains unverified.
+
+**Next major task:** Review the Task 19 development PR and required exact-head CI.
+Await explicit owner authorization before merge/deployment. After an approved
+deployment, independently verify six public routes, source identity, functionality,
+all prior tools and consent; only then propose a separate release-verification PR.
+The containing delivery commit is resolved with `git log -1 --format="%H %s"`;
+this document cannot contain its own future commit hash. No Task 20 is authorized.
 
 ## Historical Task 18.1 — pre-merge release-verification checkpoint
 
