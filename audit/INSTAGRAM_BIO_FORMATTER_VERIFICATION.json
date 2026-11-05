@@ -1,0 +1,51 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-05",
+  "source_revision": "fb821fdf44ff8c7b22e76806673bb05565dfdf6e",
+  "pages": [
+    {
+      "path": "instagram-bio-formatter/index.html",
+      "source_sha256": "be5c2fe0d66e16e754236458feff506ab1141b10e57be04f2f86ca2459be4a92",
+      "checks": [
+        "Canonical structural PASS; 11 deterministic logic fixtures; 2 real Chromium fixtures / 7 assertions",
+        "Independent focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and output-action checks. See tests/tools/instagram-bio-formatter.",
+        "Local verification only; clipboard/download simulated; no public release claim."
+      ]
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 11,
+      "failed": 0,
+      "assertions": 11,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 2,
+      "failed": 0,
+      "assertions": 7,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "browser": "Chrome/156.0.8078.4",
+  "contract": "audit/TASK_18_DEVELOPMENT_PLAN.md",
+  "limitations": [
+    "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
+    "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
+    "Publication pending."
+  ],
+  "original_local_source_revision": "ebefc51a62e5a5e1acf72faf8879a87f2789525e",
+  "source_tree_sha": "6add965023e3818e44b997db622d87465e0df72c",
+  "publication_method": "Connected GitHub app; complete published source tree independently matched the local source checkpoint tree. No merge or deployment."
+}

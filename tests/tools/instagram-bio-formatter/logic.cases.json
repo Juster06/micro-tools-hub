@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "basic",
+      "input": "Creator\nLondon",
+      "expected": {
+        "text": "Creator\nLondon",
+        "count": 14,
+        "lines": 2,
+        "guidance": "136 remaining in your 150-character guide."
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "expected": {
+        "text": "",
+        "count": 0,
+        "lines": 0,
+        "guidance": "Enter a bio to format."
+      }
+    },
+    {
+      "id": "unicode",
+      "input": "👩‍💻\né",
+      "expected": {
+        "text": "👩‍💻\né",
+        "count": 6,
+        "lines": 2,
+        "guidance": "144 remaining in your 150-character guide."
+      }
+    },
+    {
+      "id": "line-endings",
+      "input": "a\r\nb\rc",
+      "expected": {
+        "text": "a\nb\nc",
+        "count": 5,
+        "lines": 3,
+        "guidance": "145 remaining in your 150-character guide."
+      }
+    },
+    {
+      "id": "preserve",
+      "input": " a\n\n\n b ",
+      "expected": {
+        "text": " a\n\n\n b ",
+        "count": 8,
+        "lines": 4,
+        "guidance": "142 remaining in your 150-character guide."
+      }
+    },
+    {
+      "id": "blank-lines",
+      "input": "a\n \n\t\n\nb",
+      "expected": {
+        "text": "a\n\nb",
+        "count": 4,
+        "lines": 3,
+        "guidance": "146 remaining in your 150-character guide."
+      },
+      "options": {
+        "mode": "blank-lines"
+      }
+    },
+    {
+      "id": "trim-lines",
+      "input": " a \n\t b \n",
+      "expected": {
+        "text": "a\nb\n",
+        "count": 4,
+        "lines": 3,
+        "guidance": "146 remaining in your 150-character guide."
+      },
+      "options": {
+        "mode": "trim-lines"
+      }
+    },
+    {
+      "id": "over-guide",
+      "input": "abcd",
+      "expected": {
+        "text": "abcd",
+        "count": 4,
+        "lines": 1,
+        "guidance": "1 over your 3-character guide."
+      },
+      "options": {
+        "guide": 3
+      }
+    },
+    {
+      "id": "bad-mode",
+      "input": "a",
+      "error": "Unknown",
+      "options": {
+        "mode": "magic"
+      }
+    },
+    {
+      "id": "bad-guide",
+      "input": "a",
+      "error": "Guide",
+      "options": {
+        "guide": -1
+      }
+    },
+    {
+      "id": "bad-input",
+      "input": {},
+      "error": "text"
+    }
+  ]
+}

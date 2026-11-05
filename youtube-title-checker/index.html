@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Measure title length against a maintained configurable guide."><meta name="color-scheme" content="dark">
+  <title>YouTube Title Checker — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>YouTube Title Checker</h1><p class="description">Measure title length against a maintained configurable guide.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="toolInput">Video title</label><textarea id="toolInput" rows="6" aria-describedby="inputHelp"></textarea>
+<p id="inputHelp">Up to 10,000 Unicode code points. Emoji sequences can count as several characters.</p>
+<label for="guide">Length guide (characters)</label><input id="guide" type="number" min="1" max="10000" value="100">
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+<p id="counts" class="metric"></p><p id="guidance" role="status"></p><h3>Opening-title preview (approximate)</h3><div id="titlePreview" class="preview"></div>
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled>Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>10,000 Unicode code points maximum; CRLF/CR normalize to LF. The editable 100-character guide and 60-character opening preview are planning aids, not ranking predictions or exact YouTube truncation. Copy/download preserve the complete normalized title. <a href="https://developers.google.com/youtube/data/reference/rest/v3/videos" target="_blank" rel="noopener noreferrer">YouTube title reference</a> (reviewed 5 November 2026).</p>
+<p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+<script id="edb-tool-logic">
+'use strict';
+
+window.EDB_TOOL = {
+  isScaffold: false, allowEmpty: true,
+  run(input, options = {}) {
+    if (typeof input !== 'string') throw Error('Title must be text.');
+    if (Object.keys(options).some(key => key !== 'guide')) throw Error('Unsupported option.');
+    const guide = options.guide === undefined ? 100 : Number(options.guide);
+    if (!Number.isInteger(guide) || guide < 1 || guide > 10000) throw Error('Guide must be an integer from 1 to 10,000.');
+    if (input.length > 20000) throw Error('Input exceeds 10,000 characters.');
+    const text = input.replace(/\r\n?/g, '\n'), points = Array.from(text);
+    if (points.length > 10000) throw Error('Input exceeds 10,000 characters.');
+    const notes = [];
+    if (!points.length) notes.push('Enter a title to check.');
+    else notes.push(points.length > guide ? `${points.length - guide} over your ${guide}-character guide.` : `${guide - points.length} remaining in your ${guide}-character guide.`);
+    if (text.includes('\n')) notes.push('Line breaks included in count; review before publishing.');
+    if (/[<>]/.test(text)) notes.push('Angle brackets may be rejected by YouTube.');
+    return {text, count:points.length, preview:points.slice(0,60).join('') + (points.length>60?'…':''), guidance:notes.join(' ')};
+  }
+};
+</script>
+
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = output.value;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([output.value], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+  run.textContent = 'Check title';
+  const preview = $('titlePreview');
+  function changed() { invalidate(); preview.textContent=''; $('counts').textContent=''; $('guidance').textContent=''; tell('Input changed. Check again.'); }
+  input.addEventListener('input', changed); $('guide').addEventListener('input', changed);
+  run.addEventListener('click', () => {
+    changed();
+    try {
+      const value = window.EDB_TOOL.run(input.value, {guide:$('guide').value});
+      preview.textContent = value.preview; $('counts').textContent = `${value.count} characters`;
+      $('guidance').textContent = value.guidance; publish(value.text, null, 'youtube-title.txt');
+    } catch (problem) { fail(problem); }
+  });
+  $('clearBtn').addEventListener('click', () => { input.value=''; $('guide').value='100'; changed(); tell('Reset.'); input.focus(); });
+
+})();
+</script>
+</body></html>

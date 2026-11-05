@@ -1,0 +1,51 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-05",
+  "source_revision": "0cc4ca8451814537071449fc24138d6ee073aaa3",
+  "pages": [
+    {
+      "path": "regex-tester/index.html",
+      "source_sha256": "e639808058733f1fa48f299ce172987a08094cc4d0a8e6dc416e54eebc1af252",
+      "checks": [
+        "Canonical structural PASS; 7 deterministic logic fixtures; 2 real Chromium fixtures / 8 assertions",
+        "Independent focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and output-action checks. See tests/tools/regex-tester.",
+        "Local verification only; clipboard/download simulated; no public release claim."
+      ]
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 7,
+      "failed": 0,
+      "assertions": 7,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 2,
+      "failed": 0,
+      "assertions": 8,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "browser": "Chrome/156.0.8078.4",
+  "contract": "audit/TASK_18_DEVELOPMENT_PLAN.md",
+  "limitations": [
+    "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
+    "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
+    "Publication pending."
+  ],
+  "original_local_source_revision": "c8bc23acfa7452f76f007c0a697f30f422e928ad",
+  "source_tree_sha": "fc087967e761efa84c10c56c081086d6f01ea81f",
+  "publication_method": "Connected GitHub app; complete published source tree independently matched the local source checkpoint tree. No merge or deployment."
+}

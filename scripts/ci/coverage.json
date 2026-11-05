@@ -5,6 +5,7 @@
     "tests/test_consent_overlay.py",
     "tests/test_dashboard.py",
     "tests/test_status_launcher.py",
+    "tests/test_task18_preservation.py",
     "tests/test_tool_framework.py",
     "tests/test_tracking.py"
   ],
@@ -18,19 +19,23 @@
     "tests/tools/compound-interest-calculator/logic.test.mjs",
     "tests/tools/countdown-timer/logic.test.mjs",
     "tests/tools/csv-column-extractor/logic.test.mjs",
+    "tests/tools/csv-json-converter/logic.test.mjs",
     "tests/tools/csv-merger/logic.test.mjs",
     "tests/tools/csv-viewer/logic.test.mjs",
     "tests/tools/date-difference-calculator/logic.test.mjs",
     "tests/tools/discount-calculator/logic.test.mjs",
     "tests/tools/duplicate-line-remover/logic.test.mjs",
     "tests/tools/duplicate-row-finder/logic.test.mjs",
+    "tests/tools/file-signature-inspector/logic.test.mjs",
     "tests/tools/file-size-converter/logic.test.mjs",
     "tests/tools/find-and-replace/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
     "tests/tools/image-color-picker/logic.test.mjs",
+    "tests/tools/image-format-converter/logic.test.mjs",
     "tests/tools/image-resizer/logic.test.mjs",
     "tests/tools/image-rotator/logic.test.mjs",
     "tests/tools/image-watermark/logic.test.mjs",
+    "tests/tools/instagram-bio-formatter/logic.test.mjs",
     "tests/tools/invoice-generator/logic.test.mjs",
     "tests/tools/json-formatter/logic.test.mjs",
     "tests/tools/json-to-txt/logic.test.mjs",
@@ -44,6 +49,7 @@
     "tests/tools/printable-calendar-generator/logic.test.mjs",
     "tests/tools/profit-margin-calculator/logic.test.mjs",
     "tests/tools/random-name-picker/logic.test.mjs",
+    "tests/tools/regex-tester/logic.test.mjs",
     "tests/tools/secure-random-number-generator/logic.test.mjs",
     "tests/tools/sha256-hash-checker/logic.test.mjs",
     "tests/tools/slug-generator/logic.test.mjs",
@@ -57,7 +63,8 @@
     "tests/tools/vat-calculator/logic.test.mjs",
     "tests/tools/working-days-calculator/logic.test.mjs",
     "tests/tools/youtube-description-formatter/logic.test.mjs",
-    "tests/tools/youtube-thumbnail-preview/logic.test.mjs"
+    "tests/tools/youtube-thumbnail-preview/logic.test.mjs",
+    "tests/tools/youtube-title-checker/logic.test.mjs"
   ],
   "browser_files": [
     "scripts/consent-browser.test.mjs",
@@ -73,6 +80,8 @@
     "tests/tools/countdown-timer/integration-browser.test.mjs",
     "tests/tools/csv-column-extractor/extended-browser.test.mjs",
     "tests/tools/csv-column-extractor/integration-browser.test.mjs",
+    "tests/tools/csv-json-converter/extended-browser.test.mjs",
+    "tests/tools/csv-json-converter/integration-browser.test.mjs",
     "tests/tools/csv-merger/extended-browser.test.mjs",
     "tests/tools/csv-merger/integration-browser.test.mjs",
     "tests/tools/csv-viewer/extended-browser.test.mjs",
@@ -85,6 +94,8 @@
     "tests/tools/duplicate-line-remover/integration-browser.test.mjs",
     "tests/tools/duplicate-row-finder/extended-browser.test.mjs",
     "tests/tools/duplicate-row-finder/integration-browser.test.mjs",
+    "tests/tools/file-signature-inspector/extended-browser.test.mjs",
+    "tests/tools/file-signature-inspector/integration-browser.test.mjs",
     "tests/tools/file-size-converter/extended-browser.test.mjs",
     "tests/tools/file-size-converter/integration-browser.test.mjs",
     "tests/tools/find-and-replace/extended-browser.test.mjs",
@@ -93,12 +104,16 @@
     "tests/tools/hashtag-organizer/integration-browser.test.mjs",
     "tests/tools/image-color-picker/extended-browser.test.mjs",
     "tests/tools/image-color-picker/integration-browser.test.mjs",
+    "tests/tools/image-format-converter/extended-browser.test.mjs",
+    "tests/tools/image-format-converter/integration-browser.test.mjs",
     "tests/tools/image-resizer/extended-browser.test.mjs",
     "tests/tools/image-resizer/integration-browser.test.mjs",
     "tests/tools/image-rotator/extended-browser.test.mjs",
     "tests/tools/image-rotator/integration-browser.test.mjs",
     "tests/tools/image-watermark/extended-browser.test.mjs",
     "tests/tools/image-watermark/integration-browser.test.mjs",
+    "tests/tools/instagram-bio-formatter/extended-browser.test.mjs",
+    "tests/tools/instagram-bio-formatter/integration-browser.test.mjs",
     "tests/tools/invoice-generator/extended-browser.test.mjs",
     "tests/tools/invoice-generator/integration-browser.test.mjs",
     "tests/tools/json-formatter/extended-browser.test.mjs",
@@ -125,6 +140,8 @@
     "tests/tools/profit-margin-calculator/integration-browser.test.mjs",
     "tests/tools/random-name-picker/extended-browser.test.mjs",
     "tests/tools/random-name-picker/integration-browser.test.mjs",
+    "tests/tools/regex-tester/extended-browser.test.mjs",
+    "tests/tools/regex-tester/integration-browser.test.mjs",
     "tests/tools/secure-random-number-generator/extended-browser.test.mjs",
     "tests/tools/secure-random-number-generator/integration-browser.test.mjs",
     "tests/tools/sha256-hash-checker/extended-browser.test.mjs",
@@ -152,7 +169,9 @@
     "tests/tools/youtube-description-formatter/extended-browser.test.mjs",
     "tests/tools/youtube-description-formatter/integration-browser.test.mjs",
     "tests/tools/youtube-thumbnail-preview/extended-browser.test.mjs",
-    "tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs"
+    "tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs",
+    "tests/tools/youtube-title-checker/extended-browser.test.mjs",
+    "tests/tools/youtube-title-checker/integration-browser.test.mjs"
   ],
   "tools": {
     "social-counter": {
@@ -408,6 +427,36 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "youtube-title-checker": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "instagram-bio-formatter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "file-signature-inspector": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "image-format-converter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "csv-json-converter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "regex-tester": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -460,9 +509,9 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 148,
-    "node-regression": 327,
-    "browser-tests": 418
+    "python-project": 151,
+    "node-regression": 363,
+    "browser-tests": 478
   },
   "aggregate": {
     "job": "required-checks",

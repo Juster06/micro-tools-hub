@@ -1,0 +1,51 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-05",
+  "source_revision": "6b5c571fd58ec1b3543631d96ff532167bc86d3a",
+  "pages": [
+    {
+      "path": "youtube-title-checker/index.html",
+      "source_sha256": "ce9dc0dd9eabda295aa632a37a18c44796cc248cf3ca4aec431281671f7774f1",
+      "checks": [
+        "Canonical structural PASS; 9 deterministic logic fixtures; 2 real Chromium fixtures / 6 assertions",
+        "Independent focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and output-action checks. See tests/tools/youtube-title-checker.",
+        "Local verification only; clipboard/download simulated; no public release claim."
+      ]
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 9,
+      "failed": 0,
+      "assertions": 9,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 2,
+      "failed": 0,
+      "assertions": 6,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Chrome/156.0.8078.4"
+    }
+  },
+  "browser": "Chrome/156.0.8078.4",
+  "contract": "audit/TASK_18_DEVELOPMENT_PLAN.md",
+  "limitations": [
+    "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
+    "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
+    "Publication pending."
+  ],
+  "original_local_source_revision": "5fa88947ad40786e693879333544386a212b7c07",
+  "source_tree_sha": "c6805774440c100366263a7f0915ec8c6de16a72",
+  "publication_method": "Connected GitHub app; complete published source tree independently matched the local source checkpoint tree. No merge or deployment."
+}

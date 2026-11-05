@@ -1,0 +1,24 @@
+import vm from 'node:vm';
+
+import {test} from 'node:test';import assert from 'node:assert/strict';import {logic} from '../task18-logic.mjs';const {call}=logic('csv-json-converter');
+const from=csv=>JSON.parse(call(csv).output),to=(x,options={})=>call(JSON.stringify(x),{mode:'json-csv',...options});
+test('quoted commas, doubled quotes, Unicode, BOM and multiline records',()=>{assert.deepEqual(from('\ufeffname,note\r\nZoë,"a,\r\nb"\nλ,"x""y"'),[{name:'Zoë',note:'a,\nb'},{name:'λ',note:'x"y'}]);assert.deepEqual(from('a\nx\n'),[{a:'x'}])});
+test('types remain strings and flat JSON values have explicit conversion rules',()=>{assert.deepEqual(from('n,b,v\n001,true,null'),[{n:'001',b:'true',v:'null'}]);assert.equal(to([{a:1,b:true},{b:null,c:'x'}]).output,'a,b,c\r\n1,true,""\r\n"","",x');assert.throws(()=>to([{a:[1]}]),/nested/);assert.throws(()=>call('[{"a":1e400}]',{mode:'json-csv'}),/finite/)});
+test('headerless arrays and all three delimiters preserve quoted fields',()=>{for(const [key,d]of [['comma',','],['semicolon',';'],['tab','\t']]){const x=[['a'+d+'b','line\nnext','"quoted"'],['😀','','001']];const csv=to(x,{header:false,delimiter:key}).output;assert.deepEqual(JSON.parse(call(csv,{header:false,delimiter:key}).output),x)}});
+test('empty, whitespace, duplicate headers, ragged, malformed and mixed shapes fail explicitly',()=>{for(const x of ['','a,a\n1,2',' ,b\n1,2','a,b\nx','a\n"x','a\nx"y','a\n"x"y'])assert.throws(()=>call(x));for(const x of [[{}],[['x']],['x'],[{},[]]])assert.throws(()=>to(x));assert.throws(()=>to([[1],[2,3]],{header:false}),/equal/)});
+test('safe string-only object round trips and prototype-like column names',()=>{const x=[Object.fromEntries([['__proto__','safe'],['constructor','value'],['text',String.fromCodePoint(0x1f600)+',\nhello']])];assert.deepEqual(from(to(x).output),x);assert.deepEqual(from('a\n'),[]);assert.equal(to([['']],{header:false}).output,'""')});
+test('spreadsheet formula-risk headers/values are prefixed and disclosed',()=>{const r=to([{'=header':'  =SUM(1,2)',safe:'\tdata',plus:'+1',minus:'-1',at:'@x',plain:'ok'}]);assert.equal(r.protectedCells,6);assert.match(r.output,/^'=header/);assert.match(r.output,/'-1/);assert.deepEqual(from(to([{a:'ordinary'}]).output),[{a:'ordinary'}])});
+test('duplicate JSON member names reject including escaped equivalents and nested objects',()=>{for(const x of ['[{"a":1,"a":2}]','[{"a":1,"\\u0061":2}]','[{"x":{"a":1,"a":2}}]'])assert.throws(()=>call(x,{mode:'json-csv'}),/Duplicate/);assert.equal(to([{a:'text with : and "a"',b:1}]).columns,2)});
+test('row, column and cell bounds reject excess and accept exact limits',()=>{assert.equal(call('a\n'+'x\n'.repeat(10000)).rows,10000);assert.throws(()=>call('a\n'+'x\n'.repeat(10001)),/10,000/);const row=Array(100).fill('x').join(',');assert.equal(call(row,{header:false}).columns,100);assert.throws(()=>call(row+',x',{header:false}),/100 columns/);assert.throws(()=>call(Array(2001).fill(row).join('\n'),{header:false}),/200,000/)});
+test('UTF-8 input, field and output bounds enforce real encoded sizes',()=>{assert.throws(()=>call('a\n'+'x'.repeat(100001)),/Cell/);assert.throws(()=>call(String.fromCharCode(30028).repeat(700000)),/2 MiB/);const input=JSON.stringify([{a:'\0'.repeat(90000)}]);assert.throws(()=>call(input.repeat(5)),/2 MiB/);assert.throws(()=>call('a'.repeat(100000)+'\n'+'x\n'.repeat(42)),/Output/);assert.throws(()=>call(String.fromCharCode(30028).repeat(33000)+'\n'+'x\n'.repeat(43)),/Output/)});
+test('preview caps records without truncating exported result',()=>{const x=Array.from({length:25},(_,i)=>({a:String(i)}));const r=to(x);assert.equal(r.preview.split('\r\n').length,21);assert.match(r.output,/24$/);assert.doesNotMatch(r.preview,/24$/)});
+
+test('repeated long headers stop serialization before expanding all records',()=>{
+  const csv='h'.repeat(100000)+'\n'+'x\n'.repeat(10000);
+  const {context}=logic('csv-json-converter');
+  // The in-context JSON serializer counts records; at most 40 can fit the cap.
+  context.csv=csv;
+  const result=runSerializationProbe(context);
+  assert.match(result.message,/Output/);assert.ok(result.calls<50,`serialized ${result.calls} records`);
+});
+function runSerializationProbe(context){return vm.runInContext(`(()=>{let calls=0;const stringify=JSON.stringify;JSON.stringify=function(...a){calls++;return stringify.apply(this,a)};let message='';try{EDB_TOOL.run(csv)}catch(e){message=e.message}return {calls,message}})()`,context,{timeout:1000})}

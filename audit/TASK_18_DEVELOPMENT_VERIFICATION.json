@@ -1,0 +1,88 @@
+{
+  "result": "PASS_SCOPED_DEVELOPMENT",
+  "verified_on": "2026-11-05",
+  "baseline": "f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a",
+  "inventory": {
+    "registered": 93,
+    "RELEASED": 50,
+    "TESTED": 6,
+    "PLANNED": 36,
+    "READY": 0,
+    "BLOCKED": 1
+  },
+  "tools": {
+    "youtube-title-checker": {
+      "source_revision": "6b5c571fd58ec1b3543631d96ff532167bc86d3a",
+      "source_sha256": "ce9dc0dd9eabda295aa632a37a18c44796cc248cf3ca4aec431281671f7774f1",
+      "logic_fixtures": 9,
+      "browser_fixtures": 2,
+      "browser_assertions": 6
+    },
+    "instagram-bio-formatter": {
+      "source_revision": "fb821fdf44ff8c7b22e76806673bb05565dfdf6e",
+      "source_sha256": "be5c2fe0d66e16e754236458feff506ab1141b10e57be04f2f86ca2459be4a92",
+      "logic_fixtures": 11,
+      "browser_fixtures": 2,
+      "browser_assertions": 7
+    },
+    "file-signature-inspector": {
+      "source_revision": "a5034a45515eb36d411f158c4bb4e3506c4c4f93",
+      "source_sha256": "2b845bd8af6fdea9dd18f4d0dde18e0f1f65c1c4a5a8dbc92c224984ef35893b",
+      "logic_fixtures": 5,
+      "browser_fixtures": 1,
+      "browser_assertions": 4
+    },
+    "image-format-converter": {
+      "source_revision": "c15defbdea0e20e983a5dadd3807e8b7c45de11e",
+      "source_sha256": "0fc9f13a11b5e980e666b8bebcfde6c81ee9f4833835539f0e14b6a6288ab2ad",
+      "logic_fixtures": 5,
+      "browser_fixtures": 1,
+      "browser_assertions": 4
+    },
+    "csv-json-converter": {
+      "source_revision": "983ac0fee8b1cb1640ac208ddf67910c471cf08c",
+      "source_sha256": "d2c3ad816b7763adc41586e1e701c9fb3a932f3bbeaa6a2ed1093fd379c78fc7",
+      "logic_fixtures": 12,
+      "browser_fixtures": 2,
+      "browser_assertions": 5
+    },
+    "regex-tester": {
+      "source_revision": "0cc4ca8451814537071449fc24138d6ee073aaa3",
+      "source_sha256": "e639808058733f1fa48f299ce172987a08094cc4d0a8e6dc416e54eebc1af252",
+      "logic_fixtures": 7,
+      "browser_fixtures": 2,
+      "browser_assertions": 8
+    }
+  },
+  "local_validation": {
+    "python_tests": 151,
+    "python_failed": 0,
+    "python_skipped": 0,
+    "node_tests": 363,
+    "node_failed": 0,
+    "node_skipped": 0,
+    "all_tool_logic_fixtures": 1252,
+    "focused_extended_chromium_tests": 42,
+    "new_homepage_navigation_tests": 12,
+    "consent_chromium_tests": 20,
+    "task18_canonical_logic_fixtures": 49,
+    "task18_canonical_browser_fixtures": 10,
+    "task18_canonical_browser_assertions": 34,
+    "project_status": "PASS; zero errors/warnings",
+    "preservation_and_historical_consent_rechecks": "9 passed",
+    "browser": "Chrome/156.0.8078.4"
+  },
+  "full_local_browser_run": {
+    "status": "TIMEOUT",
+    "deadline_seconds": 900,
+    "completed_test_progress": 351,
+    "partition_retry": "Stopped to relieve measured Windows memory pressure; not reported as PASS."
+  },
+  "hosted_validation": "Required GitHub Actions checks must pass for the actual PR head; see final PR delivery. No hosted result is invented here.",
+  "preservation": "All 50 released registry records/pages, consent script, privacy notice, CNAME, historical audits, templates, workflow and runtime pins unchanged. Two unrelated worktree handoff edits preserved.",
+  "limits": [
+    "Local clipboard/download APIs simulated; no native-dialog, physical-device, screen-reader or cross-browser certification.",
+    "GA4 requests are intercepted in local regression tests; property-level reporting remains unverified.",
+    "No merge, production deployment, administrator bypass or RELEASED transition."
+  ]
+}

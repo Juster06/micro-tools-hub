@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "format-copy-reset",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": " a \n\n b "
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "trim-lines"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#bioPreview",
+          "property": "textContent",
+          "equals": "a\n\nb"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "a\n\nb"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolMode",
+          "property": "value",
+          "equals": "preserve"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "blank-lines",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "a\n\n\nb"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "blank-lines"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "a\n\nb"
+        },
+        {
+          "action": "expect",
+          "selector": "#counts",
+          "property": "textContent",
+          "equals": "4 characters · 3 lines"
+        }
+      ]
+    }
+  ]
+}
