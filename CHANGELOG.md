@@ -43,11 +43,16 @@ through the existing integration gate; all utility source files are unchanged.
 The next planning checkpoint is 75 releases (56/75); the existing generated
 milestone remains 100. Milestone configuration is unchanged.
 
-Full Python/Node/Chromium, per-tool fixtures, source/evidence, homepage and consent
-regression results are recorded in the final delivery and release-regression audit.
-Existing assertions are retained, with six-ID release counts and publication-aware
-checks replacing development-only TESTED assumptions. No workflow/runtime/timeout
-or required-check relaxation is authorized.
+Local Python **153/153** and Node **363/363** passed, plus **1252** inline
+logic fixtures. All six canonical suites passed structural/logic/browser layers
+(49 logic fixtures; 10 browser fixtures / 34 assertions). Project/source/registry
+validation passed with zero errors and warnings. The full local catalog Chromium
+run is still progressing at this checkpoint; no full local PASS is claimed.
+The exact-head hosted PR gate must complete the full mapped Chromium, 56 browser
+profiles and neutral templates. Actual hosted results are in the PR/final delivery.
+See `audit/TASK_18_RELEASE_REGRESSION.json`. Existing assertions are retained,
+with six-ID release counts and publication-aware checks replacing development-only
+TESTED assumptions. No workflow/runtime/timeout or required-check relaxation.
 
 **Next major task:** Owner review of the Task 18.1 release-verification PR and its
 required checks. Await separate authorization before merge; then verify deployment

@@ -43,11 +43,16 @@ through the existing integration gate; all utility source files are unchanged.
 The next planning checkpoint is 75 releases (56/75); the existing generated
 milestone remains 100. Milestone configuration is unchanged.
 
-Full Python/Node/Chromium, per-tool fixtures, source/evidence, homepage and consent
-regression results are recorded in the final delivery and release-regression audit.
-Existing assertions are retained, with six-ID release counts and publication-aware
-checks replacing development-only TESTED assumptions. No workflow/runtime/timeout
-or required-check relaxation is authorized.
+Local Python **153/153** and Node **363/363** passed, plus **1252** inline
+logic fixtures. All six canonical suites passed structural/logic/browser layers
+(49 logic fixtures; 10 browser fixtures / 34 assertions). Project/source/registry
+validation passed with zero errors and warnings. The full local catalog Chromium
+run is still progressing at this checkpoint; no full local PASS is claimed.
+The exact-head hosted PR gate must complete the full mapped Chromium, 56 browser
+profiles and neutral templates. Actual hosted results are in the PR/final delivery.
+See `audit/TASK_18_RELEASE_REGRESSION.json`. Existing assertions are retained,
+with six-ID release counts and publication-aware checks replacing development-only
+TESTED assumptions. No workflow/runtime/timeout or required-check relaxation.
 
 **Next major task:** Owner review of the Task 18.1 release-verification PR and its
 required checks. Await separate authorization before merge; then verify deployment
@@ -957,7 +962,7 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
 - Git branch: release/task-18-six-tools-verification.
-- Latest commit observed before generation: 8cb97c3f1450634524a40aa9b7cf016bd6b3c78e.
+- Latest commit observed before generation: c75e6f1a75e12cf2ab3d625004983ee7e7ef0f6f.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -990,73 +995,7 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` README.md
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
-- ` M` TOOL_REGISTRY.json
-- ` M` csv-json-converter/README.md
-- ` M` file-signature-inspector/README.md
-- ` M` image-format-converter/README.md
-- ` M` index.html
-- ` M` instagram-bio-formatter/README.md
-- ` M` regex-tester/README.md
-- ` M` scripts/ci/README.md
-- ` M` scripts/ci/coverage.json
-- ` M` scripts/consent-static.test.mjs
-- ` M` tests/test_consent_overlay.py
-- ` M` tests/test_task18_preservation.py
-- ` M` tests/tools/age-calculator/integration-browser.test.mjs
-- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/compound-interest-calculator/integration-browser.test.mjs
-- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
-- ` M` tests/tools/csv-column-extractor/integration-browser.test.mjs
-- ` M` tests/tools/csv-merger/integration-browser.test.mjs
-- ` M` tests/tools/csv-viewer/integration-browser.test.mjs
-- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
-- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-row-finder/integration-browser.test.mjs
-- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
-- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
-- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
-- ` M` tests/tools/image-color-picker/integration-browser.test.mjs
-- ` M` tests/tools/image-resizer/integration-browser.test.mjs
-- ` M` tests/tools/image-rotator/integration-browser.test.mjs
-- ` M` tests/tools/image-watermark/integration-browser.test.mjs
-- ` M` tests/tools/invoice-generator/integration-browser.test.mjs
-- ` M` tests/tools/json-formatter/integration-browser.test.mjs
-- ` M` tests/tools/json-to-txt/integration-browser.test.mjs
-- ` M` tests/tools/loan-repayment-calculator/integration-browser.test.mjs
-- ` M` tests/tools/local-to-do-list/integration-browser.test.mjs
-- ` M` tests/tools/meeting-agenda-generator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
-- ` M` tests/tools/pomodoro-timer/integration-browser.test.mjs
-- ` M` tests/tools/posting-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/printable-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
-- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
-- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
-- ` M` tests/tools/sha256-hash-checker/integration-browser.test.mjs
-- ` M` tests/tools/slug-generator/integration-browser.test.mjs
-- ` M` tests/tools/task18-navigation.mjs
-- ` M` tests/tools/text-difference-checker/integration-browser.test.mjs
-- ` M` tests/tools/text-reverser/integration-browser.test.mjs
-- ` M` tests/tools/text-sorter/integration-browser.test.mjs
-- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
-- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/username-generator/integration-browser.test.mjs
-- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
-- ` M` tests/tools/vat-calculator/integration-browser.test.mjs
-- ` M` tests/tools/working-days-calculator/integration-browser.test.mjs
-- ` M` tests/tools/youtube-description-formatter/integration-browser.test.mjs
-- ` M` tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs
-- ` M` youtube-title-checker/README.md
-- `??` audit/CSV_JSON_CONVERTER_RELEASE_VERIFICATION.json
-- `??` audit/FILE_SIGNATURE_INSPECTOR_RELEASE_VERIFICATION.json
-- `??` audit/IMAGE_FORMAT_CONVERTER_RELEASE_VERIFICATION.json
-- `??` audit/INSTAGRAM_BIO_FORMATTER_RELEASE_VERIFICATION.json
-- `??` audit/REGEX_TESTER_RELEASE_VERIFICATION.json
-- `??` audit/TASK_18_PUBLIC_RELEASE_VERIFICATION.json
-- `??` audit/YOUTUBE_TITLE_CHECKER_RELEASE_VERIFICATION.json
-- `??` tests/test_task18_release.py
+- `??` audit/TASK_18_RELEASE_REGRESSION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->
