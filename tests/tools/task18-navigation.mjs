@@ -7,14 +7,25 @@ export function navigationTests(id,name) {
   const tool=registry.tools.find(t=>t.id===id);
   const routes=registry.tools.filter(t=>['IMPLEMENTED','TESTED','RELEASED'].includes(t.status)).map(t=>t.directory_path+'/index.html').sort();
   let b;before(async()=>{b=await start()});beforeEach(async()=>b.load(source(id)));after(async()=>b?.close());
-  test('tested source has no publication claim; hub preserves canonical routes and returns',async()=>{
-    assert.equal(tool.status,'TESTED');assert.equal(tool.verification.publication,null);
+  test('source has matching lifecycle/publication evidence; hub preserves canonical routes and returns',async()=>{
+    assert.ok(['TESTED','RELEASED'].includes(tool.status));
+    if(tool.status==='TESTED')assert.equal(tool.verification.publication,null);
+    else{
+      const publication=tool.verification.publication;
+      assert.equal(publication.url,'https://everydaydigitalbox.com/'+id+'/');
+      assert.equal(publication.http_status,200);assert.equal(publication.source_matches,true);
+      assert.ok(Number.isFinite(Date.parse(publication.checked_at)));
+      const audit=JSON.parse(fs.readFileSync(new URL('../../'+tool.verification.evidence_path,import.meta.url),'utf8'));
+      assert.equal(audit.result,'PASS');assert.deepEqual(audit.pages[0].publication,publication);
+      assert.equal(audit.public_index.raw_public_sha256,audit.public_index.raw_approved_sha256);
+      assert.equal(audit.source_revision,tool.verification.source_revision);
+    }
     assert.equal(await b.evaluate('document.querySelector("header a").getAttribute("href")'),'../index.html');
     await b.evaluate('document.querySelector("header a").click();true');await wait(b,'!!document.getElementById("toolGrid")');
     assert.deepEqual(await b.evaluate('Array.from(document.querySelectorAll("#toolGrid a[data-title]"),a=>a.getAttribute("href")).sort()'),routes);
     assert.equal(await b.evaluate('resultCount.textContent'),routes.length+' tools ready to use');
-    assert.equal(await b.evaluate(`document.querySelector('[data-tool-id="${id}"]').getAttribute('data-availability')`),'tested');
-    assert.match(await b.evaluate(`document.querySelector('[data-tool-id="${id}"]').textContent`),/publication pending/);
+    assert.equal(await b.evaluate(`document.querySelector('[data-tool-id="${id}"]').getAttribute('data-availability')`),tool.status.toLowerCase());
+    assert.match(await b.evaluate(`document.querySelector('[data-tool-id="${id}"]').textContent`),tool.status==='RELEASED'?/\bLive\b/:/publication pending/);
     await b.evaluate(`document.querySelector('[data-tool-id="${id}"]').click();true`);await wait(b,'!!document.getElementById("toolInput")');
     assert.match(await b.evaluate('document.title'),new RegExp(name));
   });

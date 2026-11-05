@@ -31,7 +31,9 @@ const task14Released=registry.tools.filter(t=>task14Ids.includes(t.id)&&t.status
 const task15Ids=["youtube-thumbnail-preview","pomodoro-timer","csv-column-extractor","duplicate-row-finder","loan-repayment-calculator","invoice-generator"];
 const task15Released=registry.tools.filter(t=>task15Ids.includes(t.id)&&t.status==='RELEASED').length;
 const task16Released=registry.tools.filter(t=>t.id==='csv-merger'&&t.status==='RELEASED').length;
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,13+task9Released+task10Released+task11Released+task12Released+task13Released+task14Released+task15Released+task16Released);
+const task18Ids=["youtube-title-checker","instagram-bio-formatter","file-signature-inspector","image-format-converter","csv-json-converter","regex-tester"];
+const task18Released=registry.tools.filter(t=>task18Ids.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,13+task9Released+task10Released+task11Released+task12Released+task13Released+task14Released+task15Released+task16Released+task18Released);
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

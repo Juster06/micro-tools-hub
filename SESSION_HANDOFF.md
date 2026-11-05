@@ -1,5 +1,60 @@
 # Session handoff
 
+## Task 18.1 — six-tool public release verification
+
+PR #32 merged as `8cb97c3f1450634524a40aa9b7cf016bd6b3c78e`. Pages
+[41961586696](https://github.com/Juster06/micro-tools-hub/actions/runs/41961586696)
+and post-merge Functional CI
+[41961587358](https://github.com/Juster06/micro-tools-hub/actions/runs/41961587358)
+succeeded for that exact commit, including Required functional checks. Main had
+no newer source changes at verification.
+
+Fresh public HTTPS checks matched approved Git bytes for the homepage, all 56
+tool pages, privacy notice, consent script and registry (60 responses), plus the
+six directory-index canonical URLs. All 56 distinct visible homepage cards,
+canonical routes, search/back navigation and the custom domain were verified.
+The six Task 18 tools passed **49 fresh public Chromium interaction tests** with
+synthetic inputs, including real image Blob MIME/pixel checks, CSV expansion
+limits, and actual regex Worker timeout/cancellation/termination. Existing 50
+releases were checked through fresh HTTP/source identity and post-merge CI;
+fresh individual interactions for all 50 are not claimed.
+
+Two fresh isolated browser profiles verified actual public consent behavior.
+No Google requests occurred before choice, after rejection or after withdrawal.
+Accepted homepage/title/regex navigations each sent exactly one real GA4 page
+view for `G-XDHPQYJ5CH`, with HTTP 204; repeat acceptance did not duplicate it.
+Three synthetic test page views were sent. GA4 property-level reporting remains
+unverified. The shared analytics code, settings and privacy notice are unchanged.
+
+See `audit/TASK_18_PUBLIC_RELEASE_VERIFICATION.json` and six separate
+`*_RELEASE_VERIFICATION.json` records for timestamps, raw/normalized hashes,
+deployed revision, browser scope and limitations. Prior development/release
+audits are retained. Clipboard/download APIs were captured in memory; pixels and
+output bytes used real browser codecs. No native-dialog, physical-device,
+screen-reader or cross-browser certification is claimed. The optional
+`/favicon.ico` returns 404 (eight recorded resource-console errors across seven
+contexts); no uncaught application errors, essential asset failures or unexpected
+dependencies occurred. This cosmetic icon issue is not changed in this task.
+
+This branch proposes **93 registered, 56 RELEASED, 0 TESTED, 0 READY,
+36 PLANNED, 1 BLOCKED**. Main/public registry metadata remain at 50 RELEASED and
+6 TESTED until separately authorized integration. Six homepage labels are proposed
+through the existing integration gate; all utility source files are unchanged.
+The next planning checkpoint is 75 releases (56/75); the existing generated
+milestone remains 100. Milestone configuration is unchanged.
+
+Full Python/Node/Chromium, per-tool fixtures, source/evidence, homepage and consent
+regression results are recorded in the final delivery and release-regression audit.
+Existing assertions are retained, with six-ID release counts and publication-aware
+checks replacing development-only TESTED assumptions. No workflow/runtime/timeout
+or required-check relaxation is authorized.
+
+**Next major task:** Owner review of the Task 18.1 release-verification PR and its
+required checks. Await separate authorization before merge; then verify deployment
+of the release metadata. No administrator bypass, deployment, new utility or
+analytics/property setting change is authorized here. The two unrelated local
+handoff edits are preserved. Earlier sections below are historical checkpoints.
+
 <!-- TASK18:START -->
 ## Task 18 — development checkpoint
 
@@ -897,24 +952,24 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 100 released tools; 50 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 36; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 6; RELEASED: 50; DEPRECATED: 0.
+- Milestone: 100 released tools; 56 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 36; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 56; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: feat/task-18-six-tools.
-- Latest commit observed before generation: fb925697a9a42262e2adbc019b5c16bb38d751ae.
+- Git branch: release/task-18-six-tools-verification.
+- Latest commit observed before generation: 8cb97c3f1450634524a40aa9b7cf016bd6b3c78e.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
-- YouTube Title Checker: TESTED, evidence dated 2026-11-05.
-- Regex Tester: TESTED, evidence dated 2026-11-05.
-- Instagram Bio Formatter: TESTED, evidence dated 2026-11-05.
-- Image Format Converter: TESTED, evidence dated 2026-11-05.
-- File Signature Inspector: TESTED, evidence dated 2026-11-05.
-- CSV ↔ JSON Converter: TESTED, evidence dated 2026-11-05.
+- YouTube Title Checker: RELEASED, evidence dated 2026-11-05.
+- Regex Tester: RELEASED, evidence dated 2026-11-05.
+- Instagram Bio Formatter: RELEASED, evidence dated 2026-11-05.
+- Image Format Converter: RELEASED, evidence dated 2026-11-05.
+- File Signature Inspector: RELEASED, evidence dated 2026-11-05.
+- CSV ↔ JSON Converter: RELEASED, evidence dated 2026-11-05.
 - YouTube Thumbnail Preview: RELEASED, evidence dated 2026-11-04.
 - YouTube Description Formatter: RELEASED, evidence dated 2026-11-04.
 - Username Generator: RELEASED, evidence dated 2026-11-04.
@@ -935,7 +990,73 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` README.md
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
-- `??` audit/TASK_18_DEVELOPMENT_VERIFICATION.json
+- ` M` TOOL_REGISTRY.json
+- ` M` csv-json-converter/README.md
+- ` M` file-signature-inspector/README.md
+- ` M` image-format-converter/README.md
+- ` M` index.html
+- ` M` instagram-bio-formatter/README.md
+- ` M` regex-tester/README.md
+- ` M` scripts/ci/README.md
+- ` M` scripts/ci/coverage.json
+- ` M` scripts/consent-static.test.mjs
+- ` M` tests/test_consent_overlay.py
+- ` M` tests/test_task18_preservation.py
+- ` M` tests/tools/age-calculator/integration-browser.test.mjs
+- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/compound-interest-calculator/integration-browser.test.mjs
+- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
+- ` M` tests/tools/csv-column-extractor/integration-browser.test.mjs
+- ` M` tests/tools/csv-merger/integration-browser.test.mjs
+- ` M` tests/tools/csv-viewer/integration-browser.test.mjs
+- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
+- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-row-finder/integration-browser.test.mjs
+- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
+- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
+- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
+- ` M` tests/tools/image-color-picker/integration-browser.test.mjs
+- ` M` tests/tools/image-resizer/integration-browser.test.mjs
+- ` M` tests/tools/image-rotator/integration-browser.test.mjs
+- ` M` tests/tools/image-watermark/integration-browser.test.mjs
+- ` M` tests/tools/invoice-generator/integration-browser.test.mjs
+- ` M` tests/tools/json-formatter/integration-browser.test.mjs
+- ` M` tests/tools/json-to-txt/integration-browser.test.mjs
+- ` M` tests/tools/loan-repayment-calculator/integration-browser.test.mjs
+- ` M` tests/tools/local-to-do-list/integration-browser.test.mjs
+- ` M` tests/tools/meeting-agenda-generator/integration-browser.test.mjs
+- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
+- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
+- ` M` tests/tools/pomodoro-timer/integration-browser.test.mjs
+- ` M` tests/tools/posting-calendar-generator/integration-browser.test.mjs
+- ` M` tests/tools/printable-calendar-generator/integration-browser.test.mjs
+- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
+- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
+- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
+- ` M` tests/tools/sha256-hash-checker/integration-browser.test.mjs
+- ` M` tests/tools/slug-generator/integration-browser.test.mjs
+- ` M` tests/tools/task18-navigation.mjs
+- ` M` tests/tools/text-difference-checker/integration-browser.test.mjs
+- ` M` tests/tools/text-reverser/integration-browser.test.mjs
+- ` M` tests/tools/text-sorter/integration-browser.test.mjs
+- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
+- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/username-generator/integration-browser.test.mjs
+- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
+- ` M` tests/tools/vat-calculator/integration-browser.test.mjs
+- ` M` tests/tools/working-days-calculator/integration-browser.test.mjs
+- ` M` tests/tools/youtube-description-formatter/integration-browser.test.mjs
+- ` M` tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs
+- ` M` youtube-title-checker/README.md
+- `??` audit/CSV_JSON_CONVERTER_RELEASE_VERIFICATION.json
+- `??` audit/FILE_SIGNATURE_INSPECTOR_RELEASE_VERIFICATION.json
+- `??` audit/IMAGE_FORMAT_CONVERTER_RELEASE_VERIFICATION.json
+- `??` audit/INSTAGRAM_BIO_FORMATTER_RELEASE_VERIFICATION.json
+- `??` audit/REGEX_TESTER_RELEASE_VERIFICATION.json
+- `??` audit/TASK_18_PUBLIC_RELEASE_VERIFICATION.json
+- `??` audit/YOUTUBE_TITLE_CHECKER_RELEASE_VERIFICATION.json
+- `??` tests/test_task18_release.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

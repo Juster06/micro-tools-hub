@@ -39,7 +39,8 @@ class DeploymentEvidenceTests(unittest.TestCase):
         audit = json.loads((root/'audit/TASK_17_DEPLOYMENT.json').read_text(encoding='utf8'))
         candidate = json.loads((root/'audit/TASK_17_CANDIDATE.json').read_text(encoding='utf8'))
         registry = json.loads((root/'TOOL_REGISTRY.json').read_text(encoding='utf8'))
-        released = [tool for tool in registry['tools'] if tool['status'] == 'RELEASED']
+        released = [tool for tool in registry['tools'] if tool['status'] == 'RELEASED' and tool['id'] in candidate['tools']]
+        self.assertEqual({tool['id'] for tool in released}, set(candidate['tools']))
         paths = {'index.html', 'privacy.html', 'assets/consent.js'} | {tool['directory_path']+'/index.html' for tool in released}
         self.assertEqual(len(released), 50)
         self.assertEqual(set(audit['sources']), paths)

@@ -1,5 +1,60 @@
 # Development roadmap
 
+## Task 18.1 — six-tool public release verification
+
+PR #32 merged as `8cb97c3f1450634524a40aa9b7cf016bd6b3c78e`. Pages
+[41961586696](https://github.com/Juster06/micro-tools-hub/actions/runs/41961586696)
+and post-merge Functional CI
+[41961587358](https://github.com/Juster06/micro-tools-hub/actions/runs/41961587358)
+succeeded for that exact commit, including Required functional checks. Main had
+no newer source changes at verification.
+
+Fresh public HTTPS checks matched approved Git bytes for the homepage, all 56
+tool pages, privacy notice, consent script and registry (60 responses), plus the
+six directory-index canonical URLs. All 56 distinct visible homepage cards,
+canonical routes, search/back navigation and the custom domain were verified.
+The six Task 18 tools passed **49 fresh public Chromium interaction tests** with
+synthetic inputs, including real image Blob MIME/pixel checks, CSV expansion
+limits, and actual regex Worker timeout/cancellation/termination. Existing 50
+releases were checked through fresh HTTP/source identity and post-merge CI;
+fresh individual interactions for all 50 are not claimed.
+
+Two fresh isolated browser profiles verified actual public consent behavior.
+No Google requests occurred before choice, after rejection or after withdrawal.
+Accepted homepage/title/regex navigations each sent exactly one real GA4 page
+view for `G-XDHPQYJ5CH`, with HTTP 204; repeat acceptance did not duplicate it.
+Three synthetic test page views were sent. GA4 property-level reporting remains
+unverified. The shared analytics code, settings and privacy notice are unchanged.
+
+See `audit/TASK_18_PUBLIC_RELEASE_VERIFICATION.json` and six separate
+`*_RELEASE_VERIFICATION.json` records for timestamps, raw/normalized hashes,
+deployed revision, browser scope and limitations. Prior development/release
+audits are retained. Clipboard/download APIs were captured in memory; pixels and
+output bytes used real browser codecs. No native-dialog, physical-device,
+screen-reader or cross-browser certification is claimed. The optional
+`/favicon.ico` returns 404 (eight recorded resource-console errors across seven
+contexts); no uncaught application errors, essential asset failures or unexpected
+dependencies occurred. This cosmetic icon issue is not changed in this task.
+
+This branch proposes **93 registered, 56 RELEASED, 0 TESTED, 0 READY,
+36 PLANNED, 1 BLOCKED**. Main/public registry metadata remain at 50 RELEASED and
+6 TESTED until separately authorized integration. Six homepage labels are proposed
+through the existing integration gate; all utility source files are unchanged.
+The next planning checkpoint is 75 releases (56/75); the existing generated
+milestone remains 100. Milestone configuration is unchanged.
+
+Full Python/Node/Chromium, per-tool fixtures, source/evidence, homepage and consent
+regression results are recorded in the final delivery and release-regression audit.
+Existing assertions are retained, with six-ID release counts and publication-aware
+checks replacing development-only TESTED assumptions. No workflow/runtime/timeout
+or required-check relaxation is authorized.
+
+**Next major task:** Owner review of the Task 18.1 release-verification PR and its
+required checks. Await separate authorization before merge; then verify deployment
+of the release metadata. No administrator bypass, deployment, new utility or
+analytics/property setting change is authorized here. The two unrelated local
+handoff edits are preserved. Earlier sections below are historical checkpoints.
+
 <!-- TASK18:START -->
 ## Task 18 — development checkpoint
 
@@ -314,7 +369,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | --- | --- | --- | --- | --- | --- |
 | image-compressor | Image Compressor | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-resizer | Image Resizer | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
-| image-format-converter | Image Format Converter | TESTED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
+| image-format-converter | Image Format Converter | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-cropper | Image Cropper | PLANNED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-rotator | Image Rotator | RELEASED | P2 | S | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-watermark | Image Watermark | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
@@ -339,7 +394,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
 | excel-sandbox | Excel Formula Sandbox & Analyzer | RELEASED | P2 | M | Modern browser DOM APIs |
-| csv-json-converter | CSV ↔ JSON Converter | TESTED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
+| csv-json-converter | CSV ↔ JSON Converter | RELEASED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | excel-to-csv | Excel to CSV | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-column-extractor | CSV Column Extractor | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | duplicate-row-finder | Duplicate Row Finder | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
@@ -357,7 +412,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | url-encoder-decoder | URL Encoder and Decoder | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | uuid-generator | UUID Generator | RELEASED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | sha256-hash-checker | SHA-256 Text & File Hash Checker | RELEASED | P2 | M | Browser Web Crypto SHA-256; bounded file reads |
-| regex-tester | Regex Tester | TESTED | P2 | L | Browser Worker with termination timeout; bounded input |
+| regex-tester | Regex Tester | RELEASED | P2 | L | Browser Worker with termination timeout; bounded input |
 | html-formatter | HTML Formatter | PLANNED | P2 | L | Reviewed non-executing HTML parser and whitespace-preservation policy |
 | css-minifier | CSS Minifier | PLANNED | P2 | L | Reviewed CSS parser/minifier and license |
 | javascript-minifier | JavaScript Minifier | PLANNED | P2 | L | Reviewed JavaScript parser/minifier and license; consider worker isolation |
@@ -369,9 +424,9 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | --- | --- | --- | --- | --- | --- |
 | social-counter | Social Media Character Counter & Live Previewer | RELEASED | P2 | M | Modern browser DOM APIs |
 | hashtag-organizer | Hashtag Organizer | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| youtube-title-checker | YouTube Title Checker | TESTED | P2 | S | Browser-native approach; scope review before implementation |
+| youtube-title-checker | YouTube Title Checker | RELEASED | P2 | S | Browser-native approach; scope review before implementation |
 | youtube-description-formatter | YouTube Description Formatter | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
-| instagram-bio-formatter | Instagram Bio Formatter | TESTED | P2 | M | Browser-native approach; scope review before implementation |
+| instagram-bio-formatter | Instagram Bio Formatter | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | social-media-line-break-tool | Social Media Line Break Tool | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | emoji-picker | Emoji Picker | PLANNED | P2 | M | Reviewed local emoji dataset and usage license |
 | hashtag-counter | Hashtag Counter | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
@@ -404,7 +459,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | local-text-encryption | Local Text Encryption | PLANNED | P3 | XL | Web Crypto authenticated encryption and password derivation; Separate reviewed threat model and versioned format |
 | exif-metadata-viewer | EXIF Metadata Viewer | PLANNED | P2 | L | Reviewed format-specific metadata parser |
 | exif-metadata-remover | EXIF Metadata Remover | PLANNED | P2 | L | Reviewed metadata parser/removal method and exported-metadata verifier |
-| file-signature-inspector | File Signature Inspector | TESTED | P2 | M | Browser Web Crypto where cryptographic randomness or hashing is required |
+| file-signature-inspector | File Signature Inspector | RELEASED | P2 | M | Browser Web Crypto where cryptographic randomness or hashing is required |
 | passphrase-generator | Passphrase Generator | PLANNED | P2 | M | Reviewed licensed word list; Browser cryptographic randomness and unbiased selection |
 | qr-code-generator | QR Code Generator | PLANNED | P2 | M | Reviewed locally bundled QR encoder and license |
 
