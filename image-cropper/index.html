@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Crop an image with an accessible selection workflow."><meta name="color-scheme" content="dark">
+  <title>Image Cropper — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>Image Cropper</h1><p class="description">Crop an image with an accessible selection workflow.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="toolInput">Local image (JPEG, PNG or WebP, up to 5 MiB)</label><input id="toolInput" type="file" accept="image/jpeg,image/png,image/webp">
+<p id="sourceSize" role="status">Coordinates use the decoded image orientation. Dimensions are shown after preview.</p>
+<label for="cropX">Left edge X (pixels)</label><input id="cropX" type="number" min="0" max="4095" step="1" value="0">
+<label for="cropY">Top edge Y (pixels)</label><input id="cropY" type="number" min="0" max="4095" step="1" value="0">
+<label for="cropWidth">Crop width (pixels)</label><input id="cropWidth" type="number" min="1" max="4096" step="1" placeholder="Blank = remaining width">
+<label for="cropHeight">Crop height (pixels)</label><input id="cropHeight" type="number" min="1" max="4096" step="1" placeholder="Blank = remaining height">
+<label for="ratio">Aspect-ratio constraint</label><select id="ratio"><option value="free">Free dimensions</option><option value="square">1:1 square</option><option value="landscape">4:3 landscape</option><option value="wide">16:9 wide</option></select>
+<p>Enter coordinates and dimensions, then preview. Ratios validate your rectangle; they do not silently move or resize it. Every control works with the keyboard.</p>
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+<img id="cropPreview" alt="Cropped image preview" hidden>
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled >Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>Static JPEG/PNG/WebP input ≤5 MiB; dimensions ≤4,096 per side and ≤8 million decoded pixels. Headers are bounded before decoding; actual decoded bounds are rechecked. Crop coordinates are whole pixels in decoded orientation; no scaling or silent clipping. PNG export ≤32 MiB preserves alpha where the decoder supports it. Animated images, SVG and unsupported/corrupt input are rejected. Browser color/orientation handling can vary; exported images are re-encoded and metadata preservation/removal is not certified. Local processing only.</p>
+<p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+
+<script id="edb-tool-logic">
+'use strict';
+
+'use strict';
+
+const IMAGE_HEADER = {
+  isScaffold:false, allowEmpty:false,
+  run(input, options = {}) {
+    const bytes=input?.bytes;
+    if (!bytes || !Number.isInteger(bytes.length) || bytes.length>5*1024*1024 || !bytes.length) throw Error('Choose a nonempty image up to 5 MiB.');
+    if (Object.keys(options).some(k=>!['type','quality','background'].includes(k))) throw Error('Unsupported option.');
+    const type=options.type??'image/png', quality=Number(options.quality??0.9),background=options.background??'#ffffff';
+    if (!['image/png','image/jpeg','image/webp'].includes(type)) throw Error('Unsupported output format.');
+    if (!Number.isFinite(quality)||quality<0||quality>1) throw Error('Quality must be between 0 and 1.');
+    if (typeof background!=='string'||!/^#[0-9a-f]{6}$/i.test(background)) throw Error('Choose a six-digit JPEG background color.');
+    const at=(o,a)=>a.every((v,i)=>bytes[o+i]===v), ascii=(o,s)=>at(o,Array.from(s,c=>c.charCodeAt(0)));
+    const be32=o=>((bytes[o]*16777216)+(bytes[o+1]<<16)+(bytes[o+2]<<8)+bytes[o+3]);
+    const le32=o=>bytes[o]+bytes[o+1]*256+bytes[o+2]*65536+bytes[o+3]*16777216;
+    let width=0,height=0,format='';
+    if (at(0,[137,80,78,71,13,10,26,10])) {
+      format='PNG';
+      if (bytes.length<33||be32(8)!==13||!ascii(12,'IHDR')) throw Error('Invalid or truncated PNG header.');
+      width=be32(16);height=be32(20);let end=false;
+      for (let p=8;p+12<=bytes.length;) {
+        const length=be32(p);if (!Number.isInteger(length)||p+12+length>bytes.length) throw Error('Truncated PNG chunk.');
+        if (ascii(p+4,'acTL')) throw Error('Animated PNG is not supported.');
+        if (ascii(p+4,'IEND')) {end=true;break;} p+=12+length;
+      }
+      if (!end) throw Error('PNG end chunk is missing.');
+    } else if (at(0,[255,216,255])) {
+      format='JPEG';
+      for (let p=2;p<bytes.length;) {
+        if (bytes[p++]!==255) throw Error('Invalid JPEG marker.');
+        while(bytes[p]===255)p++;
+        const marker=bytes[p++];if(marker===217||marker===218)break;
+        if(marker===216||marker===1||(marker>=208&&marker<=215))continue;
+        if (p+2>bytes.length) throw Error('Truncated JPEG segment.');
+        const size=bytes[p]*256+bytes[p+1];
+        if (size<2||p+size>bytes.length) throw Error('Truncated JPEG segment.');
+        if (marker===226&&ascii(p+2,'MPF\0')) throw Error('Multi-picture JPEG is not supported.');
+        if ([192,193,194,195,197,198,199,201,202,203,205,206,207].includes(marker)) {
+          if(size<8)throw Error('Invalid JPEG dimensions.');height=bytes[p+3]*256+bytes[p+4];width=bytes[p+5]*256+bytes[p+6];
+        }
+        p+=size;
+      }
+      if (!width||!height) throw Error('JPEG dimensions are missing.');
+    } else if (ascii(0,'RIFF')&&ascii(8,'WEBP')) {
+      format='WebP';if(bytes.length<20||le32(4)+8!==bytes.length)throw Error('Truncated WebP container.');
+      let frame=false;
+      for(let p=12;p+8<=bytes.length;){
+        const size=le32(p+4),start=p+8;
+        if(start+size>bytes.length)throw Error('Truncated WebP chunk.');
+        if(ascii(p,'ANIM')||ascii(p,'ANMF')||(ascii(p,'VP8X')&&(bytes[start]&2)))throw Error('Animated WebP is not supported.');
+        if(ascii(p,'VP8X')){if(size<10)throw Error('Invalid WebP dimensions.');width=1+bytes[start+4]+bytes[start+5]*256+bytes[start+6]*65536;height=1+bytes[start+7]+bytes[start+8]*256+bytes[start+9]*65536;}
+        if(ascii(p,'VP8 ')) {if(size<10||!at(start+3,[157,1,42]))throw Error('Invalid WebP frame.');frame=true;if(!width){width=(bytes[start+6]+bytes[start+7]*256)&16383;height=(bytes[start+8]+bytes[start+9]*256)&16383;}}
+        if(ascii(p,'VP8L')) {if(size<5||bytes[start]!==47)throw Error('Invalid WebP frame.');frame=true;if(!width){const bits=le32(start+1);width=1+(bits&16383);height=1+((bits>>>14)&16383);}}
+        p=start+size+(size%2);
+      }
+      if(!frame)throw Error('WebP image frame is missing.');
+    } else throw Error('Only static JPEG, PNG and WebP images are supported.');
+    if(!Number.isInteger(width)||!Number.isInteger(height)||width<1||height<1||width>4096||height>4096||width*height>8000000)throw Error('Image dimensions exceed 4,096 per side or 8 million pixels.');
+    return {width,height,format,type,quality,background};
+  }
+};
+
+function cropInteger(value,fallback,label,blank=false){
+ if(value===undefined||(blank&&value===''))return fallback;
+ if(!['string','number'].includes(typeof value)||!/^\d{1,4}$/.test(String(value)))throw Error(label+' must be a nonnegative whole pixel value.');return Number(value);
+}
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,
+ run(input,options={}){
+  if(Object.keys(options).some(k=>!['x','y','width','height','ratio'].includes(k)))throw Error('Unsupported crop option.');
+  const meta=IMAGE_HEADER.run(input),sourceWidth=input.decodedWidth??meta.width,sourceHeight=input.decodedHeight??meta.height;
+  if(!Number.isInteger(sourceWidth)||!Number.isInteger(sourceHeight)||sourceWidth<1||sourceHeight<1||sourceWidth>4096||sourceHeight>4096||sourceWidth*sourceHeight>8000000||!((sourceWidth===meta.width&&sourceHeight===meta.height)||(sourceWidth===meta.height&&sourceHeight===meta.width)))throw Error('Decoded image dimensions do not match the validated bounds.');
+  const x=cropInteger(options.x,0,'X'),y=cropInteger(options.y,0,'Y'),width=cropInteger(options.width,sourceWidth-x,'Width',true),height=cropInteger(options.height,sourceHeight-y,'Height',true);
+  if(x>=sourceWidth||y>=sourceHeight||width<1||height<1||x+width>sourceWidth||y+height>sourceHeight)throw Error('Crop rectangle must stay inside the decoded image with positive width and height.');
+  const ratio=options.ratio??'free',pairs={square:[1,1],landscape:[4,3],wide:[16,9]};
+  if(ratio!=='free'){const pair=pairs[ratio];if(!pair)throw Error('Choose a supported aspect ratio.');if(width*pair[1]!==height*pair[0])throw Error('Width and height must exactly match the selected aspect ratio.');}
+  return {sourceWidth,sourceHeight,x,y,width,height,format:meta.format,ratio};
+ }
+};
+</script>
+
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt', resultText = '';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultText = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultText = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    resultText = text; output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = resultText;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([resultText], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+ run.textContent='Preview crop';let previewURL=null;
+ function clearPreview(){if(previewURL){URL.revokeObjectURL(previewURL);previewURL=null;}$('cropPreview').removeAttribute('src');$('cropPreview').hidden=true;}
+ function changed(){invalidate();clearPreview();run.disabled=false;tell('Input changed. Preview again before downloading.');}
+ input.addEventListener('change',()=>{changed();$('sourceSize').textContent='Dimensions will be shown after preview.';});
+ for(const id of ['cropX','cropY','cropWidth','cropHeight'])$(id).addEventListener('input',changed);$('ratio').addEventListener('change',changed);
+ async function decode(file){
+  let abandoned=false,timer;
+  const pending=createImageBitmap(file);pending.then(image=>{if(abandoned)image.close();},()=>{});
+  try{return await Promise.race([pending,new Promise((_,reject)=>{timer=setTimeout(()=>{abandoned=true;reject(Error('Image decoding timed out.'));},5000);})]);}finally{clearTimeout(timer);}
+ }
+ run.addEventListener('click',async()=>{
+  changed();const token=revision,file=input.files[0],canvas=document.createElement('canvas');let bitmap;
+  if(!file){fail(Error('Choose an image first.'));return;}run.disabled=true;tell('Validating and cropping locally…');
+  try{
+   if(!file.size||file.size>5242880)throw Error('Choose a nonempty image up to 5 MiB.');
+   if(typeof createImageBitmap!=='function')throw Error('This browser cannot decode images with the required API.');
+   const bytes=new Uint8Array(await file.arrayBuffer());if(token!==revision)return;
+   IMAGE_HEADER.run({bytes});bitmap=await decode(file);if(token!==revision)return;
+   const rect=window.EDB_TOOL.run({bytes,decodedWidth:bitmap.width,decodedHeight:bitmap.height},{x:$('cropX').value,y:$('cropY').value,width:$('cropWidth').value,height:$('cropHeight').value,ratio:$('ratio').value});
+   $('sourceSize').textContent=`Decoded source: ${rect.sourceWidth} × ${rect.sourceHeight} pixels`;
+   canvas.width=rect.width;canvas.height=rect.height;const context=canvas.getContext('2d');if(!context)throw Error('Canvas is unavailable.');
+   context.drawImage(bitmap,rect.x,rect.y,rect.width,rect.height,0,0,rect.width,rect.height);bitmap.close();bitmap=null;
+   const blob=await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('PNG encoding timed out.')),5000);try{canvas.toBlob(value=>{clearTimeout(timer);value?resolve(value):reject(Error('PNG encoding failed.'));},'image/png');}catch(problem){clearTimeout(timer);reject(problem);}});
+   if(token!==revision)return;if(blob.type!=='image/png'||!blob.size||blob.size>33554432)throw Error('PNG output is empty, exceeds 32 MiB or has an unexpected MIME type.');
+   previewURL=URL.createObjectURL(blob);$('cropPreview').src=previewURL;$('cropPreview').hidden=false;
+   publish(`Source: ${rect.sourceWidth} × ${rect.sourceHeight}\nCrop: X ${rect.x}, Y ${rect.y}, ${rect.width} × ${rect.height}\nPNG: ${blob.size} bytes`,blob,'cropped-image.png');
+  }catch(problem){if(token===revision){clearPreview();fail(problem);}}finally{if(bitmap)bitmap.close();canvas.width=canvas.height=0;if(token===revision)run.disabled=false;}
+ });
+ $('clearBtn').addEventListener('click',()=>{input.value='';$('cropX').value=$('cropY').value='0';$('cropWidth').value=$('cropHeight').value='';$('ratio').value='free';changed();$('sourceSize').textContent='Dimensions will be shown after preview.';tell('Reset.');input.focus();});
+ window.addEventListener('pagehide',()=>{revision++;clearPreview();});
+
+})();
+</script>
+</body></html>

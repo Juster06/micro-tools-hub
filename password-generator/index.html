@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create passwords using browser cryptographic randomness."><meta name="color-scheme" content="dark">
+  <title>Password Generator — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>Password Generator</h1><p class="description">Create passwords using browser cryptographic randomness.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="toolInput">Password length</label><input id="toolInput" type="number" min="8" max="128" step="1" value="16" autocomplete="off">
+<label for="quantity">Number of passwords</label><input id="quantity" type="number" min="1" max="20" step="1" value="1" autocomplete="off">
+<fieldset><legend>Characters allowed</legend>
+<label><input id="upper" type="checkbox" checked> Uppercase A–Z</label><label><input id="lower" type="checkbox" checked> Lowercase a–z</label>
+<label><input id="digits" type="checkbox" checked> Digits 0–9</label><label><input id="symbols" type="checkbox" checked> ASCII symbols</label></fieldset>
+<p>Selected sets form one pool. A password may not contain every selected set. Generate only when you are ready to use the result.</p>
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled hidden>Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>Length 8–128; quantity 1–20; output including separating line breaks ≤2,560 characters. Selection uses browser cryptographic randomness with rejection sampling, with no fallback. No automatic generation, downloads, saved secrets or logging. Copy is an explicit sensitive-data action; clipboard/extension access and memory erasure are outside this tool’s control. Website password rules vary; no strength or security certification is claimed.</p>
+<p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+
+<script id="edb-tool-logic">
+'use strict';
+
+function randomIndex(size, random) {
+  if (!Number.isInteger(size) || size<1 || size>65536) throw Error('Invalid selection pool.');
+  if (!random || typeof random.getRandomValues!=='function') throw Error('Cryptographic randomness is unavailable. No result generated.');
+  const limit=Math.floor(4294967296/size)*size, word=new Uint32Array(1);
+  for(let tries=0;tries<128;tries++) {
+    try { random.getRandomValues(word); } catch { throw Error('Cryptographic randomness failed. No result generated.'); }
+    if(word[0]<limit)return word[0]%size;
+  }
+  throw Error('Cryptographic randomness did not produce a usable sample. No result generated.');
+}
+function whole(value,minimum,maximum,label) {
+  if(!['string','number'].includes(typeof value)||!/^\d{1,3}$/.test(String(value)))throw Error(label+' must be a whole number.');
+  const number=Number(value);if(!Number.isInteger(number)||number<minimum||number>maximum)throw Error(label+' must be '+minimum+'–'+maximum+'.');
+  return number;
+}
+
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,
+ run(input,options={}) {
+  if(typeof input!=='string')throw Error('Length must be text from the length control.');
+  if(Object.keys(options).some(k=>!['quantity','upper','lower','digits','symbols'].includes(k)))throw Error('Unsupported option.');
+  const length=whole(input,8,128,'Length'),quantity=whole(options.quantity??1,1,20,'Quantity');
+  const sets={upper:'ABCDEFGHIJKLMNOPQRSTUVWXYZ',lower:'abcdefghijklmnopqrstuvwxyz',digits:'0123456789',symbols:'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'};
+  let alphabet='';for(const key of Object.keys(sets)){const value=options[key]??true;if(typeof value!=='boolean')throw Error('Character-set selection must be boolean.');if(value)alphabet+=sets[key];}
+  if(!alphabet)throw Error('Choose at least one character set.');
+  if(length*quantity+quantity-1>2560)throw Error('Output exceeds 2,560 characters including line breaks. Reduce length or quantity.');
+  return {length,quantity,alphabet};
+ },
+ generate(input,options={},random=window.crypto) {
+  const settings=this.run(input,options),lines=[];
+  for(let i=0;i<settings.quantity;i++){let text='';for(let j=0;j<settings.length;j++)text+=settings.alphabet[randomIndex(settings.alphabet.length,random)];lines.push(text);}
+  return lines.join('\n');
+ }
+};
+</script>
+
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt', resultText = '';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultText = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultText = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    resultText = text; output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = resultText;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([resultText], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+  run.textContent='Generate passwords';output.autocomplete='off';
+  function changed(){invalidate();tell('Settings changed. Generate a fresh result.');}
+  input.addEventListener('input',changed);$('quantity').addEventListener('input',changed);
+  for(const key of ['upper','lower','digits','symbols'])$(key).addEventListener('change',changed);
+  run.addEventListener('click',()=>{
+    changed();try{
+      if(window.isSecureContext!==true)throw Error('A secure context is required for cryptographic randomness.');
+      const settings={quantity:$('quantity').value};for(const k of ['upper','lower','digits','symbols'])settings[k]=$(k).checked;
+      const text=window.EDB_TOOL.generate(input.value,settings,window.crypto);publish(text);download.disabled=true;tell('Generated locally using Web Crypto. Copy only when you are ready; your clipboard may be visible to other apps.');
+    }catch(problem){fail(problem);}
+  });
+  $('clearBtn').addEventListener('click',()=>{input.value='16';$('quantity').value='1';for(const k of ['upper','lower','digits','symbols'])$(k).checked=true;changed();tell('Reset. Generated secrets cleared from this page.');input.focus();});
+  window.addEventListener('pagehide',()=>{invalidate();});
+
+})();
+</script>
+</body></html>

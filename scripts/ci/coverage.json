@@ -7,6 +7,7 @@
     "tests/test_status_launcher.py",
     "tests/test_task18_preservation.py",
     "tests/test_task18_release.py",
+    "tests/test_task19_preservation.py",
     "tests/test_tool_framework.py",
     "tests/test_tracking.py"
   ],
@@ -20,8 +21,10 @@
     "tests/tools/compound-interest-calculator/logic.test.mjs",
     "tests/tools/countdown-timer/logic.test.mjs",
     "tests/tools/csv-column-extractor/logic.test.mjs",
+    "tests/tools/csv-data-cleaner/logic.test.mjs",
     "tests/tools/csv-json-converter/logic.test.mjs",
     "tests/tools/csv-merger/logic.test.mjs",
+    "tests/tools/csv-to-txt/logic.test.mjs",
     "tests/tools/csv-viewer/logic.test.mjs",
     "tests/tools/date-difference-calculator/logic.test.mjs",
     "tests/tools/discount-calculator/logic.test.mjs",
@@ -32,6 +35,7 @@
     "tests/tools/find-and-replace/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
     "tests/tools/image-color-picker/logic.test.mjs",
+    "tests/tools/image-cropper/logic.test.mjs",
     "tests/tools/image-format-converter/logic.test.mjs",
     "tests/tools/image-resizer/logic.test.mjs",
     "tests/tools/image-rotator/logic.test.mjs",
@@ -43,12 +47,15 @@
     "tests/tools/loan-repayment-calculator/logic.test.mjs",
     "tests/tools/local-to-do-list/logic.test.mjs",
     "tests/tools/meeting-agenda-generator/logic.test.mjs",
+    "tests/tools/passphrase-generator/logic.test.mjs",
+    "tests/tools/password-generator/logic.test.mjs",
     "tests/tools/percentage-calculator/logic.test.mjs",
     "tests/tools/percentage-change-calculator/logic.test.mjs",
     "tests/tools/pomodoro-timer/logic.test.mjs",
     "tests/tools/posting-calendar-generator/logic.test.mjs",
     "tests/tools/printable-calendar-generator/logic.test.mjs",
     "tests/tools/profit-margin-calculator/logic.test.mjs",
+    "tests/tools/qr-code-generator/logic.test.mjs",
     "tests/tools/random-name-picker/logic.test.mjs",
     "tests/tools/regex-tester/logic.test.mjs",
     "tests/tools/secure-random-number-generator/logic.test.mjs",
@@ -81,10 +88,14 @@
     "tests/tools/countdown-timer/integration-browser.test.mjs",
     "tests/tools/csv-column-extractor/extended-browser.test.mjs",
     "tests/tools/csv-column-extractor/integration-browser.test.mjs",
+    "tests/tools/csv-data-cleaner/extended-browser.test.mjs",
+    "tests/tools/csv-data-cleaner/integration-browser.test.mjs",
     "tests/tools/csv-json-converter/extended-browser.test.mjs",
     "tests/tools/csv-json-converter/integration-browser.test.mjs",
     "tests/tools/csv-merger/extended-browser.test.mjs",
     "tests/tools/csv-merger/integration-browser.test.mjs",
+    "tests/tools/csv-to-txt/extended-browser.test.mjs",
+    "tests/tools/csv-to-txt/integration-browser.test.mjs",
     "tests/tools/csv-viewer/extended-browser.test.mjs",
     "tests/tools/csv-viewer/integration-browser.test.mjs",
     "tests/tools/date-difference-calculator/extended-browser.test.mjs",
@@ -105,6 +116,8 @@
     "tests/tools/hashtag-organizer/integration-browser.test.mjs",
     "tests/tools/image-color-picker/extended-browser.test.mjs",
     "tests/tools/image-color-picker/integration-browser.test.mjs",
+    "tests/tools/image-cropper/extended-browser.test.mjs",
+    "tests/tools/image-cropper/integration-browser.test.mjs",
     "tests/tools/image-format-converter/extended-browser.test.mjs",
     "tests/tools/image-format-converter/integration-browser.test.mjs",
     "tests/tools/image-resizer/extended-browser.test.mjs",
@@ -127,6 +140,10 @@
     "tests/tools/local-to-do-list/integration-browser.test.mjs",
     "tests/tools/meeting-agenda-generator/extended-browser.test.mjs",
     "tests/tools/meeting-agenda-generator/integration-browser.test.mjs",
+    "tests/tools/passphrase-generator/extended-browser.test.mjs",
+    "tests/tools/passphrase-generator/integration-browser.test.mjs",
+    "tests/tools/password-generator/extended-browser.test.mjs",
+    "tests/tools/password-generator/integration-browser.test.mjs",
     "tests/tools/percentage-calculator/extended-browser.test.mjs",
     "tests/tools/percentage-calculator/integration-browser.test.mjs",
     "tests/tools/percentage-change-calculator/extended-browser.test.mjs",
@@ -139,6 +156,8 @@
     "tests/tools/printable-calendar-generator/integration-browser.test.mjs",
     "tests/tools/profit-margin-calculator/extended-browser.test.mjs",
     "tests/tools/profit-margin-calculator/integration-browser.test.mjs",
+    "tests/tools/qr-code-generator/extended-browser.test.mjs",
+    "tests/tools/qr-code-generator/integration-browser.test.mjs",
     "tests/tools/random-name-picker/extended-browser.test.mjs",
     "tests/tools/random-name-picker/integration-browser.test.mjs",
     "tests/tools/regex-tester/extended-browser.test.mjs",
@@ -458,6 +477,36 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "password-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "csv-to-txt": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "passphrase-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "qr-code-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "image-cropper": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "csv-data-cleaner": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -510,9 +559,9 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 153,
-    "node-regression": 363,
-    "browser-tests": 478
+    "python-project": 161,
+    "node-regression": 403,
+    "browser-tests": 537
   },
   "aggregate": {
     "job": "required-checks",

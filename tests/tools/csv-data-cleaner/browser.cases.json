@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "preview-apply-copy-export-reset",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "name,value\n Ada , 7 "
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "#afterPreview",
+          "property": "textContent",
+          "equals": "name,value\nAda,7"
+        },
+        {
+          "action": "click",
+          "selector": "#applyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "name,value\nAda,7"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "name,value\r\nAda,7"
+        },
+        {
+          "action": "click",
+          "selector": "#downloadBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "text",
+          "equals": "name,value\r\nAda,7"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#applyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "strict-error",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "a,b\nx"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#applyBtn",
+          "property": "disabled",
+          "equals": true
+        }
+      ]
+    }
+  ]
+}

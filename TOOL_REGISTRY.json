@@ -1215,7 +1215,7 @@
       "category": "image",
       "description": "Crop an image with an accessible selection workflow.",
       "directory_path": "image-cropper",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -1227,14 +1227,34 @@
         "Numeric crop controls",
         "Preview and download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [
         "image-resizer"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_sha256": "9e3b8bcf38777bd9a90c775f17a010c8f3097ec6b552e1c1d57fef30ed99cba5",
+        "evidence_path": "audit/IMAGE_CROPPER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 8 deterministic settings/transformation fixtures; 1 real Chromium fixtures / 5 assertions.",
+          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
+          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "image-rotator",
@@ -2194,7 +2214,7 @@
       "category": "data",
       "description": "Apply explicit cleaning operations to CSV fields.",
       "directory_path": "csv-data-cleaner",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2207,14 +2227,34 @@
         "Column selection",
         "Download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [
         "csv-viewer"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_sha256": "a66bf18c8fa168eac71d758b7ec0d38ba61bc2b4265c5b63e3cc6a0a8b8d4312",
+        "evidence_path": "audit/CSV_DATA_CLEANER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 9 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 10 assertions.",
+          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
+          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "csv-merger",
@@ -3948,7 +3988,7 @@
       "category": "security",
       "description": "Create passwords using browser cryptographic randomness.",
       "directory_path": "password-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3961,12 +4001,32 @@
         "No storage or logging",
         "Copy with sensitive-data notice"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_sha256": "ccd7e401abc193ffe4d2cac50431442b355f7ba17019301db0e94e61187b2d6a",
+        "evidence_path": "audit/PASSWORD_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 9 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 6 assertions.",
+          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
+          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "password-strength-checker",
@@ -4185,7 +4245,7 @@
       "category": "security",
       "description": "Generate random word sequences from a reviewed local word list.",
       "directory_path": "passphrase-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4199,12 +4259,32 @@
         "Length options",
         "No logging"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_sha256": "cb209580582a7bc27a4d4fd570c95fdbddfe4755dd7acafa220202e8d0aa9b64",
+        "evidence_path": "audit/PASSPHRASE_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 9 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 6 assertions.",
+          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
+          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "qr-code-generator",
@@ -4212,7 +4292,7 @@
       "category": "security",
       "description": "Generate QR codes locally from user-provided text.",
       "directory_path": "qr-code-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4225,12 +4305,32 @@
         "PNG or SVG export",
         "No URL-shortening service"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
+        "evidence_path": "audit/QR_CODE_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 9 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 7 assertions.",
+          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
+          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "txt-to-pdf",
@@ -4316,7 +4416,7 @@
       "category": "conversion",
       "description": "Render selected CSV fields into a configurable text layout.",
       "directory_path": "csv-to-txt",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4329,12 +4429,32 @@
         "Line format",
         "Download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_sha256": "9f960bcc4b3c1bee64d69203108ad02cb55b772f57bd833696c7cfd2cdf5b97b",
+        "evidence_path": "audit/CSV_TO_TXT_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 12 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 7 assertions.",
+          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
+          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "json-to-txt",

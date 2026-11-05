@@ -61,3 +61,26 @@ for(const id of task18)test(`Task 18 ${id}: usable before consent/after rejectio
   assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"),true);
   events=[];await navigate(route);await exerciseTask18(id);assert.deepEqual(gaRequests(),[]);
 });
+
+
+const task19=['password-generator','csv-to-txt','passphrase-generator','qr-code-generator','image-cropper','csv-data-cleaner'];
+async function exerciseTask19(id){
+ if(id==='image-cropper'){
+  await b.evaluate(`(async()=>{const c=document.createElement('canvas');c.width=c.height=2;const blob=await new Promise(r=>c.toBlob(r,'image/png'));const dt=new DataTransfer();dt.items.add(new File([blob],'synthetic.png'));toolInput.files=dt.files;toolInput.dispatchEvent(new Event('change'));return true})()`);
+ }else{
+  const input=id==='password-generator'?'8':id==='passphrase-generator'?'6':id==='csv-to-txt'||id==='csv-data-cleaner'?'name\nlocal':'Local synthetic QR';
+  await b.evaluate(`toolInput.value=${JSON.stringify(input)};toolInput.dispatchEvent(new Event('input'));true`);
+ }
+ await click('runBtn');if(id==='csv-data-cleaner')await click('applyBtn');
+ await wait(()=>b.evaluate('!runBtn.disabled&&!!toolOutput.value'));assert.equal(await b.evaluate('toolError.hidden'),true);
+}
+for(const id of task19)test(`Task 19 ${id}: usable without consent, accepted navigation, no duplicates and persistent withdrawal`,async()=>{
+ const route='/'+id+'/index.html';await navigate(route);await exerciseTask19(id);assert.deepEqual(gaRequests(),[]);
+ await click('edb-consent-reject');await exerciseTask19(id);assert.deepEqual(gaRequests(),[]);
+ await click('edb-consent-settings');await click('edb-consent-accept');await wait(async()=>(await commands()).some(x=>x[0]==='event'));
+ assert.equal(gaRequests().filter(x=>x.includes('gtag/js')).length,1);assert.equal((await commands()).filter(x=>x[0]==='event'&&x[1]==='page_view').length,1);
+ await click('edb-consent-settings');await click('edb-consent-accept');assert.equal((await commands()).filter(x=>x[0]==='event').length,1);
+ await navigate(route);await wait(async()=>(await commands()).some(x=>x[0]==='event'));assert.equal((await commands()).filter(x=>x[0]==='event'&&x[1]==='page_view').length,1);assert.equal((await commands()).find(x=>x[0]==='event')[2].page_location,origin+route);
+ await click('edb-consent-settings');await click('edb-consent-reject');assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"),true);
+ events=[];await navigate(route);await exerciseTask19(id);assert.deepEqual(gaRequests(),[]);
+});

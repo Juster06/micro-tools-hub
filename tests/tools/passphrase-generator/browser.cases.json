@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "generate-copy-reset",
+      "width": 375,
+      "steps": [
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": false
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "copied"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "invalid-count",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "5"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+
+import {test} from 'node:test';import assert from 'node:assert/strict';import vm from 'node:vm';import {logic} from '../task18-logic.mjs';
+const {call,context}=logic('password-generator');
+function generate(input,options,values){context.input=input;context.options=options;context.values=[...values];return vm.runInContext(`EDB_TOOL.generate(input,options,{getRandomValues(a){if(!values.length)throw Error('fixture exhausted');a[0]=values.shift();return a}})`,context,{timeout:1000})}
+test('all 94 ASCII pool characters are unique; sets do not force biased inclusion',()=>{const r=call('16');assert.equal(r.alphabet.length,94);assert.equal(new Set(r.alphabet).size,94);assert.equal(generate('8',{},Array(8).fill(0)),'A'.repeat(8))});
+test('rejection sampling rejects the incomplete UInt32 interval, then maps accepted samples',()=>{assert.equal(generate('8',{upper:false,lower:false,symbols:false},[4294967295,4294967290,0,1,2,3,4,5,6,9]),'01234569')});
+test('maximum sample below cutoff and modulo endpoints map correctly',()=>{assert.equal(generate('8',{upper:false,lower:false,symbols:false},Array(8).fill(4294967289)),'9'.repeat(8))});
+test('missing, failing and nonproductive randomness fail closed without partial output',()=>{for(const expression of [`undefined`,`{}`,`{getRandomValues(){throw Error('denied')}}`,`{getRandomValues(a){a[0]=4294967295;return a}}`])assert.throws(()=>vm.runInContext(`EDB_TOOL.generate('8',{},${expression})`,context,{timeout:1000}),/randomness/)});
+test('length, quantity, total output and option type boundaries',()=>{assert.equal(call('127',{quantity:20}).length,127);assert.throws(()=>call('128',{quantity:20}),/2,560/);assert.equal(call('128').length,128);for(const n of ['', '7','129','8.1','😀',' 8','1e2'])assert.throws(()=>call(n));for(const n of [0,21,1.5,NaN])assert.throws(()=>call('8',{quantity:n}));assert.throws(()=>call('8',{digits:'yes'}),/boolean/)});
+test('multiple outputs have exact lengths and explicit separators',()=>{const x=generate('8',{quantity:20},Array(160).fill(0));assert.equal(x.length,179);assert.equal(x.split('\n').length,20)});

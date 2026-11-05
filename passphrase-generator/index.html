@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generate random word sequences from a reviewed local word list."><meta name="color-scheme" content="dark">
+  <title>Passphrase Generator — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>Passphrase Generator</h1><p class="description">Generate random word sequences from a reviewed local word list.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="toolInput">Words per passphrase</label><input id="toolInput" type="number" min="6" max="12" step="1" value="6" autocomplete="off">
+<label for="quantity">Number of passphrases</label><input id="quantity" type="number" min="1" max="10" step="1" value="1" autocomplete="off">
+<label for="separator">Word separator</label><select id="separator"><option value="space">Space</option><option value="hyphen">Hyphen</option><option value="underscore">Underscore</option></select>
+<p>Uses the locally bundled EFF large English wordlist. Repeated words are possible. Some source words contain hyphens.</p>
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled hidden>Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>6–12 words per phrase, 1–10 phrases, output including separating line breaks ≤4,096 characters. Cryptographic rejection sampling chooses each word independently; repeats are valid. English wordlist: <a href="https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt" rel="noopener noreferrer" target="_blank">Electronic Frontier Foundation / Joseph Bonneau</a>, attributed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer" target="_blank">CC BY 4.0</a>. Dice codes removed in the local JavaScript wrapper; words/order unchanged. No EFF endorsement. No automatic generation, downloads, stored secrets or logs. Clipboard/extension access and memory erasure are outside this tool’s control; site password rules vary.</p>
+<p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+<script src="../assets/data/eff-wordlist.js"></script>
+<script id="edb-tool-logic">
+'use strict';
+
+function randomIndex(size, random) {
+  if (!Number.isInteger(size) || size<1 || size>65536) throw Error('Invalid selection pool.');
+  if (!random || typeof random.getRandomValues!=='function') throw Error('Cryptographic randomness is unavailable. No result generated.');
+  const limit=Math.floor(4294967296/size)*size, word=new Uint32Array(1);
+  for(let tries=0;tries<128;tries++) {
+    try { random.getRandomValues(word); } catch { throw Error('Cryptographic randomness failed. No result generated.'); }
+    if(word[0]<limit)return word[0]%size;
+  }
+  throw Error('Cryptographic randomness did not produce a usable sample. No result generated.');
+}
+function whole(value,minimum,maximum,label) {
+  if(!['string','number'].includes(typeof value)||!/^\d{1,3}$/.test(String(value)))throw Error(label+' must be a whole number.');
+  const number=Number(value);if(!Number.isInteger(number)||number<minimum||number>maximum)throw Error(label+' must be '+minimum+'–'+maximum+'.');
+  return number;
+}
+
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,
+ run(input,options={}){
+  if(typeof input!=='string')throw Error('Word count must be text from the word-count control.');
+  if(Object.keys(options).some(k=>!['quantity','separator'].includes(k)))throw Error('Unsupported option.');
+  const words=whole(input,6,12,'Word count'),quantity=whole(options.quantity??1,1,10,'Quantity');
+  const key=options.separator??'space',separator={space:' ',hyphen:'-',underscore:'_'}[key];if(!separator)throw Error('Choose a supported separator.');
+  return {words,quantity,separator};
+ },
+ generate(input,options={},random=window.crypto){
+  const settings=this.run(input,options),list=window.EDB_WORDLIST;
+  if(!Array.isArray(list)||list.length!==7776||!Object.isFrozen(list)||new Set(list).size!==7776||list.some(word=>typeof word!=='string'||!/^[a-z]+(?:-[a-z]+)?$/.test(word)))throw Error('The pinned local wordlist is unavailable or invalid. No result generated.');
+  const lines=[];let length=0;
+  for(let i=0;i<settings.quantity;i++){
+   const words=[];for(let j=0;j<settings.words;j++)words.push(list[randomIndex(list.length,random)]);
+   const phrase=words.join(settings.separator);length+=phrase.length+(i?1:0);if(length>4096)throw Error('Output exceeds 4,096 characters.');lines.push(phrase);
+  }
+  return lines.join('\n');
+ }
+};
+</script>
+
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt', resultText = '';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultText = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultText = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    resultText = text; output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = resultText;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([resultText], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+ run.textContent='Generate passphrases';output.autocomplete='off';
+ function changed(){invalidate();tell('Settings changed. Generate a fresh result.');}
+ input.addEventListener('input',changed);$('quantity').addEventListener('input',changed);$('separator').addEventListener('change',changed);
+ run.addEventListener('click',()=>{changed();try{
+  if(window.isSecureContext!==true)throw Error('A secure context is required for cryptographic randomness.');
+  const text=window.EDB_TOOL.generate(input.value,{quantity:$('quantity').value,separator:$('separator').value},window.crypto);publish(text);download.disabled=true;tell('Generated locally using Web Crypto. Copy explicitly; your clipboard may be visible to other apps.');
+ }catch(problem){fail(problem);}});
+ $('clearBtn').addEventListener('click',()=>{input.value='6';$('quantity').value='1';$('separator').value='space';changed();tell('Reset. Generated secrets cleared from this page.');input.focus();});
+ window.addEventListener('pagehide',()=>{invalidate();});
+
+})();
+</script>
+</body></html>

@@ -1,0 +1,83 @@
+{
+  "result": "LOCAL_REQUIRED_SCOPES_PASS_HOSTED_GATE_REQUIRED",
+  "verified_on": "2026-11-05",
+  "baseline": "3178f70802a96f181fd82251d417abd1dd0ad76b",
+  "source_checkpoint": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+  "python": {
+    "status": "PASS",
+    "command": "python scripts/ci/unittest_runner.py",
+    "tests": 161,
+    "failed": 0,
+    "skipped": 0
+  },
+  "node": {
+    "status": "PASS",
+    "tests": 403,
+    "failed": 0,
+    "skipped": 0,
+    "logic_profiles": 58,
+    "logic_fixtures": 1308
+  },
+  "chromium": {
+    "status": "PASS",
+    "browser": "Chrome/156.0.8078.4",
+    "tests": 537,
+    "failed": 0,
+    "skipped": 0,
+    "canonical_profiles": 62,
+    "canonical_fixtures": 487,
+    "canonical_assertions": 1372,
+    "templates": {
+      "scope": "neutral-templates",
+      "status": "PASS",
+      "exit_code": 0,
+      "passed": 12,
+      "logic_passed": 6,
+      "assertions": 48
+    }
+  },
+  "new_tools_focused": {
+    "status": "PASS",
+    "tests": 81,
+    "failed": 0,
+    "skipped": 0,
+    "browser": "Edg/156.0.4314.58",
+    "new_tool_canonical_logic_fixtures": 56,
+    "new_tool_canonical_browser_fixtures": 11,
+    "new_tool_canonical_browser_assertions": 41
+  },
+  "consent": {
+    "status": "PASS",
+    "tests": 26,
+    "failed": 0,
+    "scope": "Local HTTP with isolated browser profile and intercepted Google endpoints. All six new pages usable before consent/after rejection/after withdrawal. Accepted navigation/reacceptance checked for one page view.",
+    "real_measurements_sent": 0,
+    "shared_consent_changed": false,
+    "measurement_id": "G-XDHPQYJ5CH",
+    "ga4_property_reporting": "UNVERIFIED"
+  },
+  "validation": {
+    "project": "PASS",
+    "errors": 0,
+    "warnings": 0,
+    "released_sources_preserved": 56,
+    "historical_audits_unchanged": true,
+    "gated_homepage_cards": 62,
+    "new_cards_publication_pending": 6
+  },
+  "local_preflight_note": "Initial full-browser invocation failed because EDB_TEST_BROWSER was not set. Failure retained in ignored reports; explicit existing pinned Chromium selected and complete unchanged job then passed. No deadline, assertion or workflow relaxation.",
+  "hosted_ci": "Required exact-PR-head GitHub Actions must complete before owner review; inspect the PR/final delivery for actual run.",
+  "limitations": [
+    "Clipboard/download APIs captured; native OS dialogs, physical devices, screen readers and other browser engines not certified.",
+    "Canonical validation fixtures are supplemented by specialist tests for real Web Crypto, independent QR decoding and PNG/crop pixels.",
+    "Four older specialist isolated-logic adapters remain unavailable; their required structural/browser scopes still run.",
+    "All six new tools remain TESTED with publication:null. No merge, deployment, bypass or public-release claim."
+  ],
+  "post_formatting_verification": {
+    "scope": "Whitespace-only normalization of vendored QR files/licence; original upstream hashes retained. Wordlist pin test also checks exact Git blob and portable working text.",
+    "qr_tests": 10,
+    "qr_result": "PASS",
+    "wordlist_node_tests": 6,
+    "wordlist_result": "PASS"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "reviewed_on": "2026-11-05",
+  "runtime": {
+    "qrcodegen": {
+      "version": "1.8.0",
+      "source_revision": "720f62bddb7226106071d4728c292cb1df519ceb",
+      "source_url": "https://github.com/nayuki/QR-Code-generator/tree/720f62bddb7226106071d4728c292cb1df519ceb/typescript-javascript",
+      "license": "MIT",
+      "use": "Local QR encoding only. No transport/storage calls; no service or production build dependency.",
+      "source_sha256": "c8e5f5696f770d02b68d5b32a2d3c5091c3d6e0c34e5e1479cb25c6a627a69c5",
+      "build": "TypeScript 5.9.3: tsc qrcodegen.ts --target es2015 --lib es2015,dom --outFile qrcodegen.js --removeComments false",
+      "path": "assets/vendor/qrcodegen-1.8.0.js",
+      "bytes": 45375,
+      "sha256": "d72f8315af5a7f7d3f91743a27f951b1e6d9cf22bfac4f3e4a0f6122289d24af",
+      "pre_normalization_compiled_sha256": "6e200897a80ff15a652a5d601667856d807cec60cfc81a3a351305d69cc9dbbd",
+      "upstream_source_sha256": "c4749095a91bf9696e3a303998b9905e467094f53041e64393e65e6d887737fd",
+      "normalization": "End-of-line whitespace removed from upstream TypeScript and generated JavaScript; no licence wording or algorithm changes. Original digests retained."
+    },
+    "wordlist": {
+      "version": "EFF large English list dated 2016-07-18; pinned by SHA-256",
+      "source_url": "https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt",
+      "license": "CC-BY-4.0 under https://www.eff.org/copyright unless otherwise noted; no contrary notice found in this source",
+      "attribution": "Electronic Frontier Foundation; Joseph Bonneau. Dice codes removed in the generated JavaScript wrapper; word order/content unchanged.",
+      "entries": 7776,
+      "use": "Local passphrase generation. No external wordlist fetch or telemetry.",
+      "path": "assets/data/eff-large-wordlist.txt",
+      "bytes": 108800,
+      "sha256": "addd35536511597a02fa0a9ff1e5284677b8883b83e986e43f15a3db996b903e",
+      "wrapper_path": "assets/data/eff-wordlist.js",
+      "wrapper_sha256": "30f4337649cc987075e65aff08d9e7786deafc67ff1917809c165ba259756577"
+    }
+  },
+  "test_only": {
+    "jsqr": {
+      "version": "1.4.0",
+      "source_revision": "49a9633931fb8030ac2fc9cecc121d6e5a19f9a3",
+      "source_url": "https://github.com/cozmo/jsQR",
+      "license": "Apache-2.0",
+      "npm_integrity": "sha512-dxLob7q65Xg2DvstYkRpkYtmKm2sPJ9oFhrhmudT1dZvNFFTlroai3AWSpLey/w5vMcLBXRgOJsbXpdN9HzU/A==",
+      "use": "Independent test decoder only; never loaded by a utility page.",
+      "path": "tests/vendor/jsQR-1.4.0.cjs",
+      "bytes": 256885,
+      "sha256": "bc40c8a15196236b2314db0856f72ca0b49980cd5413b8c852a7349f5fee0859"
+    }
+  },
+  "compiler": {
+    "name": "TypeScript",
+    "version": "5.9.3",
+    "license": "Apache-2.0",
+    "npm_integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+    "use": "One-time development compilation outside the repository. Not a website or CI installation dependency."
+  }
+}
