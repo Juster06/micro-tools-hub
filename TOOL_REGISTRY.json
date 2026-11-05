@@ -1162,7 +1162,7 @@
       "category": "image",
       "description": "Convert among JPEG, PNG and WebP in one interface.",
       "directory_path": "image-format-converter",
-      "status": "IMPLEMENTED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -1174,14 +1174,34 @@
         "JPEG background choice for transparency",
         "Runtime format support check"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Task 18 implementation exists; focused verification in progress. Publication pending.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 18 locally tested; publication pending. Limits and assumptions: audit/TASK_18_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [
         "image-compressor"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "954a9a6ac0d217333aa47906dc03b2e5b64454ca",
+        "source_sha256": "0fc9f13a11b5e980e666b8bebcfde6c81ee9f4833835539f0e14b6a6288ab2ad",
+        "evidence_path": "audit/IMAGE_FORMAT_CONVERTER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 5 deterministic logic fixtures; 1 real Chromium fixtures / 4 assertions",
+          "Independent focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and output-action checks. See tests/tools/image-format-converter.",
+          "Local verification only; clipboard/download simulated; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "image-cropper",
@@ -1976,7 +1996,7 @@
       "category": "data",
       "description": "Convert CSV and arrays of JSON records in a single utility.",
       "directory_path": "csv-json-converter",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -1989,12 +2009,32 @@
         "Explicit null and type rules",
         "Download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 18 locally tested; publication pending. Limits and assumptions: audit/TASK_18_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "1222511a15d844e2db63f8d9e6eed8f51f23aa14",
+        "source_sha256": "09648f313aee3e2f5aadb2bce9fb1a22c98a73e14c23d382874e65abd382e356",
+        "evidence_path": "audit/CSV_JSON_CONVERTER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 12 deterministic logic fixtures; 2 real Chromium fixtures / 5 assertions",
+          "Independent focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and output-action checks. See tests/tools/csv-json-converter.",
+          "Local verification only; clipboard/download simulated; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "excel-to-csv",
@@ -2688,7 +2728,7 @@
       "category": "developer",
       "description": "Inspect regular-expression matches with explicit execution limits.",
       "directory_path": "regex-tester",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2703,7 +2743,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 18 implementation exists; focused verification in progress. Publication pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null

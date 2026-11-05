@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "basic",
+      "input": "a,b\n1,2",
+      "expected": {
+        "output": "[\n  {\n    \"a\": \"1\",\n    \"b\": \"2\"\n  }\n]",
+        "rows": 1,
+        "columns": 2,
+        "preview": "[\n  {\n    \"a\": \"1\",\n    \"b\": \"2\"\n  }\n]",
+        "protectedCells": 0,
+        "type": "application/json"
+      }
+    },
+    {
+      "id": "array-mode",
+      "input": "a,b\n1,2",
+      "expected": {
+        "output": "[\n  [\n    \"a\",\n    \"b\"\n  ],\n  [\n    \"1\",\n    \"2\"\n  ]\n]",
+        "rows": 2,
+        "columns": 2,
+        "preview": "[\n  [\n    \"a\",\n    \"b\"\n  ],\n  [\n    \"1\",\n    \"2\"\n  ]\n]",
+        "protectedCells": 0,
+        "type": "application/json"
+      },
+      "options": {
+        "header": false
+      }
+    },
+    {
+      "id": "json-basic",
+      "input": "[{\"a\":\"1\",\"b\":true},{\"a\":null}]",
+      "expected": {
+        "output": "a,b\r\n1,true\r\n\"\",\"\"",
+        "rows": 2,
+        "columns": 2,
+        "preview": "a,b\r\n1,true\r\n\"\",\"\"",
+        "protectedCells": 0,
+        "type": "text/csv"
+      },
+      "options": {
+        "mode": "json-csv"
+      }
+    },
+    {
+      "id": "json-empty",
+      "input": "[]",
+      "expected": {
+        "output": "",
+        "rows": 0,
+        "columns": 0,
+        "preview": "",
+        "protectedCells": 0,
+        "type": "text/csv"
+      },
+      "options": {
+        "mode": "json-csv"
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "Enter CSV"
+    },
+    {
+      "id": "duplicate",
+      "input": "a,a\nx,y",
+      "error": "unique"
+    },
+    {
+      "id": "ragged",
+      "input": "a,b\nx",
+      "error": "Ragged"
+    },
+    {
+      "id": "quote",
+      "input": "a\n\"x",
+      "error": "Unclosed"
+    },
+    {
+      "id": "nested",
+      "input": "[{\"a\":{}}]",
+      "error": "nested",
+      "options": {
+        "mode": "json-csv"
+      }
+    },
+    {
+      "id": "duplicate-json",
+      "input": "[{\"a\":1,\"a\":2}]",
+      "error": "Duplicate",
+      "options": {
+        "mode": "json-csv"
+      }
+    },
+    {
+      "id": "bad-json",
+      "input": "{",
+      "error": "Invalid JSON",
+      "options": {
+        "mode": "json-csv"
+      }
+    },
+    {
+      "id": "bad-type",
+      "input": null,
+      "error": "text"
+    }
+  ]
+}

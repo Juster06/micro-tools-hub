@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "normal",
+      "input": {
+        "pattern": "a+",
+        "flags": "g",
+        "text": "banana"
+      },
+      "expected": {
+        "pattern": "a+",
+        "flags": "g",
+        "text": "banana",
+        "matchLimit": 1000,
+        "timeout": 200
+      }
+    },
+    {
+      "id": "empty",
+      "input": {
+        "pattern": "",
+        "flags": "gu",
+        "text": ""
+      },
+      "expected": {
+        "pattern": "",
+        "flags": "gu",
+        "text": "",
+        "matchLimit": 1000,
+        "timeout": 200
+      }
+    },
+    {
+      "id": "invalid-pattern-deferred",
+      "input": {
+        "pattern": "[",
+        "flags": "g",
+        "text": "x"
+      },
+      "expected": {
+        "pattern": "[",
+        "flags": "g",
+        "text": "x",
+        "matchLimit": 1000,
+        "timeout": 200
+      }
+    },
+    {
+      "id": "duplicate",
+      "input": {
+        "pattern": "x",
+        "flags": "gg",
+        "text": "x"
+      },
+      "error": "duplicate"
+    },
+    {
+      "id": "bad-flags",
+      "input": {
+        "pattern": "x",
+        "flags": "z",
+        "text": "x"
+      },
+      "error": "Invalid"
+    },
+    {
+      "id": "uv",
+      "input": {
+        "pattern": "x",
+        "flags": "uv",
+        "text": "x"
+      },
+      "error": "cannot"
+    },
+    {
+      "id": "bad-type",
+      "input": {
+        "pattern": 2,
+        "flags": "g",
+        "text": "x"
+      },
+      "error": "strings"
+    }
+  ]
+}

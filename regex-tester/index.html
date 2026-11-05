@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Inspect regular-expression matches with explicit execution limits."><meta name="color-scheme" content="dark">
+  <title>Regex Tester — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>Regex Tester</h1><p class="description">Inspect regular-expression matches with explicit execution limits.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="toolInput">JavaScript regex pattern (without / delimiters)</label><textarea id="toolInput" rows="3" aria-describedby="inputHelp" spellcheck="false"></textarea><p id="inputHelp">500 Unicode code points maximum. Evaluation and validation happen in an isolated Worker.</p>
+<label for="flags">Flags</label><input id="flags" type="text" value="g" spellcheck="false" autocapitalize="off" aria-describedby="flagHelp"><p id="flagHelp">d g i m s u v y; no duplicates, u/v are mutually exclusive. Browser support may vary. Without g/y, only the first match is shown.</p>
+<label for="testText">Test text</label><textarea id="testText" rows="9" aria-describedby="textHelp" spellcheck="false"></textarea><p id="textHelp">100,000 Unicode code points maximum. Match offsets are UTF-16 code units.</p><button id="cancelBtn" type="button" disabled>Cancel evaluation</button>
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+<p id="counts" class="metric"></p><h3>Match highlighting (∅ = zero length)</h3><div id="matchPreview" class="preview scroll"></div>
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled>Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>Pattern ≤500 Unicode code points; text ≤100,000; up to 1,000 displayed matches. All pattern compilation/matching runs in a terminable Web Worker with a 200 ms evaluation deadline after startup (2 s startup limit). Input changes, Cancel and Reset terminate pending work. Timer scheduling can be delayed by browser throttling; no real-time guarantee. Empty matches advance safely; ∅ indicates a zero-length match. Offsets/indices use UTF-16 units. Worker detail text/serialization ≤2,000,000 units and ≤4 MiB UTF-8; unsupported engine flags/patterns return errors. No main-thread fallback. Results are JavaScript-engine behavior, not other regex dialects.</p>
+<p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+<script id="edb-tool-logic">
+'use strict';
+
+window.EDB_TOOL = {
+  isScaffold:false, allowEmpty:true,
+  run(input, options = {}) {
+    if(Object.keys(options).length)throw Error('Unsupported option.');
+    if(!input||typeof input.pattern!=='string'||typeof input.text!=='string'||typeof input.flags!=='string')throw Error('Pattern, flags and test text must be strings.');
+    if(input.pattern.length>1000||Array.from(input.pattern).length>500)throw Error('Pattern exceeds 500 characters.');
+    if(input.text.length>200000||Array.from(input.text).length>100000)throw Error('Test text exceeds 100,000 characters.');
+    if(input.flags.length>8||Array.from(input.flags).some(flag=>!'dgimsuvy'.includes(flag))||new Set(input.flags).size!==input.flags.length)throw Error('Invalid or duplicate flags. Use d, g, i, m, s, u, v, y.');
+    if(input.flags.includes('u')&&input.flags.includes('v'))throw Error('Flags u and v cannot be combined.');
+    // No compilation here: even invalid patterns are compiled only in the Worker.
+    return {pattern:input.pattern,flags:input.flags,text:input.text,matchLimit:1000,timeout:200};
+  }
+};
+</script>
+<script id="regex-worker" type="text/plain">
+'use strict';
+self.onmessage = event => {
+  try {
+    const {pattern,flags,text,matchLimit}=event.data;
+    const regex=new RegExp(pattern,flags),matches=[];
+    const multiple=flags.includes('g')||flags.includes('y'),unicode=flags.includes('u')||flags.includes('v');
+    let match,budget=0,capped=false;
+    while((match=regex.exec(text))!==null){
+      const captures=Array.from(match,value=>value??null);
+      const groups=match.groups?Object.fromEntries(Object.entries(match.groups).map(([k,v])=>[k,v??null])):null;
+      for(const value of captures)budget+=value?.length??0;
+      if(groups)for(const value of Object.values(groups))budget+=value?.length??0;
+      if(budget>2000000)throw Error('Match detail output exceeds the 2,000,000-unit response budget.');
+      matches.push({index:match.index,end:match.index+match[0].length,value:match[0],captures:captures.slice(1),groups,indices:match.indices?Array.from(match.indices,x=>x??null):null});
+      if(!multiple)break;
+      if(matches.length>=matchLimit){capped=true;break;}
+      if(match[0]===''){
+        const p=regex.lastIndex;regex.lastIndex=p+(unicode&&text.codePointAt(p)>65535?2:1);
+      }
+    }
+    const serialized=JSON.stringify({matches,capped},null,2);
+    if(serialized.length>2000000||new TextEncoder().encode(serialized).length>4194304)throw Error('Match detail output exceeds the response budget.');
+    self.postMessage({result:serialized});
+  }catch(problem){self.postMessage({error:String(problem.message||problem).slice(0,2000)});}
+};
+self.postMessage({ready:true});
+</script>
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = output.value;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([output.value], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+  run.textContent='Test regex';let active=null,timer=null,startup=null;
+  function stop(){if(active){active.terminate();active=null;}clearTimeout(timer);clearTimeout(startup);timer=startup=null;run.disabled=false;$('cancelBtn').disabled=true;}
+  function changed(){stop();invalidate();$('matchPreview').replaceChildren();$('counts').textContent='';tell('Input changed. Test again.');}
+  for(const id of ['toolInput','flags','testText'])$(id).addEventListener('input',changed);
+  function highlight(text,matches){
+    const fragment=document.createDocumentFragment();let cursor=0;
+    for(const match of matches){
+      fragment.append(document.createTextNode(text.slice(cursor,match.index)));
+      const mark=document.createElement('mark');mark.textContent=match.value||'∅';
+      if(!match.value)mark.setAttribute('aria-label','zero-length match');
+      fragment.append(mark);cursor=match.end;
+    }
+    fragment.append(document.createTextNode(text.slice(cursor)));$('matchPreview').replaceChildren(fragment);
+  }
+  run.addEventListener('click',()=>{
+    changed();const token=revision;let payload,url;
+    try{
+      payload=window.EDB_TOOL.run({pattern:input.value,flags:$('flags').value,text:$('testText').value});
+      if(typeof Worker!=='function')throw Error('Web Workers are unavailable; safe regex evaluation cannot start.');
+      url=URL.createObjectURL(new Blob([$('regex-worker').textContent],{type:'application/javascript'}));
+      const worker=new Worker(url);active=worker;URL.revokeObjectURL(url);url=null;
+      run.disabled=true;$('cancelBtn').disabled=false;tell('Starting isolated Worker…');
+      startup=setTimeout(()=>{if(token===revision){stop();fail(Error('Worker startup timed out.'));}},2000);
+      worker.onerror=event=>{event.preventDefault();if(token===revision){stop();fail(Error('Worker could not evaluate this pattern.'));}};
+      worker.onmessage=event=>{
+        if(token!==revision||active!==worker)return;
+        if(event.data.ready){
+          clearTimeout(startup);tell('Evaluating in Worker (200 ms deadline)…');
+          timer=setTimeout(()=>{if(token===revision){stop();fail(Error('Evaluation exceeded 200 ms. Worker terminated; simplify the pattern or shorten text.'));}},payload.timeout);
+          worker.postMessage(payload);return;
+        }
+        stop();
+        if(event.data.error){fail(Error(event.data.error));return;}
+        try{
+          const value=JSON.parse(event.data.result);
+          highlight(payload.text,value.matches);
+          $('counts').textContent=`${value.matches.length} displayed matches`+(value.capped?' · display cap reached; total not determined.':'.');
+          publish(event.data.result,null,'regex-matches.json');
+        }catch(problem){fail(problem);}
+      };
+    }catch(problem){if(url)URL.revokeObjectURL(url);stop();fail(problem);}
+  });
+  $('cancelBtn').addEventListener('click',()=>{changed();tell('Evaluation cancelled. Worker terminated.');});
+  $('clearBtn').addEventListener('click',()=>{input.value='';$('flags').value='g';$('testText').value='';changed();tell('Reset.');input.focus();});
+  window.addEventListener('pagehide',()=>{revision++;stop();});
+
+})();
+</script>
+</body></html>

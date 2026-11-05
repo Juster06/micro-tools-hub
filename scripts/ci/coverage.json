@@ -19,6 +19,7 @@
     "tests/tools/compound-interest-calculator/logic.test.mjs",
     "tests/tools/countdown-timer/logic.test.mjs",
     "tests/tools/csv-column-extractor/logic.test.mjs",
+    "tests/tools/csv-json-converter/logic.test.mjs",
     "tests/tools/csv-merger/logic.test.mjs",
     "tests/tools/csv-viewer/logic.test.mjs",
     "tests/tools/date-difference-calculator/logic.test.mjs",
@@ -48,6 +49,7 @@
     "tests/tools/printable-calendar-generator/logic.test.mjs",
     "tests/tools/profit-margin-calculator/logic.test.mjs",
     "tests/tools/random-name-picker/logic.test.mjs",
+    "tests/tools/regex-tester/logic.test.mjs",
     "tests/tools/secure-random-number-generator/logic.test.mjs",
     "tests/tools/sha256-hash-checker/logic.test.mjs",
     "tests/tools/slug-generator/logic.test.mjs",
@@ -78,6 +80,8 @@
     "tests/tools/countdown-timer/integration-browser.test.mjs",
     "tests/tools/csv-column-extractor/extended-browser.test.mjs",
     "tests/tools/csv-column-extractor/integration-browser.test.mjs",
+    "tests/tools/csv-json-converter/extended-browser.test.mjs",
+    "tests/tools/csv-json-converter/integration-browser.test.mjs",
     "tests/tools/csv-merger/extended-browser.test.mjs",
     "tests/tools/csv-merger/integration-browser.test.mjs",
     "tests/tools/csv-viewer/extended-browser.test.mjs",
@@ -136,6 +140,8 @@
     "tests/tools/profit-margin-calculator/integration-browser.test.mjs",
     "tests/tools/random-name-picker/extended-browser.test.mjs",
     "tests/tools/random-name-picker/integration-browser.test.mjs",
+    "tests/tools/regex-tester/extended-browser.test.mjs",
+    "tests/tools/regex-tester/integration-browser.test.mjs",
     "tests/tools/secure-random-number-generator/extended-browser.test.mjs",
     "tests/tools/secure-random-number-generator/integration-browser.test.mjs",
     "tests/tools/sha256-hash-checker/extended-browser.test.mjs",
@@ -438,6 +444,16 @@
       "browser_job": "browser-tests"
     },
     "image-format-converter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "csv-json-converter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "regex-tester": {
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"

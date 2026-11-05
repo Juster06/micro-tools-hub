@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "matches-and-reset",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "a"
+        },
+        {
+          "action": "set",
+          "selector": "#testText",
+          "value": "banana"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#counts",
+          "property": "textContent",
+          "equals": "3 displayed matches."
+        },
+        {
+          "action": "expect",
+          "selector": "#matchPreview",
+          "property": "textContent",
+          "equals": "banana"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#flags",
+          "property": "value",
+          "equals": "g"
+        },
+        {
+          "action": "expect",
+          "selector": "#testText",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "invalid-pattern",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "["
+        },
+        {
+          "action": "set",
+          "selector": "#testText",
+          "value": "x"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        }
+      ]
+    }
+  ]
+}

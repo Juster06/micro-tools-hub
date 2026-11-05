@@ -8,9 +8,9 @@ Task 18 starts from `f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a` on
 `feat/task-18-six-tools` in a separate worktree. Owner authorization covers
 development, tests, commits and a PR; merge/deployment/bypass are not authorized.
 
-Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter, File Signature Inspector.
-Inventory: 93 registered, 50 RELEASED, 3 TESTED, 0 READY,
-39 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
+Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter, File Signature Inspector, Image Format Converter, CSV ↔ JSON Converter.
+Inventory: 93 registered, 50 RELEASED, 5 TESTED, 0 READY,
+37 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
 existing 100-release generated target are unchanged. See
 `audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
 verification audits for features, resource limits, actual test scope and omissions.
@@ -297,7 +297,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | --- | --- | --- | --- | --- | --- |
 | image-compressor | Image Compressor | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-resizer | Image Resizer | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
-| image-format-converter | Image Format Converter | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
+| image-format-converter | Image Format Converter | TESTED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-cropper | Image Cropper | PLANNED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-rotator | Image Rotator | RELEASED | P2 | S | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-watermark | Image Watermark | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
@@ -322,7 +322,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
 | excel-sandbox | Excel Formula Sandbox & Analyzer | RELEASED | P2 | M | Modern browser DOM APIs |
-| csv-json-converter | CSV ↔ JSON Converter | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
+| csv-json-converter | CSV ↔ JSON Converter | TESTED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | excel-to-csv | Excel to CSV | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-column-extractor | CSV Column Extractor | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | duplicate-row-finder | Duplicate Row Finder | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |

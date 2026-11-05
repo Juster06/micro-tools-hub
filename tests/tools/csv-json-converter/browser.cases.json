@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "csv-to-json-copy",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "name,note\nAda,\"hi, there\""
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "[\n  {\n    \"name\": \"Ada\",\n    \"note\": \"hi, there\"\n  }\n]"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "json-export",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "[{\"a\":\"=1+1\"}]"
+        },
+        {
+          "action": "set",
+          "selector": "#toolMode",
+          "value": "json-csv"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "a\n'=1+1"
+        },
+        {
+          "action": "expect",
+          "selector": "#counts",
+          "property": "textContent",
+          "equals": "1 data rows · 1 columns · 1 formula-risk cells prefixed"
+        }
+      ]
+    }
+  ]
+}
