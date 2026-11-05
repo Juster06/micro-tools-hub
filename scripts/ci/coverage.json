@@ -510,8 +510,8 @@
   ],
   "minimum_tests": {
     "python-project": 151,
-    "node-regression": 327,
-    "browser-tests": 418
+    "node-regression": 363,
+    "browser-tests": 478
   },
   "aggregate": {
     "job": "required-checks",

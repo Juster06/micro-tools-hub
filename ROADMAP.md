@@ -8,16 +8,16 @@ Task 18 starts from `f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a` on
 `feat/task-18-six-tools` in a separate worktree. Owner authorization covers
 development, tests, commits and a PR; merge/deployment/bypass are not authorized.
 
-Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter, File Signature Inspector, Image Format Converter, CSV ↔ JSON Converter.
-Inventory: 93 registered, 50 RELEASED, 5 TESTED, 0 READY,
-37 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
+Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter, File Signature Inspector, Image Format Converter, CSV ↔ JSON Converter, Regex Tester.
+Inventory: 93 registered, 50 RELEASED, 6 TESTED, 0 READY,
+36 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
 existing 100-release generated target are unchanged. See
 `audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
 verification audits for features, resource limits, actual test scope and omissions.
 Focused logic, real Chromium, canonical layers and homepage navigation passed for
 each completed tool. Full-batch regression and hosted checks are recorded at final delivery.
 
-**Next major task:** Complete the remaining Task 18 tools sequentially.
+**Next major task:** Review the Task 18 PR and its required checks.
 Await separate owner authorization before merge/deployment; independently verify
 public source and behavior before any RELEASED transition. Property-level GA4
 reporting remains unverified. The two unrelated local handoff edits remain intact.
@@ -340,7 +340,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | url-encoder-decoder | URL Encoder and Decoder | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | uuid-generator | UUID Generator | RELEASED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | sha256-hash-checker | SHA-256 Text & File Hash Checker | RELEASED | P2 | M | Browser Web Crypto SHA-256; bounded file reads |
-| regex-tester | Regex Tester | PLANNED | P2 | L | Browser Worker with termination timeout; bounded input |
+| regex-tester | Regex Tester | TESTED | P2 | L | Browser Worker with termination timeout; bounded input |
 | html-formatter | HTML Formatter | PLANNED | P2 | L | Reviewed non-executing HTML parser and whitespace-preservation policy |
 | css-minifier | CSS Minifier | PLANNED | P2 | L | Reviewed CSS parser/minifier and license |
 | javascript-minifier | JavaScript Minifier | PLANNED | P2 | L | Reviewed JavaScript parser/minifier and license; consider worker isolation |

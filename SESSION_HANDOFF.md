@@ -8,16 +8,16 @@ Task 18 starts from `f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a` on
 `feat/task-18-six-tools` in a separate worktree. Owner authorization covers
 development, tests, commits and a PR; merge/deployment/bypass are not authorized.
 
-Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter, File Signature Inspector, Image Format Converter, CSV ↔ JSON Converter.
-Inventory: 93 registered, 50 RELEASED, 5 TESTED, 0 READY,
-37 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
+Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter, File Signature Inspector, Image Format Converter, CSV ↔ JSON Converter, Regex Tester.
+Inventory: 93 registered, 50 RELEASED, 6 TESTED, 0 READY,
+36 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
 existing 100-release generated target are unchanged. See
 `audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
 verification audits for features, resource limits, actual test scope and omissions.
 Focused logic, real Chromium, canonical layers and homepage navigation passed for
 each completed tool. Full-batch regression and hosted checks are recorded at final delivery.
 
-**Next major task:** Complete the remaining Task 18 tools sequentially.
+**Next major task:** Review the Task 18 PR and its required checks.
 Await separate owner authorization before merge/deployment; independently verify
 public source and behavior before any RELEASED transition. Property-level GA4
 reporting remains unverified. The two unrelated local handoff edits remain intact.
@@ -881,11 +881,11 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 100 released tools; 50 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 37; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 5; RELEASED: 50; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 36; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 6; RELEASED: 50; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
 - Git branch: feat/task-18-six-tools.
-- Latest commit observed before generation: 1222511a15d844e2db63f8d9e6eed8f51f23aa14.
+- Latest commit observed before generation: c8bc23acfa7452f76f007c0a697f30f422e928ad.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -893,6 +893,7 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 
 These are registry verification records, not new tests or tasks executed by this generator.
 - YouTube Title Checker: TESTED, evidence dated 2026-11-05.
+- Regex Tester: TESTED, evidence dated 2026-11-05.
 - Instagram Bio Formatter: TESTED, evidence dated 2026-11-05.
 - Image Format Converter: TESTED, evidence dated 2026-11-05.
 - File Signature Inspector: TESTED, evidence dated 2026-11-05.
@@ -901,7 +902,6 @@ These are registry verification records, not new tests or tasks executed by this
 - YouTube Description Formatter: RELEASED, evidence dated 2026-11-04.
 - Username Generator: RELEASED, evidence dated 2026-11-04.
 - Text Difference Checker: RELEASED, evidence dated 2026-11-04.
-- Printable Calendar Generator: RELEASED, evidence dated 2026-11-04.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -920,7 +920,8 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
 - ` M` index.html
-- `??` audit/CSV_JSON_CONVERTER_VERIFICATION.json
+- ` M` scripts/consent-browser.test.mjs
+- `??` audit/REGEX_TESTER_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

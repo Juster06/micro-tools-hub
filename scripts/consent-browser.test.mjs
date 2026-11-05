@@ -32,3 +32,32 @@ test('accept with unavailable storage is page-local and does not carry to next p
 test('privacy notice remains reachable and consent controls fit narrow screens',async()=>{await b.call('Emulation.setDeviceMetricsOverride',{width:320,height:800,deviceScaleFactor:1,mobile:false});assert.equal(await b.evaluate('document.documentElement.scrollWidth>innerWidth'),false);const href=await b.evaluate("document.querySelector('#edb-consent-description a').getAttribute('href')");assert.equal(href,origin+'/privacy.html');await navigate('/privacy.html');assert.match(await b.evaluate('document.body.textContent'),/withdraw consent/i);await b.call('Emulation.clearDeviceMetricsOverride')});
 test('page view excludes query strings and fragments',async()=>{await navigate('/csv-merger/index.html?private=synthetic#value');await click('edb-consent-accept');await wait(()=>b.evaluate('window.__edbFakeTagLoaded===1'));await wait(async()=>(await commands()).some(x=>x[0]==='event'));const event=(await commands()).find(x=>x[0]==='event'&&x[1]==='page_view');assert.equal(event[2].page_location,origin+'/csv-merger/index.html');const config=(await commands()).find(x=>x[0]==='config');assert.equal(config[2].page_location,origin+'/csv-merger/index.html')});
 test('blocked cookie access does not prevent rejection or withdrawal',async()=>{const id=await b.call('Page.addScriptToEvaluateOnNewDocument',{source:"Object.defineProperty(Document.prototype,'cookie',{configurable:true,get(){throw new Error('denied')},set(){throw new Error('denied')}})"});try{await navigate('/');await click('edb-consent-reject');assert.equal(await b.evaluate('document.getElementById("edb-consent-panel").hidden'),true);assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"),true)}finally{await b.call('Page.removeScriptToEvaluateOnNewDocument',{identifier:id.identifier})}});
+
+const task18=['youtube-title-checker','instagram-bio-formatter','file-signature-inspector','image-format-converter','csv-json-converter','regex-tester'];
+async function exerciseTask18(id){
+  if(id==='file-signature-inspector'){
+    await b.evaluate('(()=>{const dt=new DataTransfer();dt.items.add(new File(["%PDF-1.7"],"synthetic.pdf"));toolInput.files=dt.files;toolInput.dispatchEvent(new Event("change"));return true})()');
+  }else if(id==='image-format-converter'){
+    await b.evaluate('(async()=>{const canvas=document.createElement("canvas");canvas.width=canvas.height=2;const blob=await new Promise(r=>canvas.toBlob(r,"image/png"));const dt=new DataTransfer();dt.items.add(new File([blob],"synthetic.png"));toolInput.files=dt.files;toolInput.dispatchEvent(new Event("change"));return true})()');
+  }else{
+    await b.evaluate(`(()=>{const e=document.getElementById('toolInput');e.value=${JSON.stringify(id==='csv-json-converter'?'a\nlocal':id==='regex-tester'?'local':'Local synthetic input')};e.dispatchEvent(new Event('input'));${id==='regex-tester'?"testText.value='local';testText.dispatchEvent(new Event('input'));":''}return true})()`);
+  }
+  await click('runBtn');
+  await wait(()=>b.evaluate('!document.getElementById("runBtn").disabled&&!!document.getElementById("toolOutput").value'));
+  assert.equal(await b.evaluate('document.getElementById("toolError").hidden'),true);
+}
+for(const id of task18)test(`Task 18 ${id}: usable before consent/after rejection; one accepted page view; withdrawal persists`,async()=>{
+  const route='/'+id+'/index.html';await navigate(route);
+  await exerciseTask18(id);assert.deepEqual(gaRequests(),[]);
+  await click('edb-consent-reject');await exerciseTask18(id);assert.deepEqual(gaRequests(),[]);
+  await click('edb-consent-settings');await click('edb-consent-accept');
+  await wait(async()=>(await commands()).some(x=>x[0]==='event'));
+  assert.equal(gaRequests().filter(x=>x.includes('gtag/js')).length,1);
+  const queued=await commands();assert.equal(queued.filter(x=>x[0]==='event'&&x[1]==='page_view').length,1);
+  assert.equal(queued.find(x=>x[0]==='event')[2].page_location,origin+route);
+  await click('edb-consent-settings');await click('edb-consent-accept');
+  assert.equal((await commands()).filter(x=>x[0]==='event').length,1);
+  await click('edb-consent-settings');await click('edb-consent-reject');
+  assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"),true);
+  events=[];await navigate(route);await exerciseTask18(id);assert.deepEqual(gaRequests(),[]);
+});

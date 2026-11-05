@@ -38,7 +38,7 @@ pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
 <p id="counts" class="metric"></p><h3>Preview (up to 20 data records)</h3><pre id="dataPreview" class="preview scroll"></pre>
 <label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
 <div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled>Download</button></div></section></div>
-<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>Input ≤2 MiB UTF-8; ≤10,000 data rows, 100 columns, 200,000 total cells, 100,000 UTF-16 units per cell. Output ≤4 MiB UTF-8 and 4,000,000 code units. Preview shows only the first 20 data records; copy/download use the full bounded result. CSV quotes, multiline fields, BOM and comma/tab/semicolon are supported. CRLF/CR normalize to LF. Empty/duplicate headers, ragged records, duplicate JSON keys and nested values are rejected. CSV cells stay strings. JSON object keys are unioned in first-seen JavaScript key order; missing fields/null become empty cells; numbers/booleans become text. These type distinctions do not survive a round trip. Formula-risk CSV cells (including headers) receive an apostrophe, intentionally changing values; protection is not a guarantee for every spreadsheet/import setting. No remote parser or account.</p>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>Input ≤2 MiB UTF-8; ≤10,000 data rows, 100 columns, 200,000 total cells, 100,000 UTF-16 units per cell. Output ≤4 MiB UTF-8 and 4,000,000 code units. Preview shows only the first 20 data records; copy/download use the full bounded result. CSV quotes, multiline fields, BOM and comma/tab/semicolon are supported. CRLF/CR normalize to LF. Empty/duplicate headers, ragged records, duplicate JSON keys and nested values are rejected. CSV cells stay strings. JSON object keys are unioned in first-seen JavaScript key order; missing fields/null become empty cells; numbers/booleans become text. JSON numbers use JavaScript double precision; keep large identifiers as strings. These type distinctions do not survive a round trip. Formula-risk CSV cells (including headers) receive an apostrophe, intentionally changing values; protection is not a guarantee for every spreadsheet/import setting. No remote parser or account.</p>
 <p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
 <footer class="container">Everyday Digital Box · Local browser processing</footer>
 <script id="edb-tool-logic">
@@ -83,7 +83,19 @@ window.EDB_TOOL = {
         if(names.some(name=>!name.trim())||new Set(names).size!==names.length)throw Error('CSV headers must be nonempty and unique.');
         values=records.slice(1).map(record=>Object.fromEntries(names.map((name,i)=>[name,record[i]])));
       }
-      rows=values.length;output=JSON.stringify(values,null,2);preview=JSON.stringify(values.slice(0,20),null,2);
+      rows=values.length;
+      // Repeated long keys can expand a tiny CSV into enormous JSON. Bound each
+      // record as it is serialized rather than building an unbounded whole result.
+      function boundedJSON(items){
+        const parts=['['];let units=1,bytes=1;
+        function append(part){units+=part.length;bytes+=utf8(part);if(units>4000000||bytes>4194304)throw Error('Output exceeds 4 MiB or 4,000,000 code units.');parts.push(part);}
+        for(let i=0;i<items.length;i++){
+          const record=JSON.stringify(items[i],null,2).split('\n').map(line=>'  '+line).join('\n');
+          append((i?',\n':'\n')+record);
+        }
+        append(items.length?'\n]':']');return parts.join('');
+      }
+      output=boundedJSON(values);preview=boundedJSON(values.slice(0,20));
     }else{
       let values;try{values=JSON.parse(normalized);}catch{throw Error('Invalid JSON. Enter an array of flat records.');}
       if(!Array.isArray(values))throw Error('JSON must be an array.');
