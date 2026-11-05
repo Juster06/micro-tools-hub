@@ -20,7 +20,9 @@ class Task18Preservation(unittest.TestCase):
             cards=[c for c in home.cards if c['attrs'].get('data-tool-id')==tid]
             if cards:
                 card=cards[0];self.assertEqual(card['attrs']['href'],tid+'/index.html')
-                self.assertEqual(card['attrs']['data-availability'],'tested')
+                tool=next(t for t in json.loads((ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf8'))['tools'] if t['id']==tid)
+                self.assertEqual(card['attrs']['data-availability'],tool['status'].lower())
+                self.assertIn('Live' if tool['status']=='RELEASED' else 'Tested · publication pending',current[card['start']:card['end']])
                 current=current[:card['start']-2]+current[card['end']+7:]
         registry=json.loads((ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf8'))
         added=[t for t in registry['tools'] if t['id'] in IDS and t['status'] in ('TESTED','RELEASED')]

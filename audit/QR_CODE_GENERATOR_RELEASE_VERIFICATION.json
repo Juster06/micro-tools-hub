@@ -1,0 +1,195 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-05",
+  "source_revision": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
+  "pages": [
+    {
+      "path": "qr-code-generator/index.html",
+      "source_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
+      "checks": [
+        "Public directory and index URLs returned HTTP 200 and matched the approved deployed Git blob byte for byte.",
+        "Fresh public HTTPS Chromium: 7 focused interaction cases; Live maximum 1000 UTF-8 bytes exported at H correction, actual PNG MIME and quiet border; independently decoded with separately bundled test-only jsQR.",
+        "Public homepage: 62 distinct visible canonical cards, search and actual navigation; all 62 page sources matched approved main.",
+        "Consent: no Google requests before choice/after rejection/after withdrawal; three real accepted page views returned 204 without duplicates."
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/qr-code-generator/",
+        "http_status": 200,
+        "checked_at": "2026-11-05T11:38:13.967321+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "commit": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
+    "run_id": 42010602815,
+    "conclusion": "success",
+    "pr": 34
+  },
+  "post_merge_ci": {
+    "commit": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
+    "run_id": 42010604196,
+    "conclusion": "success",
+    "required_functional_checks": "success",
+    "executed_tests": {
+      "python": 161,
+      "node": 403,
+      "chromium": 537
+    },
+    "job_ids": {
+      "python": 127188352686,
+      "node": 127188352941,
+      "chromium": 127188352191,
+      "required": 127191580750
+    },
+    "scope": "Previously completed deployment baseline; totals freshly read from GitHub job logs. Fresh public interactions and release-branch regression evidence are recorded separately."
+  },
+  "public_index": {
+    "url": "https://everydaydigitalbox.com/qr-code-generator/index.html",
+    "final_url": "https://everydaydigitalbox.com/qr-code-generator/index.html",
+    "checked_at": "2026-11-05T11:38:11.507444+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "005f8bdd939b9caa997b88477fe84179ea0b222c7c05f394001dd35420514e6e",
+    "raw_approved_sha256": "005f8bdd939b9caa997b88477fe84179ea0b222c7c05f394001dd35420514e6e",
+    "raw_match": true,
+    "source_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
+    "approved_normalized_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
+    "content_type": "text/html; charset=utf-8",
+    "title": "QR Code Generator — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js",
+      "../assets/vendor/qrcodegen-1.8.0.js"
+    ]
+  },
+  "canonical_public_url": {
+    "url": "https://everydaydigitalbox.com/qr-code-generator/",
+    "final_url": "https://everydaydigitalbox.com/qr-code-generator/",
+    "checked_at": "2026-11-05T11:38:13.967321+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "005f8bdd939b9caa997b88477fe84179ea0b222c7c05f394001dd35420514e6e",
+    "raw_approved_sha256": "005f8bdd939b9caa997b88477fe84179ea0b222c7c05f394001dd35420514e6e",
+    "raw_match": true,
+    "source_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
+    "approved_normalized_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
+    "content_type": "text/html; charset=utf-8",
+    "title": "QR Code Generator — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js",
+      "../assets/vendor/qrcodegen-1.8.0.js"
+    ]
+  },
+  "title": "QR Code Generator — Everyday Digital Box",
+  "script_dependencies": [
+    "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+    "../assets/consent.js",
+    "../assets/vendor/qrcodegen-1.8.0.js"
+  ],
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Edg/156.0.4314.58",
+    "tests": [
+      "actual exported PNG pixels independently decode Unicode at each correction level",
+      "input/UTF-8 bounds, empty validation, recovery and encoded markup stay inert",
+      "unexpected encoder MIME/oversize output and missing local encoder fail truthfully",
+      "delayed encoding results discarded after reset; object URLs revoked on edit/reset",
+      "copy, keyboard, responsive layouts and no entered-content network transport",
+      "PNG export cap rejects oversized output and releases the generation state",
+      "Live maximum 1000 UTF-8 bytes exported at H correction, actual PNG MIME and quiet border; independently decoded with separately bundled test-only jsQR."
+    ],
+    "test_count": 7,
+    "interaction_window": {
+      "after": "2026-11-05T11:43:05.259Z",
+      "before": "2026-11-05T11:44:13.719Z"
+    },
+    "uncaught_application_errors": 0,
+    "unexpected_dependencies": [],
+    "known_console_error": "Optional /favicon.ico HTTP 404; see aggregate audit for exact console records.",
+    "scope": "Fresh actual deployed HTTPS; isolated browser profiles; synthetic input; clipboard/download captured in memory; real Web Crypto, CSV processing, QR/image PNG bytes and pixels."
+  },
+  "homepage": {
+    "cards": 62,
+    "distinct": 62,
+    "canonical_routes_match": true,
+    "routes": [
+      "age-calculator/index.html",
+      "base64-encoder-decoder/index.html",
+      "case-converter/index.html",
+      "compound-interest-calculator/index.html",
+      "countdown-timer/index.html",
+      "csv-column-extractor/index.html",
+      "csv-data-cleaner/index.html",
+      "csv-json-converter/index.html",
+      "csv-merger/index.html",
+      "csv-to-txt/index.html",
+      "csv-viewer/index.html",
+      "date-difference-calculator/index.html",
+      "discount-calculator/index.html",
+      "duplicate-line-remover/index.html",
+      "duplicate-row-finder/index.html",
+      "excel-sandbox/index.html",
+      "file-signature-inspector/index.html",
+      "file-size-converter/index.html",
+      "find-and-replace/index.html",
+      "hashtag-organizer/index.html",
+      "image-color-picker/index.html",
+      "image-cropper/index.html",
+      "image-format-converter/index.html",
+      "image-resizer/index.html",
+      "image-rotator/index.html",
+      "image-watermark/index.html",
+      "instagram-bio-formatter/index.html",
+      "invoice-generator/index.html",
+      "json-formatter/index.html",
+      "json-to-txt/index.html",
+      "loan-repayment-calculator/index.html",
+      "local-to-do-list/index.html",
+      "meeting-agenda-generator/index.html",
+      "passphrase-generator/index.html",
+      "password-generator/index.html",
+      "percentage-calculator/index.html",
+      "percentage-change-calculator/index.html",
+      "pomodoro-timer/index.html",
+      "posting-calendar-generator/index.html",
+      "printable-calendar-generator/index.html",
+      "profit-margin-calculator/index.html",
+      "qr-code-generator/index.html",
+      "random-name-picker/index.html",
+      "regex-tester/index.html",
+      "secure-random-number-generator/index.html",
+      "sha-256-hash-checker/index.html",
+      "slug-generator/index.html",
+      "social-counter/index.html",
+      "streaming-roulette/index.html",
+      "text-cleaner/index.html",
+      "text-difference-checker/index.html",
+      "text-reverser/index.html",
+      "text-sorter/index.html",
+      "timestamp-converter/index.html",
+      "url-encoder-decoder/index.html",
+      "username-generator/index.html",
+      "uuid-generator/index.html",
+      "vat-calculator/index.html",
+      "working-days-calculator/index.html",
+      "youtube-description-formatter/index.html",
+      "youtube-thumbnail-preview/index.html",
+      "youtube-title-checker/index.html"
+    ],
+    "custom_domain": "everydaydigitalbox.com",
+    "checked_at": "2026-11-05T11:38:04.916566+00:00",
+    "raw_public_sha256": "4d544067dcf50756f34a39a806a38565e98521ed06387f6d4de78af1fe2c9fe0",
+    "raw_approved_sha256": "4d544067dcf50756f34a39a806a38565e98521ed06387f6d4de78af1fe2c9fe0"
+  },
+  "consent_evidence": "audit/TASK_19_PUBLIC_RELEASE_VERIFICATION.json",
+  "previous_evidence": "audit/QR_CODE_GENERATOR_VERIFICATION.json",
+  "limitations": [
+    "Actual public HTTPS with isolated headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
+    "Clipboard and download APIs were simulated/captured in memory; actual output Blob bytes, MIME and pixels were inspected.",
+    "The optional /favicon.ico returns HTTP 404; recorded resource-console errors are limited to that icon. No uncaught application errors or essential asset failures.",
+    "Previous 56 releases checked through fresh public HTTP/source identity and successful post-merge CI; no fresh individual interaction test is claimed for every prior tool.",
+    "GA4 browser collection requests verified; property-level reporting remains unverified.",
+    "Unbiased selection is evidenced by source inspection and deterministic rejection-boundary injection; statistical/security certification and browser memory erasure are outside this audit.",
+    "Release metadata and Live labels require a separately authorized merge/deployment of this release-verification PR."
+  ]
+}

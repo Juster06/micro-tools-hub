@@ -29,13 +29,13 @@ class Task19Preservation(unittest.TestCase):
         for tool in old['tools']:
             current=by_id[tool['id']]
             if tool['id'] in IDS:
-                self.assertEqual((tool['status'],current['status']),('PLANNED','TESTED'))
-                self.assertEqual(current['verification']['publication'],None)
+                self.assertEqual((tool['status'],current['status']),('PLANNED','RELEASED'))
+                self.assertEqual(current['verification']['publication']['source_matches'],True)
                 for key in ['id','name','category','description','directory_path','priority','required_features','related_tools','sequence_rank']:
                     self.assertEqual(current[key],tool[key])
             else:self.assertEqual(current,tool)
         counts={status:sum(t['status']==status for t in new['tools']) for status in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']}
-        self.assertEqual(counts,{'RELEASED':56,'TESTED':6,'READY':0,'PLANNED':30,'BLOCKED':1})
+        self.assertEqual(counts,{'RELEASED':62,'TESTED':0,'READY':0,'PLANNED':30,'BLOCKED':1})
 
     def test_all_56_released_runtime_sources_and_privacy_domain_settings_unchanged(self):
         old=json.loads(raw('TOOL_REGISTRY.json'))
@@ -50,8 +50,8 @@ class Task19Preservation(unittest.TestCase):
         current=text('index.html')
         for tid in IDS:
             home=Homepage(current);card=next(c for c in home.cards if c['attrs'].get('data-tool-id')==tid)
-            self.assertEqual(card['attrs']['href'],tid+'/index.html');self.assertEqual(card['attrs']['data-availability'],'tested')
-            self.assertIn('Tested · publication pending',current[card['start']:card['end']])
+            self.assertEqual(card['attrs']['href'],tid+'/index.html');self.assertEqual(card['attrs']['data-availability'],'released')
+            self.assertIn('Live',current[card['start']:card['end']])
             current=current[:card['start']-2]+current[card['end']+7:]
         home=Homepage(current);start,end=home.counts[0];current=current[:start]+'56 tools ready to use'+current[end:]
         self.assertEqual(current,raw('index.html').decode('utf8').replace('\r\n','\n'))
@@ -94,10 +94,14 @@ class Task19Preservation(unittest.TestCase):
             self.assertEqual(hashlib.sha256(normalized(source)).hexdigest(),verification['source_sha256'])
             self.assertEqual(hashlib.sha256(normalized(text(page['path']))).hexdigest(),page['source_sha256'])
             self.assertEqual(page['source_sha256'],verification['source_sha256'])
-            self.assertIsNone(verification['publication'])
+            self.assertEqual(verification['publication']['source_matches'],True)
+            development=json.loads(text(audit['previous_evidence']))
+            self.assertEqual(development['result'],'PASS')
+            self.assertEqual(development['pages'][0]['source_sha256'],verification['source_sha256'])
+            self.assertEqual(hashlib.sha256(normalized(raw(page['path'],development['source_revision']).decode('utf8'))).hexdigest(),verification['source_sha256'])
             for layer in ['structural','logic','browser']:
-                self.assertEqual(audit['canonical_layers'][layer]['status'],'PASS')
-                if layer!='structural':self.assertGreater(audit['canonical_layers'][layer]['passed'],0)
+                self.assertEqual(development['canonical_layers'][layer]['status'],'PASS')
+                if layer!='structural':self.assertGreater(development['canonical_layers'][layer]['passed'],0)
 
     def test_new_pages_use_only_shared_consent_and_local_reviewed_dependencies(self):
         for tid in IDS:

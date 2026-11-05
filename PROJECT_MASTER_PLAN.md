@@ -1,5 +1,68 @@
 # Project master plan
 
+## Task 19.1 — six-tool public release verification
+
+PR #34 merged as `7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b`. Pages
+[42010602815](https://github.com/Juster06/micro-tools-hub/actions/runs/42010602815)
+and post-merge Functional CI
+[42010604196](https://github.com/Juster06/micro-tools-hub/actions/runs/42010604196)
+succeeded for that exact commit, including Required functional checks. Main had
+no newer source changes at verification.
+
+Fresh public HTTPS checks matched approved Git bytes for the homepage, all 62
+tool pages, privacy notice, consent script, registry, progress and bundled assets (71 responses), plus the
+six directory-index canonical URLs. All 62 distinct visible homepage cards,
+canonical routes and the custom domain were verified.
+The six Task 19 tools passed **48 fresh public Chromium interaction tests** with
+synthetic inputs, including real Web Crypto, rejection-boundary injection,
+independent QR decoding, image Blob MIME/pixels and CSV bounds. Existing 56
+releases were checked through fresh HTTP/source identity and post-merge CI;
+fresh individual interactions for all 56 are not claimed.
+
+Two fresh isolated browser profiles verified actual public consent behavior.
+No Google requests occurred before choice, after rejection or after withdrawal.
+Accepted homepage/QR/CSV-cleaner navigations each sent exactly one real GA4 page
+view for `G-XDHPQYJ5CH`, with HTTP 204; repeat acceptance did not duplicate it.
+Three synthetic test page views were sent. GA4 property-level reporting remains
+unverified. The shared analytics code, settings and privacy notice are unchanged.
+
+See `audit/TASK_19_PUBLIC_RELEASE_VERIFICATION.json` and six separate
+`*_RELEASE_VERIFICATION.json` records for timestamps, raw/normalized hashes,
+deployed revision, browser scope and limitations. Prior development/release
+audits are retained. Clipboard/download APIs were captured in memory; pixels and
+output bytes used real browser codecs. No native-dialog, physical-device,
+screen-reader or cross-browser certification is claimed. The optional
+`/favicon.ico` returns 404 (seven recorded resource-console errors across seven
+contexts); no uncaught application errors, essential asset failures or unexpected
+dependencies occurred. This cosmetic icon issue is not changed in this task.
+
+This branch proposes **93 registered, 62 RELEASED, 0 TESTED, 0 READY,
+30 PLANNED, 1 BLOCKED**. Main/public registry metadata remain at 56 RELEASED and
+6 TESTED until separately authorized integration. Six homepage labels are proposed
+through the existing integration gate; all utility source files are unchanged.
+The next planning checkpoint is 75 releases (62/75); the existing generated
+milestone remains 100. Milestone configuration is unchanged.
+
+Local Python **163/163** and Node **403/403** passed, plus **1308** inline
+logic fixtures. All six canonical suites passed structural/logic/browser layers
+(56 logic fixtures; 11 browser fixtures / 41 assertions). Project/source/registry
+validation passed with zero errors and warnings. The full local catalog Chromium
+run is still progressing at this checkpoint; no full local PASS is claimed.
+The exact-head hosted PR gate must complete the full mapped Chromium, 62 browser
+profiles and neutral templates. Actual hosted results are in the PR/final delivery.
+See `audit/TASK_19_RELEASE_REGRESSION.json`. Existing assertions are retained,
+with six-ID release counts and source-bound publication checks. Historical
+Task19 development evidence remains independently checked. No workflow/runtime/
+timeout or required-check relaxation.
+
+**Next major task:** Owner review of the Task 19.1 release-verification PR and its
+required checks. Await separate authorization before merge; then verify deployment
+of the release metadata. No administrator bypass, deployment, new utility or
+analytics/property setting change is authorized here. The two unrelated local
+handoff edits are preserved. Delivery branch: `release/task-19-six-tools-verification`. Identify its containing
+commit with `git rev-parse HEAD`; the handoff cannot embed its own commit hash.
+Earlier sections below are historical checkpoints.
+
 ## Task 19 — six implemented and TESTED utilities; publication pending
 
 Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged.

@@ -1215,7 +1215,7 @@
       "category": "image",
       "description": "Crop an image with an accessible selection workflow.",
       "directory_path": "image-cropper",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -1229,21 +1229,27 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-05",
-      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
+      "notes": "Task 19 PR #34 merged and deployed; fresh public source and scoped live Chromium behavior independently verified. This branch proposes release metadata; its PR requires separate owner authorization to merge.",
       "sequence_rank": null,
       "related_tools": [
         "image-resizer"
       ],
       "verification": {
-        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_revision": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
         "source_sha256": "9e3b8bcf38777bd9a90c775f17a010c8f3097ec6b552e1c1d57fef30ed99cba5",
-        "evidence_path": "audit/IMAGE_CROPPER_VERIFICATION.json",
+        "evidence_path": "audit/IMAGE_CROPPER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural PASS; 8 deterministic settings/transformation fixtures; 1 real Chromium fixtures / 5 assertions.",
-          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
-          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+          "Public directory and index URLs returned HTTP 200 and matched the approved deployed Git blob byte for byte.",
+          "Fresh public HTTPS Chromium: 11 focused interaction cases; Live native Tab order through all numeric crop controls; keyboard-generated 4:3 and 16:9 PNG output dimensions verified.",
+          "Public homepage: 62 distinct visible canonical cards, search and actual navigation; all 62 page sources matched approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal; three real accepted page views returned 204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/image-cropper/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T11:38:14.393448+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2214,7 +2220,7 @@
       "category": "data",
       "description": "Apply explicit cleaning operations to CSV fields.",
       "directory_path": "csv-data-cleaner",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2229,21 +2235,27 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-05",
-      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
+      "notes": "Task 19 PR #34 merged and deployed; fresh public source and scoped live Chromium behavior independently verified. This branch proposes release metadata; its PR requires separate owner authorization to merge.",
       "sequence_rank": null,
       "related_tools": [
         "csv-viewer"
       ],
       "verification": {
-        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_revision": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
         "source_sha256": "a66bf18c8fa168eac71d758b7ec0d38ba61bc2b4265c5b63e3cc6a0a8b8d4312",
-        "evidence_path": "audit/CSV_DATA_CLEANER_VERIFICATION.json",
+        "evidence_path": "audit/CSV_DATA_CLEANER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural PASS; 9 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 10 assertions.",
-          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
-          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+          "Public directory and index URLs returned HTTP 200 and matched the approved deployed Git blob byte for byte.",
+          "Fresh public HTTPS Chromium: 8 focused interaction cases; Live trim-before-empty policy, preserve/replace/reject, unchanged unselected values, mandatory Apply, bounded 20-row preview and input/row/column/output limits.",
+          "Public homepage: 62 distinct visible canonical cards, search and actual navigation; all 62 page sources matched approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal; three real accepted page views returned 204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/csv-data-cleaner/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T11:38:14.761007+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3988,7 +4000,7 @@
       "category": "security",
       "description": "Create passwords using browser cryptographic randomness.",
       "directory_path": "password-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4003,19 +4015,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-05",
-      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
+      "notes": "Task 19 PR #34 merged and deployed; fresh public source and scoped live Chromium behavior independently verified. This branch proposes release metadata; its PR requires separate owner authorization to merge.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_revision": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
         "source_sha256": "ccd7e401abc193ffe4d2cac50431442b355f7ba17019301db0e94e61187b2d6a",
-        "evidence_path": "audit/PASSWORD_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/PASSWORD_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural PASS; 9 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 6 assertions.",
-          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
-          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+          "Public directory and index URLs returned HTTP 200 and matched the approved deployed Git blob byte for byte.",
+          "Fresh public HTTPS Chromium: 7 focused interaction cases; Live UI UInt32 rejection sampling and fail-closed retries, invalid length settings; storage/cookie/console sink monitoring without recording secret values.",
+          "Public homepage: 62 distinct visible canonical cards, search and actual navigation; all 62 page sources matched approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal; three real accepted page views returned 204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/password-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T11:38:12.749891+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4245,7 +4263,7 @@
       "category": "security",
       "description": "Generate random word sequences from a reviewed local word list.",
       "directory_path": "passphrase-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4261,19 +4279,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-05",
-      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
+      "notes": "Task 19 PR #34 merged and deployed; fresh public source and scoped live Chromium behavior independently verified. This branch proposes release metadata; its PR requires separate owner authorization to merge.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_revision": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
         "source_sha256": "cb209580582a7bc27a4d4fd570c95fdbddfe4755dd7acafa220202e8d0aa9b64",
-        "evidence_path": "audit/PASSPHRASE_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/PASSPHRASE_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural PASS; 9 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 6 assertions.",
-          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
-          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+          "Public directory and index URLs returned HTTP 200 and matched the approved deployed Git blob byte for byte.",
+          "Fresh public HTTPS Chromium: 6 focused interaction cases; Live UI UInt32 rejection sampling, 7776 unique frozen local words and attribution, invalid settings; storage/cookie/console sink monitoring without recording secret values.",
+          "Public homepage: 62 distinct visible canonical cards, search and actual navigation; all 62 page sources matched approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal; three real accepted page views returned 204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/passphrase-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T11:38:13.535382+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4292,7 +4316,7 @@
       "category": "security",
       "description": "Generate QR codes locally from user-provided text.",
       "directory_path": "qr-code-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4307,19 +4331,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-05",
-      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
+      "notes": "Task 19 PR #34 merged and deployed; fresh public source and scoped live Chromium behavior independently verified. This branch proposes release metadata; its PR requires separate owner authorization to merge.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_revision": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
         "source_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
-        "evidence_path": "audit/QR_CODE_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/QR_CODE_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural PASS; 9 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 7 assertions.",
-          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
-          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+          "Public directory and index URLs returned HTTP 200 and matched the approved deployed Git blob byte for byte.",
+          "Fresh public HTTPS Chromium: 7 focused interaction cases; Live maximum 1000 UTF-8 bytes exported at H correction, actual PNG MIME and quiet border; independently decoded with separately bundled test-only jsQR.",
+          "Public homepage: 62 distinct visible canonical cards, search and actual navigation; all 62 page sources matched approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal; three real accepted page views returned 204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/qr-code-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T11:38:13.967321+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4416,7 +4446,7 @@
       "category": "conversion",
       "description": "Render selected CSV fields into a configurable text layout.",
       "directory_path": "csv-to-txt",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4431,19 +4461,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-05",
-      "notes": "Task 19 locally tested; publication pending. Scope, resource bounds and dependency decisions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
+      "notes": "Task 19 PR #34 merged and deployed; fresh public source and scoped live Chromium behavior independently verified. This branch proposes release metadata; its PR requires separate owner authorization to merge.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "6d162305c35a60da25bf2f22e14d901b8dc41801",
+        "source_revision": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
         "source_sha256": "9f960bcc4b3c1bee64d69203108ad02cb55b772f57bd833696c7cfd2cdf5b97b",
-        "evidence_path": "audit/CSV_TO_TXT_VERIFICATION.json",
+        "evidence_path": "audit/CSV_TO_TXT_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural PASS; 12 deterministic settings/transformation fixtures; 2 real Chromium fixtures / 7 assertions.",
-          "Combined focused Task 19 suite: 81 Node/Chromium tests passed with zero failures/skips before this source checkpoint. Actual browser Web Crypto, independent QR decode/PNG pixels, crop pixels, bounded CSV/template transformations, raw quoted CRLF preservation and UI actions are separately covered.",
-          "Fresh-document focused browser wrapper asserts zero uncaught application errors and unexpected HTTP requests. Clipboard/download APIs captured in memory; no public release claim."
+          "Public directory and index URLs returned HTTP 200 and matched the approved deployed Git blob byte for byte.",
+          "Fresh public HTTPS Chromium: 8 focused interaction cases; Live inert positional templates and escaped braces, semicolon/tab/no-header layouts and exact 1 MiB boundary plus row/column/output guards.",
+          "Public homepage: 62 distinct visible canonical cards, search and actual navigation; all 62 page sources matched approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal; three real accepted page views returned 204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/csv-to-txt/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T11:38:13.151230+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",

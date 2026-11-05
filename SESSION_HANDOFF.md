@@ -1,5 +1,68 @@
 # Session handoff
 
+## Task 19.1 — six-tool public release verification
+
+PR #34 merged as `7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b`. Pages
+[42010602815](https://github.com/Juster06/micro-tools-hub/actions/runs/42010602815)
+and post-merge Functional CI
+[42010604196](https://github.com/Juster06/micro-tools-hub/actions/runs/42010604196)
+succeeded for that exact commit, including Required functional checks. Main had
+no newer source changes at verification.
+
+Fresh public HTTPS checks matched approved Git bytes for the homepage, all 62
+tool pages, privacy notice, consent script, registry, progress and bundled assets (71 responses), plus the
+six directory-index canonical URLs. All 62 distinct visible homepage cards,
+canonical routes and the custom domain were verified.
+The six Task 19 tools passed **48 fresh public Chromium interaction tests** with
+synthetic inputs, including real Web Crypto, rejection-boundary injection,
+independent QR decoding, image Blob MIME/pixels and CSV bounds. Existing 56
+releases were checked through fresh HTTP/source identity and post-merge CI;
+fresh individual interactions for all 56 are not claimed.
+
+Two fresh isolated browser profiles verified actual public consent behavior.
+No Google requests occurred before choice, after rejection or after withdrawal.
+Accepted homepage/QR/CSV-cleaner navigations each sent exactly one real GA4 page
+view for `G-XDHPQYJ5CH`, with HTTP 204; repeat acceptance did not duplicate it.
+Three synthetic test page views were sent. GA4 property-level reporting remains
+unverified. The shared analytics code, settings and privacy notice are unchanged.
+
+See `audit/TASK_19_PUBLIC_RELEASE_VERIFICATION.json` and six separate
+`*_RELEASE_VERIFICATION.json` records for timestamps, raw/normalized hashes,
+deployed revision, browser scope and limitations. Prior development/release
+audits are retained. Clipboard/download APIs were captured in memory; pixels and
+output bytes used real browser codecs. No native-dialog, physical-device,
+screen-reader or cross-browser certification is claimed. The optional
+`/favicon.ico` returns 404 (seven recorded resource-console errors across seven
+contexts); no uncaught application errors, essential asset failures or unexpected
+dependencies occurred. This cosmetic icon issue is not changed in this task.
+
+This branch proposes **93 registered, 62 RELEASED, 0 TESTED, 0 READY,
+30 PLANNED, 1 BLOCKED**. Main/public registry metadata remain at 56 RELEASED and
+6 TESTED until separately authorized integration. Six homepage labels are proposed
+through the existing integration gate; all utility source files are unchanged.
+The next planning checkpoint is 75 releases (62/75); the existing generated
+milestone remains 100. Milestone configuration is unchanged.
+
+Local Python **163/163** and Node **403/403** passed, plus **1308** inline
+logic fixtures. All six canonical suites passed structural/logic/browser layers
+(56 logic fixtures; 11 browser fixtures / 41 assertions). Project/source/registry
+validation passed with zero errors and warnings. The full local catalog Chromium
+run is still progressing at this checkpoint; no full local PASS is claimed.
+The exact-head hosted PR gate must complete the full mapped Chromium, 62 browser
+profiles and neutral templates. Actual hosted results are in the PR/final delivery.
+See `audit/TASK_19_RELEASE_REGRESSION.json`. Existing assertions are retained,
+with six-ID release counts and source-bound publication checks. Historical
+Task19 development evidence remains independently checked. No workflow/runtime/
+timeout or required-check relaxation.
+
+**Next major task:** Owner review of the Task 19.1 release-verification PR and its
+required checks. Await separate authorization before merge; then verify deployment
+of the release metadata. No administrator bypass, deployment, new utility or
+analytics/property setting change is authorized here. The two unrelated local
+handoff edits are preserved. Delivery branch: `release/task-19-six-tools-verification`. Identify its containing
+commit with `git rev-parse HEAD`; the handoff cannot embed its own commit hash.
+Earlier sections below are historical checkpoints.
+
 ## Task 19 — six implemented and TESTED utilities; publication pending
 
 Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged.
@@ -1019,12 +1082,12 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 100 released tools; 56 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 36; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 56; DEPRECATED: 0.
+- Milestone: 100 released tools; 62 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 30; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 62; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: release/task-18-six-tools-verification.
-- Latest commit observed before generation: c75e6f1a75e12cf2ab3d625004983ee7e7ef0f6f.
+- Git branch: release/task-19-six-tools-verification.
+- Latest commit observed before generation: 7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -1033,14 +1096,14 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 These are registry verification records, not new tests or tasks executed by this generator.
 - YouTube Title Checker: RELEASED, evidence dated 2026-11-05.
 - Regex Tester: RELEASED, evidence dated 2026-11-05.
+- QR Code Generator: RELEASED, evidence dated 2026-11-05.
+- Password Generator: RELEASED, evidence dated 2026-11-05.
+- Passphrase Generator: RELEASED, evidence dated 2026-11-05.
 - Instagram Bio Formatter: RELEASED, evidence dated 2026-11-05.
 - Image Format Converter: RELEASED, evidence dated 2026-11-05.
+- Image Cropper: RELEASED, evidence dated 2026-11-05.
 - File Signature Inspector: RELEASED, evidence dated 2026-11-05.
-- CSV ↔ JSON Converter: RELEASED, evidence dated 2026-11-05.
-- YouTube Thumbnail Preview: RELEASED, evidence dated 2026-11-04.
-- YouTube Description Formatter: RELEASED, evidence dated 2026-11-04.
-- Username Generator: RELEASED, evidence dated 2026-11-04.
-- Text Difference Checker: RELEASED, evidence dated 2026-11-04.
+- CSV to TXT: RELEASED, evidence dated 2026-11-05.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -1057,7 +1120,72 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` README.md
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
-- `??` audit/TASK_18_RELEASE_REGRESSION.json
+- ` M` TOOL_REGISTRY.json
+- ` M` csv-data-cleaner/README.md
+- ` M` csv-to-txt/README.md
+- ` M` image-cropper/README.md
+- ` M` index.html
+- ` M` passphrase-generator/README.md
+- ` M` password-generator/README.md
+- ` M` qr-code-generator/README.md
+- ` M` scripts/ci/README.md
+- ` M` scripts/ci/coverage.json
+- ` M` scripts/consent-static.test.mjs
+- ` M` tests/test_task18_preservation.py
+- ` M` tests/test_task19_preservation.py
+- ` M` tests/tools/age-calculator/integration-browser.test.mjs
+- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/compound-interest-calculator/integration-browser.test.mjs
+- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
+- ` M` tests/tools/csv-column-extractor/integration-browser.test.mjs
+- ` M` tests/tools/csv-merger/integration-browser.test.mjs
+- ` M` tests/tools/csv-viewer/integration-browser.test.mjs
+- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
+- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-row-finder/integration-browser.test.mjs
+- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
+- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
+- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
+- ` M` tests/tools/image-color-picker/integration-browser.test.mjs
+- ` M` tests/tools/image-resizer/integration-browser.test.mjs
+- ` M` tests/tools/image-rotator/integration-browser.test.mjs
+- ` M` tests/tools/image-watermark/integration-browser.test.mjs
+- ` M` tests/tools/invoice-generator/integration-browser.test.mjs
+- ` M` tests/tools/json-formatter/integration-browser.test.mjs
+- ` M` tests/tools/json-to-txt/integration-browser.test.mjs
+- ` M` tests/tools/loan-repayment-calculator/integration-browser.test.mjs
+- ` M` tests/tools/local-to-do-list/integration-browser.test.mjs
+- ` M` tests/tools/meeting-agenda-generator/integration-browser.test.mjs
+- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
+- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
+- ` M` tests/tools/pomodoro-timer/integration-browser.test.mjs
+- ` M` tests/tools/posting-calendar-generator/integration-browser.test.mjs
+- ` M` tests/tools/printable-calendar-generator/integration-browser.test.mjs
+- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
+- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
+- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
+- ` M` tests/tools/sha256-hash-checker/integration-browser.test.mjs
+- ` M` tests/tools/slug-generator/integration-browser.test.mjs
+- ` M` tests/tools/text-difference-checker/integration-browser.test.mjs
+- ` M` tests/tools/text-reverser/integration-browser.test.mjs
+- ` M` tests/tools/text-sorter/integration-browser.test.mjs
+- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
+- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/username-generator/integration-browser.test.mjs
+- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
+- ` M` tests/tools/vat-calculator/integration-browser.test.mjs
+- ` M` tests/tools/working-days-calculator/integration-browser.test.mjs
+- ` M` tests/tools/youtube-description-formatter/integration-browser.test.mjs
+- ` M` tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs
+- `??` audit/CSV_DATA_CLEANER_RELEASE_VERIFICATION.json
+- `??` audit/CSV_TO_TXT_RELEASE_VERIFICATION.json
+- `??` audit/IMAGE_CROPPER_RELEASE_VERIFICATION.json
+- `??` audit/PASSPHRASE_GENERATOR_RELEASE_VERIFICATION.json
+- `??` audit/PASSWORD_GENERATOR_RELEASE_VERIFICATION.json
+- `??` audit/QR_CODE_GENERATOR_RELEASE_VERIFICATION.json
+- `??` audit/TASK_19_PUBLIC_RELEASE_VERIFICATION.json
+- `??` tests/test_task19_release.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->
