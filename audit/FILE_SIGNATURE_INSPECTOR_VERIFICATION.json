@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-05",
-  "source_revision": "ddd58d80d398e2c7312c05ce674b80240bfcf563",
+  "source_revision": "a5034a45515eb36d411f158c4bb4e3506c4c4f93",
   "pages": [
     {
       "path": "file-signature-inspector/index.html",
@@ -44,5 +44,8 @@
     "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
     "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
     "Publication pending."
-  ]
+  ],
+  "original_local_source_revision": "ddd58d80d398e2c7312c05ce674b80240bfcf563",
+  "source_tree_sha": "d94bd16108981d871c675e148da58a8960318f07",
+  "publication_method": "Connected GitHub app; complete published source tree independently matched the local source checkpoint tree. No merge or deployment."
 }

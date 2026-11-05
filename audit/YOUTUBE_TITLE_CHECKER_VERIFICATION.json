@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-05",
-  "source_revision": "5fa88947ad40786e693879333544386a212b7c07",
+  "source_revision": "6b5c571fd58ec1b3543631d96ff532167bc86d3a",
   "pages": [
     {
       "path": "youtube-title-checker/index.html",
@@ -44,5 +44,8 @@
     "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
     "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
     "Publication pending."
-  ]
+  ],
+  "original_local_source_revision": "5fa88947ad40786e693879333544386a212b7c07",
+  "source_tree_sha": "c6805774440c100366263a7f0915ec8c6de16a72",
+  "publication_method": "Connected GitHub app; complete published source tree independently matched the local source checkpoint tree. No merge or deployment."
 }

@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-05",
-  "source_revision": "ebefc51a62e5a5e1acf72faf8879a87f2789525e",
+  "source_revision": "fb821fdf44ff8c7b22e76806673bb05565dfdf6e",
   "pages": [
     {
       "path": "instagram-bio-formatter/index.html",
@@ -44,5 +44,8 @@
     "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
     "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
     "Publication pending."
-  ]
+  ],
+  "original_local_source_revision": "ebefc51a62e5a5e1acf72faf8879a87f2789525e",
+  "source_tree_sha": "6add965023e3818e44b997db622d87465e0df72c",
+  "publication_method": "Connected GitHub app; complete published source tree independently matched the local source checkpoint tree. No merge or deployment."
 }

@@ -1,15 +1,16 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-05",
-  "source_revision": "1222511a15d844e2db63f8d9e6eed8f51f23aa14",
+  "source_revision": "983ac0fee8b1cb1640ac208ddf67910c471cf08c",
   "pages": [
     {
       "path": "csv-json-converter/index.html",
-      "source_sha256": "09648f313aee3e2f5aadb2bce9fb1a22c98a73e14c23d382874e65abd382e356",
+      "source_sha256": "d2c3ad816b7763adc41586e1e701c9fb3a932f3bbeaa6a2ed1093fd379c78fc7",
       "checks": [
         "Canonical structural PASS; 12 deterministic logic fixtures; 2 real Chromium fixtures / 5 assertions",
         "Independent focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and output-action checks. See tests/tools/csv-json-converter.",
-        "Local verification only; clipboard/download simulated; no public release claim."
+        "Local verification only; clipboard/download simulated; no public release claim.",
+        "Incrementally bounded JSON serialization; adversarial repeated long-header expansion rejected after fewer than 50 records, not after full allocation."
       ]
     }
   ],
@@ -44,5 +45,11 @@
     "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
     "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
     "Publication pending."
-  ]
+  ],
+  "historical_local_source_revisions": [
+    "1222511a15d844e2db63f8d9e6eed8f51f23aa14"
+  ],
+  "original_local_source_revision": "44c040471d7e77b64c538ccd5656b036564cf755",
+  "source_tree_sha": "44cabc47b02aa3cd3a2cced3a49fe0ae73e7c210",
+  "publication_method": "Connected GitHub app; complete published source tree independently matched the local source checkpoint tree. No merge or deployment."
 }

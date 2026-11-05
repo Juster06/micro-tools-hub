@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "verified_on": "2026-11-05",
-  "source_revision": "c8bc23acfa7452f76f007c0a697f30f422e928ad",
+  "source_revision": "0cc4ca8451814537071449fc24138d6ee073aaa3",
   "pages": [
     {
       "path": "regex-tester/index.html",
@@ -44,5 +44,8 @@
     "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
     "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
     "Publication pending."
-  ]
+  ],
+  "original_local_source_revision": "c8bc23acfa7452f76f007c0a697f30f422e928ad",
+  "source_tree_sha": "fc087967e761efa84c10c56c081086d6f01ea81f",
+  "publication_method": "Connected GitHub app; complete published source tree independently matched the local source checkpoint tree. No merge or deployment."
 }

@@ -1,5 +1,27 @@
 # Functional CI — Task 9.5
 
+## Task 18 coverage update
+
+The explicit coverage map now contains 56 implemented/tested/released utilities:
+50 existing releases and six Task 18 utilities with publication pending. All six
+have nonempty structural, logic and browser profiles plus independent logic,
+extended Chromium and navigation suites. Regex isolated logic tests validate only
+the configuration and bounds; actual pattern execution/timeout/termination tests
+run real Web Workers in Chromium. Image decoding/encoding and file-read pipelines
+are exercised in browser tests, separately from deterministic header fixtures.
+
+Seven Python files, 55 Node regression files and 105 browser files are explicitly
+mapped. Reviewed floors are 151 Python, 363 Node and 478 Chromium tests; these
+exclude additional JSON fixtures and neutral-template cases. Six additional
+consent tests cover each new route before consent, after rejection, acceptance,
+duplicate acceptance and withdrawal, using intercepted Google endpoints. They do
+not send GA4 events or verify property-level reporting. Historical deployment
+audits remain unchanged; tests read their dated homepage revision from Git and
+independently require current homepage changes to consist only of the six gated
+cards and the corresponding initial count. Full-history checkout remains required.
+
+Earlier sections below document the original CI introduction and baseline.
+
 ## Task 10 coverage extension
 
 Local CI partitions passed: Python **142/142**, Node **225/225** plus **791**
@@ -346,25 +368,3 @@ verification remains the Task 9 historical release evidence, not a new CI claim.
 Keep runtime/action/browser pins, npm lock integrity, coverage map, test floors
 and platform exclusions reviewed together. See [official Actions workflow syntax](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 for trigger/permission/concurrency maintenance.
-# Task 18 coverage update
-
-The explicit coverage map now contains 56 implemented/tested/released utilities:
-50 existing releases and six Task 18 utilities with publication pending. All six
-have nonempty structural, logic and browser profiles plus independent logic,
-extended Chromium and navigation suites. Regex isolated logic tests validate only
-the configuration and bounds; actual pattern execution/timeout/termination tests
-run real Web Workers in Chromium. Image decoding/encoding and file-read pipelines
-are exercised in browser tests, separately from deterministic header fixtures.
-
-Seven Python files, 55 Node regression files and 105 browser files are explicitly
-mapped. Reviewed floors are 151 Python, 363 Node and 478 Chromium tests; these
-exclude additional JSON fixtures and neutral-template cases. Six additional
-consent tests cover each new route before consent, after rejection, acceptance,
-duplicate acceptance and withdrawal, using intercepted Google endpoints. They do
-not send GA4 events or verify property-level reporting. Historical deployment
-audits remain unchanged; tests read their dated homepage revision from Git and
-independently require current homepage changes to consist only of the six gated
-cards and the corresponding initial count. Full-history checkout remains required.
-
-Earlier sections below document the original CI introduction and baseline.
-
