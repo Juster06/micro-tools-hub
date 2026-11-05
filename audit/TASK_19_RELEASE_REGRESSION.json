@@ -1,0 +1,185 @@
+{
+  "result": "SCOPED_LOCAL_PASS_FULL_HOSTED_CHROMIUM_REQUIRED",
+  "verified_on": "2026-11-05",
+  "approved_deployed_source": "7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b",
+  "python": {
+    "status": "PASS",
+    "tests": 163,
+    "failed": 0,
+    "skipped": 0,
+    "mapped_structural_profiles": 62
+  },
+  "node": {
+    "status": "PASS",
+    "tests": 403,
+    "failed": 0,
+    "skipped": 0,
+    "all_tool_logic_fixtures": 1308
+  },
+  "new_tool_canonical_layers": {
+    "password-generator": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 9,
+        "failed": 0,
+        "assertions": 9,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 6,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "csv-to-txt": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 12,
+        "failed": 0,
+        "assertions": 12,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 7,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "passphrase-generator": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 9,
+        "failed": 0,
+        "assertions": 9,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 6,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "qr-code-generator": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 9,
+        "failed": 0,
+        "assertions": 9,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 7,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "image-cropper": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 8,
+        "failed": 0,
+        "assertions": 8,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 5,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    },
+    "csv-data-cleaner": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 9,
+        "failed": 0,
+        "assertions": 9,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 10,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/156.0.4314.58"
+      }
+    }
+  },
+  "live_public_browser": {
+    "status": "PASS",
+    "tests": 48,
+    "failed": 0,
+    "evidence": "audit/TASK_19_PUBLIC_RELEASE_VERIFICATION.json"
+  },
+  "source_and_registry_validation": "PASS; zero errors/warnings",
+  "full_local_chromium": {
+    "status": "IN_PROGRESS_AT_CHECKPOINT",
+    "existing_scope_deadline_seconds": 900,
+    "note": "No full local Chromium PASS is claimed at this checkpoint. Full exact-head GitHub Actions browser suites, all 62 profiles and neutral templates must pass; inspect the actual PR run and final delivery."
+  },
+  "preservation": "All62 tool HTML sources, shared consent, privacy notice, all historical evidence including Task19 development audits, CNAME, templates, workflow/runtime pins unchanged. Only six homepage availability fields/labels change. Original18 worktrees and two uncommitted handoffs preserved.",
+  "assertions": "45 historical inventory assertions extended for exactly six approved IDs. Development evidence remains checked through previous_evidence, all old hashes preserved. Two additional Python tests require dated release/public-source/browser/real-GA4 evidence. No failure suppression, skip, timeout or assertion relaxation."
+}

@@ -8,6 +8,7 @@
     "tests/test_task18_preservation.py",
     "tests/test_task18_release.py",
     "tests/test_task19_preservation.py",
+    "tests/test_task19_release.py",
     "tests/test_tool_framework.py",
     "tests/test_tracking.py"
   ],
@@ -559,7 +560,7 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 161,
+    "python-project": 163,
     "node-regression": 403,
     "browser-tests": 537
   },

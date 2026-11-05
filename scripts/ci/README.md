@@ -1,5 +1,16 @@
 # Functional CI — Task 9.5
 
+## Task 19.1 release-evidence regression
+
+Ten Python files now include two additional checks binding six release records
+to dated public source bytes, deployed Git blobs, live browser outcomes and real
+GA4 collection evidence. Python floor: 163; Node/Chromium floors remain 403/537.
+Coverage remains 62 tools, 61 Node files, 117 browser files and two neutral templates.
+Historical inventory assertions include exactly the six Task 19 IDs; navigation
+assertions require source-bound publication evidence when status is RELEASED.
+Task 17 deployment evidence remains bound only to its original 50 tool IDs.
+No assertions, browser/Worker deadlines, workflow pins or required gates are removed.
+
 ## Task 19 coverage extension
 
 Coverage now maps 62 implemented/tested/released tools, nine Python files,
