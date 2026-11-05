@@ -30,6 +30,7 @@
     "tests/tools/find-and-replace/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
     "tests/tools/image-color-picker/logic.test.mjs",
+    "tests/tools/image-format-converter/logic.test.mjs",
     "tests/tools/image-resizer/logic.test.mjs",
     "tests/tools/image-rotator/logic.test.mjs",
     "tests/tools/image-watermark/logic.test.mjs",
@@ -99,6 +100,8 @@
     "tests/tools/hashtag-organizer/integration-browser.test.mjs",
     "tests/tools/image-color-picker/extended-browser.test.mjs",
     "tests/tools/image-color-picker/integration-browser.test.mjs",
+    "tests/tools/image-format-converter/extended-browser.test.mjs",
+    "tests/tools/image-format-converter/integration-browser.test.mjs",
     "tests/tools/image-resizer/extended-browser.test.mjs",
     "tests/tools/image-resizer/integration-browser.test.mjs",
     "tests/tools/image-rotator/extended-browser.test.mjs",
@@ -430,6 +433,11 @@
       "browser_job": "browser-tests"
     },
     "file-signature-inspector": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "image-format-converter": {
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "unknown",
+      "input": {
+        "bytes": [
+          1,
+          2,
+          3
+        ]
+      },
+      "error": "Only static"
+    },
+    {
+      "id": "empty",
+      "input": {
+        "bytes": []
+      },
+      "error": "5 MiB"
+    },
+    {
+      "id": "bad-output",
+      "input": {
+        "bytes": [
+          1
+        ]
+      },
+      "error": "Unsupported output",
+      "options": {
+        "type": "image/avif"
+      }
+    },
+    {
+      "id": "bad-quality",
+      "input": {
+        "bytes": [
+          1
+        ]
+      },
+      "error": "Quality",
+      "options": {
+        "quality": 2
+      }
+    },
+    {
+      "id": "bad-bg",
+      "input": {
+        "bytes": [
+          1
+        ]
+      },
+      "error": "background",
+      "options": {
+        "background": "transparent"
+      }
+    }
+  ]
+}

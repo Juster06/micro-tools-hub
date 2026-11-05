@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "no-image-reset",
+      "width": 375,
+      "steps": [
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#imagePreview",
+          "property": "hidden",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    }
+  ]
+}

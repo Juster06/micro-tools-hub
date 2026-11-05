@@ -8,9 +8,9 @@ Task 18 starts from `f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a` on
 `feat/task-18-six-tools` in a separate worktree. Owner authorization covers
 development, tests, commits and a PR; merge/deployment/bypass are not authorized.
 
-Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter.
-Inventory: 93 registered, 50 RELEASED, 2 TESTED, 0 READY,
-40 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
+Locally TESTED, publication pending: YouTube Title Checker, Instagram Bio Formatter, File Signature Inspector.
+Inventory: 93 registered, 50 RELEASED, 3 TESTED, 0 READY,
+39 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
 existing 100-release generated target are unchanged. See
 `audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
 verification audits for features, resource limits, actual test scope and omissions.
@@ -387,7 +387,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | local-text-encryption | Local Text Encryption | PLANNED | P3 | XL | Web Crypto authenticated encryption and password derivation; Separate reviewed threat model and versioned format |
 | exif-metadata-viewer | EXIF Metadata Viewer | PLANNED | P2 | L | Reviewed format-specific metadata parser |
 | exif-metadata-remover | EXIF Metadata Remover | PLANNED | P2 | L | Reviewed metadata parser/removal method and exported-metadata verifier |
-| file-signature-inspector | File Signature Inspector | PLANNED | P2 | M | Browser Web Crypto where cryptographic randomness or hashing is required |
+| file-signature-inspector | File Signature Inspector | TESTED | P2 | M | Browser Web Crypto where cryptographic randomness or hashing is required |
 | passphrase-generator | Passphrase Generator | PLANNED | P2 | M | Reviewed licensed word list; Browser cryptographic randomness and unbiased selection |
 | qr-code-generator | QR Code Generator | PLANNED | P2 | M | Reviewed locally bundled QR encoder and license |
 

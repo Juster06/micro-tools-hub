@@ -1162,7 +1162,7 @@
       "category": "image",
       "description": "Convert among JPEG, PNG and WebP in one interface.",
       "directory_path": "image-format-converter",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -1176,7 +1176,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 18 implementation exists; focused verification in progress. Publication pending.",
       "sequence_rank": null,
       "related_tools": [
         "image-compressor"
@@ -4043,7 +4043,7 @@
       "category": "security",
       "description": "Compare initial file bytes with a maintained signature list.",
       "directory_path": "file-signature-inspector",
-      "status": "IMPLEMENTED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4056,12 +4056,32 @@
         "Unknown result",
         "Not an antivirus claim"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Task 18 implementation exists; focused verification in progress. Publication pending.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 18 locally tested; publication pending. Limits and assumptions: audit/TASK_18_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "ddd58d80d398e2c7312c05ce674b80240bfcf563",
+        "source_sha256": "2b845bd8af6fdea9dd18f4d0dde18e0f1f65c1c4a5a8dbc92c224984ef35893b",
+        "evidence_path": "audit/FILE_SIGNATURE_INSPECTOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 5 deterministic logic fixtures; 1 real Chromium fixtures / 4 assertions",
+          "Independent focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and output-action checks. See tests/tools/file-signature-inspector.",
+          "Local verification only; clipboard/download simulated; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "passphrase-generator",
