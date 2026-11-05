@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "csv-to-txt",
+  "canonical_path": "csv-to-txt/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Render selected CSV fields into a configurable text layout."><meta name="color-scheme" content="dark">
+  <title>CSV to TXT — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>CSV to TXT</h1><p class="description">Render selected CSV fields into a configurable text layout.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="toolInput">CSV text</label><textarea id="toolInput" rows="8" spellcheck="false"></textarea>
+<label for="toolFile">Or choose a local UTF-8 CSV file (up to 1 MiB)</label><input id="toolFile" type="file" accept=".csv,text/csv,text/plain">
+<label for="delimiter">CSV delimiter</label><select id="delimiter"><option value="comma">Comma</option><option value="semicolon">Semicolon</option><option value="tab">Tab</option></select>
+<label><input id="hasHeader" type="checkbox" checked> First record is a header</label>
+<label for="columns">Column numbers, in output order</label><input id="columns" type="text" placeholder="Blank = all columns; example: 1,3" aria-describedby="columnHelp"><p id="columnHelp">Positions start at 1. Names and types are not inferred.</p>
+<label for="rowTemplate">Text layout for each record</label><textarea id="rowTemplate" rows="3" placeholder="Blank = selected fields joined with |. Example: {1}: {3}" aria-describedby="templateHelp"></textarea>
+<p id="templateHelp">Use {1} for column 1. Only selected columns may appear. Use {{ and }} for literal braces. No expressions or scripts.</p>
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+<p id="counts" class="metric"></p><h3>Preview (up to 20 records; long records shortened)</h3><pre id="dataPreview" class="preview scroll"></pre>
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled >Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>CSV input ≤1 MiB UTF-8; ≤10,000 data rows and 100 columns; output ≤2 MiB UTF-8; template ≤4,096 bytes. A leading UTF-8 BOM is removed. Quoted commas/escaped quotes/multiline fields are supported; embedded line endings are preserved. Blank lines are records; malformed quoting/ragged rows and empty/duplicate headers are rejected. Output is plain text, not a spreadsheet export. Positional templates do not execute input or infer types. Preview shows up to 20 records, 500 characters per record; complete output is retained within the cap.</p>
+<p>Uploaded CSV bytes are retained until you edit the text. Textareas display normalized line endings; automatic copy and export use the complete computed result. Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+
+<script id="edb-tool-logic">
+'use strict';
+
+function utf8Bytes(text) {
+  let bytes=0;for(const character of text){const code=character.codePointAt(0);if(code>=0xD800&&code<=0xDFFF)throw Error('Input contains an unpaired Unicode surrogate.');bytes+=code<128?1:code<2048?2:code<65536?3:4;}return bytes;
+}
+function parseCSV(input,delimiter,header) {
+  if(typeof input!=='string')throw Error('CSV input must be text.');
+  if(input.length>1048576||utf8Bytes(input)>1048576)throw Error('CSV input exceeds 1 MiB of UTF-8.');
+  if(!input.length)throw Error('Enter CSV text or choose a UTF-8 CSV file.');
+  if(input.includes('\0'))throw Error('NUL bytes are not supported in CSV.');
+  if(input.charCodeAt(0)===0xFEFF)input=input.slice(1);
+  const records=[];let row=[],field='',quoted=false,closed=false,touched=false;
+  function pushField(){row.push(field);field='';closed=false;if(row.length>100)throw Error('CSV exceeds 100 columns.');}
+  function pushRow(){pushField();if(records.length&&row.length!==records[0].length)throw Error('Ragged CSV row: column counts differ.');records.push(row);row=[];touched=false;if(records.length>10000+(header?1:0))throw Error('CSV exceeds 10,000 data rows.');}
+  for(let i=0;i<input.length;i++){
+    const c=input[i];
+    if(quoted){if(c==='"'){if(input[i+1]==='"'){field+='"';i++;}else{quoted=false;closed=true;}}else field+=c;touched=true;continue;}
+    if(c===delimiter){pushField();touched=true;continue;}
+    if(c==='\n'||c==='\r'){if(c==='\r'&&input[i+1]==='\n')i++;pushRow();continue;}
+    if(closed)throw Error('Unexpected character after closing CSV quote.');
+    if(c==='"'){if(field.length)throw Error('Quote inside an unquoted CSV field.');quoted=true;touched=true;continue;}
+    field+=c;touched=true;
+  }
+  if(quoted)throw Error('Unterminated CSV quote.');
+  if(touched||row.length||closed)pushRow();
+  if(!records.length)throw Error('CSV has no records.');
+  const width=records[0].length,headers=header?records.shift():Array.from({length:width},(_,i)=>String(i+1));
+  if(header&&(headers.some(x=>!x.trim())||new Set(headers).size!==headers.length))throw Error('CSV headers must be nonempty and unique.');
+  return {headers,rows:records,width};
+}
+function selectedColumns(text,width){
+ if(typeof text!=='string'||text.length>500)throw Error('Column selection must be a bounded comma-separated list.');
+ if(!text.trim())return Array.from({length:width},(_,i)=>i);
+ const list=text.split(',').map(x=>x.trim());if(list.some(x=>!/^\d{1,3}$/.test(x)))throw Error('Use column numbers such as 1,3.');
+ const indexes=list.map(x=>Number(x)-1);if(indexes.some(x=>x<0||x>=width)||new Set(indexes).size!==indexes.length)throw Error('Selected columns must exist and must not repeat.');return indexes;
+}
+function csvOptions(options,extra=[]){
+ if(!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(k=>!['delimiter','header','columns',...extra].includes(k)))throw Error('Unsupported option.');
+ const delimiterKey=options.delimiter??'comma';if(!['comma','semicolon','tab'].includes(delimiterKey))throw Error('Invalid delimiter option.');const delimiter={comma:',',semicolon:';',tab:'\t'}[delimiterKey],header=options.header??true;
+ if(!delimiter||typeof header!=='boolean')throw Error('Invalid delimiter or header option.');return {delimiter,header};
+}
+
+function layoutTokens(template,columns){
+ if(typeof template!=='string'||utf8Bytes(template)>4096)throw Error('Template exceeds 4,096 UTF-8 bytes or is not text.');
+ if(!template.length)return columns.flatMap((column,i)=>i?[' | ',{column}]:[{column}]);
+ const tokens=[];let literal='';const flush=()=>{if(literal){tokens.push(literal);literal='';}};
+ for(let i=0;i<template.length;i++){
+  const c=template[i];if(c==='{'&&template[i+1]==='{'){literal+='{';i++;continue;}if(c==='}'&&template[i+1]==='}'){literal+='}';i++;continue;}
+  if(c==='{'){flush();const end=template.indexOf('}',i+1);if(end<0)throw Error('Unclosed field placeholder.');const number=template.slice(i+1,end);if(!/^[1-9]\d{0,2}$/.test(number))throw Error('Use positional field placeholders such as {1}.');const column=Number(number)-1;if(!columns.includes(column))throw Error('Placeholder refers to a column outside the selected columns.');tokens.push({column});i=end;}
+  else if(c==='}')throw Error('Use }} for a literal closing brace.');else literal+=c;
+ }
+ flush();return tokens;
+}
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,
+ run(input,options={}){
+  const settings=csvOptions(options,['template']),table=parseCSV(input,settings.delimiter,settings.header),columns=selectedColumns(options.columns??'',table.width);
+  const tokens=layoutTokens(options.template??'',columns).map(x=>typeof x==='string'?{literal:x,bytes:utf8Bytes(x)}:x);
+  let size=0;const pieces=[],preview=[];
+  function append(text,bytes){if(size+bytes>2097152)throw Error('Expanded output exceeds 2 MiB of UTF-8.');size+=bytes;if(text)pieces.push(text);}
+  for(let r=0;r<table.rows.length;r++){
+   const row=table.rows[r],cache=new Map(),start=pieces.length;if(r)append('\n',1);
+   for(const token of tokens){if(Object.hasOwn(token,'literal'))append(token.literal,token.bytes);else{const value=row[token.column];if(!cache.has(token.column))cache.set(token.column,utf8Bytes(value));append(value,cache.get(token.column));}}
+   if(r<20){const part=pieces.slice(start+(r?1:0)).join('');preview.push(Array.from(part).slice(0,500).join('')+(Array.from(part).length>500?'… [preview shortened]':''));}
+  }
+  return {output:pieces.join(''),rows:table.rows.length,columns:columns.length,bytes:size,preview:preview.join('\n')};
+ }
+};
+</script>
+
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt', resultText = '';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultText = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultText = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    resultText = text; output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = resultText;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([resultText], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+ let uploadedText=null;
+ run.textContent='Convert to text';
+ function changed(){invalidate();run.disabled=false;$('dataPreview').textContent='';$('counts').textContent='';tell('Input changed. Convert again.');}
+ input.addEventListener('input',()=>{uploadedText=null;$('toolFile').value='';changed();});
+ for(const id of ['columns','rowTemplate'])$(id).addEventListener('input',changed);
+ for(const id of ['delimiter','hasHeader'])$(id).addEventListener('change',changed);
+ run.addEventListener('click',()=>{changed();try{const value=window.EDB_TOOL.run(uploadedText??input.value,{delimiter:$('delimiter').value,header:$('hasHeader').checked,columns:$('columns').value,template:$('rowTemplate').value});$('counts').textContent=`${value.rows} records · ${value.columns} selected columns · ${value.bytes} UTF-8 bytes`;$('dataPreview').textContent=value.preview;publish(value.output,new Blob([value.output],{type:'text/plain;charset=utf-8'}),'csv-layout.txt');tell(value.rows?'Converted locally. Preview may be shortened; download contains the full bounded output.':'Header only: no data records to render.');}catch(problem){fail(problem);}});
+ $('clearBtn').addEventListener('click',()=>{uploadedText=null;input.value='';$('toolFile').value='';$('delimiter').value='comma';$('hasHeader').checked=true;$('columns').value='';$('rowTemplate').value='';changed();tell('Reset.');input.focus();});
+
+  $('toolFile').addEventListener('change',async()=>{
+    uploadedText=null;input.value='';changed();const token=revision,file=$('toolFile').files[0];if(!file)return;run.disabled=true;tell('Reading local UTF-8 CSV…');
+    try{if(!file.size||file.size>1048576)throw Error('Choose a nonempty UTF-8 CSV file up to 1 MiB.');const bytes=await file.arrayBuffer();if(token!==revision)return;let text;try{text=new TextDecoder('utf-8',{fatal:true}).decode(bytes);}catch{throw Error('The file is not valid UTF-8.');}if(token!==revision)return;uploadedText=text;input.value=text;tell('CSV loaded locally. Review settings, then preview.');}
+    catch(problem){if(token===revision)fail(problem);}finally{if(token===revision)run.disabled=false;}
+  });
+
+})();
+</script>
+</body></html>

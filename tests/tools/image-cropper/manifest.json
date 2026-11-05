@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "image-cropper",
+  "canonical_path": "image-cropper/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

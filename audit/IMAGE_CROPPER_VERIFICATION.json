@@ -1,0 +1,75 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-05",
+  "source_revision": "80bb4889c822abf04a6c235ccc345137f20465d9",
+  "pages": [
+    {
+      "path": "image-cropper/index.html",
+      "source_sha256": "f7dfa0e8ea6bd60d99659a0e149398f18d0d5a2b2d57b15a6d005a353fa64d00",
+      "checks": [
+        "Canonical structural PASS; 8 deterministic logic fixtures; 1 real Chromium fixtures / 5 assertions",
+        "Focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and supported output-action checks. See tests/tools/image-cropper.",
+        "Local verification only; clipboard/download simulated; no public release claim."
+      ]
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 8,
+      "failed": 0,
+      "assertions": 8,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 1,
+      "failed": 0,
+      "assertions": 5,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Edg/156.0.4314.58"
+    }
+  },
+  "browser": "Edg/156.0.4314.58",
+  "dependencies": {
+    "qrcodegen": {
+      "version": "1.8.0",
+      "source_revision": "720f62bddb7226106071d4728c292cb1df519ceb",
+      "source_url": "https://github.com/nayuki/QR-Code-generator/tree/720f62bddb7226106071d4728c292cb1df519ceb/typescript-javascript",
+      "license": "MIT",
+      "use": "Local QR encoding only. No transport/storage calls; no service or production build dependency.",
+      "source_sha256": "c4749095a91bf9696e3a303998b9905e467094f53041e64393e65e6d887737fd",
+      "build": "TypeScript 5.9.3: tsc qrcodegen.ts --target es2015 --lib es2015,dom --outFile qrcodegen.js --removeComments false",
+      "path": "assets/vendor/qrcodegen-1.8.0.js",
+      "bytes": 45380,
+      "sha256": "6e200897a80ff15a652a5d601667856d807cec60cfc81a3a351305d69cc9dbbd"
+    },
+    "wordlist": {
+      "version": "EFF large English list dated 2016-07-18; pinned by SHA-256",
+      "source_url": "https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt",
+      "license": "CC-BY-4.0 under https://www.eff.org/copyright unless otherwise noted; no contrary notice found in this source",
+      "attribution": "Electronic Frontier Foundation; Joseph Bonneau. Dice codes removed in the generated JavaScript wrapper; word order/content unchanged.",
+      "entries": 7776,
+      "use": "Local passphrase generation. No external wordlist fetch or telemetry.",
+      "path": "assets/data/eff-large-wordlist.txt",
+      "bytes": 108800,
+      "sha256": "addd35536511597a02fa0a9ff1e5284677b8883b83e986e43f15a3db996b903e",
+      "wrapper_path": "assets/data/eff-wordlist.js",
+      "wrapper_sha256": "30f4337649cc987075e65aff08d9e7786deafc67ff1917809c165ba259756577"
+    }
+  },
+  "contract": "audit/TASK_19_DEVELOPMENT_PLAN.md",
+  "limitations": [
+    "Local headless Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
+    "User inputs processed locally; hosting/CDN requests and optional consent-based site analytics are separate.",
+    "Publication pending."
+  ]
+}

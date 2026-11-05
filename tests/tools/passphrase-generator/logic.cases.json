@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "defaults",
+      "input": "6",
+      "expected": {
+        "words": 6,
+        "quantity": 1,
+        "separator": " "
+      }
+    },
+    {
+      "id": "maximum",
+      "input": "12",
+      "expected": {
+        "words": 12,
+        "quantity": 10,
+        "separator": "_"
+      },
+      "options": {
+        "quantity": 10,
+        "separator": "underscore"
+      }
+    },
+    {
+      "id": "hyphen",
+      "input": "6",
+      "expected": {
+        "words": 6,
+        "quantity": 1,
+        "separator": "-"
+      },
+      "options": {
+        "separator": "hyphen"
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "whole"
+    },
+    {
+      "id": "small",
+      "input": "5",
+      "error": "6–12"
+    },
+    {
+      "id": "large",
+      "input": "13",
+      "error": "6–12"
+    },
+    {
+      "id": "quantity",
+      "input": "6",
+      "error": "1–10",
+      "options": {
+        "quantity": 11
+      }
+    },
+    {
+      "id": "separator",
+      "input": "6",
+      "error": "supported",
+      "options": {
+        "separator": "newline"
+      }
+    },
+    {
+      "id": "seed",
+      "input": "6",
+      "error": "Unsupported",
+      "options": {
+        "seed": 0
+      }
+    }
+  ]
+}

@@ -1215,7 +1215,7 @@
       "category": "image",
       "description": "Crop an image with an accessible selection workflow.",
       "directory_path": "image-cropper",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -1227,14 +1227,34 @@
         "Numeric crop controls",
         "Preview and download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Limits and assumptions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [
         "image-resizer"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "80bb4889c822abf04a6c235ccc345137f20465d9",
+        "source_sha256": "f7dfa0e8ea6bd60d99659a0e149398f18d0d5a2b2d57b15a6d005a353fa64d00",
+        "evidence_path": "audit/IMAGE_CROPPER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 8 deterministic logic fixtures; 1 real Chromium fixtures / 5 assertions",
+          "Focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and supported output-action checks. See tests/tools/image-cropper.",
+          "Local verification only; clipboard/download simulated; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "image-rotator",
@@ -2194,7 +2214,7 @@
       "category": "data",
       "description": "Apply explicit cleaning operations to CSV fields.",
       "directory_path": "csv-data-cleaner",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2209,7 +2229,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 19 implementation exists; focused verification in progress. Publication pending.",
       "sequence_rank": null,
       "related_tools": [
         "csv-viewer"
@@ -3948,7 +3968,7 @@
       "category": "security",
       "description": "Create passwords using browser cryptographic randomness.",
       "directory_path": "password-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3961,12 +3981,32 @@
         "No storage or logging",
         "Copy with sensitive-data notice"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Limits and assumptions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "67cb15bf70d69b0b199ff2bc5105c4dc1019e5c9",
+        "source_sha256": "d744be4f5480444144b70429d382c386702f1f212010e99ee639fad20b1da256",
+        "evidence_path": "audit/PASSWORD_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 9 deterministic logic fixtures; 2 real Chromium fixtures / 6 assertions",
+          "Focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and supported output-action checks. See tests/tools/password-generator.",
+          "Local verification only; clipboard/download simulated; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "password-strength-checker",
@@ -4185,7 +4225,7 @@
       "category": "security",
       "description": "Generate random word sequences from a reviewed local word list.",
       "directory_path": "passphrase-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4199,12 +4239,32 @@
         "Length options",
         "No logging"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Limits and assumptions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "bd8fc8f4358d86af89a5e4977b0a0b6e48abf8b6",
+        "source_sha256": "7697d4aa2623447ec729df4329d4631254391eb258ff6214207d133ab7a20bc9",
+        "evidence_path": "audit/PASSPHRASE_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 9 deterministic logic fixtures; 2 real Chromium fixtures / 6 assertions",
+          "Focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and supported output-action checks. See tests/tools/passphrase-generator.",
+          "Local verification only; clipboard/download simulated; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "qr-code-generator",
@@ -4212,7 +4272,7 @@
       "category": "security",
       "description": "Generate QR codes locally from user-provided text.",
       "directory_path": "qr-code-generator",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4225,12 +4285,32 @@
         "PNG or SVG export",
         "No URL-shortening service"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Limits and assumptions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "b0d659dbb9637d0fb0af714019dacee870e4d9b8",
+        "source_sha256": "4c6e406e5fc4574ff3d1a62738e9e903d635c3334a704a6560bd2b5c7e017fa5",
+        "evidence_path": "audit/QR_CODE_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 9 deterministic logic fixtures; 2 real Chromium fixtures / 7 assertions",
+          "Focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and supported output-action checks. See tests/tools/qr-code-generator.",
+          "Local verification only; clipboard/download simulated; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "txt-to-pdf",
@@ -4316,7 +4396,7 @@
       "category": "conversion",
       "description": "Render selected CSV fields into a configurable text layout.",
       "directory_path": "csv-to-txt",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -4329,12 +4409,32 @@
         "Line format",
         "Download"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task 19 locally tested; publication pending. Limits and assumptions: audit/TASK_19_DEVELOPMENT_PLAN.md.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "80d9e8067b0a1f543080cffa2cfaa8f199edaaa8",
+        "source_sha256": "07b49f1a01030d36a7196b2c050d2ef38702e065cd373620c7da2ae0723747ba",
+        "evidence_path": "audit/CSV_TO_TXT_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural PASS; 12 deterministic logic fixtures; 2 real Chromium fixtures / 7 assertions",
+          "Focused Node and Chromium tests passed before source commit; responsive, invalid-input, Unicode and supported output-action checks. See tests/tools/csv-to-txt.",
+          "Local verification only; clipboard/download simulated; no public release claim."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "json-to-txt",

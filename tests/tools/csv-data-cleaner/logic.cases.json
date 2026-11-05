@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "selected-only",
+      "input": "name,note\n Ada , keep ",
+      "expected": {
+        "output": "name,note\r\nAda, keep ",
+        "rows": 1,
+        "columns": 2,
+        "selected": 1,
+        "editedCells": 1,
+        "protectedCells": 0,
+        "bytes": 21,
+        "before": "name,note\n Ada , keep ",
+        "after": "name,note\nAda, keep "
+      },
+      "options": {
+        "columns": "1"
+      }
+    },
+    {
+      "id": "replace",
+      "input": "a,b\nx, ",
+      "expected": {
+        "output": "a,b\r\nx,missing",
+        "rows": 1,
+        "columns": 2,
+        "selected": 2,
+        "editedCells": 1,
+        "protectedCells": 0,
+        "bytes": 14,
+        "before": "a,b\nx, ",
+        "after": "a,b\nx,missing"
+      },
+      "options": {
+        "missing": "replace",
+        "replacement": "missing"
+      }
+    },
+    {
+      "id": "formula-unselected",
+      "input": "=head,b\n=1, x ",
+      "expected": {
+        "output": "'=head,b\r\n'=1,x",
+        "rows": 1,
+        "columns": 2,
+        "selected": 1,
+        "editedCells": 1,
+        "protectedCells": 2,
+        "bytes": 15,
+        "before": "=head,b\n=1, x ",
+        "after": "'=head,b\n'=1,x"
+      },
+      "options": {
+        "columns": "2"
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "Enter CSV"
+    },
+    {
+      "id": "ragged",
+      "input": "a,b\nx",
+      "error": "Ragged"
+    },
+    {
+      "id": "quote",
+      "input": "a\n\"x",
+      "error": "Unterminated"
+    },
+    {
+      "id": "missing-reject",
+      "input": "a\n ",
+      "error": "Empty selected",
+      "options": {
+        "missing": "reject"
+      }
+    },
+    {
+      "id": "replacement-limit",
+      "input": "a\nx",
+      "error": "1,000",
+      "options": {
+        "replacement": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      }
+    },
+    {
+      "id": "bad-policy",
+      "input": "a\nx",
+      "error": "policy",
+      "options": {
+        "missing": "guess"
+      }
+    }
+  ]
+}

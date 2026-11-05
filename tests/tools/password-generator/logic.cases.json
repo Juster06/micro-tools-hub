@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "default-settings",
+      "input": "16",
+      "expected": {
+        "length": 16,
+        "quantity": 1,
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+      }
+    },
+    {
+      "id": "digits-only",
+      "input": "8",
+      "expected": {
+        "length": 8,
+        "quantity": 2,
+        "alphabet": "0123456789"
+      },
+      "options": {
+        "quantity": 2,
+        "upper": false,
+        "lower": false,
+        "symbols": false
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "whole"
+    },
+    {
+      "id": "small",
+      "input": "7",
+      "error": "8–128"
+    },
+    {
+      "id": "large",
+      "input": "129",
+      "error": "8–128"
+    },
+    {
+      "id": "zero-quantity",
+      "input": "16",
+      "error": "1–20",
+      "options": {
+        "quantity": 0
+      }
+    },
+    {
+      "id": "output-boundary",
+      "input": "128",
+      "error": "2,560",
+      "options": {
+        "quantity": 20
+      }
+    },
+    {
+      "id": "sets-empty",
+      "input": "16",
+      "error": "at least",
+      "options": {
+        "upper": false,
+        "lower": false,
+        "digits": false,
+        "symbols": false
+      }
+    },
+    {
+      "id": "unknown",
+      "input": "16",
+      "error": "Unsupported",
+      "options": {
+        "seed": 1
+      }
+    }
+  ]
+}

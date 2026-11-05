@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "basic",
+      "input": "Hello",
+      "expected": {
+        "text": "Hello",
+        "bytes": 5,
+        "correction": "M",
+        "scale": 8
+      }
+    },
+    {
+      "id": "unicode",
+      "input": "Hi 😀",
+      "expected": {
+        "text": "Hi 😀",
+        "bytes": 7,
+        "correction": "M",
+        "scale": 8
+      }
+    },
+    {
+      "id": "settings",
+      "input": "x",
+      "expected": {
+        "text": "x",
+        "bytes": 1,
+        "correction": "H",
+        "scale": 4
+      },
+      "options": {
+        "correction": "H",
+        "scale": 4
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "Enter text"
+    },
+    {
+      "id": "oversize",
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "error": "1,000"
+    },
+    {
+      "id": "surrogate",
+      "input": "\ud800",
+      "error": "surrogate"
+    },
+    {
+      "id": "correction",
+      "input": "x",
+      "error": "correction",
+      "options": {
+        "correction": "Z"
+      }
+    },
+    {
+      "id": "scale",
+      "input": "x",
+      "error": "integer",
+      "options": {
+        "scale": 3
+      }
+    },
+    {
+      "id": "unknown",
+      "input": "x",
+      "error": "Unsupported",
+      "options": {
+        "url": true
+      }
+    }
+  ]
+}

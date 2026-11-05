@@ -1,0 +1,9 @@
+EFF large English wordlist (2016-07-18)
+Electronic Frontier Foundation / Joseph Bonneau
+Source: https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
+Copyright policy: https://www.eff.org/copyright
+Licence: Creative Commons Attribution 4.0 International, unless otherwise noted.
+https://creativecommons.org/licenses/by/4.0/
+The reviewed source carries no alternative licence notice.
+Original source preserved as eff-large-wordlist.txt. JavaScript derivative removes dice codes and wraps the same ordered words in a frozen array.
+No endorsement by EFF is implied.

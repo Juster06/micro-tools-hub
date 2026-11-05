@@ -1,6 +1,32 @@
 # Changelog
 
-## Task 18.1 — six-tool public release verification
+## Task 19 — authorized development; Task 18 complete
+
+Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged;
+current approved main is `3178f70802a96f181fd82251d417abd1dd0ad76b`. Pages
+[41979618835](https://github.com/Juster06/micro-tools-hub/actions/runs/41979618835)
+and post-merge Functional CI
+[41979619839](https://github.com/Juster06/micro-tools-hub/actions/runs/41979619839)
+succeeded, including Required functional checks (153 Python / 363 Node / 478 Chromium).
+Task 18.2 verified actual public source identity, all 56 Live cards, all 56 pages,
+seven fresh smoke/navigation tests and isolated consent acceptance/rejection/
+withdrawal. GA4 collection returned HTTP 204; property-level reporting remains
+unverified. Prior audits remain historical and unchanged.
+
+Task 19 is authorized on `feat/task-19-six-tools`: Password Generator, CSV to TXT,
+Passphrase Generator, QR Code Generator, Image Cropper and CSV Data Cleaner.
+See `audit/TASK_19_DEVELOPMENT_PLAN.md` for scope, dependency/security review,
+resource limits and tests. Starting inventory: 93 registered, 56 RELEASED,
+0 TESTED, 0 READY, 36 PLANNED, 1 BLOCKED. Development/testing does not establish
+publication; the six tools may become TESTED with publication pending after tests.
+The next planning checkpoint is 75 releases; generated milestone remains 100.
+
+**Next major task:** Finish this authorized six-tool development batch, run all
+required checks and open the Task 19 development PR. Await separate owner
+authorization before merge/deployment. Preserve consent `G-XDHPQYJ5CH`, all
+56 released tools, earlier audits and both unrelated local handoff edits.
+
+## Historical Task 18.1 — pre-merge release-verification checkpoint
 
 PR #32 merged as `8cb97c3f1450634524a40aa9b7cf016bd6b3c78e`. Pages
 [41961586696](https://github.com/Juster06/micro-tools-hub/actions/runs/41961586696)

@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "unicode-quotes",
+      "input": "name,note\nZoë,\"Hello, 世界\"",
+      "expected": {
+        "output": "Zoë | Hello, 世界",
+        "rows": 1,
+        "columns": 2,
+        "bytes": 20,
+        "preview": "Zoë | Hello, 世界"
+      }
+    },
+    {
+      "id": "multiline",
+      "input": "\"a,b\",\"line1\nline2\"",
+      "expected": {
+        "output": "a,b | line1\nline2",
+        "rows": 1,
+        "columns": 2,
+        "bytes": 17,
+        "preview": "a,b | line1\nline2"
+      },
+      "options": {
+        "header": false
+      }
+    },
+    {
+      "id": "template",
+      "input": "a,b\nx,y",
+      "expected": {
+        "output": "{y}",
+        "rows": 1,
+        "columns": 1,
+        "bytes": 3,
+        "preview": "{y}"
+      },
+      "options": {
+        "columns": "2",
+        "template": "{{{2}}}"
+      }
+    },
+    {
+      "id": "semicolon",
+      "input": "a;b\nx;y",
+      "expected": {
+        "output": "x | y",
+        "rows": 1,
+        "columns": 2,
+        "bytes": 5,
+        "preview": "x | y"
+      },
+      "options": {
+        "delimiter": "semicolon"
+      }
+    },
+    {
+      "id": "header-only",
+      "input": "a,b",
+      "expected": {
+        "output": "",
+        "rows": 0,
+        "columns": 2,
+        "bytes": 0,
+        "preview": ""
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "Enter CSV"
+    },
+    {
+      "id": "unclosed",
+      "input": "a\n\"x",
+      "error": "Unterminated"
+    },
+    {
+      "id": "quote-inside",
+      "input": "a\nx\"",
+      "error": "unquoted"
+    },
+    {
+      "id": "after-quote",
+      "input": "a\n\"x\" ",
+      "error": "after closing"
+    },
+    {
+      "id": "ragged",
+      "input": "a,b\nx",
+      "error": "Ragged"
+    },
+    {
+      "id": "duplicate",
+      "input": "a,a\nx,y",
+      "error": "unique"
+    },
+    {
+      "id": "unselected",
+      "input": "a,b\nx,y",
+      "error": "outside",
+      "options": {
+        "columns": "1",
+        "template": "{2}"
+      }
+    }
+  ]
+}

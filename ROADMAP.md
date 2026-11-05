@@ -1,6 +1,32 @@
 # Development roadmap
 
-## Task 18.1 — six-tool public release verification
+## Task 19 — authorized development; Task 18 complete
+
+Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged;
+current approved main is `3178f70802a96f181fd82251d417abd1dd0ad76b`. Pages
+[41979618835](https://github.com/Juster06/micro-tools-hub/actions/runs/41979618835)
+and post-merge Functional CI
+[41979619839](https://github.com/Juster06/micro-tools-hub/actions/runs/41979619839)
+succeeded, including Required functional checks (153 Python / 363 Node / 478 Chromium).
+Task 18.2 verified actual public source identity, all 56 Live cards, all 56 pages,
+seven fresh smoke/navigation tests and isolated consent acceptance/rejection/
+withdrawal. GA4 collection returned HTTP 204; property-level reporting remains
+unverified. Prior audits remain historical and unchanged.
+
+Task 19 is authorized on `feat/task-19-six-tools`: Password Generator, CSV to TXT,
+Passphrase Generator, QR Code Generator, Image Cropper and CSV Data Cleaner.
+See `audit/TASK_19_DEVELOPMENT_PLAN.md` for scope, dependency/security review,
+resource limits and tests. Starting inventory: 93 registered, 56 RELEASED,
+0 TESTED, 0 READY, 36 PLANNED, 1 BLOCKED. Development/testing does not establish
+publication; the six tools may become TESTED with publication pending after tests.
+The next planning checkpoint is 75 releases; generated milestone remains 100.
+
+**Next major task:** Finish this authorized six-tool development batch, run all
+required checks and open the Task 19 development PR. Await separate owner
+authorization before merge/deployment. Preserve consent `G-XDHPQYJ5CH`, all
+56 released tools, earlier audits and both unrelated local handoff edits.
+
+## Historical Task 18.1 — pre-merge release-verification checkpoint
 
 PR #32 merged as `8cb97c3f1450634524a40aa9b7cf016bd6b3c78e`. Pages
 [41961586696](https://github.com/Juster06/micro-tools-hub/actions/runs/41961586696)
@@ -375,7 +401,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | image-compressor | Image Compressor | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-resizer | Image Resizer | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-format-converter | Image Format Converter | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
-| image-cropper | Image Cropper | PLANNED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
+| image-cropper | Image Cropper | TESTED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-rotator | Image Rotator | RELEASED | P2 | S | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-watermark | Image Watermark | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-color-picker | Image Color Picker | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
@@ -403,7 +429,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | excel-to-csv | Excel to CSV | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-column-extractor | CSV Column Extractor | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | duplicate-row-finder | Duplicate Row Finder | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
-| csv-data-cleaner | CSV Data Cleaner | PLANNED | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
+| csv-data-cleaner | CSV Data Cleaner | READY | P2 | L | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | csv-merger | CSV Merger | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | json-formatter | JSON Formatter | RELEASED | P1 | S | Native JSON.parse and JSON.stringify |
 | csv-viewer | CSV Viewer | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
@@ -458,15 +484,15 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
-| password-generator | Password Generator | PLANNED | P2 | M | Browser Web Crypto where cryptographic randomness or hashing is required |
+| password-generator | Password Generator | TESTED | P2 | M | Browser Web Crypto where cryptographic randomness or hashing is required |
 | password-strength-checker | Password Strength Checker | PLANNED | P2 | L | Reviewed locally bundled password-strength estimator and license |
 | secure-random-number-generator | Secure Random Number Generator | RELEASED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | local-text-encryption | Local Text Encryption | PLANNED | P3 | XL | Web Crypto authenticated encryption and password derivation; Separate reviewed threat model and versioned format |
 | exif-metadata-viewer | EXIF Metadata Viewer | PLANNED | P2 | L | Reviewed format-specific metadata parser |
 | exif-metadata-remover | EXIF Metadata Remover | PLANNED | P2 | L | Reviewed metadata parser/removal method and exported-metadata verifier |
 | file-signature-inspector | File Signature Inspector | RELEASED | P2 | M | Browser Web Crypto where cryptographic randomness or hashing is required |
-| passphrase-generator | Passphrase Generator | PLANNED | P2 | M | Reviewed licensed word list; Browser cryptographic randomness and unbiased selection |
-| qr-code-generator | QR Code Generator | PLANNED | P2 | M | Reviewed locally bundled QR encoder and license |
+| passphrase-generator | Passphrase Generator | TESTED | P2 | M | Reviewed licensed word list; Browser cryptographic randomness and unbiased selection |
+| qr-code-generator | QR Code Generator | TESTED | P2 | M | Reviewed locally bundled QR encoder and license |
 
 ### File Conversion Tools
 
@@ -475,7 +501,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | txt-to-pdf | TXT to PDF | PLANNED | P2 | L | Reviewed PDF text rendering library and font licensing |
 | markdown-converter-previewer | Markdown Converter & Previewer | PLANNED | P2 | L | Reviewed Markdown parser and sanitizer; local bundled assets preferred |
 | html-to-markdown | HTML to Markdown | PLANNED | P2 | L | Reviewed non-executing HTML-to-Markdown conversion library |
-| csv-to-txt | CSV to TXT | PLANNED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
+| csv-to-txt | CSV to TXT | TESTED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | json-to-txt | JSON to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | svg-to-png | SVG to PNG | PLANNED | P2 | L | Reviewed SVG sanitization and external-resource blocking; Canvas rasterization with tested dimension limits |
 | png-to-ico | PNG to ICO | PLANNED | P2 | L | Reviewed local ICO encoder |
