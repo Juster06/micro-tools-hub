@@ -57,7 +57,8 @@
     "tests/tools/vat-calculator/logic.test.mjs",
     "tests/tools/working-days-calculator/logic.test.mjs",
     "tests/tools/youtube-description-formatter/logic.test.mjs",
-    "tests/tools/youtube-thumbnail-preview/logic.test.mjs"
+    "tests/tools/youtube-thumbnail-preview/logic.test.mjs",
+    "tests/tools/youtube-title-checker/logic.test.mjs"
   ],
   "browser_files": [
     "scripts/consent-browser.test.mjs",
@@ -152,7 +153,9 @@
     "tests/tools/youtube-description-formatter/extended-browser.test.mjs",
     "tests/tools/youtube-description-formatter/integration-browser.test.mjs",
     "tests/tools/youtube-thumbnail-preview/extended-browser.test.mjs",
-    "tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs"
+    "tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs",
+    "tests/tools/youtube-title-checker/extended-browser.test.mjs",
+    "tests/tools/youtube-title-checker/integration-browser.test.mjs"
   ],
   "tools": {
     "social-counter": {
@@ -405,6 +408,11 @@
       "browser_job": "browser-tests"
     },
     "csv-merger": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "youtube-title-checker": {
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"

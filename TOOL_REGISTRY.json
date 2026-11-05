@@ -2905,7 +2905,7 @@
       "category": "social",
       "description": "Measure title length against a maintained configurable guide.",
       "directory_path": "youtube-title-checker",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
@@ -2919,7 +2919,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 18 implementation exists; focused verification in progress. Publication pending.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "youtube-title-checker",
+  "canonical_path": "youtube-title-checker/index.html",
+  "template": "text",
+  "requires_specialized_implementation": false,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

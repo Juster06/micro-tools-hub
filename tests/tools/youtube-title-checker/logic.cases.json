@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "basic",
+      "input": "Everyday tools",
+      "expected": {
+        "text": "Everyday tools",
+        "count": 14,
+        "preview": "Everyday tools",
+        "guidance": "86 remaining in your 100-character guide."
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "expected": {
+        "text": "",
+        "count": 0,
+        "preview": "",
+        "guidance": "Enter a title to check."
+      }
+    },
+    {
+      "id": "unicode",
+      "input": "A😀é",
+      "expected": {
+        "text": "A😀é",
+        "count": 4,
+        "preview": "A😀é",
+        "guidance": "96 remaining in your 100-character guide."
+      }
+    },
+    {
+      "id": "line-endings",
+      "input": "a\r\nb\rc",
+      "expected": {
+        "text": "a\nb\nc",
+        "count": 5,
+        "preview": "a\nb\nc",
+        "guidance": "95 remaining in your 100-character guide. Line breaks included in count; review before publishing."
+      }
+    },
+    {
+      "id": "brackets",
+      "input": "<hi>",
+      "expected": {
+        "text": "<hi>",
+        "count": 4,
+        "preview": "<hi>",
+        "guidance": "96 remaining in your 100-character guide. Angle brackets may be rejected by YouTube."
+      }
+    },
+    {
+      "id": "guide",
+      "input": "abc",
+      "expected": {
+        "text": "abc",
+        "count": 3,
+        "preview": "abc",
+        "guidance": "1 over your 2-character guide."
+      },
+      "options": {
+        "guide": 2
+      }
+    },
+    {
+      "id": "bad-guide",
+      "input": "a",
+      "error": "Guide",
+      "options": {
+        "guide": 0
+      }
+    },
+    {
+      "id": "bad-input",
+      "input": null,
+      "error": "text"
+    },
+    {
+      "id": "unknown-option",
+      "input": "a",
+      "error": "Unsupported",
+      "options": {
+        "bad": 1
+      }
+    }
+  ]
+}
