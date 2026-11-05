@@ -14,8 +14,25 @@ Inventory: 93 registered, 50 RELEASED, 6 TESTED, 0 READY,
 existing 100-release generated target are unchanged. See
 `audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
 verification audits for features, resource limits, actual test scope and omissions.
-Focused logic, real Chromium, canonical layers and homepage navigation passed for
-each completed tool. Full-batch regression and hosted checks are recorded at final delivery.
+Local validation: **151/151 Python tests**, **363/363 Node tests** plus
+**1252** inline logic fixtures; six new tools pass all canonical layers
+(49 logic fixtures; 10 real Chromium fixtures / 34 assertions). Their independent
+focused Chromium suites pass 42 tests plus 12 homepage navigation tests. The
+20-test consent suite includes all six new pages; Google endpoints are mocked,
+with no measurement sent. Nine final preservation/historical-consent checks pass.
+Project status and source-bound audits pass with zero errors/warnings.
+
+The initial full local Chromium process reached 351 tests before its existing
+900-second deadline; that run is TIMEOUT, not PASS. A partition retry was stopped
+after observing Windows memory pressure (under 1 GiB free). Existing assertions,
+CI deadlines, runtime pins and gates remain unchanged. The full mapped Chromium,
+56 browser profiles and neutral templates require genuine hosted PR checks.
+See `audit/TASK_18_DEVELOPMENT_VERIFICATION.json` and the final PR delivery.
+
+Published source checkpoint trees were compared exactly with local source trees.
+Audits reference the matching GitHub commits and retain original local revisions.
+Local development commits are preserved before aligning this feature branch to
+the GitHub-published history. All six tools remain TESTED, publication pending.
 
 **Next major task:** Review the Task 18 PR and its required checks.
 Await separate owner authorization before merge/deployment; independently verify
