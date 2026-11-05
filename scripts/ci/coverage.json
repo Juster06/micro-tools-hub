@@ -9,6 +9,8 @@
     "tests/test_task18_release.py",
     "tests/test_task19_preservation.py",
     "tests/test_task19_release.py",
+    "tests/test_task20_formats.py",
+    "tests/test_task20_preservation.py",
     "tests/test_tool_framework.py",
     "tests/test_tracking.py"
   ],
@@ -31,11 +33,14 @@
     "tests/tools/discount-calculator/logic.test.mjs",
     "tests/tools/duplicate-line-remover/logic.test.mjs",
     "tests/tools/duplicate-row-finder/logic.test.mjs",
+    "tests/tools/emoji-picker/logic.test.mjs",
+    "tests/tools/excel-formula-generator/logic.test.mjs",
     "tests/tools/file-signature-inspector/logic.test.mjs",
     "tests/tools/file-size-converter/logic.test.mjs",
     "tests/tools/find-and-replace/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
     "tests/tools/image-color-picker/logic.test.mjs",
+    "tests/tools/image-compressor/logic.test.mjs",
     "tests/tools/image-cropper/logic.test.mjs",
     "tests/tools/image-format-converter/logic.test.mjs",
     "tests/tools/image-resizer/logic.test.mjs",
@@ -49,9 +54,11 @@
     "tests/tools/local-to-do-list/logic.test.mjs",
     "tests/tools/meeting-agenda-generator/logic.test.mjs",
     "tests/tools/passphrase-generator/logic.test.mjs",
+    "tests/tools/passport-photo-layout-maker/logic.test.mjs",
     "tests/tools/password-generator/logic.test.mjs",
     "tests/tools/percentage-calculator/logic.test.mjs",
     "tests/tools/percentage-change-calculator/logic.test.mjs",
+    "tests/tools/png-to-ico/logic.test.mjs",
     "tests/tools/pomodoro-timer/logic.test.mjs",
     "tests/tools/posting-calendar-generator/logic.test.mjs",
     "tests/tools/printable-calendar-generator/logic.test.mjs",
@@ -59,6 +66,7 @@
     "tests/tools/qr-code-generator/logic.test.mjs",
     "tests/tools/random-name-picker/logic.test.mjs",
     "tests/tools/regex-tester/logic.test.mjs",
+    "tests/tools/resume-builder/logic.test.mjs",
     "tests/tools/secure-random-number-generator/logic.test.mjs",
     "tests/tools/sha256-hash-checker/logic.test.mjs",
     "tests/tools/slug-generator/logic.test.mjs",
@@ -107,6 +115,10 @@
     "tests/tools/duplicate-line-remover/integration-browser.test.mjs",
     "tests/tools/duplicate-row-finder/extended-browser.test.mjs",
     "tests/tools/duplicate-row-finder/integration-browser.test.mjs",
+    "tests/tools/emoji-picker/extended-browser.test.mjs",
+    "tests/tools/emoji-picker/integration-browser.test.mjs",
+    "tests/tools/excel-formula-generator/extended-browser.test.mjs",
+    "tests/tools/excel-formula-generator/integration-browser.test.mjs",
     "tests/tools/file-signature-inspector/extended-browser.test.mjs",
     "tests/tools/file-signature-inspector/integration-browser.test.mjs",
     "tests/tools/file-size-converter/extended-browser.test.mjs",
@@ -117,6 +129,8 @@
     "tests/tools/hashtag-organizer/integration-browser.test.mjs",
     "tests/tools/image-color-picker/extended-browser.test.mjs",
     "tests/tools/image-color-picker/integration-browser.test.mjs",
+    "tests/tools/image-compressor/extended-browser.test.mjs",
+    "tests/tools/image-compressor/integration-browser.test.mjs",
     "tests/tools/image-cropper/extended-browser.test.mjs",
     "tests/tools/image-cropper/integration-browser.test.mjs",
     "tests/tools/image-format-converter/extended-browser.test.mjs",
@@ -143,12 +157,16 @@
     "tests/tools/meeting-agenda-generator/integration-browser.test.mjs",
     "tests/tools/passphrase-generator/extended-browser.test.mjs",
     "tests/tools/passphrase-generator/integration-browser.test.mjs",
+    "tests/tools/passport-photo-layout-maker/extended-browser.test.mjs",
+    "tests/tools/passport-photo-layout-maker/integration-browser.test.mjs",
     "tests/tools/password-generator/extended-browser.test.mjs",
     "tests/tools/password-generator/integration-browser.test.mjs",
     "tests/tools/percentage-calculator/extended-browser.test.mjs",
     "tests/tools/percentage-calculator/integration-browser.test.mjs",
     "tests/tools/percentage-change-calculator/extended-browser.test.mjs",
     "tests/tools/percentage-change-calculator/integration-browser.test.mjs",
+    "tests/tools/png-to-ico/extended-browser.test.mjs",
+    "tests/tools/png-to-ico/integration-browser.test.mjs",
     "tests/tools/pomodoro-timer/extended-browser.test.mjs",
     "tests/tools/pomodoro-timer/integration-browser.test.mjs",
     "tests/tools/posting-calendar-generator/extended-browser.test.mjs",
@@ -163,6 +181,8 @@
     "tests/tools/random-name-picker/integration-browser.test.mjs",
     "tests/tools/regex-tester/extended-browser.test.mjs",
     "tests/tools/regex-tester/integration-browser.test.mjs",
+    "tests/tools/resume-builder/extended-browser.test.mjs",
+    "tests/tools/resume-builder/integration-browser.test.mjs",
     "tests/tools/secure-random-number-generator/extended-browser.test.mjs",
     "tests/tools/secure-random-number-generator/integration-browser.test.mjs",
     "tests/tools/sha256-hash-checker/extended-browser.test.mjs",
@@ -508,6 +528,36 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "excel-formula-generator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "emoji-picker": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "image-compressor": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "png-to-ico": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "resume-builder": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "passport-photo-layout-maker": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -560,9 +610,9 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 163,
-    "node-regression": 403,
-    "browser-tests": 537
+    "python-project": 172,
+    "node-regression": 433,
+    "browser-tests": 593
   },
   "aggregate": {
     "job": "required-checks",

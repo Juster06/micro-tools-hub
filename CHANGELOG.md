@@ -1,6 +1,33 @@
 # Changelog
 
-## Task 19.1 — six-tool public release verification
+## Task 20 — authorized six-tool development; Task 19 complete
+
+Task19 is complete and publicly verified. PR #34 and PR #35 merged; current
+approved main is `1ead1c37861b80c552446afbdb952c9248370bf9`. Pages42032230127
+and post-merge CI42032231242 succeeded for that exact commit (163Python,
+403Node,537Chromium; all62profiles and Required functional checks).
+Fresh Task19.2 verified62visible canonical cards, all62 public pages/source,
+seven smoke/navigation cases and isolated real consent collection (three204
+page views; none before consent/after rejection/withdrawal; no duplicates).
+See `audit/TASK_19_FINAL_PUBLIC_STATE.json`; GA4 property reporting unverified.
+
+Starting inventory:93registered,62RELEASED,0TESTED,0READY,30PLANNED,1BLOCKED.
+Task20 development is underway on `feat/task-20-six-tools` in a separate clean
+worktree. The six owner-selected tools are Excel Formula Generator, Emoji Picker,
+Image Compressor, PNG to ICO, Resume Builder and Passport Photo Layout Maker.
+Final scope/dependency/resource/privacy decisions precede implementation in
+`audit/TASK_20_DEVELOPMENT_PLAN.md`, `TASK_20_SCOPE.json` and
+`TASK_20_DEPENDENCIES.json`. No new library service or architecture is introduced.
+The next planning checkpoint is75released; generated milestone remains100.
+
+**Next major task:** Complete authorized Task20 implementation/testing/evidence,
+then open its development PR and wait required checks. Only TESTED/publication
+pending is permitted after actual tests. Separate owner authorization is required
+before merge/deploy; independent public verification is required before RELEASED.
+Preserve all62 releases, old audits, shared consentG-XDHPQYJ5CH and original19
+worktrees including two unrelated uncommitted handoff edits.
+
+## Historical Task 19.1 — pre-merge verification checkpoint
 
 PR #34 merged as `7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b`. Pages
 [42010602815](https://github.com/Juster06/micro-tools-hub/actions/runs/42010602815)
@@ -63,7 +90,7 @@ handoff edits are preserved. Delivery branch: `release/task-19-six-tools-verific
 commit with `git rev-parse HEAD`; the handoff cannot embed its own commit hash.
 Earlier sections below are historical checkpoints.
 
-## Task 19 — six implemented and TESTED utilities; publication pending
+## Historical Task 19 — development checkpoint before public release
 
 Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged.
 Approved main: `3178f70802a96f181fd82251d417abd1dd0ad76b`; Pages

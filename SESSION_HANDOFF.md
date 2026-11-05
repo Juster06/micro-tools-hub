@@ -1,6 +1,33 @@
 # Session handoff
 
-## Task 19.1 — six-tool public release verification
+## Task 20 — authorized six-tool development; Task 19 complete
+
+Task19 is complete and publicly verified. PR #34 and PR #35 merged; current
+approved main is `1ead1c37861b80c552446afbdb952c9248370bf9`. Pages42032230127
+and post-merge CI42032231242 succeeded for that exact commit (163Python,
+403Node,537Chromium; all62profiles and Required functional checks).
+Fresh Task19.2 verified62visible canonical cards, all62 public pages/source,
+seven smoke/navigation cases and isolated real consent collection (three204
+page views; none before consent/after rejection/withdrawal; no duplicates).
+See `audit/TASK_19_FINAL_PUBLIC_STATE.json`; GA4 property reporting unverified.
+
+Starting inventory:93registered,62RELEASED,0TESTED,0READY,30PLANNED,1BLOCKED.
+Task20 development is underway on `feat/task-20-six-tools` in a separate clean
+worktree. The six owner-selected tools are Excel Formula Generator, Emoji Picker,
+Image Compressor, PNG to ICO, Resume Builder and Passport Photo Layout Maker.
+Final scope/dependency/resource/privacy decisions precede implementation in
+`audit/TASK_20_DEVELOPMENT_PLAN.md`, `TASK_20_SCOPE.json` and
+`TASK_20_DEPENDENCIES.json`. No new library service or architecture is introduced.
+The next planning checkpoint is75released; generated milestone remains100.
+
+**Next major task:** Complete authorized Task20 implementation/testing/evidence,
+then open its development PR and wait required checks. Only TESTED/publication
+pending is permitted after actual tests. Separate owner authorization is required
+before merge/deploy; independent public verification is required before RELEASED.
+Preserve all62 releases, old audits, shared consentG-XDHPQYJ5CH and original19
+worktrees including two unrelated uncommitted handoff edits.
+
+## Historical Task 19.1 — pre-merge verification checkpoint
 
 PR #34 merged as `7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b`. Pages
 [42010602815](https://github.com/Juster06/micro-tools-hub/actions/runs/42010602815)
@@ -63,7 +90,7 @@ handoff edits are preserved. Delivery branch: `release/task-19-six-tools-verific
 commit with `git rev-parse HEAD`; the handoff cannot embed its own commit hash.
 Earlier sections below are historical checkpoints.
 
-## Task 19 — six implemented and TESTED utilities; publication pending
+## Historical Task 19 — development checkpoint before public release
 
 Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged.
 Approved main: `3178f70802a96f181fd82251d417abd1dd0ad76b`; Pages
@@ -1083,11 +1110,11 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 100 released tools; 62 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 30; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 62; DEPRECATED: 0.
-- Current registered tool task: none; see manual session notes for infrastructure work.
+- Tool status counts: IDEA: 0; PLANNED: 24; READY: 0; IN_PROGRESS: 6; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 62; DEPRECATED: 0.
+- Current registered tool task: Image Compressor, Passport Photo Layout Maker, Excel Formula Generator, Emoji Picker, PNG to ICO, Resume Builder.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: release/task-19-six-tools-verification.
-- Latest commit observed before generation: 7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b.
+- Git branch: feat/task-20-six-tools.
+- Latest commit observed before generation: 1ead1c37861b80c552446afbdb952c9248370bf9.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -1124,68 +1151,36 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` csv-data-cleaner/README.md
 - ` M` csv-to-txt/README.md
 - ` M` image-cropper/README.md
-- ` M` index.html
 - ` M` passphrase-generator/README.md
 - ` M` password-generator/README.md
 - ` M` qr-code-generator/README.md
-- ` M` scripts/ci/README.md
 - ` M` scripts/ci/coverage.json
-- ` M` scripts/consent-static.test.mjs
+- ` M` scripts/consent-browser.test.mjs
 - ` M` tests/test_task18_preservation.py
 - ` M` tests/test_task19_preservation.py
-- ` M` tests/tools/age-calculator/integration-browser.test.mjs
-- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/compound-interest-calculator/integration-browser.test.mjs
-- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
-- ` M` tests/tools/csv-column-extractor/integration-browser.test.mjs
-- ` M` tests/tools/csv-merger/integration-browser.test.mjs
-- ` M` tests/tools/csv-viewer/integration-browser.test.mjs
-- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
-- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-row-finder/integration-browser.test.mjs
-- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
-- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
-- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
-- ` M` tests/tools/image-color-picker/integration-browser.test.mjs
-- ` M` tests/tools/image-resizer/integration-browser.test.mjs
-- ` M` tests/tools/image-rotator/integration-browser.test.mjs
-- ` M` tests/tools/image-watermark/integration-browser.test.mjs
-- ` M` tests/tools/invoice-generator/integration-browser.test.mjs
-- ` M` tests/tools/json-formatter/integration-browser.test.mjs
-- ` M` tests/tools/json-to-txt/integration-browser.test.mjs
-- ` M` tests/tools/loan-repayment-calculator/integration-browser.test.mjs
-- ` M` tests/tools/local-to-do-list/integration-browser.test.mjs
-- ` M` tests/tools/meeting-agenda-generator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
-- ` M` tests/tools/pomodoro-timer/integration-browser.test.mjs
-- ` M` tests/tools/posting-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/printable-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
-- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
-- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
-- ` M` tests/tools/sha256-hash-checker/integration-browser.test.mjs
-- ` M` tests/tools/slug-generator/integration-browser.test.mjs
-- ` M` tests/tools/text-difference-checker/integration-browser.test.mjs
-- ` M` tests/tools/text-reverser/integration-browser.test.mjs
-- ` M` tests/tools/text-sorter/integration-browser.test.mjs
-- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
-- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/username-generator/integration-browser.test.mjs
-- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
-- ` M` tests/tools/vat-calculator/integration-browser.test.mjs
-- ` M` tests/tools/working-days-calculator/integration-browser.test.mjs
-- ` M` tests/tools/youtube-description-formatter/integration-browser.test.mjs
-- ` M` tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs
-- `??` audit/CSV_DATA_CLEANER_RELEASE_VERIFICATION.json
-- `??` audit/CSV_TO_TXT_RELEASE_VERIFICATION.json
-- `??` audit/IMAGE_CROPPER_RELEASE_VERIFICATION.json
-- `??` audit/PASSPHRASE_GENERATOR_RELEASE_VERIFICATION.json
-- `??` audit/PASSWORD_GENERATOR_RELEASE_VERIFICATION.json
-- `??` audit/QR_CODE_GENERATOR_RELEASE_VERIFICATION.json
-- `??` audit/TASK_19_PUBLIC_RELEASE_VERIFICATION.json
-- `??` tests/test_task19_release.py
+- `??` assets/data/UNICODE-LICENSE.txt
+- `??` assets/data/emoji-18.0.js
+- `??` audit/TASK_19_FINAL_PUBLIC_STATE.json
+- `??` audit/TASK_20_DEPENDENCIES.json
+- `??` audit/TASK_20_DEVELOPMENT_PLAN.md
+- `??` audit/TASK_20_SCOPE.json
+- `??` audit/vendor-source/emoji-test-18.0.txt
+- `??` emoji-picker/
+- `??` excel-formula-generator/
+- `??` image-compressor/
+- `??` passport-photo-layout-maker/
+- `??` png-to-ico/
+- `??` resume-builder/
+- `??` tests/helpers/
+- `??` tests/test_task20_formats.py
+- `??` tests/test_task20_preservation.py
+- `??` tests/tools/emoji-picker/
+- `??` tests/tools/excel-formula-generator/
+- `??` tests/tools/image-compressor/
+- `??` tests/tools/passport-photo-layout-maker/
+- `??` tests/tools/png-to-ico/
+- `??` tests/tools/resume-builder/
+- `??` tests/tools/task20-browser.mjs
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

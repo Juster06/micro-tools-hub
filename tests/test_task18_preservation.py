@@ -9,13 +9,14 @@ sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
 IDS={'youtube-title-checker','instagram-bio-formatter','file-signature-inspector','image-format-converter','csv-json-converter','regex-tester'}
 TASK19_IDS={'password-generator','csv-to-txt','passphrase-generator','qr-code-generator','image-cropper','csv-data-cleaner'}
+TASK20_IDS={'excel-formula-generator', 'resume-builder', 'emoji-picker', 'passport-photo-layout-maker', 'image-compressor', 'png-to-ico'}
 BASE='f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a'
 def blob(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT,text=True,encoding='utf8')
 class Task18Preservation(unittest.TestCase):
     def test_only_gated_cards_and_count_change_in_homepage(self):
         current=(ROOT/'index.html').read_text(encoding='utf8')
         # Remove only the separately authorized Task 19 cards before reconstructing Task 18.
-        for tid in TASK19_IDS:
+        for tid in TASK19_IDS|TASK20_IDS:
             home=Homepage(current)
             cards=[c for c in home.cards if c['attrs'].get('data-tool-id')==tid]
             if cards:
@@ -44,7 +45,7 @@ class Task18Preservation(unittest.TestCase):
         by_id={t['id']:t for t in new['tools']}
         self.assertEqual(len(new['tools']),93);self.assertEqual(old['milestones'],new['milestones'])
         for tool in old['tools']:
-            if tool['id'] not in IDS|TASK19_IDS:self.assertEqual(tool,by_id[tool['id']])
+            if tool['id'] not in IDS|TASK19_IDS|TASK20_IDS:self.assertEqual(tool,by_id[tool['id']])
             if tool['status']=='RELEASED':
                 path=tool['directory_path']+'/index.html';self.assertEqual((ROOT/path).read_text(encoding='utf8'),blob(path))
         for path in ['CNAME','assets/consent.js','privacy.html','audit/TASK_17_CANDIDATE.json','audit/TASK_17_DEPLOYMENT.json']:

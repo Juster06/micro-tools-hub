@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find and copy emoji from a maintained local dataset."><meta name="color-scheme" content="dark">
+  <title>Emoji Picker — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+.emoji-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px;max-height:34rem;overflow:auto}.emoji-choice{display:flex;flex-direction:column;gap:6px;align-items:center;white-space:normal;overflow-wrap:anywhere;min-width:0}.emoji-glyph{font-size:2rem}</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>Emoji Picker</h1><p class="description">Find and copy emoji from a maintained local dataset.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="toolInput">Search emoji names or exact sequences</label><input id="toolInput" type="search" autocomplete="off" spellcheck="false" aria-describedby="searchHelp"><p id="searchHelp">English names; maximum 100 Unicode code points. Select a result, then Copy result. Glyphs may vary by device.</p>
+<label for="category">Category</label><select id="category"><option value="all">All categories</option></select>
+<label for="tone">Includes skin tone</label><select id="tone"><option value="all">Any</option><option value="none">No skin-tone modifier</option><option value="light">Light</option><option value="medium-light">Medium-light</option><option value="medium">Medium</option><option value="medium-dark">Medium-dark</option><option value="dark">Dark</option></select>
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+<p id="pageStatus" role="status" aria-live="polite"></p><div class="actions"><button id="previousPage" type="button" disabled>Previous 100</button><button id="nextPage" type="button" disabled>Next 100</button></div><div id="results" class="emoji-results" aria-label="Emoji results"></div>
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled >Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>Unicode Emoji 18.0: 3, 963 fully-qualified sequences, English names and categories; Unicode, Inc., Unicode LicenseV3. <a href="../assets/data/UNICODE-LICENSE.txt">Licence and copyright</a>. Derived local data retains exact sequence/name/group order. Search ≤100 code points;100 results per page; copied sequence ≤32 code points. Tone filters match existing modifiers, including mixed-tone sequences; no fabricated variants. Platform fonts determine appearance and support. No external emoji API, font or image service.</p>
+<p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+<script src="../assets/data/emoji-18.0.js"></script>
+<script id="edb-tool-logic">
+'use strict';
+
+function utf8Bytes(text){try{return unescape(encodeURIComponent(text)).length;}catch{throw Error('Invalid Unicode text.');}}
+function validText(value,max){if(typeof value!=='string'||value.length>max*2||Array.from(value).length>max||value.includes('\0'))throw Error('Text exceeds its limit or contains NUL.');utf8Bytes(value);return value;}
+window.EDB_TOOL={isScaffold:false,allowEmpty:true,run(input,options={}){
+ if(!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(k=>!['records','category','tone','page'].includes(k)))throw Error('Unsupported options.');validText(input,100);
+ const records=options.records;if(!Array.isArray(records)||!records.length||records.length>6000)throw Error('Local emoji dataset unavailable or oversized.');
+ const groups=[],seen=new Set();let bytes=0;for(const row of records){if(!Array.isArray(row)||row.length!==3)throw Error('Invalid local dataset row.');validText(row[0],32);validText(row[1],200);validText(row[2],80);if(!row[0]||!row[1]||!row[2]||seen.has(row[0]))throw Error('Invalid or duplicate dataset sequence.');seen.add(row[0]);if(!groups.includes(row[2]))groups.push(row[2]);bytes+=utf8Bytes(JSON.stringify(row));if(bytes>1048576)throw Error('Dataset exceeds 1 MiB.');}
+ const category=options.category??'all',tone=options.tone??'all',page=options.page??1;const tones=['none','light','medium-light','medium','medium-dark','dark'];if(category!=='all'&&!groups.includes(category))throw Error('Invalid category.');if(tone!=='all'&&!tones.includes(tone))throw Error('Invalid skin-tone filter.');if(!Number.isInteger(page)||page<1)throw Error('Invalid page.');
+ const query=input.trim().toLowerCase(),wanted=tone==='all'||tone==='none'?null:0x1f3fb+tones.indexOf(tone)-1;
+ const matches=records.filter(([sequence,name,group])=>{if(category!=='all'&&group!==category)return false;const points=Array.from(sequence,c=>c.codePointAt(0)),modifiers=points.filter(c=>c>=0x1f3fb&&c<=0x1f3ff);if(tone==='none'&&modifiers.length)return false;if(wanted!==null&&!modifiers.includes(wanted))return false;return !query||name.toLowerCase().includes(query)||sequence.includes(query)});
+ const pages=Math.max(1,Math.ceil(matches.length/100));if(page>pages)throw Error('Page exceeds matching results.');return {total:matches.length,page,pages,rows:matches.slice((page-1)*100,page*100).map(([sequence,name,group])=>({sequence,name,group})),groups};
+}};
+
+</script>
+
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt', resultText = '';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultText = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultText = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    resultText = text; output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = resultText;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([resultText], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+ let currentPage=1;
+ function changed(){invalidate();currentPage=1;$('results').replaceChildren();$('previousPage').disabled=$('nextPage').disabled=true;$('pageStatus').textContent='Press Search to update results.';}
+ function search(focus=false){invalidate();try{const value=EDB_TOOL.run(input.value,{records:window.EDB_EMOJI_DATA,category:$('category').value,tone:$('tone').value,page:currentPage});const results=$('results');results.replaceChildren();for(const row of value.rows){const button=document.createElement('button');button.type='button';button.className='emoji-choice';button.setAttribute('aria-label','Select '+row.name);button.title=row.name;const glyph=document.createElement('span');glyph.className='emoji-glyph';glyph.textContent=row.sequence;glyph.setAttribute('aria-hidden','true');const name=document.createElement('span');name.textContent=row.name;button.append(glyph,name);button.addEventListener('click',()=>{invalidate();publish(row.sequence);tell('Selected '+row.name+'. Use Copy result to copy the exact sequence.');});results.append(button);}$('pageStatus').textContent=value.total+(value.total===1?' match':' matches')+' · Page '+value.page+' of '+value.pages;$('previousPage').disabled=value.page===1;$('nextPage').disabled=value.page===value.pages;if(focus)results.querySelector('button')?.focus();tell('Search complete. No sequence copied automatically.');}catch(e){$('results').replaceChildren();$('pageStatus').textContent='No results. Review the error.';$('previousPage').disabled=$('nextPage').disabled=true;fail(e)}}
+ run.textContent='Search';run.addEventListener('click',()=>{currentPage=1;search()});input.addEventListener('input',changed);input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();run.click()}});
+ for(const id of ['category','tone'])$(id).addEventListener('change',()=>{changed();search()});
+ $('previousPage').addEventListener('click',()=>{if(currentPage>1){currentPage--;search(true)}});$('nextPage').addEventListener('click',()=>{currentPage++;search(true)});
+ $('clearBtn').addEventListener('click',()=>{input.value='';$('category').value=$('tone').value='all';changed();search();input.focus();tell('Reset.');});
+ try{const initial=EDB_TOOL.run('',{records:window.EDB_EMOJI_DATA});for(const group of initial.groups){const option=document.createElement('option');option.value=option.textContent=group;$('category').append(option);}search();}catch(e){fail(e)}
+
+})();
+</script>
+</body></html>

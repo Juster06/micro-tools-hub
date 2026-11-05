@@ -1,0 +1,163 @@
+{
+  "status": "Owner-authorized Task20 development. Final scope before implementation; only actual tests may establish TESTED, never RELEASED.",
+  "reviewed_planned_entries": 30,
+  "limit_policy": "Provisional starting limits, requiring browser measurements and boundary tests during separately authorized development.",
+  "candidates": [
+    {
+      "order": 1,
+      "name": "Excel Formula Generator",
+      "id": "excel-formula-generator",
+      "canonical_route": "/excel-formula-generator/index.html",
+      "registry_complexity": "L",
+      "primary_functionality": "Guided deterministic SUM, AVERAGE, COUNT, COUNTA, MIN, MAX, IF and ROUND templates; validated references, escaped literal strings, comma/semicolon argument separators, explanations and examples. Generates formulas without evaluating them. Distinct from Excel Sandbox structural inspection.",
+      "browser_apis": [
+        "DOM",
+        "Clipboard",
+        "Blob",
+        "URL object URLs"
+      ],
+      "dependencies": "No added runtime library; existing shared consent and Tailwind setup retained.",
+      "proposed_limits": "At most 20 arguments; 8 KiB total UTF-8 input; each literal <=256 code points; formula output <=4 KiB. Reject invalid references and external-workbook references.",
+      "important_tests": [
+        "Independent expected formula fixtures for all eight operations",
+        "Comma/semicolon argument separation",
+        "Quote and sheet-name escaping",
+        "Empty, invalid, boundary and Unicode input",
+        "No formula evaluation or input transport",
+        "Copy/reset/error invalidation and keyboard/mobile behavior"
+      ],
+      "known_limitations": "English function names; no arbitrary natural-language/AI interpretation, calculation, or automatic translation of Excel function names and locale decimal conventions. The registry L rating is retained; initial scope is deliberately limited."
+    },
+    {
+      "order": 2,
+      "name": "Emoji Picker",
+      "id": "emoji-picker",
+      "canonical_route": "/emoji-picker/index.html",
+      "registry_complexity": "M",
+      "primary_functionality": "Search a pinned local Unicode emoji dataset by English accessible name and category; copy exact sequences; offer only dataset-valid presentation and skin-tone variants.",
+      "browser_apis": [
+        "DOM",
+        "Clipboard"
+      ],
+      "dependencies": "Review and pin Unicode emoji-test data, its exact license, provenance and hash. Bundle data locally; use platform glyphs without third-party emoji image/font requests.",
+      "proposed_limits": "Bundled data <=1 MiB; search <=100 code points; render at most 100 results per page; copied sequence <=32 code points. Confirm dataset coverage before fixing limits.",
+      "important_tests": [
+        "Pinned dataset license/hash and unique sequences",
+        "Names and category search",
+        "ZWJ families, flags, variation selectors and valid skin-tone variants",
+        "Exact clipboard sequence preservation",
+        "Keyboard navigation, focus after filtering, accessible names and copy denial",
+        "Zero input-dependent external requests"
+      ],
+      "known_limitations": "Appearance and glyph availability depend on the OS/font. English names initially; newer emoji can display as missing glyphs. Never fabricate modifier combinations."
+    },
+    {
+      "order": 3,
+      "name": "Image Compressor",
+      "id": "image-compressor",
+      "canonical_route": "/image-compressor/index.html",
+      "registry_complexity": "M",
+      "primary_functionality": "Target-byte/quality workflow with side-by-side preview, actual before/after byte counts and explicit JPEG/WebP output. Retain the original and report no improvement when encoding is larger or the target is unattainable. This extends beyond the existing converter's single quality-controlled conversion.",
+      "browser_apis": [
+        "File/Blob",
+        "createImageBitmap",
+        "Canvas 2D",
+        "toBlob",
+        "URL object URLs"
+      ],
+      "dependencies": "Existing bounded JPEG/PNG/WebP header-validation patterns and native browser encoders; no new runtime codec.",
+      "proposed_limits": "One static image <=5 MiB, <=4096 pixels per side and <=8 million pixels; at most 12 encoding attempts within 10 seconds; output <=8 MiB. No silent resizing.",
+      "important_tests": [
+        "Actual MIME/signatures and independent output decoding",
+        "Before/after bytes and honest no-improvement result",
+        "Feasible and impossible target sizes",
+        "Transparency and explicit JPEG background",
+        "Input/header/pixel/output bounds",
+        "Cancellation/reset, stale results and bitmap/object-URL cleanup"
+      ],
+      "known_limitations": "Lossy quality varies by browser; no guaranteed exact target, globally optimal quality or lossless PNG optimization. Re-encoding can change metadata/color handling. If limited to duplicating the converter's quality slider, do not create a separate utility."
+    },
+    {
+      "order": 4,
+      "name": "PNG to ICO",
+      "id": "png-to-ico",
+      "canonical_route": "/png-to-ico/index.html",
+      "registry_complexity": "L",
+      "primary_functionality": "Produce a multi-size ICO using a reviewed local PNG-frame encoder. Offer 16, 32, 48, 64, 128 and 256 pixel images, preserving alpha and aspect ratio through explicit transparent padding.",
+      "browser_apis": [
+        "File/Blob",
+        "ArrayBuffer/DataView",
+        "createImageBitmap",
+        "Canvas 2D",
+        "URL object URLs"
+      ],
+      "dependencies": "Review the bounded ICO encoder against Microsoft format documentation and independent consumers. No production package selection or encoder approval is made by this plan.",
+      "proposed_limits": "One static PNG <=5 MiB, <=4096 pixels per side and <=8 million pixels; maximum six frames; output <=1 MiB.",
+      "important_tests": [
+        "Independent ICO directory, offsets, sizes and 256-pixel zero-byte fields",
+        "Decode every embedded PNG and compare dimensions/alpha",
+        "Open output with an independent Windows icon consumer",
+        "Non-square padding, duplicate sizes and malformed PNG",
+        "Input/output caps, reset and cleanup"
+      ],
+      "known_limitations": "Initial PNG-frame ICO scope targets modern compatible consumers, not legacy BMP-only icon editors. Scaling is not hand-tuned icon artwork. Keep the registry L rating until encoder and compatibility tests pass."
+    },
+    {
+      "order": 5,
+      "name": "Resume Builder",
+      "id": "resume-builder",
+      "canonical_route": "/resume-builder/index.html",
+      "registry_complexity": "L",
+      "primary_functionality": "Accessible structured section/item editing and reordering, safe preview, browser print layout, explicit JSON draft import/export and optional HTML export. No automatic draft persistence.",
+      "browser_apis": [
+        "DOM",
+        "File/Blob",
+        "JSON",
+        "URL object URLs",
+        "window.print and print CSS"
+      ],
+      "dependencies": "Use the existing static framework and print patterns; no PDF-rendering library, remote fonts or account service.",
+      "proposed_limits": "At most 10 sections and 50 items; total text/draft input <=50 KiB UTF-8; generated HTML <=250 KiB. Plain text fields only initially.",
+      "important_tests": [
+        "Section add/remove/reorder and keyboard focus",
+        "Literal rendering of markup and unsafe URL rejection",
+        "Validated JSON round trip and unknown-field rejection",
+        "Print pagination, long words and narrow layouts",
+        "Explicit import/export/reset, no autosave or input transmission"
+      ],
+      "known_limitations": "PDF saving uses the browser print dialog. Pagination/fonts vary across environments; no ATS or employment-outcome guarantee. No rich-text editor, photo upload or cloud drafts in the initial scope."
+    },
+    {
+      "order": 6,
+      "name": "Passport Photo Layout Maker",
+      "id": "passport-photo-layout-maker",
+      "canonical_route": "/passport-photo-layout-maker/index.html",
+      "registry_complexity": "L",
+      "primary_functionality": "Arrange copies of one local portrait at user-defined millimetre dimensions on A4/Letter sheets. Provide explicit fit/padding, margins/gaps, PNG export, print layout and a physical scaling/calibration guide. Refer manual cropping to the existing Image Cropper.",
+      "browser_apis": [
+        "File/Blob",
+        "createImageBitmap",
+        "Canvas 2D",
+        "URL object URLs",
+        "window.print and print CSS"
+      ],
+      "dependencies": "Native image/print APIs and existing bounded image patterns. No face service, official-requirement database or PDF library.",
+      "proposed_limits": "One static JPEG/PNG/WebP <=5 MiB and <=8 million input pixels; tile dimensions 10-100 mm; at most 40 tiles; A4/Letter sheet at 150/300 dpi and <=10 million output pixels; PNG <=40 MiB.",
+      "important_tests": [
+        "Independent mm-to-pixel arithmetic, rounding and tile coordinates",
+        "Exact sheet dimensions and tile count",
+        "Aspect/padding, margin/gap and sheet-fit validation",
+        "PNG signatures/MIME and pixel positions",
+        "Print CSS/calibration guide, input/output bounds, keyboard/reset and cleanup"
+      ],
+      "known_limitations": "Printer/browser scaling must be calibrated. No face/pose/background validation or guarantee of official document acceptance. No silent stretch/crop or automatic jurisdiction-specific rules."
+    }
+  ],
+  "selection_notes": [
+    "Reviewed all 30 registry PLANNED entries, including required features, dependency gates, complexity and related tools; selected scopes checked against actual released source.",
+    "Hashtag Counter overlaps Hashtag Organizer counts/extraction; Social Media Line Break Tool overlaps existing bio/text formatting; Decision Wheel needs a distinction beyond the current crypto-backed list picker.",
+    "PDF/workbook parsers, minifiers, hostile HTML/SVG conversion, password estimation, EXIF and encryption require additional dependency/security feasibility gates; defer them for a focused later batch.",
+    "All six proposals retain static browser-local processing and no paid dependencies. Dataset/encoder review remains mandatory; proposed limits are not measured performance claims.",
+    "If all six are subsequently authorized, implemented and publicly released, the count would reach 68, leaving seven tools before the 75-release planning checkpoint. No further work is authorized by that arithmetic."
+  ]
+}

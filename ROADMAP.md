@@ -1,6 +1,33 @@
 # Development roadmap
 
-## Task 19.1 — six-tool public release verification
+## Task 20 — authorized six-tool development; Task 19 complete
+
+Task19 is complete and publicly verified. PR #34 and PR #35 merged; current
+approved main is `1ead1c37861b80c552446afbdb952c9248370bf9`. Pages42032230127
+and post-merge CI42032231242 succeeded for that exact commit (163Python,
+403Node,537Chromium; all62profiles and Required functional checks).
+Fresh Task19.2 verified62visible canonical cards, all62 public pages/source,
+seven smoke/navigation cases and isolated real consent collection (three204
+page views; none before consent/after rejection/withdrawal; no duplicates).
+See `audit/TASK_19_FINAL_PUBLIC_STATE.json`; GA4 property reporting unverified.
+
+Starting inventory:93registered,62RELEASED,0TESTED,0READY,30PLANNED,1BLOCKED.
+Task20 development is underway on `feat/task-20-six-tools` in a separate clean
+worktree. The six owner-selected tools are Excel Formula Generator, Emoji Picker,
+Image Compressor, PNG to ICO, Resume Builder and Passport Photo Layout Maker.
+Final scope/dependency/resource/privacy decisions precede implementation in
+`audit/TASK_20_DEVELOPMENT_PLAN.md`, `TASK_20_SCOPE.json` and
+`TASK_20_DEPENDENCIES.json`. No new library service or architecture is introduced.
+The next planning checkpoint is75released; generated milestone remains100.
+
+**Next major task:** Complete authorized Task20 implementation/testing/evidence,
+then open its development PR and wait required checks. Only TESTED/publication
+pending is permitted after actual tests. Separate owner authorization is required
+before merge/deploy; independent public verification is required before RELEASED.
+Preserve all62 releases, old audits, shared consentG-XDHPQYJ5CH and original19
+worktrees including two unrelated uncommitted handoff edits.
+
+## Historical Task 19.1 — pre-merge verification checkpoint
 
 PR #34 merged as `7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b`. Pages
 [42010602815](https://github.com/Juster06/micro-tools-hub/actions/runs/42010602815)
@@ -63,7 +90,7 @@ handoff edits are preserved. Delivery branch: `release/task-19-six-tools-verific
 commit with `git rev-parse HEAD`; the handoff cannot embed its own commit hash.
 Earlier sections below are historical checkpoints.
 
-## Task 19 — six implemented and TESTED utilities; publication pending
+## Historical Task 19 — development checkpoint before public release
 
 Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged.
 Approved main: `3178f70802a96f181fd82251d417abd1dd0ad76b`; Pages
@@ -497,14 +524,14 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
-| image-compressor | Image Compressor | PLANNED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
+| image-compressor | Image Compressor | IN_PROGRESS | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-resizer | Image Resizer | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-format-converter | Image Format Converter | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-cropper | Image Cropper | RELEASED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-rotator | Image Rotator | RELEASED | P2 | S | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-watermark | Image Watermark | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
 | image-color-picker | Image Color Picker | RELEASED | P2 | M | Browser image decoding and Canvas; format support and memory limits must be tested |
-| passport-photo-layout-maker | Passport Photo Layout Maker | PLANNED | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
+| passport-photo-layout-maker | Passport Photo Layout Maker | IN_PROGRESS | P2 | L | Browser image decoding and Canvas; format support and memory limits must be tested |
 
 ### Text and Writing Tools
 
@@ -532,7 +559,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | csv-merger | CSV Merger | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
 | json-formatter | JSON Formatter | RELEASED | P1 | S | Native JSON.parse and JSON.stringify |
 | csv-viewer | CSV Viewer | RELEASED | P2 | M | CSV/workbook parsers where needed: evaluate correctness, license and bundle size |
-| excel-formula-generator | Excel Formula Generator | PLANNED | P2 | L | Browser-native deterministic templates; no parser or AI service |
+| excel-formula-generator | Excel Formula Generator | IN_PROGRESS | P2 | L | Browser-native deterministic templates; no parser or AI service |
 
 ### Developer Tools
 
@@ -558,7 +585,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | youtube-description-formatter | YouTube Description Formatter | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | instagram-bio-formatter | Instagram Bio Formatter | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | social-media-line-break-tool | Social Media Line Break Tool | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
-| emoji-picker | Emoji Picker | PLANNED | P2 | M | Reviewed local emoji dataset and usage license |
+| emoji-picker | Emoji Picker | IN_PROGRESS | P2 | M | Reviewed local emoji dataset and usage license |
 | hashtag-counter | Hashtag Counter | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | youtube-thumbnail-preview | YouTube Thumbnail Preview | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | posting-calendar-generator | Posting Calendar Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
@@ -603,7 +630,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | csv-to-txt | CSV to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | json-to-txt | JSON to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | svg-to-png | SVG to PNG | PLANNED | P2 | L | Reviewed SVG sanitization and external-resource blocking; Canvas rasterization with tested dimension limits |
-| png-to-ico | PNG to ICO | PLANNED | P2 | L | Reviewed local ICO encoder |
+| png-to-ico | PNG to ICO | IN_PROGRESS | P2 | L | Reviewed local ICO encoder |
 | file-size-converter | File Size Converter | RELEASED | P2 | S | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | html-previewer | HTML Previewer | PLANNED | P2 | L | Sandboxed iframe with restrictive CSP and no script/same-origin privileges |
 
@@ -617,7 +644,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | decision-wheel | Decision Wheel | PLANNED | P2 | M | Browser-native approach; scope review before implementation |
 | local-to-do-list | Local To-Do List | RELEASED | P2 | M | Explicit opt-in localStorage, export format and clear-all behavior |
 | invoice-generator | Invoice Generator | RELEASED | P2 | L | Browser-native approach; scope review before implementation |
-| resume-builder | Resume Builder | PLANNED | P2 | L | Browser-native approach; scope review before implementation |
+| resume-builder | Resume Builder | IN_PROGRESS | P2 | L | Browser-native approach; scope review before implementation |
 | meeting-agenda-generator | Meeting Agenda Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | printable-calendar-generator | Printable Calendar Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 

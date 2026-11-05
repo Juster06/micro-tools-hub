@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generate formulas from deterministic guided templates."><meta name="color-scheme" content="dark">
+  <title>Excel Formula Generator — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+fieldset.argument-row{padding:12px;margin:12px 0;min-width:0}.argument-row input,.argument-row select{min-width:0;max-width:100%}</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>Excel Formula Generator</h1><p class="description">Generate formulas from deterministic guided templates.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="function">Excel function</label><select id="function"><option>SUM</option><option>AVERAGE</option><option>COUNT</option><option>COUNTA</option><option>MIN</option><option>MAX</option><option>IF</option><option>ROUND</option></select>
+<label for="separator">Argument separator</label><select id="separator"><option value=",">Comma (,)</option><option value=";">Semicolon (;)</option></select>
+<p id="argumentHelp">Choose each argument type. References: A1, $A$1:B10, 'Sales 2026'!A1. Conditions: A1&gt;=10 or A1="yes". Text is quoted literally, never executed.</p>
+<div id="arguments" aria-describedby="argumentHelp"><label for="toolInput">Argument1 value</label><input id="toolInput" type="text"></div><div class="actions"><button id="addArgument" type="button">Add argument</button><button id="exampleBtn" type="button">Load example</button></div>
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+<p id="explanation" class="preview" aria-live="polite"></p>
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled >Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>Guided SUM, AVERAGE, COUNT, COUNTA, MIN, MAX, IF and ROUND templates. At most 20 arguments and 8 KiB input; output ≤4 KiB. References obey the Excel grid and may include quoted sheet names (conservative 31 UTF-16-unit limit, no blank/reserved History or edge-apostrophe names); no external workbook references. IF takes 3 arguments; a condition compares one unqualified cell with a literal. ROUND takes 2 arguments and integer precision -308..308. Literal text ≤256 code points. English function names and decimal points only; comma/semicolon chooses argument separators, not automatic locale translation. No AI interpretation, formula execution or calculation claim.</p>
+<p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+
+<script id="edb-tool-logic">
+'use strict';
+
+function utf8Bytes(text){try{return unescape(encodeURIComponent(text)).length;}catch{throw Error('Invalid Unicode text.');}}
+function keys(value,allowed){if(!value||typeof value!=='object'||Array.isArray(value)||Object.keys(value).some(k=>!allowed.includes(k)))throw Error('Unsupported fields or options.');}
+const functions={SUM:'Adds numbers in the supplied values or ranges.',AVERAGE:'Returns the arithmetic mean of numeric values.',COUNT:'Counts numeric values.',COUNTA:'Counts nonempty values.',MIN:'Returns the smallest number.',MAX:'Returns the largest number.',IF:'Chooses one of two values based on a logical test.',ROUND:'Rounds a number to the requested decimal precision.'};
+function cell(value){const match=/^(\$?)([A-Za-z]{1,3})(\$?)([1-9]\d{0,6})$/.exec(value);if(!match)throw Error('Invalid A1 cell reference.');let column=0;for(const c of match[2].toUpperCase())column=column*26+c.charCodeAt(0)-64;if(column>16384||Number(match[4])>1048576)throw Error('Reference exceeds Excel grid bounds.');return match[1]+match[2].toUpperCase()+match[3]+match[4];}
+function validSheetName(name){if(!name.trim()||name.length>31||name.startsWith("'")||name.endsWith("'")||name.toLowerCase()==='history')throw Error('Sheet name is blank, reserved, has an edge apostrophe or exceeds 31 UTF-16 units.');return name;}
+function reference(value){
+ if(typeof value!=='string'||value.length>128)throw Error('Reference must be text up to 128 characters.');
+ let prefix='',rest=value;
+ if(value.includes('!')){const i=value.lastIndexOf('!'),sheet=value.slice(0,i);rest=value.slice(i+1);if(/^'(?:[^'\[\]:*?\\/\x00-\x1f]|'')+'$/.test(sheet)){const name=sheet.slice(1,-1).replace(/''/g,"'");validSheetName(name);prefix="'"+name.replace(/'/g,"''")+"'!";}else if(/^[A-Za-z_][A-Za-z0-9_]{0,30}$/.test(sheet)){validSheetName(sheet);prefix=sheet+'!';}else throw Error('Invalid sheet name or external workbook reference.');}
+ const pieces=rest.split(':');if(pieces.length>2)throw Error('Invalid rectangular reference.');const result=pieces.map(cell);if(result.length===2){const coords=result.map(c=>{const m=/^\$?([A-Z]+)\$?(\d+)$/.exec(c);let col=0;for(const x of m[1])col=col*26+x.charCodeAt(0)-64;return [col,Number(m[2])]});if(coords[1][0]<coords[0][0]||coords[1][1]<coords[0][1])throw Error('Range end must follow its start.');}return prefix+result.join(':');
+}
+function number(value){if(typeof value!=='string'||! /^-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d{1,3})?$/.test(value)||!Number.isFinite(Number(value)))throw Error('Number must use finite English decimal syntax.');return value;}
+function scalar(arg,condition=false){
+ keys(arg,['kind','value']);if(typeof arg.kind!=='string'||typeof arg.value!=='string'||arg.value.length>1024)throw Error('Argument must have a type and bounded text value.');utf8Bytes(arg.value);if(arg.value.includes('\0'))throw Error('NUL is not allowed in arguments.');
+ if(arg.kind==='reference')return reference(arg.value);
+ if(arg.kind==='number')return number(arg.value);
+ if(arg.kind==='text'){if(Array.from(arg.value).length>256)throw Error('Text argument exceeds 256 code points.');return '"'+arg.value.replace(/"/g,'""')+'"';}
+ if(arg.kind==='boolean'){if(!['TRUE','FALSE'].includes(arg.value))throw Error('Boolean must be TRUE or FALSE.');return arg.value;}
+ if(arg.kind==='condition'&&condition){const m=/^(\$?[A-Za-z]{1,3}\$?[1-9]\d{0,6})(<=|>=|<>|=|<|>)(.+)$/.exec(arg.value);if(!m)throw Error('Condition must compare one A1 cell with a number, boolean or quoted text.');const left=cell(m[1]),right=m[3];let literal;if(/^"(?:[^"]|"")*"$/.test(right)){const plain=right.slice(1,-1).replace(/""/g,'"');if(Array.from(plain).length>256)throw Error('Condition text exceeds 256 code points.');literal='"'+plain.replace(/"/g,'""')+'"';}else literal=['TRUE','FALSE'].includes(right)?right:number(right);return left+m[2]+literal;}
+ throw Error('Unsupported argument type for this position.');
+}
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,run(input,options={}){
+ keys(options,['function','separator']);const fn=options.function??'SUM',separator=options.separator??',';if(!Object.hasOwn(functions,fn)||![',',';'].includes(separator))throw Error('Choose a supported function and separator.');
+ if(typeof input!=='string'||!input.length||input.length>8192||utf8Bytes(input)>8192)throw Error('Arguments must be JSON text up to 8 KiB.');let args;try{args=JSON.parse(input)}catch{throw Error('Arguments are invalid JSON.');}
+ if(!Array.isArray(args)||args.length<1||args.length>20)throw Error('Use 1–20 arguments.');if(fn==='IF'&&args.length!==3)throw Error('IF needs exactly 3 arguments.');if(fn==='ROUND'&&args.length!==2)throw Error('ROUND needs exactly 2 arguments.');
+ if(['SUM','AVERAGE','MIN','MAX'].includes(fn)&&args.some(a=>!['reference','number'].includes(a?.kind)))throw Error('This function accepts number or reference arguments.');
+ if(fn==='IF'&&!['condition','reference','boolean'].includes(args[0]?.kind))throw Error('IF first argument must be a condition, reference or boolean.');
+ if(fn==='ROUND'&&(!['number','reference'].includes(args[0]?.kind)||args[1]?.kind!=='number'||! /^-?(?:0|[1-9]\d{0,2})$/.test(args[1]?.value)||Math.abs(Number(args[1]?.value))>308))throw Error('ROUND needs a number/reference and integral precision -308..308.');
+ const parts=args.map((a,i)=>scalar(a,fn==='IF'&&i===0));const formula='='+fn+'('+parts.join(separator)+')';if(utf8Bytes(formula)>4096)throw Error('Formula output exceeds 4 KiB.');return {formula,explanation:functions[fn]};
+},reference};
+
+</script>
+
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt', resultText = '';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultText = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultText = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    resultText = text; output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = resultText;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([resultText], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+ const rows=$('arguments');rows.replaceChildren();let serial=0;
+ function argument(kind='reference',value='',focus=false){
+  if(rows.children.length>=20){tell('Maximum 20 arguments.');return;}
+  const row=document.createElement('fieldset');row.className='argument-row';const legend=document.createElement('legend');row.append(legend);
+  const select=document.createElement('select'),id=serial++===0?'toolInput':'argument-'+serial;select.id=id+'-kind';const label=document.createElement('label');label.htmlFor=select.id;label.textContent='Type';row.append(label,select);
+  for(const [key,name]of [['reference','Reference'],['number','Number'],['text','Literal text'],['boolean','Boolean (TRUE/FALSE)'],['condition','IF condition']]){const option=document.createElement('option');option.value=key;option.textContent=name;select.append(option);}select.value=kind;
+  const field=document.createElement('input');field.type='text';field.id=id;field.value=value;field.autocomplete='off';field.spellcheck=false;const valueLabel=document.createElement('label');valueLabel.htmlFor=id;valueLabel.textContent='Value';row.append(valueLabel,field);
+  const remove=document.createElement('button');remove.type='button';remove.textContent='Remove argument';remove.addEventListener('click',()=>{if(rows.children.length===1){field.value='';field.focus();}else{const next=row.nextElementSibling||row.previousElementSibling;row.remove();next.querySelector('input').focus();}renumber();changed()});row.append(remove);
+  select.addEventListener('change',changed);field.addEventListener('input',changed);rows.append(row);renumber();if(focus)field.focus();
+ }
+ function renumber(){Array.from(rows.children).forEach((r,i)=>{r.querySelector('legend').textContent='Argument '+(i+1);const field=r.querySelector('input'),select=r.querySelector('select'),labels=r.querySelectorAll('label');field.id=i===0?'toolInput':'argument-'+(i+1);select.id=field.id+'-kind';labels[0].htmlFor=select.id;labels[1].htmlFor=field.id;r.querySelector('button').setAttribute('aria-label','Remove argument '+(i+1));});$('addArgument').disabled=rows.children.length>=20;}
+ function changed(){invalidate();$('explanation').textContent='';}
+ function reset(){rows.replaceChildren();serial=0;argument();$('function').value='SUM';$('separator').value=',';changed();$('toolInput').focus();tell('Reset.');}
+ $('addArgument').addEventListener('click',()=>{argument('reference','',true);changed()});
+ for(const id of ['function','separator'])$(id).addEventListener('change',changed);
+ $('exampleBtn').addEventListener('click',()=>{const fn=$('function').value;rows.replaceChildren();serial=0;if(fn==='IF'){argument('condition','A1>=10');argument('text','Eligible');argument('text','Not yet');}else if(fn==='ROUND'){argument('reference','A1');argument('number','2');}else argument('reference','A1:A10');changed();$('toolInput').focus();tell('Example loaded. Review arguments, then Run.');});
+ run.addEventListener('click',()=>{changed();try{const args=Array.from(rows.children).map(row=>({kind:row.querySelector('select').value,value:row.querySelector('input').value}));const result=EDB_TOOL.run(JSON.stringify(args),{function:$('function').value,separator:$('separator').value});publish(result.formula);$('explanation').textContent=result.explanation+' English function names; this tool does not calculate the formula.';}catch(e){fail(e)}});
+ $('clearBtn').addEventListener('click',reset);argument();
+
+})();
+</script>
+</body></html>

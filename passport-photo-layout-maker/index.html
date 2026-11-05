@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Arrange user-sized photo tiles on a printable sheet."><meta name="color-scheme" content="dark">
+  <title>Passport Photo Layout Maker — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+#sheetPreview{display:block;width:100%;height:auto;background:white}#sheetPreview[hidden]{display:none}.print-guide{font-size:.9rem}@page{size:210 mm 297 mm;margin:0}@media print{header,footer,.guidance,.panels>section:first-child,#outputHeading,label[for=toolOutput],#toolOutput,.actions,#sheetInfo,.print-guide,#toolStatus,#toolError{display:none!important}html,body,main,.container,.panels,.panel{margin:0!important;padding:0!important;border:0!important;max-width:none!important;background:white!important;color:black!important}.panels{display:block!important}#sheetPreview{width:var(--sheet-width)!important;height:var(--sheet-height)!important;max-width:none!important;break-inside:avoid;object-fit:fill}}</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>Passport Photo Layout Maker</h1><p class="description">Arrange user-sized photo tiles on a printable sheet.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="toolInput">Local portrait (static JPEG, PNG or WebP)</label><input id="toolInput" type="file" accept="image/jpeg,image/png,image/webp">
+<label for="paper">Paper</label><select id="paper"><option value="A4">A4 (210 × 297 mm)</option><option value="Letter">Letter (215.9 × 279.4 mm)</option></select>
+<label for="dpi">Raster resolution</label><select id="dpi"><option value="150">150 DPI</option><option value="300">300 DPI</option></select>
+<label for="photoWidth">Photo width (10–100 mm)</label><input id="photoWidth" type="number" min="10" max="100" step="0.01" value="35">
+<label for="photoHeight">Photo height (10–100 mm)</label><input id="photoHeight" type="number" min="10" max="100" step="0.01" value="45">
+<label for="margin">All sheet margins (0–30 mm)</label><input id="margin" type="number" min="0" max="30" step="0.01" value="10">
+<label for="gap">Horizontal and vertical gaps (0–20 mm)</label><input id="gap" type="number" min="0" max="20" step="0.01" value="5">
+<label for="count">Tile count (1–40)</label><input id="count" type="number" min="1" max="40" step="1" value="8">
+<label><input id="calibration" type="checkbox" checked> Include 100 mm print calibration ruler (reserves 12 mm at bottom)</label>
+<p>Images are contained with white padding. For manual cropping first, use <a href="../image-cropper/index.html">Image Cropper</a>. No face/pose/background validation.</p>
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+<div class="actions"><button id="printBtn" type="button" disabled>Print calibrated sheet</button></div><p id="sheetInfo" class="preview" aria-live="polite"></p><p class="print-guide">Use 100%/actual size. Disable fit-to-page and headers/footers; measure the 100 mm ruler. This tool arranges a photo; it does not certify its suitability.</p><img id="sheetPreview" alt="Photo sheet with user-sized tiles and optional calibration ruler" hidden>
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled >Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>One static JPEG/PNG/WebP ≤5 MiB, 4096 per side and 8 million input pixels. User dimensions10–100 mm, margins0–30 mm, gaps0–20 mm, 1–40 tiles; A4/Letter at 150/300 DPI, ≤10 million sheet pixels and 40 MiB PNG. At most 2 decimal places for millimetres. Raster edges round independently to the nearest pixel (≤0.5 pixel per edge); nominal photo widths can differ by1 pixel after quantization. Transparent input is composited onto white. Calibration ruler reserves 12 mm. Print the whole sheet at 100%/actual size with fit-to-page disabled; measure the 100 mm ruler. The PNG embeds nominal DPI as pixels-per-metre metadata. PNG viewers may ignore resolution metadata, so use the fixed-mm print layout or set physical sheet dimensions explicitly. No jurisdiction-specific dimensions, official passport-photo acceptance, biometric/face/pose validation or guaranteed physical printer accuracy.</p>
+<p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+
+<script id="edb-tool-logic">
+'use strict';
+
+'use strict';
+
+const IMAGE_HEADER = {
+  isScaffold:false, allowEmpty:false,
+  run(input, options = {}) {
+    const bytes=input?.bytes;
+    if (!bytes || !Number.isInteger(bytes.length) || bytes.length>5*1024*1024 || !bytes.length) throw Error('Choose a nonempty image up to 5 MiB.');
+    if (Object.keys(options).some(k=>!['type','quality','background'].includes(k))) throw Error('Unsupported option.');
+    const type=options.type??'image/png', quality=Number(options.quality??0.9),background=options.background??'#ffffff';
+    if (!['image/png','image/jpeg','image/webp'].includes(type)) throw Error('Unsupported output format.');
+    if (!Number.isFinite(quality)||quality<0||quality>1) throw Error('Quality must be between 0 and 1.');
+    if (typeof background!=='string'||!/^#[0-9a-f]{6}$/i.test(background)) throw Error('Choose a six-digit JPEG background color.');
+    const at=(o,a)=>a.every((v,i)=>bytes[o+i]===v), ascii=(o,s)=>at(o,Array.from(s,c=>c.charCodeAt(0)));
+    const be32=o=>((bytes[o]*16777216)+(bytes[o+1]<<16)+(bytes[o+2]<<8)+bytes[o+3]);
+    const le32=o=>bytes[o]+bytes[o+1]*256+bytes[o+2]*65536+bytes[o+3]*16777216;
+    let width=0,height=0,format='';
+    if (at(0,[137,80,78,71,13,10,26,10])) {
+      format='PNG';
+      if (bytes.length<33||be32(8)!==13||!ascii(12,'IHDR')) throw Error('Invalid or truncated PNG header.');
+      width=be32(16);height=be32(20);let end=false;
+      for (let p=8;p+12<=bytes.length;) {
+        const length=be32(p);if (!Number.isInteger(length)||p+12+length>bytes.length) throw Error('Truncated PNG chunk.');
+        if (ascii(p+4,'acTL')) throw Error('Animated PNG is not supported.');
+        if (ascii(p+4,'IEND')) {end=true;break;} p+=12+length;
+      }
+      if (!end) throw Error('PNG end chunk is missing.');
+    } else if (at(0,[255,216,255])) {
+      format='JPEG';
+      for (let p=2;p<bytes.length;) {
+        if (bytes[p++]!==255) throw Error('Invalid JPEG marker.');
+        while(bytes[p]===255)p++;
+        const marker=bytes[p++];if(marker===217||marker===218)break;
+        if(marker===216||marker===1||(marker>=208&&marker<=215))continue;
+        if (p+2>bytes.length) throw Error('Truncated JPEG segment.');
+        const size=bytes[p]*256+bytes[p+1];
+        if (size<2||p+size>bytes.length) throw Error('Truncated JPEG segment.');
+        if (marker===226&&ascii(p+2,'MPF\0')) throw Error('Multi-picture JPEG is not supported.');
+        if ([192,193,194,195,197,198,199,201,202,203,205,206,207].includes(marker)) {
+          if(size<8)throw Error('Invalid JPEG dimensions.');height=bytes[p+3]*256+bytes[p+4];width=bytes[p+5]*256+bytes[p+6];
+        }
+        p+=size;
+      }
+      if (!width||!height) throw Error('JPEG dimensions are missing.');
+    } else if (ascii(0,'RIFF')&&ascii(8,'WEBP')) {
+      format='WebP';if(bytes.length<20||le32(4)+8!==bytes.length)throw Error('Truncated WebP container.');
+      let frame=false;
+      for(let p=12;p+8<=bytes.length;){
+        const size=le32(p+4),start=p+8;
+        if(start+size>bytes.length)throw Error('Truncated WebP chunk.');
+        if(ascii(p,'ANIM')||ascii(p,'ANMF')||(ascii(p,'VP8X')&&(bytes[start]&2)))throw Error('Animated WebP is not supported.');
+        if(ascii(p,'VP8X')){if(size<10)throw Error('Invalid WebP dimensions.');width=1+bytes[start+4]+bytes[start+5]*256+bytes[start+6]*65536;height=1+bytes[start+7]+bytes[start+8]*256+bytes[start+9]*65536;}
+        if(ascii(p,'VP8 ')) {if(size<10||!at(start+3,[157,1,42]))throw Error('Invalid WebP frame.');frame=true;if(!width){width=(bytes[start+6]+bytes[start+7]*256)&16383;height=(bytes[start+8]+bytes[start+9]*256)&16383;}}
+        if(ascii(p,'VP8L')) {if(size<5||bytes[start]!==47)throw Error('Invalid WebP frame.');frame=true;if(!width){const bits=le32(start+1);width=1+(bits&16383);height=1+((bits>>>14)&16383);}}
+        p=start+size+(size%2);
+      }
+      if(!frame)throw Error('WebP image frame is missing.');
+    } else throw Error('Only static JPEG, PNG and WebP images are supported.');
+    if(!Number.isInteger(width)||!Number.isInteger(height)||width<1||height<1||width>4096||height>4096||width*height>8000000)throw Error('Image dimensions exceed 4,096 per side or 8 million pixels.');
+    return {width,height,format,type,quality,background};
+  }
+};
+
+function dimension(value,label,min,max,whole=false){if(!['string','number'].includes(typeof value)||!/^\d+(?:\.\d{1,2})?$/.test(String(value)))throw Error(label+' must use decimal millimetres with at most 2 decimal places.');const n=Number(value);if(!Number.isFinite(n)||n<min||n>max||(whole&&!Number.isInteger(n)))throw Error(label+' exceeds its supported range.');return n;}
+
+const PNG_CRC=Array.from({length:256},(_,n)=>{let c=n;for(let i=0;i<8;i++)c=(c&1)?0xedb88320^(c>>>1):c>>>1;return c>>>0;});
+function pngCRC(bytes,start,end){let crc=0xffffffff;for(let i=start;i<end;i++)crc=PNG_CRC[(crc^bytes[i])&255]^(crc>>>8);return (crc^0xffffffff)>>>0;}
+function resolutionPNG(value,dpi,width,height){
+ if(![150,300].includes(dpi)||!Number.isInteger(width)||!Number.isInteger(height)||width<1||height<1||width*height>10000000||!value||!Number.isInteger(value.length)||value.length<57||value.length>41943040)throw Error('Invalid PNG resolution data or dimensions.');
+ if(Object.prototype.toString.call(value)!=='[object Uint8Array]'&&(!Array.isArray(value)||!value.every(x=>Number.isInteger(x)&&x>=0&&x<=255)))throw Error('Invalid PNG bytes.');
+ const bytes=value instanceof Uint8Array?value:Uint8Array.from(value),view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength),parts=[bytes.subarray(0,8)];if(![137,80,78,71,13,10,26,10].every((x,i)=>bytes[i]===x))throw Error('Encoder output has no PNG signature.');
+ const phys=new Uint8Array(21),pv=new DataView(phys.buffer),ppm=Math.round(dpi/0.0254);pv.setUint32(0,9);phys.set([112,72,89,115],4);pv.setUint32(8,ppm);pv.setUint32(12,ppm);phys[16]=1;pv.setUint32(17,pngCRC(phys,4,17));
+ let ended=false,image=false;for(let pos=8;pos<bytes.length;){if(pos+12>bytes.length)throw Error('Truncated PNG output.');const size=view.getUint32(pos),end=pos+size+12;if(end>bytes.length)throw Error('PNG output chunk exceeds file.');const name=String.fromCharCode(...bytes.subarray(pos+4,pos+8));if(pngCRC(bytes,pos+4,pos+8+size)!==view.getUint32(pos+8+size))throw Error('PNG output CRC mismatch.');
+  if(pos===8){if(name!=='IHDR'||size!==13||view.getUint32(pos+8)!==width||view.getUint32(pos+12)!==height)throw Error('PNG output dimensions do not match the sheet.');parts.push(bytes.subarray(pos,end),phys);}
+  else{if(name==='IHDR'||name==='acTL')throw Error('Invalid generated PNG structure.');if(name!=='pHYs')parts.push(bytes.subarray(pos,end));}
+  if(name==='IDAT'&&size>0)image=true;if(name==='IEND'){if(size||end!==bytes.length)throw Error('Invalid PNG end chunk.');ended=true;break;}pos=end;
+ }
+ if(!ended||!image)throw Error('PNG output lacks image data or end chunk.');const length=parts.reduce((n,p)=>n+p.length,0);if(length>41943040)throw Error('PNG with resolution metadata exceeds40 MiB.');const output=new Uint8Array(length);let offset=0;for(const part of parts){output.set(part,offset);offset+=part.length;}return output;
+}
+
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,resolutionPNG,run(input,options={}){
+ if(!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(k=>!['paper','dpi','photoWidth','photoHeight','margin','gap','count','calibration'].includes(k)))throw Error('Unsupported options.');
+ const papers={A4:[210,297],Letter:[215.9,279.4]},paper=options.paper??'A4';if(!Object.hasOwn(papers,paper))throw Error('Choose A4 or Letter paper.');const dpi=dimension(options.dpi??150,'DPI',150,300,true);if(![150,300].includes(dpi))throw Error('Choose 150 or 300 DPI.');
+ const photoWidth=dimension(options.photoWidth??35,'Photo width',10,100),photoHeight=dimension(options.photoHeight??45,'Photo height',10,100),margin=dimension(options.margin??10,'Margin',0,30),gap=dimension(options.gap??5,'Gap',0,20),count=dimension(options.count??8,'Tile count',1,40,true),calibration=options.calibration??true;if(typeof calibration!=='boolean')throw Error('Calibration choice must be boolean.');
+ const header=IMAGE_HEADER.run(input),sourceWidth=input.decodedWidth??header.width,sourceHeight=input.decodedHeight??header.height;if(!Number.isInteger(sourceWidth)||!Number.isInteger(sourceHeight)||sourceWidth<1||sourceHeight<1||sourceWidth>4096||sourceHeight>4096||sourceWidth*sourceHeight>8000000)throw Error('Decoded image dimensions exceed limits.');
+ const [paperWidth,paperHeight]=papers[paper],px=mm=>Math.round(mm*dpi/25.4),sheetWidth=px(paperWidth),sheetHeight=px(paperHeight);if(sheetWidth*sheetHeight>10000000)throw Error('Sheet exceeds 10 million pixels.');
+ const columns=Math.floor((paperWidth-2*margin+gap+1e-9)/(photoWidth+gap)),rows=Math.floor((paperHeight-2*margin-(calibration?12:0)+gap+1e-9)/(photoHeight+gap)),capacity=Math.max(0,columns)*Math.max(0,rows);if(columns<1||rows<1||count>capacity)throw Error('Requested tiles do not fit the sheet, margins, gaps and calibration area. Reduce count/size or change spacing.');
+ const tiles=Array.from({length:count},(_,i)=>{const left=margin+(i%columns)*(photoWidth+gap),top=margin+Math.floor(i/columns)*(photoHeight+gap),x=px(left),y=px(top),width=px(left+photoWidth)-x,height=px(top+photoHeight)-y;if(x<0||y<0||x+width>sheetWidth||y+height>sheetHeight)throw Error('Raster tile exceeds sheet bounds.');const scale=Math.min(width/sourceWidth,height/sourceHeight),drawWidth=sourceWidth*scale,drawHeight=sourceHeight*scale;return {x,y,width,height,drawX:x+(width-drawWidth)/2,drawY:y+(height-drawHeight)/2,drawWidth,drawHeight};});
+ const ruler=calibration?{x:px(margin),endX:px(margin+100),y:px(paperHeight-margin-6),captionY:px(paperHeight-margin-8),tickHeight:px(2),fontPixels:px(3)}:null;
+ return {paper,paperWidth,paperHeight,dpi,sheetWidth,sheetHeight,sourceWidth,sourceHeight,columns,capacity,tiles,ruler};
+}};
+
+</script>
+
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt', resultText = '';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultText = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultText = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    resultText = text; output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = resultText;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([resultText], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+ function imageDimensions(width,height){if(!Number.isInteger(width)||!Number.isInteger(height)||width<1||height<1||width>4096||height>4096||width*height>8000000)throw Error('Decoded image exceeds 4096 per side or 8 million pixels.');}
+ async function readImage(file,token,deadline=performance.now()+10000){
+  if(!file||!file.size||file.size>5242880)throw Error('Choose a nonempty image up to 5 MiB.');
+  if(typeof createImageBitmap!=='function')throw Error('Required image decoding API unavailable.');
+  const bytes=new Uint8Array(await file.arrayBuffer());if(token!==revision)throw Error('Cancelled.');const header=IMAGE_HEADER.run({bytes});
+  let abandoned=false,timer;const pending=createImageBitmap(file);pending.then(image=>{if(abandoned)image.close();},()=>{});
+  let bitmap;try{bitmap=await Promise.race([pending,new Promise((_,reject)=>{timer=setTimeout(()=>{abandoned=true;reject(Error('Image decoding timed out.'));},Math.max(1,Math.min(5000,deadline-performance.now())));})]);}finally{clearTimeout(timer);}
+  try{if(token!==revision)throw Error('Cancelled.');imageDimensions(bitmap.width,bitmap.height);return {bitmap,bytes,header};}catch(e){bitmap.close();throw e;}
+ }
+ function encodeImage(canvas,type,quality,deadline=performance.now()+10000){return new Promise((resolve,reject)=>{
+  const remaining=deadline-performance.now();if(remaining<=0){reject(Error('Processing deadline exceeded.'));return;}
+  const timer=setTimeout(()=>reject(Error('Image encoding timed out.')),remaining);
+  try{canvas.toBlob(blob=>{clearTimeout(timer);if(performance.now()>deadline){reject(Error('Processing deadline exceeded.'));return;}blob?resolve(blob):reject(Error('Image encoding failed.'));},type,quality);}catch(e){clearTimeout(timer);reject(e);}
+ });}
+
+ let previewURL=null;const printStyle=document.createElement('style');printStyle.id='paperStyle';document.head.append(printStyle);
+ function pageSize(width=210,height=297){printStyle.textContent='@page{size:'+width+'mm '+height+'mm;margin:0}';$('sheetPreview').style.setProperty('--sheet-width',width+'mm');$('sheetPreview').style.setProperty('--sheet-height',height+'mm');}
+ function clearSheet(){if(previewURL){URL.revokeObjectURL(previewURL);previewURL=null;}$('sheetPreview').removeAttribute('src');$('sheetPreview').hidden=true;$('printBtn').disabled=true;}
+ function changed(){invalidate();clearSheet();run.disabled=false;$('sheetInfo').textContent='';}
+ for(const id of ['toolInput','paper','dpi','calibration'])$(id).addEventListener('change',changed);for(const id of ['photoWidth','photoHeight','margin','gap','count'])$(id).addEventListener('input',changed);
+ run.textContent='Build photo sheet';run.addEventListener('click',async()=>{changed();const token=revision,deadline=performance.now()+10000,canvas=document.createElement('canvas');let bitmap;run.disabled=true;
+  try{const read=await readImage(input.files[0],token,deadline);bitmap=read.bitmap;const settings=EDB_TOOL.run({bytes:read.bytes,decodedWidth:bitmap.width,decodedHeight:bitmap.height},{paper:$('paper').value,dpi:$('dpi').value,photoWidth:$('photoWidth').value,photoHeight:$('photoHeight').value,margin:$('margin').value,gap:$('gap').value,count:$('count').value,calibration:$('calibration').checked});
+   canvas.width=settings.sheetWidth;canvas.height=settings.sheetHeight;const ctx=canvas.getContext('2d');if(!ctx)throw Error('Canvas is unavailable.');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);for(const rect of settings.tiles)ctx.drawImage(bitmap,rect.drawX,rect.drawY,rect.drawWidth,rect.drawHeight);bitmap.close();bitmap=null;
+   if(settings.ruler){const r=settings.ruler;ctx.strokeStyle=ctx.fillStyle='#000000';ctx.lineWidth=Math.max(1,settings.dpi/150);ctx.beginPath();ctx.moveTo(r.x,r.y);ctx.lineTo(r.endX,r.y);for(const x of [r.x,r.endX]){ctx.moveTo(x,r.y-r.tickHeight/2);ctx.lineTo(x,r.y+r.tickHeight/2);}ctx.stroke();ctx.font=r.fontPixels+'px sans-serif';ctx.fillText('100 mm — check after printing at actual size',r.x,r.captionY);}
+   const encoded=await encodeImage(canvas,'image/png',undefined,deadline);if(token!==revision)return;if(encoded.type!=='image/png'||!encoded.size||encoded.size>41943040)throw Error('PNG encoder MIME/size is invalid.');const data=new Uint8Array(await encoded.arrayBuffer());if(token!==revision)return;const blob=new Blob([EDB_TOOL.resolutionPNG(data,settings.dpi,settings.sheetWidth,settings.sheetHeight)],{type:'image/png'});if(token!==revision)return;if(blob.type!=='image/png'||!blob.size||blob.size>41943040)throw Error('PNG output is empty, exceeds 40 MiB or has an unexpected MIME type.');
+   previewURL=URL.createObjectURL(blob);$('sheetPreview').src=previewURL;$('sheetPreview').hidden=false;pageSize(settings.paperWidth,settings.paperHeight);$('printBtn').disabled=false;
+   const text=`${settings.paper}: ${settings.paperWidth} × ${settings.paperHeight} mm\n${settings.sheetWidth} × ${settings.sheetHeight} pixels at ${settings.dpi} DPI\nTiles: ${settings.tiles.length}; ${$('photoWidth').value} × ${$('photoHeight').value} mm\nPNG: ${blob.size} bytes\nWhite containment padding; no automatic crop. Print at 100%/actual size, disable fit-to-page and headers/footers, and measure the 100 mm ruler if included. Browser/printer calibration is required; official acceptance is not guaranteed.`;
+   $('sheetInfo').textContent=text;publish(text,blob,'photo-sheet.png');
+  }catch(e){if(token===revision){clearSheet();fail(e)}}finally{if(bitmap)bitmap.close();canvas.width=canvas.height=0;if(token===revision)run.disabled=false;}
+ });
+ $('printBtn').addEventListener('click',()=>{if($('printBtn').disabled)return;try{window.print()}catch{tell('Printing unavailable. Use the PNG and the scaling guide.')}});
+ $('clearBtn').addEventListener('click',()=>{input.value='';$('paper').value='A4';$('dpi').value='150';$('photoWidth').value='35';$('photoHeight').value='45';$('margin').value='10';$('gap').value='5';$('count').value='8';$('calibration').checked=true;changed();pageSize();input.focus();tell('Reset.');});window.addEventListener('pagehide',()=>{revision++;clearSheet();});pageSize();
+
+})();
+</script>
+</body></html>

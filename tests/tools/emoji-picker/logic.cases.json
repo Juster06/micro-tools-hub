@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "tone",
+      "input": "",
+      "expected": {
+        "total": 1,
+        "page": 1,
+        "pages": 1,
+        "rows": [
+          {
+            "sequence": "👍🏻",
+            "name": "thumbs up: light skin tone",
+            "group": "People & Body"
+          }
+        ],
+        "groups": [
+          "Smileys & Emotion",
+          "People & Body",
+          "Flags"
+        ]
+      },
+      "options": {
+        "records": [
+          [
+            "😀",
+            "grinning face",
+            "Smileys & Emotion"
+          ],
+          [
+            "👍🏻",
+            "thumbs up: light skin tone",
+            "People & Body"
+          ],
+          [
+            "🇬🇧",
+            "flag: United Kingdom",
+            "Flags"
+          ]
+        ],
+        "tone": "light"
+      }
+    },
+    {
+      "id": "over-query",
+      "input": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      "error": "limit",
+      "options": {
+        "records": [
+          [
+            "😀",
+            "grinning face",
+            "Smileys & Emotion"
+          ],
+          [
+            "👍🏻",
+            "thumbs up: light skin tone",
+            "People & Body"
+          ],
+          [
+            "🇬🇧",
+            "flag: United Kingdom",
+            "Flags"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "missing-data",
+      "input": "",
+      "error": "unavailable"
+    },
+    {
+      "id": "bad-page",
+      "input": "",
+      "error": "page",
+      "options": {
+        "records": [
+          [
+            "😀",
+            "grinning face",
+            "Smileys & Emotion"
+          ],
+          [
+            "👍🏻",
+            "thumbs up: light skin tone",
+            "People & Body"
+          ],
+          [
+            "🇬🇧",
+            "flag: United Kingdom",
+            "Flags"
+          ]
+        ],
+        "page": 0
+      }
+    }
+  ]
+}

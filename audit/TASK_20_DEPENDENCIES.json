@@ -1,0 +1,42 @@
+{
+  "reviewed_on": "2026-11-05",
+  "runtime": {
+    "emoji": {
+      "version": "18.0",
+      "license": "Unicode-3.0",
+      "source_url": "https://www.unicode.org/Public/18.0.0/emoji/emoji-test.txt",
+      "original_path": "audit/vendor-source/emoji-test-18.0.txt",
+      "original_sha256": "8f3735cda1f92a779d78af67cf86066bb1f07143dc22f2ac29394d9bc57ab21a",
+      "original_bytes": 671655,
+      "path": "assets/data/emoji-18.0.js",
+      "sha256": "cb994820b076dffa048e3d40580d53381db376abb7e6079d07857e920f61d3b0",
+      "bytes": 242922,
+      "entries": 3963,
+      "license_path": "assets/data/UNICODE-LICENSE.txt",
+      "license_sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "attribution": "Unicode, Inc., Unicode Emoji18.0. Original notices retained. Derived selection and JavaScript wrapper; sequences/names/group order unchanged.",
+      "source_policy": "https://www.unicode.org/copyright.html"
+    }
+  },
+  "ico_encoder": {
+    "type": "Reviewed local bounded PNG-frame ICO packer; no third-party runtime encoder",
+    "references": [
+      "https://devblogs.microsoft.com/oldnewthing/20101018-00/?p=12513/",
+      "https://devblogs.microsoft.com/oldnewthing/20101022-00/?p=12473/"
+    ],
+    "validation": "Independent Windows icon reader and PNG-frame decoding required before TESTED."
+  },
+  "other_runtime_dependencies": "Native browser image codecs, print CSS and unchanged Tailwind/consent. No production npm dependency.",
+  "png_resolution_metadata": {
+    "method": "Reviewed local pHYs insertion/replacement; nominal DPI rounded to integer pixels/metre, CRC32 validated, image payload unchanged.",
+    "reference": "https://www.w3.org/TR/png-3/#11pHYs",
+    "validation": "Independent chunk/payload tests plus real PNG pixel and print/PDF geometry tests."
+  },
+  "excel_reference_validation": {
+    "references": [
+      "https://support.microsoft.com/en-us/excel/rename-a-worksheet",
+      "https://support.microsoft.com/en-gb/excel/excel-specifications-and-limits"
+    ],
+    "scope": "A1 cells/ranges with Excel grid bounds; quoted sheet names with a conservative31 UTF-16-unit cap, invalid characters/edge apostrophes/blank/History rejected. No external references, evaluation or locale-name translation."
+  }
+}

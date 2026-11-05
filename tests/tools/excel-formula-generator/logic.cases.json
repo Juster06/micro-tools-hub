@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "sum",
+      "input": "[{\"kind\": \"reference\", \"value\": \"a1:a10\"}]",
+      "expected": {
+        "formula": "=SUM(A1:A10)",
+        "explanation": "Adds numbers in the supplied values or ranges."
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "8 KiB"
+    },
+    {
+      "id": "invalid-ref",
+      "input": "[{\"kind\": \"reference\", \"value\": \"XFE1\"}]",
+      "error": "grid"
+    },
+    {
+      "id": "if",
+      "input": "[{\"kind\": \"condition\", \"value\": \"A1>=10\"}, {\"kind\": \"text\", \"value\": \"caf\\u00e9 \\\"yes\\\"\"}, {\"kind\": \"text\", \"value\": \"no\"}]",
+      "expected": {
+        "formula": "=IF(A1>=10;\"café \"\"yes\"\"\";\"no\")",
+        "explanation": "Chooses one of two values based on a logical test."
+      },
+      "options": {
+        "function": "IF",
+        "separator": ";"
+      }
+    }
+  ]
+}

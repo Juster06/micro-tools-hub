@@ -1076,7 +1076,7 @@
       "category": "image",
       "description": "Reduce raster image size with visible quality tradeoffs.",
       "directory_path": "image-compressor",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -1088,9 +1088,9 @@
         "Before and after sizes",
         "Download and format disclosure"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
       "sequence_rank": null,
       "related_tools": [
         "image-format-converter"
@@ -1434,7 +1434,7 @@
       "category": "image",
       "description": "Arrange user-sized photo tiles on a printable sheet.",
       "directory_path": "passport-photo-layout-maker",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -1446,9 +1446,9 @@
         "Print scaling guide",
         "No guarantee of official document acceptance"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null
@@ -2481,7 +2481,7 @@
       "category": "data",
       "description": "Generate formulas from deterministic guided templates.",
       "directory_path": "excel-formula-generator",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2494,9 +2494,9 @@
         "Explanation and examples",
         "No AI service or calculation claim"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
       "sequence_rank": null,
       "related_tools": [
         "excel-sandbox"
@@ -3221,7 +3221,7 @@
       "category": "social",
       "description": "Find and copy emoji from a maintained local dataset.",
       "directory_path": "emoji-picker",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3234,9 +3234,9 @@
         "Variation and skin-tone handling",
         "Dataset license review"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null
@@ -4578,7 +4578,7 @@
       "category": "conversion",
       "description": "Package supported PNG-derived sizes into an icon file.",
       "directory_path": "png-to-ico",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4591,9 +4591,9 @@
         "Transparency",
         "Compatibility checks"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null
@@ -4996,7 +4996,7 @@
       "category": "productivity",
       "description": "Prepare a structured printable resume without account registration.",
       "directory_path": "resume-builder",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -5008,9 +5008,9 @@
         "Print layout",
         "Explicit local-draft behavior"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null
