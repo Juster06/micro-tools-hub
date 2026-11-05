@@ -1076,7 +1076,7 @@
       "category": "image",
       "description": "Reduce raster image size with visible quality tradeoffs.",
       "directory_path": "image-compressor",
-      "status": "IN_PROGRESS",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -1088,14 +1088,34 @@
         "Before and after sizes",
         "Download and format disclosure"
       ],
-      "testing_status": "PARTIAL",
-      "last_verification_date": null,
-      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
       "sequence_rank": null,
       "related_tools": [
         "image-format-converter"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_sha256": "ca0624cc4a2b68579133bbcee2cdd1aa1c119980c687b1392d53a82bec49e658",
+        "evidence_path": "audit/IMAGE_COMPRESSOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
+          "Focused source-checkpoint tests: 13 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
+          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "toolError",
+        "toolStatus",
+        "copyBtn",
+        "downloadBtn"
+      ]
     },
     {
       "id": "image-resizer",
@@ -1434,7 +1454,7 @@
       "category": "image",
       "description": "Arrange user-sized photo tiles on a printable sheet.",
       "directory_path": "passport-photo-layout-maker",
-      "status": "IN_PROGRESS",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -1446,12 +1466,32 @@
         "Print scaling guide",
         "No guarantee of official document acceptance"
       ],
-      "testing_status": "PARTIAL",
-      "last_verification_date": null,
-      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
+        "evidence_path": "audit/PASSPORT_PHOTO_LAYOUT_MAKER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
+          "Focused source-checkpoint tests: 14 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
+          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "toolError",
+        "toolStatus",
+        "copyBtn",
+        "downloadBtn"
+      ]
     },
     {
       "id": "case-converter",
@@ -2481,7 +2521,7 @@
       "category": "data",
       "description": "Generate formulas from deterministic guided templates.",
       "directory_path": "excel-formula-generator",
-      "status": "IN_PROGRESS",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2494,14 +2534,34 @@
         "Explanation and examples",
         "No AI service or calculation claim"
       ],
-      "testing_status": "PARTIAL",
-      "last_verification_date": null,
-      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
       "sequence_rank": null,
       "related_tools": [
         "excel-sandbox"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_sha256": "4f6bf37f4c4e225e4d13488eba11c44176e73dd11f61c68dfd701d07b7490a0b",
+        "evidence_path": "audit/EXCEL_FORMULA_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
+          "Focused source-checkpoint tests: 9 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
+          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "toolError",
+        "toolStatus",
+        "copyBtn",
+        "downloadBtn"
+      ]
     },
     {
       "id": "base64-encoder-decoder",
@@ -3221,7 +3281,7 @@
       "category": "social",
       "description": "Find and copy emoji from a maintained local dataset.",
       "directory_path": "emoji-picker",
-      "status": "IN_PROGRESS",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3234,12 +3294,32 @@
         "Variation and skin-tone handling",
         "Dataset license review"
       ],
-      "testing_status": "PARTIAL",
-      "last_verification_date": null,
-      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_sha256": "59b4e6e219715db8613af6d4e48be4361310c9c79b372323e3a3916c803282fd",
+        "evidence_path": "audit/EMOJI_PICKER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
+          "Focused source-checkpoint tests: 10 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
+          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "toolError",
+        "toolStatus",
+        "copyBtn",
+        "downloadBtn"
+      ]
     },
     {
       "id": "hashtag-counter",
@@ -4578,7 +4658,7 @@
       "category": "conversion",
       "description": "Package supported PNG-derived sizes into an icon file.",
       "directory_path": "png-to-ico",
-      "status": "IN_PROGRESS",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4591,12 +4671,32 @@
         "Transparency",
         "Compatibility checks"
       ],
-      "testing_status": "PARTIAL",
-      "last_verification_date": null,
-      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_sha256": "20b5eef801640ae9a4e4fadec36bf4993b55662f150f84eb818198feceaa8482",
+        "evidence_path": "audit/PNG_TO_ICO_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
+          "Focused source-checkpoint tests: 11 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
+          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "toolError",
+        "toolStatus",
+        "copyBtn",
+        "downloadBtn"
+      ]
     },
     {
       "id": "file-size-converter",
@@ -4996,7 +5096,7 @@
       "category": "productivity",
       "description": "Prepare a structured printable resume without account registration.",
       "directory_path": "resume-builder",
-      "status": "IN_PROGRESS",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -5008,12 +5108,32 @@
         "Print layout",
         "Explicit local-draft behavior"
       ],
-      "testing_status": "PARTIAL",
-      "last_verification_date": null,
-      "notes": "Task20 implementation and focused checks present; source-bound evidence, gated homepage integration and full regression pending. No publication verified.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-05",
+      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_sha256": "06bd8e051571ebc099185f41dabfc876117f2d07eba1b17bd2bb3d1a5e467adc",
+        "evidence_path": "audit/RESUME_BUILDER_VERIFICATION.json",
+        "test_scope": [
+          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
+          "Focused source-checkpoint tests: 11 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
+          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "toolError",
+        "toolStatus",
+        "copyBtn",
+        "downloadBtn"
+      ]
     },
     {
       "id": "meeting-agenda-generator",

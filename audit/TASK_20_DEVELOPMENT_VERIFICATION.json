@@ -1,0 +1,2242 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-05",
+  "baseline_revision": "1ead1c37861b80c552446afbdb952c9248370bf9",
+  "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+  "branch": "feat/task-20-six-tools",
+  "scope": "PASS for the six source-bound required local tool scopes, Python/Node partitions, consent and separately completed canonical browser profiles. Full local browser CI partitions FAILED at their unchanged900second deadline; exact-head hosted pinned Linux Chromium is mandatory. No public availability, release, merge or deployment claim.",
+  "tools": [
+    {
+      "id": "excel-formula-generator",
+      "canonical_route": "excel-formula-generator/index.html",
+      "source_sha256": "4f6bf37f4c4e225e4d13488eba11c44176e73dd11f61c68dfd701d07b7490a0b",
+      "status": "TESTED",
+      "publication": null,
+      "focused_tests": 9,
+      "canonical_layers": {
+        "structural": "PASS",
+        "logic": "PASS",
+        "browser": "PASS"
+      }
+    },
+    {
+      "id": "emoji-picker",
+      "canonical_route": "emoji-picker/index.html",
+      "source_sha256": "59b4e6e219715db8613af6d4e48be4361310c9c79b372323e3a3916c803282fd",
+      "status": "TESTED",
+      "publication": null,
+      "focused_tests": 10,
+      "canonical_layers": {
+        "structural": "PASS",
+        "logic": "PASS",
+        "browser": "PASS"
+      }
+    },
+    {
+      "id": "image-compressor",
+      "canonical_route": "image-compressor/index.html",
+      "source_sha256": "ca0624cc4a2b68579133bbcee2cdd1aa1c119980c687b1392d53a82bec49e658",
+      "status": "TESTED",
+      "publication": null,
+      "focused_tests": 13,
+      "canonical_layers": {
+        "structural": "PASS",
+        "logic": "PASS",
+        "browser": "PASS"
+      }
+    },
+    {
+      "id": "png-to-ico",
+      "canonical_route": "png-to-ico/index.html",
+      "source_sha256": "20b5eef801640ae9a4e4fadec36bf4993b55662f150f84eb818198feceaa8482",
+      "status": "TESTED",
+      "publication": null,
+      "focused_tests": 11,
+      "canonical_layers": {
+        "structural": "PASS",
+        "logic": "PASS",
+        "browser": "PASS"
+      }
+    },
+    {
+      "id": "resume-builder",
+      "canonical_route": "resume-builder/index.html",
+      "source_sha256": "06bd8e051571ebc099185f41dabfc876117f2d07eba1b17bd2bb3d1a5e467adc",
+      "status": "TESTED",
+      "publication": null,
+      "focused_tests": 11,
+      "canonical_layers": {
+        "structural": "PASS",
+        "logic": "PASS",
+        "browser": "PASS"
+      }
+    },
+    {
+      "id": "passport-photo-layout-maker",
+      "canonical_route": "passport-photo-layout-maker/index.html",
+      "source_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
+      "status": "TESTED",
+      "publication": null,
+      "focused_tests": 14,
+      "canonical_layers": {
+        "structural": "PASS",
+        "logic": "PASS",
+        "browser": "PASS"
+      }
+    }
+  ],
+  "inventory": {
+    "registered": 93,
+    "RELEASED": 62,
+    "TESTED": 6,
+    "READY": 0,
+    "PLANNED": 24,
+    "BLOCKED": 1
+  },
+  "milestones": {
+    "next_manual_planning_checkpoint": 75,
+    "existing_generated_milestone": 100,
+    "configuration_changed": false
+  },
+  "local_ci_partitions": {
+    "python-project": {
+      "schema_version": 1,
+      "job": "python-project",
+      "execution": "local",
+      "generated_at": "2026-11-05T22:37:26.317820+00:00",
+      "status": "PASS",
+      "scopes": [
+        {
+          "scope": "python-unittest",
+          "status": "PASS",
+          "exit_code": 0,
+          "tests": 172,
+          "failed": 0,
+          "skipped": 0,
+          "expected_failures": 0,
+          "unexpected_successes": 0,
+          "passed": 172
+        },
+        {
+          "scope": "registry",
+          "status": "PASS",
+          "exit_code": 0,
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "scope": "source-audit-homepage",
+          "status": "PASS",
+          "exit_code": 0,
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "scope": "static-tools",
+          "status": "PASS",
+          "exit_code": 0,
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "scope": "social-counter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "excel-sandbox-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "text-cleaner-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "streaming-roulette-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "case-converter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "duplicate-line-remover-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "text-sorter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "text-reverser-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "find-and-replace-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "slug-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "json-formatter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "base64-encoder-decoder-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "url-encoder-decoder-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "uuid-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "timestamp-converter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "percentage-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "percentage-change-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "discount-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "profit-margin-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "date-difference-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "countdown-timer-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "random-name-picker-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "hashtag-organizer-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "secure-random-number-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "file-size-converter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "age-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "vat-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "working-days-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "meeting-agenda-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-rotator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "sha256-hash-checker-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "printable-calendar-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "username-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "youtube-description-formatter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "json-to-txt-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-resizer-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "text-difference-checker-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-color-picker-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-viewer-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-watermark-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "local-to-do-list-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "posting-calendar-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "compound-interest-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "loan-repayment-calculator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-column-extractor-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "duplicate-row-finder-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "youtube-thumbnail-preview-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "pomodoro-timer-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "invoice-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-merger-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "youtube-title-checker-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "instagram-bio-formatter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "file-signature-inspector-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-format-converter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-json-converter-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "regex-tester-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "password-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-to-txt-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "passphrase-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "qr-code-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-cropper-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-data-cleaner-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "excel-formula-generator-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "emoji-picker-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-compressor-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "png-to-ico-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "resume-builder-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "passport-photo-layout-maker-structure",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 0,
+          "failed": 0,
+          "assertions": 0,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "project-status",
+          "status": "PASS",
+          "exit_code": 0,
+          "errors": 0,
+          "warnings": 0
+        },
+        {
+          "scope": "whitespace-working",
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "scope": "whitespace-commits",
+          "status": "PASS",
+          "exit_code": 0
+        }
+      ],
+      "unavailable_scopes": [
+        {
+          "tool": "social-counter",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "excel-sandbox",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "text-cleaner",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "streaming-roulette",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        }
+      ],
+      "coverage": {
+        "python_files": 12,
+        "node_files": 67,
+        "browser_files": 129,
+        "tools": 68
+      }
+    },
+    "node-regression": {
+      "schema_version": 1,
+      "job": "node-regression",
+      "execution": "local",
+      "generated_at": "2026-11-05T22:37:26.317454+00:00",
+      "status": "PASS",
+      "scopes": [
+        {
+          "scope": "node-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "tests": 433,
+          "passed": 433,
+          "failed": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        {
+          "scope": "case-converter-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 69,
+          "failed": 0,
+          "assertions": 69,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "duplicate-line-remover-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 66,
+          "failed": 0,
+          "assertions": 66,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "text-sorter-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 34,
+          "failed": 0,
+          "assertions": 34,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "text-reverser-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 30,
+          "failed": 0,
+          "assertions": 30,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "find-and-replace-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 33,
+          "failed": 0,
+          "assertions": 33,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "slug-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 33,
+          "failed": 0,
+          "assertions": 33,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "json-formatter-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 35,
+          "failed": 0,
+          "assertions": 35,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "base64-encoder-decoder-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 44,
+          "failed": 0,
+          "assertions": 44,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "url-encoder-decoder-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 36,
+          "failed": 0,
+          "assertions": 36,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "uuid-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 44,
+          "failed": 0,
+          "assertions": 44,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "timestamp-converter-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 52,
+          "failed": 0,
+          "assertions": 52,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "percentage-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 55,
+          "failed": 0,
+          "assertions": 55,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "percentage-change-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 56,
+          "failed": 0,
+          "assertions": 56,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "discount-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 52,
+          "failed": 0,
+          "assertions": 52,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "profit-margin-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 29,
+          "failed": 0,
+          "assertions": 29,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "date-difference-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 42,
+          "failed": 0,
+          "assertions": 42,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "countdown-timer-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 15,
+          "failed": 0,
+          "assertions": 15,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "random-name-picker-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 22,
+          "failed": 0,
+          "assertions": 22,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "hashtag-organizer-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 20,
+          "failed": 0,
+          "assertions": 20,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "secure-random-number-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 24,
+          "failed": 0,
+          "assertions": 24,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "file-size-converter-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 141,
+          "failed": 0,
+          "assertions": 141,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "age-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 15,
+          "failed": 0,
+          "assertions": 15,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "vat-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 21,
+          "failed": 0,
+          "assertions": 21,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "working-days-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 17,
+          "failed": 0,
+          "assertions": 17,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "meeting-agenda-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 18,
+          "failed": 0,
+          "assertions": 18,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-rotator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 13,
+          "failed": 0,
+          "assertions": 13,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "sha256-hash-checker-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 14,
+          "failed": 0,
+          "assertions": 14,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "printable-calendar-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 7,
+          "failed": 0,
+          "assertions": 7,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "username-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "youtube-description-formatter-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 7,
+          "failed": 0,
+          "assertions": 7,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "json-to-txt-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-resizer-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 14,
+          "failed": 0,
+          "assertions": 14,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "text-difference-checker-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-color-picker-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-viewer-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 11,
+          "failed": 0,
+          "assertions": 11,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-watermark-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 11,
+          "failed": 0,
+          "assertions": 11,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "local-to-do-list-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 10,
+          "failed": 0,
+          "assertions": 10,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "posting-calendar-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "compound-interest-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 11,
+          "failed": 0,
+          "assertions": 11,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "loan-repayment-calculator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-column-extractor-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 8,
+          "failed": 0,
+          "assertions": 8,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "duplicate-row-finder-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 7,
+          "failed": 0,
+          "assertions": 7,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "youtube-thumbnail-preview-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 6,
+          "failed": 0,
+          "assertions": 6,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "pomodoro-timer-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 8,
+          "failed": 0,
+          "assertions": 8,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "invoice-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 6,
+          "failed": 0,
+          "assertions": 6,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-merger-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 13,
+          "failed": 0,
+          "assertions": 13,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "youtube-title-checker-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "instagram-bio-formatter-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 11,
+          "failed": 0,
+          "assertions": 11,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "file-signature-inspector-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 5,
+          "failed": 0,
+          "assertions": 5,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-format-converter-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 5,
+          "failed": 0,
+          "assertions": 5,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-json-converter-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 12,
+          "failed": 0,
+          "assertions": 12,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "regex-tester-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 7,
+          "failed": 0,
+          "assertions": 7,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "password-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-to-txt-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 12,
+          "failed": 0,
+          "assertions": 12,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "passphrase-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "qr-code-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-cropper-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 8,
+          "failed": 0,
+          "assertions": 8,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "csv-data-cleaner-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 9,
+          "failed": 0,
+          "assertions": 9,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "excel-formula-generator-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 4,
+          "failed": 0,
+          "assertions": 4,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "emoji-picker-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 4,
+          "failed": 0,
+          "assertions": 4,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "image-compressor-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 4,
+          "failed": 0,
+          "assertions": 4,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "png-to-ico-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 4,
+          "failed": 0,
+          "assertions": 4,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "resume-builder-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 4,
+          "failed": 0,
+          "assertions": 4,
+          "layer_status": "PASS"
+        },
+        {
+          "scope": "passport-photo-layout-maker-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "passed": 4,
+          "failed": 0,
+          "assertions": 4,
+          "layer_status": "PASS"
+        }
+      ],
+      "unavailable_scopes": [
+        {
+          "tool": "social-counter",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "excel-sandbox",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "text-cleaner",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "streaming-roulette",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        }
+      ],
+      "coverage": {
+        "python_files": 12,
+        "node_files": 67,
+        "browser_files": 129,
+        "tools": 68
+      }
+    },
+    "browser-tests": {
+      "schema_version": 1,
+      "job": "browser-tests",
+      "execution": "local",
+      "generated_at": "2026-11-05T22:54:44.160060+00:00",
+      "status": "FAIL",
+      "scopes": [
+        {
+          "scope": "browser-preflight",
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "scope": "node-browser",
+          "status": "FAIL",
+          "exit_code": 124
+        }
+      ],
+      "unavailable_scopes": [
+        {
+          "tool": "social-counter",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "excel-sandbox",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "text-cleaner",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "streaming-roulette",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        }
+      ],
+      "coverage": {
+        "python_files": 12,
+        "node_files": 67,
+        "browser_files": 129,
+        "tools": 68
+      },
+      "browser": "Edg/156.0.4314.58",
+      "failure": "Required scope or coverage failed; inspect command logs."
+    }
+  },
+  "focused_source_checkpoint": {
+    "tests": 68,
+    "passed": 68,
+    "failed": 0,
+    "skipped": 0,
+    "execution": "Serial Node test runner; 30 pure-logic and38 actual-browser tests"
+  },
+  "consent": {
+    "tests": 32,
+    "passed": 32,
+    "failed": 0,
+    "mode": "Isolated browser contexts, synthetic intercepted Google endpoints; no real Task20 page-view collection. Existing production consent script and privacy notice byte-identical.",
+    "measurement_id": "G-XDHPQYJ5CH",
+    "checks": [
+      "No Google requests before consent",
+      "No tracking after rejection and direct navigation",
+      "Exactly one tag and page view after acceptance/reacceptance",
+      "Exactly one page view per accepted tool navigation",
+      "Withdrawal and subsequent navigation prevent requests",
+      "Tool controls remain usable without consent"
+    ],
+    "property_reporting": "UNVERIFIED"
+  },
+  "specialist_evidence": [
+    "All3963 Unicode18.0 fully-qualified sequences independently compared with pinned official source and license; dataset/original/license Git bytes bound to source revision.",
+    "Actual image input boundaries:8million pixels; JPEG/WebP output MIME/signatures/decoded pixels and target-unmet/no-improvement behavior.",
+    "Actual multi-frame ICO parsed by independent CRC/zlib PNG reader and Windows LoadImageW/GetIconInfo at16,32,48,64,128,256 pixels; transparency/padding verified.",
+    "Resume JSON round-trip, malformed/unsafe imports, DOM text-only preview, generated safe HTML, print CSS and actual A4 PDF MediaBox.",
+    "Passport independent physical-unit calculations, actual sheet pixels/tile positions,40tiles/8Minput/300DPIA4 boundary, PNG pHYs CRC/resolution and actual Letter PDF MediaBox.",
+    "All six: keyboard controls,320/375/768/1440 responsive widths, current copy/download/reset, stale asynchronous result cleanup, no unexpected JS errors/input transmissions. Six desktop screenshots visually inspected locally."
+  ],
+  "preservation": {
+    "original_worktrees": 19,
+    "unchanged_original_heads_and_changes": true,
+    "unrelated_dirty_handoffs_preserved": 2,
+    "old_released_tools": 62,
+    "old_registry_entries_unchanged_except_selected_six": true,
+    "old_runtime_assets_and_historical_audits_unchanged": true,
+    "workflow_runtime_pins_and_deadlines_unchanged": true,
+    "homepage_change": "Six reviewed existing-gate TESTED/publication-pending cards and count62 to68 only."
+  },
+  "test_history": [
+    "One concurrent focused attempt had a strict5second compressor keyboard readiness timeout under simultaneous canonical browser work (67/68 passed). No runtime deadline or assertion was relaxed; source-checkpoint serial68/68 passed.",
+    "Focused negative worksheet-name cases caught a missed edit; final source validator corrected and all9 Excel cases passed.",
+    "Earlier print CSS caused a hidden container to print; corrected production print CSS and reset print media between test documents. Final resume/passport print cases pass.",
+    "First full local Windows Chrome156 attempt overlapped Python/Node work: two consent protocol/hook timeouts and one compressor5second readiness assertion failed; the unchanged900second partition deadline then stopped after582/593 numbered cases. Second isolated Edge Chromium attempt passed544 numbered cases without assertion failures, then also hit900seconds. Neither is a full partition PASS. The interrupted file and all remaining mapped files were subsequently tested separately, along with all68 canonical browser profiles and both templates. Exact-head hosted pinned Linux Chromium remains mandatory."
+  ],
+  "limitations": [
+    "Task20 is unpublished. Independent deployed-source/HTTP/functionality verification is required before RELEASED.",
+    "Windows headless Chromium156 used locally; hosted CI adds pinned Linux Chromium. No Safari/Firefox, physical-device, screen-reader or native-dialog certification. Clipboard/download APIs captured for actual content checks.",
+    "Image compression cannot guarantee a target byte size, global quality optimum or exact native encoder interruption; at most12 tested candidates and approximately10second deadline. No lossless PNG output mode.",
+    "PNG-frame ICO targets modern readers, without a legacy BMP-only compatibility claim.",
+    "Print measurements verify raster/PDF geometry and nominal DPI metadata, not physical printer calibration, official passport acceptance or ATS compatibility.",
+    "Four pre-existing specialist isolated-logic adapters remain unavailable; all mandatory structural/browser profiles still run.",
+    "GA4 property-level reporting remains unverified."
+  ],
+  "supplemental_browser": {
+    "status": "PASS",
+    "scope": "Supplement to the retained failed900second full partition, not a replacement CI partition PASS. Repeats the interrupted file and runs every subsequent mapped file, then all68 canonical browser profiles and neutral templates.",
+    "prefix_completed": 544,
+    "prefix_assertion_failures": 0,
+    "remaining_files": [
+      "tests/tools/text-reverser/extended-browser.test.mjs",
+      "tests/tools/text-reverser/integration-browser.test.mjs",
+      "tests/tools/text-sorter/extended-browser.test.mjs",
+      "tests/tools/text-sorter/integration-browser.test.mjs",
+      "tests/tools/timestamp-converter/extended-browser.test.mjs",
+      "tests/tools/timestamp-converter/integration-browser.test.mjs",
+      "tests/tools/url-encoder-decoder/extended-browser.test.mjs",
+      "tests/tools/url-encoder-decoder/integration-browser.test.mjs",
+      "tests/tools/username-generator/extended-browser.test.mjs",
+      "tests/tools/username-generator/integration-browser.test.mjs",
+      "tests/tools/uuid-generator/extended-browser.test.mjs",
+      "tests/tools/uuid-generator/integration-browser.test.mjs",
+      "tests/tools/vat-calculator/extended-browser.test.mjs",
+      "tests/tools/vat-calculator/integration-browser.test.mjs",
+      "tests/tools/working-days-calculator/extended-browser.test.mjs",
+      "tests/tools/working-days-calculator/integration-browser.test.mjs",
+      "tests/tools/youtube-description-formatter/extended-browser.test.mjs",
+      "tests/tools/youtube-description-formatter/integration-browser.test.mjs",
+      "tests/tools/youtube-thumbnail-preview/extended-browser.test.mjs",
+      "tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs",
+      "tests/tools/youtube-title-checker/extended-browser.test.mjs",
+      "tests/tools/youtube-title-checker/integration-browser.test.mjs"
+    ],
+    "scopes": [
+      {
+        "scope": "social-counter-browser",
+        "status": "PASS",
+        "passed": 4,
+        "failed": 0,
+        "assertions": 14
+      },
+      {
+        "scope": "excel-sandbox-browser",
+        "status": "PASS",
+        "passed": 3,
+        "failed": 0,
+        "assertions": 10
+      },
+      {
+        "scope": "text-cleaner-browser",
+        "status": "PASS",
+        "passed": 3,
+        "failed": 0,
+        "assertions": 8
+      },
+      {
+        "scope": "streaming-roulette-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 9
+      },
+      {
+        "scope": "case-converter-browser",
+        "status": "PASS",
+        "passed": 22,
+        "failed": 0,
+        "assertions": 89
+      },
+      {
+        "scope": "duplicate-line-remover-browser",
+        "status": "PASS",
+        "passed": 22,
+        "failed": 0,
+        "assertions": 112
+      },
+      {
+        "scope": "text-sorter-browser",
+        "status": "PASS",
+        "passed": 20,
+        "failed": 0,
+        "assertions": 47
+      },
+      {
+        "scope": "text-reverser-browser",
+        "status": "PASS",
+        "passed": 16,
+        "failed": 0,
+        "assertions": 33
+      },
+      {
+        "scope": "find-and-replace-browser",
+        "status": "PASS",
+        "passed": 18,
+        "failed": 0,
+        "assertions": 54
+      },
+      {
+        "scope": "slug-generator-browser",
+        "status": "PASS",
+        "passed": 17,
+        "failed": 0,
+        "assertions": 42
+      },
+      {
+        "scope": "json-formatter-browser",
+        "status": "PASS",
+        "passed": 19,
+        "failed": 0,
+        "assertions": 37
+      },
+      {
+        "scope": "base64-encoder-decoder-browser",
+        "status": "PASS",
+        "passed": 17,
+        "failed": 0,
+        "assertions": 33
+      },
+      {
+        "scope": "url-encoder-decoder-browser",
+        "status": "PASS",
+        "passed": 16,
+        "failed": 0,
+        "assertions": 31
+      },
+      {
+        "scope": "uuid-generator-browser",
+        "status": "PASS",
+        "passed": 22,
+        "failed": 0,
+        "assertions": 60
+      },
+      {
+        "scope": "timestamp-converter-browser",
+        "status": "PASS",
+        "passed": 25,
+        "failed": 0,
+        "assertions": 52
+      },
+      {
+        "scope": "percentage-calculator-browser",
+        "status": "PASS",
+        "passed": 21,
+        "failed": 0,
+        "assertions": 48
+      },
+      {
+        "scope": "percentage-change-calculator-browser",
+        "status": "PASS",
+        "passed": 22,
+        "failed": 0,
+        "assertions": 49
+      },
+      {
+        "scope": "discount-calculator-browser",
+        "status": "PASS",
+        "passed": 22,
+        "failed": 0,
+        "assertions": 49
+      },
+      {
+        "scope": "profit-margin-calculator-browser",
+        "status": "PASS",
+        "passed": 8,
+        "failed": 0,
+        "assertions": 36
+      },
+      {
+        "scope": "date-difference-calculator-browser",
+        "status": "PASS",
+        "passed": 8,
+        "failed": 0,
+        "assertions": 36
+      },
+      {
+        "scope": "countdown-timer-browser",
+        "status": "PASS",
+        "passed": 7,
+        "failed": 0,
+        "assertions": 30
+      },
+      {
+        "scope": "random-name-picker-browser",
+        "status": "PASS",
+        "passed": 8,
+        "failed": 0,
+        "assertions": 36
+      },
+      {
+        "scope": "hashtag-organizer-browser",
+        "status": "PASS",
+        "passed": 8,
+        "failed": 0,
+        "assertions": 36
+      },
+      {
+        "scope": "secure-random-number-generator-browser",
+        "status": "PASS",
+        "passed": 8,
+        "failed": 0,
+        "assertions": 36
+      },
+      {
+        "scope": "file-size-converter-browser",
+        "status": "PASS",
+        "passed": 8,
+        "failed": 0,
+        "assertions": 21
+      },
+      {
+        "scope": "age-calculator-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 15
+      },
+      {
+        "scope": "vat-calculator-browser",
+        "status": "PASS",
+        "passed": 7,
+        "failed": 0,
+        "assertions": 17
+      },
+      {
+        "scope": "working-days-calculator-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 18
+      },
+      {
+        "scope": "meeting-agenda-generator-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 15
+      },
+      {
+        "scope": "image-rotator-browser",
+        "status": "PASS",
+        "passed": 5,
+        "failed": 0,
+        "assertions": 18
+      },
+      {
+        "scope": "sha256-hash-checker-browser",
+        "status": "PASS",
+        "passed": 7,
+        "failed": 0,
+        "assertions": 15
+      },
+      {
+        "scope": "printable-calendar-generator-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 14
+      },
+      {
+        "scope": "username-generator-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 13
+      },
+      {
+        "scope": "youtube-description-formatter-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 13
+      },
+      {
+        "scope": "json-to-txt-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 13
+      },
+      {
+        "scope": "image-resizer-browser",
+        "status": "PASS",
+        "passed": 5,
+        "failed": 0,
+        "assertions": 16
+      },
+      {
+        "scope": "text-difference-checker-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 13
+      },
+      {
+        "scope": "image-color-picker-browser",
+        "status": "PASS",
+        "passed": 5,
+        "failed": 0,
+        "assertions": 14
+      },
+      {
+        "scope": "csv-viewer-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 12
+      },
+      {
+        "scope": "image-watermark-browser",
+        "status": "PASS",
+        "passed": 5,
+        "failed": 0,
+        "assertions": 14
+      },
+      {
+        "scope": "local-to-do-list-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 12
+      },
+      {
+        "scope": "posting-calendar-generator-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 13
+      },
+      {
+        "scope": "compound-interest-calculator-browser",
+        "status": "PASS",
+        "passed": 6,
+        "failed": 0,
+        "assertions": 13
+      },
+      {
+        "scope": "loan-repayment-calculator-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 4
+      },
+      {
+        "scope": "csv-column-extractor-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 4
+      },
+      {
+        "scope": "duplicate-row-finder-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 5
+      },
+      {
+        "scope": "youtube-thumbnail-preview-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 4
+      },
+      {
+        "scope": "pomodoro-timer-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 5
+      },
+      {
+        "scope": "invoice-generator-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 4
+      },
+      {
+        "scope": "csv-merger-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 5
+      },
+      {
+        "scope": "youtube-title-checker-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 6
+      },
+      {
+        "scope": "instagram-bio-formatter-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 7
+      },
+      {
+        "scope": "file-signature-inspector-browser",
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 4
+      },
+      {
+        "scope": "image-format-converter-browser",
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 4
+      },
+      {
+        "scope": "csv-json-converter-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 5
+      },
+      {
+        "scope": "regex-tester-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 8
+      },
+      {
+        "scope": "password-generator-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 6
+      },
+      {
+        "scope": "csv-to-txt-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 7
+      },
+      {
+        "scope": "passphrase-generator-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 6
+      },
+      {
+        "scope": "qr-code-generator-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 7
+      },
+      {
+        "scope": "image-cropper-browser",
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 5
+      },
+      {
+        "scope": "csv-data-cleaner-browser",
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 10
+      },
+      {
+        "scope": "excel-formula-generator-browser",
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 4
+      },
+      {
+        "scope": "emoji-picker-browser",
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 5
+      },
+      {
+        "scope": "image-compressor-browser",
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 4
+      },
+      {
+        "scope": "png-to-ico-browser",
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 4
+      },
+      {
+        "scope": "resume-builder-browser",
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 5
+      },
+      {
+        "scope": "passport-photo-layout-maker-browser",
+        "status": "PASS",
+        "passed": 1,
+        "failed": 0,
+        "assertions": 4
+      }
+    ],
+    "remaining_counts": {
+      "tests": 101,
+      "passed": 101,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "browser": "Edg/156.0.4314.58",
+    "templates": {
+      "schema_version": 1,
+      "kind": "TEMPLATE_FRAMEWORK_TEST_ONLY",
+      "status": "PASS",
+      "results": [
+        {
+          "template": "text",
+          "schema_version": 1,
+          "tool_id": "text-fixture",
+          "generated_at": "2026-11-05T23:25:50+00:00",
+          "input_hash": "6f91db2051fd767dcebebf6cd9ea91060cba7f6452a2d5975c5d1436568d114f",
+          "source_sha256": "513aee55fbeae1fc149a9215a022068de797428dca4a26da262ec511f4fb764e",
+          "workspace": "staging",
+          "is_scaffold": false,
+          "layers": {
+            "structural": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "scope": "STRUCTURAL_ONLY"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 3,
+              "failed": 0,
+              "assertions": 3,
+              "failures": [],
+              "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 6,
+              "failed": 0,
+              "assertions": 24,
+              "failures": [],
+              "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+              "browser": "Edg/156.0.4314.58"
+            }
+          },
+          "status": "PASS"
+        },
+        {
+          "template": "structured",
+          "schema_version": 1,
+          "tool_id": "structured-fixture",
+          "generated_at": "2026-11-05T23:25:57+00:00",
+          "input_hash": "faa3e825f52a1012d1f71b0d546cf1627bb0420cd54c68565daf6e79b5be83ef",
+          "source_sha256": "bea90e0e55bf8b00cb487bfbe35089c74dbe221213be0a39528fe6c70bd3b337",
+          "workspace": "staging",
+          "is_scaffold": false,
+          "layers": {
+            "structural": {
+              "status": "PASS",
+              "errors": [],
+              "warnings": [],
+              "scope": "STRUCTURAL_ONLY"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 3,
+              "failed": 0,
+              "assertions": 3,
+              "failures": [],
+              "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 6,
+              "failed": 0,
+              "assertions": 24,
+              "failures": [],
+              "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+              "browser": "Edg/156.0.4314.58"
+            }
+          },
+          "status": "PASS"
+        }
+      ],
+      "scope": "Temporary neutral fixtures only. No Case Converter or other registry utility is implemented."
+    }
+  },
+  "first_browser_attempt": {
+    "schema_version": 1,
+    "job": "browser-tests",
+    "execution": "local",
+    "generated_at": "2026-11-05T22:38:18.609594+00:00",
+    "status": "FAIL",
+    "scopes": [
+      {
+        "scope": "browser-preflight",
+        "status": "PASS",
+        "exit_code": 0
+      },
+      {
+        "scope": "node-browser",
+        "status": "FAIL",
+        "exit_code": 124
+      }
+    ],
+    "unavailable_scopes": [
+      {
+        "tool": "social-counter",
+        "scope": "isolated-logic",
+        "status": "NOT RUN",
+        "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+      },
+      {
+        "tool": "excel-sandbox",
+        "scope": "isolated-logic",
+        "status": "NOT RUN",
+        "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+      },
+      {
+        "tool": "text-cleaner",
+        "scope": "isolated-logic",
+        "status": "NOT RUN",
+        "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+      },
+      {
+        "tool": "streaming-roulette",
+        "scope": "isolated-logic",
+        "status": "NOT RUN",
+        "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+      }
+    ],
+    "coverage": {
+      "python_files": 12,
+      "node_files": 67,
+      "browser_files": 129,
+      "tools": 68
+    },
+    "browser": "Chrome/156.0.8078.4",
+    "failure": "Required scope or coverage failed; inspect command logs."
+  },
+  "local_browser_scope": "Edg/156.0.4314.58",
+  "final_project_validation": {
+    "generated_at": "2026-11-05T23:26:27+00:00",
+    "status": "PASS",
+    "counts": {
+      "total": 93,
+      "by_status": {
+        "IDEA": 0,
+        "PLANNED": 24,
+        "READY": 0,
+        "IN_PROGRESS": 0,
+        "BLOCKED": 1,
+        "IMPLEMENTED": 0,
+        "TESTED": 6,
+        "RELEASED": 62,
+        "DEPRECATED": 0
+      },
+      "released": 62,
+      "tested": 6,
+      "implemented": 0,
+      "in_progress": 0,
+      "planned": 24,
+      "ready": 0,
+      "blocked": 1,
+      "backlog": 25,
+      "by_category": {
+        "pdf": 9,
+        "image": 8,
+        "text": 8,
+        "data": 10,
+        "developer": 9,
+        "social": 11,
+        "calculator": 10,
+        "security": 9,
+        "conversion": 9,
+        "productivity": 9,
+        "entertainment": 1
+      },
+      "by_priority": {
+        "P1": 20,
+        "P2": 71,
+        "P3": 2
+      },
+      "milestone": 100,
+      "milestone_percent": 62.0,
+      "remaining_to_milestone": 38
+    },
+    "errors": [],
+    "warnings": []
+  }
+}

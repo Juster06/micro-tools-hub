@@ -42,7 +42,10 @@ class Task20Preservation(unittest.TestCase):
         for path in names:self.assertEqual(norm((ROOT/path).read_bytes()),norm(blob(path)),path)
     def test_pinned_emoji_data_license_and_original_git_source_are_preserved(self):
         meta=load('audit/TASK_20_DEPENDENCIES.json')['runtime']['emoji'];self.assertEqual((meta['version'],meta['entries'],meta['license']),('18.0',3963,'Unicode-3.0'))
-        for path,sha in [(meta['path'],meta['sha256']),(meta['original_path'],meta['original_sha256']),(meta['license_path'],meta['license_sha256'])]:self.assertEqual(hashlib.sha256(norm((ROOT/path).read_bytes())).hexdigest(),sha)
+        tool=next(t for t in load('TOOL_REGISTRY.json')['tools'] if t['id']=='emoji-picker')
+        for path,sha in [(meta['path'],meta['sha256']),(meta['original_path'],meta['original_sha256']),(meta['license_path'],meta['license_sha256'])]:
+            self.assertEqual(hashlib.sha256(norm((ROOT/path).read_bytes())).hexdigest(),sha)
+            self.assertEqual(hashlib.sha256(norm(blob(path,tool['verification']['source_revision']))).hexdigest(),sha)
         self.assertLessEqual(meta['bytes'],1048576);self.assertIn('UNICODE LICENSE V3',text(meta['license_path']))
         tool=next(t for t in load('TOOL_REGISTRY.json')['tools'] if t['id']=='emoji-picker');self.assertEqual(hashlib.sha256(blob(meta['original_path'],tool['verification']['source_revision'])).hexdigest(),meta['original_sha256'])
     def test_each_tested_tool_has_real_source_bound_evidence_and_all_canonical_layers(self):
