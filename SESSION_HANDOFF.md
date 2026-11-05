@@ -1,5 +1,28 @@
 # Session handoff
 
+<!-- TASK18:START -->
+## Task 18 — development checkpoint
+
+Task 17 is complete; consent-aware GA4 and the privacy notice are preserved.
+Task 18 starts from `f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a` on
+`feat/task-18-six-tools` in a separate worktree. Owner authorization covers
+development, tests, commits and a PR; merge/deployment/bypass are not authorized.
+
+Locally TESTED, publication pending: YouTube Title Checker.
+Inventory: 93 registered, 50 RELEASED, 1 TESTED, 0 READY,
+41 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
+existing 100-release generated target are unchanged. See
+`audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
+verification audits for features, resource limits, actual test scope and omissions.
+Focused logic, real Chromium, canonical layers and homepage navigation passed for
+each completed tool. Full-batch regression and hosted checks are recorded at final delivery.
+
+**Next major task:** Complete the remaining Task 18 tools sequentially.
+Await separate owner authorization before merge/deployment; independently verify
+public source and behavior before any RELEASED transition. Property-level GA4
+reporting remains unverified. The two unrelated local handoff edits remain intact.
+<!-- TASK18:END -->
+
 ## Task 17 — deployed consent-aware analytics
 
 PR #30 merged as `c1c050c8594795dcab25d0e2362c0bfb472a5165`; Pages run 41811430121 and post-merge Functional CI 41811430196 succeeded. The homepage, privacy notice, consent script and all 50 released tools were independently verified against deployed source. Fresh isolated Chromium tests verified first-visit choice, rejection, acceptance, navigation and withdrawal. GA4 browser collection requests were verified; property-level reporting remains unverified. Task 17.1 finalizes documentation and source-bound deployment evidence; see `audit/TASK_17_DEPLOYMENT.json` and `audit/TASK_17_CONSENT_REVIEW.md`. No legal compliance certification is claimed.
@@ -857,28 +880,28 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 50 released tools; 25 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 67; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 25; DEPRECATED: 0.
+- Milestone: 100 released tools; 50 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 41; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 1; RELEASED: 50; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: release/file-size-converter-verification.
-- Latest commit observed before generation: c97c2d0b2a6d7377df3915b9fcebb0bc758f63ad.
+- Git branch: feat/task-18-six-tools.
+- Latest commit observed before generation: 5fa88947ad40786e693879333544386a212b7c07.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
-- Secure Random Number Generator: RELEASED, evidence dated 2026-11-03.
-- Random Name Picker: RELEASED, evidence dated 2026-11-03.
-- Profit Margin Calculator: RELEASED, evidence dated 2026-11-03.
-- Hashtag Organizer: RELEASED, evidence dated 2026-11-03.
-- File Size Converter: RELEASED, evidence dated 2026-11-03.
-- Date Difference Calculator: RELEASED, evidence dated 2026-11-03.
-- Countdown Timer: RELEASED, evidence dated 2026-11-03.
-- UUID Generator: RELEASED, evidence dated 2026-11-02.
-- URL Encoder and Decoder: RELEASED, evidence dated 2026-11-02.
-- Timestamp Converter: RELEASED, evidence dated 2026-11-02.
+- YouTube Title Checker: TESTED, evidence dated 2026-11-05.
+- YouTube Thumbnail Preview: RELEASED, evidence dated 2026-11-04.
+- YouTube Description Formatter: RELEASED, evidence dated 2026-11-04.
+- Username Generator: RELEASED, evidence dated 2026-11-04.
+- Text Difference Checker: RELEASED, evidence dated 2026-11-04.
+- Printable Calendar Generator: RELEASED, evidence dated 2026-11-04.
+- Posting Calendar Generator: RELEASED, evidence dated 2026-11-04.
+- Pomodoro Timer: RELEASED, evidence dated 2026-11-04.
+- Local To-Do List: RELEASED, evidence dated 2026-11-04.
+- Loan Repayment Calculator: RELEASED, evidence dated 2026-11-04.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -891,32 +914,16 @@ These are registry verification records, not new tests or tasks executed by this
 ### Uncommitted changes (repository-relative)
 - ` M` CHANGELOG.md
 - ` M` PROGRESS_TRACKER.md
+- ` M` PROJECT_MASTER_PLAN.md
 - ` M` README.md
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
 - ` M` index.html
-- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
-- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
-- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
-- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
-- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
-- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
-- ` M` tests/tools/json-formatter/integration-browser.test.mjs
-- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
-- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
-- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
-- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
-- ` M` tests/tools/slug-generator/integration-browser.test.mjs
-- ` M` tests/tools/text-reverser/integration-browser.test.mjs
-- ` M` tests/tools/text-sorter/integration-browser.test.mjs
-- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
-- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
-- `??` audit/FILE_SIZE_CONVERTER_RELEASE_VERIFICATION.json
+- ` M` scripts/consent-static.test.mjs
+- ` M` tests/test_consent_overlay.py
+- `??` audit/YOUTUBE_TITLE_CHECKER_VERIFICATION.json
+- `??` tests/test_task18_preservation.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

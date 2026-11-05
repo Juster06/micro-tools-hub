@@ -1,5 +1,28 @@
 # Progress tracker
 
+<!-- TASK18:START -->
+## Task 18 — development checkpoint
+
+Task 17 is complete; consent-aware GA4 and the privacy notice are preserved.
+Task 18 starts from `f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a` on
+`feat/task-18-six-tools` in a separate worktree. Owner authorization covers
+development, tests, commits and a PR; merge/deployment/bypass are not authorized.
+
+Locally TESTED, publication pending: YouTube Title Checker.
+Inventory: 93 registered, 50 RELEASED, 1 TESTED, 0 READY,
+41 PLANNED, 1 BLOCKED. The 75-release planning checkpoint and
+existing 100-release generated target are unchanged. See
+`audit/TASK_18_DEVELOPMENT_PLAN.md`, individual READMEs, tests and source-bound
+verification audits for features, resource limits, actual test scope and omissions.
+Focused logic, real Chromium, canonical layers and homepage navigation passed for
+each completed tool. Full-batch regression and hosted checks are recorded at final delivery.
+
+**Next major task:** Complete the remaining Task 18 tools sequentially.
+Await separate owner authorization before merge/deployment; independently verify
+public source and behavior before any RELEASED transition. Property-level GA4
+reporting remains unverified. The two unrelated local handoff edits remain intact.
+<!-- TASK18:END -->
+
 ## Task 17 — deployed consent-aware analytics
 
 PR #30 merged as `c1c050c8594795dcab25d0e2362c0bfb472a5165`; Pages run 41811430121 and post-merge Functional CI 41811430196 succeeded. The homepage, privacy notice, consent script and all 50 released tools were independently verified against deployed source. Fresh isolated Chromium tests verified first-visit choice, rejection, acceptance, navigation and withdrawal. GA4 browser collection requests were verified; property-level reporting remains unverified. Task 17.1 finalizes documentation and source-bound deployment evidence; see `audit/TASK_17_DEPLOYMENT.json` and `audit/TASK_17_CONSENT_REVIEW.md`. No legal compliance certification is claimed.
@@ -176,15 +199,15 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | --- | ---: |
 | Total registered utilities | 93 |
 | IDEA | 0 |
-| PLANNED | 42 |
+| PLANNED | 41 |
 | READY | 0 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 0 |
+| TESTED | 1 |
 | RELEASED | 50 |
 | DEPRECATED | 0 |
-| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 43 |
+| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 42 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
@@ -222,6 +245,7 @@ Next ready tool: **REQUIRES REVIEW**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
+| YouTube Title Checker | TESTED | 2026-11-05 |
 | YouTube Thumbnail Preview | RELEASED | 2026-11-04 |
 | YouTube Description Formatter | RELEASED | 2026-11-04 |
 | Username Generator | RELEASED | 2026-11-04 |
@@ -231,7 +255,6 @@ Next ready tool: **REQUIRES REVIEW**.
 | Pomodoro Timer | RELEASED | 2026-11-04 |
 | Local To-Do List | RELEASED | 2026-11-04 |
 | Loan Repayment Calculator | RELEASED | 2026-11-04 |
-| JSON to TXT | RELEASED | 2026-11-04 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.

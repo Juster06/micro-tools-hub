@@ -5,6 +5,7 @@
     "tests/test_consent_overlay.py",
     "tests/test_dashboard.py",
     "tests/test_status_launcher.py",
+    "tests/test_task18_preservation.py",
     "tests/test_tool_framework.py",
     "tests/test_tracking.py"
   ],
@@ -31,6 +32,7 @@
     "tests/tools/image-resizer/logic.test.mjs",
     "tests/tools/image-rotator/logic.test.mjs",
     "tests/tools/image-watermark/logic.test.mjs",
+    "tests/tools/instagram-bio-formatter/logic.test.mjs",
     "tests/tools/invoice-generator/logic.test.mjs",
     "tests/tools/json-formatter/logic.test.mjs",
     "tests/tools/json-to-txt/logic.test.mjs",
@@ -100,6 +102,8 @@
     "tests/tools/image-rotator/integration-browser.test.mjs",
     "tests/tools/image-watermark/extended-browser.test.mjs",
     "tests/tools/image-watermark/integration-browser.test.mjs",
+    "tests/tools/instagram-bio-formatter/extended-browser.test.mjs",
+    "tests/tools/instagram-bio-formatter/integration-browser.test.mjs",
     "tests/tools/invoice-generator/extended-browser.test.mjs",
     "tests/tools/invoice-generator/integration-browser.test.mjs",
     "tests/tools/json-formatter/extended-browser.test.mjs",
@@ -416,6 +420,11 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "instagram-bio-formatter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -468,7 +477,7 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 148,
+    "python-project": 151,
     "node-regression": 327,
     "browser-tests": 418
   },

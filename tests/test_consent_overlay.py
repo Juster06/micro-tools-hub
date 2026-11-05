@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+import subprocess
 import unittest
 SCRIPTS = Path(__file__).resolve().parents[1] / 'scripts'
 sys.path.insert(0,str(SCRIPTS))
@@ -45,7 +46,10 @@ class DeploymentEvidenceTests(unittest.TestCase):
         for path in paths:
             entry = audit['sources'][path]
             self.assertEqual(entry['http_status'], 200, path)
-            source = (root/path).read_text(encoding='utf8')
+            # This is dated deployment evidence, not a lock against later hub cards.
+            # Current Task 18 homepage additions are independently checked below.
+            source = (subprocess.check_output(['git', 'show', audit['deployment_commit']+':index.html'], cwd=root, text=True, encoding='utf8')
+                      if path == 'index.html' else (root/path).read_text(encoding='utf8'))
             self.assertEqual(entry['sha256_bytes'], hashlib.sha256(source.encode('utf8')).hexdigest(), path)
             self.assertEqual(entry['sha256_normalized'], overlay.digest(source), path)
         for tool in released:
