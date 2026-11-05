@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prepare a structured printable resume without account registration."><meta name="color-scheme" content="dark">
+  <title>Resume Builder — Everyday Digital Box</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="../assets/consent.js"></script>
+  <style>:root { color-scheme:dark; font-family:ui-sans-serif,system-ui,sans-serif; background:#020617; color:#e2e8f0; }
+* { box-sizing:border-box; } body { margin:0; } [hidden] { display:none!important; }
+.container { max-width:1120px; margin:auto; padding:24px; } .panels { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.panel { min-width:0; background:#0f172a; border:1px solid #334155; border-radius:16px; padding:22px; }
+h1 { margin:12px 0; font-size:2rem; } h2 { margin:0 0 18px; font-size:1.15rem; } a { color:#a5b4fc; } .back-link { display:inline-block; margin-bottom:18px; }
+.description { max-width:70ch; color:#94a3b8; line-height:1.7; } .eyebrow { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; }
+.notice { padding:12px; border:1px dashed #d97706; color:#fcd34d; border-radius:8px; } label { display:block; margin:14px 0 8px; font-weight:600; }
+textarea,select,input { display:block; width:100%; max-width:100%; background:#020617; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:12px; font:inherit; }
+textarea { resize:vertical; min-height:150px; line-height:1.6; } fieldset { border:1px solid #334155; border-radius:8px; margin:0; min-width:0; } legend { color:#a5b4fc; }
+button { min-height:44px; padding:10px 16px; background:#1e293b; border:1px solid #475569; color:#e2e8f0; border-radius:8px; font:inherit; cursor:pointer; }
+button.primary { background:#4338ca; border-color:#6366f1; } button:disabled { opacity:.45; cursor:not-allowed; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+:focus-visible { outline:3px solid #a5b4fc; outline-offset:3px; } #toolError { color:#fda4af; } #toolStatus,#inputHelp,.guidance,footer { font-size:.875rem; line-height:1.65; color:#94a3b8; }
+.guidance { margin-top:20px; } @media(max-width:700px) { .panels { grid-template-columns:1fr; } .container { padding:18px; } h1 { font-size:1.7rem; overflow-wrap:anywhere; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+pre,.preview {white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word} img,canvas {max-width:100%;height:auto} p,output {overflow-wrap:anywhere} .preview {border:1px solid #475569;padding:16px;border-radius:12px;min-height:90px} .metric {font-size:1.2rem;color:#c7d2fe} mark {background:#fbbf24;color:#111827} input[type=checkbox]{display:inline;width:auto} .scroll {max-height:30rem;overflow:auto} footer {padding-bottom:6rem!important}
+.resume-item{margin:12px 0}#sections fieldset{padding:12px;margin:12px 0;min-width:0}.resume-preview{background:white;color:#111;padding:20px;border-radius:8px;overflow-wrap:anywhere}.resume-preview h2{font-size:24px}.resume-preview h3{border-bottom:1px solid #777;break-after:avoid}.resume-preview p,.resume-preview li{white-space:pre-wrap}.resume-preview section{break-inside:auto}@page{size:A4;margin:15 mm}@media print{header,footer,.guidance,.panels>section:first-child,#outputHeading,label[for=toolOutput],#toolOutput,.actions,#toolStatus,#toolError{display:none!important}body,main,.panel{background:white!important;color:#111!important;border:0!important}.container{max-width:none!important;padding:0!important;margin:0!important}.panels{display:block!important}.resume-preview{padding:0!important;border:0!important;border-radius:0!important}p,li{orphans:2;widows:2}}</style>
+</head><body>
+<header class="container"><a href="../index.html" class="back-link">← Back to Hub</a>
+<p class="eyebrow">Everyday Digital Box</p><h1>Resume Builder</h1><p class="description">Prepare a structured printable resume without account registration.</p></header>
+<main class="container"><div class="panels">
+<section class="panel" aria-labelledby="inputHeading"><h2 id="inputHeading">Input</h2>
+<label for="toolInput">Name</label><input id="toolInput" type="text" autocomplete="off"><label for="headline">Headline</label><input id="headline" type="text" autocomplete="off"><label for="contact">Contact details (plain text)</label><textarea id="contact" rows="3" autocomplete="off"></textarea>
+<div id="sections"></div><button id="addSection" type="button">Add section</button>
+<fieldset><legend>Explicit local drafts</legend><button id="exportDraft" type="button">Export JSON draft</button><label for="draftFile">Import JSON draft (replaces current editing fields)</label><input id="draftFile" type="file" accept="application/json,.json"><p>No autosave. Export a draft explicitly if you want to keep it.</p></fieldset>
+<div class="actions"><button id="runBtn" type="button" class="primary">Run</button><button id="clearBtn" type="button">Reset</button></div>
+<p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready. Results stay in this browser tab.</p></section>
+<section class="panel" aria-labelledby="outputHeading"><h2 id="outputHeading">Result</h2>
+<div class="actions"><button id="printBtn" type="button" disabled>Print resume</button></div><article id="resumePreview" class="resume-preview" aria-label="Resume preview"></article>
+<label for="toolOutput">Result text</label><textarea id="toolOutput" readonly rows="8" spellcheck="false"></textarea>
+<div class="actions"><button id="copyBtn" type="button" disabled>Copy result</button><button id="downloadBtn" type="button" disabled >Download</button></div></section></div>
+<aside class="panel guidance"><h2>Privacy &amp; limits</h2><p>Plain-text resume editing: 10 sections, 50 total items, 50 KiB UTF-8 draft/input; HTML ≤250 KiB. Name ≤200 code points, headline 300, contact 1000, section title 100, each item 2000. Each previewed section requires a title and nonempty items. Line endings normalize to LF during editing/import. No autosave, personal-data persistence, cloud account or input transport. Draft import strictly validates version/fields/types/limits and replaces current editing fields. Contact details are literal text, never active links. PDF saving uses the browser print dialog. Fonts/pagination vary; no guaranteed ATS compatibility or hiring outcome.</p>
+<p>Inputs stay in this browser tab; no uploads or saved drafts. Hosting and the existing styling CDN receive ordinary page requests. Optional site analytics requires consent. <a href="../privacy.html">Privacy and cookies</a>.</p></aside></main>
+<footer class="container">Everyday Digital Box · Local browser processing</footer>
+
+<script id="edb-tool-logic">
+'use strict';
+
+function utf8Bytes(text){try{return unescape(encodeURIComponent(text)).length;}catch{throw Error('Invalid Unicode text.');}}
+function fields(value,allowed){if(!value||typeof value!=='object'||Array.isArray(value)||Object.keys(value).some(k=>!allowed.includes(k)))throw Error('Draft contains unsupported fields.');}
+function text(value,max,label){if(typeof value!=='string'||value.includes('\0')||value.length>max*2||Array.from(value).length>max)throw Error(label+' exceeds its text limit or is not text.');utf8Bytes(value);return value.replace(/\r\n?/g,'\n');}
+function escapeHTML(value){return value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;'}[c]));}
+const RESUME_STYLE="@page{size:A4;margin:15 mm}body{font:11pt/1.45 system-ui,sans-serif;color:#111;background:#fff;margin:0}h1{font-size:24pt;margin:0 0 6 mm}h2{font-size:14pt;border-bottom:1px solid #777;break-after:avoid}p,li{white-space:pre-wrap;overflow-wrap:anywhere}li{margin:2 mm 0}section{break-inside:auto}h1,h2,p{orphans:2;widows:2}";
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,run(input,options={}){
+ fields(options,['mode']);const mode=options.mode??'preview';if(!['preview','draft'].includes(mode))throw Error('Unsupported mode.');if(typeof input!=='string'||!input.length||input.length>51200||utf8Bytes(input)>51200)throw Error('Draft input must be nonempty JSON up to 50 KiB.');let value;try{value=JSON.parse(input)}catch{throw Error('Invalid JSON draft.');}fields(value,['version','name','headline','contact','sections']);if(value.version!==1)throw Error('Unsupported draft version.');
+ if(!Array.isArray(value.sections)||value.sections.length>10)throw Error('Use at most 10 sections.');const draft={version:1,name:text(value.name,200,'Name'),headline:text(value.headline,300,'Headline'),contact:text(value.contact,1000,'Contact'),sections:[]};let items=0;
+ for(const section of value.sections){fields(section,['title','items']);if(!Array.isArray(section.items)||(items+=section.items.length)>50)throw Error('Use at most 50 items.');draft.sections.push({title:text(section.title,100,'Section title'),items:section.items.map(v=>text(v,2000,'Item'))});}
+ const json=JSON.stringify(draft,null,2);if(utf8Bytes(json)>51200)throw Error('Serialized draft exceeds 50 KiB.');if(mode==='draft')return {draft,json};
+ if(!draft.name.trim()&&!draft.headline.trim()&&!draft.contact.trim()&&!draft.sections.some(s=>s.items.some(i=>i.trim())))throw Error('Enter resume content before preview.');
+ if(draft.sections.some(s=>!s.title.trim()||!s.items.length||s.items.some(i=>!i.trim())))throw Error('Each previewed section needs a title and nonempty items.');
+ const body='<h1>'+escapeHTML(draft.name||'Resume')+'</h1>'+(draft.headline?'<p>'+escapeHTML(draft.headline)+'</p>':'')+(draft.contact?'<p>'+escapeHTML(draft.contact)+'</p>':'')+draft.sections.map(s=>'<section><h2>'+escapeHTML(s.title)+'</h2><ul>'+s.items.map(i=>'<li>'+escapeHTML(i)+'</li>').join('')+'</ul></section>').join('');
+ const html='<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; style-src \'unsafe-inline\'; base-uri \'none\'; form-action \'none\'"><meta name="referrer" content="no-referrer"><title>Resume</title><style>'+RESUME_STYLE+'</style></head><body>'+body+'</body></html>\n';
+ if(utf8Bytes(html)>256000)throw Error('Generated HTML exceeds 250 KiB. Reduce the text before preview/export.');return {draft,json,html,plain:[draft.name,draft.headline,draft.contact,...draft.sections.flatMap(s=>[s.title,...s.items])].filter(Boolean).join('\n'),sections:draft.sections.length,items};
+}};
+
+</script>
+
+<script id="edb-tool-ui">
+(() => {
+'use strict';
+
+  const $ = id => document.getElementById(id);
+  const input = $('toolInput'), output = $('toolOutput'), run = $('runBtn');
+  const copy = $('copyBtn'), download = $('downloadBtn'), error = $('toolError');
+  let revision = 0, resultBlob = null, filename = 'result.txt', resultText = '';
+  const tell = message => { $('toolStatus').textContent = message; };
+  function invalidate() {
+    revision++; output.value = ''; resultText = ''; resultBlob = null;
+    copy.disabled = download.disabled = true;
+    error.textContent = ''; error.hidden = true;
+  }
+  function fail(problem) {
+    output.value = ''; resultText = ''; resultBlob = null; copy.disabled = download.disabled = true;
+    error.textContent = problem instanceof Error ? problem.message : String(problem);
+    error.hidden = false; tell('No result. Review the error and try again.');
+  }
+  function publish(text, blob = null, name = 'result.txt') {
+    resultText = text; output.value = text; resultBlob = blob; filename = name;
+    copy.disabled = !text.length; download.disabled = !(blob || text.length);
+    tell('Result updated.');
+  }
+  copy.addEventListener('click', async () => {
+    if (copy.disabled) return;
+    const token = revision, text = resultText;
+    try {
+      if (!navigator.clipboard?.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text);
+      if (token === revision) tell('Result copied.');
+    } catch {
+      if (token === revision) { output.focus(); output.select(); tell('Automatic copy unavailable. Output selected; press Ctrl+C (or ⌘C).'); }
+    }
+  });
+  download.addEventListener('click', () => {
+    if (download.disabled) return;
+    let url;
+    try {
+      url = URL.createObjectURL(resultBlob || new Blob([resultText], {type:'text/plain;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = filename;
+      document.body.append(link); link.click(); link.remove(); tell('Download requested.');
+    } catch { tell('Download unavailable. Copy the result instead.'); }
+    finally { if (url) setTimeout(() => URL.revokeObjectURL(url), 1000); }
+  });
+
+
+ let serial=0;const sectionRoot=$('sections');
+ function changed(){invalidate();$('resumePreview').replaceChildren();$('printBtn').disabled=true;}
+ function counts(){const sections=Array.from(sectionRoot.children);sections.forEach((section,i)=>{section.querySelector('legend').textContent='Section '+(i+1);const title=section.querySelector('.section-title');section.querySelector('.title-label').textContent='Section '+(i+1)+' title';const up=section.querySelector('.move-up'),down=section.querySelector('.move-down');up.disabled=i===0;down.disabled=i===sections.length-1;up.setAttribute('aria-label','Move section '+(i+1)+' up');down.setAttribute('aria-label','Move section '+(i+1)+' down');section.querySelector('.remove-section').setAttribute('aria-label','Remove section '+(i+1));Array.from(section.querySelector('.items').children).forEach((row,j)=>{row.querySelector('label').textContent='Section '+(i+1)+' item '+(j+1);row.querySelector('button').setAttribute('aria-label','Remove section '+(i+1)+' item '+(j+1));});});$('addSection').disabled=sections.length>=10;const limit=sectionRoot.querySelectorAll('.resume-item').length>=50;for(const button of sectionRoot.querySelectorAll('.add-item'))button.disabled=limit;}
+ function button(text,cls,handler){const b=document.createElement('button');b.type='button';b.textContent=text;b.className=cls;b.addEventListener('click',handler);return b;}
+ function item(section,value='',focus=false){if(sectionRoot.querySelectorAll('.resume-item').length>=50){tell('Maximum 50 items.');return;}const row=document.createElement('div');row.className='resume-item';const field=document.createElement('textarea');field.id='resume-field-'+(++serial);field.value=value;field.rows=3;field.autocomplete='off';const label=document.createElement('label');label.htmlFor=field.id;row.append(label,field,button('Remove item','',()=>{const next=row.nextElementSibling||row.previousElementSibling;row.remove();counts();changed();(next?.querySelector('textarea')||section.querySelector('.add-item')).focus()}));field.addEventListener('input',changed);section.querySelector('.items').append(row);counts();if(focus)field.focus();}
+ function section(value={title:'',items:[]},focus=false){if(sectionRoot.children.length>=10){tell('Maximum 10 sections.');return;}const box=document.createElement('fieldset'),legend=document.createElement('legend'),title=document.createElement('input');box.append(legend);title.id='resume-field-'+(++serial);title.type='text';title.className='section-title';title.value=value.title;title.autocomplete='off';const label=document.createElement('label');label.className='title-label';label.htmlFor=title.id;box.append(label,title);const items=document.createElement('div');items.className='items';box.append(items);
+  const actions=document.createElement('div');actions.className='actions';actions.append(button('Add item','add-item',()=>{item(box,'',true);changed()}),button('Move up','move-up',()=>{const previous=box.previousElementSibling;if(previous)sectionRoot.insertBefore(box,previous);counts();changed();title.focus()}),button('Move down','move-down',()=>{const next=box.nextElementSibling;if(next)sectionRoot.insertBefore(next,box);counts();changed();title.focus()}),button('Remove section','remove-section',()=>{const next=box.nextElementSibling||box.previousElementSibling;box.remove();counts();changed();(next?.querySelector('input')||$('addSection')).focus()}));box.append(actions);title.addEventListener('input',changed);sectionRoot.append(box);for(const valueItem of value.items)item(box,valueItem);counts();if(focus)title.focus();
+ }
+ function collect(){return {version:1,name:input.value,headline:$('headline').value,contact:$('contact').value,sections:Array.from(sectionRoot.children).map(s=>({title:s.querySelector('.section-title').value,items:Array.from(s.querySelectorAll('textarea')).map(i=>i.value)}))};}
+ function load(draft){input.value=draft.name;$('headline').value=draft.headline;$('contact').value=draft.contact;sectionRoot.replaceChildren();serial=0;for(const value of draft.sections)section(value);counts();changed();}
+ function render(draft){const preview=$('resumePreview');preview.replaceChildren();const name=document.createElement('h2');name.textContent=draft.name||'Resume';preview.append(name);for(const value of [draft.headline,draft.contact])if(value){const p=document.createElement('p');p.textContent=value;preview.append(p);}for(const s of draft.sections){const box=document.createElement('section'),title=document.createElement('h3'),list=document.createElement('ul');title.textContent=s.title;for(const value of s.items){const item=document.createElement('li');item.textContent=value;list.append(item);}box.append(title,list);preview.append(box);}}
+ function requestDownload(blob,name){let url;try{url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();tell('Draft download requested.');}finally{if(url)setTimeout(()=>URL.revokeObjectURL(url),1000)}}
+ for(const id of ['toolInput','headline','contact'])$(id).addEventListener('input',changed);
+ $('addSection').addEventListener('click',()=>{section({title:'',items:[]},true);changed()});
+ run.textContent='Preview resume';download.textContent='Download HTML';run.addEventListener('click',()=>{changed();try{const value=EDB_TOOL.run(JSON.stringify(collect()));render(value.draft);publish(value.plain,new Blob([value.html],{type:'text/html;charset=utf-8'}),'resume.html');$('printBtn').disabled=false;tell('Preview ready. Check the print layout before exporting.');}catch(e){fail(e)}});
+ $('exportDraft').addEventListener('click',()=>{try{const value=EDB_TOOL.run(JSON.stringify(collect()),{mode:'draft'});requestDownload(new Blob([value.json],{type:'application/json;charset=utf-8'}),'resume-draft.json');}catch(e){changed();fail(e)}});
+ $('draftFile').addEventListener('change',async()=>{changed();const file=$('draftFile').files[0],token=revision;if(!file)return;try{if(!file.size||file.size>51200)throw Error('Choose a nonempty UTF-8 JSON draft up to 50 KiB.');const bytes=await file.arrayBuffer();if(token!==revision)return;let text;try{text=new TextDecoder('utf-8',{fatal:true}).decode(bytes)}catch{throw Error('Draft must be valid UTF-8.');}const value=EDB_TOOL.run(text,{mode:'draft'});if(token!==revision)return;load(value.draft);input.focus();tell('Draft loaded locally. Preview before printing.');}catch(e){if(token===revision)fail(e)}});
+ $('printBtn').addEventListener('click',()=>{if($('printBtn').disabled)return;try{window.print()}catch{tell('Printing unavailable. Download HTML and print from your browser.')}});
+ $('clearBtn').addEventListener('click',()=>{load({version:1,name:'',headline:'',contact:'',sections:[]});$('draftFile').value='';input.focus();tell('Reset. No draft was saved automatically.');});counts();
+
+})();
+</script>
+</body></html>

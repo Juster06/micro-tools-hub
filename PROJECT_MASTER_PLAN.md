@@ -1,6 +1,55 @@
 # Project master plan
 
-## Task 19.1 — six-tool public release verification
+## Task 20 — six utilities TESTED; publication pending
+
+Task 19 is complete and publicly verified. PR #34 and PR #35 merged; approved
+main baseline is `1ead1c37861b80c552446afbdb952c9248370bf9`. Pages
+42032230127 and post-merge CI 42032231242 succeeded for that exact commit.
+The existing 62 public tools remain the release baseline; dated public evidence
+is retained in `audit/TASK_19_FINAL_PUBLIC_STATE.json`.
+
+Task 20 implements Excel Formula Generator, Emoji Picker, Image Compressor,
+PNG to ICO, Resume Builder and Passport Photo Layout Maker on
+`feat/task-20-six-tools`. Source checkpoint:
+`e2e7b5769c484d8f649dbd795aa364fe8229b423`. Per-tool development audits bind
+to that actual Git source; the containing delivery commit is identified by the
+feature branch and PR head, rather than embedding its own hash here.
+
+Inventory: 93 registered, 62 RELEASED, 6 TESTED, 0 READY, 24 PLANNED, 1 BLOCKED.
+The homepage has 68 cards; the six new cards say “Tested · publication pending”.
+All six publication fields remain null. Next planning checkpoint: 75 released;
+existing generated milestone: 100. Milestone configuration is unchanged.
+
+Fresh local mapped regression passed: 172 Python and 433 Node tests;
+1,332 canonical logic fixtures; all 68 structural/browser profiles;
+493 browser fixtures with 1,398 assertions; both neutral templates (6 logic,
+12 browser fixtures, 48 assertions). Focused source-checkpoint tests: 68/68.
+Full local browser partitions hit the unchanged 900-second deadline: first
+Chrome attempt also had three timing/protocol failures; isolated Edge passed
+544 cases with no assertion failures before timing out. The interrupted file
+and every remaining mapped file passed separately. Neither timeout is counted
+as a full partition PASS. The complete 593-case pinned Linux Chromium partition
+and all other exact-head hosted checks must pass on the development PR.
+Consent regression: 32/32 with isolated synthetic Google endpoints, including
+all six new tools. Existing production consent/privacy and measurement ID
+G-XDHPQYJ5CH are unchanged. GA4 property reporting remains unverified.
+See `audit/TASK_20_DEVELOPMENT_VERIFICATION.json` for actual local partition
+summaries, source identity, specialist checks, limitations and test history.
+
+Preserved all 62 released pages, old assets and historical audits. All 19
+original worktrees retain their original HEAD and working changes, including
+two unrelated uncommitted SESSION_HANDOFF.md edits. Task 20 uses its separate
+worktree. No owner shortcuts/settings, workflow/runtime pins or deadlines changed.
+
+**Next major task:** Review the Task 20 development PR and its exact-head required
+checks. Wait for explicit owner authorization before merge/deployment. After an
+authorized deployment, perform separate independent public source/functionality,
+existing-tool and real consent verification before proposing RELEASED status.
+No merge, deployment, public availability or Task 20 RELEASED claim is made.
+Physical printer calibration, screen-reader/cross-browser/native-dialog testing
+and GA4 property reporting remain outside the completed automated scope.
+
+## Historical Task 19.1 — pre-merge verification checkpoint
 
 PR #34 merged as `7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b`. Pages
 [42010602815](https://github.com/Juster06/micro-tools-hub/actions/runs/42010602815)
@@ -63,7 +112,7 @@ handoff edits are preserved. Delivery branch: `release/task-19-six-tools-verific
 commit with `git rev-parse HEAD`; the handoff cannot embed its own commit hash.
 Earlier sections below are historical checkpoints.
 
-## Task 19 — six implemented and TESTED utilities; publication pending
+## Historical Task 19 — development checkpoint before public release
 
 Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged.
 Approved main: `3178f70802a96f181fd82251d417abd1dd0ad76b`; Pages

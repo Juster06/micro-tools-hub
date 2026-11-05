@@ -1,0 +1,59 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-05",
+  "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+  "pages": [
+    {
+      "path": "resume-builder/index.html",
+      "source_sha256": "06bd8e051571ebc099185f41dabfc876117f2d07eba1b17bd2bb3d1a5e467adc",
+      "checks": [
+        "Canonical structural/logic/browser layers passed with nonempty fixtures.",
+        "Focused source-checkpoint tests: 11 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
+        "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+      ]
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 4,
+      "failed": 0,
+      "assertions": 4,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 1,
+      "failed": 0,
+      "assertions": 5,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Edg/156.0.4314.58"
+    }
+  },
+  "focused_test_count": 11,
+  "focused_test_hashes": {
+    "tests/tools/resume-builder/logic.test.mjs": "1b90d039042898b367c630e5a6a6bc1758be51b6389722c2eeb1b222457aeede",
+    "tests/tools/resume-builder/extended-browser.test.mjs": "4460069d87856ff19696b2a4401115c0203ab9da34460cf34f6bb60a9573038c",
+    "tests/tools/resume-builder/logic.cases.json": "6a220028bf0415c31130805067239406da8c95964eccc44861ea879721316e75",
+    "tests/tools/resume-builder/browser.cases.json": "f74aa2b41e38a9f9446a702b8d754a554f7b876e8dabc0010c5c5ce68ae213c5",
+    "tests/tools/task20-browser.mjs": "253f1e3061f10d218db50b9f23611710486f2a9e0c279758580484beb423bbd9"
+  },
+  "focused_scope": "Fresh local source-checkpoint tests, not earlier Task19.1/19.2 public evidence.",
+  "dependencies_evidence": "audit/TASK_20_DEPENDENCIES.json",
+  "limitations": [
+    "Unpublished implementation. No public source/availability verification and no RELEASED claim.",
+    "Headless Windows Chromium scope; clipboard/download APIs captured in memory; actual image bytes, pixels, ICO native reader and print/PDF geometry inspected where applicable.",
+    "No Safari/Firefox, physical-device, screen-reader, native-dialog or physical-printer certification.",
+    "Full mapped regression and exact-head required PR CI remain mandatory; actual final results are in TASK_20_DEVELOPMENT_VERIFICATION.json and the PR."
+  ],
+  "canonical_report_input_hash": "275e9252ae66cf7fd8dae6e28adc9a4aba623e64c4365e8af06b9feda5f13a19",
+  "canonical_scope": "Fresh final-metadata mapped structural/logic results plus separately completed canonical browser profiles. Each requested layer passed. Overall PARTIAL in a single-layer report denotes deliberately omitted layers. Full local browser CI partitions timed out; exact-head hosted CI remains mandatory."
+}

@@ -1,6 +1,55 @@
 # Session handoff
 
-## Task 19.1 — six-tool public release verification
+## Task 20 — six utilities TESTED; publication pending
+
+Task 19 is complete and publicly verified. PR #34 and PR #35 merged; approved
+main baseline is `1ead1c37861b80c552446afbdb952c9248370bf9`. Pages
+42032230127 and post-merge CI 42032231242 succeeded for that exact commit.
+The existing 62 public tools remain the release baseline; dated public evidence
+is retained in `audit/TASK_19_FINAL_PUBLIC_STATE.json`.
+
+Task 20 implements Excel Formula Generator, Emoji Picker, Image Compressor,
+PNG to ICO, Resume Builder and Passport Photo Layout Maker on
+`feat/task-20-six-tools`. Source checkpoint:
+`e2e7b5769c484d8f649dbd795aa364fe8229b423`. Per-tool development audits bind
+to that actual Git source; the containing delivery commit is identified by the
+feature branch and PR head, rather than embedding its own hash here.
+
+Inventory: 93 registered, 62 RELEASED, 6 TESTED, 0 READY, 24 PLANNED, 1 BLOCKED.
+The homepage has 68 cards; the six new cards say “Tested · publication pending”.
+All six publication fields remain null. Next planning checkpoint: 75 released;
+existing generated milestone: 100. Milestone configuration is unchanged.
+
+Fresh local mapped regression passed: 172 Python and 433 Node tests;
+1,332 canonical logic fixtures; all 68 structural/browser profiles;
+493 browser fixtures with 1,398 assertions; both neutral templates (6 logic,
+12 browser fixtures, 48 assertions). Focused source-checkpoint tests: 68/68.
+Full local browser partitions hit the unchanged 900-second deadline: first
+Chrome attempt also had three timing/protocol failures; isolated Edge passed
+544 cases with no assertion failures before timing out. The interrupted file
+and every remaining mapped file passed separately. Neither timeout is counted
+as a full partition PASS. The complete 593-case pinned Linux Chromium partition
+and all other exact-head hosted checks must pass on the development PR.
+Consent regression: 32/32 with isolated synthetic Google endpoints, including
+all six new tools. Existing production consent/privacy and measurement ID
+G-XDHPQYJ5CH are unchanged. GA4 property reporting remains unverified.
+See `audit/TASK_20_DEVELOPMENT_VERIFICATION.json` for actual local partition
+summaries, source identity, specialist checks, limitations and test history.
+
+Preserved all 62 released pages, old assets and historical audits. All 19
+original worktrees retain their original HEAD and working changes, including
+two unrelated uncommitted SESSION_HANDOFF.md edits. Task 20 uses its separate
+worktree. No owner shortcuts/settings, workflow/runtime pins or deadlines changed.
+
+**Next major task:** Review the Task 20 development PR and its exact-head required
+checks. Wait for explicit owner authorization before merge/deployment. After an
+authorized deployment, perform separate independent public source/functionality,
+existing-tool and real consent verification before proposing RELEASED status.
+No merge, deployment, public availability or Task 20 RELEASED claim is made.
+Physical printer calibration, screen-reader/cross-browser/native-dialog testing
+and GA4 property reporting remain outside the completed automated scope.
+
+## Historical Task 19.1 — pre-merge verification checkpoint
 
 PR #34 merged as `7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b`. Pages
 [42010602815](https://github.com/Juster06/micro-tools-hub/actions/runs/42010602815)
@@ -63,7 +112,7 @@ handoff edits are preserved. Delivery branch: `release/task-19-six-tools-verific
 commit with `git rev-parse HEAD`; the handoff cannot embed its own commit hash.
 Earlier sections below are historical checkpoints.
 
-## Task 19 — six implemented and TESTED utilities; publication pending
+## Historical Task 19 — development checkpoint before public release
 
 Task 18 is complete, publicly verified and deployed. PR #32 and PR #33 are merged.
 Approved main: `3178f70802a96f181fd82251d417abd1dd0ad76b`; Pages
@@ -1083,11 +1132,11 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 100 released tools; 62 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 30; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 62; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 24; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 6; RELEASED: 62; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: release/task-19-six-tools-verification.
-- Latest commit observed before generation: 7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b.
+- Git branch: feat/task-20-six-tools.
+- Latest commit observed before generation: e2e7b5769c484d8f649dbd795aa364fe8229b423.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -1095,15 +1144,15 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 
 These are registry verification records, not new tests or tasks executed by this generator.
 - YouTube Title Checker: RELEASED, evidence dated 2026-11-05.
+- Resume Builder: TESTED, evidence dated 2026-11-05.
 - Regex Tester: RELEASED, evidence dated 2026-11-05.
 - QR Code Generator: RELEASED, evidence dated 2026-11-05.
+- PNG to ICO: TESTED, evidence dated 2026-11-05.
 - Password Generator: RELEASED, evidence dated 2026-11-05.
+- Passport Photo Layout Maker: TESTED, evidence dated 2026-11-05.
 - Passphrase Generator: RELEASED, evidence dated 2026-11-05.
 - Instagram Bio Formatter: RELEASED, evidence dated 2026-11-05.
 - Image Format Converter: RELEASED, evidence dated 2026-11-05.
-- Image Cropper: RELEASED, evidence dated 2026-11-05.
-- File Signature Inspector: RELEASED, evidence dated 2026-11-05.
-- CSV to TXT: RELEASED, evidence dated 2026-11-05.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -1121,71 +1170,21 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
-- ` M` csv-data-cleaner/README.md
-- ` M` csv-to-txt/README.md
-- ` M` image-cropper/README.md
+- ` M` emoji-picker/README.md
+- ` M` excel-formula-generator/README.md
+- ` M` image-compressor/README.md
 - ` M` index.html
-- ` M` passphrase-generator/README.md
-- ` M` password-generator/README.md
-- ` M` qr-code-generator/README.md
-- ` M` scripts/ci/README.md
-- ` M` scripts/ci/coverage.json
-- ` M` scripts/consent-static.test.mjs
-- ` M` tests/test_task18_preservation.py
-- ` M` tests/test_task19_preservation.py
-- ` M` tests/tools/age-calculator/integration-browser.test.mjs
-- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/compound-interest-calculator/integration-browser.test.mjs
-- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
-- ` M` tests/tools/csv-column-extractor/integration-browser.test.mjs
-- ` M` tests/tools/csv-merger/integration-browser.test.mjs
-- ` M` tests/tools/csv-viewer/integration-browser.test.mjs
-- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
-- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-row-finder/integration-browser.test.mjs
-- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
-- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
-- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
-- ` M` tests/tools/image-color-picker/integration-browser.test.mjs
-- ` M` tests/tools/image-resizer/integration-browser.test.mjs
-- ` M` tests/tools/image-rotator/integration-browser.test.mjs
-- ` M` tests/tools/image-watermark/integration-browser.test.mjs
-- ` M` tests/tools/invoice-generator/integration-browser.test.mjs
-- ` M` tests/tools/json-formatter/integration-browser.test.mjs
-- ` M` tests/tools/json-to-txt/integration-browser.test.mjs
-- ` M` tests/tools/loan-repayment-calculator/integration-browser.test.mjs
-- ` M` tests/tools/local-to-do-list/integration-browser.test.mjs
-- ` M` tests/tools/meeting-agenda-generator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
-- ` M` tests/tools/pomodoro-timer/integration-browser.test.mjs
-- ` M` tests/tools/posting-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/printable-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
-- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
-- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
-- ` M` tests/tools/sha256-hash-checker/integration-browser.test.mjs
-- ` M` tests/tools/slug-generator/integration-browser.test.mjs
-- ` M` tests/tools/text-difference-checker/integration-browser.test.mjs
-- ` M` tests/tools/text-reverser/integration-browser.test.mjs
-- ` M` tests/tools/text-sorter/integration-browser.test.mjs
-- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
-- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/username-generator/integration-browser.test.mjs
-- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
-- ` M` tests/tools/vat-calculator/integration-browser.test.mjs
-- ` M` tests/tools/working-days-calculator/integration-browser.test.mjs
-- ` M` tests/tools/youtube-description-formatter/integration-browser.test.mjs
-- ` M` tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs
-- `??` audit/CSV_DATA_CLEANER_RELEASE_VERIFICATION.json
-- `??` audit/CSV_TO_TXT_RELEASE_VERIFICATION.json
-- `??` audit/IMAGE_CROPPER_RELEASE_VERIFICATION.json
-- `??` audit/PASSPHRASE_GENERATOR_RELEASE_VERIFICATION.json
-- `??` audit/PASSWORD_GENERATOR_RELEASE_VERIFICATION.json
-- `??` audit/QR_CODE_GENERATOR_RELEASE_VERIFICATION.json
-- `??` audit/TASK_19_PUBLIC_RELEASE_VERIFICATION.json
-- `??` tests/test_task19_release.py
+- ` M` passport-photo-layout-maker/README.md
+- ` M` png-to-ico/README.md
+- ` M` resume-builder/README.md
+- ` M` tests/test_task20_preservation.py
+- `??` audit/EMOJI_PICKER_VERIFICATION.json
+- `??` audit/EXCEL_FORMULA_GENERATOR_VERIFICATION.json
+- `??` audit/IMAGE_COMPRESSOR_VERIFICATION.json
+- `??` audit/PASSPORT_PHOTO_LAYOUT_MAKER_VERIFICATION.json
+- `??` audit/PNG_TO_ICO_VERIFICATION.json
+- `??` audit/RESUME_BUILDER_VERIFICATION.json
+- `??` audit/TASK_20_DEVELOPMENT_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

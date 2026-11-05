@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "draft-roundtrip",
+      "input": "{\"version\": 1, \"name\": \"Ada\", \"headline\": \"\", \"contact\": \"\", \"sections\": []}",
+      "expected": {
+        "draft": {
+          "version": 1,
+          "name": "Ada",
+          "headline": "",
+          "contact": "",
+          "sections": []
+        },
+        "json": "{\n  \"version\": 1,\n  \"name\": \"Ada\",\n  \"headline\": \"\",\n  \"contact\": \"\",\n  \"sections\": []\n}"
+      },
+      "options": {
+        "mode": "draft"
+      }
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "error": "50 KiB"
+    },
+    {
+      "id": "invalid-version",
+      "input": "{\"version\": 2, \"name\": \"Ada\", \"headline\": \"\", \"contact\": \"\", \"sections\": []}",
+      "error": "version"
+    },
+    {
+      "id": "unknown-field",
+      "input": "{\"version\": 1, \"name\": \"Ada\", \"headline\": \"\", \"contact\": \"\", \"sections\": [], \"__proto__\": {}}",
+      "error": "unsupported"
+    }
+  ]
+}

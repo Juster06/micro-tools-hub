@@ -7,7 +7,12 @@ import {fileURLToPath} from 'node:url';
 import {launchBrowser,findBrowser} from '../scripts/tool-tests/browser.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');let server,b,origin,events=[],pending=[],holdTag=false;
 const wait=async(fn)=>{for(let i=0;i<200;i++){if(await fn())return;await new Promise(r=>setTimeout(r,25))}throw Error('Expected browser state not reached')};
-async function navigate(p='/'){await b.call('Page.navigate',{url:origin+p});await wait(async()=>{try{return await b.evaluate("document.readyState==='complete'&&!!document.getElementById('edb-consent-root')")}catch{return false}})}
+let navigationSequence=0;
+async function navigate(p='/'){
+ const marker='consent-document-'+(++navigationSequence),url=origin+p;
+ const hook=await b.call('Page.addScriptToEvaluateOnNewDocument',{source:'window.__edbConsentDocument='+JSON.stringify(marker)});
+ try{await b.call('Page.navigate',{url});await wait(async()=>{try{return await b.evaluate(`window.__edbConsentDocument===${JSON.stringify(marker)}&&location.href===${JSON.stringify(url)}&&document.readyState==='complete'&&!!document.getElementById('edb-consent-root')`)}catch{return false}})}finally{await b.call('Page.removeScriptToEvaluateOnNewDocument',{identifier:hook.identifier})}
+}
 async function click(id){await b.evaluate(`document.getElementById(${JSON.stringify(id)}).click();true`)}
 async function clear(){await navigate('/');await b.evaluate('localStorage.clear();true');await navigate('/');events=[]}
 function gaRequests(){return events.filter(e=>e.includes('googletagmanager.com')||e.includes('google-analytics.com'))}
@@ -83,4 +88,26 @@ for(const id of task19)test(`Task 19 ${id}: usable without consent, accepted nav
  await navigate(route);await wait(async()=>(await commands()).some(x=>x[0]==='event'));assert.equal((await commands()).filter(x=>x[0]==='event'&&x[1]==='page_view').length,1);assert.equal((await commands()).find(x=>x[0]==='event')[2].page_location,origin+route);
  await click('edb-consent-settings');await click('edb-consent-reject');assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"),true);
  events=[];await navigate(route);await exerciseTask19(id);assert.deepEqual(gaRequests(),[]);
+});
+
+// Task20 pages use the unchanged shared consent component. Google tag is mocked.
+const task20=['excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'];
+async function exerciseTask20(id){
+ if(['image-compressor','png-to-ico','passport-photo-layout-maker'].includes(id)){
+  await b.evaluate(`(async()=>{const c=document.createElement('canvas');c.width=c.height=4;const ctx=c.getContext('2d');ctx.fillStyle='red';ctx.fillRect(0,0,4,4);const blob=await new Promise(r=>c.toBlob(r,'image/png')),dt=new DataTransfer();dt.items.add(new File([blob],'synthetic.png'));toolInput.files=dt.files;toolInput.dispatchEvent(new Event('change'));return true})()`);
+ }else if(id==='excel-formula-generator')await click('exampleBtn');
+ else await b.evaluate(`toolInput.value=${JSON.stringify(id==='emoji-picker'?'United Kingdom':'Synthetic resume')};toolInput.dispatchEvent(new Event('input'));true`);
+ await click('runBtn');
+ if(id==='emoji-picker')await b.evaluate('results.querySelector("button").click();true');
+ await wait(()=>b.evaluate('!runBtn.disabled&&!!toolOutput.value'));assert.equal(await b.evaluate('toolError.hidden'),true);
+}
+for(const id of task20)test(`Task20 ${id}: usable without consent, one accepted page view, no duplicate and persistent withdrawal`,async()=>{
+ const route='/'+id+'/index.html';await navigate(route);await exerciseTask20(id);assert.deepEqual(gaRequests(),[]);
+ await click('edb-consent-reject');await exerciseTask20(id);assert.deepEqual(gaRequests(),[]);
+ await click('edb-consent-settings');await click('edb-consent-accept');await wait(async()=>(await commands()).some(x=>x[0]==='event'));
+ assert.equal(gaRequests().filter(x=>x.includes('gtag/js')).length,1);assert.equal((await commands()).filter(x=>x[0]==='event'&&x[1]==='page_view').length,1);
+ await click('edb-consent-settings');await click('edb-consent-accept');assert.equal((await commands()).filter(x=>x[0]==='event').length,1);
+ await navigate(route);await wait(async()=>(await commands()).some(x=>x[0]==='event'));assert.equal((await commands()).filter(x=>x[0]==='event'&&x[1]==='page_view').length,1);assert.equal((await commands()).find(x=>x[0]==='event')[2].page_location,origin+route);
+ await click('edb-consent-settings');await click('edb-consent-reject');assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"),true);
+ events=[];await navigate(route);await exerciseTask20(id);assert.deepEqual(gaRequests(),[]);
 });
