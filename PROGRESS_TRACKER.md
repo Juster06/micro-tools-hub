@@ -1,5 +1,65 @@
 # Progress tracker
 
+## Task 18.1 — six-tool public release verification
+
+PR #32 merged as `8cb97c3f1450634524a40aa9b7cf016bd6b3c78e`. Pages
+[41961586696](https://github.com/Juster06/micro-tools-hub/actions/runs/41961586696)
+and post-merge Functional CI
+[41961587358](https://github.com/Juster06/micro-tools-hub/actions/runs/41961587358)
+succeeded for that exact commit, including Required functional checks. Main had
+no newer source changes at verification.
+
+Fresh public HTTPS checks matched approved Git bytes for the homepage, all 56
+tool pages, privacy notice, consent script and registry (60 responses), plus the
+six directory-index canonical URLs. All 56 distinct visible homepage cards,
+canonical routes, search/back navigation and the custom domain were verified.
+The six Task 18 tools passed **49 fresh public Chromium interaction tests** with
+synthetic inputs, including real image Blob MIME/pixel checks, CSV expansion
+limits, and actual regex Worker timeout/cancellation/termination. Existing 50
+releases were checked through fresh HTTP/source identity and post-merge CI;
+fresh individual interactions for all 50 are not claimed.
+
+Two fresh isolated browser profiles verified actual public consent behavior.
+No Google requests occurred before choice, after rejection or after withdrawal.
+Accepted homepage/title/regex navigations each sent exactly one real GA4 page
+view for `G-XDHPQYJ5CH`, with HTTP 204; repeat acceptance did not duplicate it.
+Three synthetic test page views were sent. GA4 property-level reporting remains
+unverified. The shared analytics code, settings and privacy notice are unchanged.
+
+See `audit/TASK_18_PUBLIC_RELEASE_VERIFICATION.json` and six separate
+`*_RELEASE_VERIFICATION.json` records for timestamps, raw/normalized hashes,
+deployed revision, browser scope and limitations. Prior development/release
+audits are retained. Clipboard/download APIs were captured in memory; pixels and
+output bytes used real browser codecs. No native-dialog, physical-device,
+screen-reader or cross-browser certification is claimed. The optional
+`/favicon.ico` returns 404 (eight recorded resource-console errors across seven
+contexts); no uncaught application errors, essential asset failures or unexpected
+dependencies occurred. This cosmetic icon issue is not changed in this task.
+
+This branch proposes **93 registered, 56 RELEASED, 0 TESTED, 0 READY,
+36 PLANNED, 1 BLOCKED**. Main/public registry metadata remain at 50 RELEASED and
+6 TESTED until separately authorized integration. Six homepage labels are proposed
+through the existing integration gate; all utility source files are unchanged.
+The next planning checkpoint is 75 releases (56/75); the existing generated
+milestone remains 100. Milestone configuration is unchanged.
+
+Local Python **153/153** and Node **363/363** passed, plus **1252** inline
+logic fixtures. All six canonical suites passed structural/logic/browser layers
+(49 logic fixtures; 10 browser fixtures / 34 assertions). Project/source/registry
+validation passed with zero errors and warnings. The full local catalog Chromium
+run is still progressing at this checkpoint; no full local PASS is claimed.
+The exact-head hosted PR gate must complete the full mapped Chromium, 56 browser
+profiles and neutral templates. Actual hosted results are in the PR/final delivery.
+See `audit/TASK_18_RELEASE_REGRESSION.json`. Existing assertions are retained,
+with six-ID release counts and publication-aware checks replacing development-only
+TESTED assumptions. No workflow/runtime/timeout or required-check relaxation.
+
+**Next major task:** Owner review of the Task 18.1 release-verification PR and its
+required checks. Await separate authorization before merge; then verify deployment
+of the release metadata. No administrator bypass, deployment, new utility or
+analytics/property setting change is authorized here. The two unrelated local
+handoff edits are preserved. Earlier sections below are historical checkpoints.
+
 <!-- TASK18:START -->
 ## Task 18 — development checkpoint
 
@@ -221,14 +281,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 6 |
-| RELEASED | 50 |
+| TESTED | 0 |
+| RELEASED | 56 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 37 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **100 released tools**. Progress: 50/100 (50.0%); remaining: 50.
+Current growth milestone: **100 released tools**. Progress: 56/100 (56.0%); remaining: 44.
 
 ### Tools by category
 
@@ -262,12 +322,12 @@ Next ready tool: **REQUIRES REVIEW**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| YouTube Title Checker | TESTED | 2026-11-05 |
-| Regex Tester | TESTED | 2026-11-05 |
-| Instagram Bio Formatter | TESTED | 2026-11-05 |
-| Image Format Converter | TESTED | 2026-11-05 |
-| File Signature Inspector | TESTED | 2026-11-05 |
-| CSV ↔ JSON Converter | TESTED | 2026-11-05 |
+| YouTube Title Checker | RELEASED | 2026-11-05 |
+| Regex Tester | RELEASED | 2026-11-05 |
+| Instagram Bio Formatter | RELEASED | 2026-11-05 |
+| Image Format Converter | RELEASED | 2026-11-05 |
+| File Signature Inspector | RELEASED | 2026-11-05 |
+| CSV ↔ JSON Converter | RELEASED | 2026-11-05 |
 | YouTube Thumbnail Preview | RELEASED | 2026-11-04 |
 | YouTube Description Formatter | RELEASED | 2026-11-04 |
 | Username Generator | RELEASED | 2026-11-04 |
