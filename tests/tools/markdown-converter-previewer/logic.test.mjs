@@ -24,3 +24,5 @@ test('only reviewed HTTP(S) URLs survive export; all preview links are inert',as
 test('raw HTML, handlers, frames, SVG and remote images cannot become active markup',async()=>{
  const r=await run('<script>alert(1)</script>\n\n<svg onload="bad()"></svg>\n\n![alt](https://example.invalid/a)\n\n<iframe src="https://example.invalid/"></iframe>');assert.ok(r.ok);assert.doesNotMatch(r.text,/<(?:script|svg|img|iframe)\b/i);assert.match(r.text,/&lt;script&gt;/);assert.ok(r.text.includes('alt'));
 });
+
+test('reference-link amplification is rejected during rendering, before concatenating full HTML',async()=>{const input='[x][r] '.repeat(900)+'\n\n[r]: https://example.invalid/'+'a'.repeat(16000);assert.ok(Buffer.byteLength(input)<32768);const r=await run(input);assert.equal(r.ok,false);assert.match(r.error,/Generated link output exceeds 128 KiB/);assert.equal(r.text,undefined);});
