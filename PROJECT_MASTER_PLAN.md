@@ -1,6 +1,21 @@
 # Project master plan
 
-## Current state — Task 22.1 public release-verification proposal
+## Current state — Task 22 complete; 75 publicly verified releases
+
+Task 22 development PR [#40](https://github.com/Juster06/micro-tools-hub/pull/40) and release-verification PR [#41](https://github.com/Juster06/micro-tools-hub/pull/41) are merged. The independently verified public main commit is `2234bffef4cf376357ccb7cae3d1c0ec105d08c8`.
+
+[Pages deployment 42218207674](https://github.com/Juster06/micro-tools-hub/actions/runs/42218207674) and [post-merge Functional CI 42218207882](https://github.com/Juster06/micro-tools-hub/actions/runs/42218207882) completed successfully for that commit; all four required functional checks passed (201 Python, 490 Node and 684 Chromium tests, plus canonical profiles).
+
+Task 22.2 final public verification on 2026-11-06 confirmed all 75 distinct visible cards, canonical routes and public tool pages; approved source identity for the pages, privacy notice, registry, progress tracker and all 14 assets; 22 fresh functionality/interface/catalog cases; and 13 fresh isolation cases with root/child network positive controls. Two fresh browser profiles verified real consent behavior, exactly three accepted page views returning HTTP 204 without duplicates, and no Google requests before consent or after rejection/withdrawal. GA4 property-level reporting remains unverified; measurement ID remains `G-XDHPQYJ5CH`.
+
+**Task 22 is complete and publicly verified. The 75-tool planning checkpoint is achieved and publicly verified.** The deployed inventory is **93 registered, 75 RELEASED, 0 TESTED, 0 READY, 17 PLANNED and 1 BLOCKED**. The generated milestone remains **100 released tools**, at 75/100 (75.0%), with 25 remaining; milestone configuration is unchanged.
+
+PDF Compressor remains BLOCKED and PDF processing remains deferred. Existing optional favicon404, Resume Builder print-margin issue and historical Windows local full-run/Image Compressor limitations remain documented. Runtime code, registry records, privacy controls and historical source-bound audits are unchanged by this documentation update. The earlier proposal sections below are dated historical checkpoints, not current pending-merge instructions.
+
+**Next major task:** Await explicit owner instructions for development after the verified 75-tool checkpoint. **Task 23 has not begun and requires explicit owner authorization.** This documentation-only branch (`docs/task-22-final-public-state`) does not authorize a merge or deployment; do not use administrator bypass.
+
+
+## Historical Task 22.1 public release-verification proposal
 
 Task 22 development PR #40 is merged into main at `64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140`. The standard exact-head merge followed four passing checks and a clean PR, without requesting an administrator override. Pages 42205116968 and all four post-merge Functional CI 42205117641 checks succeeded for that commit. No historical administrator-bypass audit claim is made.
 
