@@ -1,0 +1,11 @@
+{
+  "name": "reviewed-task22-build-only",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "marked": "18.1.3",
+    "parse5": "8.1.0",
+    "entities": "9.0.0",
+    "esbuild": "0.28.2"
+  }
+}

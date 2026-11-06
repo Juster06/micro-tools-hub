@@ -10,6 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20'
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
+from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS,COUNTS,assert_transition,without_cards
 
 def read(path):return (ROOT/path).read_text(encoding='utf8')
@@ -24,7 +25,7 @@ class Task21Preservation(unittest.TestCase):
         self.assertEqual(len(new['tools']),93);self.assertEqual(new['milestones'],old['milestones']);self.assertEqual(set(byid),{t['id'] for t in old['tools']})
         for tool in old['tools']:
             if tool['id'] in IDS:assert_transition(self,tool,byid[tool['id']])
-            else:self.assertEqual(tool,byid[tool['id']])
+            else:assert_unchanged_or_task22(self,tool,byid[tool['id']])
         self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in COUNTS},COUNTS)
 
     def test_all68_runtime_pages_existing_assets_privacy_domain_and_ci_pins_unchanged(self):
@@ -38,7 +39,7 @@ class Task21Preservation(unittest.TestCase):
         for path in paths:self.assertEqual(normalized((ROOT/path).read_bytes()),normalized(blob(path)),path)
 
     def test_homepage_changes_only_six_verified_cards_and_count(self):
-        current=read('index.html');home=Homepage(current);self.assertEqual(len(home.cards),74);self.assertEqual(len({c['attrs']['href'] for c in home.cards}),74)
+        current=read('index.html');home=Homepage(current);self.assertEqual(len(home.cards),75);self.assertEqual(len({c['attrs']['href'] for c in home.cards}),75)
         current=without_cards(self,current,Homepage);home=Homepage(current);start,end=home.counts[0];current=current[:start]+'68 tools ready to use'+current[end:]
         self.assertEqual(current,blob('index.html').decode('utf8').replace('\r\n','\n'))
 
@@ -83,7 +84,7 @@ class Task21Preservation(unittest.TestCase):
         for p in (ROOT/'scripts/vendor/task21').glob('*-worker.mjs'):self.assertNotRegex(p.read_text(encoding='utf8'),r'\beval\s*\(|new\s+Function')
 
     def test_ci_maps_all74_tools_and_every_new_scope_without_lowering_floors(self):
-        c=load('scripts/ci/coverage.json');old=json.loads(blob('scripts/ci/coverage.json'));self.assertEqual(len(c['tools']),74)
+        c=load('scripts/ci/coverage.json');old=json.loads(blob('scripts/ci/coverage.json'));self.assertEqual(len(c['tools']),75)
         for tid in IDS:
             self.assertEqual(c['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'})
             self.assertIn('tests/tools/'+tid+'/logic.test.mjs',c['node_files'])

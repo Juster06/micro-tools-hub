@@ -1,0 +1,1107 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "verified_at": "2026-11-06T09:09:12.268028+00:00",
+  "scope": "Pre-production scratch prototype; no public deployment or comprehensive security certification. Production tests rerun separately.",
+  "parser": "marked 18.1.3",
+  "sanitizer": "Independent bounded parse5 8.1.0 HTML-namespace/tag allowlist, all attributes stripped except reviewed export links; preview omits anchors entirely. Raw Markdown HTML escaped before sanitization.",
+  "dependencies": {
+    "scope": "Isolated pre-production candidate review; no adoption/implementation approval yet.",
+    "packages": [
+      {
+        "name": "marked",
+        "version": "18.1.3",
+        "time": "2026-11-02T18:00:32.810Z",
+        "latest_releases": [
+          [
+            "18.1.3",
+            "2026-11-02T18:00:32.810Z"
+          ],
+          [
+            "18.1.2",
+            "2026-10-26T14:54:49.753Z"
+          ],
+          [
+            "18.1.1",
+            "2026-10-12T12:29:51.405Z"
+          ],
+          [
+            "18.1.0",
+            "2026-10-05T15:40:41.608Z"
+          ],
+          [
+            "18.0.14",
+            "2026-09-22T06:09:15.277Z"
+          ],
+          [
+            "18.0.13",
+            "2026-09-12T21:44:16.925Z"
+          ],
+          [
+            "18.0.12",
+            "2026-09-07T20:40:26.015Z"
+          ],
+          [
+            "18.0.11",
+            "2026-08-24T16:55:21.888Z"
+          ],
+          [
+            "18.0.10",
+            "2026-08-18T03:07:06.748Z"
+          ],
+          [
+            "18.0.9",
+            "2026-08-04T04:35:37.017Z"
+          ],
+          [
+            "18.0.8",
+            "2026-08-04T03:29:53.106Z"
+          ],
+          [
+            "18.0.7",
+            "2026-07-21T01:50:38.417Z"
+          ]
+        ],
+        "repository": {
+          "url": "git+https://github.com/markedjs/marked.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "dependencies": {},
+        "optionalDependencies": {},
+        "engines": {
+          "node": ">= 20"
+        },
+        "dist": {
+          "shasum": "2b1f2aff274503e3ec053c412c6eb979bd7c8194",
+          "tarball": "https://registry.npmjs.org/marked/-/marked-18.1.3.tgz",
+          "fileCount": 12,
+          "integrity": "sha512-9ChMH8EVVgjgID49nsL6IWxWk5c6GtAsq/xw7U1ggkjkU5AGuv68oLTVlFRtvcUYZtpbNyjyvGo3YDu0fGapiw==",
+          "signatures": [
+            {
+              "sig": "MEUCIB6ejjHAZOxnrKJsBP3606wccjWf3tAuHmPqdJkg5neBAiEAmNnIqPpj6hzRHyw2WmX9AVKnPDg6/3utLkaN4kc+TpY=",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            },
+            {
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+              "sig": "MEQCIAPR0iP5VEJdGPKexYiAtY6Z2FshJeCl2lNK9ktATiacAiBDL4KULUsZnJd+12pffNExp5SIrlIhtX2n/e3c/Mzbtw=="
+            }
+          ],
+          "attestations": {
+            "url": "https://registry.npmjs.org/-/npm/v1/attestations/marked@18.1.3",
+            "provenance": {
+              "predicateType": "https://slsa.dev/provenance/v1"
+            }
+          },
+          "unpackedSize": 558450
+        },
+        "tarball_bytes": 143322,
+        "sha256": "5ca94887c584f7a67b27acd6b08e0a19da651418b627295d82d57fe63a56c82b",
+        "files": [
+          {
+            "path": "LICENSE",
+            "bytes": 2942,
+            "sha256": "8e3a3f82f59a60958f56ca08f445647c32a4733dc7ca6c2c46f6eb898471ab9c"
+          },
+          {
+            "path": "man/marked.1",
+            "bytes": 2429,
+            "sha256": "31a19c18deae1ceff646bf990208382ff59b5cdc54f02bc620dc595003722d61"
+          },
+          {
+            "path": "bin/main.js",
+            "bytes": 6939,
+            "sha256": "8d6c4abb481b30118bc22b8254f7998ebc2b9ced9cc1f1d26f9fcc8a868040ef"
+          },
+          {
+            "path": "lib/marked.esm.js",
+            "bytes": 49668,
+            "sha256": "e76f3b37046a5d294159872002e5f6fcda8ed232e1be45ff76b3863f2919dae3"
+          },
+          {
+            "path": "bin/marked.js",
+            "bytes": 264,
+            "sha256": "dc015672ddc613210a6fae6ab123b9295a670a4e7044a8170b41ccf4d8f5af06"
+          },
+          {
+            "path": "lib/marked.umd.js",
+            "bytes": 50548,
+            "sha256": "c34a221dc89e91833a88822e7717b8a0cf27118f8c9a8779dffb48a6be31f97a"
+          },
+          {
+            "path": "package.json",
+            "bytes": 3407,
+            "sha256": "e7c712102d49fc813ddf5c655506ebb1522e03279301b754bb7264c6f5c7a364"
+          },
+          {
+            "path": "lib/marked.esm.js.map",
+            "bytes": 203321,
+            "sha256": "a29b7d9f036b467f1ea0dc0093d04122ab246c2c99a1f1c014268a44d9496e6d"
+          },
+          {
+            "path": "lib/marked.umd.js.map",
+            "bytes": 203838,
+            "sha256": "a9c56dfc60230c29d455ab4503f238e7bd763cd628fdf882a8d80d6c1a500e81"
+          },
+          {
+            "path": "man/marked.1.md",
+            "bytes": 1970,
+            "sha256": "13f927f3c3bcf74bf32c586c81b03821e4e646a040459919cda1fd13cd25a7e3"
+          },
+          {
+            "path": "README.md",
+            "bytes": 3505,
+            "sha256": "b2f958f05b55e66a736a99745c3bb2629793867b39c05f1bb8532722dddabd54"
+          },
+          {
+            "path": "lib/marked.d.ts",
+            "bytes": 29619,
+            "sha256": "ad8dc94b5773deb320e24cc4bd8ebc50a3a4f64f629cae833941d587a36bf813"
+          }
+        ],
+        "osv": {},
+        "path": "C:\\Users\\omarz\\Documents\\Codex\\2026-11-05\\everyday-digital-box-new-codex-session\\work\\task22-setup\\packages\\marked-18.1.3"
+      },
+      {
+        "name": "parse5",
+        "version": "8.1.0",
+        "time": "2026-11-01T14:21:40.031Z",
+        "latest_releases": [
+          [
+            "8.1.0",
+            "2026-11-01T14:21:40.031Z"
+          ],
+          [
+            "8.0.1",
+            "2026-04-19T20:16:16.612Z"
+          ],
+          [
+            "8.0.0",
+            "2025-07-09T21:02:26.323Z"
+          ],
+          [
+            "7.3.0",
+            "2025-04-22T17:04:33.658Z"
+          ],
+          [
+            "7.2.1",
+            "2024-10-28T10:22:23.641Z"
+          ],
+          [
+            "7.2.0",
+            "2024-10-12T09:29:43.511Z"
+          ],
+          [
+            "7.1.2",
+            "2022-11-20T21:57:42.503Z"
+          ],
+          [
+            "7.1.1",
+            "2022-09-02T17:11:59.218Z"
+          ],
+          [
+            "7.1.0",
+            "2022-09-02T15:42:58.130Z"
+          ],
+          [
+            "7.0.0",
+            "2022-04-20T11:16:39.188Z"
+          ],
+          [
+            "6.0.1",
+            "2020-07-24T15:17:51.325Z"
+          ],
+          [
+            "6.0.0",
+            "2020-04-15T22:53:21.311Z"
+          ]
+        ],
+        "repository": {
+          "url": "git://github.com/inikulin/parse5.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "dependencies": {
+          "entities": "^9.0.0"
+        },
+        "optionalDependencies": {},
+        "engines": null,
+        "dist": {
+          "shasum": "de2cf56a4f7f47737eae13d46a8acb33a56e4844",
+          "tarball": "https://registry.npmjs.org/parse5/-/parse5-8.1.0.tgz",
+          "fileCount": 33,
+          "integrity": "sha512-sq3qBFpee5jeocbFbO48VHlGr8sT7mbXS0vxlKN6sottBtJzrOG3998sr0llSZcQAGgfpdmEYAIZE0P9z0dE8w==",
+          "signatures": [
+            {
+              "sig": "MEYCIQDf+2fHNDSOWB16Bq66H/d9UTh9NXyQosoMWVKTFCmpBwIhAM/AaduqDAiLHfBwx7FdNQMK7812M2gb8TnYPA1lftPv",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            },
+            {
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+              "sig": "MEQCIG9SDkTQGFbFVSAKJOUz9gS4ytmdoWE7tqI3jU/VtuCzAiAFIbWSKX0h8qT1BEZyJ0+jZcuWC9hWD696hffYBlqy7A=="
+            }
+          ],
+          "unpackedSize": 351101
+        },
+        "tarball_bytes": 59407,
+        "sha256": "eded22e36de43a6cd10f91e0e2e07c990b07d669cf34cd53fdb8fe0ba28c968d",
+        "files": [
+          {
+            "path": "LICENSE",
+            "bytes": 1109,
+            "sha256": "8c535800331e1e4439835555b3f9edc7fe9dee2fab0d8bbbd5a982e8b8343d4d"
+          },
+          {
+            "path": "dist/tree-adapters/default.js",
+            "bytes": 5232,
+            "sha256": "14b6408b0abb1c041e645644f977db34da280239be8a59a2eb3c9e282e89b7c4"
+          },
+          {
+            "path": "dist/common/doctype.js",
+            "bytes": 4661,
+            "sha256": "855d8cd764782cdc73003a9847d03ed261c5158f6a6901e563ccd4d3b92c8b16"
+          },
+          {
+            "path": "dist/common/error-codes.js",
+            "bytes": 4746,
+            "sha256": "b38ae5ac4f2a31ce2e1cfeca35cf7b89cc66736cd5be068cc433a3ccaca78be2"
+          },
+          {
+            "path": "dist/common/foreign-content.js",
+            "bytes": 6299,
+            "sha256": "129a84a9d04b6050b6896de45a70e1ee468434e19bdd6486e3aef3405d137cac"
+          },
+          {
+            "path": "dist/parser/formatting-element-list.js",
+            "bytes": 4301,
+            "sha256": "a6e04b000b228a0bf7eba4e5462b343ec1e13dbfbe40bce913ade646bbde4461"
+          },
+          {
+            "path": "dist/common/html.js",
+            "bytes": 17554,
+            "sha256": "e6cf93f387be70ddcd4f2bec67fbeb53161094f6306d834de461ec888a9dab76"
+          },
+          {
+            "path": "dist/index.js",
+            "bytes": 1370,
+            "sha256": "40588f3496c59345bc65d86563c42ab8246f1b2edc8d3e8e9535b921d6a45a07"
+          },
+          {
+            "path": "dist/parser/index.js",
+            "bytes": 108636,
+            "sha256": "8bf313475c8e2421c80328c6c4664fe43db6a794d343d23018cbb1d3ca385e54"
+          },
+          {
+            "path": "dist/serializer/index.js",
+            "bytes": 5269,
+            "sha256": "bb11a62d05d463bf756814d89227ea889733d3808fe7ebe27cb4f607ed85a4c7"
+          },
+          {
+            "path": "dist/tokenizer/index.js",
+            "bytes": 106869,
+            "sha256": "f69d945901a8d016e9701fff7d2df73f84c2810d6155b1e1ea50cfb35baab39a"
+          },
+          {
+            "path": "dist/tree-adapters/interface.js",
+            "bytes": 11,
+            "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+          },
+          {
+            "path": "dist/parser/open-element-stack.js",
+            "bytes": 10918,
+            "sha256": "fe4b609a572c9aa06fbd45ac53632b3ad565168903f4126a6f98d5a9d1f42999"
+          },
+          {
+            "path": "dist/tokenizer/preprocessor.js",
+            "bytes": 7571,
+            "sha256": "10aec51ec84618c910184734a76ef84adab9b0451bce60b442f0b51af2494097"
+          },
+          {
+            "path": "dist/common/token.js",
+            "bytes": 834,
+            "sha256": "52dac9efba3a637771818d633a5cf1df30c7913d05ff23235150c88319ea035a"
+          },
+          {
+            "path": "dist/common/unicode.js",
+            "bytes": 2989,
+            "sha256": "69a0a52be895d2bcf88850beead4a098c5305c0b5669d1e8a0fe26f621ea25c6"
+          },
+          {
+            "path": "package.json",
+            "bytes": 1445,
+            "sha256": "c9036acf7bbb325a810c5e163639e3c604dbf73060451fb543aec4fdf56bfa40"
+          },
+          {
+            "path": "README.md",
+            "bytes": 885,
+            "sha256": "ba4e9702964c97d16212ae3cd9b448b3292a31522e1bd3c86fcfc9cc767fd77c"
+          },
+          {
+            "path": "dist/tree-adapters/default.d.ts",
+            "bytes": 3139,
+            "sha256": "91f5dbcdb25d145a56cffe957ec665256827892d779ef108eb2f3864faff523b"
+          },
+          {
+            "path": "dist/common/doctype.d.ts",
+            "bytes": 236,
+            "sha256": "c1b8c6b45e12993a18bf4936c0bb15a05d31fa504f03c284d9e3a0d025b73cd2"
+          },
+          {
+            "path": "dist/common/error-codes.d.ts",
+            "bytes": 4468,
+            "sha256": "66995b0c991b5c5d42eff1d950733f85482c7419f7296ab8952e03718169e379"
+          },
+          {
+            "path": "dist/common/foreign-content.d.ts",
+            "bytes": 623,
+            "sha256": "927955a3de5857e0a1c575ced5a4245e74e6821d720ed213141347dd1870197f"
+          },
+          {
+            "path": "dist/parser/formatting-element-list.d.ts",
+            "bytes": 1390,
+            "sha256": "a77be6fc44c876bc10c897107f84eaba10790913ebdcad40fcda7e47469b2160"
+          },
+          {
+            "path": "dist/common/html.d.ts",
+            "bytes": 5687,
+            "sha256": "19990350fca066265b2c190c9b6cde1229f35002ea2d4df8c9e397e9942f6c89"
+          },
+          {
+            "path": "dist/index.d.ts",
+            "bytes": 3347,
+            "sha256": "ad6ae9263b74050dde1dfda728d374e731bfe755f44c442161be9dfb3515035c"
+          },
+          {
+            "path": "dist/parser/index.d.ts",
+            "bytes": 8702,
+            "sha256": "08f33b6d62816739717f08525f89cf086964301397361ddd2dc50d6654520262"
+          },
+          {
+            "path": "dist/serializer/index.d.ts",
+            "bytes": 1947,
+            "sha256": "052ba354bab8fb943e0bc05a0769f7b81d7c3b3c6cd0f5cfa53c7b2da2a525c5"
+          },
+          {
+            "path": "dist/tokenizer/index.d.ts",
+            "bytes": 12999,
+            "sha256": "c252d9d3b1b81a7095da10ac79b3def562b2c096e3f8334e37d9a13589b45d2d"
+          },
+          {
+            "path": "dist/tree-adapters/interface.d.ts",
+            "bytes": 10280,
+            "sha256": "6f6f2f24937ab55da1ee4e4fae5b0201859ceaec2c84d25ef2d6d8f865de86a4"
+          },
+          {
+            "path": "dist/parser/open-element-stack.d.ts",
+            "bytes": 2287,
+            "sha256": "62a3ad1ddd1f5974b3bf105680b3e09420f2230711d6520a521fab2be1a32838"
+          },
+          {
+            "path": "dist/tokenizer/preprocessor.d.ts",
+            "bytes": 1440,
+            "sha256": "ead15aeccf01448ac38ea370190356eb1560a964034c41c3e76f1a3bc3f61826"
+          },
+          {
+            "path": "dist/common/token.d.ts",
+            "bytes": 2690,
+            "sha256": "8fb8fdda477cd7382477ffda92c2bb7d9f7ef583b1aa531eb6b2dc2f0a206c10"
+          },
+          {
+            "path": "dist/common/unicode.d.ts",
+            "bytes": 1167,
+            "sha256": "19e02a7ba0b88ea7cdfc447c6b0ffecb7f65ce4d260dec7ffce86b3d2aa9e5a8"
+          }
+        ],
+        "osv": {},
+        "path": "C:\\Users\\omarz\\Documents\\Codex\\2026-11-05\\everyday-digital-box-new-codex-session\\work\\task22-setup\\packages\\parse5-8.1.0"
+      },
+      {
+        "name": "entities",
+        "version": "9.0.0",
+        "time": "2026-10-29T00:08:15.446Z",
+        "latest_releases": [
+          [
+            "9.0.0",
+            "2026-10-29T00:08:15.446Z"
+          ],
+          [
+            "8.1.0",
+            "2026-09-07T22:42:04.929Z"
+          ],
+          [
+            "8.0.0",
+            "2026-03-17T11:47:45.464Z"
+          ],
+          [
+            "7.0.1",
+            "2026-01-21T13:46:30.165Z"
+          ],
+          [
+            "7.0.0",
+            "2025-09-06T22:19:14.428Z"
+          ],
+          [
+            "6.0.1",
+            "2025-06-08T19:31:24.093Z"
+          ],
+          [
+            "6.0.0",
+            "2024-12-22T18:18:13.477Z"
+          ],
+          [
+            "5.0.0",
+            "2024-06-26T13:31:28.842Z"
+          ],
+          [
+            "4.5.0",
+            "2023-04-13T17:57:56.308Z"
+          ],
+          [
+            "4.4.0",
+            "2022-09-01T09:06:21.287Z"
+          ],
+          [
+            "4.3.1",
+            "2022-07-01T18:44:40.372Z"
+          ],
+          [
+            "4.3.0",
+            "2022-04-10T13:31:04.117Z"
+          ]
+        ],
+        "repository": {
+          "url": "git+https://github.com/fb55/entities.git",
+          "type": "git"
+        },
+        "license": "BSD-2-Clause",
+        "dependencies": {},
+        "optionalDependencies": {},
+        "engines": {
+          "node": ">=20.19.0"
+        },
+        "dist": {
+          "shasum": "c45df3cdbc5ce805474759f4ec4ea7907d9d5477",
+          "tarball": "https://registry.npmjs.org/entities/-/entities-9.0.0.tgz",
+          "fileCount": 43,
+          "integrity": "sha512-oJFNDJg3kTPwAD1cNn2+WmUq4wFoo09npc3Ydf1D7ED4smRiWrsKnaLxykrTWgyGEcusc87P5dxlAleol9kpkg==",
+          "signatures": [
+            {
+              "sig": "MEYCIQCIWlIrVK04slqCUKBEEohOVVs44N4wQrAcKklqOxBjlAIhAPN0DLNGBmNj4k8KvhvoHuyCw/DSNzwYSQSqcvvOxPLI",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            },
+            {
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+              "sig": "MEUCID8Mleba+PwiVcpkLel+q+QyCqOoxgiLf3vMIIDhg+CfAiEAuCgvg/1s+dzW1vc6sPYoBpmdC3Pk9J/nuAb6gHrsumI="
+            }
+          ],
+          "attestations": {
+            "url": "https://registry.npmjs.org/-/npm/v1/attestations/entities@9.0.0",
+            "provenance": {
+              "predicateType": "https://slsa.dev/provenance/v1"
+            }
+          },
+          "unpackedSize": 327668
+        },
+        "tarball_bytes": 92324,
+        "sha256": "f93f36ae30dbc07243b5ca8e060dee3713fc60968a9475715606c54fa48b48d9",
+        "files": [
+          {
+            "path": "LICENSE",
+            "bytes": 1260,
+            "sha256": "cb992345949ccd6e8394b2cd6c465f7b897c864f845937dbf64e8997f389e164"
+          },
+          {
+            "path": "dist/decode-codepoint.js",
+            "bytes": 2409,
+            "sha256": "c5c52b66256cc5a84b84a516ed78cc76256ec99c47344041f11d3e67010c4a64"
+          },
+          {
+            "path": "dist/internal/decode-data-format.js",
+            "bytes": 6523,
+            "sha256": "e2c3e8fb026292e55b124165680665593000c077af4c1c80f39a4b7451f8f2a8"
+          },
+          {
+            "path": "dist/generated/decode-data-html.js",
+            "bytes": 26305,
+            "sha256": "f26a918fce4ad7e365d8715559291e40dd16be38f50bc6b71b0a64eed2ff32b2"
+          },
+          {
+            "path": "dist/decode.js",
+            "bytes": 44274,
+            "sha256": "84447c68870d330d2d9f72fc6dd34fceeba9e2061339da0c24f5a645edf4ca88"
+          },
+          {
+            "path": "dist/generated/encode-html.js",
+            "bytes": 10042,
+            "sha256": "8b76a4028ff2a691a67c02405af473be5028db93da2cb94a9343039d69609d30"
+          },
+          {
+            "path": "dist/encode.js",
+            "bytes": 12340,
+            "sha256": "3e4fada680dd848e235df9835c766845172e8731b02cfbfea396448ec4f306a4"
+          },
+          {
+            "path": "dist/escape.js",
+            "bytes": 5670,
+            "sha256": "c9321bcfd5431fe2f81038614d1d84636328456e38be1df57e6bf3e2e24edac5"
+          },
+          {
+            "path": "dist/index.js",
+            "bytes": 3552,
+            "sha256": "efacf1df956b3d7156a17653cd241f3328f9a6fe1a4b61f098efc1bed2fa9a0e"
+          },
+          {
+            "path": "package.json",
+            "bytes": 2579,
+            "sha256": "91021df30616d21086a8b43877198c33f83fcbb8f8b74bdf5127f1fabac5e0eb"
+          },
+          {
+            "path": "dist/decode-codepoint.d.ts.map",
+            "bytes": 339,
+            "sha256": "9a8363a2f09b5665daa45fdedad4e3c89f52053df80e69438f9cffb403a61f80"
+          },
+          {
+            "path": "dist/decode-codepoint.js.map",
+            "bytes": 1360,
+            "sha256": "e86d216b631af957f33e46bea4b4a6fcdbcbb6468048f47eda1a25ace7f86317"
+          },
+          {
+            "path": "dist/internal/decode-data-format.d.ts.map",
+            "bytes": 1295,
+            "sha256": "9351dca701030e99bd0399aba3309f5ac794ca6283c20a6b244a9f92dfc46e62"
+          },
+          {
+            "path": "dist/internal/decode-data-format.js.map",
+            "bytes": 5406,
+            "sha256": "257f2f701d7a02a2ae98430f95af491312e5aaa2e4bc61bfd808d0cef3d026a6"
+          },
+          {
+            "path": "dist/generated/decode-data-html.d.ts.map",
+            "bytes": 215,
+            "sha256": "73fc1858eee4555a8e1a3f2d9ae76f773c3145f713e20b5ef43725c0373a9327"
+          },
+          {
+            "path": "dist/generated/decode-data-html.js.map",
+            "bytes": 258,
+            "sha256": "2596743b35e2e6c38f5dbc2308d493f47f796f4507d000a27522160745454b6c"
+          },
+          {
+            "path": "dist/decode.d.ts.map",
+            "bytes": 2389,
+            "sha256": "2a069c441dfb017b821ad91eff6061f6285a1dc4de930e8ebf0991f2468e5ce0"
+          },
+          {
+            "path": "dist/decode.js.map",
+            "bytes": 31271,
+            "sha256": "1639dce6e3b498718a3cd2b0b391ebee4d1b8c41fdc501245c6da665d2b9706a"
+          },
+          {
+            "path": "dist/generated/encode-html.d.ts.map",
+            "bytes": 158,
+            "sha256": "0e448997679451d42a30c5f89df963315643a1f0ba6bc081994e3efaf21cb225"
+          },
+          {
+            "path": "dist/generated/encode-html.js.map",
+            "bytes": 163,
+            "sha256": "a45fca60bd4b172d85d494602ae5960961779802c805c96176e5c7f01cdbdf6c"
+          },
+          {
+            "path": "dist/encode.d.ts.map",
+            "bytes": 297,
+            "sha256": "9630adaaf10a646f813abaef9cc50daa614ec7d83a665351f63a2161735a57c4"
+          },
+          {
+            "path": "dist/encode.js.map",
+            "bytes": 6903,
+            "sha256": "fc681723b53f584a88784b6a8651388c24c0a3443b769cc319acdb492661ebd4"
+          },
+          {
+            "path": "dist/escape.d.ts.map",
+            "bytes": 532,
+            "sha256": "c96c31b2768320200cd62b43c1976a91a8389d32b92bb89dba8105c22ee70aa2"
+          },
+          {
+            "path": "dist/escape.js.map",
+            "bytes": 3358,
+            "sha256": "da12ee07241ea76df3fad5678d79cf6b2385daa61f1160bc39aba66390bd5b5d"
+          },
+          {
+            "path": "dist/index.d.ts.map",
+            "bytes": 1135,
+            "sha256": "f2b50d76c8868aa667fc73a60ed201ebe9ac22c63e701808c51136546a73a5fe"
+          },
+          {
+            "path": "dist/index.js.map",
+            "bytes": 2227,
+            "sha256": "2062035d0585204d6f28f75a6d1279829a887e67f67f6ef65fb655c4cf4a7501"
+          },
+          {
+            "path": "readme.md",
+            "bytes": 7742,
+            "sha256": "e771c3570b19303d2a84e2c214456ba0037599382230db85d24d1a38b7f8780a"
+          },
+          {
+            "path": "dist/decode-codepoint.d.ts",
+            "bytes": 1270,
+            "sha256": "30dc1d7e1fb104b9f087f2e67873c285ad6b8d096893f340476a0d6ab6755d83"
+          },
+          {
+            "path": "src/decode-codepoint.ts",
+            "bytes": 2461,
+            "sha256": "e88ec7ca3e7284d4523966c268187c7920416ec4ae91e5dcd5fbb82e0980d552"
+          },
+          {
+            "path": "dist/internal/decode-data-format.d.ts",
+            "bytes": 4101,
+            "sha256": "36d06ce9a4faa336c169c11180e1f2956f94a80c4961de2160053b5c936ccf52"
+          },
+          {
+            "path": "src/internal/decode-data-format.ts",
+            "bytes": 8101,
+            "sha256": "ae6cb057543bbcb45bc6713d1d5d1b932973380cfc879fa6207a4d2cb7170e15"
+          },
+          {
+            "path": "dist/generated/decode-data-html.d.ts",
+            "bytes": 379,
+            "sha256": "3304876b4c33f06cb22cdafd57f434b0bd111c7870439207a8fbb427d51f0166"
+          },
+          {
+            "path": "src/generated/decode-data-html.ts",
+            "bytes": 26288,
+            "sha256": "5accfa80f9368c27f15610acf1c279b8c0498f4b0c4954b271c3d01508473bee"
+          },
+          {
+            "path": "dist/decode.d.ts",
+            "bytes": 8848,
+            "sha256": "78a9ed90d95c47ef983fbc3e93a887ddc3601cada476a74d8e6d1842e4285eb8"
+          },
+          {
+            "path": "src/decode.ts",
+            "bytes": 47239,
+            "sha256": "9a133a15bf9a6f3254f49f07f541607099012419861b56730c6b3ad64086eba0"
+          },
+          {
+            "path": "dist/generated/encode-html.d.ts",
+            "bytes": 10031,
+            "sha256": "ffd804e5bf74fae71f024d632fedf3badd58d155ad9fa55478f2381a49facb36"
+          },
+          {
+            "path": "src/generated/encode-html.ts",
+            "bytes": 10004,
+            "sha256": "0bc9ec43be8d9d09dd69dc51f7629d3e8736f99cac79a64b1187a4289a2c72a4"
+          },
+          {
+            "path": "dist/encode.d.ts",
+            "bytes": 1146,
+            "sha256": "fd335a30ce254739ace93538d4f3c0f5688e8a8d9cc94b3c6a9aa85fb48977e4"
+          },
+          {
+            "path": "src/encode.ts",
+            "bytes": 13081,
+            "sha256": "f36fbd2d702555e42896213f6b8ee3846e5900245a41d807b08c757d15a48e69"
+          },
+          {
+            "path": "dist/escape.d.ts",
+            "bytes": 1976,
+            "sha256": "072b3dff0f508c7b16cd2ae39e5178db8831903fa53a80889519a985416028d4"
+          },
+          {
+            "path": "src/escape.ts",
+            "bytes": 5693,
+            "sha256": "d7eb4a7dbdaaf7f419eb320268bcd9ffc1b328d2b25ef92507f839905979f34b"
+          },
+          {
+            "path": "dist/index.d.ts",
+            "bytes": 2854,
+            "sha256": "3ba7a2fb15dc2362c77756f2a592f52ea5b6d66ad76cbc867a2cabf011d13d0f"
+          },
+          {
+            "path": "src/index.ts",
+            "bytes": 4194,
+            "sha256": "a4c97d4e81bc6df9e1e6166c5db35216f313751bd8c0c121fe228040a910b86a"
+          }
+        ],
+        "osv": {},
+        "path": "C:\\Users\\omarz\\Documents\\Codex\\2026-11-05\\everyday-digital-box-new-codex-session\\work\\task22-setup\\packages\\entities-9.0.0"
+      },
+      {
+        "name": "esbuild",
+        "version": "0.28.2",
+        "time": "2026-08-08T20:00:55.454Z",
+        "latest_releases": [
+          [
+            "0.28.2",
+            "2026-08-08T20:00:55.454Z"
+          ],
+          [
+            "0.28.1",
+            "2026-06-11T22:47:05.085Z"
+          ],
+          [
+            "0.28.0",
+            "2026-04-02T20:38:46.463Z"
+          ],
+          [
+            "0.27.7",
+            "2026-04-02T16:43:44.831Z"
+          ],
+          [
+            "0.27.5",
+            "2026-04-02T00:29:23.059Z"
+          ],
+          [
+            "0.27.4",
+            "2026-03-12T14:23:59.944Z"
+          ],
+          [
+            "0.27.3",
+            "2026-02-05T22:03:47.060Z"
+          ],
+          [
+            "0.27.2",
+            "2025-12-17T01:05:48.693Z"
+          ],
+          [
+            "0.27.1",
+            "2025-12-03T20:25:12.048Z"
+          ],
+          [
+            "0.27.0",
+            "2025-11-09T19:02:19.764Z"
+          ],
+          [
+            "0.26.0",
+            "2025-11-09T03:16:20.752Z"
+          ],
+          [
+            "0.25.12",
+            "2025-11-01T23:36:22.605Z"
+          ]
+        ],
+        "repository": {
+          "url": "git+https://github.com/evanw/esbuild.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "dependencies": {},
+        "optionalDependencies": {
+          "@esbuild/aix-ppc64": "0.28.2",
+          "@esbuild/linux-arm": "0.28.2",
+          "@esbuild/linux-x64": "0.28.2",
+          "@esbuild/sunos-x64": "0.28.2",
+          "@esbuild/win32-x64": "0.28.2",
+          "@esbuild/darwin-x64": "0.28.2",
+          "@esbuild/linux-ia32": "0.28.2",
+          "@esbuild/netbsd-x64": "0.28.2",
+          "@esbuild/win32-ia32": "0.28.2",
+          "@esbuild/android-arm": "0.28.2",
+          "@esbuild/android-x64": "0.28.2",
+          "@esbuild/freebsd-x64": "0.28.2",
+          "@esbuild/linux-arm64": "0.28.2",
+          "@esbuild/linux-ppc64": "0.28.2",
+          "@esbuild/linux-s390x": "0.28.2",
+          "@esbuild/openbsd-x64": "0.28.2",
+          "@esbuild/win32-arm64": "0.28.2",
+          "@esbuild/darwin-arm64": "0.28.2",
+          "@esbuild/netbsd-arm64": "0.28.2",
+          "@esbuild/android-arm64": "0.28.2",
+          "@esbuild/freebsd-arm64": "0.28.2",
+          "@esbuild/linux-loong64": "0.28.2",
+          "@esbuild/linux-riscv64": "0.28.2",
+          "@esbuild/openbsd-arm64": "0.28.2",
+          "@esbuild/linux-mips64el": "0.28.2",
+          "@esbuild/openharmony-arm64": "0.28.2"
+        },
+        "engines": {
+          "node": ">=18"
+        },
+        "dist": {
+          "shasum": "0f43bd1bad955b72d24e2261e3abe5957ccf0816",
+          "tarball": "https://registry.npmjs.org/esbuild/-/esbuild-0.28.2.tgz",
+          "fileCount": 7,
+          "integrity": "sha512-HKVLS8dvII+xoKW9kmqxbRKrnWEXfJJr/FZhhJmiqIB0e053QNYFqOBouTMO/k5sID4MvCiUCvv8b9M4h32wIA==",
+          "signatures": [
+            {
+              "sig": "MEYCIQCUNxdzUXI/rpHaMMcf/skpuDBkNL7aLEXFFc0dex0NCAIhAMDKoRFFyK2uR0qEIAoCe4pdRrJ3ld2ZCoHNyNuX6ju7",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            },
+            {
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+              "sig": "MEUCIQC8VkNobVdJrr03U9huHI7n2VhWQ2shvrTvNYB1Mx8gigIgFkrOTUauuovxR8qg94n81hYvSw6PI2qEQkNiqHkmjcg="
+            }
+          ],
+          "attestations": {
+            "url": "https://registry.npmjs.org/-/npm/v1/attestations/esbuild@0.28.2",
+            "provenance": {
+              "predicateType": "https://slsa.dev/provenance/v1"
+            }
+          },
+          "unpackedSize": 147361
+        },
+        "tarball_bytes": 34207,
+        "sha256": "e045f94c235c7adc50e77ba2a579c7bec41b496b6b47c3a7845f7c1e19959a88",
+        "files": [
+          {
+            "path": "bin/esbuild",
+            "bytes": 9350,
+            "sha256": "183d6ead2dbc3af51aec767d5395f86fe54fbbc2d2aa8e54feb4e31d76a62f7e"
+          },
+          {
+            "path": "install.js",
+            "bytes": 11773,
+            "sha256": "612294e278914443bdcf81cb17f54afec34dbdd2ebd999a6ee187912320cc315"
+          },
+          {
+            "path": "lib/main.js",
+            "bytes": 97463,
+            "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd"
+          },
+          {
+            "path": "package.json",
+            "bytes": 3980,
+            "sha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490"
+          },
+          {
+            "path": "LICENSE.md",
+            "bytes": 1069,
+            "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+          },
+          {
+            "path": "README.md",
+            "bytes": 175,
+            "sha256": "6d481cd60ec3c679e5e395f547ab4221147f35642894f6b95a8df38fd25c87bd"
+          },
+          {
+            "path": "lib/main.d.ts",
+            "bytes": 23551,
+            "sha256": "e078310f23f0ccfa28a6ac81b5fad81f27150e921f92ab6e648caab42e2d9a14"
+          }
+        ],
+        "osv": {},
+        "path": "C:\\Users\\omarz\\Documents\\Codex\\2026-11-05\\everyday-digital-box-new-codex-session\\work\\task22-setup\\packages\\esbuild-0.28.2"
+      },
+      {
+        "name": "@esbuild/win32-x64",
+        "version": "0.28.2",
+        "time": "2026-08-08T20:00:43.500Z",
+        "latest_releases": [
+          [
+            "0.28.2",
+            "2026-08-08T20:00:43.500Z"
+          ],
+          [
+            "0.28.1",
+            "2026-06-11T22:46:52.393Z"
+          ],
+          [
+            "0.28.0",
+            "2026-04-02T20:38:34.541Z"
+          ],
+          [
+            "0.27.7",
+            "2026-04-02T16:43:41.245Z"
+          ],
+          [
+            "0.27.5",
+            "2026-04-02T00:29:18.396Z"
+          ],
+          [
+            "0.27.4",
+            "2026-03-12T14:23:56.370Z"
+          ],
+          [
+            "0.27.3",
+            "2026-02-05T22:03:43.963Z"
+          ],
+          [
+            "0.27.2",
+            "2025-12-17T01:05:45.325Z"
+          ],
+          [
+            "0.27.1",
+            "2025-12-03T20:25:08.518Z"
+          ],
+          [
+            "0.27.0",
+            "2025-11-09T19:02:15.783Z"
+          ],
+          [
+            "0.26.0",
+            "2025-11-09T03:16:16.946Z"
+          ],
+          [
+            "0.25.12",
+            "2025-11-01T23:34:59.445Z"
+          ]
+        ],
+        "repository": {
+          "url": "git+https://github.com/evanw/esbuild.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "dependencies": {},
+        "optionalDependencies": {},
+        "engines": {
+          "node": ">=18"
+        },
+        "dist": {
+          "shasum": "b21affb804cc167c133d95f45b3a1dc1323b9a87",
+          "tarball": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.28.2.tgz",
+          "fileCount": 3,
+          "integrity": "sha512-5ebpxr3nWMzrL/rnUI755Jkuee0bHL/Gq0WTF9lvcpv73wAp5eu8MfBUgWK9bhWvZjj7yX8etf/8tI8Ney695g==",
+          "signatures": [
+            {
+              "sig": "MEUCIQCvMbnEGYMw4gc+GriY8NlPna2De2O/zCMEUe4RMSF2VAIgS+u3R+REjPY2C/uzQWmD/e2u5XAKDKES9lWl1mKaYws=",
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+            },
+            {
+              "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+              "sig": "MEYCIQDE+HSV4i1D3atgS6f9gJboMzaHztqK/UvEOvEQUGO3CgIhAOoVue5hPWAdLhuxNfD3thdfkl1ajsY2CrJxx2yfoo4w"
+            }
+          ],
+          "attestations": {
+            "url": "https://registry.npmjs.org/-/npm/v1/attestations/@esbuild%2fwin32-x64@0.28.2",
+            "provenance": {
+              "predicateType": "https://slsa.dev/provenance/v1"
+            }
+          },
+          "unpackedSize": 11695109
+        },
+        "tarball_bytes": 4829680,
+        "sha256": "7286c3611b6f1f4c4d9ec90adcbc478407ff0d28ead96567f361d53e67613e19",
+        "files": [
+          {
+            "path": "esbuild.exe",
+            "bytes": 11694592,
+            "sha256": "c7bee37877d0aa6a046e52783fa0a2cf1a9ce5579d68bb3083bda99d4bff18ef"
+          },
+          {
+            "path": "package.json",
+            "bytes": 374,
+            "sha256": "89382df45735edcd917c492a810ab514920fa07d36c653cdc122bdfd8f526964"
+          },
+          {
+            "path": "README.md",
+            "bytes": 143,
+            "sha256": "29cf512fa580b72392176bf694933ae0decaf18116fdeee917511b445411ce16"
+          }
+        ],
+        "osv": {},
+        "path": "C:\\Users\\omarz\\Documents\\Codex\\2026-11-05\\everyday-digital-box-new-codex-session\\work\\task22-setup\\packages\\esbuild_win32-x64-0.28.2"
+      }
+    ]
+  },
+  "advisory_review": {
+    "url": "https://github.com/markedjs/marked/security/advisories/GHSA-6v9c-7cg6-27q7",
+    "affected": [
+      "18.0.0",
+      "18.0.1"
+    ],
+    "patched": "18.0.2",
+    "selected": "18.1.3",
+    "regression": "Tab/vertical-tab/newline in nonempty text completes without recursion."
+  },
+  "preimplementation_gate": {
+    "tests": 30,
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0,
+    "node_cases": 14,
+    "browser_cases": 16,
+    "root_canary_http": 200,
+    "child_canary_http": 200,
+    "unexpected_canary_requests": 0,
+    "unexpected_javascript_exceptions": 0,
+    "raw_generated_html_and_markdown_attack_groups": 10,
+    "denial_probes": [
+      "parent.document",
+      "parent.localStorage",
+      "localStorage",
+      "sessionStorage",
+      "top navigation",
+      "popup",
+      "form submission"
+    ],
+    "controls": "Local HTTP server records real requests; only preexisting styling CDN blocked. Root fetch and CSP-free test-only child image independently reach server. Malicious tests use restrictive-CSP sanitized output. Child probes execute through trusted CDP isolated world."
+  },
+  "limits": {
+    "input_utf8": 32768,
+    "intermediate_and_each_output_utf8": 131072,
+    "markdown_token_objects": 4096,
+    "html_nodes": 4096,
+    "depth": 64,
+    "attributes_per_element": 64,
+    "worker_deadline_ms": 2000,
+    "cumulative_link_rendering_utf8": 131072
+  },
+  "bundle": {
+    "delivered_bytes": 223978,
+    "sha256": "7fee247a319f58b3c6029424902bd6ade950785d2459e00cb535e4f429fd0290"
+  },
+  "compatibility": "Static HTML and locally bundled classic Blob Worker; no website build step or runtime CDN parser. Modern Chromium tested; cross-browser certification excluded. Node required only for optional reproducible build/testing.",
+  "maintenance": "Marked 18.1.3 published 2026-11-02; parse5 8.1.0 2026-11-01; entities 9.0.0 2026-10-29. Source/archive hashes and exact-version OSV responses captured in dependency review. Empty OSV response means no returned entries on the recorded date, not a vulnerability-free guarantee.",
+  "limitations": [
+    "No hard browser heap bound: byte/token/node/depth guards and termination limit tested behavior, not all possible allocations.",
+    "Markdown lexing occurs inside disposable Worker before token counting; input byte cap bounds source size.",
+    "No extensions/HTML interpretation/images/styles/relative links/mailto/math/diagrams/highlighting.",
+    "Trusted Marked/parse5 code runs only in Worker; supplied content is data, never evaluated.",
+    "esbuild and platform executable are build-only, not delivered. No package lifecycle scripts executed.",
+    "Local browser controls and resource cases are scoped evidence; malformed-input coverage is not exhaustive."
+  ],
+  "prototype_archive": [
+    {
+      "path": "audit/task22-prototype/engine.mjs",
+      "sha256": "e6dc0069d6693c827026822a940b215492e484d8d8d40e6ebc5921ff950c2f4f"
+    },
+    {
+      "path": "audit/task22-prototype/hardened-engine.mjs",
+      "sha256": "d469b6fd847c596dc14d1733d3bcf6d7bdc58bc37ddf80f6657014c61b2329a9"
+    },
+    {
+      "path": "audit/task22-prototype/hardened-resource-cases.mjs",
+      "sha256": "04b23d11ed4a70207e2bdbe1b6a2206235284a014a6c971a7990871411af4260"
+    },
+    {
+      "path": "audit/task22-prototype/isolation-cases.mjs",
+      "sha256": "727bdd0df3548c5d25a6d9aee8ba13141362b78eac53812cdceb6be1e176cbca"
+    },
+    {
+      "path": "audit/task22-prototype/prototype-html.txt",
+      "sha256": "781c197130655e9300fc1084c4a3ddcbb61a47f2172254e94e6749c83f75b8c8"
+    },
+    {
+      "path": "audit/task22-prototype/README.md",
+      "sha256": "dbe25d8f51921c8eaff058055a508748145721e31ea75dcb9b5bca674e24c010"
+    },
+    {
+      "path": "audit/task22-prototype/resource-cases.mjs",
+      "sha256": "e2a9c2f2e75b441caa8b98b6162876e936dac484c02fd541f13b6e6d08f9fd2e"
+    },
+    {
+      "path": "audit/task22-prototype/security-gate-hardened.txt",
+      "sha256": "3949e4b7d2c16f4ea39b67668b2ac1ede4281a2648f9a69e8875d950d9fac800"
+    },
+    {
+      "path": "audit/task22-prototype/security-gate.txt",
+      "sha256": "bcc2ad1b05df2b3a62efd40f5f5b7c7f372ae73921012a25c4f84cb7c8cc3091"
+    },
+    {
+      "path": "audit/task22-prototype/worker.mjs",
+      "sha256": "52894fbbddf878f411f3948c0b737f1e727e88852d41f747c23bb217d2b7c9fa"
+    }
+  ],
+  "followup_rendering_budget_gate": {
+    "result": "PASS",
+    "tests": 31,
+    "passed": 31,
+    "failed": 0,
+    "node_cases": 15,
+    "browser_cases": 16,
+    "additional_case": "Repeated 16KiB reference destination, 900 uses: source is below 32KiB and token budget; rejected by cumulative link-rendering budget before complete HTML concatenation. Earlier 1,900-reference fixture was safely rejected by token count and was reduced to exercise the intended renderer guard.",
+    "adoption": "Passed in scratch before adopting the cumulative link budget in production. No output or deadline limit was raised."
+  },
+  "initial_bundle": {
+    "delivered_bytes": 223763,
+    "sha256": "a692d04e8cf7152e4e485761fee5572e15213f1ecbe3017a6985c3347a7d2ac5"
+  }
+}

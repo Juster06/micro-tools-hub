@@ -6,6 +6,7 @@ from functools import lru_cache
 ROOT=Path(__file__).resolve().parents[1];BASE='9fa032140639550abd9a0449ed7ef5198354bd40'
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
+from task22_test_support import assert_unchanged_or_task22,without_task22
 IDS={'hashtag-counter','html-formatter','css-minifier','javascript-minifier','html-to-markdown','html-previewer'}
 def load(p):return json.loads((ROOT/p).read_text(encoding='utf8'))
 @lru_cache(maxsize=None)
@@ -21,8 +22,8 @@ class Task21Release(unittest.TestCase):
    if t['id'] in IDS:
     self.assertEqual((t['status'],n['status'],n['testing_status']),('TESTED','RELEASED','REQUIRED_PASSED'))
     for key in set(t)-{'status','notes','last_verification_date','verification'}:self.assertEqual(t[key],n[key],key)
-   else:self.assertEqual(t,n,t['id'])
-  self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':74,'TESTED':0,'READY':0,'PLANNED':18,'BLOCKED':1})
+   else:assert_unchanged_or_task22(self,t,n)
+  self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':74,'TESTED':1,'READY':0,'PLANNED':17,'BLOCKED':1})
 
  def test_six_public_audits_bind_real_git_pages_assets_dates_and_individual_behavior(self):
   for t in load('TOOL_REGISTRY.json')['tools']:
@@ -68,7 +69,7 @@ class Task21Release(unittest.TestCase):
   paths=pages+['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json']
   paths+=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets','audit','scripts/vendor/task21'],cwd=ROOT,text=True).splitlines()
   for path in paths:self.assertEqual(norm((ROOT/path).read_bytes()),norm(git(path)),path)
-  current=(ROOT/'index.html').read_text(encoding='utf8')
+  current=without_task22(self,(ROOT/'index.html').read_text(encoding='utf8'),Homepage)
   for tid in IDS:
    card=next(c for c in Homepage(current).cards if c['attrs'].get('data-tool-id')==tid);chunk=current[card['start']:card['end']];self.assertEqual(chunk.count('Live'),1);self.assertEqual(card['attrs']['data-availability'],'released');chunk=chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending');current=current[:card['start']]+chunk+current[card['end']:]
   self.assertEqual(current,norm(git('index.html')).decode('utf8'))

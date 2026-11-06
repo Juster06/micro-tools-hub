@@ -1,0 +1,79 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-06",
+  "source_revision": "c30cf78de587781502cf8832a10a5afe5a1aeba1",
+  "source_tree_sha": "25bfaab9ddc7462f3d1b5482cbfb63a5460eb58e",
+  "pages": [
+    {
+      "path": "markdown-converter-previewer/index.html",
+      "source_sha256": "17f673ec6b9a2c059df6d6c41a3fd53c109e18b59740cb33f7df3eca2bc2489e",
+      "checks": [
+        "9 canonical inline logic cases validate job preparation, not Markdown transformation.",
+        "7 canonical Chromium cases / 21 assertions.",
+        "23 specialized Node Worker cases: expected HTML, URL policy, malformed input, limits and reference amplification.",
+        "23 specialized browser cases: 16 isolation/cancellation/deadline, 5 extended output/MIME/actions/keyboard/layout and 2 hub integration cases.",
+        "Pre-production mandatory security gate: 30 cases passed with root and child network positive controls, generated-HTML and Markdown attack fixtures.",
+        "Follow-up scratch gate: 31 cases passed before adopting the cumulative link-output rendering budget."
+      ],
+      "publication": null
+    }
+  ],
+  "runtime_assets": [
+    {
+      "path": "assets/consent.js",
+      "sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "canonical_lf_bytes": 7882
+    },
+    {
+      "path": "assets/vendor/task22/markdown-source.js",
+      "sha256": "7fee247a319f58b3c6029424902bd6ade950785d2459e00cb535e4f429fd0290",
+      "canonical_lf_bytes": 223978
+    }
+  ],
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 9,
+      "failed": 0,
+      "assertions": 9,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 7,
+      "failed": 0,
+      "assertions": 21,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Edg/156.0.4314.58"
+    }
+  },
+  "browser": "Edg/156.0.4314.58",
+  "focused_node_tests": 23,
+  "focused_browser_tests": 23,
+  "security_review": "audit/TASK_22_SECURITY_REVIEW.json",
+  "test_scope": [
+    "9 canonical inline logic cases validate job preparation, not Markdown transformation.",
+    "7 canonical Chromium cases / 21 assertions.",
+    "23 specialized Node Worker cases: expected HTML, URL policy, malformed input, limits and reference amplification.",
+    "23 specialized browser cases: 16 isolation/cancellation/deadline, 5 extended output/MIME/actions/keyboard/layout and 2 hub integration cases.",
+    "Pre-production mandatory security gate: 30 cases passed with root and child network positive controls, generated-HTML and Markdown attack fixtures.",
+    "Follow-up scratch gate: 31 cases passed before adopting the cumulative link-output rendering budget."
+  ],
+  "limitations": [
+    "Scoped local development only; public source/functionality and publication remain unverified.",
+    "Generic adapter covers preparation only; specialized Worker suites execute actual transformations.",
+    "Native clipboard/Save dialogs, physical devices and screen readers are outside automated scope.",
+    "Worker deadline is not a hard heap guarantee.",
+    "Exact-head hosted full regression remains required and is reported separately.",
+    "GA4 property-level reporting remains unverified."
+  ],
+  "publication": null
+}

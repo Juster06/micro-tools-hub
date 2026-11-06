@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: network canary is reachable: interception does not hide preview requests
+ok 1 - network canary is reachable: interception does not hide preview requests
+  ---
+  duration_ms: 1282.0012
+  type: 'test'
+  ...
+# Subtest: actual preview blocks scripts without network/parent-state changes
+ok 2 - actual preview blocks scripts without network/parent-state changes
+  ---
+  duration_ms: 767.9297
+  type: 'test'
+  ...
+# Subtest: actual preview blocks handlers without network/parent-state changes
+ok 3 - actual preview blocks handlers without network/parent-state changes
+  ---
+  duration_ms: 640.1657
+  type: 'test'
+  ...
+# Subtest: actual preview blocks navigation without network/parent-state changes
+ok 4 - actual preview blocks navigation without network/parent-state changes
+  ---
+  duration_ms: 557.8153
+  type: 'test'
+  ...
+# Subtest: actual preview blocks forms without network/parent-state changes
+ok 5 - actual preview blocks forms without network/parent-state changes
+  ---
+  duration_ms: 741.659
+  type: 'test'
+  ...
+# Subtest: actual preview blocks resources without network/parent-state changes
+ok 6 - actual preview blocks resources without network/parent-state changes
+  ---
+  duration_ms: 605.904
+  type: 'test'
+  ...
+# Subtest: actual preview blocks foreign without network/parent-state changes
+ok 7 - actual preview blocks foreign without network/parent-state changes
+  ---
+  duration_ms: 493.9438
+  type: 'test'
+  ...
+# Subtest: actual preview blocks mutation without network/parent-state changes
+ok 8 - actual preview blocks mutation without network/parent-state changes
+  ---
+  duration_ms: 772.9721
+  type: 'test'
+  ...
+# Subtest: actual preview blocks templates without network/parent-state changes
+ok 9 - actual preview blocks templates without network/parent-state changes
+  ---
+  duration_ms: 578.3469
+  type: 'test'
+  ...
+# Subtest: actual preview blocks rawtext without network/parent-state changes
+ok 10 - actual preview blocks rawtext without network/parent-state changes
+  ---
+  duration_ms: 589.2133
+  type: 'test'
+  ...
+# Subtest: actual preview blocks encoded without network/parent-state changes
+ok 11 - actual preview blocks encoded without network/parent-state changes
+  ---
+  duration_ms: 690.4274
+  type: 'test'
+  ...
+# Subtest: actual child has structural content, opaque origin/storage, blocked navigation, popup and form
+ok 12 - actual child has structural content, opaque origin/storage, blocked navigation, popup and form
+  ---
+  duration_ms: 546.6041
+  type: 'test'
+  ...
+# Subtest: child network positive control reaches server with test-only CSP-free srcdoc
+ok 13 - child network positive control reaches server with test-only CSP-free srcdoc
+  ---
+  duration_ms: 142.7027
+  type: 'test'
+  ...
+# Subtest: Markdown image, unsafe link and automatic-link attacks remain inert
+ok 14 - Markdown image, unsafe link and automatic-link attacks remain inert
+  ---
+  duration_ms: 427.5618
+  type: 'test'
+  ...
+# Subtest: cancel terminates a real Worker and discards output
+ok 15 - cancel terminates a real Worker and discards output
+  ---
+  duration_ms: 407.9904
+  type: 'test'
+  ...
+# Subtest: deadline terminates a test-only non-responsive Worker without retaining output
+ok 16 - deadline terminates a test-only non-responsive Worker without retaining output
+  ---
+  duration_ms: 2156.6998
+  type: 'test'
+  ...
+# Subtest: headings independently expected HTML
+ok 17 - headings independently expected HTML
+  ---
+  duration_ms: 98.779
+  type: 'test'
+  ...
+# Subtest: emphasis independently expected HTML
+ok 18 - emphasis independently expected HTML
+  ---
+  duration_ms: 117.0071
+  type: 'test'
+  ...
+# Subtest: code independently expected HTML
+ok 19 - code independently expected HTML
+  ---
+  duration_ms: 75.8884
+  type: 'test'
+  ...
+# Subtest: Unicode independently expected HTML
+ok 20 - Unicode independently expected HTML
+  ---
+  duration_ms: 118.8898
+  type: 'test'
+  ...
+# Subtest: patched whitespace advisory independently expected HTML
+ok 21 - patched whitespace advisory independently expected HTML
+  ---
+  duration_ms: 226.9152
+  type: 'test'
+  ...
+# Subtest: byte limit rejects without partial output
+ok 22 - byte limit rejects without partial output
+  ---
+  duration_ms: 126.5106
+  type: 'test'
+  ...
+# Subtest: ASCII limit rejects without partial output
+ok 23 - ASCII limit rejects without partial output
+  ---
+  duration_ms: 379.3929
+  type: 'test'
+  ...
+# Subtest: node limit rejects without partial output
+ok 24 - node limit rejects without partial output
+  ---
+  duration_ms: 359.2083
+  type: 'test'
+  ...
+# Subtest: nesting rejects without partial output
+ok 25 - nesting rejects without partial output
+  ---
+  duration_ms: 245.1426
+  type: 'test'
+  ...
+# Subtest: output expansion rejects without partial output
+ok 26 - output expansion rejects without partial output
+  ---
+  duration_ms: 219.1646
+  type: 'test'
+  ...
+# Subtest: near limit completes bounded conversion
+ok 27 - near limit completes bounded conversion
+  ---
+  duration_ms: 99.7318
+  type: 'test'
+  ...
+# Subtest: unbalanced brackets completes bounded conversion
+ok 28 - unbalanced brackets completes bounded conversion
+  ---
+  duration_ms: 239.8925
+  type: 'test'
+  ...
+# Subtest: malformed foreign HTML completes bounded conversion
+ok 29 - malformed foreign HTML completes bounded conversion
+  ---
+  duration_ms: 160.6389
+  type: 'test'
+  ...
+# Subtest: table completes bounded conversion
+ok 30 - table completes bounded conversion
+  ---
+  duration_ms: 162.5439
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 14428.4292

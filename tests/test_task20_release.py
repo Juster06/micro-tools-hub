@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1];BASE='0b055d5b837ea0bca85f8b6583eec5607
 IDS={'excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'}
 COUNTS=dict(zip(['excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'],[5,6,9,8,7,9]))
 sys.path.insert(0,str(ROOT/'scripts'));from tool_homepage import Homepage
+from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 def load(p):return json.loads((ROOT/p).read_text(encoding='utf8'))
 def git(p):return subprocess.check_output(['git','show',BASE+':'+p],cwd=ROOT)
@@ -43,7 +44,7 @@ class Task20Release(unittest.TestCase):
     self.assertEqual(t['status'],'TESTED');self.assertEqual(by_id[t['id']]['status'],'RELEASED')
     for key in ['id','name','description','directory_path','required_features','dependencies','priority','implementation_complexity','related_tools','sequence_rank','expected_interface_ids']:self.assertEqual(t[key],by_id[t['id']][key])
    elif t['id'] in TASK21_IDS:assert_transition(self,t,by_id[t['id']])
-   else:self.assertEqual(t,by_id[t['id']])
+   else:assert_unchanged_or_task22(self,t,by_id[t['id']])
    if t['status'] in ['TESTED','RELEASED']:
     p=t['directory_path']+'/index.html';self.assertEqual(norm((ROOT/p).read_bytes()),norm(git(p)))
   for folder in ['audit','assets']:

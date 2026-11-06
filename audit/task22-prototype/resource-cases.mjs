@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {Worker} from 'node:worker_threads';
+const code=fs.readFileSync(new URL('./worker-bundle.js',import.meta.url),'utf8');
+async function run(input){const started=performance.now();return new Promise((resolve,reject)=>{const w=new Worker(`const{parentPort}=require('node:worker_threads');globalThis.self=globalThis;self.postMessage=r=>parentPort.postMessage(r);${code};parentPort.on('message',data=>self.onmessage({data}));`,{eval:true,resourceLimits:{maxOldGenerationSizeMb:96,maxYoungGenerationSizeMb:16,stackSizeMb:4}});const timer=setTimeout(()=>{w.terminate();reject(Error('Deadline exceeded'));},2000);w.once('message',r=>{clearTimeout(timer);w.terminate();resolve({...r,elapsed:performance.now()-started});});w.once('error',e=>{clearTimeout(timer);w.terminate();reject(e);});w.postMessage({input});});}
+for(const [name,input,expected]of [
+ ['headings','# Hello','<h1>Hello</h1>'],['emphasis','**bold** and *soft*','<p><strong>bold</strong> and <em>soft</em></p>'],['code','```js\n<x>\n```','<pre><code>&lt;x&gt;\n</code></pre>'],['Unicode','café 世界 😀','<p>café 世界 😀</p>'],['patched whitespace advisory','x\n\t\v\n','<p>x\n\t\v</p>']
+])test(name+' independently expected HTML',async()=>{const r=await run(input);assert.equal(r.ok,true,r.error);assert.equal(r.text,expected+String.fromCharCode(10));});
+for(const[name,input]of [['byte limit','😀'.repeat(8193)],['ASCII limit','x'.repeat(32769)],['node limit','- x\n'.repeat(2500)],['nesting','> '.repeat(80)+'x'],['output expansion','<'.repeat(32768)]])test(name+' rejects without partial output',async()=>{const r=await run(input);assert.equal(r.ok,false);assert.equal(r.text,undefined);assert.match(r.error,/exceed|complexity/i);});
+for(const[name,input]of [['near limit','a'.repeat(32768)],['unbalanced brackets','['.repeat(12000)+'x'],['malformed foreign HTML','<svg><foreignObject><script>alert(1)</svg>'],['table','| A | B |\n|---|---|\n|1|2|']])test(name+' completes bounded conversion',async()=>{const r=await run(input);assert.equal(r.ok,true,r.error);assert.ok(Buffer.byteLength(r.download)<=131072);assert.ok(r.elapsed<2000);});
