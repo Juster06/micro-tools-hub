@@ -1,6 +1,60 @@
 # Progress tracker
 
-## Task 20 — six utilities TESTED; publication pending
+## Task 20.1 — six-tool public release verification
+
+PR #36 merged as `0b055d5b837ea0bca85f8b6583eec5607f93de95`.
+[Pages42131624570](https://github.com/Juster06/micro-tools-hub/actions/runs/42131624570)
+and [post-merge Functional CI42131632444](https://github.com/Juster06/micro-tools-hub/actions/runs/42131632444)
+passed for that exact commit, including all four functional jobs (172 Python,
+433 Node,593 Chromium). No newer main source was present at verification.
+
+Fresh public HTTPS checks matched approved Git bytes for all68 tool pages,
+homepage, privacy, consent, registry and bundled assets:78 source responses plus
+six directory URLs. All68 distinct homepage cards were visible and linked to
+the correct canonical routes. The six Task20 utilities passed45 fresh public
+browser cases (38 scoped cases plus7 independent acceptance/navigation cases).
+Native image bytes/MIME/pixels, independent ICO parsing and Windows loading,
+all8 formula strings, exact emoji copying, strict JSON and print/PDF geometry
+were checked. Existing62 tools were checked by fresh HTTP/source identity and
+post-merge full CI; fresh individual interactions for all62 are not claimed.
+
+Two isolated profiles verified real consent behavior without interception:
+zero Google requests before choice/after rejection/after withdrawal, exactly
+three accepted page views with HTTP204 and no duplicates. Measurement ID
+G-XDHPQYJ5CH, shared consent code and privacy remain unchanged. GA4 property
+reporting remains unverified. Clipboard/download APIs were captured in memory;
+native dialogs, physical devices, screen readers and other browsers are excluded.
+
+Print limitation: Resume Builder's static `15 mm` margin declaration is ignored
+by CSS parsing; browser print defaults apply. A4 page geometry/controls passed;
+no exact15mm margin or physical calibration claim is made. Optional favicon.ico
+returns404; no uncaught application errors, essential asset failures or unexpected
+dependencies occurred. No production tool or consent code was changed.
+
+This branch proposes93 registered:68 RELEASED,0 TESTED,0 READY,24 PLANNED,
+1 BLOCKED. All68 homepage routes/cards are retained; only the six reviewed gated
+availability labels change from publication pending to Live. The deployed
+registry at the audited main still has62RELEASED/6TESTED until this release PR
+is separately authorized, merged and deployed. Next manual checkpoint75;
+existing generated milestone100; configuration unchanged.
+
+Evidence: `audit/TASK_20_PUBLIC_RELEASE_VERIFICATION.json` and six separate
+`*_RELEASE_VERIFICATION.json` records contain actual timestamps, raw/normalized
+source hashes, deployed revision, public interactions, consent and limitations.
+All earlier audits, all68 runtime pages, assets, privacy and CNAME are preserved.
+All20 pre-existing worktrees and their working changes, including two unrelated
+dirty handoffs, remain preserved. Task20.1 uses a separate worktree and branch
+`release/task-20-six-tools-verification`.
+
+Fresh release-branch regression passed:175 Python,433 Node and593 Chromium tests;1,332 canonical logic fixtures, all68 structural profiles and six fresh all-layer canonical release gates. The complete hosted68-profile/template browser partition and required aggregate check remain mandatory on the exact PR head. See `audit/TASK_20_1_REGRESSION.json`; local standalone browser and hosted CI scopes are distinguished.
+
+**Next major task:** Review the Task20.1 release-verification PR and exact-head
+required checks. Full mapped regression results are recorded in the final PR
+description and delivery report. Do not merge/deploy without explicit owner
+authorization; do not use administrator bypass. PDF Compressor retains its
+existing feasibility blocker. No further tool implementation is authorized here.
+
+## Historical Task 20 development checkpoint — six utilities TESTED; publication pending
 
 Task 19 is complete and publicly verified. PR #34 and PR #35 merged; approved
 main baseline is `1ead1c37861b80c552446afbdb952c9248370bf9`. Pages
@@ -455,14 +509,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 6 |
-| RELEASED | 62 |
+| TESTED | 0 |
+| RELEASED | 68 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 25 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **100 released tools**. Progress: 62/100 (62.0%); remaining: 38.
+Current growth milestone: **100 released tools**. Progress: 68/100 (68.0%); remaining: 32.
 
 ### Tools by category
 
@@ -496,16 +550,16 @@ Next ready tool: **REQUIRES REVIEW**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
+| Resume Builder | RELEASED | 2026-11-06 |
+| PNG to ICO | RELEASED | 2026-11-06 |
+| Passport Photo Layout Maker | RELEASED | 2026-11-06 |
+| Image Compressor | RELEASED | 2026-11-06 |
+| Excel Formula Generator | RELEASED | 2026-11-06 |
+| Emoji Picker | RELEASED | 2026-11-06 |
 | YouTube Title Checker | RELEASED | 2026-11-05 |
-| Resume Builder | TESTED | 2026-11-05 |
 | Regex Tester | RELEASED | 2026-11-05 |
 | QR Code Generator | RELEASED | 2026-11-05 |
-| PNG to ICO | TESTED | 2026-11-05 |
 | Password Generator | RELEASED | 2026-11-05 |
-| Passport Photo Layout Maker | TESTED | 2026-11-05 |
-| Passphrase Generator | RELEASED | 2026-11-05 |
-| Instagram Bio Formatter | RELEASED | 2026-11-05 |
-| Image Format Converter | RELEASED | 2026-11-05 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.

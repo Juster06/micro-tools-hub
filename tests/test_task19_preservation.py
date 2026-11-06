@@ -34,10 +34,10 @@ class Task19Preservation(unittest.TestCase):
                 self.assertEqual(current['verification']['publication']['source_matches'],True)
                 for key in ['id','name','category','description','directory_path','priority','required_features','related_tools','sequence_rank']:
                     self.assertEqual(current[key],tool[key])
-            elif tool['id'] in TASK20_IDS:self.assertEqual((tool['status'],current['status']),('PLANNED','TESTED'))
+            elif tool['id'] in TASK20_IDS:self.assertEqual((tool['status'],current['status']),('PLANNED','RELEASED'));self.assertTrue(current['verification']['publication']['source_matches'])
             else:self.assertEqual(current,tool)
         counts={status:sum(t['status']==status for t in new['tools']) for status in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']}
-        self.assertEqual(counts,{'RELEASED':62,'TESTED':6,'READY':0,'PLANNED':24,'BLOCKED':1})
+        self.assertEqual(counts,{'RELEASED':68,'TESTED':0,'READY':0,'PLANNED':24,'BLOCKED':1})
 
     def test_all_56_released_runtime_sources_and_privacy_domain_settings_unchanged(self):
         old=json.loads(raw('TOOL_REGISTRY.json'))
@@ -52,8 +52,8 @@ class Task19Preservation(unittest.TestCase):
         current=text('index.html')
         for tid in TASK20_IDS:
             home=Homepage(current);card=next(c for c in home.cards if c['attrs'].get('data-tool-id')==tid)
-            self.assertEqual(card['attrs']['href'],tid+'/index.html');self.assertEqual(card['attrs']['data-availability'],'tested')
-            self.assertIn('Tested · publication pending',current[card['start']:card['end']])
+            self.assertEqual(card['attrs']['href'],tid+'/index.html');self.assertEqual(card['attrs']['data-availability'],'released')
+            self.assertIn('Live',current[card['start']:card['end']])
             current=current[:card['start']-2]+current[card['end']+7:]
         for tid in IDS:
             home=Homepage(current);card=next(c for c in home.cards if c['attrs'].get('data-tool-id')==tid)

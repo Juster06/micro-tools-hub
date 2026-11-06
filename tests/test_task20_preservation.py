@@ -1,4 +1,4 @@
-"""Task20 adds exactly six tested utilities while retaining the62-release baseline."""
+"""Task20 adds exactly six source-bound releases while retaining the62-release baseline."""
 import hashlib
 import json
 from pathlib import Path
@@ -21,10 +21,10 @@ class Task20Preservation(unittest.TestCase):
         for tool in old['tools']:
             current=by_id[tool['id']]
             if tool['id'] in IDS:
-                self.assertEqual((tool['status'],current['status']),('PLANNED','TESTED'));self.assertEqual(current['testing_status'],'REQUIRED_PASSED');self.assertIsNone(current['verification']['publication'])
+                self.assertEqual((tool['status'],current['status']),('PLANNED','RELEASED'));self.assertEqual(current['testing_status'],'REQUIRED_PASSED');self.assertTrue(current['verification']['publication']['source_matches'])
                 for key in ['id','name','category','description','directory_path','priority','implementation_complexity','required_features','related_tools','sequence_rank']:self.assertEqual(tool[key],current[key])
             else:self.assertEqual(tool,current)
-        self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':62,'TESTED':6,'READY':0,'PLANNED':24,'BLOCKED':1})
+        self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':68,'TESTED':0,'READY':0,'PLANNED':24,'BLOCKED':1})
     def test_all62_runtime_pages_and_existing_assets_privacy_ci_templates_are_unchanged(self):
         registry=json.loads(blob('TOOL_REGISTRY.json'))
         paths=[t['directory_path']+'/index.html' for t in registry['tools'] if t['status']=='RELEASED']
@@ -35,7 +35,7 @@ class Task20Preservation(unittest.TestCase):
         current=text('index.html')
         for tid in IDS:
             home=Homepage(current);card=next(c for c in home.cards if c['attrs'].get('data-tool-id')==tid)
-            self.assertEqual(card['attrs']['href'],tid+'/index.html');self.assertEqual(card['attrs']['data-availability'],'tested');self.assertIn('Tested · publication pending',current[card['start']:card['end']]);current=current[:card['start']-2]+current[card['end']+7:]
+            self.assertEqual(card['attrs']['href'],tid+'/index.html');self.assertEqual(card['attrs']['data-availability'],'released');self.assertIn('Live',current[card['start']:card['end']]);current=current[:card['start']-2]+current[card['end']+7:]
         home=Homepage(current);start,end=home.counts[0];current=current[:start]+'62 tools ready to use'+current[end:];self.assertEqual(current,blob('index.html').decode('utf8').replace('\r\n','\n'))
     def test_all_historical_audits_remain_byte_identical(self):
         names=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'audit'],cwd=ROOT,text=True).splitlines();self.assertGreater(len(names),90)
@@ -52,7 +52,7 @@ class Task20Preservation(unittest.TestCase):
         for tool in load('TOOL_REGISTRY.json')['tools']:
             if tool['id'] not in IDS:continue
             v=tool['verification'];audit=load(v['evidence_path']);page=audit['pages'][0]
-            self.assertEqual((audit['result'],audit['source_revision']),('PASS',v['source_revision']));self.assertEqual(page['source_sha256'],v['source_sha256']);self.assertIsNone(v['publication'])
+            self.assertEqual((audit['result'],audit['source_revision']),('PASS',v['source_revision']));self.assertEqual(page['source_sha256'],v['source_sha256']);self.assertTrue(v['publication']['source_matches'])
             committed=blob(page['path'],v['source_revision']).decode('utf8').replace('\r\n','\n').rstrip().encode();self.assertEqual(hashlib.sha256(committed).hexdigest(),v['source_sha256']);self.assertEqual(hashlib.sha256(text(page['path']).rstrip().encode()).hexdigest(),v['source_sha256'])
             for layer in ['structural','logic','browser']:
                 self.assertEqual(audit['canonical_layers'][layer]['status'],'PASS')

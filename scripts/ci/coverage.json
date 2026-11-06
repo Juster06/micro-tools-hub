@@ -11,6 +11,7 @@
     "tests/test_task19_release.py",
     "tests/test_task20_formats.py",
     "tests/test_task20_preservation.py",
+    "tests/test_task20_release.py",
     "tests/test_tool_framework.py",
     "tests/test_tracking.py"
   ],
@@ -610,7 +611,7 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 172,
+    "python-project": 175,
     "node-regression": 433,
     "browser-tests": 593
   },
