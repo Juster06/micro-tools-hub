@@ -2922,7 +2922,7 @@
       "category": "developer",
       "description": "Format markup using an evaluated parser without executing it.",
       "directory_path": "html-formatter",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2935,9 +2935,9 @@
         "Safe text output",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Revised Task 21 implementation complete; scoped Node tests passed, required canonical browser/CI verification pending. No publication claim.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null
@@ -2948,7 +2948,7 @@
       "category": "developer",
       "description": "Minify stylesheet text using a reviewed parser.",
       "directory_path": "css-minifier",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2961,9 +2961,9 @@
         "Before and after sizes",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Revised Task 21 implementation complete; scoped Node tests passed, required canonical browser/CI verification pending. No publication claim.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null
@@ -2974,7 +2974,7 @@
       "category": "developer",
       "description": "Minify JavaScript source without running it.",
       "directory_path": "javascript-minifier",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2987,9 +2987,9 @@
         "Safe output",
         "Input cap and worker evaluation"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Revised Task 21 implementation complete; scoped Node tests passed, required canonical browser/CI verification pending. No publication claim.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null
@@ -3351,7 +3351,7 @@
       "category": "social",
       "description": "Count hashtags in pasted posts with explicit token rules.",
       "directory_path": "hashtag-counter",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3363,9 +3363,9 @@
         "List extraction",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Revised Task 21 implementation complete; scoped Node tests passed, required canonical browser/CI verification pending. No publication claim.",
       "sequence_rank": null,
       "related_tools": [
         "hashtag-organizer"
@@ -4524,7 +4524,7 @@
       "category": "conversion",
       "description": "Convert supplied markup to Markdown without executing it.",
       "directory_path": "html-to-markdown",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4537,9 +4537,9 @@
         "Copy",
         "Safe parsing"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Revised Task 21 implementation complete; scoped Node tests passed, required canonical browser/CI verification pending. No publication claim.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null
@@ -4787,7 +4787,7 @@
       "category": "conversion",
       "description": "Preview untrusted markup in an isolated sandbox.",
       "directory_path": "html-previewer",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4800,9 +4800,9 @@
         "Show source",
         "Reset preview"
       ],
-      "testing_status": "NOT_STARTED",
+      "testing_status": "PARTIAL",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Revised Task 21 implementation complete; scoped Node tests passed, required canonical browser/CI verification pending. No publication claim.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null

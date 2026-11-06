@@ -10,6 +10,7 @@ BASE='1ead1c37861b80c552446afbdb952c9248370bf9'
 IDS={'excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'}
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
+from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 def blob(path,revision=BASE):return subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT)
 def text(path):return (ROOT/path).read_text(encoding='utf8')
 def load(path):return json.loads(text(path))
@@ -23,8 +24,9 @@ class Task20Preservation(unittest.TestCase):
             if tool['id'] in IDS:
                 self.assertEqual((tool['status'],current['status']),('PLANNED','RELEASED'));self.assertEqual(current['testing_status'],'REQUIRED_PASSED');self.assertTrue(current['verification']['publication']['source_matches'])
                 for key in ['id','name','category','description','directory_path','priority','implementation_complexity','required_features','related_tools','sequence_rank']:self.assertEqual(tool[key],current[key])
+            elif tool['id'] in TASK21_IDS:assert_transition(self,tool,current)
             else:self.assertEqual(tool,current)
-        self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':68,'TESTED':0,'READY':0,'PLANNED':24,'BLOCKED':1})
+        self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},TASK21_COUNTS)
     def test_all62_runtime_pages_and_existing_assets_privacy_ci_templates_are_unchanged(self):
         registry=json.loads(blob('TOOL_REGISTRY.json'))
         paths=[t['directory_path']+'/index.html' for t in registry['tools'] if t['status']=='RELEASED']
@@ -32,7 +34,7 @@ class Task20Preservation(unittest.TestCase):
         paths+=['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json','templates/text-input.html','templates/structured-input.html']
         for path in paths:self.assertEqual(norm((ROOT/path).read_bytes()),norm(blob(path)),path)
     def test_six_pending_cards_and_count_are_the_only_homepage_changes(self):
-        current=text('index.html')
+        current=without_cards(self,text('index.html'),Homepage)
         for tid in IDS:
             home=Homepage(current);card=next(c for c in home.cards if c['attrs'].get('data-tool-id')==tid)
             self.assertEqual(card['attrs']['href'],tid+'/index.html');self.assertEqual(card['attrs']['data-availability'],'released');self.assertIn('Live',current[card['start']:card['end']]);current=current[:card['start']-2]+current[card['end']+7:]
@@ -59,7 +61,7 @@ class Task20Preservation(unittest.TestCase):
                 if layer!='structural':self.assertGreater(audit['canonical_layers'][layer]['passed'],0)
             self.assertGreater(audit['focused_test_count'],0)
     def test_all68_tools_and_new_tests_remain_mandatory_in_ci(self):
-        c=load('scripts/ci/coverage.json');self.assertEqual(len(c['tools']),68)
+        c=load('scripts/ci/coverage.json');self.assertEqual(len(c['tools']),74)
         for tid in IDS:
             self.assertEqual(c['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'});self.assertIn('tests/tools/'+tid+'/logic.test.mjs',c['node_files'])
             for name in ['extended-browser.test.mjs','integration-browser.test.mjs']:self.assertIn('tests/tools/'+tid+'/'+name,c['browser_files'])

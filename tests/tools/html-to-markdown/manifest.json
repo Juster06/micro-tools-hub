@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "html-to-markdown",
+  "canonical_path": "html-to-markdown/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Owner-authorized specialist implementation; generic logic validates job preparation; actual Worker engines have specialized Node/browser coverage."
+}

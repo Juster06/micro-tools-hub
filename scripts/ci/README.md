@@ -1,5 +1,16 @@
 # Functional CI — Task 9.5
 
+## Revised Task21 coverage
+
+All74 tools remain mandatory: the68 releases plus six unpublished text/web tools.
+New Worker-engine logic, actual2second deadline/cancellation, CSS computed-style
+checks, HTML Previewer isolation and six-page consent cases are explicitly mapped.
+Historical assertions reconstruct their exact older catalogs after strictly
+validating only the six authorized later TESTED records/cards. Source/evidence,
+workflow/runtime pins and command deadlines remain protected. Full actual suite
+counts must pass the raised floors before delivery.
+
+
 ## Task20.1 release-evidence coverage
 
 The map contains13 Python files,67 Node files,129 browser files and68 tools.

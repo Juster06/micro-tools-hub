@@ -1,5 +1,14 @@
 # PNG to ICO
 
+## Current release state
+
+Task20 completed and publicly verified; PR36 and PR37 merged. Main baseline
+`8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20`, 68 released tools. Revised Task21
+is authorized after PDF deferral; manual checkpoint75, generated milestone100.
+Earlier development/release notes below are historical. Existing print-margin,
+favicon and unverified GA4 property-reporting limitations remain unchanged.
+
+
 Canonical route: `png-to-ico/index.html`.
 
 Static PNG ≤5MiB,4096 per side and8 million decoded pixels. Select1–6 sizes:16,32,48,64,128,256; ICO ≤1MiB. Native browser PNG frames are validated as square32-bit RGBA with correct chunk CRCs before packing the reviewed ICO directory. Transparency and aspect ratio preserved with padding; resampling may soften small artwork. Intended for modern PNG-capable ICO readers, not legacy BMP-only compatibility. No upload or external encoder; native encoder/decode deadlines approximately10s.

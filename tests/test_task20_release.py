@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1];BASE='0b055d5b837ea0bca85f8b6583eec5607
 IDS={'excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'}
 COUNTS=dict(zip(['excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'],[5,6,9,8,7,9]))
 sys.path.insert(0,str(ROOT/'scripts'));from tool_homepage import Homepage
+from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 def load(p):return json.loads((ROOT/p).read_text(encoding='utf8'))
 def git(p):return subprocess.check_output(['git','show',BASE+':'+p],cwd=ROOT)
 def norm(b):return b.replace(b'\r\n',b'\n')
@@ -41,6 +42,7 @@ class Task20Release(unittest.TestCase):
    if t['id'] in IDS:
     self.assertEqual(t['status'],'TESTED');self.assertEqual(by_id[t['id']]['status'],'RELEASED')
     for key in ['id','name','description','directory_path','required_features','dependencies','priority','implementation_complexity','related_tools','sequence_rank','expected_interface_ids']:self.assertEqual(t[key],by_id[t['id']][key])
+   elif t['id'] in TASK21_IDS:assert_transition(self,t,by_id[t['id']])
    else:self.assertEqual(t,by_id[t['id']])
    if t['status'] in ['TESTED','RELEASED']:
     p=t['directory_path']+'/index.html';self.assertEqual(norm((ROOT/p).read_bytes()),norm(git(p)))
@@ -48,8 +50,8 @@ class Task20Release(unittest.TestCase):
    paths=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,folder],cwd=ROOT,text=True).splitlines()
    for p in paths:self.assertEqual(norm((ROOT/p).read_bytes()),norm(git(p)),p)
   for p in ['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json']:self.assertEqual(norm((ROOT/p).read_bytes()),norm(git(p)))
-  current=(ROOT/'index.html').read_text(encoding='utf8')
+  current=without_cards(self,(ROOT/'index.html').read_text(encoding='utf8'),Homepage)
   for tid in IDS:
    card=next(c for c in Homepage(current).cards if c['attrs'].get('data-tool-id')==tid);self.assertEqual(card['attrs']['data-availability'],'released');chunk=current[card['start']:card['end']];self.assertEqual(chunk.count('Live'),1);chunk=chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending');current=current[:card['start']]+chunk+current[card['end']:]
-  self.assertEqual(current,norm(git('index.html')).decode());self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':68,'TESTED':0,'READY':0,'PLANNED':24,'BLOCKED':1})
+  home=Homepage(current);start,end=home.counts[0];current=current[:start]+'68 tools ready to use'+current[end:];self.assertEqual(current,norm(git('index.html')).decode());self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},TASK21_COUNTS)
 if __name__=='__main__':unittest.main()

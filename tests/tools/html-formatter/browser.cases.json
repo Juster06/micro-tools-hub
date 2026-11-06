@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "normal-processing",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "<p>Hello</p>"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Complete."
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "<p>Hello</p>"
+        }
+      ]
+    },
+    {
+      "id": "reset-focus",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "<p>Hello</p>"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Complete."
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "<p>Hello</p>"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "empty-error",
+      "steps": [
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "invalidate-output",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "<p>Hello</p>"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Complete."
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "<p>Hello</p>"
+        },
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "changed"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "copy",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "<p>Hello</p>"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Complete."
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "<p>Hello</p>"
+        },
+        {
+          "action": "clipboard",
+          "mode": "success"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "equals": "<p>Hello</p>"
+        }
+      ]
+    },
+    {
+      "id": "download",
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "<p>Hello</p>"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Complete."
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": "<p>Hello</p>"
+        },
+        {
+          "action": "click",
+          "selector": "#downloadBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "count",
+          "equals": 1
+        },
+        {
+          "action": "expect",
+          "selector": "$downloads",
+          "property": "text",
+          "includes": "Hello"
+        }
+      ]
+    },
+    {
+      "id": "mobile-keyboard",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "<p>Hello</p>"
+        },
+        {
+          "action": "focus",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "key",
+          "key": "Enter"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Complete."
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    }
+  ]
+}

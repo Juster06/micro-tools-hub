@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "html-previewer",
+  "canonical_path": "html-previewer/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Owner-authorized specialist implementation; generic logic validates job preparation; actual Worker engines have specialized Node/browser coverage."
+}

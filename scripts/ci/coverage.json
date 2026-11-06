@@ -12,6 +12,7 @@
     "tests/test_task20_formats.py",
     "tests/test_task20_preservation.py",
     "tests/test_task20_release.py",
+    "tests/test_task21_preservation.py",
     "tests/test_tool_framework.py",
     "tests/test_tracking.py"
   ],
@@ -24,6 +25,7 @@
     "tests/tools/case-converter/logic.test.mjs",
     "tests/tools/compound-interest-calculator/logic.test.mjs",
     "tests/tools/countdown-timer/logic.test.mjs",
+    "tests/tools/css-minifier/logic.test.mjs",
     "tests/tools/csv-column-extractor/logic.test.mjs",
     "tests/tools/csv-data-cleaner/logic.test.mjs",
     "tests/tools/csv-json-converter/logic.test.mjs",
@@ -39,7 +41,11 @@
     "tests/tools/file-signature-inspector/logic.test.mjs",
     "tests/tools/file-size-converter/logic.test.mjs",
     "tests/tools/find-and-replace/logic.test.mjs",
+    "tests/tools/hashtag-counter/logic.test.mjs",
     "tests/tools/hashtag-organizer/logic.test.mjs",
+    "tests/tools/html-formatter/logic.test.mjs",
+    "tests/tools/html-previewer/logic.test.mjs",
+    "tests/tools/html-to-markdown/logic.test.mjs",
     "tests/tools/image-color-picker/logic.test.mjs",
     "tests/tools/image-compressor/logic.test.mjs",
     "tests/tools/image-cropper/logic.test.mjs",
@@ -49,6 +55,7 @@
     "tests/tools/image-watermark/logic.test.mjs",
     "tests/tools/instagram-bio-formatter/logic.test.mjs",
     "tests/tools/invoice-generator/logic.test.mjs",
+    "tests/tools/javascript-minifier/logic.test.mjs",
     "tests/tools/json-formatter/logic.test.mjs",
     "tests/tools/json-to-txt/logic.test.mjs",
     "tests/tools/loan-repayment-calculator/logic.test.mjs",
@@ -96,6 +103,8 @@
     "tests/tools/compound-interest-calculator/integration-browser.test.mjs",
     "tests/tools/countdown-timer/extended-browser.test.mjs",
     "tests/tools/countdown-timer/integration-browser.test.mjs",
+    "tests/tools/css-minifier/extended-browser.test.mjs",
+    "tests/tools/css-minifier/integration-browser.test.mjs",
     "tests/tools/csv-column-extractor/extended-browser.test.mjs",
     "tests/tools/csv-column-extractor/integration-browser.test.mjs",
     "tests/tools/csv-data-cleaner/extended-browser.test.mjs",
@@ -126,8 +135,17 @@
     "tests/tools/file-size-converter/integration-browser.test.mjs",
     "tests/tools/find-and-replace/extended-browser.test.mjs",
     "tests/tools/find-and-replace/integration-browser.test.mjs",
+    "tests/tools/hashtag-counter/extended-browser.test.mjs",
+    "tests/tools/hashtag-counter/integration-browser.test.mjs",
     "tests/tools/hashtag-organizer/extended-browser.test.mjs",
     "tests/tools/hashtag-organizer/integration-browser.test.mjs",
+    "tests/tools/html-formatter/extended-browser.test.mjs",
+    "tests/tools/html-formatter/integration-browser.test.mjs",
+    "tests/tools/html-previewer/extended-browser.test.mjs",
+    "tests/tools/html-previewer/integration-browser.test.mjs",
+    "tests/tools/html-previewer/isolation-browser.test.mjs",
+    "tests/tools/html-to-markdown/extended-browser.test.mjs",
+    "tests/tools/html-to-markdown/integration-browser.test.mjs",
     "tests/tools/image-color-picker/extended-browser.test.mjs",
     "tests/tools/image-color-picker/integration-browser.test.mjs",
     "tests/tools/image-compressor/extended-browser.test.mjs",
@@ -146,6 +164,8 @@
     "tests/tools/instagram-bio-formatter/integration-browser.test.mjs",
     "tests/tools/invoice-generator/extended-browser.test.mjs",
     "tests/tools/invoice-generator/integration-browser.test.mjs",
+    "tests/tools/javascript-minifier/extended-browser.test.mjs",
+    "tests/tools/javascript-minifier/integration-browser.test.mjs",
     "tests/tools/json-formatter/extended-browser.test.mjs",
     "tests/tools/json-formatter/integration-browser.test.mjs",
     "tests/tools/json-to-txt/extended-browser.test.mjs",
@@ -559,6 +579,36 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "hashtag-counter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "html-formatter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "css-minifier": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "javascript-minifier": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "html-to-markdown": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "html-previewer": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -611,9 +661,9 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 175,
-    "node-regression": 433,
-    "browser-tests": 593
+    "python-project": 184,
+    "node-regression": 467,
+    "browser-tests": 660
   },
   "aggregate": {
     "job": "required-checks",

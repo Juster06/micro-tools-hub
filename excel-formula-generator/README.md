@@ -1,5 +1,14 @@
 # Excel Formula Generator
 
+## Current release state
+
+Task20 completed and publicly verified; PR36 and PR37 merged. Main baseline
+`8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20`, 68 released tools. Revised Task21
+is authorized after PDF deferral; manual checkpoint75, generated milestone100.
+Earlier development/release notes below are historical. Existing print-margin,
+favicon and unverified GA4 property-reporting limitations remain unchanged.
+
+
 Canonical route: `excel-formula-generator/index.html`.
 
 Guided SUM, AVERAGE, COUNT, COUNTA, MIN, MAX, IF and ROUND templates. At most20 arguments and8KiB input; output ≤4KiB. References obey the Excel grid and may include quoted sheet names; no external workbook references. IF takes3 arguments; a condition compares one unqualified cell with a literal. ROUND takes2 arguments and integer precision -308..308. Literal text ≤256 code points. English function names and decimal points only; comma/semicolon chooses argument separators, not automatic locale translation. No AI interpretation, formula execution or calculation claim.

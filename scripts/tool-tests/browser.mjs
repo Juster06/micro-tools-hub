@@ -34,12 +34,12 @@ export async function launchBrowser(executable) {
       if (path.dirname(path.resolve(directory)) !== path.resolve(os.tmpdir()) || !path.basename(directory).startsWith('edb-tool-browser-')) throw Error('Unexpected browser profile path');
       try { fs.rmSync(directory, {recursive:true,force:true,maxRetries:4,retryDelay:100}); } catch { /* Windows may briefly retain a browser-owned file. */ }
     },
-    call(method, params={}) {
+    call(method, params={}, sessionId) {
       return new Promise((resolve,reject) => {
         const id=++serial;
         const timeout=setTimeout(() => {pending.delete(id);reject(Error('Browser command timed out'));},5000);
         pending.set(id,{resolve,reject,timeout});
-        socket.send(JSON.stringify({id,method,params}));
+        socket.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));
       });
     },
     async evaluate(expression) {
