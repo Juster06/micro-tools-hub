@@ -156,3 +156,8 @@ Commit/push and deployment are different events. For substantial work, open a fe
 ## Scaling direction
 
 Keep independent pages for now. As measured needs emerge, consider shared local assets, generated catalog metadata, category discovery, reusable parsers, and a compiled stylesheet. Preserve URLs and review architectural changes first; growth targets alone do not justify a wholesale rewrite.
+
+
+## 2026-11-06 — Task 22 bounded Markdown conversion
+
+The owner authorized one specialist utility after dependency/security review. Pinned Marked 18.1.3 is a parser, not a sanitizer. A separate bounded parse5 allowlist reconstructs HTML, strips attributes and unsafe destinations, and produces inert preview markup. Raw HTML is escaped and images become text. Trusted local bundles run in disposable Workers; input is never code. Export permits reviewed HTTP(S) links; preview strips anchors and uses empty sandbox/no-referrer/restrictive CSP. Existing reusable adapter validates preparation; specialized suites execute actual transformations and isolation. Timer, byte, token, node and depth controls are scoped protections, not hard heap guarantees. No PDF adoption, consent changes, backend or new site build requirement. See `audit/TASK_22_SECURITY_REVIEW.json`.

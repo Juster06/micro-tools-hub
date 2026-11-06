@@ -1,6 +1,17 @@
 # Progress tracker
 
-## Current state — Task21.1 release-verification proposal
+## Current state — Task 22 development
+
+Task 21 is complete and publicly verified. PR #38 and PR #39 are merged. Main baseline: `93f2589b244f933e353d4d93ee145e35ed354399`; Pages 42180578641 and post-merge Functional CI 42180578876 succeeded. The deployed registry has 74 RELEASED tools. Earlier release-proposal sections below are historical checkpoints.
+
+Task 22 development is underway on `feat/task-22-markdown-converter-previewer`: Markdown Converter & Previewer is implemented and scoped tests passed after the mandatory dependency/security gate. This development proposal records TESTED — publication pending: 93 registered, 74 RELEASED, 1 TESTED, 0 READY, 17 PLANNED, 1 BLOCKED. The hub has 75 cards, including one pending publication. It does not establish the 75-public-release checkpoint.
+
+Next planning checkpoint: **75 released tools**. Existing generated registry milestone: **100**, unchanged. PDF processing remains deferred and PDF Compressor remains BLOCKED. Consent code, privacy notice and `G-XDHPQYJ5CH` are unchanged. GA4 property-level reporting remains unverified. The optional favicon404, Resume Builder print-margin issue and previously documented Windows local Python deadline/Image Compressor keyboard issue remain outside this change; hosted full checks are required separately. All 24 pre-existing worktrees and both unrelated `SESSION_HANDOFF.md` edits are preserved.
+
+**Next major task:** Owner review of the Task 22 development PR after all required checks pass. Do not merge, deploy, mark RELEASED or use administrator bypass without the separately required authorization. After authorized deployment, perform independent canonical public source/functionality, catalog and consent verification before proposing RELEASED.
+
+
+## Historical Task21.1 release-verification proposal
 
 PR #38 is merged; approved deployed main is `9fa032140639550abd9a0449ed7ef5198354bd40`.
 Pages42159767277 and all four post-merge Functional CI42159767505 jobs passed for
@@ -567,15 +578,15 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | --- | ---: |
 | Total registered utilities | 93 |
 | IDEA | 0 |
-| PLANNED | 18 |
+| PLANNED | 17 |
 | READY | 0 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 0 |
+| TESTED | 1 |
 | RELEASED | 74 |
 | DEPRECATED | 0 |
-| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 19 |
+| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 18 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
@@ -616,13 +627,13 @@ Next ready tool: **REQUIRES REVIEW**.
 | Resume Builder | RELEASED | 2026-11-06 |
 | PNG to ICO | RELEASED | 2026-11-06 |
 | Passport Photo Layout Maker | RELEASED | 2026-11-06 |
+| Markdown Converter & Previewer | TESTED | 2026-11-06 |
 | JavaScript Minifier | RELEASED | 2026-11-06 |
 | Image Compressor | RELEASED | 2026-11-06 |
 | HTML to Markdown | RELEASED | 2026-11-06 |
 | HTML Previewer | RELEASED | 2026-11-06 |
 | HTML Formatter | RELEASED | 2026-11-06 |
 | Hashtag Counter | RELEASED | 2026-11-06 |
-| Excel Formula Generator | RELEASED | 2026-11-06 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.

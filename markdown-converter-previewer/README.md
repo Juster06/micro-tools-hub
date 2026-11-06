@@ -9,3 +9,5 @@ Only explicit HTTP(S) export links without credentials survive URL validation. R
 Limits: 32 KiB UTF-8 input; 128 KiB intermediate HTML, fragment, and complete preview/download documents individually; 4,096 Markdown token objects and HTML nodes; depth 64; attributes at most 64 per HTML element; 2-second Worker deadline. Reset, editing and cancellation terminate workers and discard results. These controls are not a hard browser heap guarantee.
 
 The generic framework adapter validates job preparation; specialized Node/browser suites execute the real parser and sanitizer. Clipboard/download APIs are captured in browser tests; native OS permissions/dialogs and screen-reader/device certification are excluded. Public release verification remains a separate authorized task. PDF processing remains deferred.
+
+A cumulative 128 KiB link-rendering budget rejects repeated long reference destinations before concatenating the complete HTML string. The additional 31-case scratch gate passed before adopting this guard; the maintained production suite includes its amplification regression.

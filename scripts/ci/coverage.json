@@ -15,7 +15,8 @@
     "tests/test_task21_preservation.py",
     "tests/test_task21_release.py",
     "tests/test_tool_framework.py",
-    "tests/test_tracking.py"
+    "tests/test_tracking.py",
+    "tests/test_task22_preservation.py"
   ],
   "node_files": [
     "scripts/consent-static.test.mjs",
@@ -90,7 +91,8 @@
     "tests/tools/working-days-calculator/logic.test.mjs",
     "tests/tools/youtube-description-formatter/logic.test.mjs",
     "tests/tools/youtube-thumbnail-preview/logic.test.mjs",
-    "tests/tools/youtube-title-checker/logic.test.mjs"
+    "tests/tools/youtube-title-checker/logic.test.mjs",
+    "tests/tools/markdown-converter-previewer/logic.test.mjs"
   ],
   "browser_files": [
     "scripts/consent-browser.test.mjs",
@@ -234,7 +236,10 @@
     "tests/tools/youtube-thumbnail-preview/extended-browser.test.mjs",
     "tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs",
     "tests/tools/youtube-title-checker/extended-browser.test.mjs",
-    "tests/tools/youtube-title-checker/integration-browser.test.mjs"
+    "tests/tools/youtube-title-checker/integration-browser.test.mjs",
+    "tests/tools/markdown-converter-previewer/isolation-browser.test.mjs",
+    "tests/tools/markdown-converter-previewer/extended-browser.test.mjs",
+    "tests/tools/markdown-converter-previewer/integration-browser.test.mjs"
   ],
   "tools": {
     "social-counter": {
@@ -607,6 +612,11 @@
       "browser_job": "browser-tests"
     },
     "html-previewer": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "markdown-converter-previewer": {
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"

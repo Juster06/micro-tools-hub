@@ -10,6 +10,7 @@ BASE='1ead1c37861b80c552446afbdb952c9248370bf9'
 IDS={'excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'}
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
+from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 def blob(path,revision=BASE):return subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT)
 def text(path):return (ROOT/path).read_text(encoding='utf8')
@@ -25,7 +26,7 @@ class Task20Preservation(unittest.TestCase):
                 self.assertEqual((tool['status'],current['status']),('PLANNED','RELEASED'));self.assertEqual(current['testing_status'],'REQUIRED_PASSED');self.assertTrue(current['verification']['publication']['source_matches'])
                 for key in ['id','name','category','description','directory_path','priority','implementation_complexity','required_features','related_tools','sequence_rank']:self.assertEqual(tool[key],current[key])
             elif tool['id'] in TASK21_IDS:assert_transition(self,tool,current)
-            else:self.assertEqual(tool,current)
+            else:assert_unchanged_or_task22(self,tool,current)
         self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},TASK21_COUNTS)
     def test_all62_runtime_pages_and_existing_assets_privacy_ci_templates_are_unchanged(self):
         registry=json.loads(blob('TOOL_REGISTRY.json'))

@@ -1,6 +1,17 @@
 # Changelog
 
-## Current state — Task21.1 release-verification proposal
+## Current state — Task 22 development
+
+Task 21 is complete and publicly verified. PR #38 and PR #39 are merged. Main baseline: `93f2589b244f933e353d4d93ee145e35ed354399`; Pages 42180578641 and post-merge Functional CI 42180578876 succeeded. The deployed registry has 74 RELEASED tools. Earlier release-proposal sections below are historical checkpoints.
+
+Task 22 development is underway on `feat/task-22-markdown-converter-previewer`: Markdown Converter & Previewer is implemented and scoped tests passed after the mandatory dependency/security gate. This development proposal records TESTED — publication pending: 93 registered, 74 RELEASED, 1 TESTED, 0 READY, 17 PLANNED, 1 BLOCKED. The hub has 75 cards, including one pending publication. It does not establish the 75-public-release checkpoint.
+
+Next planning checkpoint: **75 released tools**. Existing generated registry milestone: **100**, unchanged. PDF processing remains deferred and PDF Compressor remains BLOCKED. Consent code, privacy notice and `G-XDHPQYJ5CH` are unchanged. GA4 property-level reporting remains unverified. The optional favicon404, Resume Builder print-margin issue and previously documented Windows local Python deadline/Image Compressor keyboard issue remain outside this change; hosted full checks are required separately. All 24 pre-existing worktrees and both unrelated `SESSION_HANDOFF.md` edits are preserved.
+
+**Next major task:** Owner review of the Task 22 development PR after all required checks pass. Do not merge, deploy, mark RELEASED or use administrator bypass without the separately required authorization. After authorized deployment, perform independent canonical public source/functionality, catalog and consent verification before proposing RELEASED.
+
+
+## Historical Task21.1 release-verification proposal
 
 PR #38 is merged; approved deployed main is `9fa032140639550abd9a0449ed7ef5198354bd40`.
 Pages42159767277 and all four post-merge Functional CI42159767505 jobs passed for

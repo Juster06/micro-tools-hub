@@ -12,6 +12,7 @@ IDS={'password-generator','csv-to-txt','passphrase-generator','qr-code-generator
 TASK20_IDS={'excel-formula-generator', 'resume-builder', 'emoji-picker', 'passport-photo-layout-maker', 'image-compressor', 'png-to-ico'}
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
+from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 
 def raw(path,revision=BASE):
@@ -37,7 +38,7 @@ class Task19Preservation(unittest.TestCase):
                     self.assertEqual(current[key],tool[key])
             elif tool['id'] in TASK20_IDS:self.assertEqual((tool['status'],current['status']),('PLANNED','RELEASED'));self.assertTrue(current['verification']['publication']['source_matches'])
             elif tool['id'] in TASK21_IDS:assert_transition(self,tool,current)
-            else:self.assertEqual(current,tool)
+            else:assert_unchanged_or_task22(self,tool,current)
         counts={status:sum(t['status']==status for t in new['tools']) for status in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']}
         self.assertEqual(counts,TASK21_COUNTS)
 

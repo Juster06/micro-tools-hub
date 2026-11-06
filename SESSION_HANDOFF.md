@@ -1,6 +1,17 @@
 # Session handoff
 
-## Current state — Task21.1 release-verification proposal
+## Current state — Task 22 development
+
+Task 21 is complete and publicly verified. PR #38 and PR #39 are merged. Main baseline: `93f2589b244f933e353d4d93ee145e35ed354399`; Pages 42180578641 and post-merge Functional CI 42180578876 succeeded. The deployed registry has 74 RELEASED tools. Earlier release-proposal sections below are historical checkpoints.
+
+Task 22 development is underway on `feat/task-22-markdown-converter-previewer`: Markdown Converter & Previewer is implemented and scoped tests passed after the mandatory dependency/security gate. This development proposal records TESTED — publication pending: 93 registered, 74 RELEASED, 1 TESTED, 0 READY, 17 PLANNED, 1 BLOCKED. The hub has 75 cards, including one pending publication. It does not establish the 75-public-release checkpoint.
+
+Next planning checkpoint: **75 released tools**. Existing generated registry milestone: **100**, unchanged. PDF processing remains deferred and PDF Compressor remains BLOCKED. Consent code, privacy notice and `G-XDHPQYJ5CH` are unchanged. GA4 property-level reporting remains unverified. The optional favicon404, Resume Builder print-margin issue and previously documented Windows local Python deadline/Image Compressor keyboard issue remain outside this change; hosted full checks are required separately. All 24 pre-existing worktrees and both unrelated `SESSION_HANDOFF.md` edits are preserved.
+
+**Next major task:** Owner review of the Task 22 development PR after all required checks pass. Do not merge, deploy, mark RELEASED or use administrator bypass without the separately required authorization. After authorized deployment, perform independent canonical public source/functionality, catalog and consent verification before proposing RELEASED.
+
+
+## Historical Task21.1 release-verification proposal
 
 PR #38 is merged; approved deployed main is `9fa032140639550abd9a0449ed7ef5198354bd40`.
 Pages42159767277 and all four post-merge Functional CI42159767505 jobs passed for
@@ -1249,11 +1260,11 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 100 released tools; 74 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 18; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 74; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 17; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 1; RELEASED: 74; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: release/task-21-six-tools-verification.
-- Latest commit observed before generation: 9fa032140639550abd9a0449ed7ef5198354bd40.
+- Git branch: feat/task-22-markdown-converter-previewer.
+- Latest commit observed before generation: c30cf78de587781502cf8832a10a5afe5a1aeba1.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -1263,13 +1274,13 @@ These are registry verification records, not new tests or tasks executed by this
 - Resume Builder: RELEASED, evidence dated 2026-11-06.
 - PNG to ICO: RELEASED, evidence dated 2026-11-06.
 - Passport Photo Layout Maker: RELEASED, evidence dated 2026-11-06.
+- Markdown Converter & Previewer: TESTED, evidence dated 2026-11-06.
 - JavaScript Minifier: RELEASED, evidence dated 2026-11-06.
 - Image Compressor: RELEASED, evidence dated 2026-11-06.
 - HTML to Markdown: RELEASED, evidence dated 2026-11-06.
 - HTML Previewer: RELEASED, evidence dated 2026-11-06.
 - HTML Formatter: RELEASED, evidence dated 2026-11-06.
 - Hashtag Counter: RELEASED, evidence dated 2026-11-06.
-- Excel Formula Generator: RELEASED, evidence dated 2026-11-06.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -1280,13 +1291,16 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
+- ` M` ARCHITECTURE.md
 - ` M` CHANGELOG.md
+- ` M` DECISIONS.md
 - ` M` PROGRESS_TRACKER.md
 - ` M` PROJECT_MASTER_PLAN.md
 - ` M` README.md
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
+- ` M` audit/TASK_22_SECURITY_REVIEW.json
 - ` M` css-minifier/README.md
 - ` M` hashtag-counter/README.md
 - ` M` html-formatter/README.md
@@ -1295,18 +1309,25 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` index.html
 - ` M` javascript-minifier/README.md
 - ` M` scripts/ci/coverage.json
-- ` M` scripts/consent-static.test.mjs
+- ` M` scripts/consent-browser.test.mjs
 - ` M` scripts/task21_test_support.py
+- ` M` tests/test_task18_preservation.py
+- ` M` tests/test_task19_preservation.py
+- ` M` tests/test_task20_preservation.py
+- ` M` tests/test_task20_release.py
 - ` M` tests/test_task21_preservation.py
-- `??` audit/CSS_MINIFIER_RELEASE_VERIFICATION.json
-- `??` audit/HASHTAG_COUNTER_RELEASE_VERIFICATION.json
-- `??` audit/HTML_FORMATTER_RELEASE_VERIFICATION.json
-- `??` audit/HTML_PREVIEWER_RELEASE_VERIFICATION.json
-- `??` audit/HTML_TO_MARKDOWN_RELEASE_VERIFICATION.json
-- `??` audit/JAVASCRIPT_MINIFIER_RELEASE_VERIFICATION.json
-- `??` audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json
-- `??` scripts/public-verification/
-- `??` tests/test_task21_release.py
+- ` M` tests/test_task21_release.py
+- `??` audit/MARKDOWN_CONVERTER_PREVIEWER_VERIFICATION.json
+- `??` audit/TASK_22_DEVELOPMENT_VERIFICATION.json
+- `??` audit/task22-prototype/README.md
+- `??` audit/task22-prototype/hardened-engine.mjs
+- `??` audit/task22-prototype/hardened-resource-cases.mjs
+- `??` audit/task22-prototype/isolation-cases.mjs
+- `??` audit/task22-prototype/prototype-html.txt
+- `??` audit/task22-prototype/security-gate-hardened.txt
+- `??` scripts/task22_test_support.py
+- `??` tests/test_task22_preservation.py
+- `??` tests/tools/markdown-converter-previewer/integration-browser.test.mjs
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

@@ -1,5 +1,7 @@
 # HTML Previewer
 
+Current status: Task 21 complete and publicly verified; PR #38 and #39 merged. RELEASED at main `93f2589b244f933e353d4d93ee145e35ed354399`. The development checkpoint below is historical.
+
 ## Task21.1 release proposal
 
 Fresh public verification passed against deployed `9fa032140639550abd9a0449ed7ef5198354bd40`; evidence:

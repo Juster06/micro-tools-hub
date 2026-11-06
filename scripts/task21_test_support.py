@@ -1,6 +1,6 @@
 """Explicit later-batch allowance for historical preservation reconstructions."""
 IDS={'hashtag-counter','html-formatter','css-minifier','javascript-minifier','html-to-markdown','html-previewer'}
-COUNTS={'RELEASED':74,'TESTED':0,'READY':0,'PLANNED':18,'BLOCKED':1}
+from task22_test_support import COUNTS,without_task22
 
 def assert_transition(case,old,new):
     case.assertIn(old['id'],IDS)
@@ -15,6 +15,7 @@ def assert_transition(case,old,new):
         case.assertEqual(old[key],new[key],key)
 
 def without_cards(case,source,Homepage):
+    source=without_task22(case,source,Homepage)
     for tid in sorted(IDS):
         cards=[c for c in Homepage(source).cards if c['attrs'].get('data-tool-id')==tid]
         case.assertEqual(len(cards),1)

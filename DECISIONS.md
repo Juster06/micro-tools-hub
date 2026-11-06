@@ -130,3 +130,8 @@ are retained seven days. See [CI documentation](scripts/ci/README.md).
 **Alternatives:** Make the repository private, add ad/traffic scripts, or schedule recurring SEO changes.
 
 **Consequences:** No credentials or account settings enter these documents; no automation is created. Architecture/services/access changes need the relevant owner approval.
+
+
+## 2026-11-06 — Task 22 bounded Markdown conversion
+
+The owner authorized one specialist utility after dependency/security review. Pinned Marked 18.1.3 is a parser, not a sanitizer. A separate bounded parse5 allowlist reconstructs HTML, strips attributes and unsafe destinations, and produces inert preview markup. Raw HTML is escaped and images become text. Trusted local bundles run in disposable Workers; input is never code. Export permits reviewed HTTP(S) links; preview strips anchors and uses empty sandbox/no-referrer/restrictive CSP. Existing reusable adapter validates preparation; specialized suites execute actual transformations and isolation. Timer, byte, token, node and depth controls are scoped protections, not hard heap guarantees. No PDF adoption, consent changes, backend or new site build requirement. See `audit/TASK_22_SECURITY_REVIEW.json`.
