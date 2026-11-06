@@ -48,7 +48,12 @@ function convert(input,options={}){
   if(!Number.isFinite(result)||Math.abs(result)>1e18||(result===0&&value!==0&&category!=='temperature'))throw RangeError('Result exceeds the finite supported range (magnitude at most 1e18).');
   return {result:Object.is(result,-0)?0:result,category,from,to};
 }
-function run(input,options={}){const r=convert(input,options);return bounded(Number(r.result.toPrecision(12)).toString()+' '+r.to+'\nRounded to 12 significant digits; binary floating-point arithmetic.',8192,8192);}
+function run(input,options={}){
+  const r=convert(input,options);
+  const temperature={C:{C:'Identity conversion.',F:'F = C × 9/5 + 32',K:'K = C + 273.15'},F:{C:'C = (F − 32) × 5/9',F:'Identity conversion.',K:'K = (F + 459.67) × 5/9'},K:{C:'C = K − 273.15',F:'F = K × 9/5 − 459.67',K:'Identity conversion.'}};
+  const formula=r.category==='temperature'?temperature[r.from][r.to]:'Factor: 1 '+r.from+' = '+Number((units[r.category][r.from][1]/units[r.category][r.to][1]).toPrecision(12))+' '+r.to;
+  return bounded(Number(r.result.toPrecision(12)).toString()+' '+r.to+'\n'+formula+'\nRounded to 12 significant digits; binary floating-point arithmetic.',8192,8192);
+}
 window.EDB_TOOL={isScaffold:false,allowEmpty:false,run,convert,units};
 
 })();</script>
