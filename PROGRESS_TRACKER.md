@@ -15,7 +15,10 @@ The owner authorized the revised six-tool batch: Hashtag Counter, HTML Formatter
 CSS Minifier, JavaScript Minifier, HTML to Markdown and HTML Previewer. The scoped
 dependency/isolation gate passed; see `audit/TASK_21_SECURITY_REVIEW.json` for pinned
 versions, integrity, bounded experiments and limitations. Implementation is
-complete; full source-bound verification and development PR checks are underway.
+complete; scoped source-bound verification passed. The six tools are TESTED —
+publication pending. Local regression results and scope are recorded in
+`audit/TASK_21_DEVELOPMENT_VERIFICATION.json`; exact-head required PR checks must
+pass before owner review. No merge or deployment is authorized.
 No new public release is claimed. Final lifecycle counts are generated below.
 
 Next planning checkpoint: **75 released tools**. Existing generated registry
@@ -26,8 +29,8 @@ remains unverified. The shared consent script/privacy notice and G-XDHPQYJ5CH
 are preserved. All 22 pre-existing worktrees and both unrelated handoff edits
 are preserved; this task uses a separate revised Task21 worktree.
 
-**Next major task:** Complete scoped/full tests, source-bound evidence and the
-revised Task21 development PR. Do not merge, deploy or mark RELEASED without
+**Next major task:** Owner review of the revised Task21 development PR after
+all required Functional CI checks pass. Do not merge, deploy or mark RELEASED without
 separate owner authorization and independent public verification.
 
 ## Historical Task 20.1 — release-verification checkpoint
@@ -534,15 +537,15 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | --- | ---: |
 | Total registered utilities | 93 |
 | IDEA | 0 |
-| PLANNED | 24 |
+| PLANNED | 18 |
 | READY | 0 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 0 |
+| TESTED | 6 |
 | RELEASED | 68 |
 | DEPRECATED | 0 |
-| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 25 |
+| Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 19 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
@@ -583,13 +586,13 @@ Next ready tool: **REQUIRES REVIEW**.
 | Resume Builder | RELEASED | 2026-11-06 |
 | PNG to ICO | RELEASED | 2026-11-06 |
 | Passport Photo Layout Maker | RELEASED | 2026-11-06 |
+| JavaScript Minifier | TESTED | 2026-11-06 |
 | Image Compressor | RELEASED | 2026-11-06 |
+| HTML to Markdown | TESTED | 2026-11-06 |
+| HTML Previewer | TESTED | 2026-11-06 |
+| HTML Formatter | TESTED | 2026-11-06 |
+| Hashtag Counter | TESTED | 2026-11-06 |
 | Excel Formula Generator | RELEASED | 2026-11-06 |
-| Emoji Picker | RELEASED | 2026-11-06 |
-| YouTube Title Checker | RELEASED | 2026-11-05 |
-| Regex Tester | RELEASED | 2026-11-05 |
-| QR Code Generator | RELEASED | 2026-11-05 |
-| Password Generator | RELEASED | 2026-11-05 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.

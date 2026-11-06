@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "scope": "Development corrections and environment failures retained; current results are separate source-bound audits and exact-head CI.",
+  "events": [
+    {
+      "issue": "CSSO5.0.5/css-tree2.2.1 did not accept required modern media-range syntax during candidate investigation.",
+      "resolution": "Candidate rejected before adoption; CSS-Tree3.2.1 selected and disclosed. No CSSO dependency in production."
+    },
+    {
+      "issue": "Initial prototype content-preservation fixture expected formatting to pass despite a parsed-content change.",
+      "resolution": "Fail-closed behavior retained; fixture asserts refusal. No content-preservation guard removed."
+    },
+    {
+      "issue": "CSS parser could repair an unclosed string.",
+      "resolution": "Bounded lexical preflight now rejects unterminated strings/comments/URLs/brackets; specialized tests pass."
+    },
+    {
+      "issue": "Early Markdown browser fixture exposed duplicate block-spacing newlines.",
+      "resolution": "Block joining corrected while retaining code-block internal newlines; Node and browser fixtures pass at implementation checkpoint."
+    },
+    {
+      "issue": "Initial formatter output-equivalence check reused the input32KiB cap.",
+      "resolution": "Output guard remains256KiB; generated-output parser uses that cap while input stays32KiB. Final34 focused Node cases pass."
+    },
+    {
+      "issue": "One parallel local Edge startup failed with UNKNOWN.",
+      "resolution": "Focused rerun passed sequentially; no launch failure suppressed or suite skipped."
+    },
+    {
+      "issue": "First full-browser invocation lacked EDB_TEST_BROWSER and failed preflight without running browser tests.",
+      "resolution": "Explicit installed Edge path supplied; full partition rerun under unchanged deadline. Actual final partition result retained."
+    },
+    {
+      "issue": "Full local Edge suite: existing Base64 maximum UTF-8 browser command timed out; entire suite later exceeded unchanged900second deadline after540 completed cases.",
+      "resolution": "Existing Base64 extended file rerun in isolation and passed; partial local full run retained as FAIL. No deadline increased/test skipped; exact-head pinned hosted Chromium completion remains mandatory."
+    },
+    {
+      "issue": "Cross-platform CRLF asset hashing and child-frame process-model compatibility.",
+      "resolution": "LF canonical hash normalization; isolated-world instrumentation supports both in-process iframe and OOPIF. Runtime code unchanged."
+    },
+    {
+      "issue": "Git author identity unset for first commit attempt.",
+      "resolution": "Used verified owner public GitHub noreply identity per command only; no global/local config changed."
+    }
+  ]
+}

@@ -15,7 +15,10 @@ The owner authorized the revised six-tool batch: Hashtag Counter, HTML Formatter
 CSS Minifier, JavaScript Minifier, HTML to Markdown and HTML Previewer. The scoped
 dependency/isolation gate passed; see `audit/TASK_21_SECURITY_REVIEW.json` for pinned
 versions, integrity, bounded experiments and limitations. Implementation is
-complete; full source-bound verification and development PR checks are underway.
+complete; scoped source-bound verification passed. The six tools are TESTED —
+publication pending. Local regression results and scope are recorded in
+`audit/TASK_21_DEVELOPMENT_VERIFICATION.json`; exact-head required PR checks must
+pass before owner review. No merge or deployment is authorized.
 No new public release is claimed. Final lifecycle counts are generated below.
 
 Next planning checkpoint: **75 released tools**. Existing generated registry
@@ -26,8 +29,8 @@ remains unverified. The shared consent script/privacy notice and G-XDHPQYJ5CH
 are preserved. All 22 pre-existing worktrees and both unrelated handoff edits
 are preserved; this task uses a separate revised Task21 worktree.
 
-**Next major task:** Complete scoped/full tests, source-bound evidence and the
-revised Task21 development PR. Do not merge, deploy or mark RELEASED without
+**Next major task:** Owner review of the revised Task21 development PR after
+all required Functional CI checks pass. Do not merge, deploy or mark RELEASED without
 separate owner authorization and independent public verification.
 
 ## Historical Task 20.1 — release-verification checkpoint

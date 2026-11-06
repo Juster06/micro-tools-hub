@@ -12,4 +12,4 @@ Structural tags only. All attributes, styling, images, active and foreign elemen
 
 ## Verification
 
-Development in progress; no TESTED or public-release claim yet. Required tests and source-bound evidence must pass before status changes.
+TESTED — publication pending. Source checkpoint `f6a4ceab5badc73510159a33ed3b13c61f85384c`; evidence: `audit/HTML_PREVIEWER_VERIFICATION.json`. Scoped verification passed: 9 canonical inline logic fixtures (job preparation; actual transformation covered separately); 7 canonical Chromium interaction fixtures / 21 assertions; 5 specialized Node Worker/logic tests; 6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline; 12 actual HTTP preview-isolation tests: canary positive control, malicious fixtures, opaque-origin/storage, blocked top navigation/popup/form. Full mapped regression and hosted PR checks remain mandatory before owner review. No public availability or RELEASED claim.

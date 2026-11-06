@@ -15,7 +15,10 @@ The owner authorized the revised six-tool batch: Hashtag Counter, HTML Formatter
 CSS Minifier, JavaScript Minifier, HTML to Markdown and HTML Previewer. The scoped
 dependency/isolation gate passed; see `audit/TASK_21_SECURITY_REVIEW.json` for pinned
 versions, integrity, bounded experiments and limitations. Implementation is
-complete; full source-bound verification and development PR checks are underway.
+complete; scoped source-bound verification passed. The six tools are TESTED —
+publication pending. Local regression results and scope are recorded in
+`audit/TASK_21_DEVELOPMENT_VERIFICATION.json`; exact-head required PR checks must
+pass before owner review. No merge or deployment is authorized.
 No new public release is claimed. Final lifecycle counts are generated below.
 
 Next planning checkpoint: **75 released tools**. Existing generated registry
@@ -26,8 +29,8 @@ remains unverified. The shared consent script/privacy notice and G-XDHPQYJ5CH
 are preserved. All 22 pre-existing worktrees and both unrelated handoff edits
 are preserved; this task uses a separate revised Task21 worktree.
 
-**Next major task:** Complete scoped/full tests, source-bound evidence and the
-revised Task21 development PR. Do not merge, deploy or mark RELEASED without
+**Next major task:** Owner review of the revised Task21 development PR after
+all required Functional CI checks pass. Do not merge, deploy or mark RELEASED without
 separate owner authorization and independent public verification.
 
 ## Historical Task 20.1 — release-verification checkpoint
@@ -676,9 +679,9 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | uuid-generator | UUID Generator | RELEASED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | sha256-hash-checker | SHA-256 Text & File Hash Checker | RELEASED | P2 | M | Browser Web Crypto SHA-256; bounded file reads |
 | regex-tester | Regex Tester | RELEASED | P2 | L | Browser Worker with termination timeout; bounded input |
-| html-formatter | HTML Formatter | PLANNED | P2 | L | Reviewed non-executing HTML parser and whitespace-preservation policy |
-| css-minifier | CSS Minifier | PLANNED | P2 | L | Reviewed CSS parser/minifier and license |
-| javascript-minifier | JavaScript Minifier | PLANNED | P2 | L | Reviewed JavaScript parser/minifier and license; consider worker isolation |
+| html-formatter | HTML Formatter | TESTED | P2 | L | Pinned local Prettier 3.9.10 HTML and parse5 8.1.0 in bounded Worker; reviewed MIT/BSD notices |
+| css-minifier | CSS Minifier | TESTED | P2 | L | Pinned local CSS-Tree 3.2.1 parser/generator (MIT); no rule/value optimization |
+| javascript-minifier | JavaScript Minifier | TESTED | P2 | L | Pinned local Acorn 8.19.0 (MIT) and Terser 5.51.2 (BSD-2-Clause); compression/mangling disabled |
 | timestamp-converter | Timestamp Converter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 
 ### Social Media Tools
@@ -692,7 +695,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | instagram-bio-formatter | Instagram Bio Formatter | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | social-media-line-break-tool | Social Media Line Break Tool | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | emoji-picker | Emoji Picker | RELEASED | P2 | M | Reviewed local emoji dataset and usage license |
-| hashtag-counter | Hashtag Counter | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
+| hashtag-counter | Hashtag Counter | TESTED | P2 | S | Local caption parsing, NFC normalization and dedicated browser Worker; no added parser library |
 | youtube-thumbnail-preview | YouTube Thumbnail Preview | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | posting-calendar-generator | Posting Calendar Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | username-generator | Username Generator | RELEASED | P2 | S | Browser-native approach; scope review before implementation |
@@ -732,13 +735,13 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | --- | --- | --- | --- | --- | --- |
 | txt-to-pdf | TXT to PDF | PLANNED | P2 | L | Reviewed PDF text rendering library and font licensing |
 | markdown-converter-previewer | Markdown Converter & Previewer | PLANNED | P2 | L | Reviewed Markdown parser and sanitizer; local bundled assets preferred |
-| html-to-markdown | HTML to Markdown | PLANNED | P2 | L | Reviewed non-executing HTML-to-Markdown conversion library |
+| html-to-markdown | HTML to Markdown | TESTED | P2 | L | Pinned local parse5 8.1.0 and bounded reviewed HTML-tree to Markdown-text converter |
 | csv-to-txt | CSV to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | json-to-txt | JSON to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | svg-to-png | SVG to PNG | PLANNED | P2 | L | Reviewed SVG sanitization and external-resource blocking; Canvas rasterization with tested dimension limits |
 | png-to-ico | PNG to ICO | RELEASED | P2 | L | Reviewed local ICO encoder |
 | file-size-converter | File Size Converter | RELEASED | P2 | S | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
-| html-previewer | HTML Previewer | PLANNED | P2 | L | Sandboxed iframe with restrictive CSP and no script/same-origin privileges |
+| html-previewer | HTML Previewer | TESTED | P2 | L | Pinned local parse5 8.1.0 structural allowlist, empty iframe sandbox and restrictive CSP; no active/external resources |
 
 ### Everyday Productivity Tools
 

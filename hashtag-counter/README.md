@@ -12,4 +12,4 @@ Each job has a 2-second Worker deadline and can be cancelled. Input changes/rese
 
 ## Verification
 
-Development in progress; no TESTED or public-release claim yet. Required tests and source-bound evidence must pass before status changes.
+TESTED — publication pending. Source checkpoint `f6a4ceab5badc73510159a33ed3b13c61f85384c`; evidence: `audit/HASHTAG_COUNTER_VERIFICATION.json`. Scoped verification passed: 11 canonical inline logic fixtures; 7 canonical Chromium interaction fixtures / 21 assertions; 5 specialized Node Worker/logic tests; 6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline. Full mapped regression and hosted PR checks remain mandatory before owner review. No public availability or RELEASED claim.

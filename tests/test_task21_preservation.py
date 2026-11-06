@@ -48,7 +48,7 @@ class Task21Preservation(unittest.TestCase):
             v=tool['verification'];audit=load(v['evidence_path']);self.assertEqual((audit['result'],audit['source_revision']),('PASS',v['source_revision']));self.assertEqual(audit['verified_on'],tool['last_verification_date']);self.assertIsNone(v['publication'])
             p=audit['pages'][0];self.assertEqual(p['source_sha256'],v['source_sha256']);self.assertEqual(page_hash(blob(p['path'],v['source_revision'])),v['source_sha256']);self.assertEqual(page_hash((ROOT/p['path']).read_bytes()),v['source_sha256'])
             for asset in audit['runtime_assets']:
-                self.assertEqual(hashlib.sha256((ROOT/asset['path']).read_bytes()).hexdigest(),asset['sha256']);self.assertEqual(hashlib.sha256(blob(asset['path'],v['source_revision'])).hexdigest(),asset['sha256'])
+                self.assertEqual(hashlib.sha256((ROOT/asset['path']).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),asset['sha256']);self.assertEqual(hashlib.sha256(blob(asset['path'],v['source_revision']).replace(b'\r\n',b'\n')).hexdigest(),asset['sha256'])
             for layer in ['structural','logic','browser']:
                 self.assertEqual(audit['canonical_layers'][layer]['status'],'PASS')
                 if layer!='structural':self.assertGreater(audit['canonical_layers'][layer]['passed'],0)
@@ -61,7 +61,7 @@ class Task21Preservation(unittest.TestCase):
         for package in a['selected_packages']:
             self.assertTrue(package['dist']['integrity'].startswith('sha512-'));self.assertEqual(len(package['sha256']),64);self.assertEqual(package['osv'],{})
         for asset in a['artifacts']:
-            data=(ROOT/asset['path']).read_bytes();self.assertEqual(len(data),asset['bytes']);self.assertEqual(hashlib.sha256(data).hexdigest(),asset['sha256'])
+            data=(ROOT/asset['path']).read_bytes().replace(b'\r\n',b'\n');self.assertEqual(len(data),asset['bytes']);self.assertEqual(hashlib.sha256(data).hexdigest(),asset['sha256'])
         notices=read('assets/vendor/task21/THIRD_PARTY_NOTICES.txt')
         for label in ['parse5@8.1.0','prettier@3.9.10','css-tree@3.2.1','terser@5.51.2','acorn@8.19.0','BSD-2-Clause','MIT','CC0']:self.assertIn(label,notices)
         self.assertEqual(load('audit/TASK_21_PDF_DEFERRAL.json')['result'],'DEFER PDF UTILITIES')

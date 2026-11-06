@@ -158,22 +158,33 @@ test("actual child has structural content, opaque origin/storage, blocked naviga
   await preview(
     "<h1>Hello</h1><p>Readable <strong>local</strong> preview.</p>",
   );
-  let target;
+  let target, frameId, sessionId;
   await wait(async () => {
+    const parentTree = await b.call("Page.getFrameTree");
+    const child = parentTree.frameTree.childFrames?.find(
+      (entry) => entry.frame.url === "about:srcdoc",
+    );
+    if (child) {
+      frameId = child.frame.id;
+      return true;
+    }
     const t = await b.call("Target.getTargets");
     target = t.targetInfos.find(
       (x) => x.type === "iframe" && x.url === "about:srcdoc",
     );
     return !!target;
   });
-  const { sessionId } = await b.call("Target.attachToTarget", {
-    targetId: target.targetId,
-    flatten: true,
-  });
-  const tree = await b.call("Page.getFrameTree", {}, sessionId);
+  if (target) {
+    ({ sessionId } = await b.call("Target.attachToTarget", {
+      targetId: target.targetId,
+      flatten: true,
+    }));
+    const tree = await b.call("Page.getFrameTree", {}, sessionId);
+    frameId = tree.frameTree.frame.id;
+  }
   const world = await b.call(
     "Page.createIsolatedWorld",
-    { frameId: tree.frameTree.frame.id, worldName: "test-only-origin-probes" },
+    { frameId, worldName: "test-only-origin-probes" },
     sessionId,
   );
   const r = await b.call(

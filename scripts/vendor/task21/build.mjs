@@ -52,7 +52,7 @@ for (const kind of ["markup", "format", "css", "javascript"]) {
   const relative = "assets/vendor/task21/" + kind + "-source.js",
     target = path.join(root, relative);
   if (check) {
-    if (fs.readFileSync(target, "utf8") !== output)
+    if (fs.readFileSync(target, "utf8").replace(/\r\n/g, "\n") !== output)
       throw Error("Rebuilt asset differs: " + relative);
   } else fs.writeFileSync(target, output, "utf8");
   artifacts.push({

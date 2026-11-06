@@ -1908,7 +1908,7 @@
     "Generic scaffold dry-run refuses PLANNED entries. Owner explicitly authorized these six IDs; specialized pages follow existing adapter/fixture/integration conventions without weakening generator safety or temporarily changing registry statuses."
   ],
   "limitations": [
-    "Actual feasibility browser: Edge156; pinned Chromium and production-page tests still required before TESTED.",
+    "Feasibility browser: Edge156. Production-page scoped tests passed separately; full mapped local and mandatory hosted pinned Chromium results are recorded in development evidence / exact PR checks.",
     "Timers/Worker termination are safeguards, not hard heap guarantees. Small text, node, token, depth and output caps reduce bounded workload; no decompression supported.",
     "Native OS clipboard/download dialogs, screen readers, physical devices and cross-engine certification excluded.",
     "Current libraries may contain undisclosed bugs. OSV absence is not a universal security clearance.",
@@ -1921,5 +1921,83 @@
     "https://terser.org/docs/api-reference/",
     "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-sandbox",
     "https://www.w3.org/TR/CSP3/"
-  ]
+  ],
+  "asset_hash_convention": "SHA256 of UTF-8/LF bytes including final newline; Windows checkout CRLF normalized.",
+  "source_modules": [
+    {
+      "path": "scripts/vendor/task21/build.mjs",
+      "sha256": "21433e418e64e4ac01f8860c11eada9de308607589608510d6f041eb17e54866"
+    },
+    {
+      "path": "scripts/vendor/task21/css-preflight.mjs",
+      "sha256": "bd6f8cfc393dc5807729772f52bef00847675260874d81cfa59dc42ad2eb474c"
+    },
+    {
+      "path": "scripts/vendor/task21/css-worker.mjs",
+      "sha256": "aa88938534e455a9c651eaf9a5fb9d062c1b50871bced7000fc348e9ef71c19b"
+    },
+    {
+      "path": "scripts/vendor/task21/format-worker.mjs",
+      "sha256": "f03c7058a86eefa80842bdd5baa4b5f46b292be67644ef40517a5e9aafdeb68b"
+    },
+    {
+      "path": "scripts/vendor/task21/javascript-worker.mjs",
+      "sha256": "4f818be70070e06fb4927b767d2d571b0486f449882291e47521dd543f7179a0"
+    },
+    {
+      "path": "scripts/vendor/task21/markup-core.mjs",
+      "sha256": "36b63c3399a0d8ee376996f6086c5425a27e5fed888475f378cd5845f4440af2"
+    },
+    {
+      "path": "scripts/vendor/task21/markup-worker.mjs",
+      "sha256": "81a1bb56e9569937b3ac1ca43375d8af5bb8041580f845b6d12abb781c878054"
+    },
+    {
+      "path": "scripts/vendor/task21/package.json",
+      "sha256": "7649f35e1137405fe7b85cfdfd6200d29e72d581ff39cd95fb340ad92393cb42"
+    },
+    {
+      "path": "scripts/vendor/task21/pnpm-lock.yaml",
+      "sha256": "bdbd6d9497bce13d6390d8e42f9a1de6902621267363ef09f0a6fb30e5430540"
+    },
+    {
+      "path": "scripts/vendor/task21/README.md",
+      "sha256": "c6d2e511e95a3380ec9b11d9ea25f0c0812c3f536c955d25e85ccf821b3ea473"
+    }
+  ],
+  "reproducible_build": {
+    "mode": "verified reproducible assets",
+    "artifacts": [
+      {
+        "path": "assets/vendor/task21/markup-source.js",
+        "bytes": 173796,
+        "sha256": "f900f75fb6506a3403a7551eca6d18ea667a9867094bdc035c904b391664753f"
+      },
+      {
+        "path": "assets/vendor/task21/format-source.js",
+        "bytes": 437445,
+        "sha256": "55617aeb435a8fb608d341ab4ca32db77d39b5134ca4dc99835529d3184dc42b"
+      },
+      {
+        "path": "assets/vendor/task21/css-source.js",
+        "bytes": 210806,
+        "sha256": "d8aa099306ab3230f35bf3e132e6a26dcd6b67b0102ee62e2560d0e3d9147b31"
+      },
+      {
+        "path": "assets/vendor/task21/javascript-source.js",
+        "bytes": 661561,
+        "sha256": "ba966018e7ee021134424c3ec826242e700144f9c583279809b5074c43cc4b9f"
+      }
+    ]
+  },
+  "dependency_delivery_scope": {
+    "production": "Four prebundled Worker-source strings; no runtime package installation/backend/QR or processing service. Parent loads only the existing styling CDN and unchanged shared consent component.",
+    "build_only": [
+      "esbuild@0.28.2",
+      "@esbuild/win32-x64@0.28.2"
+    ],
+    "unused_or_tree_shaken": "CLI and source-map dependency metadata still reviewed and notices retained. No source-map output enabled.",
+    "platform_binary_notice": "Reviewed @esbuild/win32-x64 tarball contains no licence file. It is not redistributed; its MIT metadata and root esbuild MIT notice are recorded.",
+    "integrity_scope": "Tarball SHA512 and SHA1 verified against npm metadata; SHA256 captured. npm signature/provenance metadata captured, not independently authenticated as a signing-chain certification."
+  }
 }
