@@ -1,5 +1,16 @@
 # Functional CI — Task 9.5
 
+## Task20.1 release-evidence coverage
+
+The map contains13 Python files,67 Node files,129 browser files and68 tools.
+Reviewed floors:175 Python,433 Node,593 Chromium. Three new Python checks bind
+the six release proposals to deployed Git bytes,45 fresh public interactions,
+real consent collection and exact preservation of prior records/runtime/audits.
+All68 browser profiles,64 logic profiles and both templates remain mandatory.
+Historical catalog assertions extend only the six approved Task20 IDs. No
+existing assertions, workflow/runtime pins or deadlines are removed or weakened.
+Actual hosted exact-head CI remains required before owner review/merge.
+
 ## Task 19.1 release-evidence regression
 
 Ten Python files now include two additional checks binding six release records

@@ -1,0 +1,220 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-06",
+  "source_revision": "0b055d5b837ea0bca85f8b6583eec5607f93de95",
+  "pages": [
+    {
+      "path": "passport-photo-layout-maker/index.html",
+      "source_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
+      "checks": [
+        "Public directory and index endpoints returned200 and matched approved deployed Git bytes exactly.",
+        "Fresh public HTTPS browser cases:9. Independent SI millimetre calculations with custom30x40mm,7.5mm margins/2.25mm gaps,7 tiles; actual generated dimensions, red tile-center pixels and white gap/margin pixels checked.",
+        "Homepage:68 visible distinct canonical cards and six real hub/search/navigation workflows; all68 public page sources match approved main.",
+        "Consent: no Google requests before choice/after rejection/after withdrawal;3 accepted real page views returned204 without duplicates."
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/passport-photo-layout-maker/",
+        "http_status": 200,
+        "checked_at": "2026-11-05T23:57:10.075532+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "commit": "0b055d5b837ea0bca85f8b6583eec5607f93de95",
+    "run_id": 42131624570,
+    "conclusion": "success",
+    "pr": 36
+  },
+  "post_merge_ci": {
+    "commit": "0b055d5b837ea0bca85f8b6583eec5607f93de95",
+    "run_id": 42131632444,
+    "conclusion": "success",
+    "required_functional_checks": "success"
+  },
+  "public_index": {
+    "url": "https://everydaydigitalbox.com/passport-photo-layout-maker/index.html",
+    "final_url": "https://everydaydigitalbox.com/passport-photo-layout-maker/index.html",
+    "checked_at": "2026-11-05T23:56:48.669358+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "edddd59dcfc3380fcf99e019e2e84ddf7b5b90c7df1b69f4e7e04986ea84ce37",
+    "raw_approved_sha256": "edddd59dcfc3380fcf99e019e2e84ddf7b5b90c7df1b69f4e7e04986ea84ce37",
+    "raw_match": true,
+    "source_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
+    "approved_normalized_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Passport Photo Layout Maker — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "canonical_public_url": {
+    "url": "https://everydaydigitalbox.com/passport-photo-layout-maker/",
+    "final_url": "https://everydaydigitalbox.com/passport-photo-layout-maker/",
+    "checked_at": "2026-11-05T23:57:10.075532+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "edddd59dcfc3380fcf99e019e2e84ddf7b5b90c7df1b69f4e7e04986ea84ce37",
+    "raw_approved_sha256": "edddd59dcfc3380fcf99e019e2e84ddf7b5b90c7df1b69f4e7e04986ea84ce37",
+    "raw_match": true,
+    "source_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
+    "approved_normalized_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Passport Photo Layout Maker — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "title": "Passport Photo Layout Maker — Everyday Digital Box",
+  "script_dependencies": [
+    "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+    "../assets/consent.js"
+  ],
+  "live_browser": {
+    "result": "PASS",
+    "browser": "Edg/156.0.4314.58",
+    "tests": [
+      "actual A4PNG dimensions, tile positions, containment padding, white alpha and gap pixels match independent geometry",
+      "Letter300 DPI actual output and calibrated physical print/PDF page dimensions agree",
+      "JPEG/PNG/WebP input work without external processing; the ruler can be explicitly omitted",
+      "invalid fit and settings never silently reduce requested tiles or keep stale exports",
+      "invalid file, wrong output MIME and40 MiB output cap fail safely",
+      "reset during encoding discards late results and restores every control/focus",
+      "keyboard build/copy, responsive widths and no image transport",
+      "real8-million-pixel portrait and40 tiles render an actual300 DPI A4 sheet within caps",
+      "Independent SI millimetre calculations with custom30x40mm,7.5mm margins/2.25mm gaps,7 tiles; actual generated dimensions, red tile-center pixels and white gap/margin pixels checked."
+    ],
+    "test_count": 9,
+    "interaction_window": {
+      "after": "2026-11-05T23:58:32.321Z",
+      "before": "2026-11-06T00:00:33.783Z"
+    },
+    "uncaught_application_errors": 0,
+    "unexpected_dependencies": [],
+    "known_console_error": "Optional/favicon.ico404 only; exact records in aggregate audit.",
+    "scope": "Fresh deployed HTTPS. Actual native codecs, output bytes/pixels, independent ICO reader and print/PDF page geometry; only clipboard/download capture and explicit negative API instrumentation."
+  },
+  "homepage": {
+    "cards": 68,
+    "distinct": 68,
+    "canonical_routes_match": true,
+    "routes": [
+      "age-calculator/index.html",
+      "base64-encoder-decoder/index.html",
+      "case-converter/index.html",
+      "compound-interest-calculator/index.html",
+      "countdown-timer/index.html",
+      "csv-column-extractor/index.html",
+      "csv-data-cleaner/index.html",
+      "csv-json-converter/index.html",
+      "csv-merger/index.html",
+      "csv-to-txt/index.html",
+      "csv-viewer/index.html",
+      "date-difference-calculator/index.html",
+      "discount-calculator/index.html",
+      "duplicate-line-remover/index.html",
+      "duplicate-row-finder/index.html",
+      "emoji-picker/index.html",
+      "excel-formula-generator/index.html",
+      "excel-sandbox/index.html",
+      "file-signature-inspector/index.html",
+      "file-size-converter/index.html",
+      "find-and-replace/index.html",
+      "hashtag-organizer/index.html",
+      "image-color-picker/index.html",
+      "image-compressor/index.html",
+      "image-cropper/index.html",
+      "image-format-converter/index.html",
+      "image-resizer/index.html",
+      "image-rotator/index.html",
+      "image-watermark/index.html",
+      "instagram-bio-formatter/index.html",
+      "invoice-generator/index.html",
+      "json-formatter/index.html",
+      "json-to-txt/index.html",
+      "loan-repayment-calculator/index.html",
+      "local-to-do-list/index.html",
+      "meeting-agenda-generator/index.html",
+      "passphrase-generator/index.html",
+      "passport-photo-layout-maker/index.html",
+      "password-generator/index.html",
+      "percentage-calculator/index.html",
+      "percentage-change-calculator/index.html",
+      "png-to-ico/index.html",
+      "pomodoro-timer/index.html",
+      "posting-calendar-generator/index.html",
+      "printable-calendar-generator/index.html",
+      "profit-margin-calculator/index.html",
+      "qr-code-generator/index.html",
+      "random-name-picker/index.html",
+      "regex-tester/index.html",
+      "resume-builder/index.html",
+      "secure-random-number-generator/index.html",
+      "sha-256-hash-checker/index.html",
+      "slug-generator/index.html",
+      "social-counter/index.html",
+      "streaming-roulette/index.html",
+      "text-cleaner/index.html",
+      "text-difference-checker/index.html",
+      "text-reverser/index.html",
+      "text-sorter/index.html",
+      "timestamp-converter/index.html",
+      "url-encoder-decoder/index.html",
+      "username-generator/index.html",
+      "uuid-generator/index.html",
+      "vat-calculator/index.html",
+      "working-days-calculator/index.html",
+      "youtube-description-formatter/index.html",
+      "youtube-thumbnail-preview/index.html",
+      "youtube-title-checker/index.html"
+    ],
+    "custom_domain": "everydaydigitalbox.com",
+    "checked_at": "2026-11-05T23:56:45.592462+00:00",
+    "raw_public_sha256": "456bd00c3e0ec6412e6e69f650e008959986f326ee4f61afa5d08f48eedcd77a",
+    "raw_approved_sha256": "456bd00c3e0ec6412e6e69f650e008959986f326ee4f61afa5d08f48eedcd77a"
+  },
+  "consent_evidence": "audit/TASK_20_PUBLIC_RELEASE_VERIFICATION.json",
+  "previous_evidence": "audit/PASSPORT_PHOTO_LAYOUT_MAKER_VERIFICATION.json",
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 4,
+      "failed": 0,
+      "assertions": 4,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 1,
+      "failed": 0,
+      "assertions": 4,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Edg/156.0.4314.58"
+    }
+  },
+  "canonical_layers_scope": "Fresh all-layer canonical tests after release metadata, separate from fresh public HTTPS evidence.",
+  "focused_test_count": 14,
+  "focused_scope": "Earlier local development test count, not part of the45 fresh public cases.",
+  "limitations": [
+    "Actual public HTTPS with isolated headless Edge Chromium; no Safari/Firefox, physical-device, screen-reader or native-dialog certification.",
+    "Clipboard/download APIs captured in memory; actual generated Blob bytes, MIME, image pixels, ICO frames and print/PDF page geometry inspected.",
+    "Optional /favicon.ico returns404. Recorded resource-console errors are limited to that icon; no uncaught application errors or essential asset failures.",
+    "Existing62 releases freshly checked by public HTTP/raw source identity and successful post-merge full CI; no fresh individual interaction test is claimed for every prior tool.",
+    "GA4 browser collection requests verified; property-level reporting remains unverified.",
+    "Compression targets/global quality optimum are not guaranteed; native encoding cannot always be interrupted immediately.",
+    "PNG-frame ICO targets modern readers, without a legacy BMP-only compatibility claim.",
+    "Physical printer calibration, official passport-photo acceptance and ATS compatibility are unverified.",
+    "Resume A4 page geometry and print controls passed. Its static15 mm margin declaration is ignored by CSS parsing, so browser print defaults apply; no exact15mm margin claim. This print-style limitation is disclosed without changing production code.",
+    "This branch proposes RELEASED metadata and Live labels; those changes require a separately authorized merge/deployment. The currently deployed registry remains62RELEASED/6TESTED at the audited commit."
+  ],
+  "canonical_report_input_hash": "5e25eb364fadcb6ed0421d693825e252d10e6d74286dcd3e1db030c6afc105e1"
+}

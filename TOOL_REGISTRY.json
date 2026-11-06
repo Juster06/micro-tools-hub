@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-05",
+  "updated_on": "2026-11-06",
   "project": {
     "name": "Everyday Digital Box — WebUtils Hub",
     "repository": "https://github.com/Juster06/micro-tools-hub",
@@ -1076,7 +1076,7 @@
       "category": "image",
       "description": "Reduce raster image size with visible quality tradeoffs.",
       "directory_path": "image-compressor",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -1089,22 +1089,28 @@
         "Download and format disclosure"
       ],
       "testing_status": "REQUIRED_PASSED",
-      "last_verification_date": "2026-11-05",
-      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task20 PR36 merged and deployed. Fresh public source/functionality and consent independently verified. This branch proposes release metadata; separate owner authorization is required to merge/deploy the release PR. Known print/style and compatibility limitations are recorded in release audits.",
       "sequence_rank": null,
       "related_tools": [
         "image-format-converter"
       ],
       "verification": {
-        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_revision": "0b055d5b837ea0bca85f8b6583eec5607f93de95",
         "source_sha256": "ca0624cc4a2b68579133bbcee2cdd1aa1c119980c687b1392d53a82bec49e658",
-        "evidence_path": "audit/IMAGE_COMPRESSOR_VERIFICATION.json",
+        "evidence_path": "audit/IMAGE_COMPRESSOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
-          "Focused source-checkpoint tests: 13 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
-          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+          "Public directory and index endpoints returned200 and matched approved deployed Git bytes exactly.",
+          "Fresh public HTTPS browser cases:9. Instrumented quality arguments while calling the real native JPEG encoder; selected0.35 ceiling, bounded attempts, actual smaller JPEG bytes/dimensions/signature and truthful unmet1KiB target.",
+          "Homepage:68 visible distinct canonical cards and six real hub/search/navigation workflows; all68 public page sources match approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal;3 accepted real page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/image-compressor/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T23:57:06.328049+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -1454,7 +1460,7 @@
       "category": "image",
       "description": "Arrange user-sized photo tiles on a printable sheet.",
       "directory_path": "passport-photo-layout-maker",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -1467,20 +1473,26 @@
         "No guarantee of official document acceptance"
       ],
       "testing_status": "REQUIRED_PASSED",
-      "last_verification_date": "2026-11-05",
-      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task20 PR36 merged and deployed. Fresh public source/functionality and consent independently verified. This branch proposes release metadata; separate owner authorization is required to merge/deploy the release PR. Known print/style and compatibility limitations are recorded in release audits.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_revision": "0b055d5b837ea0bca85f8b6583eec5607f93de95",
         "source_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
-        "evidence_path": "audit/PASSPORT_PHOTO_LAYOUT_MAKER_VERIFICATION.json",
+        "evidence_path": "audit/PASSPORT_PHOTO_LAYOUT_MAKER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
-          "Focused source-checkpoint tests: 14 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
-          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+          "Public directory and index endpoints returned200 and matched approved deployed Git bytes exactly.",
+          "Fresh public HTTPS browser cases:9. Independent SI millimetre calculations with custom30x40mm,7.5mm margins/2.25mm gaps,7 tiles; actual generated dimensions, red tile-center pixels and white gap/margin pixels checked.",
+          "Homepage:68 visible distinct canonical cards and six real hub/search/navigation workflows; all68 public page sources match approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal;3 accepted real page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/passport-photo-layout-maker/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T23:57:10.075532+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2521,7 +2533,7 @@
       "category": "data",
       "description": "Generate formulas from deterministic guided templates.",
       "directory_path": "excel-formula-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2535,22 +2547,28 @@
         "No AI service or calculation claim"
       ],
       "testing_status": "REQUIRED_PASSED",
-      "last_verification_date": "2026-11-05",
-      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task20 PR36 merged and deployed. Fresh public source/functionality and consent independently verified. This branch proposes release metadata; separate owner authorization is required to merge/deploy the release PR. Known print/style and compatibility limitations are recorded in release audits.",
       "sequence_rank": null,
       "related_tools": [
         "excel-sandbox"
       ],
       "verification": {
-        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_revision": "0b055d5b837ea0bca85f8b6583eec5607f93de95",
         "source_sha256": "4f6bf37f4c4e225e4d13488eba11c44176e73dd11f61c68dfd701d07b7490a0b",
-        "evidence_path": "audit/EXCEL_FORMULA_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/EXCEL_FORMULA_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
-          "Focused source-checkpoint tests: 9 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
-          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+          "Public directory and index endpoints returned200 and matched approved deployed Git bytes exactly.",
+          "Fresh public HTTPS browser cases:5. Independently expected strings for all8 guided functions and both separators, maximum valid grid references, invalid/external/reversed references and inert literal code-like input.",
+          "Homepage:68 visible distinct canonical cards and six real hub/search/navigation workflows; all68 public page sources match approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal;3 accepted real page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/excel-formula-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T23:57:03.478355+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3281,7 +3299,7 @@
       "category": "social",
       "description": "Find and copy emoji from a maintained local dataset.",
       "directory_path": "emoji-picker",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "M",
       "dependencies": [
@@ -3295,20 +3313,26 @@
         "Dataset license review"
       ],
       "testing_status": "REQUIRED_PASSED",
-      "last_verification_date": "2026-11-05",
-      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task20 PR36 merged and deployed. Fresh public source/functionality and consent independently verified. This branch proposes release metadata; separate owner authorization is required to merge/deploy the release PR. Known print/style and compatibility limitations are recorded in release audits.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_revision": "0b055d5b837ea0bca85f8b6583eec5607f93de95",
         "source_sha256": "59b4e6e219715db8613af6d4e48be4361310c9c79b372323e3a3916c803282fd",
-        "evidence_path": "audit/EMOJI_PICKER_VERIFICATION.json",
+        "evidence_path": "audit/EMOJI_PICKER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
-          "Focused source-checkpoint tests: 10 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
-          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+          "Public directory and index endpoints returned200 and matched approved deployed Git bytes exactly.",
+          "Fresh public HTTPS browser cases:6. 3963 unique frozen locally bundled Unicode18.0 records and attribution; actual Flags/People & Body categories and medium-tone exact sequence copying.",
+          "Homepage:68 visible distinct canonical cards and six real hub/search/navigation workflows; all68 public page sources match approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal;3 accepted real page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/emoji-picker/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T23:57:04.709906+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4658,7 +4682,7 @@
       "category": "conversion",
       "description": "Package supported PNG-derived sizes into an icon file.",
       "directory_path": "png-to-ico",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4672,20 +4696,26 @@
         "Compatibility checks"
       ],
       "testing_status": "REQUIRED_PASSED",
-      "last_verification_date": "2026-11-05",
-      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task20 PR36 merged and deployed. Fresh public source/functionality and consent independently verified. This branch proposes release metadata; separate owner authorization is required to merge/deploy the release PR. Known print/style and compatibility limitations are recorded in release audits.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_revision": "0b055d5b837ea0bca85f8b6583eec5607f93de95",
         "source_sha256": "20b5eef801640ae9a4e4fadec36bf4993b55662f150f84eb818198feceaa8482",
-        "evidence_path": "audit/PNG_TO_ICO_VERIFICATION.json",
+        "evidence_path": "audit/PNG_TO_ICO_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
-          "Focused source-checkpoint tests: 11 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
-          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+          "Public directory and index endpoints returned200 and matched approved deployed Git bytes exactly.",
+          "Fresh public HTTPS browser cases:8. Independent spec-based header/directory/offset/frame-integrity parser on actual32/256-frame export, PNG decoding/alpha; extended suite additionally uses independent CRC/zlib reader and Windows native loading at all6 sizes.",
+          "Homepage:68 visible distinct canonical cards and six real hub/search/navigation workflows; all68 public page sources match approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal;3 accepted real page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/png-to-ico/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T23:57:07.988228+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -5096,7 +5126,7 @@
       "category": "productivity",
       "description": "Prepare a structured printable resume without account registration.",
       "directory_path": "resume-builder",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -5109,20 +5139,26 @@
         "Explicit local-draft behavior"
       ],
       "testing_status": "REQUIRED_PASSED",
-      "last_verification_date": "2026-11-05",
-      "notes": "Task20 source-bound local tests passed. TESTED; publication pending. Separate owner merge/deployment approval and independent public verification are required before RELEASED.",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task20 PR36 merged and deployed. Fresh public source/functionality and consent independently verified. This branch proposes release metadata; separate owner authorization is required to merge/deploy the release PR. Known print/style and compatibility limitations are recorded in release audits.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "e2e7b5769c484d8f649dbd795aa364fe8229b423",
+        "source_revision": "0b055d5b837ea0bca85f8b6583eec5607f93de95",
         "source_sha256": "06bd8e051571ebc099185f41dabfc876117f2d07eba1b17bd2bb3d1a5e467adc",
-        "evidence_path": "audit/RESUME_BUILDER_VERIFICATION.json",
+        "evidence_path": "audit/RESUME_BUILDER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "Canonical structural/logic/browser layers passed with nonempty fixtures.",
-          "Focused source-checkpoint tests: 11 Node/Chromium cases including normal, invalid, empty, Unicode, limits, keyboard/mobile, current copy/download/reset and safe processing.",
-          "Shared consent integration: before choice/rejection/acceptance/reacceptance/navigation/withdrawal tested with synthetic Google endpoints; no real Task20 measurements or public release claimed."
+          "Public directory and index endpoints returned200 and matched approved deployed Git bytes exactly.",
+          "Fresh public HTTPS browser cases:7. Actual exported JSON reimport/export round trip, malicious/prototype fields rejected, Unicode and unsafe text kept inert; zero probed input transport/storage. A4 controls/PDF geometry verified, static margin limitation disclosed.",
+          "Homepage:68 visible distinct canonical cards and six real hub/search/navigation workflows; all68 public page sources match approved main.",
+          "Consent: no Google requests before choice/after rejection/after withdrawal;3 accepted real page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/resume-builder/",
+          "http_status": 200,
+          "checked_at": "2026-11-05T23:57:08.539887+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",

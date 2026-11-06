@@ -6,6 +6,15 @@ Plain-text resume editing:10 sections,50 total items,50KiB UTF-8 draft/input; HT
 
 See `audit/TASK_20_DEVELOPMENT_PLAN.md` for acceptance, resource bounds, dependency decisions and testing scope. Inputs stay in the browser; optional shared site analytics requires consent. No public release is claimed. Clipboard/download APIs are simulated in automated Chromium tests; no native-dialog, screen-reader, physical-device or cross-browser certification.
 
-## Current development scope
+## Current release proposal
 
-TESTED; publication pending. Source-bound evidence: `audit/RESUME_BUILDER_VERIFICATION.json`. Local172 Python/433 Node tests,68 focused source-checkpoint tests,32 consent tests and all68 canonical browser profiles passed. Full local browser partitions timed out at the unchanged900second deadline; interrupted/remaining files passed separately. The complete593-case pinned hosted Chromium partition and other exact-head required GitHub checks must pass. Scope, actual attempts and limitations: `audit/TASK_20_DEVELOPMENT_VERIFICATION.json`. Owner approval is required before merge/deployment; independent public verification is required before RELEASED.
+Task20.1 independently verified this utility on actual public HTTPS against
+deployed main `0b055d5b837ea0bca85f8b6583eec5607f93de95`.
+This branch proposes RELEASED; release metadata/Live labels require a separately
+authorized PR merge/deployment. Fresh public evidence:
+`audit/RESUME_BUILDER_RELEASE_VERIFICATION.json`.
+Aggregate evidence,45 fresh public cases, three real204 GA4 page views and
+limitations: `audit/TASK_20_PUBLIC_RELEASE_VERIFICATION.json`.
+Earlier development evidence is preserved. No production code was changed.
+
+A4 print/PDF page geometry passed. The static `15 mm` CSS margin declaration is ignored; browser print defaults apply. Exact page margins and physical printer calibration are not claimed.

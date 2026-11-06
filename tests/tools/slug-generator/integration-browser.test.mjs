@@ -39,7 +39,9 @@ const task18Ids=["youtube-title-checker","instagram-bio-formatter","file-signatu
 const task18Released=registry.tools.filter(t=>task18Ids.includes(t.id)&&t.status==='RELEASED').length;
 const task19Ids=["password-generator","csv-to-txt","passphrase-generator","qr-code-generator","image-cropper","csv-data-cleaner"];
 const task19Released=registry.tools.filter(t=>task19Ids.includes(t.id)&&t.status==='RELEASED').length;
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,6+batchReleased+task8Released+task9Released+task10Released+task11Released+task12Released+task13Released+task14Released+task15Released+task16Released+task18Released+task19Released);
+const task20Ids=["excel-formula-generator","emoji-picker","image-compressor","png-to-ico","resume-builder","passport-photo-layout-maker"];
+const task20Released=registry.tools.filter(t=>task20Ids.includes(t.id)&&t.status==='RELEASED').length;
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,6+batchReleased+task8Released+task9Released+task10Released+task11Released+task12Released+task13Released+task14Released+task15Released+task16Released+task18Released+task19Released+task20Released);
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});
