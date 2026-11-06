@@ -17,7 +17,8 @@
     "tests/test_tool_framework.py",
     "tests/test_tracking.py",
     "tests/test_task22_preservation.py",
-    "tests/test_task22_release.py"
+    "tests/test_task22_release.py",
+    "tests/test_task24_preservation.py"
   ],
   "node_files": [
     "scripts/consent-static.test.mjs",
@@ -93,7 +94,8 @@
     "tests/tools/youtube-description-formatter/logic.test.mjs",
     "tests/tools/youtube-thumbnail-preview/logic.test.mjs",
     "tests/tools/youtube-title-checker/logic.test.mjs",
-    "tests/tools/markdown-converter-previewer/logic.test.mjs"
+    "tests/tools/markdown-converter-previewer/logic.test.mjs",
+    "tests/tools/task24/logic.test.mjs"
   ],
   "browser_files": [
     "scripts/consent-browser.test.mjs",
@@ -240,7 +242,8 @@
     "tests/tools/youtube-title-checker/integration-browser.test.mjs",
     "tests/tools/markdown-converter-previewer/isolation-browser.test.mjs",
     "tests/tools/markdown-converter-previewer/extended-browser.test.mjs",
-    "tests/tools/markdown-converter-previewer/integration-browser.test.mjs"
+    "tests/tools/markdown-converter-previewer/integration-browser.test.mjs",
+    "tests/tools/task24/browser.test.mjs"
   ],
   "tools": {
     "social-counter": {
@@ -621,6 +624,36 @@
       "structural_job": "python-project",
       "logic_job": "node-regression",
       "browser_job": "browser-tests"
+    },
+    "number-base-converter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "unit-converter": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "duration-calculator": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "url-inspector-query-builder": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "list-comparison-set-operations": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
+    },
+    "color-contrast-checker": {
+      "structural_job": "python-project",
+      "logic_job": "node-regression",
+      "browser_job": "browser-tests"
     }
   },
   "templates": {
@@ -673,9 +706,9 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 189,
-    "node-regression": 467,
-    "browser-tests": 660
+    "python-project": 207,
+    "node-regression": 519,
+    "browser-tests": 720
   },
   "aggregate": {
     "job": "required-checks",

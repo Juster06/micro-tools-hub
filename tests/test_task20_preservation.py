@@ -10,11 +10,14 @@ BASE='1ead1c37861b80c552446afbdb952c9248370bf9'
 IDS={'excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'}
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
+from task24_test_support import historical_registry,without_task24
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 def blob(path,revision=BASE):return subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT)
 def text(path):return (ROOT/path).read_text(encoding='utf8')
-def load(path):return json.loads(text(path))
+def load(path):
+ data=json.loads(text(path))
+ return historical_registry(data) if path=='TOOL_REGISTRY.json' else data
 def norm(raw):return raw.replace(b'\r\n',b'\n')
 class Task20Preservation(unittest.TestCase):
     def test_inventory_changes_only_the_authorized_six_and_milestones_are_identical(self):
@@ -62,7 +65,7 @@ class Task20Preservation(unittest.TestCase):
                 if layer!='structural':self.assertGreater(audit['canonical_layers'][layer]['passed'],0)
             self.assertGreater(audit['focused_test_count'],0)
     def test_all68_tools_and_new_tests_remain_mandatory_in_ci(self):
-        c=load('scripts/ci/coverage.json');self.assertEqual(len(c['tools']),75)
+        c=load('scripts/ci/coverage.json');self.assertEqual(len(c['tools']),81)
         for tid in IDS:
             self.assertEqual(c['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'});self.assertIn('tests/tools/'+tid+'/logic.test.mjs',c['node_files'])
             for name in ['extended-browser.test.mjs','integration-browser.test.mjs']:self.assertIn('tests/tools/'+tid+'/'+name,c['browser_files'])

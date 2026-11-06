@@ -124,3 +124,18 @@ for(const id of task20)test(`Task20 ${id}: usable without consent, one accepted 
  await click('edb-consent-settings');await click('edb-consent-reject');assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"),true);
  events=[];await navigate(route);await exerciseTask20(id);assert.deepEqual(gaRequests(),[]);
 });
+
+// Task24 uses the unchanged shared consent script; synthetic endpoints test lifecycle, not real GA4 reporting.
+const task24Inputs={"number-base-converter": "255", "unit-converter": "1", "duration-calculator": "0:00:01", "url-inspector-query-builder": "https://example.com/?a=1&a=2", "list-comparison-set-operations": "a\nb", "color-contrast-checker": "#000000"};
+async function exerciseTask24(id){await b.evaluate(`toolInput.value=${JSON.stringify(task24Inputs[id])};toolInput.dispatchEvent(new Event('input'));runBtn.click();true`);await wait(()=>b.evaluate("toolStatus.textContent==='Complete.'"));assert.equal(await b.evaluate('toolError.hidden'),true);}
+for(const id of Object.keys(task24Inputs))test(`Task 24 ${id}: first visit/rejection usable; one accepted view; withdrawal persists`,async()=>{
+ const route='/'+id+'/index.html';await navigate(route);await exerciseTask24(id);assert.deepEqual(gaRequests(),[]);
+ await click('edb-consent-reject');await exerciseTask24(id);assert.deepEqual(gaRequests(),[]);
+ await navigate(route);await exerciseTask24(id);assert.deepEqual(gaRequests(),[]);
+ await click('edb-consent-settings');await click('edb-consent-accept');await wait(async()=>(await commands()).some(x=>x[0]==='event'));
+ assert.equal(gaRequests().filter(x=>x.includes('gtag/js')).length,1);let queued=await commands();assert.equal(queued.filter(x=>x[0]==='event'&&x[1]==='page_view').length,1);assert.equal(queued.find(x=>x[0]==='event')[2].page_location,origin+route);
+ await click('edb-consent-settings');await click('edb-consent-accept');assert.equal((await commands()).filter(x=>x[0]==='event').length,1);
+ events=[];await navigate(route);await wait(async()=>(await commands()).some(x=>x[0]==='event'));queued=await commands();assert.equal(queued.filter(x=>x[0]==='event'&&x[1]==='page_view').length,1);
+ await click('edb-consent-settings');await click('edb-consent-reject');assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"),true);
+ events=[];await navigate(route);await exerciseTask24(id);assert.deepEqual(gaRequests(),[]);
+});

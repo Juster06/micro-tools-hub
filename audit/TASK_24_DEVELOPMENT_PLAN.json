@@ -1,0 +1,148 @@
+{
+  "task": 24,
+  "baseline": "4671204d2fb39129b0463e4b4ba8b5c8dc21e0a7",
+  "status": "SCOPE REVIEW COMPLETE — implementation/tests outstanding",
+  "reviewed_on": "2026-11-06",
+  "tools": [
+    {
+      "task": 24,
+      "order": 1,
+      "name": "Number Base Converter",
+      "id": "number-base-converter",
+      "canonical_route": "number-base-converter/index.html",
+      "complexity": "S–M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Convert exact signed integers between bases 2–36 in one interface, with binary/octal/decimal/hex presets.",
+      "dependencies_and_browser_apis": "Native BigInt and strings; existing pure inline adapter, DOM, clipboard and Blob download patterns; no new package.",
+      "provisional_input_output_limits": "4,096 input digits plus optional sign; base 2–36; output at most 32,768 digits. Reject before allocating an oversized result. ASCII digits only; leading/trailing whitespace explicitly trimmed.",
+      "security_gate": "Normal bounded-input review: preflight digit count/alphabet/base; manual digit accumulation into BigInt for arbitrary bases; never route large integers through Number; text-only output, no persistence/network.",
+      "important_tests": "0, -0, negative values, leading zeros, all bases, invalid digit/base, empty input, 4,096/4,097 boundary; independent integer vectors beyond 2^53; A→B→A; exact output cap; reset/copy/export/no transport.",
+      "duplicate_check": "Base64 converts UTF-8 bytes to an alphabet encoding; this converts mathematical integers. File Size Converter converts physical byte quantities. Base modes stay combined as one utility.",
+      "known_limitations": "Integers only, no fractions/scientific notation, two’s-complement width or binary-file editing. Exact arithmetic does not make unlimited-size input safe.",
+      "primary_sources": [
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt"
+      ],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+    },
+    {
+      "task": 24,
+      "order": 2,
+      "name": "Unit Converter",
+      "id": "unit-converter",
+      "canonical_route": "unit-converter/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Convert a reviewed fixed set of length, mass, area, volume and temperature units; restrict conversion to one dimension and show the selected factor/formula.",
+      "dependencies_and_browser_apis": "Native Number arithmetic, fixed local unit table, DOM/clipboard/Blob. No rates service or new library.",
+      "provisional_input_output_limits": "One complete decimal value at most 64 UTF-16 units; magnitude at most 10^12; reject nonfinite results or magnitude above 10^18. Display at most 12 significant digits and approximation indicator. Report at most 8 KiB.",
+      "security_gate": "Review factors against a primary standards source, including squared/cubed factors, affine temperature offsets and absolute-zero policy; reject ambiguous units (explicit US/Imperial labels). No arbitrary expressions/eval.",
+      "important_tests": "Known exact factors and inverse round trips with specified tolerance; 0 °C→32 °F/273.15 K; incompatible dimensions, ambiguous labels, negative lengths/mass, absolute-zero boundary, tiny/large/nonfinite/invalid values; accessible select/input/reset.",
+      "duplicate_check": "File Size Converter retains bytes/SI/IEC. Duration Calculator retains elapsed time. Percentage, VAT and finance tools calculate other relationships; no separate page per unit pair.",
+      "known_limitations": "Curated units, not every scientific quantity; floating-point rounding, no calibration/legal-metrology guarantee. Exclude bytes, time, currency, medical dosing and live rates.",
+      "primary_sources": [
+        "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-8"
+      ],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+    },
+    {
+      "task": 24,
+      "order": 3,
+      "name": "Duration Calculator",
+      "id": "duration-calculator",
+      "canonical_route": "duration-calculator/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Add/subtract elapsed durations and normalize totals; signed HH:MM:SS[.mmm] lines with an explicit sign, plus decimal-free hour/minute/second breakdown. Compare exactly two durations by their exact signed millisecond totals.",
+      "dependencies_and_browser_apis": "Native BigInt integer milliseconds and string parsing; DOM/clipboard/Blob. No Date/timezone dependency.",
+      "provisional_input_output_limits": "At most 100 lines, 64 UTF-16 units per line, hours at most 999,999 per line; minutes/seconds 00–59, optional 1–3 fractional-second digits. Total/result report at most 64 KiB.",
+      "security_gate": "Strict grammar/line/hour limits and exact integer arithmetic; reject rather than normalize malformed 01:90:00; explain signed total and zero normalization. No timer/audio/notifications/storage.",
+      "important_tests": "Carry/borrow across minute/hour, fractional milliseconds, negative totals and -0, 100/101 lines, invalid fields, max sum exactness, add/subtract inverse; no DST dependence; keyboard/edit invalidates stale output.",
+      "duplicate_check": "Countdown/Pomodoro run real-time deadlines; Date Difference/Age/Working Days calculate calendar dates. Agenda Generator sums meeting items; this accepts arbitrary signed elapsed durations.",
+      "known_limitations": "Elapsed arithmetic only: no calendar months, local wall-clock times, time zones, payroll rules or running alarm. Locale decimal commas unsupported initially.",
+      "primary_sources": [],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+    },
+    {
+      "task": 24,
+      "order": 4,
+      "name": "URL Inspector & Query Builder",
+      "id": "url-inspector-query-builder",
+      "canonical_route": "url-inspector-query-builder/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Show URL components and edit an ordered list of duplicate-preserving query name/value pairs; rebuild and copy a normalized HTTP(S) URL without visiting it. Explicit Inspect/Build action; no automatic URL visits. Native URL computation is covered by dedicated Node-native and real-browser tests, while generic inline run validates/prepares bounded text/options.",
+      "dependencies_and_browser_apis": "Native URL, URLSearchParams, TextEncoder, DOM/clipboard/Blob; no parser package, fetch, DNS or navigation.",
+      "provisional_input_output_limits": "Input at most 8,192 UTF-8 bytes; at most 100 query pairs; each pair field at most 2,048 UTF-16 units; combined rebuilt URL at most 16,384 UTF-8 bytes and report at most 32 KiB.",
+      "security_gate": "Reject non-HTTP(S), credentials and control characters before parsing; output as plain text, never an active href. Query secrets stay in memory. Explicitly disclose form-space/plus rules, IDN normalization and signed-URL changes; no URL safety claim.",
+      "important_tests": "Duplicate/empty parameters, order, + vs %2B vs %20, reserved characters, Unicode/IDN, fragments, default ports, malformed URL/control/credential/scheme denial, all byte/pair caps; spy for zero fetch/navigation/storage; reset/copy failure.",
+      "duplicate_check": "URL Encoder/Decoder exposes encodeURI/encodeURIComponent only and explicitly does not parse queries. This tool edits structure and repeated pairs; encoding/decoding directions remain one utility.",
+      "known_limitations": "WHATWG normalization may change byte representation or invalidate signatures. No reachability, phishing, registrable-domain or DNS validation; HTTP(S) only.",
+      "primary_sources": [
+        "https://url.spec.whatwg.org/"
+      ],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+    },
+    {
+      "task": 24,
+      "order": 5,
+      "name": "List Comparison & Set Operations",
+      "id": "list-comparison-set-operations",
+      "canonical_route": "list-comparison-set-operations/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Compare two line lists: union, intersection, A minus B, B minus A and symmetric difference. Preserve stable first-seen values and show duplicate/membership counts.",
+      "dependencies_and_browser_apis": "Native Set/Map and strings; structured/two-input inline adapter, DOM/clipboard/Blob. No regex or external dataset.",
+      "provisional_input_output_limits": "50,000 UTF-16 units and 10,000 lines per input; one record at most 2,000 units; total output at most 100,000 units/400 KiB UTF-8. Bounded count summary.",
+      "security_gate": "Specify empty-line policy and comparison-only trim/case/NFC options; default exact matching, preserve first original spelling, use Map/Set (not unsafe object keys). Bound output before joining; text-only/no storage.",
+      "important_tests": "Every set operation with independent mathematical vectors; duplicate multiplicity, empty input/blank lines, CRLF, __proto__/constructor, accents/emoji, normalization and case options, stable ordering, limits, error invalidation and copy/export.",
+      "duplicate_check": "Text Difference Checker compares ordered sequences/line edits; Duplicate Line Remover deduplicates one list. This answers cross-list membership without a quadratic diff.",
+      "known_limitations": "Set membership rather than multiset subtraction or fuzzy matching. Native lowercase is not full locale case folding; matching options can intentionally merge values.",
+      "primary_sources": [],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+    },
+    {
+      "task": 24,
+      "order": 6,
+      "name": "Color Contrast Checker",
+      "id": "color-contrast-checker",
+      "canonical_route": "color-contrast-checker/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Compare two opaque sRGB colours, calculate WCAG contrast and show AA/AAA normal/large-text labels with a fixed labelled text preview. Distinguish non-text 3:1 (SC 1.4.11) from AA large text 3:1, AA normal/AAA large 4.5:1 and AAA normal 7:1; explain context/exemptions.",
+      "dependencies_and_browser_apis": "Native numeric arithmetic and controlled DOM styles; editable hex/RGB fields and optional input type=color, clipboard/Blob. No image decoder, stylesheet parser or external library.",
+      "provisional_input_output_limits": "Two strict #RRGGBB values or three integer channels 0–255 per colour; at most 32 UTF-16 units per colour field. Report at most 4 KiB.",
+      "security_gate": "Allowlist colour grammar only; assign validated colour values to fixed preview properties, never accept arbitrary CSS/HTML. Compare unrounded ratios to thresholds; expose results in text, not colour alone.",
+      "important_tests": "Black/white 21:1, identical 1:1, channel endpoints, known independent luminance vectors, values just below/at/above 3/4.5/7 thresholds without rounding to pass, invalid alpha/CSS/HTML strings; complete keyboard workflow, labels and reset.",
+      "duplicate_check": "Image Color Picker samples one image pixel; it does not evaluate foreground/background pairs. CSS Gradient Generator produces CSS artwork and is not an accessibility evaluation.",
+      "known_limitations": "Opaque sRGB colours only; no alpha compositing, image backgrounds, APCA, site crawling or whole-page WCAG certification. Large-text applicability must be explained by the user’s context.",
+      "primary_sources": [
+        "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+      ],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+    }
+  ],
+  "scope_adjustments": [
+    "Owner-specified list-comparison-set-operations route supersedes Task 23 list-set-operations proposal.",
+    "Duration comparison added explicitly; exactly two duration lines.",
+    "Native URL parsing exercised with dedicated test coverage, not a fake URL parser in generic VM.",
+    "All actions explicit; no input auto-navigation, persistence or input analytics.",
+    "Download is bounded UTF-8 text in addition to required Copy/Reset."
+  ],
+  "dependency_review": {
+    "risk": "LOW RISK, scoped native API implementation",
+    "new_packages": [],
+    "browser_apis": [
+      "BigInt",
+      "URL",
+      "URLSearchParams",
+      "native DOM",
+      "Clipboard (with manual fallback)",
+      "Blob/object URLs"
+    ],
+    "privacy": "No input network/storage/logging; shared consent unchanged; existing hosting/Tailwind requests remain.",
+    "accessibility": "Native labelled controls, keyboard query-row add/remove, focus/reset, status/errors, readable fixed shell, text-equivalent contrast result.",
+    "resources": "Roadmap input/output caps preflighted; bounded loops/sets/BigInt; benchmark actual maximum cases before TESTED. No untrusted HTML rendering or evaluation.",
+    "conclusion": "No significant security/architectural blocker found for the bounded scopes. No PDF/cryptography dependency adoption."
+  },
+  "preserved": "75 existing releases, nine deferred PDF entries, PDF Compressor BLOCKED, 100 milestone, consent/privacy/G-XDHPQYJ5CH, historical audits."
+}

@@ -10,11 +10,14 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20'
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
+from task24_test_support import historical_registry,without_task24
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS,COUNTS,assert_transition,without_cards
 
 def read(path):return (ROOT/path).read_text(encoding='utf8')
-def load(path):return json.loads(read(path))
+def load(path):
+ data=json.loads(read(path))
+ return historical_registry(data) if path=='TOOL_REGISTRY.json' else data
 def blob(path,ref=BASE):return subprocess.check_output(['git','show',ref+':'+path],cwd=ROOT)
 def normalized(raw):return raw.replace(b'\r\n',b'\n').rstrip()
 def page_hash(raw):return hashlib.sha256(normalized(raw)).hexdigest()
@@ -84,7 +87,7 @@ class Task21Preservation(unittest.TestCase):
         for p in (ROOT/'scripts/vendor/task21').glob('*-worker.mjs'):self.assertNotRegex(p.read_text(encoding='utf8'),r'\beval\s*\(|new\s+Function')
 
     def test_ci_maps_all74_tools_and_every_new_scope_without_lowering_floors(self):
-        c=load('scripts/ci/coverage.json');old=json.loads(blob('scripts/ci/coverage.json'));self.assertEqual(len(c['tools']),75)
+        c=load('scripts/ci/coverage.json');old=json.loads(blob('scripts/ci/coverage.json'));self.assertEqual(len(c['tools']),81)
         for tid in IDS:
             self.assertEqual(c['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'})
             self.assertIn('tests/tools/'+tid+'/logic.test.mjs',c['node_files'])

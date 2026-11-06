@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Add/subtract elapsed durations and normalize totals."><title>Duration Calculator — Everyday Digital Box</title><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>*{box-sizing:border-box}html{color-scheme:dark}body{margin:0;background:#020617;color:#e2e8f0;font:16px/1.65 system-ui,sans-serif;overflow-wrap:anywhere}.container{max-width:1120px;margin:auto;padding:24px}a{color:#c7d2fe}header{border-bottom:1px solid #334155}header .container{display:flex;justify-content:space-between;gap:18px}h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2}.description{color:#cbd5e1;max-width:80ch}.panel,fieldset{min-width:0;border:1px solid #334155;border-radius:14px;background:#0f172a;padding:20px;margin:18px 0}legend{color:#c7d2fe}label{display:block;font-weight:600;margin:12px 0 6px}input,select,textarea{display:block;width:100%;min-width:0;border:1px solid #64748b;border-radius:8px;background:#020617;color:#f1f5f9;font:inherit;padding:12px}textarea{min-height:150px;resize:vertical}#toolOutput{min-height:220px}button{min-height:44px;border:1px solid #64748b;border-radius:8px;background:#1e293b;color:#f1f5f9;font:inherit;padding:10px 16px;cursor:pointer}.primary{background:#4338ca;border-color:#a5b4fc}button:disabled{opacity:.5;cursor:not-allowed}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.panels,.settings{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panels>.panel{margin:0}.settings>div{min-width:0}#toolError{color:#fda4af}#toolStatus,.privacy{color:#cbd5e1}summary{cursor:pointer;font-weight:600}:focus-visible{outline:3px solid #c7d2fe;outline-offset:3px}[hidden]{display:none!important}.query-row{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;border-bottom:1px solid #475569;padding:10px 0;align-items:end}.query-row label{margin:0}.skip{position:absolute;top:-100px;left:16px}.skip:focus{top:8px;background:#4338ca;padding:8px;z-index:10}pre{white-space:pre-wrap;overflow-wrap:anywhere}#preview{border:3px solid #64748b;border-radius:8px;padding:24px;font-size:20px}footer{border-top:1px solid #334155;margin-top:24px;color:#cbd5e1}@media(max-width:700px){.container{padding:16px}.panels,.settings,.query-row{grid-template-columns:1fr}header .container{font-size:.85rem}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}</style><script defer src="../assets/consent.js"></script></head>
+<body><a class="skip" href="#toolInput">Skip to input</a><header><div class="container"><a href="../index.html">← Back to Hub</a><span>Everyday Digital Box</span></div></header><main class="container"><h1>Duration Calculator</h1><p class="description">Add/subtract elapsed durations and normalize totals.</p><p class="privacy">Local processing · Optional analytics only with consent</p><fieldset><legend>Settings</legend><div class="settings"><div><label for="mode">Operation</label><select id="mode"><option value="add" selected>Add all lines</option><option value="subtract">First minus remaining lines</option><option value="compare">Compare exactly two lines</option></select></div></div></fieldset><div class="panels"><section class="panel"><h2>Input</h2><label for="toolInput">Durations, one per line</label><textarea id="toolInput" rows="6" autocomplete="off" spellcheck="false" aria-describedby="inputHelp"></textarea><p id="inputHelp">See the exact formats and limits below. Input is never silently truncated.</p><button id="runBtn" type="button" class="primary">Calculate / compare</button></section><section class="panel"><h2>Result</h2><label for="toolOutput">Result text</label><textarea id="toolOutput" rows="8" readonly spellcheck="false" aria-describedby="toolStatus"></textarea><div class="actions"><button id="copyBtn" type="button" class="primary" disabled>Copy result</button><button id="downloadBtn" type="button" disabled>Download .txt</button><button id="clearBtn" type="button">Reset</button></div></section></div><p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready.</p><details class="panel" open><summary>Exact rules, limits and privacy</summary><p>Use [+-]HH:MM:SS[.mmm], 1–6 hour digits (0–999999), minutes/seconds 00–59 and 1–3 optional fractional-second digits. At most 100 lines, 64 UTF-16 units per line and 6598 total input units. Blank lines rejected. Exact BigInt milliseconds; normalized output includes three fractional digits, ≥2 hour digits and no negative zero. Output ≤64KiB. Elapsed durations only: no dates/timezones/calendar months or running alarm.</p><p>Inputs stay in browser memory: no uploads, input logging, automatic saved drafts or external processing. Hosting and existing Tailwind CDN requests still occur. Shared analytics requires consent and excludes tool inputs. Copy places text on your system clipboard; permission may fail with manual-copy guidance. Text downloads use bounded UTF-8 Blobs and temporary URLs are released.</p></details></main><footer><div class="container">Everyday Digital Box · Small tools. Everyday wins.</div></footer><script id="toolConfig" type="application/json">{"id": "duration-calculator", "kind": "duration", "fields": [{"id": "mode", "label": "Operation", "options": [["add", "Add all lines"], ["subtract", "First minus remaining lines"], ["compare", "Compare exactly two lines"]], "default": "add"}]}</script><script id="edb-tool-metadata">window.EDB_META={"id": "duration-calculator", "name": "Duration Calculator", "category": "calculator"};</script>
+<script id="edb-tool-logic">(() => {
+'use strict';
+function guard(input,options,allowed,limit){
+  if(typeof input!=='string')throw TypeError('Input must be a string.');
+  if(input.length>limit)throw RangeError('Input exceeds '+limit+' UTF-16 units. Nothing was truncated.');
+  if(!options||typeof options!=='object'||Array.isArray(options))throw TypeError('Options must be an object.');
+  for(const key of Object.keys(options))if(!Object.hasOwn(allowed,key)||!allowed[key](options[key]))throw TypeError('Unsupported setting: '+key+'.');
+}
+const oneOf=(...values)=>v=>values.includes(v);
+function bytes(text){
+  let total=0;
+  for(let i=0;i<text.length;i++){
+    const c=text.charCodeAt(i);
+    if(c>=0xd800&&c<=0xdbff){const d=text.charCodeAt(++i);if(!(d>=0xdc00&&d<=0xdfff))throw Error('Unpaired Unicode surrogate.');total+=4;}
+    else if(c>=0xdc00&&c<=0xdfff)throw Error('Unpaired Unicode surrogate.');
+    else total+=c<128?1:c<2048?2:3;
+  }
+  return total;
+}
+function bounded(text,units,maxBytes){if(text.length>units||bytes(text)>maxBytes)throw RangeError('Output exceeds the supported limit. Nothing was truncated.');return text;}
+
+function parseDuration(line){
+  if(line.length>64)throw RangeError('Each duration is limited to 64 UTF-16 units.');
+  const match=/^([+-]?)(\d{1,6}):([0-5]\d):([0-5]\d)(?:\.(\d{1,3}))?$/.exec(line);
+  if(!match)throw Error('Use signed HH:MM:SS[.mmm], hours 0–999999 and minutes/seconds 00–59. Blank lines and dates are not durations.');
+  const value=((BigInt(match[2])*60n+BigInt(match[3]))*60n+BigInt(match[4]))*1000n+BigInt((match[5]||'').padEnd(3,'0'));
+  return match[1]==='-'?-value:value;
+}
+function formatDuration(value){const sign=value<0n?'-':'';let n=value<0n?-value:value;const ms=n%1000n;n/=1000n;const seconds=n%60n;n/=60n;const minutes=n%60n;const hours=n/60n;return sign+hours.toString().padStart(2,'0')+':'+minutes.toString().padStart(2,'0')+':'+seconds.toString().padStart(2,'0')+'.'+ms.toString().padStart(3,'0');}
+function run(input,options={}){
+  guard(input,options,{mode:oneOf('add','subtract','compare')},6598);
+  if(!input)throw Error('Enter at least one duration.');
+  const lines=input.replace(/\r\n?/g,'\n').split('\n');if(lines.length>100)throw RangeError('At most 100 duration lines.');
+  const values=lines.map(parseDuration),mode=options.mode||'add';
+  if(mode==='compare'){
+    if(values.length!==2)throw Error('Comparison requires exactly two duration lines.');
+    return 'Comparison: first '+(values[0]===values[1]?'=':values[0]<values[1]?'<':'>')+' second\nFirst: '+formatDuration(values[0])+'\nSecond: '+formatDuration(values[1]);
+  }
+  const result=mode==='add'?values.reduce((a,b)=>a+b,0n):values.slice(1).reduce((a,b)=>a-b,values[0]);
+  return bounded(formatDuration(result),65536,65536);
+}
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,run};
+
+})();</script>
+<script>(() => {
+  'use strict';
+  const config=JSON.parse(document.getElementById('toolConfig').textContent);
+  const $=id=>document.getElementById(id),input=$('toolInput'),output=$('toolOutput');
+  let revision=0,result=null,pairsChanged=false;
+  const fields=config.fields.map(f=>f.id);
+  function invalidate(){revision++;result=null;output.value='';$('copyBtn').disabled=true;$('downloadBtn').disabled=true;$('toolError').hidden=true;input.removeAttribute('aria-invalid');$('toolStatus').textContent='Input changed. Run again to calculate.';if($('preview'))$('preview').hidden=true;if($('components'))$('components').textContent='';}
+  function unitOptions(){
+    const table=window.EDB_TOOL.units[$('category').value];
+    for(const id of ['from','to']){const select=$(id);select.replaceChildren();for(const [key,[name]]of Object.entries(table)){const option=document.createElement('option');option.value=key;option.textContent=name;select.append(option);}}
+    $('to').selectedIndex=Math.min(1,$('to').options.length-1);
+  }
+  function row(name='',value=''){
+    const count=$('queryRows').children.length;
+    if(count>=100){$('toolError').textContent='At most 100 query pairs.';$('toolError').hidden=false;return;}
+    const line=document.createElement('div');line.className='query-row';
+    const make=(caption,value)=>{const label=document.createElement('label');label.append(document.createTextNode(caption));const field=document.createElement('input');field.type='text';field.autocomplete='off';field.spellcheck=false;field.value=value;field.addEventListener('input',()=>{pairsChanged=true;invalidate();});label.append(field);line.append(label);return field;};
+    make('Parameter name',name);make('Parameter value',value);
+    const remove=document.createElement('button');remove.type='button';remove.textContent='Remove parameter';remove.addEventListener('click',()=>{line.remove();pairsChanged=true;invalidate();$('addPair').focus();});line.append(remove);$('queryRows').append(line);
+    return line;
+  }
+  function options(){return Object.fromEntries(fields.map(id=>[id,$(id).value]));}
+  function run(){
+    invalidate();const opts=options();
+    try{
+      if(config.kind==='url'){
+        if(pairsChanged)opts.pairs=Array.from($('queryRows').children,line=>Array.from(line.querySelectorAll('input'),x=>x.value));
+        const data=window.EDB_TOOL.convert(input.value,opts);result=data.text;$('components').textContent=data.components;
+        // Rebuild only after validation; rows remain plain native controls.
+        $('queryRows').replaceChildren();for(const pair of data.pairs)row(...pair);
+        // Keep edited pairs authoritative across repeated builds until raw URL changes.
+      }else{
+        result=window.EDB_TOOL.run(input.value,opts);
+        if(config.kind==='contrast'){const colors=window.EDB_TOOL.analyze(input.value,opts);$('preview').style.color=colors.foreground;$('preview').style.backgroundColor=colors.background;$('preview').hidden=false;}
+      }
+      output.value=result;$('copyBtn').disabled=false;$('downloadBtn').disabled=false;$('toolStatus').textContent='Complete.';
+    }catch(error){result=null;output.value='';$('toolError').textContent=error.message;$('toolError').hidden=false;input.setAttribute('aria-invalid','true');$('toolStatus').textContent='Check the input and settings. Nothing was truncated.';}
+  }
+  input.addEventListener('input',()=>{if(config.kind==='url'){$('queryRows').replaceChildren();pairsChanged=false;}invalidate();});
+  for(const id of fields)$(id).addEventListener('input',()=>{if(id==='category')unitOptions();invalidate();});
+  $('runBtn').addEventListener('click',run);
+  $('clearBtn').addEventListener('click',()=>{
+    input.value='';for(const field of config.fields)$(field.id).value=field.default;
+    if(config.kind==='unit')unitOptions();
+    if(config.kind==='url'){$('queryRows').replaceChildren();pairsChanged=false;}
+    invalidate();$('toolStatus').textContent='Ready.';input.focus();
+  });
+  $('copyBtn').addEventListener('click',async()=>{
+    if(result===null)return;const text=result,version=revision;
+    try{if(!navigator.clipboard?.writeText)throw Error('unavailable');await navigator.clipboard.writeText(text);if(version===revision)$('toolStatus').textContent='Copied.';}
+    catch{if(version===revision){output.focus();output.select();$('toolStatus').textContent='Copy unavailable. Output selected; press Ctrl+C or ⌘C.';}}
+  });
+  $('downloadBtn').addEventListener('click',()=>{
+    if(result===null)return;let url;
+    try{url=URL.createObjectURL(new Blob([result],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=config.id+'.txt';a.click();$('toolStatus').textContent='Download requested. Your browser controls saving.';}
+    catch{$('toolStatus').textContent='Download unavailable. Copy or select the result instead.';}
+    finally{if(url)URL.revokeObjectURL(url);}
+  });
+  if(config.kind==='unit')unitOptions();
+  if(config.kind==='url')$('addPair').addEventListener('click',()=>{const line=row();if(line){pairsChanged=true;invalidate();line.querySelector('input').focus();}});
+})();
+</script></body></html>

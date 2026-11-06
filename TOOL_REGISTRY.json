@@ -5477,6 +5477,181 @@
         "weekStart",
         "locale"
       ]
+    },
+    {
+      "id": "number-base-converter",
+      "name": "Number Base Converter",
+      "category": "developer",
+      "description": "Convert exact signed integers between bases 2–36 in one interface, with binary/octal/decimal/hex presets..",
+      "directory_path": "number-base-converter",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Exact BigInt base 2–36 conversion",
+        "Signed integer/digit validation",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 24 authorized scope/dependency review complete; no publication claim. See audit/TASK_24_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 21,
+      "related_tools": [
+        "base64-encoder-decoder"
+      ],
+      "verification": null
+    },
+    {
+      "id": "unit-converter",
+      "name": "Unit Converter",
+      "category": "calculator",
+      "description": "Convert a reviewed fixed set of length, mass, area, volume and temperature units.",
+      "directory_path": "unit-converter",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Five measurement categories",
+        "Documented unit factors",
+        "Affine temperature conversions",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 24 authorized scope/dependency review complete; no publication claim. See audit/TASK_24_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 22,
+      "related_tools": [
+        "file-size-converter"
+      ],
+      "verification": null
+    },
+    {
+      "id": "duration-calculator",
+      "name": "Duration Calculator",
+      "category": "calculator",
+      "description": "Add/subtract elapsed durations and normalize totals.",
+      "directory_path": "duration-calculator",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Signed elapsed durations",
+        "Add subtract compare",
+        "Exact millisecond normalization",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 24 authorized scope/dependency review complete; no publication claim. See audit/TASK_24_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 23,
+      "related_tools": [
+        "countdown-timer",
+        "date-difference-calculator"
+      ],
+      "verification": null
+    },
+    {
+      "id": "url-inspector-query-builder",
+      "name": "URL Inspector & Query Builder",
+      "category": "developer",
+      "description": "Show URL components and edit an ordered list of duplicate-preserving query name/value pairs.",
+      "directory_path": "url-inspector-query-builder",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Native URL components",
+        "Ordered duplicate query pairs",
+        "Add edit remove without navigation",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 24 authorized scope/dependency review complete; no publication claim. See audit/TASK_24_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 24,
+      "related_tools": [
+        "url-encoder-decoder"
+      ],
+      "verification": null
+    },
+    {
+      "id": "list-comparison-set-operations",
+      "name": "List Comparison & Set Operations",
+      "category": "text",
+      "description": "Compare two line lists: union, intersection, A minus B, B minus A and symmetric difference.",
+      "directory_path": "list-comparison-set-operations",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Union intersection both differences symmetric difference",
+        "Explicit whitespace case and Unicode policy",
+        "Stable first-seen spelling/order",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 24 authorized scope/dependency review complete; no publication claim. See audit/TASK_24_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 25,
+      "related_tools": [
+        "duplicate-line-remover",
+        "text-difference-checker"
+      ],
+      "verification": null
+    },
+    {
+      "id": "color-contrast-checker",
+      "name": "Color Contrast Checker",
+      "category": "calculator",
+      "description": "Compare two opaque sRGB colours, calculate WCAG contrast and show AA/AAA normal/large-text labels with a fixed labelled text preview.",
+      "directory_path": "color-contrast-checker",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "WCAG sRGB contrast ratio",
+        "AA AAA normal/large and non-text labels",
+        "Validated colour preview",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 24 authorized scope/dependency review complete; no publication claim. See audit/TASK_24_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 26,
+      "related_tools": [
+        "image-color-picker"
+      ],
+      "verification": null
     }
   ],
   "milestones": [

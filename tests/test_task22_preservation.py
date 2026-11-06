@@ -4,9 +4,12 @@ from functools import lru_cache
 import hashlib,json,subprocess,sys,unittest
 ROOT=Path(__file__).resolve().parents[1];BASE='93f2589b244f933e353d4d93ee145e35ed354399'
 sys.path.insert(0,str(ROOT/'scripts'))
+from task24_test_support import historical_registry,without_task24
 from task22_test_support import ID,COUNTS,assert_unchanged_or_task22,without_task22
 from tool_homepage import Homepage
-def load(p):return json.loads((ROOT/p).read_text(encoding='utf-8'))
+def load(p):
+ data=json.loads((ROOT/p).read_text(encoding='utf-8'))
+ return historical_registry(data) if p=='TOOL_REGISTRY.json' else data
 @lru_cache(maxsize=None)
 def git(p,ref=BASE):return subprocess.check_output(['git','show',ref+':'+p],cwd=ROOT)
 def norm(b):return b.replace(b'\r\n',b'\n')
@@ -21,7 +24,7 @@ class Task22Preservation(unittest.TestCase):
   paths=pages+['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json']+subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets','audit','scripts/vendor/task21'],cwd=ROOT,text=True).splitlines()
   for p in paths:self.assertEqual(norm((ROOT/p).read_bytes()),norm(git(p)),p)
  def test_one_pending_card_is_the_only_hub_change(self):
-  source=(ROOT/'index.html').read_text(encoding='utf-8');home=Homepage(source);self.assertEqual(len(home.cards),75);self.assertEqual(len({c['attrs']['href']for c in home.cards}),75);self.assertEqual(without_task22(self,source,Homepage),norm(git('index.html')).decode())
+  source=without_task24((ROOT/'index.html').read_text(encoding='utf-8'),Homepage);home=Homepage(source);self.assertEqual(len(home.cards),75);self.assertEqual(len({c['attrs']['href']for c in home.cards}),75);self.assertEqual(without_task22(self,source,Homepage),norm(git('index.html')).decode())
  def test_release_evidence_binds_real_source_and_verified_publication(self):
   t=next(t for t in load('TOOL_REGISTRY.json')['tools']if t['id']==ID);v=t['verification'];a=load(v['evidence_path']);self.assertEqual(a['result'],'PASS');self.assertEqual(v['publication']['http_status'],200);self.assertIs(v['publication']['source_matches'],True);self.assertEqual(a['publication'],v['publication']);self.assertEqual(a['source_revision'],v['source_revision']);self.assertEqual(a['source_tree_sha'],subprocess.check_output(['git','rev-parse',v['source_revision']+'^{tree}'],cwd=ROOT,text=True).strip());self.assertEqual(sha(norm(git(ID+'/index.html',v['source_revision'])).rstrip()),v['source_sha256']);self.assertEqual(sha(norm((ROOT/ID/'index.html').read_bytes()).rstrip()),v['source_sha256'])
   for asset in a['runtime_assets']:self.assertEqual(sha(norm((ROOT/asset['path']).read_bytes())),asset['sha256']);self.assertEqual(sha(norm(git(asset['path'],v['source_revision']))),asset['sha256'])

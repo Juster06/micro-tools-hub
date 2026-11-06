@@ -5,7 +5,10 @@ from datetime import datetime
 import hashlib,json,subprocess,sys,unittest
 ROOT=Path(__file__).resolve().parents[1];BASE='64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140';ID='markdown-converter-previewer'
 sys.path.insert(0,str(ROOT/'scripts'));from tool_homepage import Homepage
-def load(p):return json.loads((ROOT/p).read_text(encoding='utf-8'))
+from task24_test_support import historical_registry,without_task24
+def load(p):
+ data=json.loads((ROOT/p).read_text(encoding='utf-8'))
+ return historical_registry(data) if p=='TOOL_REGISTRY.json' else data
 @lru_cache(maxsize=None)
 def git(p):return subprocess.check_output(['git','show',BASE+':'+p],cwd=ROOT)
 def norm(b):return b.replace(b'\r\n',b'\n')
@@ -53,6 +56,6 @@ class Task22Release(unittest.TestCase):
   old=json.loads(git('TOOL_REGISTRY.json'));pages=[t['directory_path']+'/index.html'for t in old['tools']if t['status']in ['TESTED','RELEASED']];self.assertEqual(len(pages),75)
   paths=pages+['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json']+subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets','audit','scripts/vendor'],cwd=ROOT,text=True).splitlines()
   for path in paths:self.assertEqual(norm((ROOT/path).read_bytes()),norm(git(path)),path)
-  current=(ROOT/'index.html').read_text(encoding='utf-8');card=next(c for c in Homepage(current).cards if c['attrs'].get('data-tool-id')==ID);chunk=current[card['start']:card['end']];self.assertEqual(card['attrs']['data-availability'],'released');self.assertEqual(chunk.count('Live'),1);chunk=chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending');self.assertEqual(current[:card['start']]+chunk+current[card['end']:],norm(git('index.html')).decode())
+  current=without_task24((ROOT/'index.html').read_text(encoding='utf-8'),Homepage);card=next(c for c in Homepage(current).cards if c['attrs'].get('data-tool-id')==ID);chunk=current[card['start']:card['end']];self.assertEqual(card['attrs']['data-availability'],'released');self.assertEqual(chunk.count('Live'),1);chunk=chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending');self.assertEqual(current[:card['start']]+chunk+current[card['end']:],norm(git('index.html')).decode())
   a=load('audit/TASK_22_PUBLIC_RELEASE_VERIFICATION.json');self.assertEqual(a['milestones'],{'next_planning_checkpoint':75,'generated_registry_milestone':100,'configuration_changed':False});self.assertEqual(a['preservation']['original_worktrees'],25);self.assertTrue(a['preservation']['original_worktrees_unchanged']);self.assertEqual(len(a['preservation']['dirty_files_preserved']),2)
 if __name__=='__main__':unittest.main()
