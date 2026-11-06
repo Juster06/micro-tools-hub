@@ -99,7 +99,7 @@ window.EDB_TOOL={isScaffold:false,allowEmpty:false,run};
   });
   $('downloadBtn').addEventListener('click',()=>{
     if(result===null)return;let url;
-    try{url=URL.createObjectURL(new Blob([result],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=config.id+'.txt';a.click();$('toolStatus').textContent='Download requested. Your browser controls saving.';}
+    try{url=URL.createObjectURL(new Blob([result],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=config.id+'.txt';a.hidden=true;document.body.append(a);try{a.click();}finally{a.remove();}$('toolStatus').textContent='Download requested. Your browser controls saving.';}
     catch{$('toolStatus').textContent='Download unavailable. Copy or select the result instead.';}
     finally{if(url)URL.revokeObjectURL(url);}
   });
