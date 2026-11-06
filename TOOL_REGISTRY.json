@@ -4611,7 +4611,7 @@
       "category": "conversion",
       "description": "Convert Markdown to sanitized HTML and preview it safely.",
       "directory_path": "markdown-converter-previewer",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4626,22 +4626,26 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-06",
-      "notes": "Task 22 scoped development tests passed after mandatory dependency/security gate. TESTED — publication pending; no merge, deployment or public verification claimed.",
+      "notes": "Task 22.1: independently verified deployed main source, public functionality, isolation and real consent. RELEASED transition proposed pending owner review/merge; previous development evidence preserved.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "c30cf78de587781502cf8832a10a5afe5a1aeba1",
+        "source_revision": "64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140",
         "source_sha256": "17f673ec6b9a2c059df6d6c41a3fd53c109e18b59740cb33f7df3eca2bc2489e",
-        "evidence_path": "audit/MARKDOWN_CONVERTER_PREVIEWER_VERIFICATION.json",
+        "evidence_path": "audit/MARKDOWN_CONVERTER_PREVIEWER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "9 canonical inline logic cases validate job preparation, not Markdown transformation.",
-          "7 canonical Chromium cases / 21 assertions.",
-          "23 specialized Node Worker cases: expected HTML, URL policy, malformed input, limits and reference amplification.",
-          "23 specialized browser cases: 16 isolation/cancellation/deadline, 5 extended output/MIME/actions/keyboard/layout and 2 hub integration cases.",
-          "Pre-production mandatory security gate: 30 cases passed with root and child network positive controls, generated-HTML and Markdown attack fixtures.",
-          "Follow-up scratch gate: 31 cases passed before adopting the cumulative link-output rendering budget."
+          "Fresh actual public HTML and canonical directory URL return HTTP 200 and match approved main bytes/hashes.",
+          "22 fresh public functional/interface/catalog tests: independent HTML expectations, link policy, escaping, sanitized copy/download MIME, invalid/boundary inputs, cancellation, reset, keyboard/responsive and explicit Worker controls.",
+          "13 fresh actual public isolation tests: root/child network positive controls, ten hostile-input groups, actual opaque-origin/storage/navigation/popup/form probes.",
+          "Two isolated profiles verify real consent, three accepted page views with HTTP 204, no duplicates and no requests before consent/after rejection/withdrawal.",
+          "All 75 canonical tool pages, homepage, privacy notice, registry, progress and 14 assets match approved source; existing-tool post-merge functional CI passed."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/markdown-converter-previewer/",
+          "checked_at": "2026-11-06T10:56:46.813201+00:00",
+          "http_status": 200,
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",

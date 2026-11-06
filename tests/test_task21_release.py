@@ -23,7 +23,7 @@ class Task21Release(unittest.TestCase):
     self.assertEqual((t['status'],n['status'],n['testing_status']),('TESTED','RELEASED','REQUIRED_PASSED'))
     for key in set(t)-{'status','notes','last_verification_date','verification'}:self.assertEqual(t[key],n[key],key)
    else:assert_unchanged_or_task22(self,t,n)
-  self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':74,'TESTED':1,'READY':0,'PLANNED':17,'BLOCKED':1})
+  self.assertEqual({s:sum(t['status']==s for t in new['tools']) for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':75,'TESTED':0,'READY':0,'PLANNED':17,'BLOCKED':1})
 
  def test_six_public_audits_bind_real_git_pages_assets_dates_and_individual_behavior(self):
   for t in load('TOOL_REGISTRY.json')['tools']:
@@ -43,7 +43,7 @@ class Task21Release(unittest.TestCase):
   a=load('audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json');self.assertEqual(a['result'],'PASS');self.assertEqual(a['source_revision'],BASE);self.assertEqual((a['deployment']['run_id'],a['post_merge_ci']['run_id']),(42159767277,42159767505));self.assertEqual(a['github']['main']['sha'],BASE);self.assertTrue(a['github']['pr']['merged']);self.assertEqual(len(a['github']['post_merge_ci']['jobs']),4);self.assertTrue(all(j['conclusion']=='success' for j in a['github']['post_merge_ci']['jobs']))
   self.assertEqual(len(a['sources']),90);self.assertEqual(len(a['canonical_public_urls']),6)
   for path,s in a['sources'].items():self.assertEqual((s['http_status'],s['raw_match']),(200,True));self.assertEqual(s['raw_public_sha256'],sha(git(path)));self.assertEqual(s['raw_approved_sha256'],s['raw_public_sha256'])
-  h=a['homepage'];self.assertEqual((h['cards'],h['distinct'],h['visible_cards'],h['canonical_routes_match']),(74,74,74,True));self.assertEqual(sorted(h['routes']),sorted(t['directory_path']+'/index.html' for t in load('TOOL_REGISTRY.json')['tools'] if t['status']=='RELEASED'))
+  h=a['homepage'];self.assertEqual((h['cards'],h['distinct'],h['visible_cards'],h['canonical_routes_match']),(74,74,74,True));self.assertEqual(sorted(h['routes']),sorted(t['directory_path']+'/index.html' for t in json.loads(git('TOOL_REGISTRY.json'))['tools'] if t['status'] in ['TESTED','RELEASED']))
   b=a['public_browser'];self.assertEqual(b['total_cases'],36)
   for kind,n in [('functional',23),('isolation',13)]:self.assertEqual(b[kind],{'tests':n,'pass':n,'fail':0,'cancelled':0,'skipped':0,'todo':0})
   self.assertEqual((b['uncaught_application_errors'],b['functional_google_requests'],b['unexpected_dependencies']),(0,0,[]))

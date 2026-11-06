@@ -1,5 +1,9 @@
 # Markdown Converter & Previewer — Task 22
 
+Current status: Task 22.1 public source, functionality, isolation and real consent verification passed at `64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140`. RELEASED transition is proposed in the separate release-verification branch, awaiting owner authorization to merge/deploy. The currently deployed registry remains 74 RELEASED / 1 TESTED. See `audit/MARKDOWN_CONVERTER_PREVIEWER_RELEASE_VERIFICATION.json`.
+
+## Historical development checkpoint
+
 Development: publication pending. This tool is not independently publicly verified or RELEASED.
 
 Converts the common GFM subset locally in a fresh disposable Worker using pinned Marked 18.1.3 and independent parse5 8.1.0 allowlist serialization. HTML source is shown as text. Raw HTML is escaped; images become alt text. Tables, fenced code, strikethrough and autolinks are supported without styling/extensions. Task-list checkbox controls, HTML interpretation, math, diagrams, syntax highlighting, IDs and custom attributes are unsupported.

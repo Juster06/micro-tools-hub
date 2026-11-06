@@ -1,6 +1,19 @@
 # Development roadmap
 
-## Current state — Task 22 development
+## Current state — Task 22.1 public release-verification proposal
+
+Task 22 development PR #40 is merged into main at `64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140`. The standard exact-head merge followed four passing checks and a clean PR, without requesting an administrator override. Pages 42205116968 and all four post-merge Functional CI 42205117641 checks succeeded for that commit. No historical administrator-bypass audit claim is made.
+
+Fresh public verification passed: 93 matching source responses plus the Markdown canonical directory URL; all 75 visible distinct canonical cards/pages; 22 functionality/interface/catalog cases and 13 isolation cases. Root and child network positive controls returned 200; attack cases made no unexpected canary requests. Two fresh browser profiles verified real consent, exactly three accepted page views returning 204, no duplicates, and no requests before consent or after rejection/withdrawal. Evidence: `audit/TASK_22_PUBLIC_RELEASE_VERIFICATION.json` and the separate Markdown release audit. GA4 property reporting remains unverified.
+
+This separate proposal advances the verified Markdown utility from TESTED to RELEASED: **93 registered, 75 RELEASED, 0 TESTED, 0 READY, 17 PLANNED, 1 BLOCKED**. The deployed registry remains **74 RELEASED / 1 TESTED** until this proposal is separately authorized, merged and deployed. Existing runtime pages/assets, consent/privacy/G-XDHPQYJ5CH, historical audits and all 25 pre-existing worktrees/two unrelated handoff edits are preserved.
+
+Planning checkpoint: **75 released tools**, with this proposed transition awaiting owner review and final merged-state verification. Existing generated registry milestone: **100**, unchanged. PDF processing remains deferred; PDF Compressor remains BLOCKED. Optional favicon404, Resume Builder print-margin issue and documented Windows local full-run/Image Compressor limitations remain outside this change.
+
+**Next major task:** Owner review of `release/task-22-markdown-verification` and its exact-head required CI. Do not merge/deploy this release-verification PR without explicit authorization or use administrator bypass. After authorized deployment, independently verify the final 75-RELEASED public state. No next development batch is authorized.
+
+
+## Historical Task 22 development checkpoint
 
 Task 21 is complete and publicly verified. PR #38 and PR #39 are merged. Main baseline: `93f2589b244f933e353d4d93ee145e35ed354399`; Pages 42180578641 and post-merge Functional CI 42180578876 succeeded. The deployed registry has 74 RELEASED tools. Earlier release-proposal sections below are historical checkpoints.
 
@@ -775,7 +788,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | Tool ID | Utility | Status | Priority | Complexity | Dependencies / gate |
 | --- | --- | --- | --- | --- | --- |
 | txt-to-pdf | TXT to PDF | PLANNED | P2 | L | Reviewed PDF text rendering library and font licensing |
-| markdown-converter-previewer | Markdown Converter & Previewer | TESTED | P2 | L | Pinned local Marked 18.1.3, parse5 8.1.0 and entities 9.0.0; reviewed bounded sanitizer and isolated Worker preview |
+| markdown-converter-previewer | Markdown Converter & Previewer | RELEASED | P2 | L | Pinned local Marked 18.1.3, parse5 8.1.0 and entities 9.0.0; reviewed bounded sanitizer and isolated Worker preview |
 | html-to-markdown | HTML to Markdown | RELEASED | P2 | L | Pinned local parse5 8.1.0 and bounded reviewed HTML-tree to Markdown-text converter |
 | csv-to-txt | CSV to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | json-to-txt | JSON to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
