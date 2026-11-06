@@ -2922,7 +2922,7 @@
       "category": "developer",
       "description": "Format markup using an evaluated parser without executing it.",
       "directory_path": "html-formatter",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2937,20 +2937,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-06",
-      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
+      "notes": "Task21.1: independently verified deployed source, public functionality and consent; release status proposed pending owner review. Previous development evidence preserved. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_revision": "9fa032140639550abd9a0449ed7ef5198354bd40",
         "source_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
-        "evidence_path": "audit/HTML_FORMATTER_VERIFICATION.json",
+        "evidence_path": "audit/HTML_FORMATTER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "10 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
-          "7 canonical Chromium interaction fixtures / 21 assertions",
-          "6 specialized Node Worker/logic tests",
-          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+          "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+          "Fresh public functionality:4 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+          "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+          "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/html-formatter/",
+          "http_status": 200,
+          "checked_at": "2026-11-06T04:23:20.319657+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -2972,7 +2977,7 @@
       "category": "developer",
       "description": "Minify stylesheet text using a reviewed parser.",
       "directory_path": "css-minifier",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -2987,20 +2992,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-06",
-      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
+      "notes": "Task21.1: independently verified deployed source, public functionality and consent; release status proposed pending owner review. Previous development evidence preserved. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_revision": "9fa032140639550abd9a0449ed7ef5198354bd40",
         "source_sha256": "d492a1cc073d884e4f7ec099381b04e47a00d7cb1b451439fbbb322eb6cfdd50",
-        "evidence_path": "audit/CSS_MINIFIER_VERIFICATION.json",
+        "evidence_path": "audit/CSS_MINIFIER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "9 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
-          "7 canonical Chromium interaction fixtures / 21 assertions",
-          "6 specialized Node Worker/logic tests",
-          "7 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+          "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+          "Fresh public functionality:4 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+          "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+          "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/css-minifier/",
+          "http_status": 200,
+          "checked_at": "2026-11-06T04:23:20.977804+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3020,7 +3030,7 @@
       "category": "developer",
       "description": "Minify JavaScript source without running it.",
       "directory_path": "javascript-minifier",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -3035,20 +3045,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-06",
-      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
+      "notes": "Task21.1: independently verified deployed source, public functionality and consent; release status proposed pending owner review. Previous development evidence preserved. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_revision": "9fa032140639550abd9a0449ed7ef5198354bd40",
         "source_sha256": "b9563b537e70dc86547dc60eed44e345e8e6a0807a1fddd9066fc5bd7eaee489",
-        "evidence_path": "audit/JAVASCRIPT_MINIFIER_VERIFICATION.json",
+        "evidence_path": "audit/JAVASCRIPT_MINIFIER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "10 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
-          "7 canonical Chromium interaction fixtures / 21 assertions",
-          "6 specialized Node Worker/logic tests",
-          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+          "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+          "Fresh public functionality:4 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+          "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+          "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/javascript-minifier/",
+          "http_status": 200,
+          "checked_at": "2026-11-06T04:23:21.628558+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -3420,7 +3435,7 @@
       "category": "social",
       "description": "Count hashtags in pasted posts with explicit token rules.",
       "directory_path": "hashtag-counter",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
@@ -3435,22 +3450,27 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-06",
-      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
+      "notes": "Task21.1: independently verified deployed source, public functionality and consent; release status proposed pending owner review. Previous development evidence preserved. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [
         "hashtag-organizer"
       ],
       "verification": {
-        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_revision": "9fa032140639550abd9a0449ed7ef5198354bd40",
         "source_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
-        "evidence_path": "audit/HASHTAG_COUNTER_VERIFICATION.json",
+        "evidence_path": "audit/HASHTAG_COUNTER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "11 canonical inline logic fixtures",
-          "7 canonical Chromium interaction fixtures / 21 assertions",
-          "5 specialized Node Worker/logic tests",
-          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+          "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+          "Fresh public functionality:4 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+          "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+          "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/hashtag-counter/",
+          "http_status": 200,
+          "checked_at": "2026-11-06T04:23:19.770669+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4617,7 +4637,7 @@
       "category": "conversion",
       "description": "Convert supplied markup to Markdown without executing it.",
       "directory_path": "html-to-markdown",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4632,20 +4652,25 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-06",
-      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
+      "notes": "Task21.1: independently verified deployed source, public functionality and consent; release status proposed pending owner review. Previous development evidence preserved. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_revision": "9fa032140639550abd9a0449ed7ef5198354bd40",
         "source_sha256": "3e3198471cf5eca4f71d0637cc16e9d0a8ad9232b9c31ca623013c0dd6b83b45",
-        "evidence_path": "audit/HTML_TO_MARKDOWN_VERIFICATION.json",
+        "evidence_path": "audit/HTML_TO_MARKDOWN_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "9 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
-          "7 canonical Chromium interaction fixtures / 21 assertions",
-          "6 specialized Node Worker/logic tests",
-          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+          "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+          "Fresh public functionality:4 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+          "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+          "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/html-to-markdown/",
+          "http_status": 200,
+          "checked_at": "2026-11-06T04:23:22.213719+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -4902,7 +4927,7 @@
       "category": "conversion",
       "description": "Preview untrusted markup in an isolated sandbox.",
       "directory_path": "html-previewer",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4917,21 +4942,26 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-06",
-      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
+      "notes": "Task21.1: independently verified deployed source, public functionality and consent; release status proposed pending owner review. Previous development evidence preserved. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": {
-        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_revision": "9fa032140639550abd9a0449ed7ef5198354bd40",
         "source_sha256": "0bde0accbd4efe8bf0bb20575fa480aac3aa9d723c12003f7abab938aec0508b",
-        "evidence_path": "audit/HTML_PREVIEWER_VERIFICATION.json",
+        "evidence_path": "audit/HTML_PREVIEWER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "9 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
-          "7 canonical Chromium interaction fixtures / 21 assertions",
-          "5 specialized Node Worker/logic tests",
-          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline",
-          "12 actual HTTP preview-isolation tests: canary positive control, malicious fixtures, opaque-origin/storage, blocked top navigation/popup/form"
+          "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+          "Fresh public functionality:2 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+          "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+          "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates.",
+          "Fresh13-case public isolation:parent/child HTTP200 positive controls;10 malicious fixtures; actual rendered child-origin/storage/navigation/popup/form probes;zero unexpected canary requests."
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/html-previewer/",
+          "http_status": 200,
+          "checked_at": "2026-11-06T04:23:22.796203+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",

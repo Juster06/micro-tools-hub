@@ -1,6 +1,36 @@
 # Development roadmap
 
-## Current state — revised Task 21 development
+## Current state — Task21.1 release-verification proposal
+
+PR #38 is merged; approved deployed main is `9fa032140639550abd9a0449ed7ef5198354bd40`.
+Pages42159767277 and all four post-merge Functional CI42159767505 jobs passed for
+that exact commit. Fresh public verification matched90 source responses plus six
+directory routes to Git, checked all74 visible canonical cards/pages,23 functional
+cases and13 Previewer isolation cases. Parent and child network positive controls
+returned200; malicious inputs produced no unexpected requests or execution.
+
+Two isolated profiles verified real consent:zero Google requests before choice,
+after rejection or withdrawal; exactly3 accepted page views returned204 without
+duplicates. Consent/privacy/G-XDHPQYJ5CH are unchanged; property reporting remains
+unverified. Evidence:`audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json` plus six
+separate release audits. Development and historical evidence remain intact.
+
+This unmerged release proposal advances six TESTED tools to RELEASED:93 registered,
+74 RELEASED,0 TESTED,0 READY,18 PLANNED,1 BLOCKED. The deployed registry still has
+68 RELEASED/6 TESTED until this proposal is approved, merged and deployed. Full
+proposal regression and exact-head required PR checks must pass before review.
+
+Next planning checkpoint:**75 released**. Existing generated registry milestone:
+**100**, unchanged. PDF investigation is complete and utilities remain deferred;
+PDF Compressor remains BLOCKED. Existing optional favicon404 and Resume Builder
+print-margin limitation remain. All23 pre-existing worktrees and both unrelated
+handoff edits are preserved; this task uses a separate release worktree.
+
+**Next major task:** Owner review of the Task21.1 release-verification PR after
+required CI passes. Do not merge/deploy without explicit authorization or use
+administrator bypass. After deployment, verify final public registry/source state.
+
+## Historical Task21 development checkpoint
 
 Task 20 is complete and publicly verified. PR #36 and release-verification PR #37
 are merged. Approved main baseline: `8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20`.
@@ -679,9 +709,9 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | uuid-generator | UUID Generator | RELEASED | P1 | S | Browser cryptographic randomness; feature-detect and fail clearly if unavailable |
 | sha256-hash-checker | SHA-256 Text & File Hash Checker | RELEASED | P2 | M | Browser Web Crypto SHA-256; bounded file reads |
 | regex-tester | Regex Tester | RELEASED | P2 | L | Browser Worker with termination timeout; bounded input |
-| html-formatter | HTML Formatter | TESTED | P2 | L | Pinned local Prettier 3.9.10 HTML and parse5 8.1.0 in bounded Worker; reviewed MIT/BSD notices |
-| css-minifier | CSS Minifier | TESTED | P2 | L | Pinned local CSS-Tree 3.2.1 parser/generator (MIT); no rule/value optimization |
-| javascript-minifier | JavaScript Minifier | TESTED | P2 | L | Pinned local Acorn 8.19.0 (MIT) and Terser 5.51.2 (BSD-2-Clause); compression/mangling disabled |
+| html-formatter | HTML Formatter | RELEASED | P2 | L | Pinned local Prettier 3.9.10 HTML and parse5 8.1.0 in bounded Worker; reviewed MIT/BSD notices |
+| css-minifier | CSS Minifier | RELEASED | P2 | L | Pinned local CSS-Tree 3.2.1 parser/generator (MIT); no rule/value optimization |
+| javascript-minifier | JavaScript Minifier | RELEASED | P2 | L | Pinned local Acorn 8.19.0 (MIT) and Terser 5.51.2 (BSD-2-Clause); compression/mangling disabled |
 | timestamp-converter | Timestamp Converter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 
 ### Social Media Tools
@@ -695,7 +725,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | instagram-bio-formatter | Instagram Bio Formatter | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | social-media-line-break-tool | Social Media Line Break Tool | PLANNED | P2 | S | Browser-native approach; scope review before implementation |
 | emoji-picker | Emoji Picker | RELEASED | P2 | M | Reviewed local emoji dataset and usage license |
-| hashtag-counter | Hashtag Counter | TESTED | P2 | S | Local caption parsing, NFC normalization and dedicated browser Worker; no added parser library |
+| hashtag-counter | Hashtag Counter | RELEASED | P2 | S | Local caption parsing, NFC normalization and dedicated browser Worker; no added parser library |
 | youtube-thumbnail-preview | YouTube Thumbnail Preview | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | posting-calendar-generator | Posting Calendar Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | username-generator | Username Generator | RELEASED | P2 | S | Browser-native approach; scope review before implementation |
@@ -735,13 +765,13 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | --- | --- | --- | --- | --- | --- |
 | txt-to-pdf | TXT to PDF | PLANNED | P2 | L | Reviewed PDF text rendering library and font licensing |
 | markdown-converter-previewer | Markdown Converter & Previewer | PLANNED | P2 | L | Reviewed Markdown parser and sanitizer; local bundled assets preferred |
-| html-to-markdown | HTML to Markdown | TESTED | P2 | L | Pinned local parse5 8.1.0 and bounded reviewed HTML-tree to Markdown-text converter |
+| html-to-markdown | HTML to Markdown | RELEASED | P2 | L | Pinned local parse5 8.1.0 and bounded reviewed HTML-tree to Markdown-text converter |
 | csv-to-txt | CSV to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | json-to-txt | JSON to TXT | RELEASED | P2 | M | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
 | svg-to-png | SVG to PNG | PLANNED | P2 | L | Reviewed SVG sanitization and external-resource blocking; Canvas rasterization with tested dimension limits |
 | png-to-ico | PNG to ICO | RELEASED | P2 | L | Reviewed local ICO encoder |
 | file-size-converter | File Size Converter | RELEASED | P2 | S | Format-specific parsers, sanitizers or encoders: evaluate before implementation |
-| html-previewer | HTML Previewer | TESTED | P2 | L | Pinned local parse5 8.1.0 structural allowlist, empty iframe sandbox and restrictive CSP; no active/external resources |
+| html-previewer | HTML Previewer | RELEASED | P2 | L | Pinned local parse5 8.1.0 structural allowlist, empty iframe sandbox and restrictive CSP; no active/external resources |
 
 ### Everyday Productivity Tools
 

@@ -1,6 +1,36 @@
 # Progress tracker
 
-## Current state — revised Task 21 development
+## Current state — Task21.1 release-verification proposal
+
+PR #38 is merged; approved deployed main is `9fa032140639550abd9a0449ed7ef5198354bd40`.
+Pages42159767277 and all four post-merge Functional CI42159767505 jobs passed for
+that exact commit. Fresh public verification matched90 source responses plus six
+directory routes to Git, checked all74 visible canonical cards/pages,23 functional
+cases and13 Previewer isolation cases. Parent and child network positive controls
+returned200; malicious inputs produced no unexpected requests or execution.
+
+Two isolated profiles verified real consent:zero Google requests before choice,
+after rejection or withdrawal; exactly3 accepted page views returned204 without
+duplicates. Consent/privacy/G-XDHPQYJ5CH are unchanged; property reporting remains
+unverified. Evidence:`audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json` plus six
+separate release audits. Development and historical evidence remain intact.
+
+This unmerged release proposal advances six TESTED tools to RELEASED:93 registered,
+74 RELEASED,0 TESTED,0 READY,18 PLANNED,1 BLOCKED. The deployed registry still has
+68 RELEASED/6 TESTED until this proposal is approved, merged and deployed. Full
+proposal regression and exact-head required PR checks must pass before review.
+
+Next planning checkpoint:**75 released**. Existing generated registry milestone:
+**100**, unchanged. PDF investigation is complete and utilities remain deferred;
+PDF Compressor remains BLOCKED. Existing optional favicon404 and Resume Builder
+print-margin limitation remain. All23 pre-existing worktrees and both unrelated
+handoff edits are preserved; this task uses a separate release worktree.
+
+**Next major task:** Owner review of the Task21.1 release-verification PR after
+required CI passes. Do not merge/deploy without explicit authorization or use
+administrator bypass. After deployment, verify final public registry/source state.
+
+## Historical Task21 development checkpoint
 
 Task 20 is complete and publicly verified. PR #36 and release-verification PR #37
 are merged. Approved main baseline: `8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20`.
@@ -542,14 +572,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 6 |
-| RELEASED | 68 |
+| TESTED | 0 |
+| RELEASED | 74 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 19 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **100 released tools**. Progress: 68/100 (68.0%); remaining: 32.
+Current growth milestone: **100 released tools**. Progress: 74/100 (74.0%); remaining: 26.
 
 ### Tools by category
 
@@ -586,12 +616,12 @@ Next ready tool: **REQUIRES REVIEW**.
 | Resume Builder | RELEASED | 2026-11-06 |
 | PNG to ICO | RELEASED | 2026-11-06 |
 | Passport Photo Layout Maker | RELEASED | 2026-11-06 |
-| JavaScript Minifier | TESTED | 2026-11-06 |
+| JavaScript Minifier | RELEASED | 2026-11-06 |
 | Image Compressor | RELEASED | 2026-11-06 |
-| HTML to Markdown | TESTED | 2026-11-06 |
-| HTML Previewer | TESTED | 2026-11-06 |
-| HTML Formatter | TESTED | 2026-11-06 |
-| Hashtag Counter | TESTED | 2026-11-06 |
+| HTML to Markdown | RELEASED | 2026-11-06 |
+| HTML Previewer | RELEASED | 2026-11-06 |
+| HTML Formatter | RELEASED | 2026-11-06 |
+| Hashtag Counter | RELEASED | 2026-11-06 |
 | Excel Formula Generator | RELEASED | 2026-11-06 |
 <!-- GENERATED:COUNTS:END -->
 

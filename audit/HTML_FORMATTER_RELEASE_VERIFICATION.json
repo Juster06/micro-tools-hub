@@ -1,0 +1,177 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-06",
+  "source_revision": "9fa032140639550abd9a0449ed7ef5198354bd40",
+  "source_tree_sha": "634fa256d1032f70f8366eec8105de9d5a292f09",
+  "pages": [
+    {
+      "path": "html-formatter/index.html",
+      "source_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
+      "checks": [
+        "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+        "Fresh public functionality:4 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+        "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+        "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates."
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/html-formatter/",
+        "http_status": 200,
+        "checked_at": "2026-11-06T04:23:20.319657+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "commit": "9fa032140639550abd9a0449ed7ef5198354bd40",
+    "run_id": 42159767277,
+    "conclusion": "success",
+    "pr": 38
+  },
+  "post_merge_ci": {
+    "commit": "9fa032140639550abd9a0449ed7ef5198354bd40",
+    "run_id": 42159767505,
+    "conclusion": "success",
+    "required_functional_checks": "success"
+  },
+  "public_index": {
+    "url": "https://everydaydigitalbox.com/html-formatter/index.html",
+    "final_url": "https://everydaydigitalbox.com/html-formatter/index.html",
+    "checked_at": "2026-11-06T04:23:13.937443+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "48f8455048ac090b80be3197668743ae634ed5a2aae41c047d31b6748795785a",
+    "raw_approved_sha256": "48f8455048ac090b80be3197668743ae634ed5a2aae41c047d31b6748795785a",
+    "raw_match": true,
+    "source_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
+    "approved_normalized_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
+    "content_type": "text/html; charset=utf-8",
+    "title": "HTML Formatter — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js",
+      "../assets/vendor/task21/format-source.js"
+    ]
+  },
+  "canonical_public_url": {
+    "url": "https://everydaydigitalbox.com/html-formatter/",
+    "final_url": "https://everydaydigitalbox.com/html-formatter/",
+    "checked_at": "2026-11-06T04:23:20.319657+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "48f8455048ac090b80be3197668743ae634ed5a2aae41c047d31b6748795785a",
+    "raw_approved_sha256": "48f8455048ac090b80be3197668743ae634ed5a2aae41c047d31b6748795785a",
+    "raw_match": true,
+    "source_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
+    "approved_normalized_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
+    "content_type": "text/html; charset=utf-8",
+    "title": "HTML Formatter — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js",
+      "../assets/vendor/task21/format-source.js"
+    ]
+  },
+  "live_browser": {
+    "result": "PASS",
+    "test_count": 4,
+    "cases": [
+      "html-formatter: real Worker result, copy/download/reset, native keyboard and responsive layout",
+      "html-formatter: indentation and preferred width options change structured formatting",
+      "html-formatter: meaningful inline/pre whitespace retained; content-changing script case refuses and never executes",
+      "html-formatter: malformed, nesting/byte overflow fail; bounded HTML5 repair is disclosed"
+    ],
+    "browser": "Edg/156.0.4314.58",
+    "checked_at": "2026-11-06T04:53:29.886Z",
+    "scope": "Fresh actual public HTTPS with unmodified production responses; clipboard/download captured; independent expectations.",
+    "isolation_cases": 0
+  },
+  "runtime_assets": [
+    {
+      "path": "assets/consent.js",
+      "sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "canonical_lf_bytes": 7882
+    },
+    {
+      "path": "assets/vendor/task21/format-source.js",
+      "sha256": "55617aeb435a8fb608d341ab4ca32db77d39b5134ca4dc99835529d3184dc42b",
+      "canonical_lf_bytes": 437445
+    }
+  ],
+  "runtime_assets_public": {
+    "assets/consent.js": {
+      "url": "https://everydaydigitalbox.com/assets/consent.js",
+      "final_url": "https://everydaydigitalbox.com/assets/consent.js",
+      "checked_at": "2026-11-06T04:23:07.072175+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "raw_approved_sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "raw_match": true,
+      "source_sha256": "83d76f2a1cbe5b7cc7ec1827e8a78dd6a63f6739f2a000ca8d52d5aa8021bfa8",
+      "approved_normalized_sha256": "83d76f2a1cbe5b7cc7ec1827e8a78dd6a63f6739f2a000ca8d52d5aa8021bfa8",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "assets/vendor/task21/format-source.js": {
+      "url": "https://everydaydigitalbox.com/assets/vendor/task21/format-source.js",
+      "final_url": "https://everydaydigitalbox.com/assets/vendor/task21/format-source.js",
+      "checked_at": "2026-11-06T04:23:08.325889+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "55617aeb435a8fb608d341ab4ca32db77d39b5134ca4dc99835529d3184dc42b",
+      "raw_approved_sha256": "55617aeb435a8fb608d341ab4ca32db77d39b5134ca4dc99835529d3184dc42b",
+      "raw_match": true,
+      "source_sha256": "0ca76682efa767ca8c07e057ae8732d70d51ab0222ac8a3401b0356d0beca194",
+      "approved_normalized_sha256": "0ca76682efa767ca8c07e057ae8732d70d51ab0222ac8a3401b0356d0beca194",
+      "content_type": "application/javascript; charset=utf-8"
+    }
+  },
+  "asset_hash_convention": "SHA256 of UTF-8/LF bytes, including final newline; normalizes Windows checkout CRLF. Page source hashes use existing project normalization (LF, trailing whitespace stripped).",
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 10,
+      "failed": 0,
+      "assertions": 10,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 7,
+      "failed": 0,
+      "assertions": 21,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Edg/156.0.4314.58"
+    }
+  },
+  "canonical_layer_scope": "Earlier scoped development evidence retained by previous_evidence; fresh post-merge full CI separately passed184 Python/467 Node/660 Chromium plus all canonical profiles. Release-proposal suites will be rerun separately.",
+  "focused_node_tests": 6,
+  "focused_browser_tests": 6,
+  "previous_evidence": "audit/HTML_FORMATTER_VERIFICATION.json",
+  "aggregate_public_evidence": "audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json",
+  "test_scope": [
+    "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+    "Fresh public functionality:4 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+    "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+    "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates."
+  ],
+  "limitations": [
+    "Actual public browser:Edge156 headless. Full local/hosted automated regression is recorded separately; no universal cross-engine certification.",
+    "Clipboard/download APIs captured in memory; no native OS dialogs, physical device or screen-reader certification.",
+    "Expected browser security-console messages from deliberate blocked probes and existing favicon404 recorded separately; no unexpected application JS exceptions.",
+    "HTML formatter can refuse valid input to preserve parsed content. HTML5 normalization and strict whitespace may change source representation.",
+    "CSS/JS syntax is limited to reviewed parsers; JS compression/mangling disabled. Markdown is a common text subset.",
+    "Previewer structural subset only:attributes/styles/images/scripts/forms/navigation/resources omitted; no full HTML/CSS rendering.",
+    "Worker timers are not hard heap guarantees; existing input/output/node/depth/token bounds apply.",
+    "Existing PDF Compressor BLOCKED, optional favicon404, Resume Builder print-margin issue and unverified GA4 property reporting remain."
+  ],
+  "publication": {
+    "url": "https://everydaydigitalbox.com/html-formatter/",
+    "http_status": 200,
+    "checked_at": "2026-11-06T04:23:20.319657+00:00",
+    "source_matches": true
+  }
+}
