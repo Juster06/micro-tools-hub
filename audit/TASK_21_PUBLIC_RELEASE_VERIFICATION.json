@@ -122,7 +122,7 @@
       "source_sha256": "0b52017658b6905cfaff995c4c3e4f5ac52d0c102c5dfb3ca463e9bf5861eb26",
       "approved_normalized_sha256": "0b52017658b6905cfaff995c4c3e4f5ac52d0c102c5dfb3ca463e9bf5861eb26",
       "content_type": "text/html; charset=utf-8",
-      "title": "WebUtils Hub — Small tools. Everyday wins.",
+      "title": "WebUtils Hub â€” Small tools. Everyday wins.",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "assets/consent.js"
@@ -139,7 +139,7 @@
       "source_sha256": "2f827a73285cde7a2449b77364a0aeec30bcf29e244d976162d4200fb97ab9ab",
       "approved_normalized_sha256": "2f827a73285cde7a2449b77364a0aeec30bcf29e244d976162d4200fb97ab9ab",
       "content_type": "text/html; charset=utf-8",
-      "title": "Privacy and cookies — Everyday Digital Box",
+      "title": "Privacy and cookies â€” Everyday Digital Box",
       "scripts": [
         "assets/consent.js"
       ]
@@ -391,7 +391,7 @@
       "source_sha256": "ca0624cc4a2b68579133bbcee2cdd1aa1c119980c687b1392d53a82bec49e658",
       "approved_normalized_sha256": "ca0624cc4a2b68579133bbcee2cdd1aa1c119980c687b1392d53a82bec49e658",
       "content_type": "text/html; charset=utf-8",
-      "title": "Image Compressor — Everyday Digital Box",
+      "title": "Image Compressor â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -408,7 +408,7 @@
       "source_sha256": "1a3f803f46f68e76b02fe7d6a89a8b0b0e2416dd685a9e87bcce327032307652",
       "approved_normalized_sha256": "1a3f803f46f68e76b02fe7d6a89a8b0b0e2416dd685a9e87bcce327032307652",
       "content_type": "text/html; charset=utf-8",
-      "title": "Image Resizer — Everyday Digital Box",
+      "title": "Image Resizer â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -425,7 +425,7 @@
       "source_sha256": "0fc9f13a11b5e980e666b8bebcfde6c81ee9f4833835539f0e14b6a6288ab2ad",
       "approved_normalized_sha256": "0fc9f13a11b5e980e666b8bebcfde6c81ee9f4833835539f0e14b6a6288ab2ad",
       "content_type": "text/html; charset=utf-8",
-      "title": "Image Format Converter — Everyday Digital Box",
+      "title": "Image Format Converter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -442,7 +442,7 @@
       "source_sha256": "9e3b8bcf38777bd9a90c775f17a010c8f3097ec6b552e1c1d57fef30ed99cba5",
       "approved_normalized_sha256": "9e3b8bcf38777bd9a90c775f17a010c8f3097ec6b552e1c1d57fef30ed99cba5",
       "content_type": "text/html; charset=utf-8",
-      "title": "Image Cropper — Everyday Digital Box",
+      "title": "Image Cropper â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -459,7 +459,7 @@
       "source_sha256": "606bd2213bf61aa15299e010bfbd0c661064271bf57dfddf3cf755830846ee4d",
       "approved_normalized_sha256": "606bd2213bf61aa15299e010bfbd0c661064271bf57dfddf3cf755830846ee4d",
       "content_type": "text/html; charset=utf-8",
-      "title": "Image Rotator — Everyday Digital Box",
+      "title": "Image Rotator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -476,7 +476,7 @@
       "source_sha256": "b4c435011f96920edec64ee94e6ec7550db396ef561b0693a866c2514dff3067",
       "approved_normalized_sha256": "b4c435011f96920edec64ee94e6ec7550db396ef561b0693a866c2514dff3067",
       "content_type": "text/html; charset=utf-8",
-      "title": "Image Watermark — Everyday Digital Box",
+      "title": "Image Watermark â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -493,7 +493,7 @@
       "source_sha256": "53e90cffa56526d98f628065e9d117ddcd141aa6c623a2a4de950e05232d2467",
       "approved_normalized_sha256": "53e90cffa56526d98f628065e9d117ddcd141aa6c623a2a4de950e05232d2467",
       "content_type": "text/html; charset=utf-8",
-      "title": "Image Color Picker — Everyday Digital Box",
+      "title": "Image Color Picker â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -510,7 +510,7 @@
       "source_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
       "approved_normalized_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
       "content_type": "text/html; charset=utf-8",
-      "title": "Passport Photo Layout Maker — Everyday Digital Box",
+      "title": "Passport Photo Layout Maker â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -527,7 +527,7 @@
       "source_sha256": "ec0199b70fb695fb331aadbc58a1c9d475745cb65c264f0cbbc46600d41ef3e6",
       "approved_normalized_sha256": "ec0199b70fb695fb331aadbc58a1c9d475745cb65c264f0cbbc46600d41ef3e6",
       "content_type": "text/html; charset=utf-8",
-      "title": "Case Converter — Everyday Digital Box",
+      "title": "Case Converter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -544,7 +544,7 @@
       "source_sha256": "88ed108487329b70e8f9356b191772eeaebdb106a1465ad769e76998671679c7",
       "approved_normalized_sha256": "88ed108487329b70e8f9356b191772eeaebdb106a1465ad769e76998671679c7",
       "content_type": "text/html; charset=utf-8",
-      "title": "Duplicate Line Remover — Everyday Digital Box",
+      "title": "Duplicate Line Remover â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -561,7 +561,7 @@
       "source_sha256": "435820ade8b9a2a14506e7121eaedbf94f356aa327cf3fda208f90e941a3b517",
       "approved_normalized_sha256": "435820ade8b9a2a14506e7121eaedbf94f356aa327cf3fda208f90e941a3b517",
       "content_type": "text/html; charset=utf-8",
-      "title": "Text Difference Checker — Everyday Digital Box",
+      "title": "Text Difference Checker â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -578,7 +578,7 @@
       "source_sha256": "0ddaf9bef846908750cf12a1f7ecb46ac7c183abc4d2c9454c7e3cdc6c7211a5",
       "approved_normalized_sha256": "0ddaf9bef846908750cf12a1f7ecb46ac7c183abc4d2c9454c7e3cdc6c7211a5",
       "content_type": "text/html; charset=utf-8",
-      "title": "Text Sorter — Everyday Digital Box",
+      "title": "Text Sorter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -595,7 +595,7 @@
       "source_sha256": "8c79de2d91ccf02c95d28d277cb21b6746fcd50c80ebf89e9fd26fa02d9f9012",
       "approved_normalized_sha256": "8c79de2d91ccf02c95d28d277cb21b6746fcd50c80ebf89e9fd26fa02d9f9012",
       "content_type": "text/html; charset=utf-8",
-      "title": "Text Reverser — Everyday Digital Box",
+      "title": "Text Reverser â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -612,7 +612,7 @@
       "source_sha256": "aa6b51c8b03b2a69efb5701c5368fc2a8adaed94a3c2f0d52b8228f372f23644",
       "approved_normalized_sha256": "aa6b51c8b03b2a69efb5701c5368fc2a8adaed94a3c2f0d52b8228f372f23644",
       "content_type": "text/html; charset=utf-8",
-      "title": "Find and Replace — Everyday Digital Box",
+      "title": "Find and Replace â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -629,7 +629,7 @@
       "source_sha256": "27c0fad33af3a4706a9e2ca404f388346c69e4919319fdb21734f3616beaa1a9",
       "approved_normalized_sha256": "27c0fad33af3a4706a9e2ca404f388346c69e4919319fdb21734f3616beaa1a9",
       "content_type": "text/html; charset=utf-8",
-      "title": "Slug Generator — Everyday Digital Box",
+      "title": "Slug Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -646,7 +646,7 @@
       "source_sha256": "d2c3ad816b7763adc41586e1e701c9fb3a932f3bbeaa6a2ed1093fd379c78fc7",
       "approved_normalized_sha256": "d2c3ad816b7763adc41586e1e701c9fb3a932f3bbeaa6a2ed1093fd379c78fc7",
       "content_type": "text/html; charset=utf-8",
-      "title": "CSV ↔ JSON Converter — Everyday Digital Box",
+      "title": "CSV â†” JSON Converter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -663,7 +663,7 @@
       "source_sha256": "75423b6be705b575455c219c0d83b5513bbc3689b3583fbb26c59259884603ce",
       "approved_normalized_sha256": "75423b6be705b575455c219c0d83b5513bbc3689b3583fbb26c59259884603ce",
       "content_type": "text/html; charset=utf-8",
-      "title": "CSV Column Extractor — Everyday Digital Box",
+      "title": "CSV Column Extractor â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -680,7 +680,7 @@
       "source_sha256": "ecfa0f0a03c033efb2c2e1e8cef3daf369e405edff628d9e42c4484e0586839d",
       "approved_normalized_sha256": "ecfa0f0a03c033efb2c2e1e8cef3daf369e405edff628d9e42c4484e0586839d",
       "content_type": "text/html; charset=utf-8",
-      "title": "Duplicate Row Finder — Everyday Digital Box",
+      "title": "Duplicate Row Finder â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -697,7 +697,7 @@
       "source_sha256": "a66bf18c8fa168eac71d758b7ec0d38ba61bc2b4265c5b63e3cc6a0a8b8d4312",
       "approved_normalized_sha256": "a66bf18c8fa168eac71d758b7ec0d38ba61bc2b4265c5b63e3cc6a0a8b8d4312",
       "content_type": "text/html; charset=utf-8",
-      "title": "CSV Data Cleaner — Everyday Digital Box",
+      "title": "CSV Data Cleaner â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -714,7 +714,7 @@
       "source_sha256": "317586ddfe94203e9d875baf38a3820aa8317f6e6f101c252db9c4a77f5fe61c",
       "approved_normalized_sha256": "317586ddfe94203e9d875baf38a3820aa8317f6e6f101c252db9c4a77f5fe61c",
       "content_type": "text/html; charset=utf-8",
-      "title": "CSV Merger — Everyday Digital Box",
+      "title": "CSV Merger â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -731,7 +731,7 @@
       "source_sha256": "6154a159dbb1fe07751d6b1f70a1fc8f8f0e0fbf9d9a5510dfb7caee035b5028",
       "approved_normalized_sha256": "6154a159dbb1fe07751d6b1f70a1fc8f8f0e0fbf9d9a5510dfb7caee035b5028",
       "content_type": "text/html; charset=utf-8",
-      "title": "JSON Formatter — Everyday Digital Box",
+      "title": "JSON Formatter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -748,7 +748,7 @@
       "source_sha256": "6cc73260b960c2454298541bb5e602fc3dbedf121eddb5a05ffb718b6595e39d",
       "approved_normalized_sha256": "6cc73260b960c2454298541bb5e602fc3dbedf121eddb5a05ffb718b6595e39d",
       "content_type": "text/html; charset=utf-8",
-      "title": "CSV Viewer — Everyday Digital Box",
+      "title": "CSV Viewer â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -765,7 +765,7 @@
       "source_sha256": "4f6bf37f4c4e225e4d13488eba11c44176e73dd11f61c68dfd701d07b7490a0b",
       "approved_normalized_sha256": "4f6bf37f4c4e225e4d13488eba11c44176e73dd11f61c68dfd701d07b7490a0b",
       "content_type": "text/html; charset=utf-8",
-      "title": "Excel Formula Generator — Everyday Digital Box",
+      "title": "Excel Formula Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -782,7 +782,7 @@
       "source_sha256": "f555e7d3abca5fb76aec32dc4e2443313ed616a5abbda477527947af864a199d",
       "approved_normalized_sha256": "f555e7d3abca5fb76aec32dc4e2443313ed616a5abbda477527947af864a199d",
       "content_type": "text/html; charset=utf-8",
-      "title": "Base64 Encoder and Decoder — Everyday Digital Box",
+      "title": "Base64 Encoder and Decoder â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -799,7 +799,7 @@
       "source_sha256": "ba547664fa8d9dc4d9a4f89c9dcec9582f094f79ed64bca1ab7fce6c8efdb675",
       "approved_normalized_sha256": "ba547664fa8d9dc4d9a4f89c9dcec9582f094f79ed64bca1ab7fce6c8efdb675",
       "content_type": "text/html; charset=utf-8",
-      "title": "URL Encoder and Decoder — Everyday Digital Box",
+      "title": "URL Encoder and Decoder â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -816,7 +816,7 @@
       "source_sha256": "e3577aaa8168f6913b92fbc7f9b19e3039cecfa3bf3ed605efc4c326863e74bf",
       "approved_normalized_sha256": "e3577aaa8168f6913b92fbc7f9b19e3039cecfa3bf3ed605efc4c326863e74bf",
       "content_type": "text/html; charset=utf-8",
-      "title": "UUID Generator — Everyday Digital Box",
+      "title": "UUID Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -833,7 +833,7 @@
       "source_sha256": "f69db3cc178957bff9c7136f1ed3f9f7f86a40023d8b08780508871bb67d99ea",
       "approved_normalized_sha256": "f69db3cc178957bff9c7136f1ed3f9f7f86a40023d8b08780508871bb67d99ea",
       "content_type": "text/html; charset=utf-8",
-      "title": "SHA-256 Text & File Hash Checker — Everyday Digital Box",
+      "title": "SHA-256 Text & File Hash Checker â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -850,7 +850,7 @@
       "source_sha256": "e639808058733f1fa48f299ce172987a08094cc4d0a8e6dc416e54eebc1af252",
       "approved_normalized_sha256": "e639808058733f1fa48f299ce172987a08094cc4d0a8e6dc416e54eebc1af252",
       "content_type": "text/html; charset=utf-8",
-      "title": "Regex Tester — Everyday Digital Box",
+      "title": "Regex Tester â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -867,7 +867,7 @@
       "source_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
       "approved_normalized_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
       "content_type": "text/html; charset=utf-8",
-      "title": "HTML Formatter — Everyday Digital Box",
+      "title": "HTML Formatter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -885,7 +885,7 @@
       "source_sha256": "d492a1cc073d884e4f7ec099381b04e47a00d7cb1b451439fbbb322eb6cfdd50",
       "approved_normalized_sha256": "d492a1cc073d884e4f7ec099381b04e47a00d7cb1b451439fbbb322eb6cfdd50",
       "content_type": "text/html; charset=utf-8",
-      "title": "CSS Minifier — Everyday Digital Box",
+      "title": "CSS Minifier â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -903,7 +903,7 @@
       "source_sha256": "b9563b537e70dc86547dc60eed44e345e8e6a0807a1fddd9066fc5bd7eaee489",
       "approved_normalized_sha256": "b9563b537e70dc86547dc60eed44e345e8e6a0807a1fddd9066fc5bd7eaee489",
       "content_type": "text/html; charset=utf-8",
-      "title": "JavaScript Minifier — Everyday Digital Box",
+      "title": "JavaScript Minifier â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -921,7 +921,7 @@
       "source_sha256": "670737ba7fccb5da6a583e741e527e24005d5c3b18b378397c04de122d745abb",
       "approved_normalized_sha256": "670737ba7fccb5da6a583e741e527e24005d5c3b18b378397c04de122d745abb",
       "content_type": "text/html; charset=utf-8",
-      "title": "Timestamp Converter — Everyday Digital Box",
+      "title": "Timestamp Converter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -938,7 +938,7 @@
       "source_sha256": "1179d0a98f2adbb739e9a4f4bce348344c355d6005073771df6e09a92a54a0c6",
       "approved_normalized_sha256": "1179d0a98f2adbb739e9a4f4bce348344c355d6005073771df6e09a92a54a0c6",
       "content_type": "text/html; charset=utf-8",
-      "title": "Hashtag Organizer — Everyday Digital Box",
+      "title": "Hashtag Organizer â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -955,7 +955,7 @@
       "source_sha256": "ce9dc0dd9eabda295aa632a37a18c44796cc248cf3ca4aec431281671f7774f1",
       "approved_normalized_sha256": "ce9dc0dd9eabda295aa632a37a18c44796cc248cf3ca4aec431281671f7774f1",
       "content_type": "text/html; charset=utf-8",
-      "title": "YouTube Title Checker — Everyday Digital Box",
+      "title": "YouTube Title Checker â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -972,7 +972,7 @@
       "source_sha256": "56db240536c56c9267589fd08d990b413c15876e571765d86b28033fac457971",
       "approved_normalized_sha256": "56db240536c56c9267589fd08d990b413c15876e571765d86b28033fac457971",
       "content_type": "text/html; charset=utf-8",
-      "title": "YouTube Description Formatter — Everyday Digital Box",
+      "title": "YouTube Description Formatter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -989,7 +989,7 @@
       "source_sha256": "be5c2fe0d66e16e754236458feff506ab1141b10e57be04f2f86ca2459be4a92",
       "approved_normalized_sha256": "be5c2fe0d66e16e754236458feff506ab1141b10e57be04f2f86ca2459be4a92",
       "content_type": "text/html; charset=utf-8",
-      "title": "Instagram Bio Formatter — Everyday Digital Box",
+      "title": "Instagram Bio Formatter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1006,7 +1006,7 @@
       "source_sha256": "59b4e6e219715db8613af6d4e48be4361310c9c79b372323e3a3916c803282fd",
       "approved_normalized_sha256": "59b4e6e219715db8613af6d4e48be4361310c9c79b372323e3a3916c803282fd",
       "content_type": "text/html; charset=utf-8",
-      "title": "Emoji Picker — Everyday Digital Box",
+      "title": "Emoji Picker â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1024,7 +1024,7 @@
       "source_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
       "approved_normalized_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
       "content_type": "text/html; charset=utf-8",
-      "title": "Hashtag Counter — Everyday Digital Box",
+      "title": "Hashtag Counter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1041,7 +1041,7 @@
       "source_sha256": "30d119911de835a821324155c85dcf92c76049a88d51f2efdd0c6e7203d68678",
       "approved_normalized_sha256": "30d119911de835a821324155c85dcf92c76049a88d51f2efdd0c6e7203d68678",
       "content_type": "text/html; charset=utf-8",
-      "title": "YouTube Thumbnail Preview — Everyday Digital Box",
+      "title": "YouTube Thumbnail Preview â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1058,7 +1058,7 @@
       "source_sha256": "e3c629a489da2d6cd662a7d9e4b44a21f32e96b828ed065126681aa10e58951e",
       "approved_normalized_sha256": "e3c629a489da2d6cd662a7d9e4b44a21f32e96b828ed065126681aa10e58951e",
       "content_type": "text/html; charset=utf-8",
-      "title": "Posting Calendar Generator — Everyday Digital Box",
+      "title": "Posting Calendar Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1075,7 +1075,7 @@
       "source_sha256": "22c95639efe252840f1ee07181ad479b6258b3f64d644232e700961d33846934",
       "approved_normalized_sha256": "22c95639efe252840f1ee07181ad479b6258b3f64d644232e700961d33846934",
       "content_type": "text/html; charset=utf-8",
-      "title": "Username Generator — Everyday Digital Box",
+      "title": "Username Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1092,7 +1092,7 @@
       "source_sha256": "0fdb156ad6ac4194f308881d627dec3f37fb2b240e4aa6db19411ce9f1e25323",
       "approved_normalized_sha256": "0fdb156ad6ac4194f308881d627dec3f37fb2b240e4aa6db19411ce9f1e25323",
       "content_type": "text/html; charset=utf-8",
-      "title": "Percentage Calculator — Everyday Digital Box",
+      "title": "Percentage Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1109,7 +1109,7 @@
       "source_sha256": "0c55abfd53e23f4cc78cdf2c70b32f5e52b1c7b0dfb2ec914a0be6b17ea22f03",
       "approved_normalized_sha256": "0c55abfd53e23f4cc78cdf2c70b32f5e52b1c7b0dfb2ec914a0be6b17ea22f03",
       "content_type": "text/html; charset=utf-8",
-      "title": "Percentage Change Calculator — Everyday Digital Box",
+      "title": "Percentage Change Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1126,7 +1126,7 @@
       "source_sha256": "3a988d59542ffed5f6489afb4bbf23500776df0723d78eed2ef027a51e8d88d7",
       "approved_normalized_sha256": "3a988d59542ffed5f6489afb4bbf23500776df0723d78eed2ef027a51e8d88d7",
       "content_type": "text/html; charset=utf-8",
-      "title": "VAT Calculator — Everyday Digital Box",
+      "title": "VAT Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1143,7 +1143,7 @@
       "source_sha256": "5ced306abe918fdec6c9b1ce054a2713da854a1b4942c63dbe4dc7d3c47e067d",
       "approved_normalized_sha256": "5ced306abe918fdec6c9b1ce054a2713da854a1b4942c63dbe4dc7d3c47e067d",
       "content_type": "text/html; charset=utf-8",
-      "title": "Discount Calculator — Everyday Digital Box",
+      "title": "Discount Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1160,7 +1160,7 @@
       "source_sha256": "d176ac8c5953439c07c2e62e02e61b0ec2f8692fbda98d477683943ba96e8f03",
       "approved_normalized_sha256": "d176ac8c5953439c07c2e62e02e61b0ec2f8692fbda98d477683943ba96e8f03",
       "content_type": "text/html; charset=utf-8",
-      "title": "Age Calculator — Everyday Digital Box",
+      "title": "Age Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1177,7 +1177,7 @@
       "source_sha256": "f1fcdc20f329dd02d247fd3c97cab0977cffacc68c5bf335b9df5f9fcd4a4a46",
       "approved_normalized_sha256": "f1fcdc20f329dd02d247fd3c97cab0977cffacc68c5bf335b9df5f9fcd4a4a46",
       "content_type": "text/html; charset=utf-8",
-      "title": "Date Difference Calculator — Everyday Digital Box",
+      "title": "Date Difference Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1194,7 +1194,7 @@
       "source_sha256": "a46a558f5c48542e862a32e33beb7006123c92649814413a3429e69f18a95735",
       "approved_normalized_sha256": "a46a558f5c48542e862a32e33beb7006123c92649814413a3429e69f18a95735",
       "content_type": "text/html; charset=utf-8",
-      "title": "Working Days Calculator — Everyday Digital Box",
+      "title": "Working Days Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1211,7 +1211,7 @@
       "source_sha256": "eadc07ca9ce5bc4d8795bb7eb76778293f54c1ece9626d80d8cd4b4c47c75f2f",
       "approved_normalized_sha256": "eadc07ca9ce5bc4d8795bb7eb76778293f54c1ece9626d80d8cd4b4c47c75f2f",
       "content_type": "text/html; charset=utf-8",
-      "title": "Loan Repayment Calculator — Everyday Digital Box",
+      "title": "Loan Repayment Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1228,7 +1228,7 @@
       "source_sha256": "ffa361936b0d22b21b1253cac0c04dbd8cdcc5ed221b1bdf72eebf68ede70025",
       "approved_normalized_sha256": "ffa361936b0d22b21b1253cac0c04dbd8cdcc5ed221b1bdf72eebf68ede70025",
       "content_type": "text/html; charset=utf-8",
-      "title": "Profit Margin Calculator — Everyday Digital Box",
+      "title": "Profit Margin Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1245,7 +1245,7 @@
       "source_sha256": "09aa6dd060a2342ce9afc398f74f961feaaa5ab467dda169740e7e6d309cdd6a",
       "approved_normalized_sha256": "09aa6dd060a2342ce9afc398f74f961feaaa5ab467dda169740e7e6d309cdd6a",
       "content_type": "text/html; charset=utf-8",
-      "title": "Compound Interest Calculator — Everyday Digital Box",
+      "title": "Compound Interest Calculator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1262,7 +1262,7 @@
       "source_sha256": "ccd7e401abc193ffe4d2cac50431442b355f7ba17019301db0e94e61187b2d6a",
       "approved_normalized_sha256": "ccd7e401abc193ffe4d2cac50431442b355f7ba17019301db0e94e61187b2d6a",
       "content_type": "text/html; charset=utf-8",
-      "title": "Password Generator — Everyday Digital Box",
+      "title": "Password Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1279,7 +1279,7 @@
       "source_sha256": "d691354ed364f6e3fc2eb2906b52f953de0170841969198dacc3a00f90933352",
       "approved_normalized_sha256": "d691354ed364f6e3fc2eb2906b52f953de0170841969198dacc3a00f90933352",
       "content_type": "text/html; charset=utf-8",
-      "title": "Secure Random Number Generator — Everyday Digital Box",
+      "title": "Secure Random Number Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1296,7 +1296,7 @@
       "source_sha256": "2b845bd8af6fdea9dd18f4d0dde18e0f1f65c1c4a5a8dbc92c224984ef35893b",
       "approved_normalized_sha256": "2b845bd8af6fdea9dd18f4d0dde18e0f1f65c1c4a5a8dbc92c224984ef35893b",
       "content_type": "text/html; charset=utf-8",
-      "title": "File Signature Inspector — Everyday Digital Box",
+      "title": "File Signature Inspector â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1313,7 +1313,7 @@
       "source_sha256": "cb209580582a7bc27a4d4fd570c95fdbddfe4755dd7acafa220202e8d0aa9b64",
       "approved_normalized_sha256": "cb209580582a7bc27a4d4fd570c95fdbddfe4755dd7acafa220202e8d0aa9b64",
       "content_type": "text/html; charset=utf-8",
-      "title": "Passphrase Generator — Everyday Digital Box",
+      "title": "Passphrase Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1331,7 +1331,7 @@
       "source_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
       "approved_normalized_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
       "content_type": "text/html; charset=utf-8",
-      "title": "QR Code Generator — Everyday Digital Box",
+      "title": "QR Code Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1349,7 +1349,7 @@
       "source_sha256": "3e3198471cf5eca4f71d0637cc16e9d0a8ad9232b9c31ca623013c0dd6b83b45",
       "approved_normalized_sha256": "3e3198471cf5eca4f71d0637cc16e9d0a8ad9232b9c31ca623013c0dd6b83b45",
       "content_type": "text/html; charset=utf-8",
-      "title": "HTML to Markdown — Everyday Digital Box",
+      "title": "HTML to Markdown â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1367,7 +1367,7 @@
       "source_sha256": "9f960bcc4b3c1bee64d69203108ad02cb55b772f57bd833696c7cfd2cdf5b97b",
       "approved_normalized_sha256": "9f960bcc4b3c1bee64d69203108ad02cb55b772f57bd833696c7cfd2cdf5b97b",
       "content_type": "text/html; charset=utf-8",
-      "title": "CSV to TXT — Everyday Digital Box",
+      "title": "CSV to TXT â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1384,7 +1384,7 @@
       "source_sha256": "dc69efc1f5c5dd842d55e33699e88b4b522eff123d177d4a9fc1102c56ed4356",
       "approved_normalized_sha256": "dc69efc1f5c5dd842d55e33699e88b4b522eff123d177d4a9fc1102c56ed4356",
       "content_type": "text/html; charset=utf-8",
-      "title": "JSON to TXT — Everyday Digital Box",
+      "title": "JSON to TXT â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1401,7 +1401,7 @@
       "source_sha256": "20b5eef801640ae9a4e4fadec36bf4993b55662f150f84eb818198feceaa8482",
       "approved_normalized_sha256": "20b5eef801640ae9a4e4fadec36bf4993b55662f150f84eb818198feceaa8482",
       "content_type": "text/html; charset=utf-8",
-      "title": "PNG to ICO — Everyday Digital Box",
+      "title": "PNG to ICO â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1418,7 +1418,7 @@
       "source_sha256": "a7f9049f044037e40178245cd87c4eddae94fbcd829130a5c1070e497219b121",
       "approved_normalized_sha256": "a7f9049f044037e40178245cd87c4eddae94fbcd829130a5c1070e497219b121",
       "content_type": "text/html; charset=utf-8",
-      "title": "File Size Converter — Everyday Digital Box",
+      "title": "File Size Converter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1435,7 +1435,7 @@
       "source_sha256": "0bde0accbd4efe8bf0bb20575fa480aac3aa9d723c12003f7abab938aec0508b",
       "approved_normalized_sha256": "0bde0accbd4efe8bf0bb20575fa480aac3aa9d723c12003f7abab938aec0508b",
       "content_type": "text/html; charset=utf-8",
-      "title": "HTML Previewer — Everyday Digital Box",
+      "title": "HTML Previewer â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1453,7 +1453,7 @@
       "source_sha256": "c17d8acf59a746d3a8dcad198699592ef9b8880c2ebf62eb60f1b7ba5c999e55",
       "approved_normalized_sha256": "c17d8acf59a746d3a8dcad198699592ef9b8880c2ebf62eb60f1b7ba5c999e55",
       "content_type": "text/html; charset=utf-8",
-      "title": "Pomodoro Timer — Everyday Digital Box",
+      "title": "Pomodoro Timer â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1470,7 +1470,7 @@
       "source_sha256": "58dbee0b612c0744cbf2056be9b1f87af42fd12915e44d575660524ba97b948f",
       "approved_normalized_sha256": "58dbee0b612c0744cbf2056be9b1f87af42fd12915e44d575660524ba97b948f",
       "content_type": "text/html; charset=utf-8",
-      "title": "Countdown Timer — Everyday Digital Box",
+      "title": "Countdown Timer â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1487,7 +1487,7 @@
       "source_sha256": "f9e2dbb21db106c6a8c1ac29cd91888ebe69df6c74e023572304cbbf1d93f361",
       "approved_normalized_sha256": "f9e2dbb21db106c6a8c1ac29cd91888ebe69df6c74e023572304cbbf1d93f361",
       "content_type": "text/html; charset=utf-8",
-      "title": "Random Name Picker — Everyday Digital Box",
+      "title": "Random Name Picker â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1504,7 +1504,7 @@
       "source_sha256": "cdf9c3fc0119972593868bbf3b8e331b993f0c3ae3121a32d0edb8f704ffd844",
       "approved_normalized_sha256": "cdf9c3fc0119972593868bbf3b8e331b993f0c3ae3121a32d0edb8f704ffd844",
       "content_type": "text/html; charset=utf-8",
-      "title": "Local To-Do List — Everyday Digital Box",
+      "title": "Local To-Do List â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1521,7 +1521,7 @@
       "source_sha256": "567fdec52dcf39ad99474ff2e1b35f055d668674fb5420f3912dc9b1bfd2e1b2",
       "approved_normalized_sha256": "567fdec52dcf39ad99474ff2e1b35f055d668674fb5420f3912dc9b1bfd2e1b2",
       "content_type": "text/html; charset=utf-8",
-      "title": "Invoice Generator — Everyday Digital Box",
+      "title": "Invoice Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1538,7 +1538,7 @@
       "source_sha256": "06bd8e051571ebc099185f41dabfc876117f2d07eba1b17bd2bb3d1a5e467adc",
       "approved_normalized_sha256": "06bd8e051571ebc099185f41dabfc876117f2d07eba1b17bd2bb3d1a5e467adc",
       "content_type": "text/html; charset=utf-8",
-      "title": "Resume Builder — Everyday Digital Box",
+      "title": "Resume Builder â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1555,7 +1555,7 @@
       "source_sha256": "5ce7019d339357f0e431298caf698b9c7a5fd5a756e5a522972ed58ff6b155cc",
       "approved_normalized_sha256": "5ce7019d339357f0e431298caf698b9c7a5fd5a756e5a522972ed58ff6b155cc",
       "content_type": "text/html; charset=utf-8",
-      "title": "Meeting Agenda Generator — Everyday Digital Box",
+      "title": "Meeting Agenda Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1572,7 +1572,7 @@
       "source_sha256": "37e2a027293cee4d8388bbbe1c952d08806a2afb8e7d779d42187eeb0a7694fe",
       "approved_normalized_sha256": "37e2a027293cee4d8388bbbe1c952d08806a2afb8e7d779d42187eeb0a7694fe",
       "content_type": "text/html; charset=utf-8",
-      "title": "Printable Calendar Generator — Everyday Digital Box",
+      "title": "Printable Calendar Generator â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1591,7 +1591,7 @@
       "source_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
       "approved_normalized_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
       "content_type": "text/html; charset=utf-8",
-      "title": "Hashtag Counter — Everyday Digital Box",
+      "title": "Hashtag Counter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js"
@@ -1608,7 +1608,7 @@
       "source_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
       "approved_normalized_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
       "content_type": "text/html; charset=utf-8",
-      "title": "HTML Formatter — Everyday Digital Box",
+      "title": "HTML Formatter â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1626,7 +1626,7 @@
       "source_sha256": "d492a1cc073d884e4f7ec099381b04e47a00d7cb1b451439fbbb322eb6cfdd50",
       "approved_normalized_sha256": "d492a1cc073d884e4f7ec099381b04e47a00d7cb1b451439fbbb322eb6cfdd50",
       "content_type": "text/html; charset=utf-8",
-      "title": "CSS Minifier — Everyday Digital Box",
+      "title": "CSS Minifier â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1644,7 +1644,7 @@
       "source_sha256": "b9563b537e70dc86547dc60eed44e345e8e6a0807a1fddd9066fc5bd7eaee489",
       "approved_normalized_sha256": "b9563b537e70dc86547dc60eed44e345e8e6a0807a1fddd9066fc5bd7eaee489",
       "content_type": "text/html; charset=utf-8",
-      "title": "JavaScript Minifier — Everyday Digital Box",
+      "title": "JavaScript Minifier â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1662,7 +1662,7 @@
       "source_sha256": "3e3198471cf5eca4f71d0637cc16e9d0a8ad9232b9c31ca623013c0dd6b83b45",
       "approved_normalized_sha256": "3e3198471cf5eca4f71d0637cc16e9d0a8ad9232b9c31ca623013c0dd6b83b45",
       "content_type": "text/html; charset=utf-8",
-      "title": "HTML to Markdown — Everyday Digital Box",
+      "title": "HTML to Markdown â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1680,7 +1680,7 @@
       "source_sha256": "0bde0accbd4efe8bf0bb20575fa480aac3aa9d723c12003f7abab938aec0508b",
       "approved_normalized_sha256": "0bde0accbd4efe8bf0bb20575fa480aac3aa9d723c12003f7abab938aec0508b",
       "content_type": "text/html; charset=utf-8",
-      "title": "HTML Previewer — Everyday Digital Box",
+      "title": "HTML Previewer â€” Everyday Digital Box",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
         "../assets/consent.js",
@@ -1844,147 +1844,147 @@
           {
             "url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
             "checked_at": "2026-11-06T04:53:00.612Z",
-            "title": "Hashtag Counter — Everyday Digital Box"
+            "title": "Hashtag Counter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-formatter/index.html",
             "checked_at": "2026-11-06T04:53:01.706Z",
-            "title": "HTML Formatter — Everyday Digital Box"
+            "title": "HTML Formatter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/css-minifier/index.html",
             "checked_at": "2026-11-06T04:53:03.463Z",
-            "title": "CSS Minifier — Everyday Digital Box"
+            "title": "CSS Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/javascript-minifier/index.html",
             "checked_at": "2026-11-06T04:53:04.555Z",
-            "title": "JavaScript Minifier — Everyday Digital Box"
+            "title": "JavaScript Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-to-markdown/index.html",
             "checked_at": "2026-11-06T04:53:05.956Z",
-            "title": "HTML to Markdown — Everyday Digital Box"
+            "title": "HTML to Markdown â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:53:08.189Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
             "checked_at": "2026-11-06T04:53:09.995Z",
-            "title": "Hashtag Counter — Everyday Digital Box"
+            "title": "Hashtag Counter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
             "checked_at": "2026-11-06T04:53:10.522Z",
-            "title": "Hashtag Counter — Everyday Digital Box"
+            "title": "Hashtag Counter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
             "checked_at": "2026-11-06T04:53:10.977Z",
-            "title": "Hashtag Counter — Everyday Digital Box"
+            "title": "Hashtag Counter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-formatter/index.html",
             "checked_at": "2026-11-06T04:53:11.606Z",
-            "title": "HTML Formatter — Everyday Digital Box"
+            "title": "HTML Formatter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-formatter/index.html",
             "checked_at": "2026-11-06T04:53:12.243Z",
-            "title": "HTML Formatter — Everyday Digital Box"
+            "title": "HTML Formatter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-formatter/index.html",
             "checked_at": "2026-11-06T04:53:13.348Z",
-            "title": "HTML Formatter — Everyday Digital Box"
+            "title": "HTML Formatter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/css-minifier/index.html",
             "checked_at": "2026-11-06T04:53:13.860Z",
-            "title": "CSS Minifier — Everyday Digital Box"
+            "title": "CSS Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/css-minifier/index.html",
             "checked_at": "2026-11-06T04:53:14.192Z",
-            "title": "CSS Minifier — Everyday Digital Box"
+            "title": "CSS Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/css-minifier/index.html",
             "checked_at": "2026-11-06T04:53:14.495Z",
-            "title": "CSS Minifier — Everyday Digital Box"
+            "title": "CSS Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/javascript-minifier/index.html",
             "checked_at": "2026-11-06T04:53:15.578Z",
-            "title": "JavaScript Minifier — Everyday Digital Box"
+            "title": "JavaScript Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/javascript-minifier/index.html",
             "checked_at": "2026-11-06T04:53:16.461Z",
-            "title": "JavaScript Minifier — Everyday Digital Box"
+            "title": "JavaScript Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/javascript-minifier/index.html",
             "checked_at": "2026-11-06T04:53:17.783Z",
-            "title": "JavaScript Minifier — Everyday Digital Box"
+            "title": "JavaScript Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-to-markdown/index.html",
             "checked_at": "2026-11-06T04:53:19.132Z",
-            "title": "HTML to Markdown — Everyday Digital Box"
+            "title": "HTML to Markdown â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-to-markdown/index.html",
             "checked_at": "2026-11-06T04:53:19.602Z",
-            "title": "HTML to Markdown — Everyday Digital Box"
+            "title": "HTML to Markdown â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-to-markdown/index.html",
             "checked_at": "2026-11-06T04:53:20.444Z",
-            "title": "HTML to Markdown — Everyday Digital Box"
+            "title": "HTML to Markdown â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:53:21.263Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/",
             "checked_at": "2026-11-06T04:53:23.179Z",
-            "title": "WebUtils Hub — Small tools. Everyday wins."
+            "title": "WebUtils Hub â€” Small tools. Everyday wins."
           },
           {
             "url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
             "checked_at": "2026-11-06T04:53:23.725Z",
-            "title": "Hashtag Counter — Everyday Digital Box"
+            "title": "Hashtag Counter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-formatter/index.html",
             "checked_at": "2026-11-06T04:53:25.030Z",
-            "title": "HTML Formatter — Everyday Digital Box"
+            "title": "HTML Formatter â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/css-minifier/index.html",
             "checked_at": "2026-11-06T04:53:25.995Z",
-            "title": "CSS Minifier — Everyday Digital Box"
+            "title": "CSS Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/javascript-minifier/index.html",
             "checked_at": "2026-11-06T04:53:27.392Z",
-            "title": "JavaScript Minifier — Everyday Digital Box"
+            "title": "JavaScript Minifier â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-to-markdown/index.html",
             "checked_at": "2026-11-06T04:53:28.381Z",
-            "title": "HTML to Markdown — Everyday Digital Box"
+            "title": "HTML to Markdown â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:53:29.227Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           }
         ],
         "requests": [
@@ -4352,67 +4352,67 @@
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:39:57.221Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:39:57.685Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:39:58.508Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:39:59.130Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:39:59.569Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:40:00.058Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:40:00.623Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:40:01.144Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:40:01.672Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:40:02.133Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:40:02.646Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:40:03.105Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           },
           {
             "url": "https://everydaydigitalbox.com/html-previewer/index.html",
             "checked_at": "2026-11-06T04:40:03.743Z",
-            "title": "HTML Previewer — Everyday Digital Box"
+            "title": "HTML Previewer â€” Everyday Digital Box"
           }
         ],
         "requests": [
@@ -5505,6 +5505,10 @@
     {
       "observed": "Existing consent-static released-page formula omitted Task21 and expected68 rather than74.",
       "resolution": "Added exactly six authorized Task21 IDs to existing formula, retaining exactly-one shared loader and no unconditional Google tag checks on every released page. Focused check and full rerun passed; production consent unchanged."
+    },
+    {
+      "observed": "Initial full local Chromium615 entries:568 passed/47 failed.45 duplicated legacy integration module counts still expected68 releases; two existing image-compressor/URL-encoder timing assertions also failed.",
+      "resolution": "Added exact six Task21 IDs to all45 formulas without changing route/publication/search assertions or deadlines. Targeted complete failed-scope rerun and fresh exact-head hosted full CI remain required; no local full PASS claim."
     }
   ],
   "limitations": [

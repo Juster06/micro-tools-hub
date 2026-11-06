@@ -79,10 +79,70 @@
     "failure": "Required scope or coverage failed; inspect command logs."
   },
   "local_browser_partition": {
-    "status": "IN PROGRESS AT THIS SNAPSHOT",
+    "status": "FAIL on initial proposal head",
     "browser": "Chrome/156.0.8078.80",
-    "deadline_seconds": 900,
-    "final_result": "Final delivery report records completion; do not infer success from this snapshot."
+    "summary": {
+      "schema_version": 1,
+      "job": "browser-tests",
+      "execution": "local",
+      "generated_at": "2026-11-06T04:43:59.409056+00:00",
+      "status": "FAIL",
+      "scopes": [
+        {
+          "scope": "browser-preflight",
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "scope": "node-browser",
+          "status": "FAIL",
+          "exit_code": 1,
+          "tests": 615,
+          "passed": 568,
+          "failed": 47,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        }
+      ],
+      "unavailable_scopes": [
+        {
+          "tool": "social-counter",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "excel-sandbox",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "text-cleaner",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        },
+        {
+          "tool": "streaming-roulette",
+          "scope": "isolated-logic",
+          "status": "NOT RUN",
+          "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+        }
+      ],
+      "coverage": {
+        "python_files": 15,
+        "node_files": 73,
+        "browser_files": 142,
+        "tools": 74
+      },
+      "browser": "Chrome/156.0.8078.80",
+      "failure": "Required scope or coverage failed; inspect command logs."
+    },
+    "cause": "45 legacy integration modules retained a pre-Task21 released-count formula and exited before their cases; two existing timing cases also failed.",
+    "correction": "Added only the exact six Task21 IDs/released count to all45 duplicated formulas; all route, publication, availability and search assertions retained. Targeted47-file rerun in progress; complete exact-head hosted660-case suite mandatory.",
+    "full_local_pass_claimed": false
   },
   "project_validation": {
     "result": "PASS",
