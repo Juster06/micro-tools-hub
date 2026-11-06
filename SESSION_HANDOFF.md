@@ -1,6 +1,39 @@
 # Session handoff
 
-## Task 20.1 — six-tool public release verification
+## Current state — revised Task 21 development
+
+Task 20 is complete and publicly verified. PR #36 and release-verification PR #37
+are merged. Approved main baseline: `8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20`.
+The release baseline is 68 publicly released tools. Earlier Task 20 audit records
+below are historical checkpoints, not pending merge instructions.
+
+Task 21.0 PDF security/dependency investigation is complete. PDF utilities remain
+deferred: no reviewed candidate met the required complete resource-control gate.
+See `audit/TASK_21_PDF_DEFERRAL.json`. This batch introduces no PDF dependency.
+
+The owner authorized the revised six-tool batch: Hashtag Counter, HTML Formatter,
+CSS Minifier, JavaScript Minifier, HTML to Markdown and HTML Previewer. The scoped
+dependency/isolation gate passed; see `audit/TASK_21_SECURITY_REVIEW.json` for pinned
+versions, integrity, bounded experiments and limitations. Implementation is
+complete; scoped source-bound verification passed. The six tools are TESTED —
+publication pending. Local regression results and scope are recorded in
+`audit/TASK_21_DEVELOPMENT_VERIFICATION.json`; exact-head required PR checks must
+pass before owner review. No merge or deployment is authorized.
+No new public release is claimed. Final lifecycle counts are generated below.
+
+Next planning checkpoint: **75 released tools**. Existing generated registry
+milestone: **100**; configuration is unchanged. PDF Compressor remains BLOCKED.
+Known existing issues: optional favicon HTTP404; Resume Builder's `15 mm` CSS
+print margin is ignored and browser defaults apply; GA4 property-level reporting
+remains unverified. The shared consent script/privacy notice and G-XDHPQYJ5CH
+are preserved. All 22 pre-existing worktrees and both unrelated handoff edits
+are preserved; this task uses a separate revised Task21 worktree.
+
+**Next major task:** Owner review of the revised Task21 development PR after
+all required Functional CI checks pass. Do not merge, deploy or mark RELEASED without
+separate owner authorization and independent public verification.
+
+## Historical Task 20.1 — release-verification checkpoint
 
 PR #36 merged as `0b055d5b837ea0bca85f8b6583eec5607f93de95`.
 [Pages42131624570](https://github.com/Juster06/micro-tools-hub/actions/runs/42131624570)

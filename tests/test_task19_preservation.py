@@ -12,6 +12,7 @@ IDS={'password-generator','csv-to-txt','passphrase-generator','qr-code-generator
 TASK20_IDS={'excel-formula-generator', 'resume-builder', 'emoji-picker', 'passport-photo-layout-maker', 'image-compressor', 'png-to-ico'}
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
+from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 
 def raw(path,revision=BASE):
     return subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT)
@@ -35,9 +36,10 @@ class Task19Preservation(unittest.TestCase):
                 for key in ['id','name','category','description','directory_path','priority','required_features','related_tools','sequence_rank']:
                     self.assertEqual(current[key],tool[key])
             elif tool['id'] in TASK20_IDS:self.assertEqual((tool['status'],current['status']),('PLANNED','RELEASED'));self.assertTrue(current['verification']['publication']['source_matches'])
+            elif tool['id'] in TASK21_IDS:assert_transition(self,tool,current)
             else:self.assertEqual(current,tool)
         counts={status:sum(t['status']==status for t in new['tools']) for status in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']}
-        self.assertEqual(counts,{'RELEASED':68,'TESTED':0,'READY':0,'PLANNED':24,'BLOCKED':1})
+        self.assertEqual(counts,TASK21_COUNTS)
 
     def test_all_56_released_runtime_sources_and_privacy_domain_settings_unchanged(self):
         old=json.loads(raw('TOOL_REGISTRY.json'))
@@ -49,7 +51,7 @@ class Task19Preservation(unittest.TestCase):
             self.assertEqual(text(path),raw(path).decode('utf8').replace('\r\n','\n'))
 
     def test_only_six_gated_cards_and_initial_count_change_in_the_hub(self):
-        current=text('index.html')
+        current=without_cards(self,text('index.html'),Homepage)
         for tid in TASK20_IDS:
             home=Homepage(current);card=next(c for c in home.cards if c['attrs'].get('data-tool-id')==tid)
             self.assertEqual(card['attrs']['href'],tid+'/index.html');self.assertEqual(card['attrs']['data-availability'],'released')
@@ -120,7 +122,7 @@ class Task19Preservation(unittest.TestCase):
 
     def test_coverage_includes_all_new_tools_and_existing_mandatory_scopes(self):
         coverage=json.loads(text('scripts/ci/coverage.json'))
-        self.assertEqual(len(coverage['tools']),68)
+        self.assertEqual(len(coverage['tools']),74)
         for tid in IDS:
             self.assertEqual(coverage['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'})
             self.assertIn('tests/tools/'+tid+'/logic.test.mjs',coverage['node_files'])

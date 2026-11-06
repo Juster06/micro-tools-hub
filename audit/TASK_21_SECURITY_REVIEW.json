@@ -1,0 +1,2003 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-11-06T02:56:27.227883+00:00",
+  "result": "PASS",
+  "approved_scope": "Bounded text-only static utilities. No approval of PDFs, backend processing or universal browser/heap isolation.",
+  "baseline": {
+    "sha": "8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20",
+    "tree": "0e451b65c48c89c0d4f004a00ce65c095e7e4ecc",
+    "protected": true,
+    "checked_at": "2026-11-06 02:17:37 UTC"
+  },
+  "requirements": [
+    {
+      "requirement": "Exact package/version and integrity",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Maintenance/release activity reviewed",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Licence and attribution retained",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Direct/transitive dependency graph reviewed",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Known-advisory checks completed",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Browser Worker compatibility",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Static hosting / no external processing",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Measured bundle payload",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Input/output bounds and complexity review",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Malformed-input behavior",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Cancellation / late-result lifecycle design",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Preview: no user scripts",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Preview: no parent-document or storage access",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Preview: no top navigation/popups/forms",
+      "status": "PASS"
+    },
+    {
+      "requirement": "Preview: no external resource/network requests",
+      "status": "PASS"
+    }
+  ],
+  "selected_packages": [
+    {
+      "name": "@esbuild/win32-x64",
+      "version": "0.28.2",
+      "time": "2026-08-08T20:00:43.500Z",
+      "latest_releases": [
+        [
+          "0.28.2",
+          "2026-08-08T20:00:43.500Z"
+        ],
+        [
+          "0.28.1",
+          "2026-06-11T22:46:52.393Z"
+        ],
+        [
+          "0.28.0",
+          "2026-04-02T20:38:34.541Z"
+        ],
+        [
+          "0.27.7",
+          "2026-04-02T16:43:41.245Z"
+        ],
+        [
+          "0.27.5",
+          "2026-04-02T00:29:18.396Z"
+        ],
+        [
+          "0.27.4",
+          "2026-03-12T14:23:56.370Z"
+        ],
+        [
+          "0.27.3",
+          "2026-02-05T22:03:43.963Z"
+        ],
+        [
+          "0.27.2",
+          "2025-12-17T01:05:45.325Z"
+        ],
+        [
+          "0.27.1",
+          "2025-12-03T20:25:08.518Z"
+        ],
+        [
+          "0.27.0",
+          "2025-11-09T19:02:15.783Z"
+        ],
+        [
+          "0.26.0",
+          "2025-11-09T03:16:16.946Z"
+        ],
+        [
+          "0.25.12",
+          "2025-11-01T23:34:59.445Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "b21affb804cc167c133d95f45b3a1dc1323b9a87",
+        "tarball": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.28.2.tgz",
+        "fileCount": 3,
+        "integrity": "sha512-5ebpxr3nWMzrL/rnUI755Jkuee0bHL/Gq0WTF9lvcpv73wAp5eu8MfBUgWK9bhWvZjj7yX8etf/8tI8Ney695g==",
+        "signatures": [
+          {
+            "sig": "MEUCIQCvMbnEGYMw4gc+GriY8NlPna2De2O/zCMEUe4RMSF2VAIgS+u3R+REjPY2C/uzQWmD/e2u5XAKDKES9lWl1mKaYws=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEYCIQDE+HSV4i1D3atgS6f9gJboMzaHztqK/UvEOvEQUGO3CgIhAOoVue5hPWAdLhuxNfD3thdfkl1ajsY2CrJxx2yfoo4w"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/@esbuild%2fwin32-x64@0.28.2",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 11695109
+      },
+      "tarball_bytes": 4829680,
+      "sha256": "7286c3611b6f1f4c4d9ec90adcbc478407ff0d28ead96567f361d53e67613e19",
+      "osv": {}
+    },
+    {
+      "name": "@jridgewell/gen-mapping",
+      "version": "0.3.13",
+      "time": "2025-08-12T06:43:21.134Z",
+      "latest_releases": [
+        [
+          "0.4.0-beta.0",
+          "2026-05-18T12:23:24.883Z"
+        ],
+        [
+          "0.3.13",
+          "2025-08-12T06:43:21.134Z"
+        ],
+        [
+          "0.3.12",
+          "2025-07-01T18:18:54.284Z"
+        ],
+        [
+          "0.3.11",
+          "2025-06-30T18:08:32.100Z"
+        ],
+        [
+          "0.3.10",
+          "2025-06-30T05:03:43.261Z"
+        ],
+        [
+          "0.3.9",
+          "2025-06-29T21:28:12.225Z"
+        ],
+        [
+          "0.3.8",
+          "2024-12-11T19:10:03.689Z"
+        ],
+        [
+          "0.3.7",
+          "2024-12-10T08:24:59.035Z"
+        ],
+        [
+          "0.3.6",
+          "2024-12-10T06:59:27.174Z"
+        ],
+        [
+          "0.3.6-beta.4",
+          "2024-06-25T12:17:39.973Z"
+        ],
+        [
+          "0.3.6-beta.3",
+          "2024-06-25T12:13:54.254Z"
+        ],
+        [
+          "0.3.6-beta.2",
+          "2024-06-25T11:56:34.815Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "@jridgewell/trace-mapping": "^0.3.24",
+        "@jridgewell/sourcemap-codec": "^1.5.0"
+      },
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "6342a19f44347518c93e43b1ac69deb3c4656a1f",
+        "tarball": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.13.tgz",
+        "fileCount": 31,
+        "integrity": "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==",
+        "signatures": [
+          {
+            "sig": "MEYCIQCZS3dgBdG5uXwrzHb1UYb5NNdvaORTULbodpiz+zsgCgIhAPHtuiXeY1/emutgT7qTbyJLtsq305ywba6Hbp/g2ZjD",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 93797
+      },
+      "tarball_bytes": 17972,
+      "sha256": "bc16f658c1f6d63e0c8738ab881d03f49f1955d8f853cdcb8f7d315cf62f0082",
+      "osv": {}
+    },
+    {
+      "name": "@jridgewell/resolve-uri",
+      "version": "3.1.2",
+      "time": "2024-02-14T19:32:38.143Z",
+      "latest_releases": [
+        [
+          "3.1.2",
+          "2024-02-14T19:32:38.143Z"
+        ],
+        [
+          "3.1.1",
+          "2023-04-07T02:43:12.012Z"
+        ],
+        [
+          "3.1.0",
+          "2022-07-05T23:40:49.196Z"
+        ],
+        [
+          "3.0.8",
+          "2022-06-26T15:40:00.724Z"
+        ],
+        [
+          "3.0.7",
+          "2022-05-05T21:57:19.632Z"
+        ],
+        [
+          "3.0.6",
+          "2022-04-22T22:30:56.595Z"
+        ],
+        [
+          "3.0.5",
+          "2022-02-11T05:20:32.856Z"
+        ],
+        [
+          "3.0.4",
+          "2022-02-03T03:20:30.542Z"
+        ],
+        [
+          "3.0.3",
+          "2022-01-23T08:08:17.686Z"
+        ],
+        [
+          "3.0.2",
+          "2022-01-23T07:39:43.337Z"
+        ],
+        [
+          "3.0.1",
+          "2022-01-23T05:03:42.185Z"
+        ],
+        [
+          "3.0.0",
+          "2022-01-22T11:38:34.346Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "integrity": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==",
+        "shasum": "7a0ee601f60f99a20c7c7c5ff0c80388c1189bd6",
+        "tarball": "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz",
+        "fileCount": 8,
+        "unpackedSize": 53153,
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIEXppH+0BsrbWtra1kPPaPPmx9gUaehh6s6zaKjIHAFlAiBmQfkNGAwgSsvu0SsXAVHZi7isPYQkKaLUvLVGXwxCaw=="
+          }
+        ]
+      },
+      "tarball_bytes": 9622,
+      "sha256": "db52f9f62558baab13353dd39e3200750fc33e6a129a575b46226f493776e230",
+      "osv": {}
+    },
+    {
+      "name": "@jridgewell/source-map",
+      "version": "0.3.11",
+      "time": "2025-08-12T06:43:46.471Z",
+      "latest_releases": [
+        [
+          "0.3.11",
+          "2025-08-12T06:43:46.471Z"
+        ],
+        [
+          "0.3.10",
+          "2025-07-01T18:18:29.538Z"
+        ],
+        [
+          "0.3.9",
+          "2025-06-30T18:08:08.357Z"
+        ],
+        [
+          "0.3.8",
+          "2025-06-30T05:04:24.857Z"
+        ],
+        [
+          "0.3.7",
+          "2025-06-29T21:45:18.698Z"
+        ],
+        [
+          "0.3.6",
+          "2024-03-12T03:24:11.534Z"
+        ],
+        [
+          "0.3.5",
+          "2023-07-03T19:07:28.181Z"
+        ],
+        [
+          "0.3.4",
+          "2023-06-29T17:25:48.012Z"
+        ],
+        [
+          "0.3.3",
+          "2023-04-07T02:43:04.304Z"
+        ],
+        [
+          "0.3.2",
+          "2022-05-01T21:04:04.833Z"
+        ],
+        [
+          "0.3.1",
+          "2022-05-01T20:50:09.164Z"
+        ],
+        [
+          "0.3.0",
+          "2022-05-01T20:28:41.420Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "@jridgewell/gen-mapping": "^0.3.5",
+        "@jridgewell/trace-mapping": "^0.3.25"
+      },
+      "optionalDependencies": {},
+      "dist": {
+        "integrity": "sha512-ZMp1V8ZFcPG5dIWnQLr3NSI1MiCU7UETdS/A0G8V/XWHvJv3ZsFqutJn1Y5RPmAPX6F3BiE397OqveU/9NCuIA==",
+        "shasum": "b21835cbd36db656b857c2ad02ebd413cc13a9ba",
+        "tarball": "https://registry.npmjs.org/@jridgewell/source-map/-/source-map-0.3.11.tgz",
+        "fileCount": 12,
+        "unpackedSize": 33473,
+        "signatures": [
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEUCIC79JET7UH0nCL5ToBNT7u911z1nYIrq5USicQODXohSAiEAs76qUo3xVSwG9OXb7LQI9EIUM8YxqABxLq44WjwsD10="
+          }
+        ]
+      },
+      "tarball_bytes": 7371,
+      "sha256": "002115a6e70a202b154333b911f30575aa0164e865a83fb1c766047a579d3ce5",
+      "osv": {}
+    },
+    {
+      "name": "@jridgewell/sourcemap-codec",
+      "version": "1.6.0",
+      "time": "2026-08-28T01:14:47.331Z",
+      "latest_releases": [
+        [
+          "1.6.0",
+          "2026-08-28T01:14:47.331Z"
+        ],
+        [
+          "1.6.0-beta.0",
+          "2026-05-18T12:21:23.161Z"
+        ],
+        [
+          "1.5.5",
+          "2025-08-12T06:43:59.139Z"
+        ],
+        [
+          "1.5.4",
+          "2025-07-01T18:18:17.094Z"
+        ],
+        [
+          "1.5.3",
+          "2025-06-30T18:07:27.130Z"
+        ],
+        [
+          "1.5.2",
+          "2025-06-30T05:04:12.051Z"
+        ],
+        [
+          "1.5.1",
+          "2025-06-29T21:45:57.019Z"
+        ],
+        [
+          "1.5.0",
+          "2024-07-09T19:28:12.902Z"
+        ],
+        [
+          "1.4.16-beta.0",
+          "2024-06-25T09:18:19.950Z"
+        ],
+        [
+          "1.4.15",
+          "2023-04-07T02:43:01.666Z"
+        ],
+        [
+          "1.4.14",
+          "2022-06-26T16:53:35.725Z"
+        ],
+        [
+          "1.4.13",
+          "2022-05-05T21:38:32.817Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "f4c663e862f06dc98ca4d453862c46902789a18d",
+        "tarball": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.6.0.tgz",
+        "fileCount": 32,
+        "integrity": "sha512-T7jf+5zgsZHwNJ4lvQ7/aezbyk0nNX+zJVWpmHA7VYsEx7a7qr5Rg5IbtJFqkgze5Y2sruq1RUY8Q837Od7iFw==",
+        "signatures": [
+          {
+            "sig": "MEUCID2yH70Ss45IMGTOPkxOjXb+ujSZyKynZt3qMx7uuDQ2AiEA10KVxh15mTI15w09BWSLJ+ReM9lqj8pSxWdQ+t0LRDk=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEYCIQDMe77/0TrzJHiWeODwQJjwyD2z13mqlvpdAJVJ8AKTDAIhAJS4mfQYkgJRc1BSe6Q9DXbjJWEGr+KpFFdlLHN+kD8E"
+          }
+        ],
+        "unpackedSize": 96626
+      },
+      "tarball_bytes": 18401,
+      "sha256": "f30a35f6af8c347d01b8ff2f8662272f7d986cf21b916704d86c249a90b97e25",
+      "osv": {}
+    },
+    {
+      "name": "@jridgewell/trace-mapping",
+      "version": "0.3.31",
+      "time": "2025-09-10T20:12:49.468Z",
+      "latest_releases": [
+        [
+          "0.3.31",
+          "2025-09-10T20:12:49.468Z"
+        ],
+        [
+          "0.3.30",
+          "2025-08-12T06:44:08.414Z"
+        ],
+        [
+          "0.3.29",
+          "2025-07-01T18:16:52.074Z"
+        ],
+        [
+          "0.3.28",
+          "2025-06-30T18:07:12.367Z"
+        ],
+        [
+          "0.3.27",
+          "2025-06-30T05:03:29.167Z"
+        ],
+        [
+          "0.3.26",
+          "2025-06-29T21:46:11.328Z"
+        ],
+        [
+          "0.3.25",
+          "2024-03-02T06:52:51.917Z"
+        ],
+        [
+          "0.3.24",
+          "2024-03-01T06:30:49.845Z"
+        ],
+        [
+          "0.3.23",
+          "2024-02-24T08:17:16.263Z"
+        ],
+        [
+          "0.3.22",
+          "2024-01-19T17:56:17.695Z"
+        ],
+        [
+          "0.3.21",
+          "2024-01-12T03:50:36.467Z"
+        ],
+        [
+          "0.3.20",
+          "2023-10-17T20:15:05.167Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "@jridgewell/resolve-uri": "^3.1.0",
+        "@jridgewell/sourcemap-codec": "^1.4.14"
+      },
+      "optionalDependencies": {},
+      "dist": {
+        "integrity": "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==",
+        "shasum": "db15d6781c931f3a251a3dac39501c98a6082fd0",
+        "tarball": "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz",
+        "fileCount": 52,
+        "unpackedSize": 146724,
+        "signatures": [
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEYCIQDnt7ZEsRkLh3IbT97P+q8XOsPOIAm84QB799xQzYZB/AIhAO6Mu+WPLULxKneRGao2w4gLAEcsMgb/Sl16RVJJzM4r"
+          }
+        ]
+      },
+      "tarball_bytes": 30747,
+      "sha256": "c64c71a119630d5abe8246889edf334b2ca9ddad094e20d623332956b1453ccf",
+      "osv": {}
+    },
+    {
+      "name": "acorn",
+      "version": "8.19.0",
+      "time": "2026-10-05T12:51:20.979Z",
+      "latest_releases": [
+        [
+          "8.19.0",
+          "2026-10-05T12:51:20.979Z"
+        ],
+        [
+          "8.18.0",
+          "2026-07-28T06:47:49.255Z"
+        ],
+        [
+          "8.17.0",
+          "2026-06-11T16:39:51.312Z"
+        ],
+        [
+          "8.16.0",
+          "2026-02-19T15:06:28.070Z"
+        ],
+        [
+          "8.15.0",
+          "2025-06-08T16:23:04.888Z"
+        ],
+        [
+          "8.14.1",
+          "2025-03-05T12:53:22.957Z"
+        ],
+        [
+          "8.14.0",
+          "2024-10-27T11:23:49.958Z"
+        ],
+        [
+          "8.13.0",
+          "2024-10-16T06:10:57.587Z"
+        ],
+        [
+          "8.12.1",
+          "2024-07-03T06:13:12.194Z"
+        ],
+        [
+          "8.12.0",
+          "2024-06-14T07:08:36.203Z"
+        ],
+        [
+          "8.11.3",
+          "2023-12-29T09:04:19.934Z"
+        ],
+        [
+          "8.11.2",
+          "2023-10-27T08:05:30.548Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "6b26fd97ce1cc9dc50bdf7ad305e9f1384d4f28a",
+        "tarball": "https://registry.npmjs.org/acorn/-/acorn-8.19.0.tgz",
+        "fileCount": 10,
+        "integrity": "sha512-oJlA3XiRm7Cyk6qFD2Jn8ak9B7jSy0qy00ADO3+8dpT0LSjFihQYv4C02LFCSYJV3Q37xYwwRy5m+IpIiUzqWw==",
+        "signatures": [
+          {
+            "sig": "MEUCIQCKouNeQjsNuIDNdOhBF+uz6LunkScoJS+/V2+4k9ge/AIgEHuXfZzDLG7gfnbawXsTF58tvH/KnOP7UZCVEVfxL90=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEQCIEj7V006uCgFneGXpdKS6uVJ0thDA2SqILqtSzkr9AkwAiBR1FIFWu4i3zlDWa4igOGgoJ5OQNOgrzS+K7GBC6TYkg=="
+          }
+        ],
+        "unpackedSize": 568532
+      },
+      "tarball_bytes": 134282,
+      "sha256": "c6fad21ffa1f2ba20338bf1dde1de911c2093c1aaf7b3af17c477661bd3bfaaf",
+      "osv": {}
+    },
+    {
+      "name": "buffer-from",
+      "version": "1.1.2",
+      "time": "2021-07-29T17:05:33.074Z",
+      "latest_releases": [
+        [
+          "1.1.2",
+          "2021-07-29T17:05:33.074Z"
+        ],
+        [
+          "1.1.1",
+          "2018-07-31T14:41:23.906Z"
+        ],
+        [
+          "1.1.0",
+          "2018-05-29T23:38:08.325Z"
+        ],
+        [
+          "1.0.0",
+          "2018-03-12T19:13:23.644Z"
+        ],
+        [
+          "0.1.2",
+          "2018-03-12T19:12:39.586Z"
+        ],
+        [
+          "0.1.1",
+          "2016-10-16T12:37:51.558Z"
+        ],
+        [
+          "0.1.0",
+          "2016-08-18T19:54:04.205Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "integrity": "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==",
+        "shasum": "2b146a6fd72e80b4f55d255f35ed59a3a9a41bd5",
+        "tarball": "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5047,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhAt/dCRA9TVsSAnZWagAAK3gP/3U4DZr6cDPvIUqEzn6Z\npqnUZD8mwnMtuFYU2LFuB1/biFBrLv0Mph2aXBh8k2nCjKoMuqy7AKGVkv7q\n1ieA/JAHWdEhDuo82I+Hi0qqzw9jpwp7l5mLFTdFX90HtA8BOvyWGDkdg3pL\nbFVP1dxBHu8LI3zrWnd2ruAYOoylSXNysJuXwaSqV6OToz/8ZRYrbyzZC/4m\noqxS6WdflQcs7jSLJkBZSHTV6rmCoDg3FbB5zLiJOUfj4oUM/JnlkN6cR54/\nhXVJo0s0+Rqb8KL7+tR3pj+sjJQqtzvPi21sMBbkg/btayJs9DUJSEp6h0/x\nfSgTBGVaPT5jbAM45e2KmkAI78eLlpwNUZzM34FFuYj8Zl1Fjnckdj7Fgadn\nJLpv283KG4oYY5yF16inPIaAh7hf74eNVx+KBjTs4jOt89CDFEmViANgV5+e\nLhS21CdMMkPIuA4xnB+Ya5jeC19Z03gKSN+t5vA2nFK2l0K7/JUMzF4jICUz\nr2q5kt3RiN2/EH3I4wYUnE6cuOKWmxF4IpB9rNU16ARV5Bxq4zp42JoDgGie\nbpaVM8YWvkMAj0eBXJ+pW5JSDdQnwpuiaPx9ry3ZfpYv9QkCWjr0qibSsXu+\n10CK9AbxTy+QRPNYkTn/te7WH2bc/V3l80ypNEnXJJICKWgOzgH4W4kG1fjH\nHMP0\r\n=2uut\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCICwILuKQPZZQ6XxAN2DiGeVk/fpq0Ls5VaL1Sxgl4JGcAiAubelJ6nbraK71jpE/QRm7uePA3TtO4Yo/sXvSly8W7Q=="
+          }
+        ]
+      },
+      "tarball_bytes": 2313,
+      "sha256": "9c2b03d59eca8f463a1927e07273ddaa87785fe3f61626c42b005540e962e343",
+      "osv": {}
+    },
+    {
+      "name": "commander",
+      "version": "2.20.3",
+      "time": "2019-10-11T05:40:24.166Z",
+      "latest_releases": [
+        [
+          "15.0.0",
+          "2026-05-29T09:16:23.076Z"
+        ],
+        [
+          "15.0.0-0",
+          "2026-02-21T07:16:07.899Z"
+        ],
+        [
+          "14.0.3",
+          "2026-01-31T01:47:17.592Z"
+        ],
+        [
+          "14.0.2",
+          "2025-10-25T12:07:44.078Z"
+        ],
+        [
+          "14.0.1",
+          "2025-09-12T07:27:06.725Z"
+        ],
+        [
+          "14.0.0",
+          "2025-05-18T06:10:29.194Z"
+        ],
+        [
+          "13.1.0",
+          "2025-01-20T23:29:10.201Z"
+        ],
+        [
+          "13.0.0",
+          "2024-12-30T05:26:40.123Z"
+        ],
+        [
+          "13.0.0-0",
+          "2024-12-06T23:12:32.307Z"
+        ],
+        [
+          "12.1.0",
+          "2024-05-18T11:16:54.043Z"
+        ],
+        [
+          "12.0.0",
+          "2024-02-03T09:44:33.948Z"
+        ],
+        [
+          "12.0.0-1",
+          "2024-01-19T20:12:13.073Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "fd485e84c03eb4881c20722ba48035e8531aeb33",
+        "tarball": "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz",
+        "fileCount": 6,
+        "integrity": "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==",
+        "signatures": [
+          {
+            "sig": "MEYCIQDi8P97IdM/HCU/5iN1cUMTYac7x2dNO9uJn3grTlBU5wIhAJTnisAKEKNxXfo45VISgVzZa+3JpFUl+TaprmdT3PYp",
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+          }
+        ],
+        "unpackedSize": 62442,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdoBXICRA9TVsSAnZWagAAxZoQAJuUZ2avRahPhSmn15Vt\nRrnyt/EzaZaR9jGpwPpdSVKEyEypyKO21zsrFKg+3TjJGLQVb6gd6eXvY3Rs\nTG1JeNQKYyqcrvH+q94ZIDTMT4tzUv50MVBuSdVCAQB2liHKzcay2aMbd0bW\nFbb56rVEfixabLoYJGhpsHAamzAD51CpxwjpeKuVIYe2LDTxcDOAsMvrjxwK\nB1vsuQe4EqcuMWE0a7jtGJTHqxxqQxcvZLloxgO+kr6TGMZQ1oMtwhRUayNO\nPbN9R97nhOoV9J9AZu28O98yJXiz6p7TQ11JeN/mWF8F4LT1N5Nv227OHP/a\nVh6EtM6YPMLQU6lQTWUVa9BF6mqCMREBY9QRmh8wfRhrrCfD9oOez1qmGsx6\nnz6zqiqabuy8KlULmhyXA2ixHcKgEimlQOVDGJLy4EJIv84o+GCdVJNiP9qd\nrB7qTVbiNm9TiY22OehPADtx9QhcavZuju6xftjXllvjKN3lJFx+jbyenfR5\nBonTnPuqx4+dmUyFnmfHSM7pHO7NtzpLuEx7N/SGDtUfI6KPRBSEt7DpoaFu\nF7lABbtehgMpcR/gCOMez7BXcNkigDWHQeRqaJ+iedXrd3YLvJMQoaFgUmDU\nMyS3zLW3srq8EsazcsdlmQpVb8lRJjKnki6Bj93v0caKaT+4aAjpMtn2xyCK\nPqC9\r\n=91C8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "tarball_bytes": 18702,
+      "sha256": "3c02903de017a98d4dc3fe2bed4900beb0d04cf7b679dca0915fd8c759652b55",
+      "osv": {}
+    },
+    {
+      "name": "css-tree",
+      "version": "3.2.1",
+      "time": "2026-03-05T14:12:36.884Z",
+      "latest_releases": [
+        [
+          "3.2.1",
+          "2026-03-05T14:12:36.884Z"
+        ],
+        [
+          "3.2.0",
+          "2026-03-05T02:30:26.199Z"
+        ],
+        [
+          "3.1.0",
+          "2024-12-06T17:26:29.749Z"
+        ],
+        [
+          "3.0.1",
+          "2024-11-02T04:10:11.808Z"
+        ],
+        [
+          "3.0.0",
+          "2024-09-11T22:45:03.189Z"
+        ],
+        [
+          "2.3.1",
+          "2022-12-14T17:32:22.353Z"
+        ],
+        [
+          "2.3.0",
+          "2022-11-30T14:47:26.213Z"
+        ],
+        [
+          "2.2.1",
+          "2022-08-14T20:13:07.339Z"
+        ],
+        [
+          "2.2.0",
+          "2022-08-10T13:20:45.010Z"
+        ],
+        [
+          "2.1.0",
+          "2022-02-27T20:10:37.269Z"
+        ],
+        [
+          "2.0.4",
+          "2021-12-17T15:16:21.662Z"
+        ],
+        [
+          "2.0.3",
+          "2021-12-15T01:12:43.473Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "mdn-data": "2.27.1",
+        "source-map-js": "^1.2.1"
+      },
+      "optionalDependencies": {},
+      "dist": {
+        "integrity": "sha512-X7sjQzceUhu1u7Y/ylrRZFU2FS6LRiFVp6rKLPg23y3x3c3DOKAwuXGDp+PAGjh6CSnCjYeAul8pcT8bAl+lSA==",
+        "shasum": "86cac7011561272b30e6b1e042ba6ce047aa7518",
+        "tarball": "https://registry.npmjs.org/css-tree/-/css-tree-3.2.1.tgz",
+        "fileCount": 278,
+        "unpackedSize": 1362649,
+        "signatures": [
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEUCIC7clP/S8cEwvnThBSxGQP8dbMKp6YjMRb6WMfCsEEgUAiEAm29nf7KsIFTrYXD1mPgRbLYuCPr23CngMMBjFQ34k8U="
+          }
+        ]
+      },
+      "tarball_bytes": 316943,
+      "sha256": "4c06bfe733d006103a4c070dcf8e0a3b2eb6b6a83e20e21c32d2d3b9c3ffae0a",
+      "osv": {}
+    },
+    {
+      "name": "entities",
+      "version": "9.0.0",
+      "time": "2026-10-29T00:08:15.446Z",
+      "latest_releases": [
+        [
+          "9.0.0",
+          "2026-10-29T00:08:15.446Z"
+        ],
+        [
+          "8.1.0",
+          "2026-09-07T22:42:04.929Z"
+        ],
+        [
+          "8.0.0",
+          "2026-03-17T11:47:45.464Z"
+        ],
+        [
+          "7.0.1",
+          "2026-01-21T13:46:30.165Z"
+        ],
+        [
+          "7.0.0",
+          "2025-09-06T22:19:14.428Z"
+        ],
+        [
+          "6.0.1",
+          "2025-06-08T19:31:24.093Z"
+        ],
+        [
+          "6.0.0",
+          "2024-12-22T18:18:13.477Z"
+        ],
+        [
+          "5.0.0",
+          "2024-06-26T13:31:28.842Z"
+        ],
+        [
+          "4.5.0",
+          "2023-04-13T17:57:56.308Z"
+        ],
+        [
+          "4.4.0",
+          "2022-09-01T09:06:21.287Z"
+        ],
+        [
+          "4.3.1",
+          "2022-07-01T18:44:40.372Z"
+        ],
+        [
+          "4.3.0",
+          "2022-04-10T13:31:04.117Z"
+        ]
+      ],
+      "license": "BSD-2-Clause",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "c45df3cdbc5ce805474759f4ec4ea7907d9d5477",
+        "tarball": "https://registry.npmjs.org/entities/-/entities-9.0.0.tgz",
+        "fileCount": 43,
+        "integrity": "sha512-oJFNDJg3kTPwAD1cNn2+WmUq4wFoo09npc3Ydf1D7ED4smRiWrsKnaLxykrTWgyGEcusc87P5dxlAleol9kpkg==",
+        "signatures": [
+          {
+            "sig": "MEYCIQCIWlIrVK04slqCUKBEEohOVVs44N4wQrAcKklqOxBjlAIhAPN0DLNGBmNj4k8KvhvoHuyCw/DSNzwYSQSqcvvOxPLI",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEUCID8Mleba+PwiVcpkLel+q+QyCqOoxgiLf3vMIIDhg+CfAiEAuCgvg/1s+dzW1vc6sPYoBpmdC3Pk9J/nuAb6gHrsumI="
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/entities@9.0.0",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 327668
+      },
+      "tarball_bytes": 92324,
+      "sha256": "f93f36ae30dbc07243b5ca8e060dee3713fc60968a9475715606c54fa48b48d9",
+      "osv": {}
+    },
+    {
+      "name": "esbuild",
+      "version": "0.28.2",
+      "time": "2026-08-08T20:00:55.454Z",
+      "latest_releases": [
+        [
+          "0.28.2",
+          "2026-08-08T20:00:55.454Z"
+        ],
+        [
+          "0.28.1",
+          "2026-06-11T22:47:05.085Z"
+        ],
+        [
+          "0.28.0",
+          "2026-04-02T20:38:46.463Z"
+        ],
+        [
+          "0.27.7",
+          "2026-04-02T16:43:44.831Z"
+        ],
+        [
+          "0.27.5",
+          "2026-04-02T00:29:23.059Z"
+        ],
+        [
+          "0.27.4",
+          "2026-03-12T14:23:59.944Z"
+        ],
+        [
+          "0.27.3",
+          "2026-02-05T22:03:47.060Z"
+        ],
+        [
+          "0.27.2",
+          "2025-12-17T01:05:48.693Z"
+        ],
+        [
+          "0.27.1",
+          "2025-12-03T20:25:12.048Z"
+        ],
+        [
+          "0.27.0",
+          "2025-11-09T19:02:19.764Z"
+        ],
+        [
+          "0.26.0",
+          "2025-11-09T03:16:20.752Z"
+        ],
+        [
+          "0.25.12",
+          "2025-11-01T23:36:22.605Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {},
+      "optionalDependencies": {
+        "@esbuild/aix-ppc64": "0.28.2",
+        "@esbuild/linux-arm": "0.28.2",
+        "@esbuild/linux-x64": "0.28.2",
+        "@esbuild/sunos-x64": "0.28.2",
+        "@esbuild/win32-x64": "0.28.2",
+        "@esbuild/darwin-x64": "0.28.2",
+        "@esbuild/linux-ia32": "0.28.2",
+        "@esbuild/netbsd-x64": "0.28.2",
+        "@esbuild/win32-ia32": "0.28.2",
+        "@esbuild/android-arm": "0.28.2",
+        "@esbuild/android-x64": "0.28.2",
+        "@esbuild/freebsd-x64": "0.28.2",
+        "@esbuild/linux-arm64": "0.28.2",
+        "@esbuild/linux-ppc64": "0.28.2",
+        "@esbuild/linux-s390x": "0.28.2",
+        "@esbuild/openbsd-x64": "0.28.2",
+        "@esbuild/win32-arm64": "0.28.2",
+        "@esbuild/darwin-arm64": "0.28.2",
+        "@esbuild/netbsd-arm64": "0.28.2",
+        "@esbuild/android-arm64": "0.28.2",
+        "@esbuild/freebsd-arm64": "0.28.2",
+        "@esbuild/linux-loong64": "0.28.2",
+        "@esbuild/linux-riscv64": "0.28.2",
+        "@esbuild/openbsd-arm64": "0.28.2",
+        "@esbuild/linux-mips64el": "0.28.2",
+        "@esbuild/openharmony-arm64": "0.28.2"
+      },
+      "dist": {
+        "shasum": "0f43bd1bad955b72d24e2261e3abe5957ccf0816",
+        "tarball": "https://registry.npmjs.org/esbuild/-/esbuild-0.28.2.tgz",
+        "fileCount": 7,
+        "integrity": "sha512-HKVLS8dvII+xoKW9kmqxbRKrnWEXfJJr/FZhhJmiqIB0e053QNYFqOBouTMO/k5sID4MvCiUCvv8b9M4h32wIA==",
+        "signatures": [
+          {
+            "sig": "MEYCIQCUNxdzUXI/rpHaMMcf/skpuDBkNL7aLEXFFc0dex0NCAIhAMDKoRFFyK2uR0qEIAoCe4pdRrJ3ld2ZCoHNyNuX6ju7",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEUCIQC8VkNobVdJrr03U9huHI7n2VhWQ2shvrTvNYB1Mx8gigIgFkrOTUauuovxR8qg94n81hYvSw6PI2qEQkNiqHkmjcg="
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/esbuild@0.28.2",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 147361
+      },
+      "tarball_bytes": 34207,
+      "sha256": "e045f94c235c7adc50e77ba2a579c7bec41b496b6b47c3a7845f7c1e19959a88",
+      "osv": {}
+    },
+    {
+      "name": "mdn-data",
+      "version": "2.27.1",
+      "time": "2026-02-13T22:41:03.295Z",
+      "latest_releases": [
+        [
+          "2.37.2",
+          "2026-10-03T14:37:03.290Z"
+        ],
+        [
+          "2.37.1",
+          "2026-09-29T11:53:30.493Z"
+        ],
+        [
+          "2.37.0",
+          "2026-09-23T08:31:48.534Z"
+        ],
+        [
+          "2.36.0",
+          "2026-09-14T18:40:24.173Z"
+        ],
+        [
+          "2.35.0",
+          "2026-09-02T12:58:18.648Z"
+        ],
+        [
+          "2.34.0",
+          "2026-08-29T10:27:58.828Z"
+        ],
+        [
+          "2.33.0",
+          "2026-08-16T22:14:19.796Z"
+        ],
+        [
+          "2.32.0",
+          "2026-08-12T12:30:51.193Z"
+        ],
+        [
+          "2.31.0",
+          "2026-08-04T21:10:49.374Z"
+        ],
+        [
+          "2.30.0",
+          "2026-08-04T15:39:48.704Z"
+        ],
+        [
+          "2.29.0",
+          "2026-07-17T01:21:08.543Z"
+        ],
+        [
+          "2.28.1",
+          "2026-05-07T12:28:21.206Z"
+        ]
+      ],
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "e37b9c50880b75366c4d40ac63d9bbcacdb61f0e",
+        "tarball": "https://registry.npmjs.org/mdn-data/-/mdn-data-2.27.1.tgz",
+        "fileCount": 25,
+        "integrity": "sha512-9Yubnt3e8A0OKwxYSXyhLymGW4sCufcLG6VdiDdUGVkPhpqLxlvP5vl1983gQjJl3tqbrM731mjaZaP68AgosQ==",
+        "signatures": [
+          {
+            "sig": "MEUCIANNF5Nx7bvKG85lfdwgM01Ti/kHtydnSgCQZdAiltxVAiEAjJifyn7c2+raG2Klo0Mbag83B0ItDAtaqjzmdGIYaeI=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/mdn-data@2.27.1",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 732388
+      },
+      "tarball_bytes": 102934,
+      "sha256": "63985bd4ce64e9a0142d70465c3a7f54c488f3ef6da3f9512d54a728cde46870",
+      "osv": {}
+    },
+    {
+      "name": "parse5",
+      "version": "8.1.0",
+      "time": "2026-11-01T14:21:40.031Z",
+      "latest_releases": [
+        [
+          "8.1.0",
+          "2026-11-01T14:21:40.031Z"
+        ],
+        [
+          "8.0.1",
+          "2026-04-19T20:16:16.612Z"
+        ],
+        [
+          "8.0.0",
+          "2025-07-09T21:02:26.323Z"
+        ],
+        [
+          "7.3.0",
+          "2025-04-22T17:04:33.658Z"
+        ],
+        [
+          "7.2.1",
+          "2024-10-28T10:22:23.641Z"
+        ],
+        [
+          "7.2.0",
+          "2024-10-12T09:29:43.511Z"
+        ],
+        [
+          "7.1.2",
+          "2022-11-20T21:57:42.503Z"
+        ],
+        [
+          "7.1.1",
+          "2022-09-02T17:11:59.218Z"
+        ],
+        [
+          "7.1.0",
+          "2022-09-02T15:42:58.130Z"
+        ],
+        [
+          "7.0.0",
+          "2022-04-20T11:16:39.188Z"
+        ],
+        [
+          "6.0.1",
+          "2020-07-24T15:17:51.325Z"
+        ],
+        [
+          "6.0.0",
+          "2020-04-15T22:53:21.311Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "entities": "^9.0.0"
+      },
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "de2cf56a4f7f47737eae13d46a8acb33a56e4844",
+        "tarball": "https://registry.npmjs.org/parse5/-/parse5-8.1.0.tgz",
+        "fileCount": 33,
+        "integrity": "sha512-sq3qBFpee5jeocbFbO48VHlGr8sT7mbXS0vxlKN6sottBtJzrOG3998sr0llSZcQAGgfpdmEYAIZE0P9z0dE8w==",
+        "signatures": [
+          {
+            "sig": "MEYCIQDf+2fHNDSOWB16Bq66H/d9UTh9NXyQosoMWVKTFCmpBwIhAM/AaduqDAiLHfBwx7FdNQMK7812M2gb8TnYPA1lftPv",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEQCIG9SDkTQGFbFVSAKJOUz9gS4ytmdoWE7tqI3jU/VtuCzAiAFIbWSKX0h8qT1BEZyJ0+jZcuWC9hWD696hffYBlqy7A=="
+          }
+        ],
+        "unpackedSize": 351101
+      },
+      "tarball_bytes": 59407,
+      "sha256": "eded22e36de43a6cd10f91e0e2e07c990b07d669cf34cd53fdb8fe0ba28c968d",
+      "osv": {}
+    },
+    {
+      "name": "prettier",
+      "version": "3.9.10",
+      "time": "2026-10-10T08:35:28.472Z",
+      "latest_releases": [
+        [
+          "3.9.10",
+          "2026-10-10T08:35:28.472Z"
+        ],
+        [
+          "3.9.9",
+          "2026-09-23T06:31:34.693Z"
+        ],
+        [
+          "3.9.8",
+          "2026-09-17T21:41:05.085Z"
+        ],
+        [
+          "3.9.7",
+          "2026-09-16T08:23:07.844Z"
+        ],
+        [
+          "3.9.6",
+          "2026-07-21T05:51:53.987Z"
+        ],
+        [
+          "3.9.5",
+          "2026-07-09T16:17:00.997Z"
+        ],
+        [
+          "3.9.4",
+          "2026-06-30T01:11:17.630Z"
+        ],
+        [
+          "3.9.3",
+          "2026-06-29T11:36:49.074Z"
+        ],
+        [
+          "3.9.2",
+          "2026-06-29T11:27:58.952Z"
+        ],
+        [
+          "3.9.1",
+          "2026-06-27T23:04:57.318Z"
+        ],
+        [
+          "3.9.0",
+          "2026-06-27T10:26:05.555Z"
+        ],
+        [
+          "3.8.5",
+          "2026-06-26T12:58:13.266Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "ac378e432f1a7381518f2e080816bbaefa38d585",
+        "tarball": "https://registry.npmjs.org/prettier/-/prettier-3.9.10.tgz",
+        "fileCount": 56,
+        "integrity": "sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==",
+        "signatures": [
+          {
+            "sig": "MEUCIQDgHgN4auSq7PgTerG0NFX1Mk+T2uP3cE6ha6aJ7w/tkwIgFpRhdUOVFyHeZiLlYYFKXEad/nNjbePT9j9hMMpzH+s=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEUCIG7C8H1bAJUAGGQ4j0aCCSsbHfycuFPsRXwyn9MaNq0lAiEApwH/eF1zz56yZlV6P+rRm3QGYL1OLBItFTlxavjsS9Q="
+          }
+        ],
+        "unpackedSize": 9959033
+      },
+      "tarball_bytes": 2801570,
+      "sha256": "9dc72045591793dff972432fb78722f7ab91aaa90a7fa8c1261ede55969246b7",
+      "osv": {}
+    },
+    {
+      "name": "source-map",
+      "version": "0.6.1",
+      "time": "2017-09-29T14:42:30.948Z",
+      "latest_releases": [
+        [
+          "0.8.0",
+          "2026-07-20T05:45:25.965Z"
+        ],
+        [
+          "0.7.6",
+          "2025-07-24T05:12:51.288Z"
+        ],
+        [
+          "0.7.5",
+          "2025-07-24T04:53:27.548Z"
+        ],
+        [
+          "0.7.4",
+          "2022-06-04T22:57:10.068Z"
+        ],
+        [
+          "0.8.0-beta.0",
+          "2018-11-16T00:03:32.324Z"
+        ],
+        [
+          "0.7.3",
+          "2018-05-16T17:29:49.200Z"
+        ],
+        [
+          "0.7.2",
+          "2018-02-26T23:30:02.206Z"
+        ],
+        [
+          "0.7.1",
+          "2018-02-14T18:58:41.826Z"
+        ],
+        [
+          "0.7.0",
+          "2018-01-19T21:40:28.391Z"
+        ],
+        [
+          "0.6.1",
+          "2017-09-29T14:42:30.948Z"
+        ],
+        [
+          "0.6.0",
+          "2017-09-27T14:32:14.978Z"
+        ],
+        [
+          "0.5.7",
+          "2017-08-21T16:30:15.907Z"
+        ]
+      ],
+      "license": "BSD-3-Clause",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "74722af32e9614e9c287a8d0bbde48b5e2f1a263",
+        "tarball": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
+        "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
+        "signatures": [
+          {
+            "sig": "MEUCIQDPx7x89gwCo+c9mch3nQQV4x592HZQjNy/wpijqND5dwIgdntgvrjeVvc+G3I58Ystp1p/nRlBvwCttzsVkDpLzVo=",
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+          }
+        ]
+      },
+      "tarball_bytes": 199644,
+      "sha256": "bdbca10d17ff5a5802d5acfc7b2f22f9f9bf587632a95650d3c5f513c7092b86",
+      "osv": {}
+    },
+    {
+      "name": "source-map-js",
+      "version": "1.2.2",
+      "time": "2026-09-30T14:08:09.382Z",
+      "latest_releases": [
+        [
+          "1.2.2",
+          "2026-09-30T14:08:09.382Z"
+        ],
+        [
+          "1.2.1",
+          "2024-09-08T16:22:55.645Z"
+        ],
+        [
+          "1.2.0",
+          "2024-03-19T16:21:36.869Z"
+        ],
+        [
+          "1.1.0",
+          "2024-03-17T19:32:42.478Z"
+        ],
+        [
+          "1.0.3",
+          "2024-03-17T18:32:22.535Z"
+        ],
+        [
+          "1.0.2",
+          "2022-01-18T16:23:43.673Z"
+        ],
+        [
+          "1.0.1",
+          "2021-11-08T19:45:12.345Z"
+        ],
+        [
+          "1.0.0",
+          "2021-11-04T20:49:09.163Z"
+        ],
+        [
+          "0.6.2",
+          "2021-02-07T21:53:50.369Z"
+        ]
+      ],
+      "license": "BSD-3-Clause",
+      "dependencies": {},
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "79fb88d97535a21cb27162cb05d211b67acea4ab",
+        "tarball": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz",
+        "fileCount": 18,
+        "integrity": "sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==",
+        "signatures": [
+          {
+            "sig": "MEUCIQCZPHMjtDeHbdrm8FkXj5rlr8cwbP4XoW93v0jVGGdWcQIgDcavClXA2dNCvB2XyxxKW7ZkgwaSlqeBeaayOtgq3ik=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEQCIAIRiJPeK+kn49RlwVL7LPl5GHFd6PnL/DKFgl/oQu6HAiBd4xIiwYFmu+pXEiZr7YrCXUt4BQ3XkahaDqCpu90zYA=="
+          }
+        ],
+        "unpackedSize": 142723
+      },
+      "tarball_bytes": 36349,
+      "sha256": "05c8cf8e7c3a6b56cada7668fe9342b10f4b625efc92aba9ba05b9e8fe4d71a3",
+      "osv": {}
+    },
+    {
+      "name": "source-map-support",
+      "version": "0.5.21",
+      "time": "2021-11-19T11:02:57.258Z",
+      "latest_releases": [
+        [
+          "0.5.21",
+          "2021-11-19T11:02:57.258Z"
+        ],
+        [
+          "0.5.20",
+          "2021-09-09T09:25:18.790Z"
+        ],
+        [
+          "0.5.19",
+          "2020-04-24T08:33:40.284Z"
+        ],
+        [
+          "0.5.18",
+          "2020-04-21T16:47:19.244Z"
+        ],
+        [
+          "0.5.17",
+          "2020-04-19T11:44:34.210Z"
+        ],
+        [
+          "0.5.16",
+          "2019-10-29T22:58:32.200Z"
+        ],
+        [
+          "0.5.15",
+          "2019-10-28T20:07:17.178Z"
+        ],
+        [
+          "0.5.14",
+          "2019-10-28T20:04:10.958Z"
+        ],
+        [
+          "0.5.13",
+          "2019-07-31T09:31:10.108Z"
+        ],
+        [
+          "0.5.12",
+          "2019-04-08T15:07:19.018Z"
+        ],
+        [
+          "0.5.11",
+          "2019-03-12T11:49:26.044Z"
+        ],
+        [
+          "0.5.10",
+          "2019-01-11T17:20:04.691Z"
+        ]
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "buffer-from": "^1.0.0",
+        "source-map": "^0.6.0"
+      },
+      "optionalDependencies": {},
+      "dist": {
+        "integrity": "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==",
+        "shasum": "04fe7c7f9e1ed2d662233c28cb2b35b9f63f6e4f",
+        "tarball": "https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz",
+        "fileCount": 7,
+        "unpackedSize": 85177,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhl4RhCRA9TVsSAnZWagAA9MkP/2Qs2CRjqtdJ3CcEi0Vm\n+eJyrGexCW8k5I/lW4F5GBZDmeVp6q/qXtH1FREVY+wgJHNxBbIChzGlj2qb\n6OWktq5UUikQ6gTtROP9qO1JRavOamFycZjslQ2oINcJk6ITxGmzWHn/30XC\nkqssvpRepn9lsD1W7N9wy+sNV1af9r/JSnKoJ7t8b514u5PFXkRNPg7GMQBK\nc/KRHejC9UnBxBjBFMwpGgPG2d8wWZtDM9CANnrU+xBkgREUffgzp3/HVh8g\nLSLRVjpHMmX6HpwU4saICf9AiKlnexn/JIJ0+JRGTBAxbwNdpVseE/L+2GkA\nVUDC/CZjnoRmNihjjhUuyExxOfkRSh/mPB2k1+EmYDLcDL9ICl4rsiiESMW1\nDF/yZUxy7ZzNEyzVDQsNTUrrSKu62X1k9cQqcJflGxV+Ukujq3t9XGXgTTEW\n2zkth1+EYJDkZRBlRjgIzavxK18fKgWsb0Kt+G+qtzGblPzZPfNkgP9WPxyO\nG3hkHXsVtAgRkmhhhlLuGPki2iJ/DAwjW26uJZygnE94Qpk8ZVrL0hqyvWz1\ngJ0UbtNKnDu6UQaLGsa8pK4r1yi6vizbGds74brsbRM2WVKS2N8cqSWGnmCU\ndChn505i0VVd3wxhMl8Mv5d8Cury+f3I2ijsRnTggb4ckDs8vNU7KSY3lZVa\n6aSS\r\n=6Bt8\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQDUl2pliUzT75Wfqw//lyr9KAtvcgB9REe76ZbJMxL5EAIgCnzJxTTn3B/svqUxsUG+7hYfFD+E6oKtl14eUAqdq6c="
+          }
+        ]
+      },
+      "tarball_bytes": 26650,
+      "sha256": "5d9b04ef3e6824fdcf91cfcc03ab427fae486bc6859735805593f51b3554f636",
+      "osv": {}
+    },
+    {
+      "name": "terser",
+      "version": "5.51.2",
+      "time": "2026-08-27T11:31:25.786Z",
+      "latest_releases": [
+        [
+          "5.51.2",
+          "2026-08-27T11:31:25.786Z"
+        ],
+        [
+          "5.51.1",
+          "2026-08-27T06:06:41.423Z"
+        ],
+        [
+          "5.51.0",
+          "2026-08-26T10:55:53.143Z"
+        ],
+        [
+          "5.50.0",
+          "2026-08-11T18:32:26.453Z"
+        ],
+        [
+          "5.49.2",
+          "2026-08-05T11:21:56.575Z"
+        ],
+        [
+          "5.49.1",
+          "2026-08-04T07:12:19.599Z"
+        ],
+        [
+          "5.49.0",
+          "2026-07-08T17:14:36.616Z"
+        ],
+        [
+          "5.48.0",
+          "2026-05-21T18:18:56.338Z"
+        ],
+        [
+          "5.47.1",
+          "2026-05-07T10:16:39.195Z"
+        ],
+        [
+          "5.47.0",
+          "2026-05-07T07:30:02.213Z"
+        ],
+        [
+          "5.46.2",
+          "2026-04-23T10:58:46.887Z"
+        ],
+        [
+          "5.46.1",
+          "2026-03-16T10:59:07.417Z"
+        ]
+      ],
+      "license": "BSD-2-Clause",
+      "dependencies": {
+        "acorn": "^8.15.0",
+        "commander": "^2.20.0",
+        "source-map-support": "~0.5.20",
+        "@jridgewell/source-map": "^0.3.3"
+      },
+      "optionalDependencies": {},
+      "dist": {
+        "shasum": "555912425a7f2ff7737425c3718fa76c7069f6ef",
+        "tarball": "https://registry.npmjs.org/terser/-/terser-5.51.2.tgz",
+        "fileCount": 43,
+        "integrity": "sha512-bWnjSNscmuI+GJze6ZupnHP8G/cTcsJF+bXCeQknk2SHQsgbNJnLrqiH9jZ2W4STPVXH2mDKKRX3iwPhc9Cn/Q==",
+        "signatures": [
+          {
+            "sig": "MEUCIQD23ThLLGY5TwcdXKOzgobfaJRht3MU39PcH+SMj/qCTAIgKO4sGfqIPAwXonjfW9PfglZp/DCZW2rRrY1oBOnjI6s=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEUCIFtAEVF9NBpaBWdKjn02wUe6d5DICi1kzZRg0adwVEo3AiEArtWDuLIuZTHMd4FQylO1GuNKSadQJTD4XSr8K6Vua+w="
+          }
+        ],
+        "unpackedSize": 2354204
+      },
+      "tarball_bytes": 469320,
+      "sha256": "e861b3a42eef7477ba7df38483fd0b802b4954637d396ca04316f26e30996d89",
+      "osv": {}
+    }
+  ],
+  "repository_activity": [
+    {
+      "name": "inikulin/parse5",
+      "pushed_at": "2026-11-06T01:36:31Z",
+      "archived": false,
+      "license": "MIT",
+      "default_branch": "master"
+    },
+    {
+      "name": "prettier/prettier",
+      "pushed_at": "2026-11-06T01:32:05Z",
+      "archived": false,
+      "license": "MIT",
+      "default_branch": "main"
+    },
+    {
+      "name": "css/csso",
+      "pushed_at": "2024-06-21T16:11:18Z",
+      "archived": false,
+      "license": "MIT",
+      "default_branch": "master"
+    },
+    {
+      "name": "terser/terser",
+      "pushed_at": "2026-10-05T21:41:49Z",
+      "archived": false,
+      "license": "NOASSERTION",
+      "default_branch": "master"
+    },
+    {
+      "name": "acornjs/acorn",
+      "pushed_at": "2026-10-21T04:54:03Z",
+      "archived": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "csstree/csstree",
+      "pushed_at": "2026-09-16T15:23:07Z",
+      "archived": false,
+      "license": "MIT"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "assets/vendor/task21/css-source.js",
+      "bytes": 210806,
+      "gzip_bytes": 58241,
+      "sha256": "d8aa099306ab3230f35bf3e132e6a26dcd6b67b0102ee62e2560d0e3d9147b31",
+      "worker_code_sha256": "00a2af1971e544d6b81a0b77d005f1ff5c9398f6033431fd5b9e57412c5107ff"
+    },
+    {
+      "path": "assets/vendor/task21/format-source.js",
+      "bytes": 437445,
+      "gzip_bytes": 121460,
+      "sha256": "55617aeb435a8fb608d341ab4ca32db77d39b5134ca4dc99835529d3184dc42b",
+      "worker_code_sha256": "a8135a1c3f0ae105b980eae6275a04c64ab3887844a0c961ce307600a2619e1d"
+    },
+    {
+      "path": "assets/vendor/task21/javascript-source.js",
+      "bytes": 661561,
+      "gzip_bytes": 176988,
+      "sha256": "ba966018e7ee021134424c3ec826242e700144f9c583279809b5074c43cc4b9f",
+      "worker_code_sha256": "86282183a2ed7de2e2f0d4c1ab90cd6f93916a60f33e7ad2d38100a496d2d41c"
+    },
+    {
+      "path": "assets/vendor/task21/markup-source.js",
+      "bytes": 173796,
+      "gzip_bytes": 43894,
+      "sha256": "f900f75fb6506a3403a7551eca6d18ea667a9867094bdc035c904b391664753f",
+      "worker_code_sha256": "55ef4343c5250863136a9f5164d7bbe54f921dcaf7deb7347afc2c127174725d"
+    }
+  ],
+  "node_experiments": {
+    "scope": "Isolated feasibility; no user code executed. Trusted engine bundles run in Node Workers with96MiB old-space/16MiB young-space limits and2second deadline. Limits do not apply to production browser heaps.",
+    "results": [
+      {
+        "name": "format-preservation:<div><p>Hello <strong>",
+        "status": "PASS",
+        "elapsed_ms": 209.2597
+      },
+      {
+        "name": "format-preservation:<div class=\"some-long-",
+        "status": "PASS",
+        "elapsed_ms": 118.91270000000003
+      },
+      {
+        "name": "format-preservation:<pre>  A\n B </pre>",
+        "status": "PASS",
+        "elapsed_ms": 88.15539999999999
+      },
+      {
+        "name": "format-refuses-parsed-content-change",
+        "status": "PASS",
+        "elapsed_ms": 92.10199999999998
+      },
+      {
+        "name": "html5-repair-retains-literal-content",
+        "status": "PASS",
+        "elapsed_ms": 85.75310000000002
+      },
+      {
+        "name": "html-invalid-or-limit:25000",
+        "status": "PASS",
+        "elapsed_ms": 239.00109999999995
+      },
+      {
+        "name": "html-invalid-or-limit:32769",
+        "status": "PASS",
+        "elapsed_ms": 61.15829999999994
+      },
+      {
+        "name": "html-invalid-or-limit:727",
+        "status": "PASS",
+        "elapsed_ms": 75.85160000000008
+      },
+      {
+        "name": "css-normal:/* keep */ a { color: ",
+        "status": "PASS",
+        "elapsed_ms": 65.19180000000006
+      },
+      {
+        "name": "css-normal:/*! license */ :root {",
+        "status": "PASS",
+        "elapsed_ms": 74.69540000000006
+      },
+      {
+        "name": "css-normal:@media (width > 20px){",
+        "status": "PASS",
+        "elapsed_ms": 64.90989999999988
+      },
+      {
+        "name": "css-normal:a{content:\"a; } \\\" x\";",
+        "status": "PASS",
+        "elapsed_ms": 62.82920000000013
+      },
+      {
+        "name": "css-malformed",
+        "status": "PASS",
+        "elapsed_ms": 59.85229999999979
+      },
+      {
+        "name": "css-limit",
+        "status": "PASS",
+        "elapsed_ms": 62.113000000000056
+      },
+      {
+        "name": "js-ast-equivalence:function add(a,b){ ret",
+        "status": "PASS",
+        "elapsed_ms": 99.63569999999982
+      },
+      {
+        "name": "js-ast-equivalence:function f(){return\n1;",
+        "status": "PASS",
+        "elapsed_ms": 73.8909000000001
+      },
+      {
+        "name": "js-ast-equivalence:const x=/a+b/giu;const",
+        "status": "PASS",
+        "elapsed_ms": 75.94399999999996
+      },
+      {
+        "name": "js-ast-equivalence:class X { #x=1; f(){ r",
+        "status": "PASS",
+        "elapsed_ms": 71.31899999999996
+      },
+      {
+        "name": "js-ast-equivalence:/*! licence */ const v",
+        "status": "PASS",
+        "elapsed_ms": 75.10609999999997
+      },
+      {
+        "name": "js-module",
+        "status": "PASS",
+        "elapsed_ms": 68.11130000000003
+      },
+      {
+        "name": "js-malformed",
+        "status": "PASS",
+        "elapsed_ms": 63.28909999999996
+      },
+      {
+        "name": "js-limit",
+        "status": "PASS",
+        "elapsed_ms": 67.49459999999999
+      },
+      {
+        "name": "markdown-common",
+        "status": "PASS",
+        "elapsed_ms": 49.920199999999795
+      },
+      {
+        "name": "markdown-unsafe-link",
+        "status": "PASS",
+        "elapsed_ms": 53.864700000000084
+      },
+      {
+        "name": "preview-allowlist",
+        "status": "PASS",
+        "elapsed_ms": 49.17599999999993
+      },
+      {
+        "name": "preview-nodes",
+        "status": "PASS",
+        "elapsed_ms": 50.808300000000145
+      }
+    ]
+  },
+  "browser_experiments": {
+    "checked_at": "2026-11-06T02:53:42.204Z",
+    "status": "PASS",
+    "browser": "Edg/156.0.4314.58",
+    "scope": "Fresh isolated HTTP browser prototype; no production pages. Parse5 allowlisted structural HTML; all attributes removed; no scripting/stylesheet/image/foreign/form/navigation support. Sandbox empty and CSP default-src none. CDP child probes are test instrumentation, never preview user scripts.",
+    "results": [
+      {
+        "name": "network-positive-control-with-interception-disabled",
+        "status": "PASS",
+        "http_status": 200
+      },
+      {
+        "name": "preview-scripts",
+        "status": "PASS",
+        "elapsed_ms": 161.99160000000006
+      },
+      {
+        "name": "preview-event-handlers",
+        "status": "PASS",
+        "elapsed_ms": 156.21969999999988
+      },
+      {
+        "name": "preview-navigation",
+        "status": "PASS",
+        "elapsed_ms": 152.5722999999998
+      },
+      {
+        "name": "preview-forms-popups",
+        "status": "PASS",
+        "elapsed_ms": 155.3449999999998
+      },
+      {
+        "name": "preview-resources",
+        "status": "PASS",
+        "elapsed_ms": 152.0848000000001
+      },
+      {
+        "name": "preview-foreign-content",
+        "status": "PASS",
+        "elapsed_ms": 133.40970000000016
+      },
+      {
+        "name": "preview-malformed-mutation",
+        "status": "PASS",
+        "elapsed_ms": 141.79759999999987
+      },
+      {
+        "name": "preview-templates",
+        "status": "PASS",
+        "elapsed_ms": 156.1921000000002
+      },
+      {
+        "name": "preview-raw-text",
+        "status": "PASS",
+        "elapsed_ms": 163.3185000000003
+      },
+      {
+        "name": "preview-unicode-encoded",
+        "status": "PASS",
+        "elapsed_ms": 146.3442
+      },
+      {
+        "name": "actual-child-probes",
+        "status": "PASS",
+        "observations": {
+          "heading": "Hello",
+          "active": 0,
+          "localStorage": "SecurityError",
+          "sessionStorage": "SecurityError",
+          "parent": "SecurityError",
+          "top": "SecurityError",
+          "popup": true
+        }
+      },
+      {
+        "name": "rendered-safe-structure-and-origin-probes",
+        "status": "PASS",
+        "elapsed_ms": 227.35620000000017
+      },
+      {
+        "name": "browser-worker-format",
+        "status": "PASS",
+        "elapsed_ms": 76.01350000000002
+      },
+      {
+        "name": "browser-worker-css",
+        "status": "PASS",
+        "elapsed_ms": 43.17390000000023
+      },
+      {
+        "name": "browser-worker-javascript",
+        "status": "PASS",
+        "elapsed_ms": 72.3777
+      },
+      {
+        "name": "browser-worker-markup",
+        "status": "PASS",
+        "elapsed_ms": 51.207800000000134
+      },
+      {
+        "name": "input-depth-limit",
+        "status": "PASS",
+        "elapsed_ms": 50.15819999999985
+      },
+      {
+        "name": "worker-cancel-and-deadline",
+        "status": "PASS",
+        "elapsed_ms": 166.10979999999972
+      }
+    ],
+    "canary_requests": [],
+    "observed_network_requests": [],
+    "unexpected_js_exceptions": [],
+    "limitations": [
+      "Tested Edge156 only; hosted CI will use pinned Chromium. No universal browser isolation or hard Worker heap certification.",
+      "Timers and Worker termination do not guarantee bounded prior allocation. Text/node/depth/token limits apply; no decompression supported."
+    ]
+  },
+  "limits": {
+    "hashtag_counter": {
+      "input_utf16_units": 100000,
+      "occurrences": 10000,
+      "code_points_per_tag": 100,
+      "output_utf8_bytes": 1048576,
+      "worker_deadline_ms": 2000
+    },
+    "other_five": {
+      "input_utf8_bytes": 32768,
+      "output_utf8_bytes": 262144,
+      "nodes": 4096,
+      "nesting": 64,
+      "css_or_js_tokens": 8192,
+      "worker_deadline_ms": 2000
+    }
+  },
+  "decision_notes": [
+    "CSSO5.0.5/css-tree2.2.1 was evaluated and rejected for unsupported modern media-range syntax; current CSS-Tree3.2.1 parsing/generation selected instead. No CSSO code adopted.",
+    "Prettier strict-whitespace output is checked against canonical HTML5 parsing; changed parsed content fails closed. Some HTML5 repair is permitted when parsed content is preserved. Embedded JS/CSS formatting disabled.",
+    "Terser compression and name mangling disabled; both Acorn and Terser must accept input. No input code executed.",
+    "HTML-to-Markdown uses a reviewed bounded parse5 tree converter. It outputs text, not rendered Markdown; unsafe link destinations omitted.",
+    "Preview: parse5 structural tag allowlist, all attributes removed, active/foreign/resource elements omitted, empty sandbox and restrictive CSP. No stylesheet, image, link-navigation, form or script support.",
+    "Generic scaffold dry-run refuses PLANNED entries. Owner explicitly authorized these six IDs; specialized pages follow existing adapter/fixture/integration conventions without weakening generator safety or temporarily changing registry statuses."
+  ],
+  "limitations": [
+    "Feasibility browser: Edge156. Production-page scoped tests passed separately; full mapped local and mandatory hosted pinned Chromium results are recorded in development evidence / exact PR checks.",
+    "Timers/Worker termination are safeguards, not hard heap guarantees. Small text, node, token, depth and output caps reduce bounded workload; no decompression supported.",
+    "Native OS clipboard/download dialogs, screen readers, physical devices and cross-engine certification excluded.",
+    "Current libraries may contain undisclosed bugs. OSV absence is not a universal security clearance.",
+    "PDF tools remain deferred; GA4 property-level reporting unverified."
+  ],
+  "sources": [
+    "https://github.com/inikulin/parse5",
+    "https://prettier.io/docs/options",
+    "https://github.com/csstree/csstree",
+    "https://terser.org/docs/api-reference/",
+    "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-sandbox",
+    "https://www.w3.org/TR/CSP3/"
+  ],
+  "asset_hash_convention": "SHA256 of UTF-8/LF bytes including final newline; Windows checkout CRLF normalized.",
+  "source_modules": [
+    {
+      "path": "scripts/vendor/task21/build.mjs",
+      "sha256": "21433e418e64e4ac01f8860c11eada9de308607589608510d6f041eb17e54866"
+    },
+    {
+      "path": "scripts/vendor/task21/css-preflight.mjs",
+      "sha256": "bd6f8cfc393dc5807729772f52bef00847675260874d81cfa59dc42ad2eb474c"
+    },
+    {
+      "path": "scripts/vendor/task21/css-worker.mjs",
+      "sha256": "aa88938534e455a9c651eaf9a5fb9d062c1b50871bced7000fc348e9ef71c19b"
+    },
+    {
+      "path": "scripts/vendor/task21/format-worker.mjs",
+      "sha256": "f03c7058a86eefa80842bdd5baa4b5f46b292be67644ef40517a5e9aafdeb68b"
+    },
+    {
+      "path": "scripts/vendor/task21/javascript-worker.mjs",
+      "sha256": "4f818be70070e06fb4927b767d2d571b0486f449882291e47521dd543f7179a0"
+    },
+    {
+      "path": "scripts/vendor/task21/markup-core.mjs",
+      "sha256": "36b63c3399a0d8ee376996f6086c5425a27e5fed888475f378cd5845f4440af2"
+    },
+    {
+      "path": "scripts/vendor/task21/markup-worker.mjs",
+      "sha256": "81a1bb56e9569937b3ac1ca43375d8af5bb8041580f845b6d12abb781c878054"
+    },
+    {
+      "path": "scripts/vendor/task21/package.json",
+      "sha256": "7649f35e1137405fe7b85cfdfd6200d29e72d581ff39cd95fb340ad92393cb42"
+    },
+    {
+      "path": "scripts/vendor/task21/pnpm-lock.yaml",
+      "sha256": "bdbd6d9497bce13d6390d8e42f9a1de6902621267363ef09f0a6fb30e5430540"
+    },
+    {
+      "path": "scripts/vendor/task21/README.md",
+      "sha256": "c6d2e511e95a3380ec9b11d9ea25f0c0812c3f536c955d25e85ccf821b3ea473"
+    }
+  ],
+  "reproducible_build": {
+    "mode": "verified reproducible assets",
+    "artifacts": [
+      {
+        "path": "assets/vendor/task21/markup-source.js",
+        "bytes": 173796,
+        "sha256": "f900f75fb6506a3403a7551eca6d18ea667a9867094bdc035c904b391664753f"
+      },
+      {
+        "path": "assets/vendor/task21/format-source.js",
+        "bytes": 437445,
+        "sha256": "55617aeb435a8fb608d341ab4ca32db77d39b5134ca4dc99835529d3184dc42b"
+      },
+      {
+        "path": "assets/vendor/task21/css-source.js",
+        "bytes": 210806,
+        "sha256": "d8aa099306ab3230f35bf3e132e6a26dcd6b67b0102ee62e2560d0e3d9147b31"
+      },
+      {
+        "path": "assets/vendor/task21/javascript-source.js",
+        "bytes": 661561,
+        "sha256": "ba966018e7ee021134424c3ec826242e700144f9c583279809b5074c43cc4b9f"
+      }
+    ]
+  },
+  "dependency_delivery_scope": {
+    "production": "Four prebundled Worker-source strings; no runtime package installation/backend/QR or processing service. Parent loads only the existing styling CDN and unchanged shared consent component.",
+    "build_only": [
+      "esbuild@0.28.2",
+      "@esbuild/win32-x64@0.28.2"
+    ],
+    "unused_or_tree_shaken": "CLI and source-map dependency metadata still reviewed and notices retained. No source-map output enabled.",
+    "platform_binary_notice": "Reviewed @esbuild/win32-x64 tarball contains no licence file. It is not redistributed; its MIT metadata and root esbuild MIT notice are recorded.",
+    "integrity_scope": "Tarball SHA512 and SHA1 verified against npm metadata; SHA256 captured. npm signature/provenance metadata captured, not independently authenticated as a signing-chain certification."
+  }
+}

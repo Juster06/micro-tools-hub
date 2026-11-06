@@ -1,0 +1,87 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-06",
+  "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+  "source_tree_sha": "ac1747dc3d69acc0c7ccdd26164ae497b030b1e4",
+  "pages": [
+    {
+      "path": "hashtag-counter/index.html",
+      "source_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
+      "checks": [
+        "11 canonical inline logic fixtures",
+        "7 canonical Chromium interaction fixtures / 21 assertions",
+        "5 specialized Node Worker/logic tests",
+        "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+      ]
+    }
+  ],
+  "runtime_assets": [
+    {
+      "path": "assets/consent.js",
+      "sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "canonical_lf_bytes": 7882
+    }
+  ],
+  "asset_hash_convention": "SHA256 of UTF-8/LF bytes, including final newline; normalizes Windows checkout CRLF. Page source hashes use existing project normalization (LF, trailing whitespace stripped).",
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 11,
+      "failed": 0,
+      "assertions": 11,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 7,
+      "failed": 0,
+      "assertions": 21,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Edg/156.0.4314.58"
+    }
+  },
+  "browser": "Edg/156.0.4314.58",
+  "focused_node_tests": 5,
+  "focused_browser_tests": 6,
+  "focused_results": {
+    "node": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "browser": {
+      "tests": 6,
+      "pass": 6,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    }
+  },
+  "security_review": "audit/TASK_21_SECURITY_REVIEW.json",
+  "test_scope": [
+    "11 canonical inline logic fixtures",
+    "7 canonical Chromium interaction fixtures / 21 assertions",
+    "5 specialized Node Worker/logic tests",
+    "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+  ],
+  "limitations": [
+    "Local Edge156 headless; pinned hosted Chromium/full mapped regression remains separately required before delivery.",
+    "Generic inline adapters validate preparation for asynchronous parser tools; actual transformations execute in separate reviewed Workers and specialized tests.",
+    "Native clipboard/download dialogs, physical devices, screen readers and cross-browser certification excluded.",
+    "Worker deadlines are not hard heap limits. Bounded text, node/depth/token/output controls apply.",
+    "No public deployment, public functionality or publication has been verified; GA4 property reporting remains unverified."
+  ],
+  "publication": null
+}

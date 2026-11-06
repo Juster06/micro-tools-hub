@@ -2922,12 +2922,12 @@
       "category": "developer",
       "description": "Format markup using an evaluated parser without executing it.",
       "directory_path": "html-formatter",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
         "Tailwind CSS Play CDN v4",
-        "Reviewed non-executing HTML parser and whitespace-preservation policy"
+        "Pinned local Prettier 3.9.10 HTML and parse5 8.1.0 in bounded Worker; reviewed MIT/BSD notices"
       ],
       "required_features": [
         "Parse errors",
@@ -2935,12 +2935,36 @@
         "Safe text output",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
+        "evidence_path": "audit/HTML_FORMATTER_VERIFICATION.json",
+        "test_scope": [
+          "10 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
+          "7 canonical Chromium interaction fixtures / 21 assertions",
+          "6 specialized Node Worker/logic tests",
+          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "cancelBtn",
+        "toolError",
+        "toolStatus",
+        "indent",
+        "width"
+      ]
     },
     {
       "id": "css-minifier",
@@ -2948,12 +2972,12 @@
       "category": "developer",
       "description": "Minify stylesheet text using a reviewed parser.",
       "directory_path": "css-minifier",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
         "Tailwind CSS Play CDN v4",
-        "Reviewed CSS parser/minifier and license"
+        "Pinned local CSS-Tree 3.2.1 parser/generator (MIT); no rule/value optimization"
       ],
       "required_features": [
         "Preserve strings and URLs",
@@ -2961,12 +2985,34 @@
         "Before and after sizes",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_sha256": "d492a1cc073d884e4f7ec099381b04e47a00d7cb1b451439fbbb322eb6cfdd50",
+        "evidence_path": "audit/CSS_MINIFIER_VERIFICATION.json",
+        "test_scope": [
+          "9 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
+          "7 canonical Chromium interaction fixtures / 21 assertions",
+          "6 specialized Node Worker/logic tests",
+          "7 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "cancelBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "javascript-minifier",
@@ -2974,12 +3020,12 @@
       "category": "developer",
       "description": "Minify JavaScript source without running it.",
       "directory_path": "javascript-minifier",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
         "Tailwind CSS Play CDN v4",
-        "Reviewed JavaScript parser/minifier and license; consider worker isolation"
+        "Pinned local Acorn 8.19.0 (MIT) and Terser 5.51.2 (BSD-2-Clause); compression/mangling disabled"
       ],
       "required_features": [
         "Reviewed parser",
@@ -2987,12 +3033,35 @@
         "Safe output",
         "Input cap and worker evaluation"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_sha256": "b9563b537e70dc86547dc60eed44e345e8e6a0807a1fddd9066fc5bd7eaee489",
+        "evidence_path": "audit/JAVASCRIPT_MINIFIER_VERIFICATION.json",
+        "test_scope": [
+          "10 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
+          "7 canonical Chromium interaction fixtures / 21 assertions",
+          "6 specialized Node Worker/logic tests",
+          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "cancelBtn",
+        "toolError",
+        "toolStatus",
+        "toolMode"
+      ]
     },
     {
       "id": "timestamp-converter",
@@ -3351,11 +3420,12 @@
       "category": "social",
       "description": "Count hashtags in pasted posts with explicit token rules.",
       "directory_path": "hashtag-counter",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "S",
       "dependencies": [
-        "Tailwind CSS Play CDN v4"
+        "Tailwind CSS Play CDN v4",
+        "Local caption parsing, NFC normalization and dedicated browser Worker; no added parser library"
       ],
       "required_features": [
         "Unicode policy",
@@ -3363,14 +3433,37 @@
         "List extraction",
         "Copy"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [
         "hashtag-organizer"
       ],
-      "verification": null
+      "verification": {
+        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
+        "evidence_path": "audit/HASHTAG_COUNTER_VERIFICATION.json",
+        "test_scope": [
+          "11 canonical inline logic fixtures",
+          "7 canonical Chromium interaction fixtures / 21 assertions",
+          "5 specialized Node Worker/logic tests",
+          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "cancelBtn",
+        "toolError",
+        "toolStatus",
+        "casePolicy"
+      ]
     },
     {
       "id": "youtube-thumbnail-preview",
@@ -4524,12 +4617,12 @@
       "category": "conversion",
       "description": "Convert supplied markup to Markdown without executing it.",
       "directory_path": "html-to-markdown",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
         "Tailwind CSS Play CDN v4",
-        "Reviewed non-executing HTML-to-Markdown conversion library"
+        "Pinned local parse5 8.1.0 and bounded reviewed HTML-tree to Markdown-text converter"
       ],
       "required_features": [
         "Reviewed DOM conversion",
@@ -4537,12 +4630,34 @@
         "Copy",
         "Safe parsing"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_sha256": "3e3198471cf5eca4f71d0637cc16e9d0a8ad9232b9c31ca623013c0dd6b83b45",
+        "evidence_path": "audit/HTML_TO_MARKDOWN_VERIFICATION.json",
+        "test_scope": [
+          "9 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
+          "7 canonical Chromium interaction fixtures / 21 assertions",
+          "6 specialized Node Worker/logic tests",
+          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "cancelBtn",
+        "toolError",
+        "toolStatus"
+      ]
     },
     {
       "id": "csv-to-txt",
@@ -4787,12 +4902,12 @@
       "category": "conversion",
       "description": "Preview untrusted markup in an isolated sandbox.",
       "directory_path": "html-previewer",
-      "status": "PLANNED",
+      "status": "TESTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
         "Tailwind CSS Play CDN v4",
-        "Sandboxed iframe with restrictive CSP and no script/same-origin privileges"
+        "Pinned local parse5 8.1.0 structural allowlist, empty iframe sandbox and restrictive CSP; no active/external resources"
       ],
       "required_features": [
         "Sandbox without scripts or same-origin privileges",
@@ -4800,12 +4915,36 @@
         "Show source",
         "Reset preview"
       ],
-      "testing_status": "NOT_STARTED",
-      "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Revised Task 21: scoped canonical, specialized Worker and Chromium checks passed; publication pending. PDF utilities remain deferred.",
       "sequence_rank": null,
       "related_tools": [],
-      "verification": null
+      "verification": {
+        "source_revision": "f6a4ceab5badc73510159a33ed3b13c61f85384c",
+        "source_sha256": "0bde0accbd4efe8bf0bb20575fa480aac3aa9d723c12003f7abab938aec0508b",
+        "evidence_path": "audit/HTML_PREVIEWER_VERIFICATION.json",
+        "test_scope": [
+          "9 canonical inline logic fixtures (job preparation; actual transformation covered separately)",
+          "7 canonical Chromium interaction fixtures / 21 assertions",
+          "5 specialized Node Worker/logic tests",
+          "6 extended Chromium tests: actual output, clipboard/download mocks, reset, cancellation, late-result invalidation, keyboard/layout, missing Worker and actual 2-second deadline",
+          "12 actual HTTP preview-isolation tests: canary positive control, malicious fixtures, opaque-origin/storage, blocked top navigation/popup/form"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "toolOutput",
+        "runBtn",
+        "clearBtn",
+        "copyBtn",
+        "downloadBtn",
+        "cancelBtn",
+        "toolError",
+        "toolStatus",
+        "safePreview"
+      ]
     },
     {
       "id": "pomodoro-timer",

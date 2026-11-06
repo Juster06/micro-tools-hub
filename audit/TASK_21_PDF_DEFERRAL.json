@@ -1,0 +1,25 @@
+{
+  "task": "Task21.0 PDF security/dependency investigation",
+  "result": "DEFER PDF UTILITIES",
+  "completed_at": "2026-11-06T02:05:54.748043+00:00",
+  "source_report_sha256": "5a1b6ea68702d04a068099542c8459f57a194b6017c874546b16daeb79eecdab",
+  "baseline": "8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20",
+  "candidates": [
+    "@pdfme/pdf-lib6.2.8",
+    "pdfjs-dist6.5.438",
+    "mupdf1.28.1"
+  ],
+  "findings": [
+    "Upstream pdf-lib1.17.1 earlier bounded16909-byte PDF expanded16MiB in126.6ms; no uncontrolled exhaustion attempted.",
+    "The fork fixed a100MiB per-buffer boundary but no complete cumulative processing budget was demonstrated.",
+    "PDF.js had uncapped reviewed decoder paths; stock MuPDF Wasm maximum2GiB, no suitable whole-job safety/licensing proof.",
+    "Decoder-only patch leaves parsing, copying, image and output allocation gaps. No dependency adopted."
+  ],
+  "advisory_scope": "GHSA-vrqm-gvq7-rrwh concerns @pdfme/pdf-lib, not formally upstream pdf-lib1.17.1.",
+  "status_changes": false,
+  "production_changes": false,
+  "sources": [
+    "https://github.com/pdfme/pdfme/security/advisories/GHSA-vrqm-gvq7-rrwh",
+    "https://github.com/Hopding/pdf-lib/blob/v1.17.1/src/core/streams/DecodeStream.ts"
+  ]
+}
