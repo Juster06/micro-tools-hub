@@ -4611,7 +4611,7 @@
       "category": "conversion",
       "description": "Convert Markdown to sanitized HTML and preview it safely.",
       "directory_path": "markdown-converter-previewer",
-      "status": "PLANNED",
+      "status": "IMPLEMENTED",
       "priority": "P2",
       "implementation_complexity": "L",
       "dependencies": [
@@ -4626,7 +4626,7 @@
       ],
       "testing_status": "NOT_STARTED",
       "last_verification_date": null,
-      "notes": "Proposed scope only; no tool page has been implemented.",
+      "notes": "Task 22 source implemented after mandatory security gate; development tests in progress. Publication unverified.",
       "sequence_rank": null,
       "related_tools": [],
       "verification": null
