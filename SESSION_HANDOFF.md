@@ -1,6 +1,21 @@
 # Session handoff
 
-## Current state — Task 22.1 public release-verification proposal
+## Current state — Task 22 complete; 75 publicly verified releases
+
+Task 22 development PR [#40](https://github.com/Juster06/micro-tools-hub/pull/40) and release-verification PR [#41](https://github.com/Juster06/micro-tools-hub/pull/41) are merged. The independently verified public main commit is `2234bffef4cf376357ccb7cae3d1c0ec105d08c8`.
+
+[Pages deployment 42218207674](https://github.com/Juster06/micro-tools-hub/actions/runs/42218207674) and [post-merge Functional CI 42218207882](https://github.com/Juster06/micro-tools-hub/actions/runs/42218207882) completed successfully for that commit; all four required functional checks passed (201 Python, 490 Node and 684 Chromium tests, plus canonical profiles).
+
+Task 22.2 final public verification on 2026-11-06 confirmed all 75 distinct visible cards, canonical routes and public tool pages; approved source identity for the pages, privacy notice, registry, progress tracker and all 14 assets; 22 fresh functionality/interface/catalog cases; and 13 fresh isolation cases with root/child network positive controls. Two fresh browser profiles verified real consent behavior, exactly three accepted page views returning HTTP 204 without duplicates, and no Google requests before consent or after rejection/withdrawal. GA4 property-level reporting remains unverified; measurement ID remains `G-XDHPQYJ5CH`.
+
+**Task 22 is complete and publicly verified. The 75-tool planning checkpoint is achieved and publicly verified.** The deployed inventory is **93 registered, 75 RELEASED, 0 TESTED, 0 READY, 17 PLANNED and 1 BLOCKED**. The generated milestone remains **100 released tools**, at 75/100 (75.0%), with 25 remaining; milestone configuration is unchanged.
+
+PDF Compressor remains BLOCKED and PDF processing remains deferred. Existing optional favicon404, Resume Builder print-margin issue and historical Windows local full-run/Image Compressor limitations remain documented. Runtime code, registry records, privacy controls and historical source-bound audits are unchanged by this documentation update. The earlier proposal sections below are dated historical checkpoints, not current pending-merge instructions.
+
+**Next major task:** Await explicit owner instructions for development after the verified 75-tool checkpoint. **Task 23 has not begun and requires explicit owner authorization.** This documentation-only branch (`docs/task-22-final-public-state`) does not authorize a merge or deployment; do not use administrator bypass.
+
+
+## Historical Task 22.1 public release-verification proposal
 
 Task 22 development PR #40 is merged into main at `64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140`. The standard exact-head merge followed four passing checks and a clean PR, without requesting an administrator override. Pages 42205116968 and all four post-merge Functional CI 42205117641 checks succeeded for that commit. No historical administrator-bypass audit claim is made.
 
@@ -1276,8 +1291,8 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Tool status counts: IDEA: 0; PLANNED: 17; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 75; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: release/task-22-markdown-verification.
-- Latest commit observed before generation: 64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140.
+- Git branch: docs/task-22-final-public-state.
+- Latest commit observed before generation: 2234bffef4cf376357ccb7cae3d1c0ec105d08c8.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -1310,65 +1325,7 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` README.md
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
-- ` M` TOOL_REGISTRY.json
-- ` M` index.html
 - ` M` markdown-converter-previewer/README.md
-- ` M` scripts/ci/coverage.json
-- ` M` scripts/consent-static.test.mjs
-- ` M` scripts/task22_test_support.py
-- ` M` tests/test_task21_release.py
-- ` M` tests/test_task22_preservation.py
-- ` M` tests/tools/age-calculator/integration-browser.test.mjs
-- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/compound-interest-calculator/integration-browser.test.mjs
-- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
-- ` M` tests/tools/csv-column-extractor/integration-browser.test.mjs
-- ` M` tests/tools/csv-merger/integration-browser.test.mjs
-- ` M` tests/tools/csv-viewer/integration-browser.test.mjs
-- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
-- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-row-finder/integration-browser.test.mjs
-- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
-- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
-- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
-- ` M` tests/tools/image-color-picker/integration-browser.test.mjs
-- ` M` tests/tools/image-resizer/integration-browser.test.mjs
-- ` M` tests/tools/image-rotator/integration-browser.test.mjs
-- ` M` tests/tools/image-watermark/integration-browser.test.mjs
-- ` M` tests/tools/invoice-generator/integration-browser.test.mjs
-- ` M` tests/tools/json-formatter/integration-browser.test.mjs
-- ` M` tests/tools/json-to-txt/integration-browser.test.mjs
-- ` M` tests/tools/loan-repayment-calculator/integration-browser.test.mjs
-- ` M` tests/tools/local-to-do-list/integration-browser.test.mjs
-- ` M` tests/tools/markdown-converter-previewer/integration-browser.test.mjs
-- ` M` tests/tools/meeting-agenda-generator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
-- ` M` tests/tools/pomodoro-timer/integration-browser.test.mjs
-- ` M` tests/tools/posting-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/printable-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
-- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
-- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
-- ` M` tests/tools/sha256-hash-checker/integration-browser.test.mjs
-- ` M` tests/tools/slug-generator/integration-browser.test.mjs
-- ` M` tests/tools/text-difference-checker/integration-browser.test.mjs
-- ` M` tests/tools/text-reverser/integration-browser.test.mjs
-- ` M` tests/tools/text-sorter/integration-browser.test.mjs
-- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
-- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/username-generator/integration-browser.test.mjs
-- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
-- ` M` tests/tools/vat-calculator/integration-browser.test.mjs
-- ` M` tests/tools/working-days-calculator/integration-browser.test.mjs
-- ` M` tests/tools/youtube-description-formatter/integration-browser.test.mjs
-- ` M` tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs
-- `??` audit/MARKDOWN_CONVERTER_PREVIEWER_RELEASE_VERIFICATION.json
-- `??` audit/TASK_22_PUBLIC_RELEASE_VERIFICATION.json
-- `??` audit/TASK_22_RELEASE_PROPOSAL_TESTS.json
-- `??` audit/task22-public/
-- `??` tests/test_task22_release.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

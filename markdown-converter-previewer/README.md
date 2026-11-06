@@ -1,5 +1,11 @@
 # Markdown Converter & Previewer — Task 22
 
+Current status: **RELEASED and publicly verified**. PR #41 is merged; the public registry records 75 RELEASED tools at main `2234bffef4cf376357ccb7cae3d1c0ec105d08c8`. Task 22.2 fresh public functionality, isolation and real consent checks passed on 2026-11-06. Pages deployment 42218207674 and all four post-merge Functional CI 42218207882 checks passed. See the current project handoff and `audit/MARKDOWN_CONVERTER_PREVIEWER_RELEASE_VERIFICATION.json`; historical audit evidence remains unchanged. GA4 property-level reporting remains unverified.
+
+Task 22 is complete. Task 23 has not begun and requires separate owner authorization.
+
+## Historical Task 22.1 release-verification proposal
+
 Current status: Task 22.1 public source, functionality, isolation and real consent verification passed at `64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140`. RELEASED transition is proposed in the separate release-verification branch, awaiting owner authorization to merge/deploy. The currently deployed registry remains 74 RELEASED / 1 TESTED. See `audit/MARKDOWN_CONVERTER_PREVIEWER_RELEASE_VERIFICATION.json`.
 
 ## Historical development checkpoint
