@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-06T04:51:37.954005+00:00",
+  "deployed_source_revision": "9fa032140639550abd9a0449ed7ef5198354bd40",
+  "public_evidence": "audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json",
+  "scope": "Pre-commit release proposal validation; exact containing PR head required hosted CI is separate and mandatory. No deployment/merge action.",
+  "public_cases": {
+    "functional": 23,
+    "isolation": 13,
+    "total": 36,
+    "result": "PASS"
+  },
+  "source_bound_release_tests": {
+    "tests": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "local_node": {
+    "result": "PASS",
+    "tests": {
+      "scope": "node-logic",
+      "status": "PASS",
+      "exit_code": 0,
+      "tests": 467,
+      "passed": 467,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "canonical_logic_profiles": 70,
+    "canonical_logic_fixtures": 1390
+  },
+  "local_python_partition": {
+    "schema_version": 1,
+    "job": "python-project",
+    "execution": "local",
+    "generated_at": "2026-11-06T04:43:59.406662+00:00",
+    "status": "FAIL",
+    "scopes": [
+      {
+        "scope": "python-unittest",
+        "status": "FAIL",
+        "exit_code": 124
+      }
+    ],
+    "unavailable_scopes": [
+      {
+        "tool": "social-counter",
+        "scope": "isolated-logic",
+        "status": "NOT RUN",
+        "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+      },
+      {
+        "tool": "excel-sandbox",
+        "scope": "isolated-logic",
+        "status": "NOT RUN",
+        "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+      },
+      {
+        "tool": "text-cleaner",
+        "scope": "isolated-logic",
+        "status": "NOT RUN",
+        "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+      },
+      {
+        "tool": "streaming-roulette",
+        "scope": "isolated-logic",
+        "status": "NOT RUN",
+        "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+      }
+    ],
+    "coverage": {
+      "python_files": 15,
+      "node_files": 73,
+      "browser_files": 142,
+      "tools": 74
+    },
+    "failure": "Required scope or coverage failed; inspect command logs."
+  },
+  "local_browser_partition": {
+    "status": "IN PROGRESS AT THIS SNAPSHOT",
+    "browser": "Chrome/156.0.8078.80",
+    "deadline_seconds": 900,
+    "final_result": "Final delivery report records completion; do not infer success from this snapshot."
+  },
+  "project_validation": {
+    "result": "PASS",
+    "errors": 0,
+    "warnings": 0
+  },
+  "first_node_attempt": {
+    "tests": 467,
+    "passed": 466,
+    "failed": 1,
+    "cause": "Existing consent-static released-page formula omitted Task21 and expected68 rather than74.",
+    "resolution": "Added exactly six authorized Task21 IDs to existing formula, retaining exactly-one shared loader and no unconditional Google tag checks on every released page. Focused check and full rerun passed; production consent unchanged."
+  },
+  "local_python_limitation": "Existing240second local unittest command deadline expired without an assertion failure before all189 tests completed. Full local PASS is not claimed; all5 new release tests passed separately. Require complete hosted Windows189-test execution on exact PR head. No deadline/test/skip gate changed.",
+  "required_hosted_jobs": [
+    "Python and project validation",
+    "Node logic regression",
+    "Real Chromium browser tests",
+    "Required functional checks"
+  ],
+  "merge_and_deploy": "Owner authorization required; not performed."
+}

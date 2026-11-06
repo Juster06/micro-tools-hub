@@ -1,5 +1,13 @@
 # CSS Minifier
 
+## Task21.1 release proposal
+
+Fresh public verification passed against deployed `9fa032140639550abd9a0449ed7ef5198354bd40`; evidence:
+`audit/CSS_MINIFIER_RELEASE_VERIFICATION.json`. Proposed RELEASED
+status awaits owner review/merge/deployment; the current deployed registry remains
+TESTED. Original development scope below is historical. Known interface/format
+limitations remain; no runtime, dependency, privacy or consent change.
+
 Canonical route: `css-minifier/index.html`.
 
 Compact CSS with a reviewed parser and generator, without rule merging.

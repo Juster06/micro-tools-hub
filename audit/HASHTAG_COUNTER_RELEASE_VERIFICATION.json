@@ -1,0 +1,158 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-06",
+  "source_revision": "9fa032140639550abd9a0449ed7ef5198354bd40",
+  "source_tree_sha": "634fa256d1032f70f8366eec8105de9d5a292f09",
+  "pages": [
+    {
+      "path": "hashtag-counter/index.html",
+      "source_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
+      "checks": [
+        "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+        "Fresh public functionality:4 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+        "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+        "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates."
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/hashtag-counter/",
+        "http_status": 200,
+        "checked_at": "2026-11-06T04:23:19.770669+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "deployment": {
+    "commit": "9fa032140639550abd9a0449ed7ef5198354bd40",
+    "run_id": 42159767277,
+    "conclusion": "success",
+    "pr": 38
+  },
+  "post_merge_ci": {
+    "commit": "9fa032140639550abd9a0449ed7ef5198354bd40",
+    "run_id": 42159767505,
+    "conclusion": "success",
+    "required_functional_checks": "success"
+  },
+  "public_index": {
+    "url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
+    "final_url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
+    "checked_at": "2026-11-06T04:23:15.007150+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "1e6314d394237648ef2c26564f59463028944e00e499c96819ec244a22280f4b",
+    "raw_approved_sha256": "1e6314d394237648ef2c26564f59463028944e00e499c96819ec244a22280f4b",
+    "raw_match": true,
+    "source_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
+    "approved_normalized_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Hashtag Counter — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "canonical_public_url": {
+    "url": "https://everydaydigitalbox.com/hashtag-counter/",
+    "final_url": "https://everydaydigitalbox.com/hashtag-counter/",
+    "checked_at": "2026-11-06T04:23:19.770669+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "1e6314d394237648ef2c26564f59463028944e00e499c96819ec244a22280f4b",
+    "raw_approved_sha256": "1e6314d394237648ef2c26564f59463028944e00e499c96819ec244a22280f4b",
+    "raw_match": true,
+    "source_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
+    "approved_normalized_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Hashtag Counter — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "live_browser": {
+    "result": "PASS",
+    "test_count": 4,
+    "cases": [
+      "hashtag-counter: real Worker result, copy/download/reset, native keyboard and responsive layout",
+      "hashtag-counter: complete caption, URL/fragments/C\\#, punctuation and duplicate policy",
+      "hashtag-counter: NFC, exact/lowercase policies and documented non-full-case-folding",
+      "hashtag-counter: invalid Unicode, tag/input/occurrence boundaries and no-tag result"
+    ],
+    "browser": "Edg/156.0.4314.58",
+    "checked_at": "2026-11-06T04:53:29.886Z",
+    "scope": "Fresh actual public HTTPS with unmodified production responses; clipboard/download captured; independent expectations.",
+    "isolation_cases": 0
+  },
+  "runtime_assets": [
+    {
+      "path": "assets/consent.js",
+      "sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "canonical_lf_bytes": 7882
+    }
+  ],
+  "runtime_assets_public": {
+    "assets/consent.js": {
+      "url": "https://everydaydigitalbox.com/assets/consent.js",
+      "final_url": "https://everydaydigitalbox.com/assets/consent.js",
+      "checked_at": "2026-11-06T04:23:07.072175+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "raw_approved_sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "raw_match": true,
+      "source_sha256": "83d76f2a1cbe5b7cc7ec1827e8a78dd6a63f6739f2a000ca8d52d5aa8021bfa8",
+      "approved_normalized_sha256": "83d76f2a1cbe5b7cc7ec1827e8a78dd6a63f6739f2a000ca8d52d5aa8021bfa8",
+      "content_type": "application/javascript; charset=utf-8"
+    }
+  },
+  "asset_hash_convention": "SHA256 of UTF-8/LF bytes, including final newline; normalizes Windows checkout CRLF. Page source hashes use existing project normalization (LF, trailing whitespace stripped).",
+  "canonical_layers": {
+    "structural": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "scope": "STRUCTURAL_ONLY"
+    },
+    "logic": {
+      "status": "PASS",
+      "passed": 11,
+      "failed": 0,
+      "assertions": 11,
+      "failures": [],
+      "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+    },
+    "browser": {
+      "status": "PASS",
+      "passed": 7,
+      "failed": 0,
+      "assertions": 21,
+      "failures": [],
+      "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+      "browser": "Edg/156.0.4314.58"
+    }
+  },
+  "canonical_layer_scope": "Earlier scoped development evidence retained by previous_evidence; fresh post-merge full CI separately passed184 Python/467 Node/660 Chromium plus all canonical profiles. Release-proposal suites will be rerun separately.",
+  "focused_node_tests": 5,
+  "focused_browser_tests": 6,
+  "previous_evidence": "audit/HASHTAG_COUNTER_VERIFICATION.json",
+  "aggregate_public_evidence": "audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json",
+  "test_scope": [
+    "Fresh public index/directory HTTP200; exact approved Git bytes and normalized source hash (9fa032140639550abd9a0449ed7ef5198354bd40).",
+    "Fresh public functionality:4 cases, including real Worker output, captured copy/download/reset, native Enter and responsive320/375/768/1440 layouts.",
+    "All74 public pages and12 existing/new assets match Git;74 visible distinct canonical cards; existing68 released pages preserved.",
+    "Two isolated profiles:zero Google requests before consent/after rejection/after withdrawal;3 real accepted page views returned204 without duplicates."
+  ],
+  "limitations": [
+    "Actual public browser:Edge156 headless. Full local/hosted automated regression is recorded separately; no universal cross-engine certification.",
+    "Clipboard/download APIs captured in memory; no native OS dialogs, physical device or screen-reader certification.",
+    "Expected browser security-console messages from deliberate blocked probes and existing favicon404 recorded separately; no unexpected application JS exceptions.",
+    "HTML formatter can refuse valid input to preserve parsed content. HTML5 normalization and strict whitespace may change source representation.",
+    "CSS/JS syntax is limited to reviewed parsers; JS compression/mangling disabled. Markdown is a common text subset.",
+    "Previewer structural subset only:attributes/styles/images/scripts/forms/navigation/resources omitted; no full HTML/CSS rendering.",
+    "Worker timers are not hard heap guarantees; existing input/output/node/depth/token bounds apply.",
+    "Existing PDF Compressor BLOCKED, optional favicon404, Resume Builder print-margin issue and unverified GA4 property reporting remain."
+  ],
+  "publication": {
+    "url": "https://everydaydigitalbox.com/hashtag-counter/",
+    "http_status": 200,
+    "checked_at": "2026-11-06T04:23:19.770669+00:00",
+    "source_matches": true
+  }
+}

@@ -1,6 +1,36 @@
 # Project master plan
 
-## Current state — revised Task 21 development
+## Current state — Task21.1 release-verification proposal
+
+PR #38 is merged; approved deployed main is `9fa032140639550abd9a0449ed7ef5198354bd40`.
+Pages42159767277 and all four post-merge Functional CI42159767505 jobs passed for
+that exact commit. Fresh public verification matched90 source responses plus six
+directory routes to Git, checked all74 visible canonical cards/pages,23 functional
+cases and13 Previewer isolation cases. Parent and child network positive controls
+returned200; malicious inputs produced no unexpected requests or execution.
+
+Two isolated profiles verified real consent:zero Google requests before choice,
+after rejection or withdrawal; exactly3 accepted page views returned204 without
+duplicates. Consent/privacy/G-XDHPQYJ5CH are unchanged; property reporting remains
+unverified. Evidence:`audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json` plus six
+separate release audits. Development and historical evidence remain intact.
+
+This unmerged release proposal advances six TESTED tools to RELEASED:93 registered,
+74 RELEASED,0 TESTED,0 READY,18 PLANNED,1 BLOCKED. The deployed registry still has
+68 RELEASED/6 TESTED until this proposal is approved, merged and deployed. Full
+proposal regression and exact-head required PR checks must pass before review.
+
+Next planning checkpoint:**75 released**. Existing generated registry milestone:
+**100**, unchanged. PDF investigation is complete and utilities remain deferred;
+PDF Compressor remains BLOCKED. Existing optional favicon404 and Resume Builder
+print-margin limitation remain. All23 pre-existing worktrees and both unrelated
+handoff edits are preserved; this task uses a separate release worktree.
+
+**Next major task:** Owner review of the Task21.1 release-verification PR after
+required CI passes. Do not merge/deploy without explicit authorization or use
+administrator bypass. After deployment, verify final public registry/source state.
+
+## Historical Task21 development checkpoint
 
 Task 20 is complete and publicly verified. PR #36 and release-verification PR #37
 are merged. Approved main baseline: `8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20`.

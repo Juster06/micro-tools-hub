@@ -1,4 +1,4 @@
-"""Task21 adds only six unpublished text/web utilities to the68-release baseline."""
+"""Task21's six source-bound verified additions preserve the68-release baseline."""
 import hashlib
 import json
 from pathlib import Path
@@ -37,7 +37,7 @@ class Task21Preservation(unittest.TestCase):
         paths=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'audit'],cwd=ROOT,text=True).splitlines();self.assertGreater(len(paths),100)
         for path in paths:self.assertEqual(normalized((ROOT/path).read_bytes()),normalized(blob(path)),path)
 
-    def test_homepage_changes_only_six_pending_cards_and_count(self):
+    def test_homepage_changes_only_six_verified_cards_and_count(self):
         current=read('index.html');home=Homepage(current);self.assertEqual(len(home.cards),74);self.assertEqual(len({c['attrs']['href'] for c in home.cards}),74)
         current=without_cards(self,current,Homepage);home=Homepage(current);start,end=home.counts[0];current=current[:start]+'68 tools ready to use'+current[end:]
         self.assertEqual(current,blob('index.html').decode('utf8').replace('\r\n','\n'))
@@ -45,7 +45,7 @@ class Task21Preservation(unittest.TestCase):
     def test_new_pages_and_worker_assets_bind_to_real_git_source_and_scoped_tests(self):
         for tool in load('TOOL_REGISTRY.json')['tools']:
             if tool['id'] not in IDS:continue
-            v=tool['verification'];audit=load(v['evidence_path']);self.assertEqual((audit['result'],audit['source_revision']),('PASS',v['source_revision']));self.assertEqual(audit['verified_on'],tool['last_verification_date']);self.assertIsNone(v['publication'])
+            v=tool['verification'];audit=load(v['evidence_path']);self.assertEqual((audit['result'],audit['source_revision']),('PASS',v['source_revision']));self.assertEqual(audit['verified_on'],tool['last_verification_date']);self.assertEqual(v['publication']['http_status'],200);self.assertIs(v['publication']['source_matches'],True);self.assertEqual(audit['pages'][0]['publication'],v['publication'])
             p=audit['pages'][0];self.assertEqual(p['source_sha256'],v['source_sha256']);self.assertEqual(page_hash(blob(p['path'],v['source_revision'])),v['source_sha256']);self.assertEqual(page_hash((ROOT/p['path']).read_bytes()),v['source_sha256'])
             for asset in audit['runtime_assets']:
                 self.assertEqual(hashlib.sha256((ROOT/asset['path']).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),asset['sha256']);self.assertEqual(hashlib.sha256(blob(asset['path'],v['source_revision']).replace(b'\r\n',b'\n')).hexdigest(),asset['sha256'])
