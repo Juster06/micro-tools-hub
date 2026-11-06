@@ -62,7 +62,7 @@ class Task20Preservation(unittest.TestCase):
                 if layer!='structural':self.assertGreater(audit['canonical_layers'][layer]['passed'],0)
             self.assertGreater(audit['focused_test_count'],0)
     def test_all68_tools_and_new_tests_remain_mandatory_in_ci(self):
-        c=load('scripts/ci/coverage.json');self.assertEqual(len(c['tools']),74)
+        c=load('scripts/ci/coverage.json');self.assertEqual(len(c['tools']),75)
         for tid in IDS:
             self.assertEqual(c['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'});self.assertIn('tests/tools/'+tid+'/logic.test.mjs',c['node_files'])
             for name in ['extended-browser.test.mjs','integration-browser.test.mjs']:self.assertIn('tests/tools/'+tid+'/'+name,c['browser_files'])

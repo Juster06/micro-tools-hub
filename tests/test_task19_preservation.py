@@ -123,7 +123,7 @@ class Task19Preservation(unittest.TestCase):
 
     def test_coverage_includes_all_new_tools_and_existing_mandatory_scopes(self):
         coverage=json.loads(text('scripts/ci/coverage.json'))
-        self.assertEqual(len(coverage['tools']),74)
+        self.assertEqual(len(coverage['tools']),75)
         for tid in IDS:
             self.assertEqual(coverage['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'})
             self.assertIn('tests/tools/'+tid+'/logic.test.mjs',coverage['node_files'])

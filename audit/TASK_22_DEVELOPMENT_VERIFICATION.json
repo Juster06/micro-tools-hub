@@ -938,5 +938,16 @@
     "GA4 property-level reporting and new-tool public publication remain unverified.",
     "PDF utilities remain deferred; optional favicon404 and Resume Builder print-margin limitation remain."
   ],
-  "hosted_ci": "Required exact-head python-project, node-regression, browser-tests and required-checks must pass before owner review. No merge/deployment/admin bypass performed."
+  "hosted_ci": "Required exact-head python-project, node-regression, browser-tests and required-checks must pass before owner review. No merge/deployment/admin bypass performed.",
+  "hosted_ci_first_attempt": {
+    "run_id": 42196537194,
+    "head": "22aeed67c821875ec7391bd60c3cbad9d897114d",
+    "node_tests": 490,
+    "node_result": "PASS",
+    "python_tests": 196,
+    "python_passed": 194,
+    "python_failed": 2,
+    "cause": "Two legacy preservation CI-map assertions expected 74 implemented profiles; corrected to exactly 75 for the authorized additional TESTED utility. Mandatory scopes, test floors and deadlines unchanged.",
+    "targeted_correction_recheck": "2/2 PASS; all exact-head required checks must rerun."
+  }
 }
