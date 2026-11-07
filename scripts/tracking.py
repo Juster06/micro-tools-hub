@@ -16,6 +16,7 @@ import unicodedata
 from urllib.parse import unquote, urlsplit
 
 from consent_overlay import valid_candidate
+from seo_overlay import valid_candidate as valid_seo_candidate
 
 DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 STATUSES = ("IDEA", "PLANNED", "READY", "IN_PROGRESS", "BLOCKED", "IMPLEMENTED", "TESTED", "RELEASED", "DEPRECATED")
@@ -596,7 +597,11 @@ def check_project(root, registry=None):
         try:
             current_source = read_text(safe_path(root, filename))
             if normalized_hash(current_source) != v["source_sha256"]:
-                if t["status"] == "RELEASED" and valid_candidate(root, t, current_source):
+                if t["status"] == "RELEASED" and valid_seo_candidate(root, t, current_source):
+                    note = "SEO Task 2A exact canonical-only candidate verified locally; historical publication evidence is unchanged and does not verify this pending deployment."
+                    if note not in result["information"]:
+                        result["information"].append(note)
+                elif t["status"] == "RELEASED" and valid_candidate(root, t, current_source):
                     note = "Task 17 consent-only candidate verified locally; publication evidence remains bound to prior deployed source."
                     if note not in result["information"]:
                         result["information"].append(note)
@@ -612,6 +617,16 @@ def check_project(root, registry=None):
                 issue(result, "errors", "PUBLICATION_MISMATCH", "Recorded publication evidence does not match audit report.", tool_id=t["id"])
         except (OSError, UnicodeError, ValueError, TypeError, KeyError):
             issue(result, "errors", "EVIDENCE_UNREADABLE", "Missing, invalid or unsafe verification evidence.", tool_id=t["id"])
+    # This site's SEO contract also runs through check_project and status. Generic
+    # example.invalid fixture projects do not inherit a production domain policy.
+    if (r["project"]["website"].rstrip("/") == "https://everydaydigitalbox.com"
+            or (root / "sitemap.xml").exists()
+            or (root / "audit/SEO_TASK_2A_SOURCE_OVERLAY.json").exists()):
+        from seo import validate as validate_seo
+        seo_result = validate_seo(root, registry=r)
+        result["errors"].extend(seo_result["errors"])
+        result["warnings"].extend(seo_result["warnings"])
+        result["details"]["technical_seo"] = {"status": seo_result["status"], "counts": seo_result["counts"]}
     result["information"].append("Read-only local consistency checks; external URLs and live publication were not checked.")
     return finish(result)
 

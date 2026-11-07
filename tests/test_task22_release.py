@@ -5,9 +5,10 @@ from datetime import datetime
 import hashlib,json,subprocess,sys,unittest
 ROOT=Path(__file__).resolve().parents[1];BASE='64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140';ID='markdown-converter-previewer'
 sys.path.insert(0,str(ROOT/'scripts'));from tool_homepage import Homepage
+from seo_overlay import historical_source, historical_bytes
 from task24_test_support import historical_registry,without_task24
 def load(p):
- data=json.loads((ROOT/p).read_text(encoding='utf-8'))
+ data=json.loads(historical_source(ROOT, (ROOT/p).relative_to(ROOT).as_posix(), (ROOT/p).read_text(encoding='utf-8')))
  return historical_registry(data) if p=='TOOL_REGISTRY.json' else data
 @lru_cache(maxsize=None)
 def git(p):return subprocess.check_output(['git','show',BASE+':'+p],cwd=ROOT)
@@ -28,7 +29,7 @@ class Task22Release(unittest.TestCase):
   for p in [a['public_index'],a['canonical_public_url']]:self.assertEqual((p['http_status'],p['raw_match']),(200,True));self.assertEqual(p['raw_public_sha256'],sha(git(ID+'/index.html')));self.assertEqual(p['raw_approved_sha256'],p['raw_public_sha256']);self.assertEqual(p['source_sha256'],v['source_sha256'])
   for asset in a['runtime_assets']:
    public=a['runtime_assets_public'][asset['path']];self.assertEqual((public['http_status'],public['raw_match']),(200,True));self.assertEqual(public['raw_public_sha256'],sha(git(asset['path'])));self.assertEqual(asset['sha256'],sha(norm(git(asset['path']))))
-  self.assertEqual(norm((ROOT/a['previous_evidence']).read_bytes()),norm(git(a['previous_evidence'])));self.assertEqual(a['live_browser']['actual_download_mime'],'text/html;charset=utf-8')
+  self.assertEqual(norm(historical_bytes(ROOT, (ROOT/a['previous_evidence']).relative_to(ROOT).as_posix(), (ROOT/a['previous_evidence']).read_bytes())),norm(git(a['previous_evidence'])));self.assertEqual(a['live_browser']['actual_download_mime'],'text/html;charset=utf-8')
  def test_complete_public_catalog_real_browser_results_and_real_consent_are_fresh_and_bound(self):
   a=load('audit/TASK_22_PUBLIC_RELEASE_VERIFICATION.json');self.assertEqual((a['result'],a['source_revision']),('PASS',BASE));self.assertEqual((a['deployment']['run_id'],a['post_merge_ci']['run_id']),(42205116968,42205117641));self.assertEqual(a['github']['main']['sha'],BASE);self.assertEqual(a['github']['pr']['merge_commit'],BASE);self.assertTrue(a['github']['pr']['merged']);self.assertEqual(len(a['post_merge_ci']['jobs']),4);self.assertTrue(all(j['conclusion']=='success'for j in a['post_merge_ci']['jobs']));self.assertEqual(a['deployment']['sha'],BASE);self.assertEqual(a['post_merge_ci']['sha'],BASE)
   self.assertEqual(len(a['sources']),93);self.assertEqual(len(a['canonical_public_urls']),1)
@@ -51,11 +52,11 @@ class Task22Release(unittest.TestCase):
   for k in ['localStorage','sessionStorage','parent','parentStorage','top']:self.assertEqual(child[k],'SecurityError')
   self.assertIs(child['popup'],True);self.assertIn("default-src 'none'",child['csp']);self.assertIn("form-action 'none'",child['csp'])
   requests=a['public_browser']['records']['isolation']['canary_requests'];self.assertEqual(len(requests),2);self.assertTrue(all('positive-'in x['url']for x in requests))
-  for item in a['reproduction_scripts']:self.assertEqual(sha(norm((ROOT/item['path']).read_bytes())),item['sha256'])
+  for item in a['reproduction_scripts']:self.assertEqual(sha(norm(historical_bytes(ROOT, (ROOT/item['path']).relative_to(ROOT).as_posix(), (ROOT/item['path']).read_bytes()))),item['sha256'])
  def test_release_preserves_all75_runtime_pages_assets_historical_audits_and_only_changes_one_card_label(self):
   old=json.loads(git('TOOL_REGISTRY.json'));pages=[t['directory_path']+'/index.html'for t in old['tools']if t['status']in ['TESTED','RELEASED']];self.assertEqual(len(pages),75)
   paths=pages+['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json']+subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets','audit','scripts/vendor'],cwd=ROOT,text=True).splitlines()
-  for path in paths:self.assertEqual(norm((ROOT/path).read_bytes()),norm(git(path)),path)
-  current=without_task24((ROOT/'index.html').read_text(encoding='utf-8'),Homepage);card=next(c for c in Homepage(current).cards if c['attrs'].get('data-tool-id')==ID);chunk=current[card['start']:card['end']];self.assertEqual(card['attrs']['data-availability'],'released');self.assertEqual(chunk.count('Live'),1);chunk=chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending');self.assertEqual(current[:card['start']]+chunk+current[card['end']:],norm(git('index.html')).decode())
+  for path in paths:self.assertEqual(norm(historical_bytes(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_bytes())),norm(git(path)),path)
+  current=without_task24(historical_source(ROOT, (ROOT/'index.html').relative_to(ROOT).as_posix(), (ROOT/'index.html').read_text(encoding='utf-8')),Homepage);card=next(c for c in Homepage(current).cards if c['attrs'].get('data-tool-id')==ID);chunk=current[card['start']:card['end']];self.assertEqual(card['attrs']['data-availability'],'released');self.assertEqual(chunk.count('Live'),1);chunk=chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending');self.assertEqual(current[:card['start']]+chunk+current[card['end']:],norm(git('index.html')).decode())
   a=load('audit/TASK_22_PUBLIC_RELEASE_VERIFICATION.json');self.assertEqual(a['milestones'],{'next_planning_checkpoint':75,'generated_registry_milestone':100,'configuration_changed':False});self.assertEqual(a['preservation']['original_worktrees'],25);self.assertTrue(a['preservation']['original_worktrees_unchanged']);self.assertEqual(len(a['preservation']['dirty_files_preserved']),2)
 if __name__=='__main__':unittest.main()

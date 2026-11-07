@@ -172,6 +172,7 @@ def run(job):
             execute("python-unittest", [sys.executable, "scripts/ci/unittest_runner.py"], "python", timeout=240, minimum=value["minimum_tests"][job])
             for scope, script in (("registry", "validate_registry.py"), ("source-audit-homepage", "check_project.py"), ("static-tools", "verify_tools.py")):
                 execute(scope, [sys.executable, "scripts/" + script, "--json", "--no-report"], "validation")
+            execute("technical-seo", [sys.executable, "scripts/validate_seo.py", "--json"], "validation")
             for tid in value["tools"]:
                 execute(tid + "-structure", [sys.executable, "scripts/test_tool.py", "--id", tid, "--workspace", "canonical", "--layers", "structural", "--no-report"], "layer", "structural")
             execute("project-status", [sys.executable, "scripts/project_status.py", "--check-only", "--no-report", "--json"], "validation")

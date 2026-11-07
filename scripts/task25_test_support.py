@@ -5,6 +5,7 @@ import hashlib
 import json
 import subprocess
 
+from seo_overlay import historical_source, historical_bytes
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '3e6b3d256d731cacdac8d6098937e2a5a9ba1378'
 DEPLOYMENT = 'c127f856cbd97497412ec35ed66b3b1a58c4b2dc'
@@ -40,12 +41,12 @@ def registry_before_task25(registry):
         revision = verification['source_revision']
         assert revision == DEPLOYMENT
         expected = normalized(git_blob(path, revision)).rstrip()
-        assert normalized((ROOT / path).read_bytes()).rstrip() == expected
+        assert normalized(historical_bytes(ROOT, (ROOT / path).relative_to(ROOT).as_posix(), (ROOT / path).read_bytes())).rstrip() == expected
         assert hashlib.sha256(expected).hexdigest() == verification['source_sha256']
         audit_prefix = 'audit/' + tid.upper().replace('-', '_')
         expected_audit = audit_prefix + '_RELEASE_VERIFICATION.json'
         assert verification['evidence_path'] == expected_audit
-        audit = json.loads((ROOT / expected_audit).read_text(encoding='utf-8'))
+        audit = json.loads(historical_source(ROOT, (ROOT / expected_audit).relative_to(ROOT).as_posix(), (ROOT / expected_audit).read_text(encoding='utf-8')))
         assert audit['result'] == 'PASS' and audit['source_revision'] == revision
         assert audit['verified_on'] == tool['last_verification_date']
         assert audit['pages'][0]['path'] == path and audit['pages'][0]['publication'] == publication == audit['publication']
@@ -54,7 +55,7 @@ def registry_before_task25(registry):
         assert audit['public_source_sha256'] == audit['approved_source_sha256'] == hashlib.sha256(git_blob(path, revision)).hexdigest()
         assert len(audit['public_browser_checks']) >= 6 and all(row['result'] == 'PASS' for row in audit['public_browser_checks'])
         assert audit['previous_evidence'] == audit_prefix + '_VERIFICATION.json'
-        previous = json.loads((ROOT / audit['previous_evidence']).read_text(encoding='utf-8'))
+        previous = json.loads(historical_source(ROOT, (ROOT / audit['previous_evidence']).relative_to(ROOT).as_posix(), (ROOT / audit['previous_evidence']).read_text(encoding='utf-8')))
         assert previous['result'] == 'PASS' and previous['pages'][0]['publication'] is None
         assert all(audit['automated_tool_report']['layers'][layer]['status'] == 'PASS' for layer in ('structural','logic','browser'))
     return {**registry, 'tools': [tool for tool in registry['tools'] if tool['id'] not in IDS]}

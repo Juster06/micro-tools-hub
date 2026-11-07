@@ -8,12 +8,13 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
+from seo_overlay import historical_source, historical_bytes
 from task25_test_support import DEPLOYMENT, IDS, git_blob, normalized, registry_before_task25
 from tool_homepage import Homepage
 
 
 def read(path):
-    return json.loads((ROOT / path).read_text(encoding='utf-8'))
+    return json.loads(historical_source(ROOT, (ROOT / path).relative_to(ROOT).as_posix(), (ROOT / path).read_text(encoding='utf-8')))
 
 
 def digest(data):
@@ -49,7 +50,7 @@ class Task25PublicRelease(unittest.TestCase):
         self.assertEqual(len(pages), 87)
         paths = subprocess.check_output(['git','ls-tree','-r','--name-only',DEPLOYMENT,'assets','audit','templates','.github/workflows'],cwd=ROOT,text=True).splitlines()
         for path in [*pages,*paths,'CNAME','privacy.html','scripts/ci/run.py','scripts/ci/package-lock.json']:
-            self.assertEqual(normalized((ROOT / path).read_bytes()), normalized(approved(path)), path)
+            self.assertEqual(normalized(historical_bytes(ROOT, (ROOT / path).relative_to(ROOT).as_posix(), (ROOT / path).read_bytes())), normalized(approved(path)), path)
 
     def test_public_source_evidence_binds_105_responses_and_seven_aliases_to_git(self):
         audit = read('audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json')
@@ -68,7 +69,7 @@ class Task25PublicRelease(unittest.TestCase):
             self.assertEqual(item['raw_public_sha256'], item['raw_approved_sha256'])
             datetime.fromisoformat(item['checked_at'])
         for path, sha in audit['reproduction_sources'].items():
-            self.assertEqual(digest(normalized((ROOT / path).read_bytes())), sha)
+            self.assertEqual(digest(normalized(historical_bytes(ROOT, (ROOT / path).relative_to(ROOT).as_posix(), (ROOT / path).read_bytes()))), sha)
 
     def test_fresh_browser_results_include_native_worker_and_safe_csv_evidence(self):
         audit = read('audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json')
@@ -111,7 +112,7 @@ class Task25PublicRelease(unittest.TestCase):
         self.assertTrue(any('property-level reporting remains unverified' in text for text in c['limitations']))
 
     def test_only_six_homepage_labels_change_and_generated_milestone_is_preserved(self):
-        source = (ROOT / 'index.html').read_text(encoding='utf-8')
+        source = historical_source(ROOT, (ROOT / 'index.html').relative_to(ROOT).as_posix(), (ROOT / 'index.html').read_text(encoding='utf-8'))
         home = Homepage(source)
         self.assertEqual(len(home.cards), 87)
         cards = [card for card in home.cards if card['attrs'].get('data-tool-id') in IDS]
@@ -122,6 +123,6 @@ class Task25PublicRelease(unittest.TestCase):
             self.assertEqual(chunk.count('Live'), 1)
             source = source[:start] + chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending') + source[end:]
         self.assertEqual(source, normalized(approved('index.html')).decode())
-        tracker = (ROOT / 'PROGRESS_TRACKER.md').read_text(encoding='utf-8').split('<!-- GENERATED:COUNTS:START -->',1)[1].split('<!-- GENERATED:COUNTS:END -->',1)[0]
+        tracker = historical_source(ROOT, (ROOT / 'PROGRESS_TRACKER.md').relative_to(ROOT).as_posix(), (ROOT / 'PROGRESS_TRACKER.md').read_text(encoding='utf-8')).split('<!-- GENERATED:COUNTS:START -->',1)[1].split('<!-- GENERATED:COUNTS:END -->',1)[0]
         self.assertIn('| RELEASED | 87 |', tracker)
         self.assertIn('87/100 (87.0%); remaining: 13.', tracker)

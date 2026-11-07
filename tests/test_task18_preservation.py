@@ -6,6 +6,7 @@ import sys
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
+from seo_overlay import historical_source, historical_bytes
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
 from task22_test_support import assert_unchanged_or_task22,without_task22
@@ -17,7 +18,7 @@ BASE='f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a'
 def blob(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT,text=True,encoding='utf8')
 class Task18Preservation(unittest.TestCase):
     def test_only_gated_cards_and_count_change_in_homepage(self):
-        current=without_task24((ROOT/'index.html').read_text(encoding='utf8'),Homepage)
+        current=without_task24(historical_source(ROOT, (ROOT/'index.html').relative_to(ROOT).as_posix(), (ROOT/'index.html').read_text(encoding='utf8')),Homepage)
         current=without_cards(self,current,Homepage)
         # Remove only the separately authorized Task 19 cards before reconstructing Task 18.
         for tid in TASK19_IDS|TASK20_IDS:
@@ -25,11 +26,11 @@ class Task18Preservation(unittest.TestCase):
             cards=[c for c in home.cards if c['attrs'].get('data-tool-id')==tid]
             if cards:
                 card=cards[0];self.assertEqual(card['attrs']['href'],tid+'/index.html')
-                tool=next(t for t in historical_registry(json.loads((ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf8')))['tools'] if t['id']==tid)
+                tool=next(t for t in historical_registry(json.loads(historical_source(ROOT, (ROOT/'TOOL_REGISTRY.json').relative_to(ROOT).as_posix(), (ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf8'))))['tools'] if t['id']==tid)
                 self.assertEqual(card['attrs']['data-availability'],tool['status'].lower())
                 self.assertIn('Live' if tool['status']=='RELEASED' else 'Tested · publication pending',current[card['start']:card['end']])
                 current=current[:card['start']-2]+current[card['end']+7:]
-        registry=historical_registry(json.loads((ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf8')))
+        registry=historical_registry(json.loads(historical_source(ROOT, (ROOT/'TOOL_REGISTRY.json').relative_to(ROOT).as_posix(), (ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf8'))))
         added=[t for t in registry['tools'] if t['id'] in IDS and t['status'] in ('TESTED','RELEASED')]
         for tool in reversed(added):
             # Registry order differs from insertion order; locate the exact current range.
@@ -45,16 +46,16 @@ class Task18Preservation(unittest.TestCase):
         current=current[:begin]+'50 tools ready to use'+current[end:]
         self.assertEqual(current,blob('index.html'))
     def test_all_prior_registry_records_and_runtime_files_unchanged(self):
-        old=json.loads(blob('TOOL_REGISTRY.json'));new=historical_registry(json.loads((ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf8')))
+        old=json.loads(blob('TOOL_REGISTRY.json'));new=historical_registry(json.loads(historical_source(ROOT, (ROOT/'TOOL_REGISTRY.json').relative_to(ROOT).as_posix(), (ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf8'))))
         by_id={t['id']:t for t in new['tools']}
         self.assertEqual(len(new['tools']),93);self.assertEqual(old['milestones'],new['milestones'])
         for tool in old['tools']:
             if tool['id'] in TASK21_IDS:assert_transition(self,tool,by_id[tool['id']])
             elif tool['id'] not in IDS|TASK19_IDS|TASK20_IDS:assert_unchanged_or_task22(self,tool,by_id[tool['id']])
             if tool['status']=='RELEASED':
-                path=tool['directory_path']+'/index.html';self.assertEqual((ROOT/path).read_text(encoding='utf8'),blob(path))
+                path=tool['directory_path']+'/index.html';self.assertEqual(historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf8')),blob(path))
         for path in ['CNAME','assets/consent.js','privacy.html','audit/TASK_17_CANDIDATE.json','audit/TASK_17_DEPLOYMENT.json']:
-            self.assertEqual((ROOT/path).read_text(encoding='utf8'),blob(path))
+            self.assertEqual(historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf8')),blob(path))
     def test_new_pages_have_exact_shared_loader_and_no_direct_google_tag(self):
         for tid in IDS:
             page=ROOT/tid/'index.html'

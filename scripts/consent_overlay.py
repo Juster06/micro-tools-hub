@@ -7,6 +7,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+from seo_overlay import historical_source
 
 LOADER = '<script defer src="../assets/consent.js"></script>'
 REPLACEMENTS = (
@@ -51,7 +52,7 @@ def valid_candidate(root: Path, tool: dict, text: str) -> bool:
         resolved_root = root.resolve()
         for path in ('assets/consent.js', 'privacy.html'):
             asset_path = (root / path).resolve(strict=True)
-            if not asset_path.is_relative_to(resolved_root) or digest(asset_path.read_text(encoding='utf-8-sig')) != assets[path]: return False
+            if not asset_path.is_relative_to(resolved_root) or digest(historical_source(root, path, asset_path.read_text(encoding='utf-8-sig'))) != assets[path]: return False
         entry = manifest['tools'][tool['id']]
         previous = tool['verification']['source_sha256']
         return entry['previous_sha256'] == previous and entry['candidate_sha256'] == digest(text) and digest(remove_overlay(text)) == previous

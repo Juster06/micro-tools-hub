@@ -6,12 +6,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
+from seo_overlay import historical_source, historical_bytes
 from task25_test_support import BASE, IDS, git_blob, homepage_before_task25, normalized, registry_before_task25, tool_map_before_task25
 from tool_homepage import Homepage
 
 
 def read(path):
-    return json.loads((ROOT / path).read_text(encoding='utf-8'))
+    return json.loads(historical_source(ROOT, (ROOT / path).relative_to(ROOT).as_posix(), (ROOT / path).read_text(encoding='utf-8')))
 
 
 class Task25Preservation(unittest.TestCase):
@@ -29,17 +30,17 @@ class Task25Preservation(unittest.TestCase):
         self.assertEqual(len(pages), 81)
         protected = subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets','templates','audit','.github/workflows'], cwd=ROOT, text=True).splitlines()
         for path in [*pages, *protected, 'CNAME','privacy.html','scripts/ci/run.py','scripts/ci/package-lock.json']:
-            self.assertEqual(normalized((ROOT / path).read_bytes()), normalized(git_blob(path)), path)
+            self.assertEqual(normalized(historical_bytes(ROOT, (ROOT / path).relative_to(ROOT).as_posix(), (ROOT / path).read_bytes())), normalized(git_blob(path)), path)
 
     def test_only_six_catalog_cards_and_count_added(self):
-        source = (ROOT / 'index.html').read_text(encoding='utf-8')
+        source = historical_source(ROOT, (ROOT / 'index.html').relative_to(ROOT).as_posix(), (ROOT / 'index.html').read_text(encoding='utf-8'))
         self.assertEqual(homepage_before_task25(source, Homepage), normalized(git_blob('index.html')).decode())
         routes = {card['attrs']['href'] for card in Homepage(source).cards}
         self.assertEqual(len(routes), 87)
 
     def test_shared_consent_and_no_input_transport_or_markup_execution(self):
         for tid in IDS:
-            source = (ROOT / tid / 'index.html').read_text(encoding='utf-8')
+            source = historical_source(ROOT, (ROOT / tid / 'index.html').relative_to(ROOT).as_posix(), (ROOT / tid / 'index.html').read_text(encoding='utf-8'))
             self.assertEqual(source.count('<script defer src="../assets/consent.js"></script>'), 1)
             for forbidden in ('innerHTML', 'eval(', 'new Function', 'localStorage', 'sessionStorage', 'fetch(', 'XMLHttpRequest', 'sendBeacon', 'gtag('):
                 self.assertNotIn(forbidden, source, tid)

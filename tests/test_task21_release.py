@@ -5,12 +5,13 @@ import hashlib,json,subprocess,sys,unittest
 from functools import lru_cache
 ROOT=Path(__file__).resolve().parents[1];BASE='9fa032140639550abd9a0449ed7ef5198354bd40'
 sys.path.insert(0,str(ROOT/'scripts'))
+from seo_overlay import historical_source, historical_bytes
 from tool_homepage import Homepage
 from task24_test_support import historical_registry
 from task22_test_support import assert_unchanged_or_task22,without_task22
 IDS={'hashtag-counter','html-formatter','css-minifier','javascript-minifier','html-to-markdown','html-previewer'}
 def load(p):
- data=json.loads((ROOT/p).read_text(encoding='utf8'))
+ data=json.loads(historical_source(ROOT, (ROOT/p).relative_to(ROOT).as_posix(), (ROOT/p).read_text(encoding='utf8')))
  return historical_registry(data) if p=='TOOL_REGISTRY.json' else data
 @lru_cache(maxsize=None)
 def git(p):return subprocess.check_output(['git','show',BASE+':'+p],cwd=ROOT)
@@ -40,7 +41,7 @@ class Task21Release(unittest.TestCase):
    for asset in a['runtime_assets']:
     s=a['runtime_assets_public'][asset['path']];self.assertEqual((s['http_status'],s['raw_match']),(200,True));self.assertEqual(s['raw_public_sha256'],sha(git(asset['path'])));self.assertEqual(asset['sha256'],sha(norm(git(asset['path']))))
    self.assertEqual(a['live_browser']['result'],'PASS');self.assertEqual(a['live_browser']['test_count'],2 if t['id']=='html-previewer' else 4);self.assertEqual(len(a['live_browser']['cases']),a['live_browser']['test_count']);self.assertEqual(a['live_browser']['isolation_cases'],13 if t['id']=='html-previewer' else 0)
-   self.assertEqual(norm((ROOT/a['previous_evidence']).read_bytes()),norm(git(a['previous_evidence'])))
+   self.assertEqual(norm(historical_bytes(ROOT, (ROOT/a['previous_evidence']).relative_to(ROOT).as_posix(), (ROOT/a['previous_evidence']).read_bytes())),norm(git(a['previous_evidence'])))
 
  def test_full_public_catalog_source_identity_and_real_consent_are_fresh_and_complete(self):
   a=load('audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json');self.assertEqual(a['result'],'PASS');self.assertEqual(a['source_revision'],BASE);self.assertEqual((a['deployment']['run_id'],a['post_merge_ci']['run_id']),(42159767277,42159767505));self.assertEqual(a['github']['main']['sha'],BASE);self.assertTrue(a['github']['pr']['merged']);self.assertEqual(len(a['github']['post_merge_ci']['jobs']),4);self.assertTrue(all(j['conclusion']=='success' for j in a['github']['post_merge_ci']['jobs']))
@@ -71,11 +72,11 @@ class Task21Release(unittest.TestCase):
   old=json.loads(git('TOOL_REGISTRY.json'));pages=[t['directory_path']+'/index.html' for t in old['tools'] if t['status'] in ['TESTED','RELEASED']];self.assertEqual(len(pages),74)
   paths=pages+['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json']
   paths+=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets','audit','scripts/vendor/task21'],cwd=ROOT,text=True).splitlines()
-  for path in paths:self.assertEqual(norm((ROOT/path).read_bytes()),norm(git(path)),path)
-  current=without_task22(self,(ROOT/'index.html').read_text(encoding='utf8'),Homepage)
+  for path in paths:self.assertEqual(norm(historical_bytes(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_bytes())),norm(git(path)),path)
+  current=without_task22(self,historical_source(ROOT, (ROOT/'index.html').relative_to(ROOT).as_posix(), (ROOT/'index.html').read_text(encoding='utf8')),Homepage)
   for tid in IDS:
    card=next(c for c in Homepage(current).cards if c['attrs'].get('data-tool-id')==tid);chunk=current[card['start']:card['end']];self.assertEqual(chunk.count('Live'),1);self.assertEqual(card['attrs']['data-availability'],'released');chunk=chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending');current=current[:card['start']]+chunk+current[card['end']:]
   self.assertEqual(current,norm(git('index.html')).decode('utf8'))
   a=load('audit/TASK_21_PUBLIC_RELEASE_VERIFICATION.json');self.assertEqual(a['milestones'],{'next_planning_checkpoint':75,'generated_registry_milestone':100,'configuration_changed':False});self.assertEqual(a['preservation']['original_worktrees'],23);self.assertTrue(a['preservation']['original_worktrees_unchanged']);self.assertEqual(len(a['preservation']['dirty_files_preserved']),2)
-  for item in a['reproduction_scripts']:self.assertEqual(sha((ROOT/item['path']).read_bytes().replace(b'\r\n',b'\n')),item['sha256'])
+  for item in a['reproduction_scripts']:self.assertEqual(sha(historical_bytes(ROOT, (ROOT/item['path']).relative_to(ROOT).as_posix(), (ROOT/item['path']).read_bytes()).replace(b'\r\n',b'\n')),item['sha256'])
 if __name__=='__main__':unittest.main()
