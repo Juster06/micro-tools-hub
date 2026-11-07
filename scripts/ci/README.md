@@ -1,5 +1,16 @@
 # Functional CI — Task 9.5
 
+## Task 24.1 release evidence coverage
+
+Six additional Python checks bind the six release records to deployed Git bytes,
+99 actual public HTTP/source responses, six canonical aliases,61 fresh public
+interaction/catalog cases, real consent collection and unchanged81-page runtime.
+Floor rises to213 Python;519 Node/720 Chromium and all81 profiles remain mandatory.
+Historical catalog counters admit exactly the six source-bound verified releases;
+no old assertions, source/evidence checks, runtime pins or deadlines are weakened.
+Local Windows historical deadline limits are reported separately from hosted CI.
+
+
 ## Task 24 coverage extension
 
 All 81 canonical pages remain mandatory: 75 released and six TESTED/publication-pending native utilities. Map: 18 Python files, 75 Node files and 146 browser files. Floors: 207 Python, 519 Node, 720 browser tests. All 77 canonical logic adapters, 81 structural/browser profiles and both neutral templates remain required.

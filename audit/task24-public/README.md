@@ -1,0 +1,5 @@
+# Task24.1 public verification reproduction
+
+Historical evidence for deployed main a7da719ea6ccc4caae572f26f6ae5e707fbb70be. Copy this folder to ignored scratch outside repository worktrees before execution and set EDB_REPO_ROOT to a full-history checkout containing that commit. Use Python3.10+, Node24+ and an installed Chromium browser (EDB_TEST_BROWSER optional on Windows autodiscovery). Run source.py, node --test functional.test.mjs, then node public-consent.mjs. Later authorized metadata deployments can correctly fail the historical exact-source check.
+
+The source audit checks99 HTTPS resources and six canonical aliases. Browser tests run actual public HTML/JS without response substitution/request blocking; clipboard/download captures are scoped automation, not native OS certification. A separate real-consent run creates two new temporary profiles and sends exactly three synthetic page views after acceptance. Client identifiers/request bodies are not retained in evidence. GA4 property reporting remains unverified. No script changes registry status, opens PRs, merges or deploys.
