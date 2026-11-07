@@ -1,5 +1,18 @@
 # Decision log
 
+## 2026-11-07 — Preserve routes and add deterministic SEO metadata
+
+Use HTTPS apex `/index.html`, registry-directory `/index.html` tool routes and
+`/privacy.html`, matching existing internal links without a URL migration. Include
+only released tools plus those two explicitly public pages; no lastmod until
+reliable significant-update data exists. Use Python standard-library XML/HTML
+parsers, no runtime injection. Preserve dated release evidence with a strictly
+bounded canonical-only candidate overlay; no publication/indexing claim.
+This implements SEO 1 TECH-01 (MEDIUM), TECH-02 (MEDIUM) and TECH-03 (LOW) locally.
+Original severity and historical evidence remain unchanged. Owner approval is
+required before merge/deployment; Task 26 remains paused.
+
+
 ## 2026-11-02 — Execute existing functional suites through independent CI gates
 
 **Decision:** Explicit coverage map, Windows full Python regression for native

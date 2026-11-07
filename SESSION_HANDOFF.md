@@ -1,5 +1,27 @@
 # Session handoff
 
+## Current checkpoint — SEO Task 2A development proposal
+
+Starting main is `7cdd6f43800fc1ae01ee597d9bab1a7a597f7f32`; the completed SEO 1
+audit and a fresh 89-page HTTP/source check confirm 87 released tools. Inventory:
+**105 registered, 87 RELEASED, 0 TESTED, 0 READY, 17 PLANNED, 1 BLOCKED**.
+The milestone stays 100 (13 remaining). Prior "current state" proposal headings
+below are retained as historical records; PR #46 is already merged in this baseline.
+
+This separate `seo/task-2a-canonical-sitemap` worktree proposes static canonical
+annotations, a deterministic 89-URL sitemap, permissive robots sitemap discovery
+and read-only SEO validation in the existing project/CI gates. See
+[SEO foundation and commands](SEO_FOUNDATION.md). No registry status changes,
+runtime/consent behavior changes or public SEO deployment are claimed.
+
+**Next major task:** Review the SEO Task 2A development PR and required checks;
+await explicit owner authorization before merge/deployment, then perform public
+SEO verification. Task 26 remains paused (inconclusive contact-sheet memory
+benchmark); PDF Compressor remains BLOCKED. Do not start traffic automation,
+redesign or another tool batch. All 31 earlier worktrees and both unrelated
+handoff edits are preserved; this task uses one additional dedicated worktree.
+
+
 ## Current state — Task 25.1 release verification
 
 Task 25 development PR #45 merged at `c127f856cbd97497412ec35ed66b3b1a58c4b2dc`. Pages run 42338516265 and

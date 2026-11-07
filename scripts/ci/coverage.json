@@ -21,7 +21,10 @@
     "tests/test_task24_preservation.py",
     "tests/test_task24_release.py",
     "tests/test_task25_preservation.py",
-    "tests/test_task25_release.py"
+    "tests/test_task25_release.py",
+    "tests/test_seo.py",
+    "tests/test_prepare_tool_seo.py",
+    "tests/test_seo_overlay.py"
   ],
   "node_files": [
     "scripts/consent-static.test.mjs",
@@ -99,7 +102,8 @@
     "tests/tools/youtube-title-checker/logic.test.mjs",
     "tests/tools/markdown-converter-previewer/logic.test.mjs",
     "tests/tools/task24/logic.test.mjs",
-    "scripts/task25.logic.test.mjs"
+    "scripts/task25.logic.test.mjs",
+    "scripts/seo-overlay.test.mjs"
   ],
   "browser_files": [
     "scripts/consent-browser.test.mjs",

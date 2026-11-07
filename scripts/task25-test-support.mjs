@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
+import {historicalSource} from './seo-overlay.mjs';
 
 const root = new URL('../', import.meta.url);
 const ids = ['word-frequency-analyzer','unicode-inspector','ipv4-subnet-calculator','batch-filename-planner','file-byte-comparator','css-gradient-generator'];
@@ -28,7 +29,7 @@ export function task25ReleasedCount(registry) {
     assert.equal(audit.public_source_sha256, audit.approved_source_sha256);
     assert.ok(audit.public_browser_checks.length >= 6);
     assert.ok(audit.public_browser_checks.every(row => row.result === 'PASS'));
-    const source = fs.readFileSync(new URL(tool.id + '/index.html', root), 'utf8').replaceAll('\r\n','\n').trimEnd();
+    const source = historicalSource(root, tool.id + '/index.html', fs.readFileSync(new URL(tool.id + '/index.html', root), 'utf8')).replaceAll('\r\n','\n').trimEnd();
     assert.equal(createHash('sha256').update(source).digest('hex'), v.source_sha256);
     assert.equal(audit.pages[0].source_sha256, v.source_sha256);
   }

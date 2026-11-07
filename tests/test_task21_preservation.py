@@ -9,13 +9,14 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 BASE='8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20'
 sys.path.insert(0,str(ROOT/'scripts'))
+from seo_overlay import historical_source, historical_bytes
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
 from task25_test_support import tool_map_before_task25
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS,COUNTS,assert_transition,without_cards
 
-def read(path):return (ROOT/path).read_text(encoding='utf8')
+def read(path):return historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf8'))
 def load(path):
  data=json.loads(read(path))
  return historical_registry(data) if path=='TOOL_REGISTRY.json' else data
@@ -36,11 +37,11 @@ class Task21Preservation(unittest.TestCase):
         old=json.loads(blob('TOOL_REGISTRY.json'));pages=[t['directory_path']+'/index.html' for t in old['tools'] if t['status']=='RELEASED'];self.assertEqual(len(pages),68)
         paths=pages+subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets'],cwd=ROOT,text=True).splitlines()
         paths+=['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json','templates/text-input.html','templates/structured-input.html']
-        for path in paths:self.assertEqual(normalized((ROOT/path).read_bytes()),normalized(blob(path)),path)
+        for path in paths:self.assertEqual(normalized(historical_bytes(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_bytes())),normalized(blob(path)),path)
 
     def test_all_historical_audits_remain_byte_identical(self):
         paths=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'audit'],cwd=ROOT,text=True).splitlines();self.assertGreater(len(paths),100)
-        for path in paths:self.assertEqual(normalized((ROOT/path).read_bytes()),normalized(blob(path)),path)
+        for path in paths:self.assertEqual(normalized(historical_bytes(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_bytes())),normalized(blob(path)),path)
 
     def test_homepage_changes_only_six_verified_cards_and_count(self):
         current=without_task24(read('index.html'),Homepage);home=Homepage(current);self.assertEqual(len(home.cards),75);self.assertEqual(len({c['attrs']['href'] for c in home.cards}),75)
@@ -51,9 +52,9 @@ class Task21Preservation(unittest.TestCase):
         for tool in load('TOOL_REGISTRY.json')['tools']:
             if tool['id'] not in IDS:continue
             v=tool['verification'];audit=load(v['evidence_path']);self.assertEqual((audit['result'],audit['source_revision']),('PASS',v['source_revision']));self.assertEqual(audit['verified_on'],tool['last_verification_date']);self.assertEqual(v['publication']['http_status'],200);self.assertIs(v['publication']['source_matches'],True);self.assertEqual(audit['pages'][0]['publication'],v['publication'])
-            p=audit['pages'][0];self.assertEqual(p['source_sha256'],v['source_sha256']);self.assertEqual(page_hash(blob(p['path'],v['source_revision'])),v['source_sha256']);self.assertEqual(page_hash((ROOT/p['path']).read_bytes()),v['source_sha256'])
+            p=audit['pages'][0];self.assertEqual(p['source_sha256'],v['source_sha256']);self.assertEqual(page_hash(blob(p['path'],v['source_revision'])),v['source_sha256']);self.assertEqual(page_hash(historical_bytes(ROOT, (ROOT/p['path']).relative_to(ROOT).as_posix(), (ROOT/p['path']).read_bytes())),v['source_sha256'])
             for asset in audit['runtime_assets']:
-                self.assertEqual(hashlib.sha256((ROOT/asset['path']).read_bytes().replace(b'\r\n',b'\n')).hexdigest(),asset['sha256']);self.assertEqual(hashlib.sha256(blob(asset['path'],v['source_revision']).replace(b'\r\n',b'\n')).hexdigest(),asset['sha256'])
+                self.assertEqual(hashlib.sha256(historical_bytes(ROOT, (ROOT/asset['path']).relative_to(ROOT).as_posix(), (ROOT/asset['path']).read_bytes()).replace(b'\r\n',b'\n')).hexdigest(),asset['sha256']);self.assertEqual(hashlib.sha256(blob(asset['path'],v['source_revision']).replace(b'\r\n',b'\n')).hexdigest(),asset['sha256'])
             for layer in ['structural','logic','browser']:
                 self.assertEqual(audit['canonical_layers'][layer]['status'],'PASS')
                 if layer!='structural':self.assertGreater(audit['canonical_layers'][layer]['passed'],0)
@@ -66,7 +67,7 @@ class Task21Preservation(unittest.TestCase):
         for package in a['selected_packages']:
             self.assertTrue(package['dist']['integrity'].startswith('sha512-'));self.assertEqual(len(package['sha256']),64);self.assertEqual(package['osv'],{})
         for asset in a['artifacts']:
-            data=(ROOT/asset['path']).read_bytes().replace(b'\r\n',b'\n');self.assertEqual(len(data),asset['bytes']);self.assertEqual(hashlib.sha256(data).hexdigest(),asset['sha256'])
+            data=historical_bytes(ROOT, (ROOT/asset['path']).relative_to(ROOT).as_posix(), (ROOT/asset['path']).read_bytes()).replace(b'\r\n',b'\n');self.assertEqual(len(data),asset['bytes']);self.assertEqual(hashlib.sha256(data).hexdigest(),asset['sha256'])
         notices=read('assets/vendor/task21/THIRD_PARTY_NOTICES.txt')
         for label in ['parse5@8.1.0','prettier@3.9.10','css-tree@3.2.1','terser@5.51.2','acorn@8.19.0','BSD-2-Clause','MIT','CC0']:self.assertIn(label,notices)
         self.assertEqual(load('audit/TASK_21_PDF_DEFERRAL.json')['result'],'DEFER PDF UTILITIES')
@@ -80,7 +81,7 @@ class Task21Preservation(unittest.TestCase):
         source=read('html-previewer/index.html');self.assertIn('sandbox=""',source);self.assertNotIn('allow-scripts',source);self.assertNotIn('allow-same-origin',source)
 
     def test_all_new_pages_preserve_consent_loader_and_do_not_store_or_execute_input(self):
-        self.assertEqual(normalized((ROOT/'assets/consent.js').read_bytes()),normalized(blob('assets/consent.js')))
+        self.assertEqual(normalized(historical_bytes(ROOT, (ROOT/'assets/consent.js').relative_to(ROOT).as_posix(), (ROOT/'assets/consent.js').read_bytes())),normalized(blob('assets/consent.js')))
         for tid in IDS:
             source=read(tid+'/index.html');self.assertEqual(source.count('<script defer src="../assets/consent.js"></script>'),1)
             for value in ['innerHTML','localStorage','sessionStorage','googletagmanager.com/gtag/js','gtag(']:self.assertNotIn(value,source)

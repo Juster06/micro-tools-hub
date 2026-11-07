@@ -5,6 +5,7 @@ new Task24 preservation suite independently binds the entire 75-release baseline
 """
 from pathlib import Path
 import hashlib,json
+from seo_overlay import historical_source, historical_bytes
 from task25_test_support import homepage_before_task25, registry_before_task25
 ROOT=Path(__file__).resolve().parents[1]
 IDS={'number-base-converter','unit-converter','duration-calculator','url-inspector-query-builder','list-comparison-set-operations','color-contrast-checker'}
@@ -20,9 +21,9 @@ def historical_registry(registry):
         assert verification['source_revision']=='a7da719ea6ccc4caae572f26f6ae5e707fbb70be'
         assert publication['url']=='https://everydaydigitalbox.com/'+tool['id']+'/'
         assert publication['http_status']==200 and publication['source_matches']is True
-        source=(ROOT/tool['directory_path']/'index.html').read_text(encoding='utf-8').replace('\r\n','\n').rstrip().encode()
+        source=historical_source(ROOT, (ROOT/tool['directory_path']/'index.html').relative_to(ROOT).as_posix(), (ROOT/tool['directory_path']/'index.html').read_text(encoding='utf-8')).replace('\r\n','\n').rstrip().encode()
         assert verification['source_sha256']==hashlib.sha256(source).hexdigest()
-        audit=json.loads((ROOT/verification['evidence_path']).read_text(encoding='utf-8'))
+        audit=json.loads(historical_source(ROOT, (ROOT/verification['evidence_path']).relative_to(ROOT).as_posix(), (ROOT/verification['evidence_path']).read_text(encoding='utf-8')))
         assert audit['result']=='PASS' and audit['source_revision']==verification['source_revision']
         assert audit['pages'][0]['source_sha256']==verification['source_sha256']
         assert audit['pages'][0]['publication']==publication==audit['publication']
@@ -30,7 +31,7 @@ def historical_registry(registry):
         assert audit['public_source_sha256']==audit['approved_source_sha256']
         assert audit['canonical_public_url']['raw_match']is True
         assert audit['public_browser_checks']and all(c['result']=='PASS'for c in audit['public_browser_checks'])
-        previous=json.loads((ROOT/audit['previous_evidence']).read_text(encoding='utf-8'))
+        previous=json.loads(historical_source(ROOT, (ROOT/audit['previous_evidence']).relative_to(ROOT).as_posix(), (ROOT/audit['previous_evidence']).read_text(encoding='utf-8')))
         assert previous['result']=='PASS'and previous['pages'][0]['publication']is None
         assert all(audit['automated_tool_report']['layers'][layer]['status']=='PASS'for layer in ['structural','logic','browser'])
     return {**registry,'tools':[t for t in registry['tools']if t['id']not in IDS]}

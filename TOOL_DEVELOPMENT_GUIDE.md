@@ -1,5 +1,16 @@
 # Developing a utility
 
+## SEO preparation before recording source evidence
+
+Keep scaffolds noindex. On a deliberately implemented canonical page, run
+`python scripts/prepare_tool_seo.py --id TOOL_ID` while IN_PROGRESS/IMPLEMENTED
+and before recording verified source hashes. This never removes noindex or
+changes a status. After the separate approved RELEASED transition, run
+`python scripts/generate_sitemap.py` and `python scripts/validate_seo.py`.
+The CI check rejects stale output. See [SEO_FOUNDATION.md](SEO_FOUNDATION.md) for
+the full release sequence; a canonical tag never proves publication.
+
+
 Read `AGENTS.md`, the latest manual handoff and [the utility contract](TOOL_CONTRACT.md) first. Work in the active Git checkout on a feature branch. Do not move that checkout: the Windows dashboard shortcuts refer to it. Explicit user scope takes precedence over the recommended queue.
 
 ## Select and inspect

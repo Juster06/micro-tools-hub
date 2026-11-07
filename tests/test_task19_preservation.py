@@ -11,6 +11,7 @@ BASE='3178f70802a96f181fd82251d417abd1dd0ad76b'
 IDS={'password-generator','csv-to-txt','passphrase-generator','qr-code-generator','image-cropper','csv-data-cleaner'}
 TASK20_IDS={'excel-formula-generator', 'resume-builder', 'emoji-picker', 'passport-photo-layout-maker', 'image-compressor', 'png-to-ico'}
 sys.path.insert(0,str(ROOT/'scripts'))
+from seo_overlay import historical_source, historical_bytes
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
 from task25_test_support import tool_map_before_task25
@@ -21,7 +22,7 @@ def raw(path,revision=BASE):
     return subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT)
 
 def text(path):
-    return (ROOT/path).read_text(encoding='utf8')
+    return historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf8'))
 
 def normalized(value):
     return value.replace('\r\n','\n').rstrip().encode('utf8')
@@ -71,12 +72,12 @@ class Task19Preservation(unittest.TestCase):
     def test_all_historical_audit_records_remain_unchanged(self):
         names=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'audit'],cwd=ROOT,text=True).splitlines()
         self.assertGreater(len(names),70)
-        for path in names:self.assertEqual((ROOT/path).read_bytes().replace(b'\r\n',b'\n'),raw(path).replace(b'\r\n',b'\n'))
+        for path in names:self.assertEqual(historical_bytes(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_bytes()).replace(b'\r\n',b'\n'),raw(path).replace(b'\r\n',b'\n'))
 
     def test_dependency_payload_hashes_licenses_and_wordlist_content_are_pinned(self):
         manifest=json.loads(text('audit/TASK_19_DEPENDENCIES.json'))
         for item in [*manifest['runtime'].values(),*manifest['test_only'].values()]:
-            content=(ROOT/item['path']).read_bytes().replace(b'\r\n',b'\n')
+            content=historical_bytes(ROOT, (ROOT/item['path']).relative_to(ROOT).as_posix(), (ROOT/item['path']).read_bytes()).replace(b'\r\n',b'\n')
             self.assertEqual(hashlib.sha256(content).hexdigest(),item['sha256'])
             self.assertEqual(len(content),item['bytes'])
         self.assertEqual(manifest['runtime']['qrcodegen']['license'],'MIT')

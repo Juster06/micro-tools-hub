@@ -5,10 +5,11 @@ import json
 from pathlib import Path
 import subprocess
 import unittest
+from seo_overlay import historical_source, historical_bytes
 ROOT=Path(__file__).resolve().parents[1]
 BASE='7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b'
 IDS={'csv-data-cleaner', 'image-cropper', 'password-generator', 'qr-code-generator', 'passphrase-generator', 'csv-to-txt'}
-def load(path):return json.loads((ROOT/path).read_text(encoding='utf8'))
+def load(path):return json.loads(historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf8')))
 def git(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT)
 class Task19ReleaseEvidence(unittest.TestCase):
     def test_six_releases_have_matching_dated_public_source_and_browser_evidence(self):
@@ -28,7 +29,7 @@ class Task19ReleaseEvidence(unittest.TestCase):
                 self.assertEqual(item['raw_public_sha256'],actual_hash);self.assertEqual(item['raw_approved_sha256'],actual_hash)
             self.assertEqual(hashlib.sha256(raw.decode('utf8').replace('\r\n','\n').rstrip().encode()).hexdigest(),v['source_sha256'])
             self.assertEqual(audit['live_browser']['result'],'PASS');self.assertGreaterEqual(audit['live_browser']['test_count'],6)
-            self.assertEqual((ROOT/audit['previous_evidence']).read_text(encoding='utf8').replace('\r\n','\n'),git(audit['previous_evidence']).decode('utf8').replace('\r\n','\n'))
+            self.assertEqual(historical_source(ROOT, (ROOT/audit['previous_evidence']).relative_to(ROOT).as_posix(), (ROOT/audit['previous_evidence']).read_text(encoding='utf8')).replace('\r\n','\n'),git(audit['previous_evidence']).decode('utf8').replace('\r\n','\n'))
     def test_live_catalog_assets_and_real_collection_evidence_are_complete(self):
         audit=load('audit/TASK_19_PUBLIC_RELEASE_VERIFICATION.json');self.assertEqual(audit['result'],'PASS')
         self.assertEqual((audit['deployment']['commit'],audit['deployment']['run_id'],audit['deployment']['conclusion']),(BASE,42010602815,'success'))

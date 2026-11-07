@@ -4,13 +4,14 @@ from functools import lru_cache
 import json,hashlib,subprocess,sys,unittest
 ROOT=Path(__file__).resolve().parents[1];BASE='a7da719ea6ccc4caae572f26f6ae5e707fbb70be'
 sys.path.insert(0,str(ROOT/'scripts'))
+from seo_overlay import historical_source, historical_bytes
 from task24_test_support import IDS
 from tool_homepage import Homepage
 from task25_test_support import homepage_before_task25, registry_before_task25
 @lru_cache(maxsize=None)
 def blob(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT)
 def load(path):
- data=json.loads((ROOT/path).read_text(encoding='utf-8'))
+ data=json.loads(historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf-8')))
  return registry_before_task25(data) if path=='TOOL_REGISTRY.json' else data
 def norm(b):return b.replace(b'\r\n',b'\n')
 def sha(b):return hashlib.sha256(b).hexdigest()
@@ -26,7 +27,7 @@ class Task24Release(unittest.TestCase):
  def test_all81_runtime_assets_privacy_historical_audits_and_ci_pins_unchanged(self):
   old=json.loads(blob('TOOL_REGISTRY.json'));pages=[t['directory_path']+'/index.html'for t in old['tools']if t['status']in ['TESTED','RELEASED']];self.assertEqual(len(pages),81)
   paths=pages+['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json']+subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets','audit','templates'],cwd=ROOT,text=True).splitlines()
-  for path in paths:self.assertEqual(norm((ROOT/path).read_bytes()),norm(blob(path)),path)
+  for path in paths:self.assertEqual(norm(historical_bytes(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_bytes())),norm(blob(path)),path)
  def test_source_evidence_matches_deployed_git_for99_responses_and_six_aliases(self):
   a=load('audit/TASK_24_PUBLIC_RELEASE_VERIFICATION.json');self.assertEqual(a['result'],'PASS');self.assertEqual(a['source_revision'],BASE);self.assertEqual(a['deployment']['run_id'],42324279460);self.assertEqual(a['post_merge_ci']['run_id'],42324279630);self.assertEqual(a['github']['main'],BASE);self.assertEqual(len(a['sources']),99);self.assertEqual(len(a['canonical_public_urls']),6)
   for path,item in a['sources'].items():self.assertEqual(item['http_status'],200);self.assertTrue(item['raw_match']);self.assertEqual(item['raw_public_sha256'],sha(blob(path)));self.assertEqual(item['raw_approved_sha256'],item['raw_public_sha256']);datetime.fromisoformat(item['checked_at'])
@@ -41,7 +42,7 @@ class Task24Release(unittest.TestCase):
   for view in c['page_views']:self.assertEqual(view['event'],'page_view');self.assertEqual(view['measurement_id'],'G-XDHPQYJ5CH');self.assertEqual(view['http_response'],204);self.assertNotIn('?',view['page_location']);self.assertNotIn('#',view['page_location'])
   self.assertTrue(any('property-level reporting remains unverified'in x for x in c['limitations']))
  def test_only_six_availability_labels_change_on_homepage(self):
-  source=homepage_before_task25((ROOT/'index.html').read_text(encoding='utf-8'),Homepage);home=Homepage(source);self.assertEqual(len(home.cards),81)
+  source=homepage_before_task25(historical_source(ROOT, (ROOT/'index.html').relative_to(ROOT).as_posix(), (ROOT/'index.html').read_text(encoding='utf-8')),Homepage);home=Homepage(source);self.assertEqual(len(home.cards),81)
   for tid in IDS:
    card=next(c for c in Homepage(source).cards if c['attrs'].get('data-tool-id')==tid);chunk=source[card['start']:card['end']];self.assertEqual(card['attrs']['data-availability'],'released');self.assertEqual(chunk.count('Live'),1);chunk=chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending');source=source[:card['start']]+chunk+source[card['end']:]
   self.assertEqual(source,norm(blob('index.html')).decode('utf-8'))

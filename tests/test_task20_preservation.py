@@ -9,13 +9,14 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='1ead1c37861b80c552446afbdb952c9248370bf9'
 IDS={'excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'}
 sys.path.insert(0,str(ROOT/'scripts'))
+from seo_overlay import historical_source, historical_bytes
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
 from task25_test_support import tool_map_before_task25
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 def blob(path,revision=BASE):return subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT)
-def text(path):return (ROOT/path).read_text(encoding='utf8')
+def text(path):return historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf8'))
 def load(path):
  data=json.loads(text(path))
  return historical_registry(data) if path=='TOOL_REGISTRY.json' else data
@@ -37,7 +38,7 @@ class Task20Preservation(unittest.TestCase):
         paths=[t['directory_path']+'/index.html' for t in registry['tools'] if t['status']=='RELEASED']
         paths+=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets'],cwd=ROOT,text=True).splitlines()
         paths+=['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json','templates/text-input.html','templates/structured-input.html']
-        for path in paths:self.assertEqual(norm((ROOT/path).read_bytes()),norm(blob(path)),path)
+        for path in paths:self.assertEqual(norm(historical_bytes(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_bytes())),norm(blob(path)),path)
     def test_six_pending_cards_and_count_are_the_only_homepage_changes(self):
         current=without_cards(self,text('index.html'),Homepage)
         for tid in IDS:
@@ -46,12 +47,12 @@ class Task20Preservation(unittest.TestCase):
         home=Homepage(current);start,end=home.counts[0];current=current[:start]+'62 tools ready to use'+current[end:];self.assertEqual(current,blob('index.html').decode('utf8').replace('\r\n','\n'))
     def test_all_historical_audits_remain_byte_identical(self):
         names=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'audit'],cwd=ROOT,text=True).splitlines();self.assertGreater(len(names),90)
-        for path in names:self.assertEqual(norm((ROOT/path).read_bytes()),norm(blob(path)),path)
+        for path in names:self.assertEqual(norm(historical_bytes(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_bytes())),norm(blob(path)),path)
     def test_pinned_emoji_data_license_and_original_git_source_are_preserved(self):
         meta=load('audit/TASK_20_DEPENDENCIES.json')['runtime']['emoji'];self.assertEqual((meta['version'],meta['entries'],meta['license']),('18.0',3963,'Unicode-3.0'))
         tool=next(t for t in load('TOOL_REGISTRY.json')['tools'] if t['id']=='emoji-picker')
         for path,sha in [(meta['path'],meta['sha256']),(meta['original_path'],meta['original_sha256']),(meta['license_path'],meta['license_sha256'])]:
-            self.assertEqual(hashlib.sha256(norm((ROOT/path).read_bytes())).hexdigest(),sha)
+            self.assertEqual(hashlib.sha256(norm(historical_bytes(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_bytes()))).hexdigest(),sha)
             self.assertEqual(hashlib.sha256(norm(blob(path,tool['verification']['source_revision']))).hexdigest(),sha)
         self.assertLessEqual(meta['bytes'],1048576);self.assertIn('UNICODE LICENSE V3',text(meta['license_path']))
         tool=next(t for t in load('TOOL_REGISTRY.json')['tools'] if t['id']=='emoji-picker');self.assertEqual(hashlib.sha256(blob(meta['original_path'],tool['verification']['source_revision'])).hexdigest(),meta['original_sha256'])

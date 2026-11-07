@@ -1,5 +1,15 @@
 # Architecture
 
+## SEO Task 2A — static metadata, offline validation
+
+The public runtime remains static and unchanged apart from head canonical links.
+`scripts/seo.py` derives an explicit home/privacy/RELEASED allowlist, generates
+`sitemap.xml`, and validates static heads, sitemap and robots. No network calls,
+third-party dependencies or status transitions occur. Existing project checks
+and the required Python CI partition enforce it. See [SEO_FOUNDATION.md](SEO_FOUNDATION.md)
+for URL policy, future tool preparation and the bounded historical-source overlay.
+
+
 ## Task 9.5 — local CI infrastructure
 
 `scripts/ci/` separates read-only quality gates from website runtime/deployment.

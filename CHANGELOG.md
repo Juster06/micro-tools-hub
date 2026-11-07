@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-07 — SEO Task 2A (development, not deployed)
+
+Add static canonical metadata for 87 released tools, home and privacy; generate
+a deterministic release-only XML sitemap and minimal permissive robots discovery.
+Add negative-case SEO tests and read-only project/CI validation. Keep all tool
+logic, consent, registry statuses, templates and custom domain unchanged.
+See [SEO_FOUNDATION.md](SEO_FOUNDATION.md); no merge or public verification yet.
+
+
 ## Current state — Task 25.1 release verification
 
 Task 25 development PR #45 merged at `c127f856cbd97497412ec35ed66b3b1a58c4b2dc`. Pages run 42338516265 and

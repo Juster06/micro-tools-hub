@@ -1,0 +1,551 @@
+{
+  "schema_version": 1,
+  "purpose": "Exact canonical-only development overlay; not new publication evidence.",
+  "state": "PENDING_REVIEW_AND_DEPLOYMENT",
+  "base_revision": "7cdd6f43800fc1ae01ee597d9bab1a7a597f7f32",
+  "normalization": "CRLF to LF only; trailing whitespace retained.",
+  "pages": {
+    "index.html": {
+      "canonical": "https://everydaydigitalbox.com/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "c06e8961b77ccf1406445feb427b0dd41b12e0bbb07c5a0dd7809a1fb02df528",
+      "candidate_sha256": "670a47e2d209ffa9d573d4309523d11d8b1d8eb87d25b9ff42e52cfa98d70553"
+    },
+    "privacy.html": {
+      "canonical": "https://everydaydigitalbox.com/privacy.html",
+      "head_had_newline": false,
+      "previous_sha256": "bd60b598bfc4193e839903a29ac23ad5119ce59e82f867778cea8092882887aa",
+      "candidate_sha256": "09c3d9f126bf2193a9b5828c12157459ebb7aeffefbcfb27a56dfba0259f1d3a"
+    },
+    "age-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/age-calculator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "246072acb8a522885dcc69ee492aac343a9d6c39b23b57599643901a2175cd83",
+      "candidate_sha256": "a26486ad3808dd47533f09ad89bccd99d9d560137581ef1ae5e3558bf5f3a780"
+    },
+    "base64-encoder-decoder/index.html": {
+      "canonical": "https://everydaydigitalbox.com/base64-encoder-decoder/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "ca98d22d0779fa85cdf5e5418ec360f7142964fa50beb9fc7bd751909db5c497",
+      "candidate_sha256": "c2ce8907621385b6cecafec71f18452a9bfdefc812ecb37d23341e19213475ac"
+    },
+    "batch-filename-planner/index.html": {
+      "canonical": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+      "candidate_sha256": "815b7b724ce4504e961b450d4229211bff6e217fa1f5ebb2c179b8dbaa6f7a49"
+    },
+    "case-converter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/case-converter/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "b6465d6f67cdc91bf431ac4fd5c091eff7b3c7da141697da4ab1441e549e3a98",
+      "candidate_sha256": "3d20217a1c23fe18b364451b0d88651279c42850c028fbcd4079d7c0f285d204"
+    },
+    "color-contrast-checker/index.html": {
+      "canonical": "https://everydaydigitalbox.com/color-contrast-checker/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "11f80e033b2eb4f3a5556b881061a836f19ea621288f1a70d6f2e8a433f8c96a",
+      "candidate_sha256": "48f855922e7861db88a78009ffc6817cfa3fc98802fdc83af202c3dc1726c9ae"
+    },
+    "compound-interest-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/compound-interest-calculator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "761e375f0240b91a465e21f0ea018948ff4f2d8999bf3e6c454628ef1ee12883",
+      "candidate_sha256": "fb622b4100d68a612de423f0a240261d9c9a3239dcc8739714954ccd47d6b4f2"
+    },
+    "countdown-timer/index.html": {
+      "canonical": "https://everydaydigitalbox.com/countdown-timer/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "c2b8092a4c161d3ce46e1c2038475d46af82c2fa1dae2f477c86fd3bb47e25c1",
+      "candidate_sha256": "af759798c2ddc18f981a0dd4222431f7b7cf944bb721ae744c7c9b0d383a14ae"
+    },
+    "css-gradient-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "c3c4fa6c7ec48016a122c591325c5559030666408c9c5e2596d2b22bcd7cc259",
+      "candidate_sha256": "7c903910473bf9a92eb31db27419b04a6fe6541c99f39acef9ebd575c5bd7840"
+    },
+    "css-minifier/index.html": {
+      "canonical": "https://everydaydigitalbox.com/css-minifier/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "b41956b10c9815faeee1a3ca46820c35b867c48cef74aa1c5ef69a33b7284298",
+      "candidate_sha256": "718e37b60982418719f5697ca50cda66e9c530a1dd92d54a6bdd586fedd9c163"
+    },
+    "csv-column-extractor/index.html": {
+      "canonical": "https://everydaydigitalbox.com/csv-column-extractor/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "75423b6be705b575455c219c0d83b5513bbc3689b3583fbb26c59259884603ce",
+      "candidate_sha256": "038b062ee5e535ee1ad4ad602022443fb5905314553aea16f90fbcbe3990ebb9"
+    },
+    "csv-data-cleaner/index.html": {
+      "canonical": "https://everydaydigitalbox.com/csv-data-cleaner/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "2cd147716ce3fdd2ae6e4b5699bf28e54f607e1e2ef6c0f2340d7d284d419cfd",
+      "candidate_sha256": "b03d3ff806bb899b647df18f6e516a0383ea471d019f084ccd10063af948436c"
+    },
+    "csv-json-converter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/csv-json-converter/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "51dac12ac8955b97c150dc50fb3ce2daefa2bc990a1d6c3c28aee9ed694b85f1",
+      "candidate_sha256": "f40274acca63ca78cfa9b9e07331bdbcbb8a9d566e7dbe462202882c54ae9f8c"
+    },
+    "csv-merger/index.html": {
+      "canonical": "https://everydaydigitalbox.com/csv-merger/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "317586ddfe94203e9d875baf38a3820aa8317f6e6f101c252db9c4a77f5fe61c",
+      "candidate_sha256": "f3f5d056cffa9f5aac8be0f59c2572395da6299ba72f2113650be86540ae6bd5"
+    },
+    "csv-to-txt/index.html": {
+      "canonical": "https://everydaydigitalbox.com/csv-to-txt/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "432594cca900fc7f4cc1e3bfa8f2c9ff789d90e716f6bed6bbd1864ca435588a",
+      "candidate_sha256": "46c4c81f11f8369f40ee4af031d90caee7720ad9861233a7ea964dc5ed412225"
+    },
+    "csv-viewer/index.html": {
+      "canonical": "https://everydaydigitalbox.com/csv-viewer/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "6cc73260b960c2454298541bb5e602fc3dbedf121eddb5a05ffb718b6595e39d",
+      "candidate_sha256": "7b747ea6611fb9ae4a98c4768b54552cde002529b5b0b4371b8817db6b3b10ef"
+    },
+    "date-difference-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/date-difference-calculator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "f807de990d11871759ebd18e827ac9b7b08efb6b9e23aac50d08bae9f4748143",
+      "candidate_sha256": "e56bdd0b46550f92fc95e34999a2b274308de1a27e371f6d9a39b96c1d6e50aa"
+    },
+    "discount-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/discount-calculator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "5b8e853c9e7381343608f0f0c7dc75bb388048fa2fcb59a8107cfa3bd835afb0",
+      "candidate_sha256": "d3b877755d6c9bcdf8205eb7aeadbd38c22e5937fa45f9af647c8b7679c67606"
+    },
+    "duplicate-line-remover/index.html": {
+      "canonical": "https://everydaydigitalbox.com/duplicate-line-remover/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "d936cddd688bf40fb3375773aae9dd874d3cb6a14900db128ef0af5252ccab9d",
+      "candidate_sha256": "8854155e30e6ef705c26f965fc94cc8bdb9e6d9ed126bc4b79de634e1b24c5fb"
+    },
+    "duplicate-row-finder/index.html": {
+      "canonical": "https://everydaydigitalbox.com/duplicate-row-finder/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "ecfa0f0a03c033efb2c2e1e8cef3daf369e405edff628d9e42c4484e0586839d",
+      "candidate_sha256": "bb7ccdb3184430c27c08d9e0586d627fb84478dc40f68b1c0cbbfe412bcbd287"
+    },
+    "duration-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/duration-calculator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "29e485638cdc71abecdaca9d3cd942dde25c0632bf78d738fef6ac1741fb6187",
+      "candidate_sha256": "436eced120a427615170c059eb28bc15a7bad4677e22f59232a51178d0ecd6b0"
+    },
+    "emoji-picker/index.html": {
+      "canonical": "https://everydaydigitalbox.com/emoji-picker/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "badcdc267813c85b1cd3c30a6258019f8f2e9f326f9113b3624ebe3cfd92eb7f",
+      "candidate_sha256": "96f79eb8a50f320e0b2845936dbee3797e7f508c8e602f0968e4ffb498dc8046"
+    },
+    "excel-formula-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/excel-formula-generator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "92ab80280b94b2ded785f2100518952fa924e6acc9c432b59552fcabb5b7c979",
+      "candidate_sha256": "8fae2f6f579974dd040e07d0d72ef5b32199987677b7e33ae68eeb142f08fc88"
+    },
+    "excel-sandbox/index.html": {
+      "canonical": "https://everydaydigitalbox.com/excel-sandbox/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "e5c934b7eb071f62619dd38f272b32541892e11ecd94d988f9b8d20a6bc2ca12",
+      "candidate_sha256": "eee3cfc880f77add602da624604c479c2ca363221d82e82978cf203a97c6014d"
+    },
+    "file-byte-comparator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+      "candidate_sha256": "c754209b2a0d803b72348b2952e9c3ba85fa1350c438d07aaeb444e616060202"
+    },
+    "file-signature-inspector/index.html": {
+      "canonical": "https://everydaydigitalbox.com/file-signature-inspector/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "2b99104465ae13ed1365593c1cbaf318160394366c3656ca59118352acf1efce",
+      "candidate_sha256": "8913ab334ed6b17fd2e1d69abb9d3ada276f5870a37d06b4a5999ec67ac33d72"
+    },
+    "file-size-converter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/file-size-converter/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "e5c407ebe28441684cf569f775f90740b856b3d5f997655f69858f539fa61cf1",
+      "candidate_sha256": "fb1de57c3f27e48b1cb2b0b04c469ae1743dbf305d5de98fe36b9b2a0a8f2c43"
+    },
+    "find-and-replace/index.html": {
+      "canonical": "https://everydaydigitalbox.com/find-and-replace/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "338f167a458b59be9af45124f07e890e36a5f23704d46c2f70b72d2cd3e81bce",
+      "candidate_sha256": "975d3a7f073ede13665edafa968b965aea36ae24624bdb982bbe221143df2792"
+    },
+    "hashtag-counter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/hashtag-counter/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "1e6314d394237648ef2c26564f59463028944e00e499c96819ec244a22280f4b",
+      "candidate_sha256": "51eecd59dd2bff7d12a6bd7f94d3eed4fd734077a49aae3fd48b96e631295fc6"
+    },
+    "hashtag-organizer/index.html": {
+      "canonical": "https://everydaydigitalbox.com/hashtag-organizer/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "50bd48e2a2767ccc1dde73bcb296b677a86c978509fb28e0d013d4720760abaf",
+      "candidate_sha256": "f1166aca865673086ec138c940c4a113b1652078e0de3173757888cb8302e5fc"
+    },
+    "html-formatter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/html-formatter/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "48f8455048ac090b80be3197668743ae634ed5a2aae41c047d31b6748795785a",
+      "candidate_sha256": "3fc7eaff6e29c09cc07c6c464f3925e4bc0fc8b7e08fa4fe2a705eee7a95a652"
+    },
+    "html-previewer/index.html": {
+      "canonical": "https://everydaydigitalbox.com/html-previewer/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "e099d671c23b8220080c1d4ae92c9be1e1dad0cac854eb98a5b1f1c31a1b6742",
+      "candidate_sha256": "7a690a5123c2efacc9a4d9ec9547d7f24e5b6909e06e790cf574ea0379bf7436"
+    },
+    "html-to-markdown/index.html": {
+      "canonical": "https://everydaydigitalbox.com/html-to-markdown/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "fe423cc6c3f92adc2c847beda65ac33de6595697b7c1d90a22bbb322e38462f6",
+      "candidate_sha256": "2471097bed168fadd7fc2117ee6661d9c78fc849b51bcd29c405053a3bd4590b"
+    },
+    "image-color-picker/index.html": {
+      "canonical": "https://everydaydigitalbox.com/image-color-picker/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "53e90cffa56526d98f628065e9d117ddcd141aa6c623a2a4de950e05232d2467",
+      "candidate_sha256": "70a7b55e5e72a85648f93a1e3e6ecad74d087cbeaf7f2c38895d68cb12506f59"
+    },
+    "image-compressor/index.html": {
+      "canonical": "https://everydaydigitalbox.com/image-compressor/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "2d6730604833038eb67cb81414937d8fff943addd334ad62fd34c3eda8c1ab39",
+      "candidate_sha256": "12e3c1a44d15619452644b19e28a6284023a7097f8f4ef3e475ca6828fe41478"
+    },
+    "image-cropper/index.html": {
+      "canonical": "https://everydaydigitalbox.com/image-cropper/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "861e50a2b9c01ad3c60faffe7fd2befc1aa403f74575b7911dd94cdac4ce61c6",
+      "candidate_sha256": "1db5be2c301eb3ea9afae2d68c0345df9bb73ef281721a4376ddbcef82096f43"
+    },
+    "image-format-converter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/image-format-converter/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "846d9e1858c06268f1298838d8bac9d0bcdee51be114b8a9e65361af97a866e8",
+      "candidate_sha256": "77af7fe24bcb930b08263aa30bce72b478ac049cd54f965e35dd4b2b891dda01"
+    },
+    "image-resizer/index.html": {
+      "canonical": "https://everydaydigitalbox.com/image-resizer/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "1a3f803f46f68e76b02fe7d6a89a8b0b0e2416dd685a9e87bcce327032307652",
+      "candidate_sha256": "0f1519f83ab18878761c1b75e6ed4be5d1d7450499d4abd19e0335c56dcc0191"
+    },
+    "image-rotator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/image-rotator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "606bd2213bf61aa15299e010bfbd0c661064271bf57dfddf3cf755830846ee4d",
+      "candidate_sha256": "82b3d17df0c710fa1366fc45cd77ae21cd134bc283ca7f680d9d4323a4c678f6"
+    },
+    "image-watermark/index.html": {
+      "canonical": "https://everydaydigitalbox.com/image-watermark/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "b4c435011f96920edec64ee94e6ec7550db396ef561b0693a866c2514dff3067",
+      "candidate_sha256": "56d1b4aa42252a22cebe3de577e2251c067e12d4d2fc8a5e92c8778efe6d05c1"
+    },
+    "instagram-bio-formatter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/instagram-bio-formatter/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "5f892ee0a7d1ee4aa1794e844dafd05e3455f881772820011ac8b1187064e552",
+      "candidate_sha256": "5f014a87dc389a5648ee4690c8d59c82d50999c16e336799c5bfbc21d8033416"
+    },
+    "invoice-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/invoice-generator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "567fdec52dcf39ad99474ff2e1b35f055d668674fb5420f3912dc9b1bfd2e1b2",
+      "candidate_sha256": "65539eab29e22d1d0f0660b5466a9f4c60f7b9a04d7bf4280d67060a1c25ed6b"
+    },
+    "ipv4-subnet-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "acfa9c5550be43a22fac982c35f3132eaaa579ffbda5b2d67dcb973681ca08fc",
+      "candidate_sha256": "f038e2ccb554ef068af2b9f8eb86111ac009d5fdcbdc654521ba7d0d34ed1a0e"
+    },
+    "javascript-minifier/index.html": {
+      "canonical": "https://everydaydigitalbox.com/javascript-minifier/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "ea5e5e1e8f739e8bda75a5a13b7db6f9b37d9555422b88a7bdbfcb7ccd83dd3f",
+      "candidate_sha256": "22890a80bbdaed4345a4f688d0554bc57b76ffcffaebd80f9077c5da7b3938cb"
+    },
+    "json-formatter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/json-formatter/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "ed72595e194f6f23a9e87153921637d4e52d9f6da7bdb2d07ec84958402c8342",
+      "candidate_sha256": "c17099442e0b38fb90c309de2ace219ce904f3ac81315b2be30f30ec8ec0432b"
+    },
+    "json-to-txt/index.html": {
+      "canonical": "https://everydaydigitalbox.com/json-to-txt/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "1e141dff6850a7bbd3c95bd42560c2f27fa10608c204ab43d3ca425becfbf8dd",
+      "candidate_sha256": "e1554875252f57276319bc7aa16a9d062a066ee4c0edbd67e06201c44e6b85b2"
+    },
+    "list-comparison-set-operations/index.html": {
+      "canonical": "https://everydaydigitalbox.com/list-comparison-set-operations/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "8d6478160b3d25e5f91322ba480a09b70b7b22e34df6b4863d425b48eac648c0",
+      "candidate_sha256": "a8fa3be71f39140f96a3360c71ae619a0a962646a36f37afe43bc4bffde20480"
+    },
+    "loan-repayment-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/loan-repayment-calculator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "e3b4badbf4b57f2debfd18b2adf1dc9161a7cf329963e3553103311090470e9d",
+      "candidate_sha256": "8daad4d4e9f331ab9250e8e16b7f9606d63418707cd743986d5a33cf767a6298"
+    },
+    "local-to-do-list/index.html": {
+      "canonical": "https://everydaydigitalbox.com/local-to-do-list/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "cdf9c3fc0119972593868bbf3b8e331b993f0c3ae3121a32d0edb8f704ffd844",
+      "candidate_sha256": "cc4c4ba5301ed8a92d595755e90d08691d77f2242b8a025dcbcb8d646e65e4e4"
+    },
+    "markdown-converter-previewer/index.html": {
+      "canonical": "https://everydaydigitalbox.com/markdown-converter-previewer/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "da23dd5a5483935fdc70399ed738e8bf9145f284e48878f374a9adccceeea503",
+      "candidate_sha256": "a14e6c2277dd734d03386d88ccc001c1d6f81f97c17e0b3fd28089962d4866ba"
+    },
+    "meeting-agenda-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/meeting-agenda-generator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "5ce7019d339357f0e431298caf698b9c7a5fd5a756e5a522972ed58ff6b155cc",
+      "candidate_sha256": "cfeb0a09a85840ad0b68298614233421df061ebea1fa967039dd99123c7a6959"
+    },
+    "number-base-converter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/number-base-converter/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "af7c2d98d17689d146c2dd487f9e775c65392a1bfdab34ff3b10d3ff5f93eec3",
+      "candidate_sha256": "5d10f4d8d67440e6875b42fb74dc6a9cd7310d78d587d704bcfb18a91f470ec1"
+    },
+    "passphrase-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/passphrase-generator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "f16f6d93698c38549396fd9c7d379771e70cedd4fd931a1984b3cfe056d2bdd0",
+      "candidate_sha256": "55d93b06a0dedb1480f0adf133e79fa39a1bb69c92457062e7574079ff769427"
+    },
+    "passport-photo-layout-maker/index.html": {
+      "canonical": "https://everydaydigitalbox.com/passport-photo-layout-maker/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "edddd59dcfc3380fcf99e019e2e84ddf7b5b90c7df1b69f4e7e04986ea84ce37",
+      "candidate_sha256": "ce0a2ae96fcbd7bfce8e69900bedbd09dda8aad68607f8cf65e08182f7afe5ce"
+    },
+    "password-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/password-generator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "aab4e2feda7860702d8fd4ed9a1477d781f1bbc1c52e94908d6b347ba6fff073",
+      "candidate_sha256": "c997cbc5ebb9d8e9d84412b6f365b2be3f581d6843bf32f10a6a031d80bda582"
+    },
+    "percentage-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/percentage-calculator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "e8729d3c97a84fc46a54d026e4da6f05bc1f2c59bbfcd9c1acb4f9056ca68c0c",
+      "candidate_sha256": "39efe923f57be52a6b0c68624a49f273783d27a2a329f7b5688f7c8a26d19f26"
+    },
+    "percentage-change-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/percentage-change-calculator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "6d87b9a6eebe333a2088121df765f8cbd5ab609463c4d509813a7e681369cd15",
+      "candidate_sha256": "ce31bedd4ce1f741a28d00c0da52ee04cfda9282a14dd4237b5678bdeb58c30f"
+    },
+    "png-to-ico/index.html": {
+      "canonical": "https://everydaydigitalbox.com/png-to-ico/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "b71196dea1c6ac2339a2a9363718b52bde87da676119539d913d9967ffd546ad",
+      "candidate_sha256": "d2db7898c13f359229f810b8139ed018eb002e8915a654817a6c29bbfaa7c526"
+    },
+    "pomodoro-timer/index.html": {
+      "canonical": "https://everydaydigitalbox.com/pomodoro-timer/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "c17d8acf59a746d3a8dcad198699592ef9b8880c2ebf62eb60f1b7ba5c999e55",
+      "candidate_sha256": "860b9bcb88d1ae8327be308eb72cc6957eba2104f56c03332b83ce3b9a9eb5b8"
+    },
+    "posting-calendar-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/posting-calendar-generator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "2e4a1d9cdc1b56cf8cfc0e02a5912be8ad84e01fb417b110de49cead6f8c61c0",
+      "candidate_sha256": "fd3cbfc993e8f548cbda0739d5ac77906b53581583eab04b2ffc5fc89260e7e3"
+    },
+    "printable-calendar-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/printable-calendar-generator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "951578abaef331aa9857039f0e4d8e273b0e6463258e79c43ac5e78f491b9c55",
+      "candidate_sha256": "ecdbf017749bf5d4ead367f16bf3b49cd67575475cb5a5cc058e1e81135a0512"
+    },
+    "profit-margin-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/profit-margin-calculator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "7803612757fe7d8aec84cfbf6193131c5cc169edb88a5dc720525fd8e63bf44b",
+      "candidate_sha256": "deb0d631d2256fda44a5c1dd7db12adf666f231754d030900e38a0560cb0c341"
+    },
+    "qr-code-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/qr-code-generator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "005f8bdd939b9caa997b88477fe84179ea0b222c7c05f394001dd35420514e6e",
+      "candidate_sha256": "b16b4ad644e7b6a0c3f82eef4f458044c4f20dca6a08d747b89cd7e9ce9afa43"
+    },
+    "random-name-picker/index.html": {
+      "canonical": "https://everydaydigitalbox.com/random-name-picker/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "1aaa4dad4ec4f549d333723bb3efb449554e750ca6fa864076413dffd5781ff2",
+      "candidate_sha256": "874a11838161c752b85dcfc83f9731157857021293e840d4d9faa4d27268c4b5"
+    },
+    "regex-tester/index.html": {
+      "canonical": "https://everydaydigitalbox.com/regex-tester/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "b5f83a222248c0ce9ad2c7331d9e9acbb8eb9f96996015641eafa8c22947097b",
+      "candidate_sha256": "a53ac8f9900a5d521583295051c680d02449091ae0a058df3f369921b0ef46e1"
+    },
+    "resume-builder/index.html": {
+      "canonical": "https://everydaydigitalbox.com/resume-builder/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "87478090d2e918bbf29f1504763a7b72ddca7455671ed4185624bd71245d9804",
+      "candidate_sha256": "4c665f934484e2bba78fe32f51d89c4406ccc69c971eb0bd9817d6f7def3ebcd"
+    },
+    "secure-random-number-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/secure-random-number-generator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "476de61456b49ed026d5f150706952bbd777d4225208c7d453022dd164a58a5e",
+      "candidate_sha256": "86a2093288bebd62b8ca746cb9142801e32273824ea7ee44651c90dff46ad5ae"
+    },
+    "sha-256-hash-checker/index.html": {
+      "canonical": "https://everydaydigitalbox.com/sha-256-hash-checker/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "f69db3cc178957bff9c7136f1ed3f9f7f86a40023d8b08780508871bb67d99ea",
+      "candidate_sha256": "40fb6d26d23aa64b5807a843a4016f8892e4dab60ab844d53c88182869a6b174"
+    },
+    "slug-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/slug-generator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "a7418c6ca06f74be22d9ccbec94880b7e98cbf1666219023cb9a7f972ae87d26",
+      "candidate_sha256": "e216e5ff34487c51afde9586b583d27a6935ac47498c9304e1693e5bab3dfff7"
+    },
+    "social-counter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/social-counter/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "c42c2c58b35f0a925a5c2c2f13a4770460e5b39a5f8436682577b1418a438cf6",
+      "candidate_sha256": "6f0156f9f7316090a069306211b9db917570e680c31515366f224a7ebec9a7ef"
+    },
+    "streaming-roulette/index.html": {
+      "canonical": "https://everydaydigitalbox.com/streaming-roulette/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "d73f996b54b16d2ca4ad9449ae850d01958467bad28675b3d25e651a9ff18963",
+      "candidate_sha256": "dd014b5e61c5fcd7f98781fe6a7fa4bfd2f6a8059c90bbfd821f02d270248a63"
+    },
+    "text-cleaner/index.html": {
+      "canonical": "https://everydaydigitalbox.com/text-cleaner/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "907d81983a27fa16ffe23d51a03033c9df9fdd06db22baf0e26a03cecae95cb3",
+      "candidate_sha256": "b2963133a3aaec5a66ab5e770b5423bf0e9d18847bf3f5ee0113304bad60d426"
+    },
+    "text-difference-checker/index.html": {
+      "canonical": "https://everydaydigitalbox.com/text-difference-checker/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "ce9408f08ce2082503bfdb6e9f9004218ab63372489b3b3a7fd0b1f53bb7ef46",
+      "candidate_sha256": "7c4e8a4ff121c9404816ef123a063978e5825f6d66124c6c3f73f3579b823a4c"
+    },
+    "text-reverser/index.html": {
+      "canonical": "https://everydaydigitalbox.com/text-reverser/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "4613e5dae5f49f99aa63ba79e6a14f60bc564aaf0da69d939d35e66706f2ff42",
+      "candidate_sha256": "fee54e0eed13e3b616792dee9def17444b6373083aaa0c87a9b2e5570abbcef9"
+    },
+    "text-sorter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/text-sorter/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "443949b97916f35b8bd4c3715706154012cc3899421cac9092a01e9b69a3b4fc",
+      "candidate_sha256": "294c23fc896a9bca871fb26de31b49acba8d0c05ae8fec959daa061994974306"
+    },
+    "timestamp-converter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/timestamp-converter/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "25e1bbb2d29fdebf0e13bc4b6e66b6cc611dbcab3140d40f6baf4a792f6f44e6",
+      "candidate_sha256": "d9b5656d5f00c4d91262533e73600dc9b2ca29c7502e72e44c09353767ce825a"
+    },
+    "unicode-inspector/index.html": {
+      "canonical": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "ffff512e80d44a1900ed04f81049b7104ef601b1bbd825e9de6160616dc0346d",
+      "candidate_sha256": "44da2dd8bfaeaf8eee232166e750f4538c4261333312111f0b43810f6d64f72e"
+    },
+    "unit-converter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/unit-converter/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "8ea27c8492f15f271b34a0f50b33a34da6bf0e7e2c73893fc2829cd7a62a4f7f",
+      "candidate_sha256": "253400c74e6fb96c49fe2dd0f65c7ef7b0cecfc356c4c2cba5390abc33a6abff"
+    },
+    "url-encoder-decoder/index.html": {
+      "canonical": "https://everydaydigitalbox.com/url-encoder-decoder/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "1495c61f9b735537e729d0a3bb75b500e2c5a3b52902aca7cfca8821e844d28b",
+      "candidate_sha256": "a4223ec5165bdfa438940304afa71c92a9ac9f1c885d1c6681f9d1a6bece4982"
+    },
+    "url-inspector-query-builder/index.html": {
+      "canonical": "https://everydaydigitalbox.com/url-inspector-query-builder/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "1322ab9a554d260440c7467cec157fbb9660e09eb76f67c305a0801fab13f9a7",
+      "candidate_sha256": "4e540d435dae99644c94cbb52c15515d8e83679ce49d262462d33b77e2b09edf"
+    },
+    "username-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/username-generator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "818a1cf1a2984442193a5c97a8e7b92c5726f56f3baf57f130d2ca1c8879b4e3",
+      "candidate_sha256": "f11c1044a9eb05b03364b0d9569bb1d3111ab1a8f67b3b4a336b9fe03e809746"
+    },
+    "uuid-generator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/uuid-generator/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "8a6bd72dd7ae8f7b75507ed82aea5560b2d5d5889e216c057f9bd97702f0ecf4",
+      "candidate_sha256": "c0c7211bdaf0fbe09d97dd98de964f2be3258a90d960ed4f1f237ec0ac97ff8d"
+    },
+    "vat-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/vat-calculator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "13f638970e4ea54fcaada0655041a7bc998917624a0c9f278728ce80d257a71a",
+      "candidate_sha256": "b21e5c3269f867e71d9f9e710cd84b06d3a3a52ce11608cb255aa17b265cad5c"
+    },
+    "word-frequency-analyzer/index.html": {
+      "canonical": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+      "candidate_sha256": "4dfd12bca18e70b009e175d59c0e612f0c07e8b0a5dfec14072a3eeee2e0ca3a"
+    },
+    "working-days-calculator/index.html": {
+      "canonical": "https://everydaydigitalbox.com/working-days-calculator/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "f5eefcd5fe9d63cedfa2c8b99503cae653abc3d2fabafed3f7a60e41440a9281",
+      "candidate_sha256": "e81db736b2212381c58092d1a47682c31ebcb608a0b921fbe1284ac01f881dae"
+    },
+    "youtube-description-formatter/index.html": {
+      "canonical": "https://everydaydigitalbox.com/youtube-description-formatter/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "c4ef5cd1c2f542111eefdfcf6dd299a77578373525125b41f4d01c4bcdb650bf",
+      "candidate_sha256": "3910ecfc4c1faeb3890289e1e997f5bb11718341312bad560f1fa6ee5c85d4ed"
+    },
+    "youtube-thumbnail-preview/index.html": {
+      "canonical": "https://everydaydigitalbox.com/youtube-thumbnail-preview/index.html",
+      "head_had_newline": false,
+      "previous_sha256": "30d119911de835a821324155c85dcf92c76049a88d51f2efdd0c6e7203d68678",
+      "candidate_sha256": "c8f0b27661f54e90eadf94540605a012c0b623c93c6faf10608c84bbfd871ff9"
+    },
+    "youtube-title-checker/index.html": {
+      "canonical": "https://everydaydigitalbox.com/youtube-title-checker/index.html",
+      "head_had_newline": true,
+      "previous_sha256": "dfdbaccf5d833e14ff44527091f678bb754edb63e0430777c764b0835b149d04",
+      "candidate_sha256": "c16caedde28370781446eeeb64ac95a346389c97e1d77768e4a4e0eb699765d3"
+    }
+  },
+  "infrastructure": {
+    "scripts/ci/run.py": {
+      "previous_sha256": "213eba5c682db0a012707a674257db97d9b31d600a19d8f4942641effa81502a",
+      "candidate_sha256": "1a4a97f848db758dca84b9d20a27c60820df0a546f2aca3a786658057007c31d",
+      "insertion": "            execute(\"technical-seo\", [sys.executable, \"scripts/validate_seo.py\", \"--json\"], \"validation\")\n",
+      "anchor": "            for tid in value[\"tools\"]:\n"
+    }
+  }
+}
