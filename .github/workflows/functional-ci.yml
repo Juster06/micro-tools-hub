@@ -71,6 +71,8 @@ jobs:
         with:
           node-version: '24.22.1'
           package-manager-cache: false
+      - name: Install locked development-only CSS compiler
+        run: npm ci --prefix scripts/styles --ignore-scripts --no-audit --no-fund
       - name: Execute required node-regression scopes
         env:
           EDB_CI_DIFF_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}

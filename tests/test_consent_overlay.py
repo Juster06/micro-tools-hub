@@ -9,7 +9,8 @@ import unittest
 SCRIPTS = Path(__file__).resolve().parents[1] / 'scripts'
 sys.path.insert(0,str(SCRIPTS))
 import consent_overlay as overlay
-from seo_overlay import historical_source
+from css_overlay import historical_snapshot
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 
 class ConsentOverlayTests(unittest.TestCase):
     def setUp(self):

@@ -5,7 +5,8 @@ new Task24 preservation suite independently binds the entire 75-release baseline
 """
 from pathlib import Path
 import hashlib,json
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 from task25_test_support import homepage_before_task25, registry_before_task25
 ROOT=Path(__file__).resolve().parents[1]
 IDS={'number-base-converter','unit-converter','duration-calculator','url-inspector-query-builder','list-comparison-set-operations','color-contrast-checker'}

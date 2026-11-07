@@ -1,0 +1,1871 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-07T23:39:40.767523+00:00",
+  "state": "DEVELOPMENT_CANDIDATE_NOT_DEPLOYED",
+  "report_sections": {
+    "1. Verified starting state": {
+      "repository": "Juster06/micro-tools-hub",
+      "website": "https://everydaydigitalbox.com",
+      "hosting": "Existing GitHub Pages main/root publishing configuration",
+      "verified_main_commit": "cf443c3b1facc2ae422fc6c55d546528671be1d0",
+      "verified_tree": "1c2e08c558a707999181b5ae53c4cb1df927f072",
+      "expected_commit_matches": true,
+      "registry": {
+        "registered": 105,
+        "RELEASED": 87,
+        "TESTED": 0,
+        "READY": 0,
+        "PLANNED": 17,
+        "BLOCKED": 1
+      },
+      "canonical_public_pages": 89,
+      "reference": "outputs/seo-task-2b-design-specification-2026-11-07-214556/; detailed task-2c-instructions.txt is the architectural reference. Prior reports remain historical context, not current performance measurements.",
+      "baseline_evidence": "Immutable work/seo2a1/source; all 1056 baseline file hashes preserved. Current main verified at expected commit before development.",
+      "task26": "Paused; utility development not resumed",
+      "evidence": [
+        "github-start.json",
+        "initial-project-status.json",
+        "preservation-after-summary.json"
+      ]
+    },
+    "2. Branch and worktree": {
+      "branch": "seo/task-2c-static-css",
+      "development_worktree": "Isolated checkout at work/seo2c/repo (workspace-relative)",
+      "starting_commit": "cf443c3b1facc2ae422fc6c55d546528671be1d0",
+      "preservation": {
+        "status": "PASS",
+        "original_worktrees": 32,
+        "current_worktrees": 33,
+        "original_worktrees_unchanged": true,
+        "only_new_worktree": true,
+        "unrelated_SESSION_HANDOFF_edits_preserved": 2,
+        "prior_report_files_unchanged": 346,
+        "immutable_baseline_files_unchanged": 1056
+      },
+      "authorization_boundary": "Development implementation, commit, push and dedicated PR only. No merge, deployment, administrator bypass or unrelated worktree cleanup."
+    },
+    "3. Exact implementation scope": {
+      "migrated_pages": [
+        "index.html",
+        "text-cleaner/index.html",
+        "json-formatter/index.html",
+        "csv-viewer/index.html",
+        "image-color-picker/index.html",
+        "vat-calculator/index.html",
+        "batch-filename-planner/index.html"
+      ],
+      "read_only_legacy_sample": "social-counter/index.html",
+      "unmigrated_released_tool_pages": 81,
+      "unchanged_other_public_pages": 82,
+      "page_changes": "One browser Tailwind script per pilot page replaced by one first-party stylesheet link in head. Six minimal CDN/network-delivery descriptions corrected; exact literal substitutions and preimages recorded. Classes, inline CSS, tool JavaScript, IDs, labels, controls, titles, metadata, canonicals and consent loader preserved.",
+      "wording_changes": {
+        "index.html": [
+          "Tool processing runs locally; styling loads from Tailwind’s Play CDN.",
+          "Tool processing runs locally; styles load from this site."
+        ],
+        "text-cleaner/index.html": [
+          "All text processing happens in this browser; only the Tailwind styling script loads externally.",
+          "All text processing happens in this browser. Styles load from this site; hosting requests and optional consented analytics still occur."
+        ],
+        "json-formatter/index.html": [
+          "Page delivery and Tailwind Play CDN styling make ordinary network requests; inline CSS keeps the page usable without the CDN.",
+          "Page and first-party style delivery make ordinary network requests; inline CSS keeps the page usable if the stylesheet is unavailable."
+        ],
+        "csv-viewer/index.html": [
+          "Hosting and the existing styling CDN are separate network requests.",
+          "Page and first-party style delivery make ordinary hosting requests."
+        ],
+        "image-color-picker/index.html": [
+          "Hosting and the existing styling CDN are separate network requests.",
+          "Page and first-party style delivery make ordinary hosting requests."
+        ],
+        "vat-calculator/index.html": [
+          "Page/style delivery uses hosting and the existing Tailwind Play CDN; inline fallback styling works without the CDN.",
+          "Page and first-party style delivery use hosting; inline fallback styling works if the stylesheet is unavailable."
+        ]
+      },
+      "supporting_changes": "Isolated development build package, generated asset, deterministic check, strict source approval and preservation adapters, negative tests, explicit CI coverage, narrow LF Git attribute, and current documentation. No new visitor runtime framework or visual redesign.",
+      "unchanged": "Registry/publication status,87 released tool routes,87 homepage tool cards, privacy page, consent engine, sitemap, robots, aliases, CNAME and existing deployment settings."
+    },
+    "4. CSS build architecture": {
+      "purpose": "Move Tailwind compilation to development/CI so visitors receive static CSS without downloading/executing the Tailwind browser compiler.",
+      "components": [
+        "styles/tailwind.input.css",
+        "styles/sources.json",
+        "scripts/styles/package.json",
+        "scripts/styles/package-lock.json",
+        "scripts/build_styles.mjs",
+        "styles/build-manifest.json"
+      ],
+      "source_policy": {
+        "automatic_discovery": "Disabled with @import \"tailwindcss\" source(none).",
+        "explicit_source_files": 90,
+        "sources": "89 existing public HTML pages plus assets/consent.js; copied into isolated scanner scratch. Only seven consumers change.",
+        "exclusions": "No audit/report files, node_modules, provisional scaffolds or arbitrary filesystem discovery. Scanner list checked against the released registry.",
+        "dynamic_classes": "Complete dynamic utility tokens in inline scripts remain discoverable. Existing custom-state and page-specific inline CSS retained. 11 required output selectors provide a smoke gate, supplemented by actual state/browser tests. No blanket safelist or general unused-CSS purge."
+      },
+      "commands": {
+        "install": "npm ci --prefix scripts/styles --ignore-scripts --no-audit --no-fund",
+        "deliberate_generation": "node scripts/build_styles.mjs",
+        "read_only_reproducibility": "node scripts/build_styles.mjs --check",
+        "independent_source_gate": "python scripts/css_overlay.py --check --json"
+      },
+      "reproducibility": {
+        "two_unchanged_builds": true,
+        "read_only_check_does_not_change_repository": true,
+        "recorded_input_hashes": 96,
+        "normalization": "Input text hashes normalize CRLF to LF only; generated CSS hash covers exact bytes. No timestamps, local paths or secrets.",
+        "validation_order": "CI checks stale output before any regeneration; --check compiles in isolated scratch and compares bytes, inputs and references. No silent repair."
+      },
+      "generated_asset_policy": "Content-named CSS committed for the existing static deployment; old content-named assets retained until separately reviewed cleanup. Narrow .gitattributes LF rule preserves exact CSS bytes on Windows; independent core.autocrlf=true checkout test passed.",
+      "rollback": "After separate owner authorization, revert the pilot coherently: HTML references, selected generated asset, build configuration and current-source approval. Retain old assets, dated historical evidence and unrelated work."
+    },
+    "5. Dependency versions": {
+      "development_dependencies": {
+        "tailwindcss": "4.3.5",
+        "@tailwindcss/cli": "4.3.5"
+      },
+      "selection_basis": "Real baseline CDN response X-JSD-Version resolved @tailwindcss/browser@4 to 4.3.5; matching exact CLI compiler selected.",
+      "node": "Supported 24.x minimum 24.15.0; existing CI pin 24.22.1 preserved.",
+      "npm": "Local official npm 12.2.2 scratch bootstrap verified against registry SHA-512 because npm was absent from PATH; not a repository/runtime dependency. Lockfile v3 pins transitive versions and integrity records.",
+      "package_sha256": "f2bddec683cd1f71ec4c0df8c973c287bbb154d3c38bce663e53a54e37501d0b",
+      "lockfile_sha256": "66b6856c4b7064c0ac4b5e8e8fbe2923b26cfb4c7b2ecf4353ce69cf57005d24",
+      "install_policy": "npm ci with --ignore-scripts; prebuilt optional native bindings, no implicit npx compiler download, no lifecycle hooks needed for supported build.",
+      "license": "Tailwind MIT notice retained in generated CSS and full upstream license stored under scripts/styles/licenses/. Transitive development metadata includes MIT,MPL-2.0,ISC,0BSD,Apache-2.0,BSD-3-Clause.",
+      "npm_audit": {
+        "vulnerabilities": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        },
+        "dependencies": {
+          "prod": 1,
+          "dev": 65,
+          "optional": 41,
+          "peer": 0,
+          "peerOptional": 0,
+          "total": 65
+        }
+      },
+      "audit_limit": "Registry advisory snapshot, not proof of absence of undisclosed vulnerabilities. Development dependencies only.",
+      "visitor_dependencies": "No new fonts, icons, third-party styling services, runtime frameworks, service workers or trackers."
+    },
+    "6. Generated CSS asset and hashes": {
+      "path": "assets/css/site.77d4325c7538174e.css",
+      "sha256": "77d4325c7538174ef816ff7265aa95ec3a24897a0e69b508e800fad75ca91538",
+      "bytes": 36289,
+      "gzip_bytes": 6977,
+      "gzip_kib": 6.813,
+      "build_manifest_sha256": "2ff089f458f9e3d9eee7393a56f17377013954cc218b6a171209734f3a0febab",
+      "input_hashes": {
+        "styles/tailwind.input.css": "94f42069ee25cefb399580f9788024eacb343207274379fd80d22c0af0cafb4c",
+        "styles/sources.json": "874008a170d489a40dca4379ddc3cf0d8658a8bb841b5764e4681ca80eec3bef",
+        "scripts/build_styles.mjs": "149f68710cd4bcfe4e658d5febaf9ad6d2257f2629201d902d403c599dcbc374",
+        "scripts/styles/package.json": "f2bddec683cd1f71ec4c0df8c973c287bbb154d3c38bce663e53a54e37501d0b",
+        "scripts/styles/package-lock.json": "66b6856c4b7064c0ac4b5e8e8fbe2923b26cfb4c7b2ecf4353ce69cf57005d24",
+        "TOOL_REGISTRY.json": "8525daeb907970384adc8ffc0476322a6be07b1d95fedec9ac743a3199d4dbd5"
+      },
+      "budgets": {
+        "preferred_gzip_bytes": 30720,
+        "ceiling_gzip_bytes": 51200,
+        "preferred_met": true,
+        "ceiling_met": true,
+        "class_removal_for_budget": false
+      },
+      "local_http_observation": {
+        "content_type": "text/css",
+        "decoded_bytes": 36289,
+        "gzip_level6_encoded_body_bytes": 7024,
+        "build_gzip_level9_bytes": 6977,
+        "explanation": "Different compressor levels;7024 is measured loopback body representation,6977 is the deterministic engineering-budget size. Production Pages compression/cache headers await authorized public verification."
+      },
+      "first_party_delivery": "All 7 migrated pages load the reviewed stylesheet with JavaScript enabled and disabled. Pilot browser compiler references/requests are zero in resource/state probes.",
+      "input_hash_policy": "These hashes use the build record normalization: CRLF to LF only. Generated CSS uses exact bytes."
+    },
+    "7. Source-verification migration": {
+      "new_record": "audit/SEO_TASK_2C_SOURCE_APPROVAL.json",
+      "manifest_sha256": "38c6459b48ceecba7db73b10e8b092326f9908c793413b046c69a3d27191feef",
+      "trust_anchor": "scripts/css_approval_identity.py",
+      "base_revision": "cf443c3b1facc2ae422fc6c55d546528671be1d0",
+      "bound_files": 1061,
+      "exact_transformations": 34,
+      "html_inventory_paths": 92,
+      "canonical_public_pages": 89,
+      "approval_type": "Reviewed literal source trust anchor, not a cryptographic signature or automatic approval. Manifest and bootstrap deliberately avoid circular self-hashing; pure current documentation is outside the executable closure.",
+      "bound_inputs": "Current runtime pages/modules/shared assets; exact CSS; build/scanner/package/lock/configuration; actual validators, tests, CI coverage/workflow; frozen historical audits/projectors and registry dependencies.",
+      "pilot_hashes": [
+        {
+          "path": "index.html",
+          "previous_sha256": "670a47e2d209ffa9d573d4309523d11d8b1d8eb87d25b9ff42e52cfa98d70553",
+          "candidate_sha256": "5ad676c3ccf6dfe0c549e9b5bcb3b6d35ba00e5c3aee223ccf8ba106ae014c01"
+        },
+        {
+          "path": "text-cleaner/index.html",
+          "previous_sha256": "b2963133a3aaec5a66ab5e770b5423bf0e9d18847bf3f5ee0113304bad60d426",
+          "candidate_sha256": "f2d96e882e8c94f55c71e547a24f747ec4145101599aca4c2e4e1a9419bcd8f4"
+        },
+        {
+          "path": "json-formatter/index.html",
+          "previous_sha256": "c17099442e0b38fb90c309de2ace219ce904f3ac81315b2be30f30ec8ec0432b",
+          "candidate_sha256": "21525154dc0895a19a4d864f9f0667fa02c227aac7aee45cb0408fa3eb432f84"
+        },
+        {
+          "path": "csv-viewer/index.html",
+          "previous_sha256": "7b747ea6611fb9ae4a98c4768b54552cde002529b5b0b4371b8817db6b3b10ef",
+          "candidate_sha256": "d998ecbb120a5bbfab200cdaeb3dfc0e204e0765821cb23bffe19caa2aa2e840"
+        },
+        {
+          "path": "image-color-picker/index.html",
+          "previous_sha256": "70a7b55e5e72a85648f93a1e3e6ecad74d087cbeaf7f2c38895d68cb12506f59",
+          "candidate_sha256": "b287a0143cb492da01b79f9401ecae36203edb8dfc3a2ea79312e3661549491d"
+        },
+        {
+          "path": "vat-calculator/index.html",
+          "previous_sha256": "b21e5c3269f867e71d9f9e710cd84b06d3a3a52ce11608cb255aa17b265cad5c",
+          "candidate_sha256": "5a327c1dc9bfc01ab81d0423ea32efd012c9542941edade1dccc08d161adf31c"
+        },
+        {
+          "path": "batch-filename-planner/index.html",
+          "previous_sha256": "815b7b724ce4504e961b450d4229211bff6e217fa1f5ebb2c179b8dbaa6f7a49",
+          "candidate_sha256": "9a0d48dca87942126523c1032f612eecf356ea4de747b5244195f31c3675ddfe"
+        }
+      ],
+      "validation_sequence": [
+        "Check literal manifest/bootstrap identity, expected base and exact seven-page scope.",
+        "Read/hash complete current dependency closure and exact HTML route/consumer inventory; validate local head stylesheet and no migrated compiler.",
+        "Only after current approval succeeds, reverse enumerated exact operations and verify original source hashes at the starting commit.",
+        "Invoke unchanged historical SEO/consent projectors for old release-evidence comparison."
+      ],
+      "snapshot_architecture": "Preservation batches capture one fully validated immutable byte snapshot. Snapshot readers bind the exact repository root/path and reject changed source arguments. They compare captured historical evidence only; they never approve later disk changes. Live checks reread/hash the full closure without cross-call mtime caching, including same-size/same-mtime mutations. Captured old-manifest preimage hashes also reject the frozen historical projector fallback if the old manifest disappears during snapshot preparation.",
+      "normalization": "Only CRLF to LF for UTF-8 source; preserve every trailing byte. Binary assets use exact bytes.",
+      "historical_integrity": "254 existing dated audits unchanged; Task 17/SEO Task 2A frozen manifests and original SEO/consent projector implementations preserved. Old overlay-specific tests still operate on reconstructed historical source. No generic source-hash bypass and no refreshed historical hashes.",
+      "future_change": "Any approved runtime/build/test dependency change invalidates the current approval and requires explicit new review, record and tests; current on-disk hashes alone are not authority.",
+      "test_fixture_reads": "Historical preservation keeps every assertion and fixed Git revision. A test-only bounded Git blob reader avoids repeated Git process startup; it validates requested revisions/paths and returned blob identity/size. It reads immutable Git objects and never approves current working-tree bytes."
+    },
+    "8. Security checks": {
+      "focused_python_gate": {
+        "tests": 30,
+        "status": "PASS",
+        "log": "source_gate/python-focused.log"
+      },
+      "focused_node_combined": {
+        "tests": 22,
+        "status": "PASS",
+        "new_css_gate_tests": 17,
+        "existing_consent_static_tests": 5,
+        "log": "source_gate/node-focused.log"
+      },
+      "focused_task25_preservation": {
+        "tests": 6,
+        "status": "PASS",
+        "log": "source_gate/preservation-focused.log"
+      },
+      "css_build_tests": {
+        "tests": 16,
+        "passed": 16,
+        "log": "css/styles-tests.log"
+      },
+      "negative_cases": [
+        "Missing, wrong, duplicate or relocated stylesheet; retained or duplicate browser compiler.",
+        "Changed/missing CSS, incorrect content hash, CSS line-ending changes and same-size/same-mtime tampering.",
+        "Canonical/body/tool logic, consent asset/loader, historical audit, frozen projector, manifest/bootstrap changes.",
+        "Altered build/scanner/package/lock, validation/test/CI inputs and stale generated output.",
+        "Unapproved consumers/routes, including HTML hidden in nested directories named reports or node_modules.",
+        "Lexical traversal, absolute/URL/encoded paths, symlink/junction/reparse ancestors.",
+        "Old baseline cannot satisfy current CSS approval; snapshot cannot accept another root/path/source or authorize later tampering.",
+        "Immutable Git fixture records reject unsafe paths, mutable revisions, wrong blob type/length/framing/hash, missing objects and unresponsive reader processes."
+      ],
+      "ci_preservation": "Existing permissions contents:read; action/runtime pins, workflow triggers, deadlines, original Python/Node/Chromium commands and required aggregate preserved. New checks join explicit coverage rather than replacing historical suites.",
+      "branch_protection": "Active ruleset 26413762 requires pull requests and strict Required functional checks. No settings changed or bypass used. Exact-head hosted checks must pass on the development PR before any separately authorized merge.",
+      "final_focused_evidence": {
+        "schema_version": 1,
+        "recorded_at_utc": "2026-11-07T23:35:18.729378+00:00",
+        "state": "DEVELOPMENT_CANDIDATE_NOT_DEPLOYED",
+        "scope": "Focused source-gate development verification; full CI and browser evidence recorded separately by the coordinating agent.",
+        "base_revision": "cf443c3b1facc2ae422fc6c55d546528671be1d0",
+        "source_approval": {
+          "manifest_path": "audit/SEO_TASK_2C_SOURCE_APPROVAL.json",
+          "manifest_sha256": "38c6459b48ceecba7db73b10e8b092326f9908c793413b046c69a3d27191feef",
+          "trust_anchor": "scripts/css_approval_identity.py",
+          "bound_files": 1061,
+          "exact_transformations": 34,
+          "pilot_pages": 7,
+          "bound_html_files": 92,
+          "public_canonical_pages": 89,
+          "cli_result": "PASS",
+          "cli_log": "current-gate.json"
+        },
+        "asset": {
+          "path": "assets/css/site.77d4325c7538174e.css",
+          "sha256": "77d4325c7538174ef816ff7265aa95ec3a24897a0e69b508e800fad75ca91538",
+          "bytes": 36289,
+          "gzip_bytes": 6977,
+          "normalization": "bytes",
+          "checkout_policy": "assets/css/*.css text eol=lf"
+        },
+        "focused_tests": [
+          {
+            "command": "python -X utf8 -m unittest discover -s tests -p test_css_overlay.py -v",
+            "result": "PASS",
+            "tests": 30,
+            "passed": 30,
+            "failed": 0,
+            "skipped": 0,
+            "seconds": 23.908,
+            "log": "python-focused.log",
+            "tested_manifest_sha256": "4fe098bf9c957dafbe20b50818f0be9b30d1217f95f9e5844b5c83c21ddec3ef"
+          },
+          {
+            "command": "node --test --test-concurrency=1 scripts/css-overlay.test.mjs scripts/consent-static.test.mjs",
+            "result": "PASS",
+            "tests": 22,
+            "passed": 22,
+            "failed": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0,
+            "by_file": {
+              "scripts/css-overlay.test.mjs": 17,
+              "scripts/consent-static.test.mjs": 5
+            },
+            "seconds": 25.9921482,
+            "log": "node-focused.log",
+            "tested_manifest_sha256": "4fe098bf9c957dafbe20b50818f0be9b30d1217f95f9e5844b5c83c21ddec3ef"
+          },
+          {
+            "command": "python -X utf8 -m unittest discover -s tests -p test_task25_preservation.py -v",
+            "result": "PASS",
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "seconds": 1.78,
+            "log": "preservation-focused.log",
+            "tested_manifest_sha256": "4fe098bf9c957dafbe20b50818f0be9b30d1217f95f9e5844b5c83c21ddec3ef"
+          },
+          {
+            "command": "python -X utf8 -m unittest discover -s tests -p test_git_fixtures.py -v",
+            "result": "PASS",
+            "tests": 8,
+            "passed": 8,
+            "failed": 0,
+            "skipped": 0,
+            "seconds": 2.393,
+            "log": "git-fixtures-focused.log",
+            "tested_manifest_sha256": "4fe098bf9c957dafbe20b50818f0be9b30d1217f95f9e5844b5c83c21ddec3ef"
+          },
+          {
+            "command": "python -X utf8 -m unittest discover -s tests -p test_task21_release.py -v",
+            "result": "PASS",
+            "tests": 5,
+            "passed": 5,
+            "failed": 0,
+            "skipped": 0,
+            "seconds": 2.154,
+            "log": "task21-release-fixed.log",
+            "tested_manifest_sha256": "4fe098bf9c957dafbe20b50818f0be9b30d1217f95f9e5844b5c83c21ddec3ef"
+          },
+          {
+            "command": "python -X utf8 -m unittest discover -s tests -p test_task25_release.py -v",
+            "result": "PASS",
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "seconds": 0.742,
+            "log": "task25-release-fixed.log",
+            "tested_manifest_sha256": "38c6459b48ceecba7db73b10e8b092326f9908c793413b046c69a3d27191feef"
+          }
+        ],
+        "security_properties": [
+          "Fresh current approval cryptographically rereads the entire bound closure on every invocation; no cross-call mtime or size cache.",
+          "All seven exact candidates reconstruct their actual cf443c3 Git preimages; Python and Node agree.",
+          "Manifest content is pinned by a reviewed literal bootstrap digest outside the self-referential manifest; actual validation, build, package-lock, tests and CI source is bound.",
+          "Missing/changed CSS, same-size same-mtime tamper, CSS CRLF changes, missing/duplicate/moved stylesheets and retained browser compiler are rejected.",
+          "Unknown HTML/HTM routes, nested ignored-name directories, eighth consumers, canonical/body/tool/consent changes, lexical escapes and symlink/junction traversal are rejected.",
+          "Historical snapshots retain private exact verified bytes, bind root/path/source arguments, and precompute exact old evidence without subsequent filesystem reads.",
+          "A snapshot remains evidence for its captured source after later disk mutation; fresh live approval and new snapshot creation reject that mutation.",
+          "Captured SEO preimage hashes reject the frozen old projector's generic missing-manifest fallback if the old manifest disappears during snapshot preparation.",
+          "Frozen SEO/consent projectors, historical audits and registry publication records remain unchanged. Existing historical-test assertions remain, using explicit snapshots or exact Git baseline fixtures.",
+          "Project consistency uses a private source/registry/root-bound candidate snapshot and performs a second fresh full live gate before returning a current result.",
+          "Python snapshots share only immutable byte payloads after every new path/hash validation; shared bytes never constitute cached live approval.",
+          "The test-only Git reader uses actual immutable Git objects via a bounded repository-bound serialized cat-file process; validates revision/path, binary framing, size and complete Git object hash; disables replace objects and closes failed processes.",
+          "Thirteen historical Git-fetch helper replacements retain exact revisions, output bytes or original universal-newline semantics, and every historical assertion. No CI test floors or time limits were lowered or extended.",
+          "Current root prose remains outside historical CSS projection; its existing generated-count assertions read the current document directly, without expanding the snapshot allowlist or accepting unbound sources."
+        ],
+        "independent_review": {
+          "reviewer": "/root/seo2c_css_build",
+          "result": "PASS",
+          "reviewed_final_manifest": "38c6459b48ceecba7db73b10e8b092326f9908c793413b046c69a3d27191feef",
+          "final_consumer_followup": "PASS: all 52 Task 25 release assertion nodes unchanged; current generated counts read directly without relaxing snapshot path binding.",
+          "resolved_findings": [
+            "Replace basename-wide directory skipping with exact repository-relative generated/dependency roots.",
+            "Bind generated CSS as exact bytes and retain LF on fresh Windows checkouts.",
+            "Validate historical snapshots against captured old-manifest preimage hashes.",
+            "Reject .htm as well as .html unapproved routes.",
+            "Include preserved templates/vendor Markdown in snapshot closure.",
+            "Bind preserved nested Markdown, including historical public-verification reproduction README files.",
+            "Replace repeated Windows Git process startup with the exact immutable-object batch reader, preserving historical assertions and unchanged CI deadlines.",
+            "Reduce duplicate project candidate checks through captured exact bytes and a final fresh gate; share only immutable snapshot byte payloads."
+          ]
+        },
+        "documentation_contract": {
+          "current_policy_document": "CSS_PIPELINE.md",
+          "python_entrypoint": "python scripts/css_overlay.py --check",
+          "node_current_api": "validateCurrent(root)",
+          "python_historical_snapshot_api": "historical_snapshot(root) -> (historical_source, historical_bytes)",
+          "node_historical_snapshot_api": "historicalSnapshot(root) -> {historicalSource}",
+          "snapshot_warning": "Preservation-only immutable evidence. A snapshot does not certify subsequent mutable working-tree state.",
+          "no_compiler_required_for_static_gate": true,
+          "reproducible_build_check_separate": "node scripts/build_styles.mjs --check",
+          "python_project_candidate_snapshot_api": "candidate_snapshot(root) -> (approval, exact source/registry/root predicate); project checker gates freshly before return"
+        },
+        "limitations": [
+          "This focused record is not full CI evidence and is not a public deployment or release claim.",
+          "Verification reports are excluded from their own source-approval closure to avoid circular evidence."
+        ],
+        "historical_attempts": [
+          {
+            "log": "task21-release-attempt1.log",
+            "result": "FAIL",
+            "finding": "Historical reproduction README was omitted from snapshot closure. Fixed by binding preserved nested Markdown; all five Task 21 release tests now pass."
+          },
+          {
+            "parent_log": "../python-project-attempt1.log",
+            "result": "FAIL",
+            "finding": "Original 240-second Python cap reached before completion; parent retained the full attempt. Bounded immutable Git batch reads reduce measured Task 25 preservation from 30.284s to 1.780s. Full retry is recorded separately by the coordinating agent."
+          },
+          {
+            "parent_log": "../python-project-attempt2.log",
+            "result": "FAIL",
+            "tests": 304,
+            "passed": 303,
+            "failed": 1,
+            "seconds": 53.69,
+            "finding": "One historical test attempted to snapshot intentionally unbound current root prose. Fixed narrowly by directly reading the current generated-count block, preserving both old assertions and strict rejection of unbound snapshot paths."
+          }
+        ],
+        "focused_test_scope_note": "The earlier focused suites ran on the prior 4fe098bf identity. The final candidate differs only by an explicit direct read of current PROGRESS_TRACKER.md generated counts in one historical test; both old assertions remain unchanged. The focused six-test Task 25 release suite passes on the final candidate; full Python/Node retries cover the final identity separately."
+      }
+    },
+    "9. Performance measurements": {
+      "verdict": "INCONCLUSIVE",
+      "claim": "No reliable speedup, regression, field Core Web Vitals, INP, ranking or traffic conclusion is supported.",
+      "method": {
+        "browser": "Edg/157.0.4341.42",
+        "viewport": "390×844 CSS pixels,DPR1; desktop hardware, not physical mobile",
+        "origin": "Same http://127.0.0.1:65406 baseline/candidate",
+        "serving": "Same loopback MIME/gzip6/cache600s rules; actual CDN compiler fetched for baseline; original source bytes.",
+        "cache": "Cold clears browser HTTP cache only; warm immediately follows same-URL cold navigation. OS/DNS/TLS not reset.",
+        "throttling": "None; one browser at a time",
+        "consent": "LocalStorage cleared before every measured navigation; no acceptance",
+        "observation": "1500ms after load; finite initial LCP/CLS window"
+      },
+      "coverage": {
+        "baseline": {
+          "target_complete_loads": 42,
+          "complete_loads": 40,
+          "target_shortfall": 2,
+          "raw_sample_rows": 44,
+          "excluded_diagnostic_rows": 4,
+          "failed_attempts": 5,
+          "completion_target_met": false,
+          "started_at": "2026-11-07T22:57:52.430Z",
+          "finished_at": "2026-11-07T23:06:46.086Z",
+          "minimum_free_memory_bytes": 67817472,
+          "maximum_free_memory_bytes": 1184276480,
+          "failure_messages": {
+            "Error: Browser command timed out": 5
+          },
+          "excluded_statuses": {
+            "INCOMPLETE_TELEMETRY": 4
+          }
+        },
+        "candidate": {
+          "target_complete_loads": 42,
+          "complete_loads": 22,
+          "target_shortfall": 20,
+          "raw_sample_rows": 22,
+          "excluded_diagnostic_rows": 0,
+          "failed_attempts": 10,
+          "completion_target_met": false,
+          "started_at": "2026-11-07T23:08:22.913Z",
+          "finished_at": "2026-11-07T23:11:30.173Z",
+          "minimum_free_memory_bytes": 92889088,
+          "maximum_free_memory_bytes": 1150287872,
+          "failure_messages": {
+            "Error: Browser command timed out": 10
+          },
+          "excluded_statuses": {}
+        }
+      },
+      "minimum_free_physical_memory_mib": 64.676,
+      "failure_handling": "5 baseline and10 candidate CDP command timeouts retained;4 baseline incomplete-telemetry diagnostics excluded. No imputation or replacement with old Task 2B values. Target3cold+3warm per page/configuration incomplete.",
+      "median_rows": [
+        {
+          "configuration": "baseline",
+          "page": "index.html",
+          "cache": "cold",
+          "n": 3,
+          "fcp_ms": 760,
+          "lcp_candidate_ms": 768,
+          "initial_cls": 0.0,
+          "script_ms": 9.885,
+          "network_bytes_cdp": 73041,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "index.html",
+          "cache": "warm",
+          "n": 3,
+          "fcp_ms": 180,
+          "lcp_candidate_ms": 212,
+          "initial_cls": 0.0,
+          "script_ms": 8.775,
+          "network_bytes_cdp": 0,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "text-cleaner/index.html",
+          "cache": "cold",
+          "n": 3,
+          "fcp_ms": 1008,
+          "lcp_candidate_ms": 1032,
+          "initial_cls": 0.0,
+          "script_ms": 28.062,
+          "network_bytes_cdp": 68566,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "text-cleaner/index.html",
+          "cache": "warm",
+          "n": 3,
+          "fcp_ms": 168,
+          "lcp_candidate_ms": 184,
+          "initial_cls": 0.0,
+          "script_ms": 16.741,
+          "network_bytes_cdp": 0,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "json-formatter/index.html",
+          "cache": "cold",
+          "n": 3,
+          "fcp_ms": 476,
+          "lcp_candidate_ms": 512,
+          "initial_cls": 0.0,
+          "script_ms": 19.825,
+          "network_bytes_cdp": 69246,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "json-formatter/index.html",
+          "cache": "warm",
+          "n": 3,
+          "fcp_ms": 168,
+          "lcp_candidate_ms": 188,
+          "initial_cls": 0.0,
+          "script_ms": 21.162,
+          "network_bytes_cdp": 0,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "csv-viewer/index.html",
+          "cache": "cold",
+          "n": 3,
+          "fcp_ms": 368,
+          "lcp_candidate_ms": 436,
+          "initial_cls": 0.0,
+          "script_ms": 6.628,
+          "network_bytes_cdp": 69093,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "csv-viewer/index.html",
+          "cache": "warm",
+          "n": 3,
+          "fcp_ms": 140,
+          "lcp_candidate_ms": 164,
+          "initial_cls": 0.0,
+          "script_ms": 6.313,
+          "network_bytes_cdp": 0,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "image-color-picker/index.html",
+          "cache": "cold",
+          "n": 3,
+          "fcp_ms": 400,
+          "lcp_candidate_ms": 416,
+          "initial_cls": 0.0,
+          "script_ms": 6.2,
+          "network_bytes_cdp": 68981,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "image-color-picker/index.html",
+          "cache": "warm",
+          "n": 3,
+          "fcp_ms": 160,
+          "lcp_candidate_ms": 184,
+          "initial_cls": 0.0,
+          "script_ms": 6.3660000000000005,
+          "network_bytes_cdp": 0,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "vat-calculator/index.html",
+          "cache": "cold",
+          "n": 2,
+          "fcp_ms": 312.0,
+          "lcp_candidate_ms": 334.0,
+          "initial_cls": 0.0002637670284809416,
+          "script_ms": 10.440000000000001,
+          "network_bytes_cdp": 69838.5,
+          "css_encoded_body_bytes": 0.0,
+          "compiler_requests": 1.0
+        },
+        {
+          "configuration": "baseline",
+          "page": "vat-calculator/index.html",
+          "cache": "warm",
+          "n": 2,
+          "fcp_ms": 174.0,
+          "lcp_candidate_ms": 212.0,
+          "initial_cls": 0.0002637670284809416,
+          "script_ms": 8.7615,
+          "network_bytes_cdp": 0.0,
+          "css_encoded_body_bytes": 0.0,
+          "compiler_requests": 1.0
+        },
+        {
+          "configuration": "baseline",
+          "page": "batch-filename-planner/index.html",
+          "cache": "cold",
+          "n": 3,
+          "fcp_ms": 316,
+          "lcp_candidate_ms": 332,
+          "initial_cls": 0.0,
+          "script_ms": 5.777,
+          "network_bytes_cdp": 69046,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "baseline",
+          "page": "batch-filename-planner/index.html",
+          "cache": "warm",
+          "n": 3,
+          "fcp_ms": 116,
+          "lcp_candidate_ms": 140,
+          "initial_cls": 0.0,
+          "script_ms": 5.769,
+          "network_bytes_cdp": 0,
+          "css_encoded_body_bytes": 0,
+          "compiler_requests": 1
+        },
+        {
+          "configuration": "candidate",
+          "page": "index.html",
+          "cache": "cold",
+          "n": 3,
+          "fcp_ms": 140,
+          "lcp_candidate_ms": 140,
+          "initial_cls": 0.0,
+          "script_ms": 4.535,
+          "network_bytes_cdp": 21279,
+          "css_encoded_body_bytes": 7024,
+          "compiler_requests": 0
+        },
+        {
+          "configuration": "candidate",
+          "page": "index.html",
+          "cache": "warm",
+          "n": 3,
+          "fcp_ms": 144,
+          "lcp_candidate_ms": 144,
+          "initial_cls": 0.0,
+          "script_ms": 4.839,
+          "network_bytes_cdp": 0,
+          "css_encoded_body_bytes": 7024,
+          "compiler_requests": 0
+        },
+        {
+          "configuration": "candidate",
+          "page": "text-cleaner/index.html",
+          "cache": "cold",
+          "n": 3,
+          "fcp_ms": 164,
+          "lcp_candidate_ms": 192,
+          "initial_cls": 0.0,
+          "script_ms": 23.791,
+          "network_bytes_cdp": 16844,
+          "css_encoded_body_bytes": 7024,
+          "compiler_requests": 0
+        },
+        {
+          "configuration": "candidate",
+          "page": "text-cleaner/index.html",
+          "cache": "warm",
+          "n": 3,
+          "fcp_ms": 164,
+          "lcp_candidate_ms": 176,
+          "initial_cls": 0.0,
+          "script_ms": 17.602,
+          "network_bytes_cdp": 0,
+          "css_encoded_body_bytes": 7024,
+          "compiler_requests": 0
+        },
+        {
+          "configuration": "candidate",
+          "page": "json-formatter/index.html",
+          "cache": "cold",
+          "n": 0,
+          "fcp_ms": null,
+          "lcp_candidate_ms": null,
+          "initial_cls": null,
+          "script_ms": null,
+          "network_bytes_cdp": null,
+          "css_encoded_body_bytes": null,
+          "compiler_requests": null
+        },
+        {
+          "configuration": "candidate",
+          "page": "json-formatter/index.html",
+          "cache": "warm",
+          "n": 0,
+          "fcp_ms": null,
+          "lcp_candidate_ms": null,
+          "initial_cls": null,
+          "script_ms": null,
+          "network_bytes_cdp": null,
+          "css_encoded_body_bytes": null,
+          "compiler_requests": null
+        },
+        {
+          "configuration": "candidate",
+          "page": "csv-viewer/index.html",
+          "cache": "cold",
+          "n": 3,
+          "fcp_ms": 232,
+          "lcp_candidate_ms": 232,
+          "initial_cls": 0.0,
+          "script_ms": 6.113,
+          "network_bytes_cdp": 17070,
+          "css_encoded_body_bytes": 7024,
+          "compiler_requests": 0
+        },
+        {
+          "configuration": "candidate",
+          "page": "csv-viewer/index.html",
+          "cache": "warm",
+          "n": 3,
+          "fcp_ms": 140,
+          "lcp_candidate_ms": 140,
+          "initial_cls": 0.0,
+          "script_ms": 5.211,
+          "network_bytes_cdp": 0,
+          "css_encoded_body_bytes": 7024,
+          "compiler_requests": 0
+        },
+        {
+          "configuration": "candidate",
+          "page": "image-color-picker/index.html",
+          "cache": "cold",
+          "n": 2,
+          "fcp_ms": 328.0,
+          "lcp_candidate_ms": 328.0,
+          "initial_cls": 0.0,
+          "script_ms": 12.905999999999999,
+          "network_bytes_cdp": 17228.0,
+          "css_encoded_body_bytes": 7024.0,
+          "compiler_requests": 0.0
+        },
+        {
+          "configuration": "candidate",
+          "page": "image-color-picker/index.html",
+          "cache": "warm",
+          "n": 2,
+          "fcp_ms": 180.0,
+          "lcp_candidate_ms": 180.0,
+          "initial_cls": 0.0,
+          "script_ms": 5.247,
+          "network_bytes_cdp": 0.0,
+          "css_encoded_body_bytes": 7024.0,
+          "compiler_requests": 0.0
+        },
+        {
+          "configuration": "candidate",
+          "page": "vat-calculator/index.html",
+          "cache": "cold",
+          "n": 0,
+          "fcp_ms": null,
+          "lcp_candidate_ms": null,
+          "initial_cls": null,
+          "script_ms": null,
+          "network_bytes_cdp": null,
+          "css_encoded_body_bytes": null,
+          "compiler_requests": null
+        },
+        {
+          "configuration": "candidate",
+          "page": "vat-calculator/index.html",
+          "cache": "warm",
+          "n": 0,
+          "fcp_ms": null,
+          "lcp_candidate_ms": null,
+          "initial_cls": null,
+          "script_ms": null,
+          "network_bytes_cdp": null,
+          "css_encoded_body_bytes": null,
+          "compiler_requests": null
+        },
+        {
+          "configuration": "candidate",
+          "page": "batch-filename-planner/index.html",
+          "cache": "cold",
+          "n": 0,
+          "fcp_ms": null,
+          "lcp_candidate_ms": null,
+          "initial_cls": null,
+          "script_ms": null,
+          "network_bytes_cdp": null,
+          "css_encoded_body_bytes": null,
+          "compiler_requests": null
+        },
+        {
+          "configuration": "candidate",
+          "page": "batch-filename-planner/index.html",
+          "cache": "warm",
+          "n": 0,
+          "fcp_ms": null,
+          "lcp_candidate_ms": null,
+          "initial_cls": null,
+          "script_ms": null,
+          "network_bytes_cdp": null,
+          "css_encoded_body_bytes": null,
+          "compiler_requests": null
+        }
+      ],
+      "median_units": "Milliseconds except dimensionless CLS, byte fields and compiler request counts. n=0 groups have null medians. Each metric finite-observation counts/ranges remain in full performance-summary.json.",
+      "resource_facts": {
+        "baseline": {
+          "scope": "Complete performance loads only; separate functional/resource verification covers additional page states.",
+          "complete_loads": 40,
+          "routes_with_complete_loads": [
+            "batch-filename-planner/index.html",
+            "csv-viewer/index.html",
+            "image-color-picker/index.html",
+            "index.html",
+            "json-formatter/index.html",
+            "text-cleaner/index.html",
+            "vat-calculator/index.html"
+          ],
+          "compiler_request_count_total": 40,
+          "first_party_stylesheet_request_count_total": 0,
+          "compiler_statuses": {
+            "200": 40
+          },
+          "stylesheet_statuses": {},
+          "stylesheet_mime_types": [],
+          "stylesheet_etags": [],
+          "request_hosts": {
+            "127.0.0.1": 97,
+            "cdn.jsdelivr.net": 40
+          },
+          "analytics_request_count": 0,
+          "runtime_exception_count": 0,
+          "compiler_encoded_body_sizes": [
+            58993
+          ],
+          "compiler_decoded_body_sizes": [
+            286994
+          ],
+          "stylesheet_encoded_body_sizes": [
+            0
+          ],
+          "stylesheet_decoded_body_sizes": [
+            0
+          ]
+        },
+        "candidate": {
+          "scope": "Complete performance loads only; separate functional/resource verification covers additional page states.",
+          "complete_loads": 22,
+          "routes_with_complete_loads": [
+            "csv-viewer/index.html",
+            "image-color-picker/index.html",
+            "index.html",
+            "text-cleaner/index.html"
+          ],
+          "compiler_request_count_total": 0,
+          "first_party_stylesheet_request_count_total": 22,
+          "compiler_statuses": {},
+          "stylesheet_statuses": {
+            "200": 22
+          },
+          "stylesheet_mime_types": [
+            "text/css"
+          ],
+          "stylesheet_etags": [
+            "\"77d4325c7538174ef816ff7265aa95ec3a24897a0e69b508e800fad75ca91538\""
+          ],
+          "request_hosts": {
+            "127.0.0.1": 74
+          },
+          "analytics_request_count": 0,
+          "runtime_exception_count": 0,
+          "compiler_encoded_body_sizes": [
+            0
+          ],
+          "compiler_decoded_body_sizes": [
+            0
+          ],
+          "stylesheet_encoded_body_sizes": [
+            7024
+          ],
+          "stylesheet_decoded_body_sizes": [
+            36289
+          ]
+        }
+      },
+      "resource_interpretation": "Compiler response observed286994 decoded/58993 encoded body bytes in baseline complete loads. Candidate static CSS36289 decoded/7024 gzip6 body bytes; zero compiler requests. These are resource-removal facts, not proof of a timing speedup. Cached body sizes can remain nonzero while transferSize is zero; CDP network totals include observed protocol/header accounting.",
+      "confounds": [
+        "Shared7.7GiB host with64.676MiB minimum free; fixed5s CDP deadline and possible concurrent build work.",
+        "Real CDN/network variation, unthrottled desktop CPU and incomplete comparable samples.",
+        "Baseline LF vs candidate Windows CRLF in unchanged text (consent.js7882→7990 raw;2674→2682 gzip6) affects total-page byte deltas independently ofCSS."
+      ],
+      "task2b_criteria": {
+        "gzip_budget": "PASS below preferred30KiB and ceiling50KiB.",
+        "compiler_removal_and_local_asset": "PASS on7 pages.",
+        "FCP_LCP_median_regression_rule": "INCONCLUSIVE; cannot reliably apply greater-than-both10% and100ms criterion under this host/coverage. Repeat on a stable host before speedup/regression claims.",
+        "initial_layout_shift": "Finite-window values retained per group; no fieldCLS or universal no-shift claim.",
+        "field_metrics": "No INP, field Core Web Vitals, ranking or traffic measurements claimed."
+      },
+      "full_evidence": "performance-summary.json plus browser/performance-baseline.json and browser/performance-candidate.json"
+    },
+    "10. Visual comparisons": {
+      "baseline": "Approved immutable starting source; same serving rules/browser conditions as candidate.",
+      "coverage": "Seven pilot pages plus read-only social-counter; desktop1365×900/mobile390×844, default/focus/error/empty/disabled/results/copy/download/file/canvas,320px reflow, text scaling and print-media states.",
+      "state_pairs": 72,
+      "selected_computed_style_differences": 0,
+      "element_identity_differences": 0,
+      "hidden_disabled_flag_differences": 0,
+      "control_geometry_differences": 0,
+      "expected_geometry": "15 BODY/MAIN height or FOOTER y differences from approved shorter homepage/longer text-cleaner privacy wording; supplement400% states add6 analogous wrap fields. No changed control geometry.",
+      "exact_screenshot_comparison": {
+        "initial_pairs": 34,
+        "pixel_identical": 31,
+        "residuals": [
+          {
+            "category": "home",
+            "state": "mobile-keyboard",
+            "before": "baseline-home-mobile-keyboard.png",
+            "after": "candidate-home-mobile-keyboard.png",
+            "width": 390,
+            "height": 844,
+            "changed_pixels": 3201,
+            "changed_fraction": 0.009724753919066716,
+            "bbox": [
+              192,
+              12,
+              363,
+              68
+            ]
+          },
+          {
+            "category": "home",
+            "state": "search-results",
+            "before": "baseline-home-search-results.png",
+            "after": "candidate-home-search-results.png",
+            "width": 390,
+            "height": 844,
+            "changed_pixels": 970,
+            "changed_fraction": 0.0029468951269899135,
+            "bbox": [
+              97,
+              12,
+              357,
+              22
+            ]
+          },
+          {
+            "category": "text",
+            "state": "desktop-initial",
+            "before": "baseline-text-desktop-initial.png",
+            "after": "candidate-text-desktop-initial.png",
+            "width": 1365,
+            "height": 900,
+            "changed_pixels": 82,
+            "changed_fraction": 6.674806674806674e-05,
+            "bbox": [
+              1353,
+              516,
+              1362,
+              528
+            ]
+          }
+        ],
+        "interpretation": "Two mobile home-header differences and one text-cleaner scrollbar-thumb difference. Scrollbar change follows longer approved text. Additional header probe resolves identical standardCSS properties/geometry across13 elements; exact header pixels still differ after keyboard focus. Cause not established; no pixel-perfect claim."
+      },
+      "functional_outputs": "All selected baseline/candidate outputs equal. No candidate runtime exceptions in captured states. All captured candidate page hashes match current source.",
+      "raw_evidence": [
+        "browser/visual-comparison.json",
+        "browser/pixel-comparison.json",
+        "browser/header-probe.json",
+        "browser/browser-verification.json"
+      ]
+    },
+    "11. Accessibility regression results": {
+      "result": "Selected regression probes pass within stated scope; no WCAG-conformance or accessibility-remediation claim.",
+      "keyboard": "Actual Tab traversal on home and keyboard canvas movement; labels/focus/control states preserved. Existing synthetic consent suite also tests native keyboard activation/withdrawal.",
+      "reflow": "No page-level horizontal overflow at320 CSSpx in selected states.14 matched200%/400% zoom-equivalent state pairs:0 selected style/identity differences and no overflow.",
+      "zoom_limits": "200% text test sets root font-size; it is not native text-only browser zoom.200%/400% zoom uses CDP viewport/DPR simulation, not native browser zoom UI.",
+      "print": "Print-media emulation compared; no physical print/PDF export review.",
+      "known_issue": "LIVE-03 remains: first-visit mobile consent panel covers the keyboard-focused home search identically in baseline and candidate. Not worsened, not fixed; homepage placement correction is a mandatory Task 2D gate, then verified layout propagation inTask 2E.",
+      "other_limits": "No screen-reader, physical-device, Safari/Firefox or native OS file/clipboard/download dialog testing."
+    },
+    "12. Python test results": {
+      "full_required_partition": {
+        "status": "PASS",
+        "execution": "local",
+        "unit_suite": {
+          "scope": "python-unittest",
+          "status": "PASS",
+          "exit_code": 0,
+          "tests": 304,
+          "failed": 0,
+          "skipped": 0,
+          "expected_failures": 0,
+          "unexpected_successes": 0,
+          "passed": 304
+        },
+        "canonical_profiles": {
+          "executed": 87,
+          "passed": 87,
+          "cases": 0,
+          "assertions": 0
+        },
+        "other_checks": [
+          {
+            "scope": "css-source-approval",
+            "status": "PASS",
+            "exit_code": 0
+          },
+          {
+            "scope": "registry",
+            "status": "PASS",
+            "exit_code": 0,
+            "errors": 0,
+            "warnings": 0
+          },
+          {
+            "scope": "source-audit-homepage",
+            "status": "PASS",
+            "exit_code": 0,
+            "errors": 0,
+            "warnings": 0
+          },
+          {
+            "scope": "static-tools",
+            "status": "PASS",
+            "exit_code": 0,
+            "errors": 0,
+            "warnings": 0
+          },
+          {
+            "scope": "technical-seo",
+            "status": "PASS",
+            "exit_code": 0,
+            "errors": 0,
+            "warnings": 0
+          },
+          {
+            "scope": "project-status",
+            "status": "PASS",
+            "exit_code": 0,
+            "errors": 0,
+            "warnings": 0
+          },
+          {
+            "scope": "whitespace-working",
+            "status": "PASS",
+            "exit_code": 0
+          },
+          {
+            "scope": "whitespace-commits",
+            "status": "PASS",
+            "exit_code": 0
+          }
+        ],
+        "unavailable_scopes": [
+          {
+            "tool": "social-counter",
+            "scope": "isolated-logic",
+            "status": "NOT RUN",
+            "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+          },
+          {
+            "tool": "excel-sandbox",
+            "scope": "isolated-logic",
+            "status": "NOT RUN",
+            "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+          },
+          {
+            "tool": "text-cleaner",
+            "scope": "isolated-logic",
+            "status": "NOT RUN",
+            "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+          },
+          {
+            "tool": "streaming-roulette",
+            "scope": "isolated-logic",
+            "status": "NOT RUN",
+            "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+          }
+        ],
+        "evidence": "Owner-local evidence/local-ci/python-project/summary.json"
+      },
+      "focused_source_gate": {
+        "status": "PASS",
+        "tests": 30,
+        "evidence": "source_gate/python-focused.log"
+      },
+      "project_status": {
+        "schema_version": 1,
+        "generated_at": "2026-11-07T23:39:28+00:00",
+        "check_name": "project-status",
+        "status": "PASS",
+        "counts": {
+          "total": 105,
+          "by_status": {
+            "IDEA": 0,
+            "PLANNED": 17,
+            "READY": 0,
+            "IN_PROGRESS": 0,
+            "BLOCKED": 1,
+            "IMPLEMENTED": 0,
+            "TESTED": 0,
+            "RELEASED": 87,
+            "DEPRECATED": 0
+          },
+          "released": 87,
+          "tested": 0,
+          "implemented": 0,
+          "in_progress": 0,
+          "planned": 17,
+          "ready": 0,
+          "blocked": 1,
+          "backlog": 18,
+          "by_category": {
+            "pdf": 9,
+            "image": 8,
+            "text": 11,
+            "data": 10,
+            "developer": 13,
+            "social": 11,
+            "calculator": 14,
+            "security": 9,
+            "conversion": 9,
+            "productivity": 10,
+            "entertainment": 1
+          },
+          "by_priority": {
+            "P1": 32,
+            "P2": 71,
+            "P3": 2
+          },
+          "milestone": 100,
+          "milestone_percent": 87.0,
+          "remaining_to_milestone": 13
+        },
+        "errors": [],
+        "warnings": [],
+        "information": [],
+        "details": {
+          "checks": {
+            "registry-validation": "PASS",
+            "project-consistency": "PASS",
+            "tool-verification": "PASS",
+            "progress-generation": "PASS",
+            "handoff-generation": "PASS"
+          },
+          "git": {
+            "status": "KNOWN",
+            "branch": "seo/task-2c-static-css",
+            "latest_commit": "cf443c3b1facc2ae422fc6c55d546528671be1d0",
+            "working_tree": "Dirty",
+            "changes": [
+              {
+                "state": " M",
+                "path": ".github/workflows/functional-ci.yml"
+              },
+              {
+                "state": " M",
+                "path": ".gitignore"
+              },
+              {
+                "state": " M",
+                "path": "AGENTS.md"
+              },
+              {
+                "state": " M",
+                "path": "ARCHITECTURE.md"
+              },
+              {
+                "state": " M",
+                "path": "CHANGELOG.md"
+              },
+              {
+                "state": " M",
+                "path": "DECISIONS.md"
+              },
+              {
+                "state": " M",
+                "path": "PROGRESS_TRACKER.md"
+              },
+              {
+                "state": " M",
+                "path": "PROJECT_MASTER_PLAN.md"
+              },
+              {
+                "state": " M",
+                "path": "README.md"
+              },
+              {
+                "state": " M",
+                "path": "ROADMAP.md"
+              },
+              {
+                "state": " M",
+                "path": "SESSION_HANDOFF.md"
+              },
+              {
+                "state": " M",
+                "path": "batch-filename-planner/index.html"
+              },
+              {
+                "state": " M",
+                "path": "csv-viewer/index.html"
+              },
+              {
+                "state": " M",
+                "path": "image-color-picker/index.html"
+              },
+              {
+                "state": " M",
+                "path": "index.html"
+              },
+              {
+                "state": " M",
+                "path": "json-formatter/index.html"
+              },
+              {
+                "state": " M",
+                "path": "scripts/ci/README.md"
+              },
+              {
+                "state": " M",
+                "path": "scripts/ci/coverage.json"
+              },
+              {
+                "state": " M",
+                "path": "scripts/ci/run.py"
+              },
+              {
+                "state": " M",
+                "path": "scripts/consent-static.test.mjs"
+              },
+              {
+                "state": " M",
+                "path": "scripts/seo-overlay.test.mjs"
+              },
+              {
+                "state": " M",
+                "path": "scripts/task24-test-support.mjs"
+              },
+              {
+                "state": " M",
+                "path": "scripts/task24_test_support.py"
+              },
+              {
+                "state": " M",
+                "path": "scripts/task25-test-support.mjs"
+              },
+              {
+                "state": " M",
+                "path": "scripts/task25_test_support.py"
+              },
+              {
+                "state": " M",
+                "path": "scripts/tracking.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_consent_overlay.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_seo_overlay.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task18_preservation.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task18_release.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task19_preservation.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task19_release.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task20_preservation.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task20_release.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task21_preservation.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task21_release.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task22_preservation.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task22_release.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task24_preservation.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task24_release.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task25_preservation.py"
+              },
+              {
+                "state": " M",
+                "path": "tests/test_task25_release.py"
+              },
+              {
+                "state": " M",
+                "path": "text-cleaner/index.html"
+              },
+              {
+                "state": " M",
+                "path": "vat-calculator/index.html"
+              },
+              {
+                "state": "??",
+                "path": ".gitattributes"
+              },
+              {
+                "state": "??",
+                "path": "CSS_PIPELINE.md"
+              },
+              {
+                "state": "??",
+                "path": "assets/css/"
+              },
+              {
+                "state": "??",
+                "path": "audit/SEO_TASK_2C_SOURCE_APPROVAL.json"
+              },
+              {
+                "state": "??",
+                "path": "scripts/build_styles.mjs"
+              },
+              {
+                "state": "??",
+                "path": "scripts/css-overlay.mjs"
+              },
+              {
+                "state": "??",
+                "path": "scripts/css-overlay.test.mjs"
+              },
+              {
+                "state": "??",
+                "path": "scripts/css_approval_identity.py"
+              },
+              {
+                "state": "??",
+                "path": "scripts/css_overlay.py"
+              },
+              {
+                "state": "??",
+                "path": "scripts/git_fixtures.py"
+              },
+              {
+                "state": "??",
+                "path": "scripts/styles.test.mjs"
+              },
+              {
+                "state": "??",
+                "path": "scripts/styles/"
+              },
+              {
+                "state": "??",
+                "path": "styles/"
+              },
+              {
+                "state": "??",
+                "path": "tests/test_css_overlay.py"
+              },
+              {
+                "state": "??",
+                "path": "tests/test_git_fixtures.py"
+              }
+            ],
+            "push_status": "UNKNOWN; no remote verification performed",
+            "deployment": "UNKNOWN; not checked"
+          },
+          "current_task": [],
+          "next_task": "REQUIRES REVIEW",
+          "initial_consistency": {
+            "status": "PASS",
+            "errors": [],
+            "warnings": []
+          },
+          "documentation_updates_enabled": true,
+          "scope": "OFFLINE_STATIC_ONLY; no automatic tool status changes, functional tests, pushes or deployment."
+        }
+      }
+    },
+    "13. Node test results": {
+      "full_required_partition": {
+        "status": "PASS",
+        "execution": "local",
+        "unit_suite": {
+          "scope": "node-logic",
+          "status": "PASS",
+          "exit_code": 0,
+          "tests": 569,
+          "passed": 569,
+          "failed": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "canonical_profiles": {
+          "executed": 83,
+          "passed": 83,
+          "cases": 1595,
+          "assertions": 1595
+        },
+        "other_checks": [
+          {
+            "scope": "css-build-freshness",
+            "status": "PASS",
+            "exit_code": 0
+          }
+        ],
+        "unavailable_scopes": [
+          {
+            "tool": "social-counter",
+            "scope": "isolated-logic",
+            "status": "NOT RUN",
+            "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+          },
+          {
+            "tool": "excel-sandbox",
+            "scope": "isolated-logic",
+            "status": "NOT RUN",
+            "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+          },
+          {
+            "tool": "text-cleaner",
+            "scope": "isolated-logic",
+            "status": "NOT RUN",
+            "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+          },
+          {
+            "tool": "streaming-roulette",
+            "scope": "isolated-logic",
+            "status": "NOT RUN",
+            "reason": "Specialist page has no isolated logic adapter; structural and real-browser profiles remain mandatory."
+          }
+        ],
+        "evidence": "Owner-local evidence/local-ci/node-regression/summary.json"
+      },
+      "focused_preservation_and_gate": {
+        "status": "PASS",
+        "tests": 22,
+        "evidence": "source_gate/node-focused.log"
+      },
+      "styles_tests": {
+        "status": "PASS",
+        "tests": 16,
+        "passed": 16,
+        "evidence": "css/styles-tests.log"
+      },
+      "determinism": {
+        "status": "PASS",
+        "two_builds": true,
+        "read_only_check": true
+      }
+    },
+    "14. Chromium test results": {
+      "local_browser": "Isolated Edge 157.0.4341.42 Chromium engine; one browser at a time.",
+      "local_profiles": [
+        {
+          "tool": "text-cleaner",
+          "requested_command": [
+            "scripts/test_tool.py",
+            "--id",
+            "text-cleaner",
+            "--workspace",
+            "canonical",
+            "--layers",
+            "structural,browser",
+            "--no-report"
+          ],
+          "exit_code": 0,
+          "report_status": "PARTIAL",
+          "layers": {
+            "structural": {
+              "status": "PASS"
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 3,
+              "failed": 0,
+              "assertions": 8
+            },
+            "logic": {
+              "status": "NOT RUN",
+              "passed": 0,
+              "failed": 0,
+              "assertions": 0
+            }
+          }
+        },
+        {
+          "tool": "json-formatter",
+          "requested_command": [
+            "scripts/test_tool.py",
+            "--id",
+            "json-formatter",
+            "--workspace",
+            "canonical",
+            "--layers",
+            "structural,logic,browser",
+            "--no-report"
+          ],
+          "exit_code": 0,
+          "report_status": "PASS",
+          "layers": {
+            "structural": {
+              "status": "PASS"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 35,
+              "failed": 0,
+              "assertions": 35
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 19,
+              "failed": 0,
+              "assertions": 37
+            }
+          }
+        },
+        {
+          "tool": "csv-viewer",
+          "requested_command": [
+            "scripts/test_tool.py",
+            "--id",
+            "csv-viewer",
+            "--workspace",
+            "canonical",
+            "--layers",
+            "structural,logic,browser",
+            "--no-report"
+          ],
+          "exit_code": 0,
+          "report_status": "PASS",
+          "layers": {
+            "structural": {
+              "status": "PASS"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 11,
+              "failed": 0,
+              "assertions": 11
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 6,
+              "failed": 0,
+              "assertions": 12
+            }
+          }
+        },
+        {
+          "tool": "image-color-picker",
+          "requested_command": [
+            "scripts/test_tool.py",
+            "--id",
+            "image-color-picker",
+            "--workspace",
+            "canonical",
+            "--layers",
+            "structural,logic,browser",
+            "--no-report"
+          ],
+          "exit_code": 0,
+          "report_status": "PASS",
+          "layers": {
+            "structural": {
+              "status": "PASS"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 9,
+              "failed": 0,
+              "assertions": 9
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 5,
+              "failed": 0,
+              "assertions": 14
+            }
+          }
+        },
+        {
+          "tool": "vat-calculator",
+          "requested_command": [
+            "scripts/test_tool.py",
+            "--id",
+            "vat-calculator",
+            "--workspace",
+            "canonical",
+            "--layers",
+            "structural,logic,browser",
+            "--no-report"
+          ],
+          "exit_code": 0,
+          "report_status": "PASS",
+          "layers": {
+            "structural": {
+              "status": "PASS"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 21,
+              "failed": 0,
+              "assertions": 21
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 7,
+              "failed": 0,
+              "assertions": 17
+            }
+          }
+        },
+        {
+          "tool": "batch-filename-planner",
+          "requested_command": [
+            "scripts/test_tool.py",
+            "--id",
+            "batch-filename-planner",
+            "--workspace",
+            "canonical",
+            "--layers",
+            "structural,logic,browser",
+            "--no-report"
+          ],
+          "exit_code": 0,
+          "report_status": "PASS",
+          "layers": {
+            "structural": {
+              "status": "PASS"
+            },
+            "logic": {
+              "status": "PASS",
+              "passed": 13,
+              "failed": 0,
+              "assertions": 13
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 5,
+              "failed": 0,
+              "assertions": 15
+            }
+          }
+        },
+        {
+          "tool": "social-counter",
+          "requested_command": [
+            "scripts/test_tool.py",
+            "--id",
+            "social-counter",
+            "--workspace",
+            "canonical",
+            "--layers",
+            "structural,browser",
+            "--no-report"
+          ],
+          "exit_code": 0,
+          "report_status": "PARTIAL",
+          "layers": {
+            "structural": {
+              "status": "PASS"
+            },
+            "browser": {
+              "status": "PASS",
+              "passed": 4,
+              "failed": 0,
+              "assertions": 14
+            },
+            "logic": {
+              "status": "NOT RUN",
+              "passed": 0,
+              "failed": 0,
+              "assertions": 0
+            }
+          }
+        }
+      ],
+      "profile_summary": "Five nonlegacy pilot tools pass structural,logic,browser. Text-cleaner and read-only social-counter pass structural/browser; isolated legacy logic remains NOT RUN, so their overall reports are PARTIAL. Unavailable logic is never relabeled PASS.",
+      "selected_functional_probes": "Text replacement/copy/undo/clear; JSON malformed/valid/copy/download; CSV malformed/upload/preview; image synthetic2×2 pixel selection/canvas ArrowRight/copy; VAT validation/calculation/export; batch reserved-name validation/UnicodeCSV output; legacy social count/cleanup. Clipboard/download/files use synthetic fixtures.",
+      "no_javascript_css": "7/7 pilot stylesheet loads succeed with 57 CSSOM top-level rules and 0 compiler references; independent styling delivery confirmed, not tool functionality without JavaScript.",
+      "hosted_full_chromium_partition": {
+        "status": "PENDING_EXACT_HEAD_CI",
+        "note": "Local focused profiles do not substitute for required complete hosted Chromium coverage."
+      },
+      "evidence": "browser/regressions.json and individual profile JSON/stdout/stderr"
+    },
+    "15. Consent regression": {
+      "suite": "node --test scripts/consent-browser.test.mjs",
+      "tests": 51,
+      "passed": 51,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "scope": "First visit/rejection/withdrawal blocking; persistent choices; one consented page view per navigation; duplicate suppression; delayed-tag acceptance; native keyboard; unavailable storage/cookies; sanitizedURLs; representative tool usability.",
+      "privacy": "Google endpoints intercepted and fulfilled with synthetic tagJavaScript on loopback; no real Analytics collection. No analytics requests in nonaccepted browser/performance probes. Consent engine and measurement ID G-XDHPQYJ5CH unchanged; no new trackers or input telemetry introduced.",
+      "fixture_limit": "Existing consent fixture serves non-JS assets as text/html, so its pass establishes consent behavior. Correct-MIME CSS delivery is established separately across all 7 pilot pages.",
+      "not_claimed": "No liveGA account/property/realtime report verification or actual production acceptance during development.",
+      "evidence": "browser/consent-regression.stdout, browser/consent-regression.stderr"
+    },
+    "16. SEO validation": {
+      "validator_result": {
+        "kind": "technical-seo",
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "counts": {
+          "released_tools": 87,
+          "public_pages": 89
+        }
+      },
+      "canonical_public_pages": 89,
+      "sitemap_urls": 89,
+      "released_routes": 87,
+      "crawlable_homepage_cards": 87,
+      "preservation": "All current public titles, metadata (including Google verification), canonical tags, routes/aliases and privacy/robots/sitemap/CNAME retained. Inline scripts/styles, other script declarations and IDs independently compared against base for all 89 public pages.",
+      "runtime_source_review": {
+        "status": "PASS",
+        "pilot_pages": 7,
+        "unchanged_other_public_pages": 82,
+        "unmigrated_released_tool_pages": 81,
+        "historical_audits_unchanged": 254,
+        "newlines_note": "Text source equality permits checkout CRLF/LF representation only; CSS asset hashes are exact bytes."
+      },
+      "scope": "Development validation only, not public deployment or Search Console/indexing/ranking verification. No autonomous SEO changes."
+    },
+    "17. Pull request": {
+      "state": "To be opened after this development evidence is committed",
+      "branch": "seo/task-2c-static-css",
+      "base": "main",
+      "publication": "No merge or deployment authorized by this record."
+    },
+    "18. Required CI status": {
+      "state": "Exact-head hosted results are recorded by GitHub on the ensuing development PR and in the final owner-local report. This pre-PR development record does not claim hosted completion.",
+      "required_checks": [
+        "Python and project validation",
+        "Node logic regression",
+        "Real Chromium browser tests",
+        "Required functional checks"
+      ]
+    },
+    "19. Outstanding limitations": {
+      "timing": "INCONCLUSIVE due severe host memory pressure, real CDN variability, incomplete 3 cold + 3 warm coverage and 15 retained timeout attempts. No speedup/field CWV/INP/ranking/traffic claim.",
+      "visual": "Residual exact mobile-header pixels despite identical resolved CSS/geometry; bounded screenshots/computed-state checks do not prove every future state or unstyled-flash absence. Approved privacy-copy wraps and scrollbar change retained.",
+      "accessibility": "LIVE-03 focus obstruction remains for Task 2D. Native 200% text-only/browser zoom, physical printing/OS dialogs, screenreaders/physicaldevices/otherbrowser engines untested.",
+      "legacy_logic": "text-cleaner and social-counter isolated logic layers remain NOT RUN; actual structural/browser scopes pass.",
+      "scope": "Only 7 stylesheet consumers migrated;81 released tool pages retain existing delivery. No production deployment/public verification from this PR.",
+      "preserved_diagnostics": "8 initial baseline visual harness quoting failures retained then corrected;4 baseline telemetry-only diagnostics excluded; all performance failures retained. These are not silently counted as passing samples.",
+      "dependency_advisories": "Zero known npm advisory findings at recorded snapshot is not proof against undisclosed vulnerabilities.",
+      "development_scope": "The complete local Chromium aggregate is not rerun on the memory-constrained host; the required full Chromium job, all 87 canonical browser profiles and both templates must pass in hosted CI. Local targeted browser/consent evidence is reported separately.",
+      "initial_python_attempt": "The first complete Python partition timed out at the unchanged 240-second cap and exposed a missing historical Markdown dependency. The dependency was bound and test-only Git reads were batched. A second run exposed a generated-progress document incorrectly routed through the runtime snapshot; its existing count assertions now read current documentation directly. All assertions and deadlines remain. Both failed-attempt logs are retained separately from the final passing run."
+    },
+    "20. Recommended post-merge public verification": {
+      "authorization": "Only after separate owner authorization to merge/deploy; no production action performed here.",
+      "steps": [
+        "Record exact merged/deployed commit and GitHub Pages deployment result.",
+        "Independently fetch all 89 canonical HTML pages,89-URL sitemap,robots, aliases and required assets; compare expected hashes/metadata/routes/cards.",
+        "For each of7 pilot pages verify static CSS200/MIME/content hash and zero browser compiler requests with JavaScript on/off; verify 81 other released-tool delivery paths remain unchanged.",
+        "Run representative tool/error/file/canvas/copy/download/keyboard/consent checks with production-safe synthetic inputs and explicit analytics-interception/authorization boundaries.",
+        "Repeat 3 cold + 3 warm controlled before/after trials on stable comparable hardware; report actual cache/compression/headers,medians/ranges/failures and finite FCP/LCP/CLS without field claims.",
+        "Perform native text/zoom, print and assistive-technology coverage as appropriate; keep LIVE-03 scheduled for Task 2D and do not represent CSS pilot as its fix.",
+        "Save new dated public-verification evidence separately from development and old historical audits; report discrepancies before considering rollout beyond the pilot."
+      ],
+      "rollback": "If an authorized deployment fails acceptance, use separately authorized coherent revert of pilot delivery/build/approval; retain dated evidence and unrelated work."
+    }
+  },
+  "evidence_scope": "Dated development validation, not public release verification. Raw evidence and failed attempts are retained in the owner-local Task 2C output bundle; relative browser/source_gate/css evidence paths refer to that bundle.",
+  "evidence_sha256": {
+    "runtime-source-review.json": "2cb346538a54cb7e0c8fc9c9b4c19ca7dd4529080e2042af58aa3c66f7832525",
+    "performance-summary.json": "b892f30f627de304fa3b99ed36676391348ee612adce3f0e20f3680103c4039a",
+    "browser/browser-verification.json": "b208fee51e999d7d4816ce3519a1606a37c9f07242cf13af69c8b4c7e905ddb9",
+    "browser/regressions.json": "94961d10c83808eaa80b86e76661be2235374a6e03404c7026db8bc2f0b23ad5",
+    "source_gate/verification.json": "195e281d26ca74c2ab0af996351526e46a0d97ee9acc3bc62554d334f96e8348",
+    "preservation-after-summary.json": "1fdd8d1d1685d0ba14447bd1a4d4dfab0253b1b176c31937f184439b9192f7f4"
+  }
+}

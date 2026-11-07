@@ -6,3 +6,5 @@ __pycache__/
 /development/
 # CI-only browser installer dependencies; never website assets.
 /scripts/ci/node_modules/
+# Locked development-only CSS compiler; generated CSS is committed separately.
+/scripts/styles/node_modules/

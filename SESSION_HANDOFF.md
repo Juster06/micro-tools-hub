@@ -1,5 +1,39 @@
 # Session handoff
 
+## Current checkpoint — SEO Task 2C development pilot
+
+Verified starting main is `cf443c3b1facc2ae422fc6c55d546528671be1d0`.
+SEO Task 2A was merged through PR #47 and independently publicly verified;
+the earlier proposal checkpoints below are retained as historical context.
+The read-only Task 2B specification is complete. This branch implements its
+seven-page production CSS pilot, preserving the current slate/indigo appearance.
+See [CSS pipeline, scope and rollback](CSS_PIPELINE.md).
+
+Inventory stays **105 registered, 87 RELEASED, 0 TESTED, 0 READY,
+17 PLANNED and 1 BLOCKED**. The milestone remains 100 (13 remaining).
+Registry publication records describe the verified public baseline. The new
+CSS revision is a development candidate, not a new public verification.
+
+Branch: `seo/task-2c-static-css`. The 32 pre-existing worktrees and both unrelated
+handoff edits are preserved; development uses one additional isolated worktree.
+Only the homepage, Text Cleanser, JSON Formatter, CSV Viewer, Image Color Picker,
+VAT Calculator and Batch Filename Planner change their CSS delivery. All other
+released pages retain their existing compiler references. Tool logic, consent
+engine, routes, canonical metadata, sitemap and publication statuses stay intact.
+
+Local Python and Node partitions and targeted browser/consent checks pass.
+Actual counts and limitations are recorded in
+`audit/SEO_TASK_2C_DEVELOPMENT_VERIFICATION.json`. Timing is INCONCLUSIVE;
+exact-head hosted CI on the development PR remains a separate required gate.
+No merged deployment, field Core Web Vitals or accessibility remediation is
+claimed. The known homepage consent focus obstruction remains for Task 2D.
+
+**Next major task:** Review the Task 2C development PR and all four required
+checks. Await separate owner authorization before merge or deployment, then
+independently verify public HTML/CSS/SEO/consent for the deployed commit.
+Task 26 remains paused; PDF Compressor stays BLOCKED. Do not introduce the
+Task 2B redesign, new tools, additional tracking or autonomous SEO operations.
+
 ## Current checkpoint — SEO Task 2A development proposal
 
 Starting main is `7cdd6f43800fc1ae01ee597d9bab1a7a597f7f32`; the completed SEO 1
@@ -1464,8 +1498,8 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Tool status counts: IDEA: 0; PLANNED: 17; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 87; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: release/task-25-public-verification.
-- Latest commit observed before generation: c127f856cbd97497412ec35ed66b3b1a58c4b2dc.
+- Git branch: seo/task-2c-static-css.
+- Latest commit observed before generation: cf443c3b1facc2ae422fc6c55d546528671be1d0.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -1492,83 +1526,65 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
+- ` M` .github/workflows/functional-ci.yml
+- ` M` .gitignore
+- ` M` AGENTS.md
+- ` M` ARCHITECTURE.md
 - ` M` CHANGELOG.md
+- ` M` DECISIONS.md
 - ` M` PROGRESS_TRACKER.md
 - ` M` PROJECT_MASTER_PLAN.md
 - ` M` README.md
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
-- ` M` TOOL_REGISTRY.json
-- ` M` batch-filename-planner/README.md
-- ` M` css-gradient-generator/README.md
-- ` M` file-byte-comparator/README.md
+- ` M` batch-filename-planner/index.html
+- ` M` csv-viewer/index.html
+- ` M` image-color-picker/index.html
 - ` M` index.html
-- ` M` ipv4-subnet-calculator/README.md
+- ` M` json-formatter/index.html
 - ` M` scripts/ci/README.md
 - ` M` scripts/ci/coverage.json
+- ` M` scripts/ci/run.py
 - ` M` scripts/consent-static.test.mjs
+- ` M` scripts/seo-overlay.test.mjs
+- ` M` scripts/task24-test-support.mjs
+- ` M` scripts/task24_test_support.py
+- ` M` scripts/task25-test-support.mjs
 - ` M` scripts/task25_test_support.py
+- ` M` scripts/tracking.py
+- ` M` tests/test_consent_overlay.py
+- ` M` tests/test_seo_overlay.py
+- ` M` tests/test_task18_preservation.py
+- ` M` tests/test_task18_release.py
+- ` M` tests/test_task19_preservation.py
+- ` M` tests/test_task19_release.py
+- ` M` tests/test_task20_preservation.py
+- ` M` tests/test_task20_release.py
+- ` M` tests/test_task21_preservation.py
+- ` M` tests/test_task21_release.py
 - ` M` tests/test_task22_preservation.py
+- ` M` tests/test_task22_release.py
+- ` M` tests/test_task24_preservation.py
+- ` M` tests/test_task24_release.py
 - ` M` tests/test_task25_preservation.py
-- ` M` tests/tools/age-calculator/integration-browser.test.mjs
-- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/compound-interest-calculator/integration-browser.test.mjs
-- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
-- ` M` tests/tools/csv-column-extractor/integration-browser.test.mjs
-- ` M` tests/tools/csv-merger/integration-browser.test.mjs
-- ` M` tests/tools/csv-viewer/integration-browser.test.mjs
-- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
-- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
-- ` M` tests/tools/duplicate-row-finder/integration-browser.test.mjs
-- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
-- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
-- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
-- ` M` tests/tools/image-color-picker/integration-browser.test.mjs
-- ` M` tests/tools/image-resizer/integration-browser.test.mjs
-- ` M` tests/tools/image-rotator/integration-browser.test.mjs
-- ` M` tests/tools/image-watermark/integration-browser.test.mjs
-- ` M` tests/tools/invoice-generator/integration-browser.test.mjs
-- ` M` tests/tools/json-formatter/integration-browser.test.mjs
-- ` M` tests/tools/json-to-txt/integration-browser.test.mjs
-- ` M` tests/tools/loan-repayment-calculator/integration-browser.test.mjs
-- ` M` tests/tools/local-to-do-list/integration-browser.test.mjs
-- ` M` tests/tools/markdown-converter-previewer/integration-browser.test.mjs
-- ` M` tests/tools/meeting-agenda-generator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
-- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
-- ` M` tests/tools/pomodoro-timer/integration-browser.test.mjs
-- ` M` tests/tools/posting-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/printable-calendar-generator/integration-browser.test.mjs
-- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
-- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
-- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
-- ` M` tests/tools/sha256-hash-checker/integration-browser.test.mjs
-- ` M` tests/tools/slug-generator/integration-browser.test.mjs
-- ` M` tests/tools/task25-browser.test.mjs
-- ` M` tests/tools/text-difference-checker/integration-browser.test.mjs
-- ` M` tests/tools/text-reverser/integration-browser.test.mjs
-- ` M` tests/tools/text-sorter/integration-browser.test.mjs
-- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
-- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
-- ` M` tests/tools/username-generator/integration-browser.test.mjs
-- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
-- ` M` tests/tools/vat-calculator/integration-browser.test.mjs
-- ` M` tests/tools/working-days-calculator/integration-browser.test.mjs
-- ` M` tests/tools/youtube-description-formatter/integration-browser.test.mjs
-- ` M` tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs
-- ` M` unicode-inspector/README.md
-- ` M` word-frequency-analyzer/README.md
-- `??` audit/BATCH_FILENAME_PLANNER_RELEASE_VERIFICATION.json
-- `??` audit/CSS_GRADIENT_GENERATOR_RELEASE_VERIFICATION.json
-- `??` audit/FILE_BYTE_COMPARATOR_RELEASE_VERIFICATION.json
-- `??` audit/IPV4_SUBNET_CALCULATOR_RELEASE_VERIFICATION.json
-- `??` audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json
-- `??` audit/UNICODE_INSPECTOR_RELEASE_VERIFICATION.json
-- `??` audit/WORD_FREQUENCY_ANALYZER_RELEASE_VERIFICATION.json
-- `??` audit/task25-public/
-- `??` scripts/task25-test-support.mjs
-- `??` tests/test_task25_release.py
+- ` M` tests/test_task25_release.py
+- ` M` text-cleaner/index.html
+- ` M` vat-calculator/index.html
+- `??` .gitattributes
+- `??` CSS_PIPELINE.md
+- `??` assets/css/
+- `??` audit/SEO_TASK_2C_SOURCE_APPROVAL.json
+- `??` scripts/build_styles.mjs
+- `??` scripts/css-overlay.mjs
+- `??` scripts/css-overlay.test.mjs
+- `??` scripts/css_approval_identity.py
+- `??` scripts/css_overlay.py
+- `??` scripts/git_fixtures.py
+- `??` scripts/styles.test.mjs
+- `??` scripts/styles/
+- `??` styles/
+- `??` tests/test_css_overlay.py
+- `??` tests/test_git_fixtures.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

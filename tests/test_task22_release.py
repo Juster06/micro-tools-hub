@@ -5,13 +5,15 @@ from datetime import datetime
 import hashlib,json,subprocess,sys,unittest
 ROOT=Path(__file__).resolve().parents[1];BASE='64a19c6bc1ee2dfbd81cf9ffa6b1ca00f15c8140';ID='markdown-converter-previewer'
 sys.path.insert(0,str(ROOT/'scripts'));from tool_homepage import Homepage
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+from git_fixtures import git_blob as frozen_git_blob
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 from task24_test_support import historical_registry,without_task24
 def load(p):
  data=json.loads(historical_source(ROOT, (ROOT/p).relative_to(ROOT).as_posix(), (ROOT/p).read_text(encoding='utf-8')))
  return historical_registry(data) if p=='TOOL_REGISTRY.json' else data
 @lru_cache(maxsize=None)
-def git(p):return subprocess.check_output(['git','show',BASE+':'+p],cwd=ROOT)
+def git(p):return frozen_git_blob(ROOT,BASE,p)
 def norm(b):return b.replace(b'\r\n',b'\n')
 def sha(b):return hashlib.sha256(b).hexdigest()
 class Task22Release(unittest.TestCase):

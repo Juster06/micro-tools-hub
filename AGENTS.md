@@ -40,7 +40,7 @@ For framework changes run the full Python suite, `node --test scripts/project.te
 
 ## Technology and repository conventions
 
-- Prefer static HTML, small inline CSS, vanilla browser JavaScript, and the existing Tailwind Play CDN setup. Keep each tool at `<slug>/index.html`; the root `index.html` is the hub.
+- Prefer static HTML, small inline CSS and vanilla browser JavaScript. The approved SEO Task 2C seven-page pilot uses committed, locally hosted CSS built by a pinned development-only Tailwind CLI; follow `CSS_PIPELINE.md`. Preserve existing CSS delivery on unrelated pages until a separately reviewed migration. Keep each tool at `<slug>/index.html`; the root `index.html` is the hub.
 - No backend, database, paid API, account system, or major framework without a clear technical reason and owner approval. Small maintained libraries may be used after documenting license, payload, offline behavior, versioning, and privacy implications.
 - A dependency mentioned as a candidate in the registry is not installed or approved by that mention. Evaluate it before use. Tooling-only Python scripts and the Node compatibility commands do not introduce a website runtime or build requirement.
 - Preserve all working pages, the `CNAME`, and the Google site-verification tag. Preserve the public website/code and restrict changes to authorized accounts; do not change visibility or access settings without a specific instruction.

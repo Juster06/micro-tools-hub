@@ -4,12 +4,14 @@ from functools import lru_cache
 import json,hashlib,subprocess,sys,unittest
 ROOT=Path(__file__).resolve().parents[1];BASE='a7da719ea6ccc4caae572f26f6ae5e707fbb70be'
 sys.path.insert(0,str(ROOT/'scripts'))
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+from git_fixtures import git_blob as frozen_git_blob
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 from task24_test_support import IDS
 from tool_homepage import Homepage
 from task25_test_support import homepage_before_task25, registry_before_task25
 @lru_cache(maxsize=None)
-def blob(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT)
+def blob(path):return frozen_git_blob(ROOT,BASE,path)
 def load(path):
  data=json.loads(historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf-8')))
  return registry_before_task25(data) if path=='TOOL_REGISTRY.json' else data

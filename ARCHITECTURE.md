@@ -1,5 +1,22 @@
 # Architecture
 
+## SEO Task 2C — limited static CSS delivery
+
+The development pilot replaces Tailwind browser compilation on seven explicitly
+approved pages with one committed first-party stylesheet. Exact Tailwind v4 CLI
+dependencies and a lockfile are development-only; visitors receive CSS, without
+a framework, font or CSS compiler download. Other pages and neutral templates
+retain their previous delivery. Existing inline CSS, page classes and tool logic
+remain. [CSS_PIPELINE.md](CSS_PIPELINE.md) documents the build and read-only checks.
+
+New current-source approval validates the entire candidate and its required
+assets before an exact preimage is passed to unchanged historical SEO/consent
+verification. Historical evidence is not rewritten to approve new bytes. CI adds
+locked compiler installation in the Node job and deterministic freshness checks;
+all old jobs, action/runtime pins, permissions and deadlines remain required.
+This paragraph supersedes older baseline statements below for these seven pages
+only. Merge/deployment and public verification remain separate owner gates.
+
 ## SEO Task 2A — static metadata, offline validation
 
 The public runtime remains static and unchanged apart from head canonical links.

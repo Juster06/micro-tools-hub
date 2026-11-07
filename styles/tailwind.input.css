@@ -1,0 +1,4 @@
+/* Source discovery is disabled here. The build supplies only the explicit
+   styles/sources.json allowlist as ordinary files in an isolated staging folder.
+   Keep page-specific inline CSS and existing utility classes unchanged. */
+@import "tailwindcss" source(none);

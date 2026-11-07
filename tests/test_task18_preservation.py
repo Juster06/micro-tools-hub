@@ -6,7 +6,9 @@ import sys
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+from git_fixtures import git_blob as frozen_git_blob
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
 from task22_test_support import assert_unchanged_or_task22,without_task22
@@ -15,7 +17,7 @@ IDS={'youtube-title-checker','instagram-bio-formatter','file-signature-inspector
 TASK19_IDS={'password-generator','csv-to-txt','passphrase-generator','qr-code-generator','image-cropper','csv-data-cleaner'}
 TASK20_IDS={'excel-formula-generator', 'resume-builder', 'emoji-picker', 'passport-photo-layout-maker', 'image-compressor', 'png-to-ico'}
 BASE='f35f07ee5da8c5c4efdf7d3f1ffeabe75571a16a'
-def blob(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT,text=True,encoding='utf8')
+def blob(path):return frozen_git_blob(ROOT,BASE,path).decode('utf8').replace('\r\n','\n').replace('\r','\n')
 class Task18Preservation(unittest.TestCase):
     def test_only_gated_cards_and_count_change_in_homepage(self):
         current=without_task24(historical_source(ROOT, (ROOT/'index.html').relative_to(ROOT).as_posix(), (ROOT/'index.html').read_text(encoding='utf8')),Homepage)

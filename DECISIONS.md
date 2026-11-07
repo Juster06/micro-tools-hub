@@ -1,5 +1,17 @@
 # Decision log
 
+## 2026-11-07 — Compile styling for a seven-page performance pilot
+
+Use the matching pinned Tailwind v4 CLI in a small development-only package,
+explicit source scanning, minified content-addressed CSS and read-only freshness
+validation. Retain inline CSS and present appearance to isolate delivery changes.
+The generated stylesheet is committed for the existing Pages static deployment.
+Do not add a frontend framework, change publication statuses or migrate other
+pages. New exact current-source approval and negative tests protect the reviewed
+revision while keeping historical SEO/consent evidence immutable. Memory-limited
+lab timing is reported as inconclusive when it cannot support a reliable claim.
+The known consent focus obstruction stays assigned to Task 2D.
+
 ## 2026-11-07 — Preserve routes and add deterministic SEO metadata
 
 Use HTTPS apex `/index.html`, registry-directory `/index.html` tool routes and

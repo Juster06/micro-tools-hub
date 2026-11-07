@@ -1,4 +1,5 @@
-import {historicalSource} from './seo-overlay.mjs';
+import {historicalSnapshot} from './css-overlay.mjs';
+const {historicalSource}=historicalSnapshot(new URL('../',import.meta.url));
 import {task25ReleasedCount} from './task25-test-support.mjs';
 import {task24ReleasedCount} from './task24-test-support.mjs';
 import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import crypto from 'node:crypto';

@@ -5,7 +5,9 @@ import hashlib
 import json
 import subprocess
 
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+from git_fixtures import git_blob as frozen_git_blob
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '3e6b3d256d731cacdac8d6098937e2a5a9ba1378'
 DEPLOYMENT = 'c127f856cbd97497412ec35ed66b3b1a58c4b2dc'
@@ -22,7 +24,7 @@ def normalized(data):
 
 @lru_cache(maxsize=None)
 def git_blob(path, revision=BASE):
-    return subprocess.check_output(['git', 'show', revision + ':' + path], cwd=ROOT)
+    return frozen_git_blob(ROOT,revision,path)
 
 
 def registry_before_task25(registry):

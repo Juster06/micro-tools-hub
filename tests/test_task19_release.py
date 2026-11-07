@@ -5,12 +5,14 @@ import json
 from pathlib import Path
 import subprocess
 import unittest
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+from git_fixtures import git_blob as frozen_git_blob
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 ROOT=Path(__file__).resolve().parents[1]
 BASE='7ecbe37d15d51e3393c1d0f532fa4f2afd279f0b'
 IDS={'csv-data-cleaner', 'image-cropper', 'password-generator', 'qr-code-generator', 'passphrase-generator', 'csv-to-txt'}
 def load(path):return json.loads(historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf8')))
-def git(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT)
+def git(path):return frozen_git_blob(ROOT,BASE,path)
 class Task19ReleaseEvidence(unittest.TestCase):
     def test_six_releases_have_matching_dated_public_source_and_browser_evidence(self):
         registry=load('TOOL_REGISTRY.json');selected=[t for t in registry['tools'] if t['id'] in IDS]

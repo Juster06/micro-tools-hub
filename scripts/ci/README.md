@@ -1,5 +1,19 @@
 # Functional CI — Task 9.5
 
+## SEO Task 2C CSS pilot validation
+
+The Python job validates the exact current-source approval before historical
+tests run. The Node job installs the isolated, locked Tailwind 4.3.5 development
+package with lifecycle scripts disabled, then runs the read-only CSS freshness
+check before the existing regression suite. Validation never regenerates assets.
+Both runtimes include negative source-approval tests; Node also checks build
+reproducibility, scanner boundaries, dynamic utilities and stale output.
+
+All previous suites, coverage floors, canonical profiles, browser requirements,
+runtime/action pins, permissions, deadlines and the required-check aggregator
+remain intact. See [the CSS pipeline](../../CSS_PIPELINE.md) for commands and
+the distinction between development evidence and public deployment verification.
+
 ## Task 25.1 public release evidence
 
 Six Python checks verify the deployed source hashes, 43 fresh public browser
