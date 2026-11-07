@@ -31,6 +31,11 @@ verify Pages/post-merge CI and perform Task 24.1 independent public release audi
 only then propose a separate release-verification PR requiring separate consent.
 
 
+A final Number Base review added explicit raw ASCII validation before lowercasing;
+Unicode compatibility characters such as the Kelvin sign are rejected. The existing
+29-test native suite and24/13 Number Base logic/browser cases passed after the fix.
+A fresh exact-head hosted run is required for the updated PR source.
+
 ### Task 24 scoped verification and local regression history
 
 The six tools passed 130 canonical logic fixtures and 76 real Chromium cases

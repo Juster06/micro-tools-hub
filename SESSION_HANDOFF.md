@@ -31,6 +31,11 @@ verify Pages/post-merge CI and perform Task 24.1 independent public release audi
 only then propose a separate release-verification PR requiring separate consent.
 
 
+A final Number Base review added explicit raw ASCII validation before lowercasing;
+Unicode compatibility characters such as the Kelvin sign are rejected. The existing
+29-test native suite and24/13 Number Base logic/browser cases passed after the fix.
+A fresh exact-head hosted run is required for the updated PR source.
+
 ### Task 24 scoped verification and local regression history
 
 The six tools passed 130 canonical logic fixtures and 76 real Chromium cases
@@ -1341,7 +1346,7 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
 - Git branch: feat/task-24-six-browser-utilities.
-- Latest commit observed before generation: 0457799fc71faae98ecc27c04a4946ac3b4756a2.
+- Latest commit observed before generation: 494fada334af7f0e1f548484e02844f3d993c83e.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -1349,11 +1354,11 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 
 These are registry verification records, not new tests or tasks executed by this generator.
 - Unit Converter: TESTED, evidence dated 2026-11-07.
+- Number Base Converter: TESTED, evidence dated 2026-11-07.
 - URL Inspector & Query Builder: TESTED, evidence dated 2026-11-06.
 - Resume Builder: RELEASED, evidence dated 2026-11-06.
 - PNG to ICO: RELEASED, evidence dated 2026-11-06.
 - Passport Photo Layout Maker: RELEASED, evidence dated 2026-11-06.
-- Number Base Converter: TESTED, evidence dated 2026-11-06.
 - Markdown Converter & Previewer: RELEASED, evidence dated 2026-11-06.
 - List Comparison & Set Operations: TESTED, evidence dated 2026-11-06.
 - JavaScript Minifier: RELEASED, evidence dated 2026-11-06.
@@ -1370,33 +1375,11 @@ These are registry verification records, not new tests or tasks executed by this
 ### Uncommitted changes (repository-relative)
 - ` M` CHANGELOG.md
 - ` M` PROGRESS_TRACKER.md
-- ` M` PROJECT_MASTER_PLAN.md
-- ` M` README.md
-- ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
-- ` M` audit/TASK_24_DEVELOPMENT_PLAN.json
-- ` M` color-contrast-checker/README.md
-- ` M` duration-calculator/README.md
-- ` M` index.html
-- ` M` list-comparison-set-operations/README.md
+- ` M` audit/NUMBER_BASE_CONVERTER_VERIFICATION.json
+- ` M` audit/TASK_24_DEVELOPMENT_VERIFICATION.json
 - ` M` number-base-converter/README.md
-- ` M` scripts/ci/README.md
-- ` M` tests/test_task20_release.py
-- ` M` tests/test_task21_preservation.py
-- ` M` tests/test_task21_release.py
-- ` M` tests/test_task22_preservation.py
-- ` M` tests/tools/markdown-converter-previewer/integration-browser.test.mjs
-- ` M` unit-converter/README.md
-- ` M` url-inspector-query-builder/README.md
-- `??` audit/COLOR_CONTRAST_CHECKER_VERIFICATION.json
-- `??` audit/DURATION_CALCULATOR_VERIFICATION.json
-- `??` audit/LIST_COMPARISON_SET_OPERATIONS_VERIFICATION.json
-- `??` audit/NUMBER_BASE_CONVERTER_VERIFICATION.json
-- `??` audit/TASK_24_DEVELOPMENT_VERIFICATION.json
-- `??` audit/TASK_24_SECURITY_REVIEW.json
-- `??` audit/UNIT_CONVERTER_VERIFICATION.json
-- `??` audit/URL_INSPECTOR_QUERY_BUILDER_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

@@ -702,11 +702,11 @@ Next ready tool: **REQUIRES REVIEW**.
 | Tool | Status | Last verification |
 | --- | --- | --- |
 | Unit Converter | TESTED | 2026-11-07 |
+| Number Base Converter | TESTED | 2026-11-07 |
 | URL Inspector & Query Builder | TESTED | 2026-11-06 |
 | Resume Builder | RELEASED | 2026-11-06 |
 | PNG to ICO | RELEASED | 2026-11-06 |
 | Passport Photo Layout Maker | RELEASED | 2026-11-06 |
-| Number Base Converter | TESTED | 2026-11-06 |
 | Markdown Converter & Previewer | RELEASED | 2026-11-06 |
 | List Comparison & Set Operations | TESTED | 2026-11-06 |
 | JavaScript Minifier | RELEASED | 2026-11-06 |

@@ -2,7 +2,7 @@
 
 Canonical route: `number-base-converter/index.html`.
 
-TESTED — publication pending. Local source checkpoint `6437b046e5827d82d2f3dbf7668dc451c51c2614`; evidence: `audit/NUMBER_BASE_CONVERTER_VERIFICATION.json`. No live-publication claim.
+TESTED — publication pending. Local source checkpoint `494fada334af7f0e1f548484e02844f3d993c83e`; evidence: `audit/NUMBER_BASE_CONVERTER_VERIFICATION.json`. No live-publication claim.
 
 1–4096 ASCII digits, optional +/− sign; no spaces/prefixes, fractions or scientific notation. Bases 2–36; exact BigInt, normalized lowercase output ≤32768 digits. Original input preserved. Signed zero becomes 0; no two’s-complement mode.
 
@@ -13,3 +13,5 @@ Native APIs only; no new runtime package. Pure inline logic and actual browser i
 
 
 Clipboard/download automation is simulated/captured; no native OS dialog, physical device, cross-browser or screen-reader certification. Existing PDF deferral, blocked compressor and consent/privacy code are unchanged.
+
+Raw digits must be ASCII before case conversion: compatibility letters such as the Kelvin sign are rejected rather than silently converted to k.

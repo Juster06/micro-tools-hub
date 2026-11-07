@@ -29,7 +29,7 @@
     {
       "id": "number-base-converter",
       "readme": "number-base-converter/README.md",
-      "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+      "source_revision": "494fada334af7f0e1f548484e02844f3d993c83e",
       "input_output_policy": "Final formats/caps documented on page and README; no silent truncation."
     },
     {
@@ -347,5 +347,6 @@
     "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
     "https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html",
     "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
-  ]
+  ],
+  "ascii_validation_followup": "Raw ASCII digits/letters are validated before case conversion; compatibility characters are rejected and covered by deterministic regression assertions."
 }

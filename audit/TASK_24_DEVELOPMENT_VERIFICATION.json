@@ -26,9 +26,9 @@
     {
       "schema_version": 1,
       "tool_id": "number-base-converter",
-      "generated_at": "2026-11-06T23:52:37+00:00",
-      "input_hash": "1f4227fcaf9e1f296a46bb47e8dbc4464aaa5eab062a54184246c35b2abd0a23",
-      "source_sha256": "7b7c2aa15158d1d2a4fc2ab21bbdbb52d9c583644240c4cd8125691469a3c11c",
+      "generated_at": "2026-11-07T00:20:46+00:00",
+      "input_hash": "8bed65bf8c667d062e13dce31ea13e13fc36289a9486e0149af7148027a62470",
+      "source_sha256": "7d44e30061fd9e6f4570903937379f153129b099b7eeb898fbcfba6335c016b2",
       "workspace": "canonical",
       "is_scaffold": false,
       "layers": {
@@ -589,5 +589,11 @@
     "After authorized development merge, wait for correct-commit Pages and post-merge Functional CI.",
     "Task24.1: independently verify actual public source hashes, all six features/limits/exports, all81 canonical pages/cards, existing75 availability and isolated real consent/network behavior.",
     "Only eligible verified utilities may be proposed TESTED→RELEASED in a separate release-verification PR, with 99 registered /81 RELEASED /0 TESTED /0 READY /17 PLANNED /1 BLOCKED; obtain separate owner merge authorization."
-  ]
+  ],
+  "ascii_validation_followup": {
+    "source_revision": "494fada334af7f0e1f548484e02844f3d993c83e",
+    "scope": "Raw ASCII digit/letter validation before case normalization; Kelvin/fullwidth/emoji/Unicode-minus regression assertions passed in existing29-test native suite.",
+    "new_tool_framework": "Number Base Converter24 logic/13 browser cases passed after correction; canonical report refreshed after metadata update.",
+    "final_hosted_exact_head": "Requires a fresh complete CI run for the updated PR head."
+  }
 }

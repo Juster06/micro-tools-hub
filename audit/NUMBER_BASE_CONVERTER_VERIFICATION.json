@@ -1,13 +1,13 @@
 {
   "result": "PASS",
-  "verified_on": "2026-11-06",
-  "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+  "verified_on": "2026-11-07",
+  "source_revision": "494fada334af7f0e1f548484e02844f3d993c83e",
   "browser": "Edg/157.0.4341.42",
   "scope": "Local scoped development evidence only. Generic URL logic prepares bounded text; dedicated Node-native and Chromium tests execute native URL parsing. Existing shared consent unchanged.",
   "pages": [
     {
       "path": "number-base-converter/index.html",
-      "source_sha256": "7b7c2aa15158d1d2a4fc2ab21bbdbb52d9c583644240c4cd8125691469a3c11c",
+      "source_sha256": "7d44e30061fd9e6f4570903937379f153129b099b7eeb898fbcfba6335c016b2",
       "checks": [
         "24 generic logic fixtures (bounded preparation only for URL Inspector)",
         "13 actual Chromium browser cases / 49 assertions",
@@ -20,9 +20,9 @@
   "automated_tool_report": {
     "schema_version": 1,
     "tool_id": "number-base-converter",
-    "generated_at": "2026-11-06T23:52:37+00:00",
-    "input_hash": "1f4227fcaf9e1f296a46bb47e8dbc4464aaa5eab062a54184246c35b2abd0a23",
-    "source_sha256": "7b7c2aa15158d1d2a4fc2ab21bbdbb52d9c583644240c4cd8125691469a3c11c",
+    "generated_at": "2026-11-07T00:20:46+00:00",
+    "input_hash": "8bed65bf8c667d062e13dce31ea13e13fc36289a9486e0149af7148027a62470",
+    "source_sha256": "7d44e30061fd9e6f4570903937379f153129b099b7eeb898fbcfba6335c016b2",
     "workspace": "canonical",
     "is_scaffold": false,
     "layers": {
@@ -107,5 +107,6 @@
   },
   "visual_review_scope": "24 viewport captures and overflow measurements; representative URL/mobile and contrast/desktop screenshots visually reviewed. No physical-device or screen-reader claim.",
   "visual_browser": "Edg/157.0.4341.42",
-  "visual_source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614"
+  "visual_source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+  "ascii_validation_followup": "Explicit raw ASCII predicate rejects Unicode compatibility characters before lowercasing; Kelvin sign/fullwidth/emoji/Unicode-minus regressions passed in the existing native/property test suite."
 }
