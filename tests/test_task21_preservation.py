@@ -42,7 +42,7 @@ class Task21Preservation(unittest.TestCase):
         for path in paths:self.assertEqual(normalized((ROOT/path).read_bytes()),normalized(blob(path)),path)
 
     def test_homepage_changes_only_six_verified_cards_and_count(self):
-        current=read('index.html');home=Homepage(current);self.assertEqual(len(home.cards),75);self.assertEqual(len({c['attrs']['href'] for c in home.cards}),75)
+        current=without_task24(read('index.html'),Homepage);home=Homepage(current);self.assertEqual(len(home.cards),75);self.assertEqual(len({c['attrs']['href'] for c in home.cards}),75)
         current=without_cards(self,current,Homepage);home=Homepage(current);start,end=home.counts[0];current=current[:start]+'68 tools ready to use'+current[end:]
         self.assertEqual(current,blob('index.html').decode('utf8').replace('\r\n','\n'))
 

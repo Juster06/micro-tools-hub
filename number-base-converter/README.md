@@ -2,7 +2,7 @@
 
 Canonical route: `number-base-converter/index.html`.
 
-Task 24 development; publication unverified.
+TESTED — publication pending. Local source checkpoint `6437b046e5827d82d2f3dbf7668dc451c51c2614`; evidence: `audit/NUMBER_BASE_CONVERTER_VERIFICATION.json`. No live-publication claim.
 
 1–4096 ASCII digits, optional +/− sign; no spaces/prefixes, fractions or scientific notation. Bases 2–36; exact BigInt, normalized lowercase output ≤32768 digits. Original input preserved. Signed zero becomes 0; no two’s-complement mode.
 

@@ -2,7 +2,7 @@
 
 Canonical route: `list-comparison-set-operations/index.html`.
 
-Task 24 development; publication unverified.
+TESTED — publication pending. Local source checkpoint `6437b046e5827d82d2f3dbf7668dc451c51c2614`; evidence: `audit/LIST_COMPARISON_SET_OPERATIONS_VERIFICATION.json`. No live-publication claim.
 
 Each list ≤50000 UTF-16 units/10000 lines, each line ≤2000 units; CRLF/CR normalize to LF. Empty input is an empty list. Default exact case/spacing, no normalization, empty keys omitted. Optional trim→NFC→lowercase affects comparison keys only. Keep the first original spelling/spacing; union/intersection/first-only use first-list order, second-only uses second-list order, symmetric difference appends first-only then second-only. Duplicates within each list count once. A kept empty item is a blank output line. Output ≤100000 units/400KiB UTF-8; no fuzzy or multiset matching.
 

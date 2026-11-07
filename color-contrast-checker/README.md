@@ -2,7 +2,7 @@
 
 Canonical route: `color-contrast-checker/index.html`.
 
-Task 24 development; publication unverified.
+TESTED — publication pending. Local source checkpoint `6437b046e5827d82d2f3dbf7668dc451c51c2614`; evidence: `audit/COLOR_CONTRAST_CHECKER_VERIFICATION.json`. No live-publication claim.
 
 Two opaque sRGB colours: #RRGGBB or rgb(R, G, B) with integer 0–255 channels; each field ≤32 UTF-16 units. No alpha, CSS variables or arbitrary CSS. Linearize sRGB at 0.04045, luminance weights 0.2126/0.7152/0.0722; ratio (lighter+0.05)/(darker+0.05). Display four decimals; classify with unrounded ratio. AA normal 4.5:1 / large 3:1; AAA normal 7:1 / large 4.5:1; non-text UI/meaningful graphic contrast 3:1 (SC1.4.11, context/exceptions apply). Large text means ≥18pt regular or ≥14pt bold. A pair result is not whole-page accessibility certification. Report ≤4KiB.
 

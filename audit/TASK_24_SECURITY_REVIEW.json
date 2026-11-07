@@ -1,0 +1,351 @@
+{
+  "task": 24,
+  "result": "PASS — scoped native-API design/implementation review",
+  "reviewed_on": "2026-11-07",
+  "source_baseline": "4671204d2fb39129b0463e4b4ba8b5c8dc21e0a7",
+  "risk": "LOW RISK for the bounded six-tool scope, not a general security certification",
+  "new_runtime_packages": [],
+  "existing_external_delivery": [
+    "GitHub Pages hosting",
+    "Existing Tailwind Play CDN @4 styling script",
+    "Unchanged consent-gated Google Analytics G-XDHPQYJ5CH"
+  ],
+  "required_browser_apis": [
+    "BigInt for exact integer/millisecond arithmetic",
+    "URL and URLSearchParams (actual native execution in dedicated Node/browser scopes)",
+    "DOM/Map/Set/native Unicode strings",
+    "Clipboard with explicit failure fallback",
+    "UTF-8 Blob and object URLs with cleanup"
+  ],
+  "privacy_controls": [
+    "No input fetch/XHR/beacon or browser storage/logging in new utility source",
+    "Entered URLs are text; never navigated/fetched or inserted as href",
+    "Credential URLs rejected; component summary omits fragment contents; query values shown only for explicit editing/output",
+    "Outputs use textarea.value/textContent; dynamic query controls built with createElement",
+    "Copy/download explicit; stale async copy status guarded by revision",
+    "Consent/privacy script and measurement ID preserved byte-for-byte from baseline"
+  ],
+  "resource_controls": [
+    {
+      "id": "number-base-converter",
+      "readme": "number-base-converter/README.md",
+      "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+      "input_output_policy": "Final formats/caps documented on page and README; no silent truncation."
+    },
+    {
+      "id": "unit-converter",
+      "readme": "unit-converter/README.md",
+      "source_revision": "0457799fc71faae98ecc27c04a4946ac3b4756a2",
+      "input_output_policy": "Final formats/caps documented on page and README; no silent truncation."
+    },
+    {
+      "id": "duration-calculator",
+      "readme": "duration-calculator/README.md",
+      "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+      "input_output_policy": "Final formats/caps documented on page and README; no silent truncation."
+    },
+    {
+      "id": "url-inspector-query-builder",
+      "readme": "url-inspector-query-builder/README.md",
+      "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+      "input_output_policy": "Final formats/caps documented on page and README; no silent truncation."
+    },
+    {
+      "id": "list-comparison-set-operations",
+      "readme": "list-comparison-set-operations/README.md",
+      "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+      "input_output_policy": "Final formats/caps documented on page and README; no silent truncation."
+    },
+    {
+      "id": "color-contrast-checker",
+      "readme": "color-contrast-checker/README.md",
+      "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+      "input_output_policy": "Final formats/caps documented on page and README; no silent truncation."
+    }
+  ],
+  "measurements": {
+    "browser": "Edg/157.0.4341.42",
+    "visual": [
+      {
+        "id": "number-base-converter",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 2586,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "number-base-converter",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 2419,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "number-base-converter",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 1548,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "number-base-converter",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1427,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "unit-converter",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 2892,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "unit-converter",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 2654,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "unit-converter",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 1730,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "unit-converter",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1582,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "duration-calculator",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 2596,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "duration-calculator",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 2411,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "duration-calculator",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 1574,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "duration-calculator",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1427,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 3906,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 3615,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 2225,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 2024,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 3491,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 3254,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 1989,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1841,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "color-contrast-checker",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 3439,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "color-contrast-checker",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 3055,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "color-contrast-checker",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 2112,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "color-contrast-checker",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1912,
+        "error": null,
+        "status": "Complete."
+      }
+    ],
+    "representative_maximums": [
+      {
+        "id": "number-base-converter",
+        "milliseconds": 9.900000035762787,
+        "input_units": 4096,
+        "output_units": 21177,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee.",
+        "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614"
+      },
+      {
+        "id": "unit-converter",
+        "milliseconds": 0.09999996423721313,
+        "input_units": 13,
+        "output_units": 109,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee.",
+        "source_revision": "0457799fc71faae98ecc27c04a4946ac3b4756a2"
+      },
+      {
+        "id": "duration-calculator",
+        "milliseconds": 0.19999998807907104,
+        "input_units": 1699,
+        "output_units": 18,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee.",
+        "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614"
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "milliseconds": 1.800000011920929,
+        "input_units": 6810,
+        "output_units": 6810,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee.",
+        "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614"
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "milliseconds": 25.5,
+        "input_units": 49999,
+        "output_units": 99999,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee.",
+        "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614"
+      },
+      {
+        "id": "color-contrast-checker",
+        "milliseconds": 0.19999998807907104,
+        "input_units": 18,
+        "output_units": 308,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee.",
+        "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614"
+      }
+    ]
+  },
+  "scope_notes": [
+    "Maximum test cases are measured on one desktop; not universal performance, hard heap or physical-device guarantees.",
+    "No hostile document/image parser, untrusted HTML rendering, cryptography or new build/backend architecture.",
+    "No new package/advisory approval implied for deferred PDF, workbook, SVG, EXIF, encryption or password-estimator tools.",
+    "WCAG ratios compare unrounded sRGB results; context/exceptions apply, no complete accessibility certification.",
+    "Normal/large/non-text criteria use W3C SC1.4.3,1.4.6,1.4.11; conversion factors documented against NIST SP811."
+  ],
+  "references": [
+    "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+    "https://url.spec.whatwg.org/",
+    "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
+  ]
+}

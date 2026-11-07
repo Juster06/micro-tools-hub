@@ -1,7 +1,7 @@
 {
   "task": 24,
   "baseline": "4671204d2fb39129b0463e4b4ba8b5c8dc21e0a7",
-  "status": "SCOPE REVIEW COMPLETE — implementation/tests outstanding",
+  "status": "ACCEPTED SCOPE — implemented scopes and actual verification are recorded in per-tool audits and TASK_24_DEVELOPMENT_VERIFICATION.json",
   "reviewed_on": "2026-11-06",
   "tools": [
     {
@@ -22,7 +22,7 @@
       "primary_sources": [
         "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt"
       ],
-      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+      "task23_origin_status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
     },
     {
       "task": 24,
@@ -42,7 +42,7 @@
       "primary_sources": [
         "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-8"
       ],
-      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+      "task23_origin_status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
     },
     {
       "task": 24,
@@ -60,7 +60,7 @@
       "duplicate_check": "Countdown/Pomodoro run real-time deadlines; Date Difference/Age/Working Days calculate calendar dates. Agenda Generator sums meeting items; this accepts arbitrary signed elapsed durations.",
       "known_limitations": "Elapsed arithmetic only: no calendar months, local wall-clock times, time zones, payroll rules or running alarm. Locale decimal commas unsupported initially.",
       "primary_sources": [],
-      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+      "task23_origin_status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
     },
     {
       "task": 24,
@@ -80,7 +80,7 @@
       "primary_sources": [
         "https://url.spec.whatwg.org/"
       ],
-      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+      "task23_origin_status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
     },
     {
       "task": 24,
@@ -98,7 +98,7 @@
       "duplicate_check": "Text Difference Checker compares ordered sequences/line edits; Duplicate Line Remover deduplicates one list. This answers cross-list membership without a quadratic diff.",
       "known_limitations": "Set membership rather than multiset subtraction or fuzzy matching. Native lowercase is not full locale case folding; matching options can intentionally merge values.",
       "primary_sources": [],
-      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+      "task23_origin_status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
     },
     {
       "task": 24,
@@ -118,7 +118,7 @@
       "primary_sources": [
         "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
       ],
-      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
+      "task23_origin_status": "UNREGISTERED PROPOSAL — not approved, implemented or tested"
     }
   ],
   "scope_adjustments": [
@@ -144,5 +144,13 @@
     "resources": "Roadmap input/output caps preflighted; bounded loops/sets/BigInt; benchmark actual maximum cases before TESTED. No untrusted HTML rendering or evaluation.",
     "conclusion": "No significant security/architectural blocker found for the bounded scopes. No PDF/cryptography dependency adoption."
   },
-  "preserved": "75 existing releases, nine deferred PDF entries, PDF Compressor BLOCKED, 100 milestone, consent/privacy/G-XDHPQYJ5CH, historical audits."
+  "preserved": "75 existing releases, nine deferred PDF entries, PDF Compressor BLOCKED, 100 milestone, consent/privacy/G-XDHPQYJ5CH, historical audits.",
+  "final_scope_adjustments": [
+    "Number input: 4096 digits plus optional ASCII sign; raw whitespace/prefixes rejected rather than implicitly stripped.",
+    "Unit results display selected factor/formula and 12 significant digits; exact decimal factor definitions are tabulated in the utility README. Signed physical quantities are converted; below-absolute-zero temperatures fail.",
+    "Duration adds/subtracts up to 100 signed lines or compares exactly two; always three fractional digits.",
+    "URL native parser prepares separately from generic VM logic; userinfo/raw controls/backslash rejected, no navigation, duplicate order retained.",
+    "Set ordering is first-list order followed by new second-list keys; trim→NFC→lowercase modifies comparison keys, original spelling retained.",
+    "Contrast output distinguishes AA/AAA normal/large text and SC1.4.11 non-text applicability; only validated opaque hex/rgb colours become preview styles."
+  ]
 }

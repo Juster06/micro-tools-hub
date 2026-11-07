@@ -2,7 +2,7 @@
 
 Canonical route: `unit-converter/index.html`.
 
-TESTED — publication pending. Local source checkpoint `6437b046e5827d82d2f3dbf7668dc451c51c2614`; evidence: `audit/UNIT_CONVERTER_VERIFICATION.json`. No live-publication claim.
+TESTED — publication pending. Local source checkpoint `0457799fc71faae98ecc27c04a4946ac3b4756a2`; evidence: `audit/UNIT_CONVERTER_VERIFICATION.json`. No live-publication claim.
 
 One finite decimal ≤64 UTF-16 units and magnitude ≤1e12. Result finite and magnitude ≤1e18; rounded to 12 significant digits with IEEE-754 arithmetic (not exact decimal metrology). Signed quantities allowed; temperatures below absolute zero rejected. Length/mass/area/volume use documented fixed factors; temperature uses offsets. No bytes, time, money, live rates or medical dosing. Report ≤8KiB.
 

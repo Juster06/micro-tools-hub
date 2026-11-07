@@ -1,6 +1,55 @@
 # Session handoff
 
-## Current state — Task 22 complete; 75 publicly verified releases
+## Current state — Task 24 development; six TESTED, publication pending
+
+Task 23 read-only consolidation and the 100-release roadmap are complete. Owner
+authorized the first six-tool development batch. Starting main is
+`4671204d2fb39129b0463e4b4ba8b5c8dc21e0a7`; PR #41 and documentation PR #42
+are merged. Pages 42227568412 and all required Functional CI 42227568792 checks
+passed for that baseline. Task 22 remains complete with 75 publicly verified tools.
+
+Task 24 implements Number Base Converter, Unit Converter, Duration Calculator,
+URL Inspector & Query Builder, List Comparison & Set Operations and Color Contrast
+Checker. All six are new registered entries and locally TESTED — publication
+pending. Inventory: **99 registered, 75 RELEASED, 6 TESTED, 0 READY, 17 PLANNED,
+1 BLOCKED**. The development hub has 81 cards, six explicitly marked publication
+pending; production remains at 75 releases until authorized merges and independent
+public verification. See `audit/TASK_24_DEVELOPMENT_PLAN.json` and per-tool audits.
+
+The achieved manual checkpoint is 75 released. Existing generated milestone is
+100, still 75/100 (75%), 25 remaining; configuration unchanged. PDF processing
+remains deferred, PDF Compressor BLOCKED. Existing consent/privacy and measurement
+ID `G-XDHPQYJ5CH` are unchanged; GA4 property reporting remains unverified.
+All 27 pre-existing worktrees and both unrelated handoff edits are preserved.
+Historical favicon404, Resume print-margin, Windows timeout/keyboard and native,
+physical-device/cross-browser/screen-reader testing limitations remain.
+
+**Next major task:** Complete exact-head development PR checks and await owner
+review. Do not merge/deploy this branch, start another batch, mark tools RELEASED
+or use administrator bypass. After a separately authorized development merge,
+verify Pages/post-merge CI and perform Task 24.1 independent public release audit;
+only then propose a separate release-verification PR requiring separate consent.
+
+
+### Task 24 scoped verification and local regression history
+
+The six tools passed 130 canonical logic fixtures and 76 real Chromium cases
+(290 assertions), plus29 native/property tests and30 additional browser tests.
+Full Node passed519 tests and1,529 canonical fixtures across77 adapters. The
+45-case focused consent regression passed with synthetic Google endpoints;
+this is not public GA4/property evidence. Project validation has0 errors/warnings.
+
+Local Windows full CI commands reached the unchanged240-second Python and
+900-second browser deadlines; neither is PASS. Direct Python discovery completed
+207 cases:206 passed, one historical minimum-count assertion failed. That
+assertion now protects exact raised207/519/720 floors and all seven affected
+tests passed. Two old Markdown hub assertions expected75 cards; strict81-route/
+75-release/six-pending checks now pass both cases. New Task24 preservation is6/6.
+No source regression, required scope, runtime pin or deadline is suppressed.
+Complete hosted exact-head Python/Node/Chromium and aggregate checks remain
+mandatory before owner review. See `audit/TASK_24_DEVELOPMENT_VERIFICATION.json`.
+
+## Historical Task 22 documentation checkpoint
 
 Task 22 development PR [#40](https://github.com/Juster06/micro-tools-hub/pull/40) and release-verification PR [#41](https://github.com/Juster06/micro-tools-hub/pull/41) are merged. The independently verified public main commit is `2234bffef4cf376357ccb7cae3d1c0ec105d08c8`.
 
@@ -1288,27 +1337,27 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
 - Milestone: 100 released tools; 75 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 17; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 75; DEPRECATED: 0.
+- Tool status counts: IDEA: 0; PLANNED: 17; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 6; RELEASED: 75; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: docs/task-22-final-public-state.
-- Latest commit observed before generation: 2234bffef4cf376357ccb7cae3d1c0ec105d08c8.
+- Git branch: feat/task-24-six-browser-utilities.
+- Latest commit observed before generation: 0457799fc71faae98ecc27c04a4946ac3b4756a2.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
+- Unit Converter: TESTED, evidence dated 2026-11-07.
+- URL Inspector & Query Builder: TESTED, evidence dated 2026-11-06.
 - Resume Builder: RELEASED, evidence dated 2026-11-06.
 - PNG to ICO: RELEASED, evidence dated 2026-11-06.
 - Passport Photo Layout Maker: RELEASED, evidence dated 2026-11-06.
+- Number Base Converter: TESTED, evidence dated 2026-11-06.
 - Markdown Converter & Previewer: RELEASED, evidence dated 2026-11-06.
+- List Comparison & Set Operations: TESTED, evidence dated 2026-11-06.
 - JavaScript Minifier: RELEASED, evidence dated 2026-11-06.
 - Image Compressor: RELEASED, evidence dated 2026-11-06.
-- HTML to Markdown: RELEASED, evidence dated 2026-11-06.
-- HTML Previewer: RELEASED, evidence dated 2026-11-06.
-- HTML Formatter: RELEASED, evidence dated 2026-11-06.
-- Hashtag Counter: RELEASED, evidence dated 2026-11-06.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -1325,7 +1374,29 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` README.md
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
-- ` M` markdown-converter-previewer/README.md
+- ` M` TOOL_REGISTRY.json
+- ` M` audit/TASK_24_DEVELOPMENT_PLAN.json
+- ` M` color-contrast-checker/README.md
+- ` M` duration-calculator/README.md
+- ` M` index.html
+- ` M` list-comparison-set-operations/README.md
+- ` M` number-base-converter/README.md
+- ` M` scripts/ci/README.md
+- ` M` tests/test_task20_release.py
+- ` M` tests/test_task21_preservation.py
+- ` M` tests/test_task21_release.py
+- ` M` tests/test_task22_preservation.py
+- ` M` tests/tools/markdown-converter-previewer/integration-browser.test.mjs
+- ` M` unit-converter/README.md
+- ` M` url-inspector-query-builder/README.md
+- `??` audit/COLOR_CONTRAST_CHECKER_VERIFICATION.json
+- `??` audit/DURATION_CALCULATOR_VERIFICATION.json
+- `??` audit/LIST_COMPARISON_SET_OPERATIONS_VERIFICATION.json
+- `??` audit/NUMBER_BASE_CONVERTER_VERIFICATION.json
+- `??` audit/TASK_24_DEVELOPMENT_VERIFICATION.json
+- `??` audit/TASK_24_SECURITY_REVIEW.json
+- `??` audit/UNIT_CONVERTER_VERIFICATION.json
+- `??` audit/URL_INSPECTOR_QUERY_BUILDER_VERIFICATION.json
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

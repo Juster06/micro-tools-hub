@@ -1,0 +1,111 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-07",
+  "source_revision": "0457799fc71faae98ecc27c04a4946ac3b4756a2",
+  "browser": "Edg/157.0.4341.42",
+  "scope": "Local scoped development evidence only. Generic URL logic prepares bounded text; dedicated Node-native and Chromium tests execute native URL parsing. Existing shared consent unchanged.",
+  "pages": [
+    {
+      "path": "unit-converter/index.html",
+      "source_sha256": "5bf6acd58a2ff3d6808449172ff8400715a93f8f7cd2c96f9933857a9e76d964",
+      "checks": [
+        "25 generic logic fixtures (bounded preparation only for URL Inspector)",
+        "14 actual Chromium browser cases / 51 assertions",
+        "Dedicated native-API/property tests and actual keyboard/clipboard-race/Blob/privacy/browser cases; batch suite totals recorded separately",
+        "320/375/768/1440 viewport no-overflow cases; shared consent lifecycle regression; no public verification claim"
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "unit-converter",
+    "generated_at": "2026-11-07T00:00:08+00:00",
+    "input_hash": "260cb22219c7b105d36350328d7439f45e09c7aa469ffcde5fa9fbd3f9baf9e7",
+    "source_sha256": "5bf6acd58a2ff3d6808449172ff8400715a93f8f7cd2c96f9933857a9e76d964",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 25,
+        "failed": 0,
+        "assertions": 25,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 14,
+        "failed": 0,
+        "assertions": 51,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/157.0.4341.42"
+      }
+    },
+    "status": "PASS"
+  },
+  "limitations": [
+    "Publication unverified; no RELEASED claim.",
+    "Clipboard APIs simulated and downloads captured in memory; no native OS clipboard/save dialog certification.",
+    "Chromium/Edge desktop automation; no exhaustive cross-browser, physical-device, real screen-reader or native IME certification.",
+    "Provisional caps verified on representative local maximums, not universal device performance or a hard heap guarantee.",
+    "Consent endpoints synthetic in development; no real GA4 property-level reporting claim."
+  ],
+  "visual_checks": [
+    {
+      "id": "unit-converter",
+      "viewport": 320,
+      "width": 320,
+      "scrollWidth": 305,
+      "height": 2892,
+      "error": null,
+      "status": "Complete."
+    },
+    {
+      "id": "unit-converter",
+      "viewport": 375,
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 2654,
+      "error": null,
+      "status": "Complete."
+    },
+    {
+      "id": "unit-converter",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 1730,
+      "error": null,
+      "status": "Complete."
+    },
+    {
+      "id": "unit-converter",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 1582,
+      "error": null,
+      "status": "Complete."
+    }
+  ],
+  "representative_maximum_computation": {
+    "id": "unit-converter",
+    "milliseconds": 0.09999996423721313,
+    "input_units": 13,
+    "output_units": 109,
+    "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee.",
+    "source_revision": "0457799fc71faae98ecc27c04a4946ac3b4756a2"
+  },
+  "visual_review_scope": "24 viewport captures and overflow measurements; representative URL/mobile and contrast/desktop screenshots visually reviewed. No physical-device or screen-reader claim.",
+  "visual_browser": "Edg/157.0.4341.42",
+  "visual_source_revision": "0457799fc71faae98ecc27c04a4946ac3b4756a2"
+}

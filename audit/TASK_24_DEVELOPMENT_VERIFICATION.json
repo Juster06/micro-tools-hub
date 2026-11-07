@@ -1,0 +1,593 @@
+{
+  "task": 24,
+  "result": "PASS — six scoped development verifications; full hosted exact-head checks required before owner review",
+  "verified_at": "2026-11-07T00:12:38.761162+00:00",
+  "baseline_main": "4671204d2fb39129b0463e4b4ba8b5c8dc21e0a7",
+  "branch": "feat/task-24-six-browser-utilities",
+  "starting_counts": {
+    "registered": 93,
+    "RELEASED": 75,
+    "TESTED": 0,
+    "READY": 0,
+    "PLANNED": 17,
+    "BLOCKED": 1
+  },
+  "proposed_counts": {
+    "registered": 99,
+    "RELEASED": 75,
+    "TESTED": 6,
+    "READY": 0,
+    "PLANNED": 17,
+    "BLOCKED": 1
+  },
+  "homepage_cards": 81,
+  "publication": "UNVERIFIED — all six publication fields null; no RELEASED transition",
+  "canonical_reports": [
+    {
+      "schema_version": 1,
+      "tool_id": "number-base-converter",
+      "generated_at": "2026-11-06T23:52:37+00:00",
+      "input_hash": "1f4227fcaf9e1f296a46bb47e8dbc4464aaa5eab062a54184246c35b2abd0a23",
+      "source_sha256": "7b7c2aa15158d1d2a4fc2ab21bbdbb52d9c583644240c4cd8125691469a3c11c",
+      "workspace": "canonical",
+      "is_scaffold": false,
+      "layers": {
+        "structural": {
+          "status": "PASS",
+          "errors": [],
+          "warnings": [],
+          "scope": "STRUCTURAL_ONLY"
+        },
+        "logic": {
+          "status": "PASS",
+          "passed": 24,
+          "failed": 0,
+          "assertions": 24,
+          "failures": [],
+          "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+        },
+        "browser": {
+          "status": "PASS",
+          "passed": 13,
+          "failed": 0,
+          "assertions": 49,
+          "failures": [],
+          "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+          "browser": "Edg/157.0.4341.42"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "schema_version": 1,
+      "tool_id": "unit-converter",
+      "generated_at": "2026-11-07T00:00:08+00:00",
+      "input_hash": "260cb22219c7b105d36350328d7439f45e09c7aa469ffcde5fa9fbd3f9baf9e7",
+      "source_sha256": "5bf6acd58a2ff3d6808449172ff8400715a93f8f7cd2c96f9933857a9e76d964",
+      "workspace": "canonical",
+      "is_scaffold": false,
+      "layers": {
+        "structural": {
+          "status": "PASS",
+          "errors": [],
+          "warnings": [],
+          "scope": "STRUCTURAL_ONLY"
+        },
+        "logic": {
+          "status": "PASS",
+          "passed": 25,
+          "failed": 0,
+          "assertions": 25,
+          "failures": [],
+          "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+        },
+        "browser": {
+          "status": "PASS",
+          "passed": 14,
+          "failed": 0,
+          "assertions": 51,
+          "failures": [],
+          "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+          "browser": "Edg/157.0.4341.42"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "schema_version": 1,
+      "tool_id": "duration-calculator",
+      "generated_at": "2026-11-06T23:52:49+00:00",
+      "input_hash": "acc39b0d24c590e6e00765989717e987b4d44b5d1fcac5a94cb70fdd9160d70e",
+      "source_sha256": "4da965140c1fbbd7ede22fb798a87dabb5d526167064da27f8af4b2a1109e330",
+      "workspace": "canonical",
+      "is_scaffold": false,
+      "layers": {
+        "structural": {
+          "status": "PASS",
+          "errors": [],
+          "warnings": [],
+          "scope": "STRUCTURAL_ONLY"
+        },
+        "logic": {
+          "status": "PASS",
+          "passed": 22,
+          "failed": 0,
+          "assertions": 22,
+          "failures": [],
+          "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+        },
+        "browser": {
+          "status": "PASS",
+          "passed": 15,
+          "failed": 0,
+          "assertions": 53,
+          "failures": [],
+          "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+          "browser": "Edg/157.0.4341.42"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "schema_version": 1,
+      "tool_id": "url-inspector-query-builder",
+      "generated_at": "2026-11-06T23:52:54+00:00",
+      "input_hash": "dca498d12afd99a15637dbca70e2848eca24aefb7de9ffbcae4416c01bae5a9f",
+      "source_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+      "workspace": "canonical",
+      "is_scaffold": false,
+      "layers": {
+        "structural": {
+          "status": "PASS",
+          "errors": [],
+          "warnings": [],
+          "scope": "STRUCTURAL_ONLY"
+        },
+        "logic": {
+          "status": "PASS",
+          "passed": 18,
+          "failed": 0,
+          "assertions": 18,
+          "failures": [],
+          "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+        },
+        "browser": {
+          "status": "PASS",
+          "passed": 11,
+          "failed": 0,
+          "assertions": 45,
+          "failures": [],
+          "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+          "browser": "Edg/157.0.4341.42"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "schema_version": 1,
+      "tool_id": "list-comparison-set-operations",
+      "generated_at": "2026-11-06T23:52:57+00:00",
+      "input_hash": "f25899d4116a90b430994702d1f26b0a5eae559a1815eb483337f84e570af1db",
+      "source_sha256": "debcbede1959b4cee44d2b07552550cd4cef3a29ec347676567a89a6016c924e",
+      "workspace": "canonical",
+      "is_scaffold": false,
+      "layers": {
+        "structural": {
+          "status": "PASS",
+          "errors": [],
+          "warnings": [],
+          "scope": "STRUCTURAL_ONLY"
+        },
+        "logic": {
+          "status": "PASS",
+          "passed": 24,
+          "failed": 0,
+          "assertions": 24,
+          "failures": [],
+          "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+        },
+        "browser": {
+          "status": "PASS",
+          "passed": 9,
+          "failed": 0,
+          "assertions": 41,
+          "failures": [],
+          "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+          "browser": "Edg/157.0.4341.42"
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "schema_version": 1,
+      "tool_id": "color-contrast-checker",
+      "generated_at": "2026-11-06T23:53:01+00:00",
+      "input_hash": "b01cc1bdc59d624e2240cbc8913706a56bdfad94063436ff2b676e98d718c7c6",
+      "source_sha256": "1a4fe79bc483370abc574217d2e78951b17a55c92010ba9f744b336514f213e7",
+      "workspace": "canonical",
+      "is_scaffold": false,
+      "layers": {
+        "structural": {
+          "status": "PASS",
+          "errors": [],
+          "warnings": [],
+          "scope": "STRUCTURAL_ONLY"
+        },
+        "logic": {
+          "status": "PASS",
+          "passed": 17,
+          "failed": 0,
+          "assertions": 17,
+          "failures": [],
+          "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+        },
+        "browser": {
+          "status": "PASS",
+          "passed": 14,
+          "failed": 0,
+          "assertions": 51,
+          "failures": [],
+          "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+          "browser": "Edg/157.0.4341.42"
+        }
+      },
+      "status": "PASS"
+    }
+  ],
+  "new_tool_totals": {
+    "logic_fixtures": 130,
+    "browser_cases": 76,
+    "browser_assertions": 290,
+    "additional_node_tests": {
+      "tests": 29,
+      "pass": 29,
+      "fail": 0
+    },
+    "additional_browser_tests": {
+      "tests": 30,
+      "pass": 30,
+      "fail": 0
+    }
+  },
+  "local_full_node": {
+    "status": "PASS",
+    "tests": 519,
+    "canonical_logic_profiles": 77,
+    "canonical_logic_fixtures": 1529
+  },
+  "local_python_history": {
+    "ci_partition": "TIMEOUT at unchanged 240-second command deadline; not PASS",
+    "full_discovery": {
+      "tests": 207,
+      "failed": 1,
+      "skipped": 0,
+      "expected_failures": 0,
+      "unexpected_successes": 0,
+      "passed": 206
+    },
+    "failure": "One historical assertion expected unchanged minimum test counts rather than the reviewed raised counts. Fixed to assert exact 207/519/720 floors plus preserve older minimums, runtimes, aggregate jobs and deadlines.",
+    "affected_suite_rerun": {
+      "tests": 7,
+      "passed": 7,
+      "failed": 0
+    },
+    "new_preservation_suite": {
+      "tests": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "full_hosted_exact_head": "Required; local combined reruns do not retroactively make the failed full run PASS."
+  },
+  "local_browser_history": {
+    "ci_partition": "TIMEOUT at unchanged 900-second command deadline; not PASS",
+    "observed_assertion_failures": "Two Markdown hub integration assertions expected 75 cards. Updated to assert 81 distinct canonical routes, all 75 existing releases and all six explicit TESTED labels.",
+    "affected_suite_rerun": {
+      "tests": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "focused_new_tool_browser": {
+      "tests": 30,
+      "pass": 30,
+      "fail": 0
+    },
+    "full_hosted_exact_head": "Required complete 720-test partition, all 81 canonical profiles and both templates."
+  },
+  "consent": {
+    "scope": "45 focused existing/new-page consent lifecycle tests passed against isolated local synthetic Google endpoints; six new page cases. Unchanged production consent script; final hosted suite repeats these cases.",
+    "tools_usable_without_consent": true,
+    "no_requests_before_consent": true,
+    "rejection_persists": true,
+    "accepted_pageviews": "One explicit queued page_view per full navigation, send_page_view:false; no duplicate on repeated acceptance",
+    "withdrawal": "Disables subsequent tracking and persists across navigation",
+    "measurement_id": "G-XDHPQYJ5CH",
+    "property_reporting": "UNVERIFIED; no authenticated property evidence",
+    "real_public_ga4_collection": "Not tested for these undeployed utilities; required in Task24.1."
+  },
+  "resource_and_visual_checks": {
+    "browser": "Edg/157.0.4341.42",
+    "visual": [
+      {
+        "id": "number-base-converter",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 2586,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "number-base-converter",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 2419,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "number-base-converter",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 1548,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "number-base-converter",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1427,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "unit-converter",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 2892,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "unit-converter",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 2654,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "unit-converter",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 1730,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "unit-converter",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1582,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "duration-calculator",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 2596,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "duration-calculator",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 2411,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "duration-calculator",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 1574,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "duration-calculator",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1427,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 3906,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 3615,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 2225,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 2024,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 3491,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 3254,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 1989,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1841,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "color-contrast-checker",
+        "viewport": 320,
+        "width": 320,
+        "scrollWidth": 305,
+        "height": 3439,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "color-contrast-checker",
+        "viewport": 375,
+        "width": 375,
+        "scrollWidth": 360,
+        "height": 3055,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "color-contrast-checker",
+        "viewport": 768,
+        "width": 768,
+        "scrollWidth": 753,
+        "height": 2112,
+        "error": null,
+        "status": "Complete."
+      },
+      {
+        "id": "color-contrast-checker",
+        "viewport": 1440,
+        "width": 1440,
+        "scrollWidth": 1425,
+        "height": 1912,
+        "error": null,
+        "status": "Complete."
+      }
+    ],
+    "representative_maximums": [
+      {
+        "id": "number-base-converter",
+        "milliseconds": 9.900000035762787,
+        "input_units": 4096,
+        "output_units": 21177,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee."
+      },
+      {
+        "id": "unit-converter",
+        "milliseconds": 0.09999996423721313,
+        "input_units": 13,
+        "output_units": 109,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee."
+      },
+      {
+        "id": "duration-calculator",
+        "milliseconds": 0.19999998807907104,
+        "input_units": 1699,
+        "output_units": 18,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee."
+      },
+      {
+        "id": "url-inspector-query-builder",
+        "milliseconds": 1.800000011920929,
+        "input_units": 6810,
+        "output_units": 6810,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee."
+      },
+      {
+        "id": "list-comparison-set-operations",
+        "milliseconds": 25.5,
+        "input_units": 49999,
+        "output_units": 99999,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee."
+      },
+      {
+        "id": "color-contrast-checker",
+        "milliseconds": 0.19999998807907104,
+        "input_units": 18,
+        "output_units": 308,
+        "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee."
+      }
+    ]
+  },
+  "project_validation": {
+    "status": "PASS",
+    "errors": 0,
+    "warnings": 0,
+    "framework_homepage_gates": "All six PASS; framework template matches reviewed pending cards with empty patch",
+    "existing_runtime": "75 source pages, all existing assets/privacy/workflow/audits and original93 registry records preserved by source-bound tests",
+    "worktrees": "All27 original HEAD/status/dirty hashes preserved; two unrelated SESSION_HANDOFF edits unchanged; one new isolated Task24 worktree"
+  },
+  "limitations": [
+    "No merge/deployment/public release authorization.",
+    "Local Windows full-run deadline limitations remain; no timeouts, skips or CI requirements weakened.",
+    "Clipboard/download captures are simulated/in-memory; native OS permissions/save-dialog, physical-device, screen-reader and exhaustive cross-browser scope unverified.",
+    "Representative desktop performance is not a universal memory/latency guarantee.",
+    "PDF processing deferred; PDF Compressor BLOCKED; optional favicon404 and Resume print-margin issue unchanged."
+  ],
+  "next_steps": [
+    "Require all four exact-head PR checks before owner review; do not merge without explicit authorization.",
+    "After authorized development merge, wait for correct-commit Pages and post-merge Functional CI.",
+    "Task24.1: independently verify actual public source hashes, all six features/limits/exports, all81 canonical pages/cards, existing75 availability and isolated real consent/network behavior.",
+    "Only eligible verified utilities may be proposed TESTED→RELEASED in a separate release-verification PR, with 99 registered /81 RELEASED /0 TESTED /0 READY /17 PLANNED /1 BLOCKED; obtain separate owner merge authorization."
+  ]
+}
