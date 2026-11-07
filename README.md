@@ -1,6 +1,26 @@
 # Everyday Digital Box — WebUtils Hub
 
-## Current state — Task 25 development
+## Current state — Task 25.1 release verification
+
+Task 25 development PR #45 merged at `c127f856cbd97497412ec35ed66b3b1a58c4b2dc`. Pages run 42338516265 and
+all required post-merge Functional CI checks in run 42338516503 succeeded for
+that commit. Fresh public checks verified the six tools, all 87 canonical pages
+and matching source for 105 responses. The homepage root and six directory
+aliases also matched. All 43 public browser cases passed. Two isolated profiles
+verified real consent behavior and three accepted page views returning HTTP 204.
+
+This release proposal records **105 registered, 87 RELEASED, 0 TESTED, 0 READY,
+17 PLANNED and 1 BLOCKED**. The deployed registry records 81 RELEASED and 6
+TESTED at the verified baseline. The milestone is 100, with 13 remaining in the
+proposal. PDF processing is deferred and PDF Compressor is BLOCKED.
+
+See `audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json` and the six per-tool
+release audits for source hashes, timestamps, independent public results and
+scope limitations. The known optional favicon returned HTTP 404. GA4 browser
+collection was verified using `G-XDHPQYJ5CH`. Property reporting remains
+unverified.
+
+## Historical Task 25 development
 
 Task 24 is complete and publicly verified. PRs #43 and #44 are merged. Main
 `3e6b3d256d731cacdac8d6098937e2a5a9ba1378` deployed successfully through Pages

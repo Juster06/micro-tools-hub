@@ -1,0 +1,4314 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-07",
+  "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+  "source_tree_sha": "b6a52211aaafcdb2886374d5ed46c28bf166af74",
+  "github": {
+    "main": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "tree": "b6a52211aaafcdb2886374d5ed46c28bf166af74",
+    "checked_at": "2026-11-07T04:57:44.459Z",
+    "development_pr": {
+      "number": 45,
+      "merged": true,
+      "merge_commit": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+      "head": "7fe5cd158b82bbea1e95e575a294cb141ed4f93b",
+      "url": "https://github.com/Juster06/micro-tools-hub/pull/45"
+    },
+    "deployment": {
+      "run_id": 42338516265,
+      "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516265",
+      "jobs": [
+        {
+          "id": 128300789972,
+          "name": "build",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 128300881730,
+          "name": "report-build-status",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 128300881750,
+          "name": "deploy",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "post_merge_ci": {
+      "run_id": 42338516503,
+      "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516503",
+      "jobs": [
+        {
+          "id": 128300787626,
+          "name": "Python and project validation",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 128300787726,
+          "name": "Real Chromium browser tests",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 128300787978,
+          "name": "Node logic regression",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 128302710015,
+          "name": "Required functional checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    "open_pull_requests": []
+  },
+  "deployment": {
+    "run_id": 42338516265,
+    "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516265",
+    "jobs": [
+      {
+        "id": 128300789972,
+        "name": "build",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300881730,
+        "name": "report-build-status",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300881750,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "post_merge_ci": {
+    "run_id": 42338516503,
+    "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516503",
+    "jobs": [
+      {
+        "id": 128300787626,
+        "name": "Python and project validation",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300787726,
+        "name": "Real Chromium browser tests",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300787978,
+        "name": "Node logic regression",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128302710015,
+        "name": "Required functional checks",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "sources": {
+    "index.html": {
+      "url": "https://everydaydigitalbox.com/index.html",
+      "final_url": "https://everydaydigitalbox.com/index.html",
+      "checked_at": "2026-11-07T04:57:58.688522+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "8b8df4ea4c790a0efb5f12804fd6987f9afa0ef25d479b22f710f6f726af0e77",
+      "raw_approved_sha256": "8b8df4ea4c790a0efb5f12804fd6987f9afa0ef25d479b22f710f6f726af0e77",
+      "raw_match": true,
+      "source_sha256": "702fb7ee21c6d6f4a4ba35f310aa3a4427ed31435bcc518d9f3af2b5549f76b1",
+      "approved_normalized_sha256": "702fb7ee21c6d6f4a4ba35f310aa3a4427ed31435bcc518d9f3af2b5549f76b1",
+      "content_type": "text/html; charset=utf-8",
+      "title": "WebUtils Hub — Small tools. Everyday wins.",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "assets/consent.js"
+      ]
+    },
+    "privacy.html": {
+      "url": "https://everydaydigitalbox.com/privacy.html",
+      "final_url": "https://everydaydigitalbox.com/privacy.html",
+      "checked_at": "2026-11-07T04:57:58.550019+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "bd60b598bfc4193e839903a29ac23ad5119ce59e82f867778cea8092882887aa",
+      "raw_approved_sha256": "bd60b598bfc4193e839903a29ac23ad5119ce59e82f867778cea8092882887aa",
+      "raw_match": true,
+      "source_sha256": "2f827a73285cde7a2449b77364a0aeec30bcf29e244d976162d4200fb97ab9ab",
+      "approved_normalized_sha256": "2f827a73285cde7a2449b77364a0aeec30bcf29e244d976162d4200fb97ab9ab",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Privacy and cookies — Everyday Digital Box",
+      "scripts": [
+        "assets/consent.js"
+      ]
+    },
+    "TOOL_REGISTRY.json": {
+      "url": "https://everydaydigitalbox.com/TOOL_REGISTRY.json",
+      "final_url": "https://everydaydigitalbox.com/TOOL_REGISTRY.json",
+      "checked_at": "2026-11-07T04:57:58.564217+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "a73bec0843d0d4efa3681a5420a165c5b510a6c5e244a2728276e3425d6cef09",
+      "raw_approved_sha256": "a73bec0843d0d4efa3681a5420a165c5b510a6c5e244a2728276e3425d6cef09",
+      "raw_match": true,
+      "source_sha256": "b2935d75d8598a38b7ac73634a3ad0e9aae2e75c70b5e3ebfb6c14e6f2588660",
+      "approved_normalized_sha256": "b2935d75d8598a38b7ac73634a3ad0e9aae2e75c70b5e3ebfb6c14e6f2588660",
+      "content_type": "application/json; charset=utf-8"
+    },
+    "PROGRESS_TRACKER.md": {
+      "url": "https://everydaydigitalbox.com/PROGRESS_TRACKER.md",
+      "final_url": "https://everydaydigitalbox.com/PROGRESS_TRACKER.md",
+      "checked_at": "2026-11-07T04:57:58.559128+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "29efa342f0c1c712a590d6fa10d9c7275cc54d5f742b147cd1c0ffc651283fc7",
+      "raw_approved_sha256": "29efa342f0c1c712a590d6fa10d9c7275cc54d5f742b147cd1c0ffc651283fc7",
+      "raw_match": true,
+      "source_sha256": "80fdeba1cc72e8f51d7c8285a079f0bbecb32bc2b3a6b7b561824fd601e52acb",
+      "approved_normalized_sha256": "80fdeba1cc72e8f51d7c8285a079f0bbecb32bc2b3a6b7b561824fd601e52acb",
+      "content_type": "text/markdown; charset=utf-8"
+    },
+    "assets/consent.js": {
+      "url": "https://everydaydigitalbox.com/assets/consent.js",
+      "final_url": "https://everydaydigitalbox.com/assets/consent.js",
+      "checked_at": "2026-11-07T04:57:59.847068+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "raw_approved_sha256": "47139d56fef3089787cd4baaa0acf75b0e033465ba95631c5f8cf966f12e1bb8",
+      "raw_match": true,
+      "source_sha256": "83d76f2a1cbe5b7cc7ec1827e8a78dd6a63f6739f2a000ca8d52d5aa8021bfa8",
+      "approved_normalized_sha256": "83d76f2a1cbe5b7cc7ec1827e8a78dd6a63f6739f2a000ca8d52d5aa8021bfa8",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "assets/data/EFF-WORDLIST-LICENSE.txt": {
+      "url": "https://everydaydigitalbox.com/assets/data/EFF-WORDLIST-LICENSE.txt",
+      "final_url": "https://everydaydigitalbox.com/assets/data/EFF-WORDLIST-LICENSE.txt",
+      "checked_at": "2026-11-07T04:58:00.198316+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "1b0797ff0e063aaaf94ca1765f924f1244f95fe37f0342d30cdcbec94ba716e5",
+      "raw_approved_sha256": "1b0797ff0e063aaaf94ca1765f924f1244f95fe37f0342d30cdcbec94ba716e5",
+      "raw_match": true,
+      "source_sha256": "7a9e46d17f59a7ca10b862de26dc34ba167d7e73420a67a6cfc542e0f3dbf2ce",
+      "approved_normalized_sha256": "7a9e46d17f59a7ca10b862de26dc34ba167d7e73420a67a6cfc542e0f3dbf2ce",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    "assets/data/UNICODE-LICENSE.txt": {
+      "url": "https://everydaydigitalbox.com/assets/data/UNICODE-LICENSE.txt",
+      "final_url": "https://everydaydigitalbox.com/assets/data/UNICODE-LICENSE.txt",
+      "checked_at": "2026-11-07T04:58:00.261705+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "raw_approved_sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "raw_match": true,
+      "source_sha256": "8fa201617d2c10c64205a88903dfac046417e6b95748e36b492026fbc38c5b94",
+      "approved_normalized_sha256": "8fa201617d2c10c64205a88903dfac046417e6b95748e36b492026fbc38c5b94",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    "assets/data/eff-large-wordlist.txt": {
+      "url": "https://everydaydigitalbox.com/assets/data/eff-large-wordlist.txt",
+      "final_url": "https://everydaydigitalbox.com/assets/data/eff-large-wordlist.txt",
+      "checked_at": "2026-11-07T04:58:00.370477+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "addd35536511597a02fa0a9ff1e5284677b8883b83e986e43f15a3db996b903e",
+      "raw_approved_sha256": "addd35536511597a02fa0a9ff1e5284677b8883b83e986e43f15a3db996b903e",
+      "raw_match": true,
+      "source_sha256": "ccba0018f766e955b13db0285bcebc91d3460523b71b1459d4b61e69e97e92f3",
+      "approved_normalized_sha256": "ccba0018f766e955b13db0285bcebc91d3460523b71b1459d4b61e69e97e92f3",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    "assets/data/eff-wordlist.js": {
+      "url": "https://everydaydigitalbox.com/assets/data/eff-wordlist.js",
+      "final_url": "https://everydaydigitalbox.com/assets/data/eff-wordlist.js",
+      "checked_at": "2026-11-07T04:58:00.611386+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "30f4337649cc987075e65aff08d9e7786deafc67ff1917809c165ba259756577",
+      "raw_approved_sha256": "30f4337649cc987075e65aff08d9e7786deafc67ff1917809c165ba259756577",
+      "raw_match": true,
+      "source_sha256": "79223f88bc3bf5707ab89a52a78e3cb0b06a07400c99ee27b7cac14c3d8c4424",
+      "approved_normalized_sha256": "79223f88bc3bf5707ab89a52a78e3cb0b06a07400c99ee27b7cac14c3d8c4424",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "assets/data/emoji-18.0.js": {
+      "url": "https://everydaydigitalbox.com/assets/data/emoji-18.0.js",
+      "final_url": "https://everydaydigitalbox.com/assets/data/emoji-18.0.js",
+      "checked_at": "2026-11-07T04:58:00.689068+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "cb994820b076dffa048e3d40580d53381db376abb7e6079d07857e920f61d3b0",
+      "raw_approved_sha256": "cb994820b076dffa048e3d40580d53381db376abb7e6079d07857e920f61d3b0",
+      "raw_match": true,
+      "source_sha256": "4de0593f2693262f5adb17ea51adb1fc9c39c7f35958ecfb371e536d59ba70b0",
+      "approved_normalized_sha256": "4de0593f2693262f5adb17ea51adb1fc9c39c7f35958ecfb371e536d59ba70b0",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "assets/vendor/qrcodegen-1.8.0.js": {
+      "url": "https://everydaydigitalbox.com/assets/vendor/qrcodegen-1.8.0.js",
+      "final_url": "https://everydaydigitalbox.com/assets/vendor/qrcodegen-1.8.0.js",
+      "checked_at": "2026-11-07T04:58:00.674665+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "d72f8315af5a7f7d3f91743a27f951b1e6d9cf22bfac4f3e4a0f6122289d24af",
+      "raw_approved_sha256": "d72f8315af5a7f7d3f91743a27f951b1e6d9cf22bfac4f3e4a0f6122289d24af",
+      "raw_match": true,
+      "source_sha256": "475c3ae120baf39d3359608ce601563a76bec9814656899b7c9c86e2510f98af",
+      "approved_normalized_sha256": "475c3ae120baf39d3359608ce601563a76bec9814656899b7c9c86e2510f98af",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "assets/vendor/task21/THIRD_PARTY_NOTICES.txt": {
+      "url": "https://everydaydigitalbox.com/assets/vendor/task21/THIRD_PARTY_NOTICES.txt",
+      "final_url": "https://everydaydigitalbox.com/assets/vendor/task21/THIRD_PARTY_NOTICES.txt",
+      "checked_at": "2026-11-07T04:58:00.798450+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "e0a3806f0300a4f6d2bbe2ad65994c475cd6987443388035783fb115d76ca66c",
+      "raw_approved_sha256": "e0a3806f0300a4f6d2bbe2ad65994c475cd6987443388035783fb115d76ca66c",
+      "raw_match": true,
+      "source_sha256": "b42130350d8f55a52718bfe9d08e97162819fb7b6ac7f0ff171ce952176d1053",
+      "approved_normalized_sha256": "b42130350d8f55a52718bfe9d08e97162819fb7b6ac7f0ff171ce952176d1053",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    "assets/vendor/task21/css-source.js": {
+      "url": "https://everydaydigitalbox.com/assets/vendor/task21/css-source.js",
+      "final_url": "https://everydaydigitalbox.com/assets/vendor/task21/css-source.js",
+      "checked_at": "2026-11-07T04:58:01.260180+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "d8aa099306ab3230f35bf3e132e6a26dcd6b67b0102ee62e2560d0e3d9147b31",
+      "raw_approved_sha256": "d8aa099306ab3230f35bf3e132e6a26dcd6b67b0102ee62e2560d0e3d9147b31",
+      "raw_match": true,
+      "source_sha256": "994214289b4694faefc4e76a67cccd2a02eed56dcd47809f18616256d56f3404",
+      "approved_normalized_sha256": "994214289b4694faefc4e76a67cccd2a02eed56dcd47809f18616256d56f3404",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "assets/vendor/task21/format-source.js": {
+      "url": "https://everydaydigitalbox.com/assets/vendor/task21/format-source.js",
+      "final_url": "https://everydaydigitalbox.com/assets/vendor/task21/format-source.js",
+      "checked_at": "2026-11-07T04:58:01.377347+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "55617aeb435a8fb608d341ab4ca32db77d39b5134ca4dc99835529d3184dc42b",
+      "raw_approved_sha256": "55617aeb435a8fb608d341ab4ca32db77d39b5134ca4dc99835529d3184dc42b",
+      "raw_match": true,
+      "source_sha256": "0ca76682efa767ca8c07e057ae8732d70d51ab0222ac8a3401b0356d0beca194",
+      "approved_normalized_sha256": "0ca76682efa767ca8c07e057ae8732d70d51ab0222ac8a3401b0356d0beca194",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "assets/vendor/task21/javascript-source.js": {
+      "url": "https://everydaydigitalbox.com/assets/vendor/task21/javascript-source.js",
+      "final_url": "https://everydaydigitalbox.com/assets/vendor/task21/javascript-source.js",
+      "checked_at": "2026-11-07T04:58:01.625316+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "ba966018e7ee021134424c3ec826242e700144f9c583279809b5074c43cc4b9f",
+      "raw_approved_sha256": "ba966018e7ee021134424c3ec826242e700144f9c583279809b5074c43cc4b9f",
+      "raw_match": true,
+      "source_sha256": "73701968b23bddb2e3b21d859c4adb3c5f3337f3a739bc93deca29e5f50bbbe1",
+      "approved_normalized_sha256": "73701968b23bddb2e3b21d859c4adb3c5f3337f3a739bc93deca29e5f50bbbe1",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "assets/vendor/task21/markup-source.js": {
+      "url": "https://everydaydigitalbox.com/assets/vendor/task21/markup-source.js",
+      "final_url": "https://everydaydigitalbox.com/assets/vendor/task21/markup-source.js",
+      "checked_at": "2026-11-07T04:58:01.681969+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "f900f75fb6506a3403a7551eca6d18ea667a9867094bdc035c904b391664753f",
+      "raw_approved_sha256": "f900f75fb6506a3403a7551eca6d18ea667a9867094bdc035c904b391664753f",
+      "raw_match": true,
+      "source_sha256": "600f2952f8b55322a5e3adc96ae063b4714ae611d30b4c2dd9daac912672b88c",
+      "approved_normalized_sha256": "600f2952f8b55322a5e3adc96ae063b4714ae611d30b4c2dd9daac912672b88c",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "assets/vendor/task22/THIRD_PARTY_NOTICES.txt": {
+      "url": "https://everydaydigitalbox.com/assets/vendor/task22/THIRD_PARTY_NOTICES.txt",
+      "final_url": "https://everydaydigitalbox.com/assets/vendor/task22/THIRD_PARTY_NOTICES.txt",
+      "checked_at": "2026-11-07T04:58:02.257842+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "adb7786fdebf551dcfe4fdcc2ea1070944fc0219be566864b2985ee928f470c2",
+      "raw_approved_sha256": "adb7786fdebf551dcfe4fdcc2ea1070944fc0219be566864b2985ee928f470c2",
+      "raw_match": true,
+      "source_sha256": "0cf3a33e88d07c61cd7e79d3cd6fb212c84ff4c3828700bd7549624b44787700",
+      "approved_normalized_sha256": "0cf3a33e88d07c61cd7e79d3cd6fb212c84ff4c3828700bd7549624b44787700",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    "assets/vendor/task22/markdown-source.js": {
+      "url": "https://everydaydigitalbox.com/assets/vendor/task22/markdown-source.js",
+      "final_url": "https://everydaydigitalbox.com/assets/vendor/task22/markdown-source.js",
+      "checked_at": "2026-11-07T04:58:02.348277+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "7fee247a319f58b3c6029424902bd6ade950785d2459e00cb535e4f429fd0290",
+      "raw_approved_sha256": "7fee247a319f58b3c6029424902bd6ade950785d2459e00cb535e4f429fd0290",
+      "raw_match": true,
+      "source_sha256": "0be563bc3a6f9dbd07d9d5e82bee9e2af6dad7c321feedd4296bef139c5e94e8",
+      "approved_normalized_sha256": "0be563bc3a6f9dbd07d9d5e82bee9e2af6dad7c321feedd4296bef139c5e94e8",
+      "content_type": "application/javascript; charset=utf-8"
+    },
+    "social-counter/index.html": {
+      "url": "https://everydaydigitalbox.com/social-counter/index.html",
+      "final_url": "https://everydaydigitalbox.com/social-counter/index.html",
+      "checked_at": "2026-11-07T04:58:02.849614+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "c42c2c58b35f0a925a5c2c2f13a4770460e5b39a5f8436682577b1418a438cf6",
+      "raw_approved_sha256": "c42c2c58b35f0a925a5c2c2f13a4770460e5b39a5f8436682577b1418a438cf6",
+      "raw_match": true,
+      "source_sha256": "e9a58809b167a402b7ad5f564e4bb2b34ee050e5565cf43e0cab6cdef3784086",
+      "approved_normalized_sha256": "e9a58809b167a402b7ad5f564e4bb2b34ee050e5565cf43e0cab6cdef3784086",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Social Media Character Counter & Live Previewer | WebUtils Hub",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "excel-sandbox/index.html": {
+      "url": "https://everydaydigitalbox.com/excel-sandbox/index.html",
+      "final_url": "https://everydaydigitalbox.com/excel-sandbox/index.html",
+      "checked_at": "2026-11-07T04:58:03.722446+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "e5c934b7eb071f62619dd38f272b32541892e11ecd94d988f9b8d20a6bc2ca12",
+      "raw_approved_sha256": "e5c934b7eb071f62619dd38f272b32541892e11ecd94d988f9b8d20a6bc2ca12",
+      "raw_match": true,
+      "source_sha256": "a8acc83a6414a5eb95e62370aeaa0560cf93ab2b7cfe3c9417ea5680985c340b",
+      "approved_normalized_sha256": "a8acc83a6414a5eb95e62370aeaa0560cf93ab2b7cfe3c9417ea5680985c340b",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Excel Formula Sandbox & Analyzer",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "text-cleaner/index.html": {
+      "url": "https://everydaydigitalbox.com/text-cleaner/index.html",
+      "final_url": "https://everydaydigitalbox.com/text-cleaner/index.html",
+      "checked_at": "2026-11-07T04:58:03.708294+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "907d81983a27fa16ffe23d51a03033c9df9fdd06db22baf0e26a03cecae95cb3",
+      "raw_approved_sha256": "907d81983a27fa16ffe23d51a03033c9df9fdd06db22baf0e26a03cecae95cb3",
+      "raw_match": true,
+      "source_sha256": "662cd20e2b3f257656c5990f69ee44d6eada14811e9593f25a66612d6572024c",
+      "approved_normalized_sha256": "662cd20e2b3f257656c5990f69ee44d6eada14811e9593f25a66612d6572024c",
+      "content_type": "text/html; charset=utf-8",
+      "title": "AI Text Footprint Cleanser",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "streaming-roulette/index.html": {
+      "url": "https://everydaydigitalbox.com/streaming-roulette/index.html",
+      "final_url": "https://everydaydigitalbox.com/streaming-roulette/index.html",
+      "checked_at": "2026-11-07T04:58:04.227671+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "d73f996b54b16d2ca4ad9449ae850d01958467bad28675b3d25e651a9ff18963",
+      "raw_approved_sha256": "d73f996b54b16d2ca4ad9449ae850d01958467bad28675b3d25e651a9ff18963",
+      "raw_match": true,
+      "source_sha256": "17efdcd4155864a95528e107bc49a8a0480262388d561efaad16eb25c01a9767",
+      "approved_normalized_sha256": "17efdcd4155864a95528e107bc49a8a0480262388d561efaad16eb25c01a9767",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Free Legal Streaming Roulette & Finder",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "image-compressor/index.html": {
+      "url": "https://everydaydigitalbox.com/image-compressor/index.html",
+      "final_url": "https://everydaydigitalbox.com/image-compressor/index.html",
+      "checked_at": "2026-11-07T04:58:04.232754+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "2d6730604833038eb67cb81414937d8fff943addd334ad62fd34c3eda8c1ab39",
+      "raw_approved_sha256": "2d6730604833038eb67cb81414937d8fff943addd334ad62fd34c3eda8c1ab39",
+      "raw_match": true,
+      "source_sha256": "ca0624cc4a2b68579133bbcee2cdd1aa1c119980c687b1392d53a82bec49e658",
+      "approved_normalized_sha256": "ca0624cc4a2b68579133bbcee2cdd1aa1c119980c687b1392d53a82bec49e658",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Image Compressor — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "image-resizer/index.html": {
+      "url": "https://everydaydigitalbox.com/image-resizer/index.html",
+      "final_url": "https://everydaydigitalbox.com/image-resizer/index.html",
+      "checked_at": "2026-11-07T04:58:07.757937+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "1a3f803f46f68e76b02fe7d6a89a8b0b0e2416dd685a9e87bcce327032307652",
+      "raw_approved_sha256": "1a3f803f46f68e76b02fe7d6a89a8b0b0e2416dd685a9e87bcce327032307652",
+      "raw_match": true,
+      "source_sha256": "1a3f803f46f68e76b02fe7d6a89a8b0b0e2416dd685a9e87bcce327032307652",
+      "approved_normalized_sha256": "1a3f803f46f68e76b02fe7d6a89a8b0b0e2416dd685a9e87bcce327032307652",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Image Resizer — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "image-format-converter/index.html": {
+      "url": "https://everydaydigitalbox.com/image-format-converter/index.html",
+      "final_url": "https://everydaydigitalbox.com/image-format-converter/index.html",
+      "checked_at": "2026-11-07T04:58:07.762676+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "846d9e1858c06268f1298838d8bac9d0bcdee51be114b8a9e65361af97a866e8",
+      "raw_approved_sha256": "846d9e1858c06268f1298838d8bac9d0bcdee51be114b8a9e65361af97a866e8",
+      "raw_match": true,
+      "source_sha256": "0fc9f13a11b5e980e666b8bebcfde6c81ee9f4833835539f0e14b6a6288ab2ad",
+      "approved_normalized_sha256": "0fc9f13a11b5e980e666b8bebcfde6c81ee9f4833835539f0e14b6a6288ab2ad",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Image Format Converter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "image-cropper/index.html": {
+      "url": "https://everydaydigitalbox.com/image-cropper/index.html",
+      "final_url": "https://everydaydigitalbox.com/image-cropper/index.html",
+      "checked_at": "2026-11-07T04:58:08.323363+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "861e50a2b9c01ad3c60faffe7fd2befc1aa403f74575b7911dd94cdac4ce61c6",
+      "raw_approved_sha256": "861e50a2b9c01ad3c60faffe7fd2befc1aa403f74575b7911dd94cdac4ce61c6",
+      "raw_match": true,
+      "source_sha256": "9e3b8bcf38777bd9a90c775f17a010c8f3097ec6b552e1c1d57fef30ed99cba5",
+      "approved_normalized_sha256": "9e3b8bcf38777bd9a90c775f17a010c8f3097ec6b552e1c1d57fef30ed99cba5",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Image Cropper — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "image-rotator/index.html": {
+      "url": "https://everydaydigitalbox.com/image-rotator/index.html",
+      "final_url": "https://everydaydigitalbox.com/image-rotator/index.html",
+      "checked_at": "2026-11-07T04:58:08.298323+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "606bd2213bf61aa15299e010bfbd0c661064271bf57dfddf3cf755830846ee4d",
+      "raw_approved_sha256": "606bd2213bf61aa15299e010bfbd0c661064271bf57dfddf3cf755830846ee4d",
+      "raw_match": true,
+      "source_sha256": "606bd2213bf61aa15299e010bfbd0c661064271bf57dfddf3cf755830846ee4d",
+      "approved_normalized_sha256": "606bd2213bf61aa15299e010bfbd0c661064271bf57dfddf3cf755830846ee4d",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Image Rotator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "image-watermark/index.html": {
+      "url": "https://everydaydigitalbox.com/image-watermark/index.html",
+      "final_url": "https://everydaydigitalbox.com/image-watermark/index.html",
+      "checked_at": "2026-11-07T04:58:08.543808+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "b4c435011f96920edec64ee94e6ec7550db396ef561b0693a866c2514dff3067",
+      "raw_approved_sha256": "b4c435011f96920edec64ee94e6ec7550db396ef561b0693a866c2514dff3067",
+      "raw_match": true,
+      "source_sha256": "b4c435011f96920edec64ee94e6ec7550db396ef561b0693a866c2514dff3067",
+      "approved_normalized_sha256": "b4c435011f96920edec64ee94e6ec7550db396ef561b0693a866c2514dff3067",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Image Watermark — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "image-color-picker/index.html": {
+      "url": "https://everydaydigitalbox.com/image-color-picker/index.html",
+      "final_url": "https://everydaydigitalbox.com/image-color-picker/index.html",
+      "checked_at": "2026-11-07T04:58:08.717094+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "53e90cffa56526d98f628065e9d117ddcd141aa6c623a2a4de950e05232d2467",
+      "raw_approved_sha256": "53e90cffa56526d98f628065e9d117ddcd141aa6c623a2a4de950e05232d2467",
+      "raw_match": true,
+      "source_sha256": "53e90cffa56526d98f628065e9d117ddcd141aa6c623a2a4de950e05232d2467",
+      "approved_normalized_sha256": "53e90cffa56526d98f628065e9d117ddcd141aa6c623a2a4de950e05232d2467",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Image Color Picker — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "passport-photo-layout-maker/index.html": {
+      "url": "https://everydaydigitalbox.com/passport-photo-layout-maker/index.html",
+      "final_url": "https://everydaydigitalbox.com/passport-photo-layout-maker/index.html",
+      "checked_at": "2026-11-07T04:58:08.760290+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "edddd59dcfc3380fcf99e019e2e84ddf7b5b90c7df1b69f4e7e04986ea84ce37",
+      "raw_approved_sha256": "edddd59dcfc3380fcf99e019e2e84ddf7b5b90c7df1b69f4e7e04986ea84ce37",
+      "raw_match": true,
+      "source_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
+      "approved_normalized_sha256": "927889e2cd1df2a474eb6175359f3e5d442bb565a3e645a90ee49cbd82c84116",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Passport Photo Layout Maker — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "case-converter/index.html": {
+      "url": "https://everydaydigitalbox.com/case-converter/index.html",
+      "final_url": "https://everydaydigitalbox.com/case-converter/index.html",
+      "checked_at": "2026-11-07T04:58:12.224656+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "b6465d6f67cdc91bf431ac4fd5c091eff7b3c7da141697da4ab1441e549e3a98",
+      "raw_approved_sha256": "b6465d6f67cdc91bf431ac4fd5c091eff7b3c7da141697da4ab1441e549e3a98",
+      "raw_match": true,
+      "source_sha256": "ec0199b70fb695fb331aadbc58a1c9d475745cb65c264f0cbbc46600d41ef3e6",
+      "approved_normalized_sha256": "ec0199b70fb695fb331aadbc58a1c9d475745cb65c264f0cbbc46600d41ef3e6",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Case Converter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "duplicate-line-remover/index.html": {
+      "url": "https://everydaydigitalbox.com/duplicate-line-remover/index.html",
+      "final_url": "https://everydaydigitalbox.com/duplicate-line-remover/index.html",
+      "checked_at": "2026-11-07T04:58:12.229527+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "d936cddd688bf40fb3375773aae9dd874d3cb6a14900db128ef0af5252ccab9d",
+      "raw_approved_sha256": "d936cddd688bf40fb3375773aae9dd874d3cb6a14900db128ef0af5252ccab9d",
+      "raw_match": true,
+      "source_sha256": "88ed108487329b70e8f9356b191772eeaebdb106a1465ad769e76998671679c7",
+      "approved_normalized_sha256": "88ed108487329b70e8f9356b191772eeaebdb106a1465ad769e76998671679c7",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Duplicate Line Remover — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "text-difference-checker/index.html": {
+      "url": "https://everydaydigitalbox.com/text-difference-checker/index.html",
+      "final_url": "https://everydaydigitalbox.com/text-difference-checker/index.html",
+      "checked_at": "2026-11-07T04:58:12.694090+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "ce9408f08ce2082503bfdb6e9f9004218ab63372489b3b3a7fd0b1f53bb7ef46",
+      "raw_approved_sha256": "ce9408f08ce2082503bfdb6e9f9004218ab63372489b3b3a7fd0b1f53bb7ef46",
+      "raw_match": true,
+      "source_sha256": "435820ade8b9a2a14506e7121eaedbf94f356aa327cf3fda208f90e941a3b517",
+      "approved_normalized_sha256": "435820ade8b9a2a14506e7121eaedbf94f356aa327cf3fda208f90e941a3b517",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Text Difference Checker — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "text-sorter/index.html": {
+      "url": "https://everydaydigitalbox.com/text-sorter/index.html",
+      "final_url": "https://everydaydigitalbox.com/text-sorter/index.html",
+      "checked_at": "2026-11-07T04:58:12.732018+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "443949b97916f35b8bd4c3715706154012cc3899421cac9092a01e9b69a3b4fc",
+      "raw_approved_sha256": "443949b97916f35b8bd4c3715706154012cc3899421cac9092a01e9b69a3b4fc",
+      "raw_match": true,
+      "source_sha256": "0ddaf9bef846908750cf12a1f7ecb46ac7c183abc4d2c9454c7e3cdc6c7211a5",
+      "approved_normalized_sha256": "0ddaf9bef846908750cf12a1f7ecb46ac7c183abc4d2c9454c7e3cdc6c7211a5",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Text Sorter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "text-reverser/index.html": {
+      "url": "https://everydaydigitalbox.com/text-reverser/index.html",
+      "final_url": "https://everydaydigitalbox.com/text-reverser/index.html",
+      "checked_at": "2026-11-07T04:58:12.753426+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "4613e5dae5f49f99aa63ba79e6a14f60bc564aaf0da69d939d35e66706f2ff42",
+      "raw_approved_sha256": "4613e5dae5f49f99aa63ba79e6a14f60bc564aaf0da69d939d35e66706f2ff42",
+      "raw_match": true,
+      "source_sha256": "8c79de2d91ccf02c95d28d277cb21b6746fcd50c80ebf89e9fd26fa02d9f9012",
+      "approved_normalized_sha256": "8c79de2d91ccf02c95d28d277cb21b6746fcd50c80ebf89e9fd26fa02d9f9012",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Text Reverser — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "find-and-replace/index.html": {
+      "url": "https://everydaydigitalbox.com/find-and-replace/index.html",
+      "final_url": "https://everydaydigitalbox.com/find-and-replace/index.html",
+      "checked_at": "2026-11-07T04:58:12.755653+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "338f167a458b59be9af45124f07e890e36a5f23704d46c2f70b72d2cd3e81bce",
+      "raw_approved_sha256": "338f167a458b59be9af45124f07e890e36a5f23704d46c2f70b72d2cd3e81bce",
+      "raw_match": true,
+      "source_sha256": "aa6b51c8b03b2a69efb5701c5368fc2a8adaed94a3c2f0d52b8228f372f23644",
+      "approved_normalized_sha256": "aa6b51c8b03b2a69efb5701c5368fc2a8adaed94a3c2f0d52b8228f372f23644",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Find and Replace — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "slug-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/slug-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/slug-generator/index.html",
+      "checked_at": "2026-11-07T04:58:13.086132+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "a7418c6ca06f74be22d9ccbec94880b7e98cbf1666219023cb9a7f972ae87d26",
+      "raw_approved_sha256": "a7418c6ca06f74be22d9ccbec94880b7e98cbf1666219023cb9a7f972ae87d26",
+      "raw_match": true,
+      "source_sha256": "27c0fad33af3a4706a9e2ca404f388346c69e4919319fdb21734f3616beaa1a9",
+      "approved_normalized_sha256": "27c0fad33af3a4706a9e2ca404f388346c69e4919319fdb21734f3616beaa1a9",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Slug Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "csv-json-converter/index.html": {
+      "url": "https://everydaydigitalbox.com/csv-json-converter/index.html",
+      "final_url": "https://everydaydigitalbox.com/csv-json-converter/index.html",
+      "checked_at": "2026-11-07T04:58:13.112488+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "51dac12ac8955b97c150dc50fb3ce2daefa2bc990a1d6c3c28aee9ed694b85f1",
+      "raw_approved_sha256": "51dac12ac8955b97c150dc50fb3ce2daefa2bc990a1d6c3c28aee9ed694b85f1",
+      "raw_match": true,
+      "source_sha256": "d2c3ad816b7763adc41586e1e701c9fb3a932f3bbeaa6a2ed1093fd379c78fc7",
+      "approved_normalized_sha256": "d2c3ad816b7763adc41586e1e701c9fb3a932f3bbeaa6a2ed1093fd379c78fc7",
+      "content_type": "text/html; charset=utf-8",
+      "title": "CSV ↔ JSON Converter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "csv-column-extractor/index.html": {
+      "url": "https://everydaydigitalbox.com/csv-column-extractor/index.html",
+      "final_url": "https://everydaydigitalbox.com/csv-column-extractor/index.html",
+      "checked_at": "2026-11-07T04:58:13.136504+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "75423b6be705b575455c219c0d83b5513bbc3689b3583fbb26c59259884603ce",
+      "raw_approved_sha256": "75423b6be705b575455c219c0d83b5513bbc3689b3583fbb26c59259884603ce",
+      "raw_match": true,
+      "source_sha256": "75423b6be705b575455c219c0d83b5513bbc3689b3583fbb26c59259884603ce",
+      "approved_normalized_sha256": "75423b6be705b575455c219c0d83b5513bbc3689b3583fbb26c59259884603ce",
+      "content_type": "text/html; charset=utf-8",
+      "title": "CSV Column Extractor — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "duplicate-row-finder/index.html": {
+      "url": "https://everydaydigitalbox.com/duplicate-row-finder/index.html",
+      "final_url": "https://everydaydigitalbox.com/duplicate-row-finder/index.html",
+      "checked_at": "2026-11-07T04:58:13.140741+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "ecfa0f0a03c033efb2c2e1e8cef3daf369e405edff628d9e42c4484e0586839d",
+      "raw_approved_sha256": "ecfa0f0a03c033efb2c2e1e8cef3daf369e405edff628d9e42c4484e0586839d",
+      "raw_match": true,
+      "source_sha256": "ecfa0f0a03c033efb2c2e1e8cef3daf369e405edff628d9e42c4484e0586839d",
+      "approved_normalized_sha256": "ecfa0f0a03c033efb2c2e1e8cef3daf369e405edff628d9e42c4484e0586839d",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Duplicate Row Finder — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "csv-data-cleaner/index.html": {
+      "url": "https://everydaydigitalbox.com/csv-data-cleaner/index.html",
+      "final_url": "https://everydaydigitalbox.com/csv-data-cleaner/index.html",
+      "checked_at": "2026-11-07T04:58:13.444645+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "2cd147716ce3fdd2ae6e4b5699bf28e54f607e1e2ef6c0f2340d7d284d419cfd",
+      "raw_approved_sha256": "2cd147716ce3fdd2ae6e4b5699bf28e54f607e1e2ef6c0f2340d7d284d419cfd",
+      "raw_match": true,
+      "source_sha256": "a66bf18c8fa168eac71d758b7ec0d38ba61bc2b4265c5b63e3cc6a0a8b8d4312",
+      "approved_normalized_sha256": "a66bf18c8fa168eac71d758b7ec0d38ba61bc2b4265c5b63e3cc6a0a8b8d4312",
+      "content_type": "text/html; charset=utf-8",
+      "title": "CSV Data Cleaner — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "csv-merger/index.html": {
+      "url": "https://everydaydigitalbox.com/csv-merger/index.html",
+      "final_url": "https://everydaydigitalbox.com/csv-merger/index.html",
+      "checked_at": "2026-11-07T04:58:13.481457+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "317586ddfe94203e9d875baf38a3820aa8317f6e6f101c252db9c4a77f5fe61c",
+      "raw_approved_sha256": "317586ddfe94203e9d875baf38a3820aa8317f6e6f101c252db9c4a77f5fe61c",
+      "raw_match": true,
+      "source_sha256": "317586ddfe94203e9d875baf38a3820aa8317f6e6f101c252db9c4a77f5fe61c",
+      "approved_normalized_sha256": "317586ddfe94203e9d875baf38a3820aa8317f6e6f101c252db9c4a77f5fe61c",
+      "content_type": "text/html; charset=utf-8",
+      "title": "CSV Merger — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "json-formatter/index.html": {
+      "url": "https://everydaydigitalbox.com/json-formatter/index.html",
+      "final_url": "https://everydaydigitalbox.com/json-formatter/index.html",
+      "checked_at": "2026-11-07T04:58:13.489107+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "ed72595e194f6f23a9e87153921637d4e52d9f6da7bdb2d07ec84958402c8342",
+      "raw_approved_sha256": "ed72595e194f6f23a9e87153921637d4e52d9f6da7bdb2d07ec84958402c8342",
+      "raw_match": true,
+      "source_sha256": "6154a159dbb1fe07751d6b1f70a1fc8f8f0e0fbf9d9a5510dfb7caee035b5028",
+      "approved_normalized_sha256": "6154a159dbb1fe07751d6b1f70a1fc8f8f0e0fbf9d9a5510dfb7caee035b5028",
+      "content_type": "text/html; charset=utf-8",
+      "title": "JSON Formatter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "csv-viewer/index.html": {
+      "url": "https://everydaydigitalbox.com/csv-viewer/index.html",
+      "final_url": "https://everydaydigitalbox.com/csv-viewer/index.html",
+      "checked_at": "2026-11-07T04:58:13.515940+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "6cc73260b960c2454298541bb5e602fc3dbedf121eddb5a05ffb718b6595e39d",
+      "raw_approved_sha256": "6cc73260b960c2454298541bb5e602fc3dbedf121eddb5a05ffb718b6595e39d",
+      "raw_match": true,
+      "source_sha256": "6cc73260b960c2454298541bb5e602fc3dbedf121eddb5a05ffb718b6595e39d",
+      "approved_normalized_sha256": "6cc73260b960c2454298541bb5e602fc3dbedf121eddb5a05ffb718b6595e39d",
+      "content_type": "text/html; charset=utf-8",
+      "title": "CSV Viewer — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "excel-formula-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/excel-formula-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/excel-formula-generator/index.html",
+      "checked_at": "2026-11-07T04:58:13.797488+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "92ab80280b94b2ded785f2100518952fa924e6acc9c432b59552fcabb5b7c979",
+      "raw_approved_sha256": "92ab80280b94b2ded785f2100518952fa924e6acc9c432b59552fcabb5b7c979",
+      "raw_match": true,
+      "source_sha256": "4f6bf37f4c4e225e4d13488eba11c44176e73dd11f61c68dfd701d07b7490a0b",
+      "approved_normalized_sha256": "4f6bf37f4c4e225e4d13488eba11c44176e73dd11f61c68dfd701d07b7490a0b",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Excel Formula Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "base64-encoder-decoder/index.html": {
+      "url": "https://everydaydigitalbox.com/base64-encoder-decoder/index.html",
+      "final_url": "https://everydaydigitalbox.com/base64-encoder-decoder/index.html",
+      "checked_at": "2026-11-07T04:58:13.836201+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "ca98d22d0779fa85cdf5e5418ec360f7142964fa50beb9fc7bd751909db5c497",
+      "raw_approved_sha256": "ca98d22d0779fa85cdf5e5418ec360f7142964fa50beb9fc7bd751909db5c497",
+      "raw_match": true,
+      "source_sha256": "f555e7d3abca5fb76aec32dc4e2443313ed616a5abbda477527947af864a199d",
+      "approved_normalized_sha256": "f555e7d3abca5fb76aec32dc4e2443313ed616a5abbda477527947af864a199d",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Base64 Encoder and Decoder — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "url-encoder-decoder/index.html": {
+      "url": "https://everydaydigitalbox.com/url-encoder-decoder/index.html",
+      "final_url": "https://everydaydigitalbox.com/url-encoder-decoder/index.html",
+      "checked_at": "2026-11-07T04:58:13.843300+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "1495c61f9b735537e729d0a3bb75b500e2c5a3b52902aca7cfca8821e844d28b",
+      "raw_approved_sha256": "1495c61f9b735537e729d0a3bb75b500e2c5a3b52902aca7cfca8821e844d28b",
+      "raw_match": true,
+      "source_sha256": "ba547664fa8d9dc4d9a4f89c9dcec9582f094f79ed64bca1ab7fce6c8efdb675",
+      "approved_normalized_sha256": "ba547664fa8d9dc4d9a4f89c9dcec9582f094f79ed64bca1ab7fce6c8efdb675",
+      "content_type": "text/html; charset=utf-8",
+      "title": "URL Encoder and Decoder — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "uuid-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/uuid-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/uuid-generator/index.html",
+      "checked_at": "2026-11-07T04:58:13.954298+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "8a6bd72dd7ae8f7b75507ed82aea5560b2d5d5889e216c057f9bd97702f0ecf4",
+      "raw_approved_sha256": "8a6bd72dd7ae8f7b75507ed82aea5560b2d5d5889e216c057f9bd97702f0ecf4",
+      "raw_match": true,
+      "source_sha256": "e3577aaa8168f6913b92fbc7f9b19e3039cecfa3bf3ed605efc4c326863e74bf",
+      "approved_normalized_sha256": "e3577aaa8168f6913b92fbc7f9b19e3039cecfa3bf3ed605efc4c326863e74bf",
+      "content_type": "text/html; charset=utf-8",
+      "title": "UUID Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "sha-256-hash-checker/index.html": {
+      "url": "https://everydaydigitalbox.com/sha-256-hash-checker/index.html",
+      "final_url": "https://everydaydigitalbox.com/sha-256-hash-checker/index.html",
+      "checked_at": "2026-11-07T04:58:14.186665+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "f69db3cc178957bff9c7136f1ed3f9f7f86a40023d8b08780508871bb67d99ea",
+      "raw_approved_sha256": "f69db3cc178957bff9c7136f1ed3f9f7f86a40023d8b08780508871bb67d99ea",
+      "raw_match": true,
+      "source_sha256": "f69db3cc178957bff9c7136f1ed3f9f7f86a40023d8b08780508871bb67d99ea",
+      "approved_normalized_sha256": "f69db3cc178957bff9c7136f1ed3f9f7f86a40023d8b08780508871bb67d99ea",
+      "content_type": "text/html; charset=utf-8",
+      "title": "SHA-256 Text & File Hash Checker — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "regex-tester/index.html": {
+      "url": "https://everydaydigitalbox.com/regex-tester/index.html",
+      "final_url": "https://everydaydigitalbox.com/regex-tester/index.html",
+      "checked_at": "2026-11-07T04:58:14.350917+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "b5f83a222248c0ce9ad2c7331d9e9acbb8eb9f96996015641eafa8c22947097b",
+      "raw_approved_sha256": "b5f83a222248c0ce9ad2c7331d9e9acbb8eb9f96996015641eafa8c22947097b",
+      "raw_match": true,
+      "source_sha256": "e639808058733f1fa48f299ce172987a08094cc4d0a8e6dc416e54eebc1af252",
+      "approved_normalized_sha256": "e639808058733f1fa48f299ce172987a08094cc4d0a8e6dc416e54eebc1af252",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Regex Tester — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "html-formatter/index.html": {
+      "url": "https://everydaydigitalbox.com/html-formatter/index.html",
+      "final_url": "https://everydaydigitalbox.com/html-formatter/index.html",
+      "checked_at": "2026-11-07T04:58:14.347157+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "48f8455048ac090b80be3197668743ae634ed5a2aae41c047d31b6748795785a",
+      "raw_approved_sha256": "48f8455048ac090b80be3197668743ae634ed5a2aae41c047d31b6748795785a",
+      "raw_match": true,
+      "source_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
+      "approved_normalized_sha256": "d60f683ae5a542200d2f7b774c60d9c319d046dedc56b57529ca577d98935541",
+      "content_type": "text/html; charset=utf-8",
+      "title": "HTML Formatter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js",
+        "../assets/vendor/task21/format-source.js"
+      ]
+    },
+    "css-minifier/index.html": {
+      "url": "https://everydaydigitalbox.com/css-minifier/index.html",
+      "final_url": "https://everydaydigitalbox.com/css-minifier/index.html",
+      "checked_at": "2026-11-07T04:58:14.431365+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "b41956b10c9815faeee1a3ca46820c35b867c48cef74aa1c5ef69a33b7284298",
+      "raw_approved_sha256": "b41956b10c9815faeee1a3ca46820c35b867c48cef74aa1c5ef69a33b7284298",
+      "raw_match": true,
+      "source_sha256": "d492a1cc073d884e4f7ec099381b04e47a00d7cb1b451439fbbb322eb6cfdd50",
+      "approved_normalized_sha256": "d492a1cc073d884e4f7ec099381b04e47a00d7cb1b451439fbbb322eb6cfdd50",
+      "content_type": "text/html; charset=utf-8",
+      "title": "CSS Minifier — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js",
+        "../assets/vendor/task21/css-source.js"
+      ]
+    },
+    "javascript-minifier/index.html": {
+      "url": "https://everydaydigitalbox.com/javascript-minifier/index.html",
+      "final_url": "https://everydaydigitalbox.com/javascript-minifier/index.html",
+      "checked_at": "2026-11-07T04:58:15.192103+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "ea5e5e1e8f739e8bda75a5a13b7db6f9b37d9555422b88a7bdbfcb7ccd83dd3f",
+      "raw_approved_sha256": "ea5e5e1e8f739e8bda75a5a13b7db6f9b37d9555422b88a7bdbfcb7ccd83dd3f",
+      "raw_match": true,
+      "source_sha256": "b9563b537e70dc86547dc60eed44e345e8e6a0807a1fddd9066fc5bd7eaee489",
+      "approved_normalized_sha256": "b9563b537e70dc86547dc60eed44e345e8e6a0807a1fddd9066fc5bd7eaee489",
+      "content_type": "text/html; charset=utf-8",
+      "title": "JavaScript Minifier — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js",
+        "../assets/vendor/task21/javascript-source.js"
+      ]
+    },
+    "timestamp-converter/index.html": {
+      "url": "https://everydaydigitalbox.com/timestamp-converter/index.html",
+      "final_url": "https://everydaydigitalbox.com/timestamp-converter/index.html",
+      "checked_at": "2026-11-07T04:58:15.199333+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "25e1bbb2d29fdebf0e13bc4b6e66b6cc611dbcab3140d40f6baf4a792f6f44e6",
+      "raw_approved_sha256": "25e1bbb2d29fdebf0e13bc4b6e66b6cc611dbcab3140d40f6baf4a792f6f44e6",
+      "raw_match": true,
+      "source_sha256": "670737ba7fccb5da6a583e741e527e24005d5c3b18b378397c04de122d745abb",
+      "approved_normalized_sha256": "670737ba7fccb5da6a583e741e527e24005d5c3b18b378397c04de122d745abb",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Timestamp Converter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "hashtag-organizer/index.html": {
+      "url": "https://everydaydigitalbox.com/hashtag-organizer/index.html",
+      "final_url": "https://everydaydigitalbox.com/hashtag-organizer/index.html",
+      "checked_at": "2026-11-07T04:58:15.196094+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "50bd48e2a2767ccc1dde73bcb296b677a86c978509fb28e0d013d4720760abaf",
+      "raw_approved_sha256": "50bd48e2a2767ccc1dde73bcb296b677a86c978509fb28e0d013d4720760abaf",
+      "raw_match": true,
+      "source_sha256": "1179d0a98f2adbb739e9a4f4bce348344c355d6005073771df6e09a92a54a0c6",
+      "approved_normalized_sha256": "1179d0a98f2adbb739e9a4f4bce348344c355d6005073771df6e09a92a54a0c6",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Hashtag Organizer — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "youtube-title-checker/index.html": {
+      "url": "https://everydaydigitalbox.com/youtube-title-checker/index.html",
+      "final_url": "https://everydaydigitalbox.com/youtube-title-checker/index.html",
+      "checked_at": "2026-11-07T04:58:15.210826+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "dfdbaccf5d833e14ff44527091f678bb754edb63e0430777c764b0835b149d04",
+      "raw_approved_sha256": "dfdbaccf5d833e14ff44527091f678bb754edb63e0430777c764b0835b149d04",
+      "raw_match": true,
+      "source_sha256": "ce9dc0dd9eabda295aa632a37a18c44796cc248cf3ca4aec431281671f7774f1",
+      "approved_normalized_sha256": "ce9dc0dd9eabda295aa632a37a18c44796cc248cf3ca4aec431281671f7774f1",
+      "content_type": "text/html; charset=utf-8",
+      "title": "YouTube Title Checker — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "youtube-description-formatter/index.html": {
+      "url": "https://everydaydigitalbox.com/youtube-description-formatter/index.html",
+      "final_url": "https://everydaydigitalbox.com/youtube-description-formatter/index.html",
+      "checked_at": "2026-11-07T04:58:15.667484+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "c4ef5cd1c2f542111eefdfcf6dd299a77578373525125b41f4d01c4bcdb650bf",
+      "raw_approved_sha256": "c4ef5cd1c2f542111eefdfcf6dd299a77578373525125b41f4d01c4bcdb650bf",
+      "raw_match": true,
+      "source_sha256": "56db240536c56c9267589fd08d990b413c15876e571765d86b28033fac457971",
+      "approved_normalized_sha256": "56db240536c56c9267589fd08d990b413c15876e571765d86b28033fac457971",
+      "content_type": "text/html; charset=utf-8",
+      "title": "YouTube Description Formatter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "instagram-bio-formatter/index.html": {
+      "url": "https://everydaydigitalbox.com/instagram-bio-formatter/index.html",
+      "final_url": "https://everydaydigitalbox.com/instagram-bio-formatter/index.html",
+      "checked_at": "2026-11-07T04:58:15.664398+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "5f892ee0a7d1ee4aa1794e844dafd05e3455f881772820011ac8b1187064e552",
+      "raw_approved_sha256": "5f892ee0a7d1ee4aa1794e844dafd05e3455f881772820011ac8b1187064e552",
+      "raw_match": true,
+      "source_sha256": "be5c2fe0d66e16e754236458feff506ab1141b10e57be04f2f86ca2459be4a92",
+      "approved_normalized_sha256": "be5c2fe0d66e16e754236458feff506ab1141b10e57be04f2f86ca2459be4a92",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Instagram Bio Formatter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "emoji-picker/index.html": {
+      "url": "https://everydaydigitalbox.com/emoji-picker/index.html",
+      "final_url": "https://everydaydigitalbox.com/emoji-picker/index.html",
+      "checked_at": "2026-11-07T04:58:15.693179+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "badcdc267813c85b1cd3c30a6258019f8f2e9f326f9113b3624ebe3cfd92eb7f",
+      "raw_approved_sha256": "badcdc267813c85b1cd3c30a6258019f8f2e9f326f9113b3624ebe3cfd92eb7f",
+      "raw_match": true,
+      "source_sha256": "59b4e6e219715db8613af6d4e48be4361310c9c79b372323e3a3916c803282fd",
+      "approved_normalized_sha256": "59b4e6e219715db8613af6d4e48be4361310c9c79b372323e3a3916c803282fd",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Emoji Picker — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js",
+        "../assets/data/emoji-18.0.js"
+      ]
+    },
+    "hashtag-counter/index.html": {
+      "url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
+      "final_url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
+      "checked_at": "2026-11-07T04:58:15.715197+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "1e6314d394237648ef2c26564f59463028944e00e499c96819ec244a22280f4b",
+      "raw_approved_sha256": "1e6314d394237648ef2c26564f59463028944e00e499c96819ec244a22280f4b",
+      "raw_match": true,
+      "source_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
+      "approved_normalized_sha256": "e48fc23bf06a1f97f3210e741402388ac97240e70a8fce2aa651084fbf49df00",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Hashtag Counter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "youtube-thumbnail-preview/index.html": {
+      "url": "https://everydaydigitalbox.com/youtube-thumbnail-preview/index.html",
+      "final_url": "https://everydaydigitalbox.com/youtube-thumbnail-preview/index.html",
+      "checked_at": "2026-11-07T04:58:16.005253+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "30d119911de835a821324155c85dcf92c76049a88d51f2efdd0c6e7203d68678",
+      "raw_approved_sha256": "30d119911de835a821324155c85dcf92c76049a88d51f2efdd0c6e7203d68678",
+      "raw_match": true,
+      "source_sha256": "30d119911de835a821324155c85dcf92c76049a88d51f2efdd0c6e7203d68678",
+      "approved_normalized_sha256": "30d119911de835a821324155c85dcf92c76049a88d51f2efdd0c6e7203d68678",
+      "content_type": "text/html; charset=utf-8",
+      "title": "YouTube Thumbnail Preview — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "posting-calendar-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/posting-calendar-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/posting-calendar-generator/index.html",
+      "checked_at": "2026-11-07T04:58:16.129064+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "2e4a1d9cdc1b56cf8cfc0e02a5912be8ad84e01fb417b110de49cead6f8c61c0",
+      "raw_approved_sha256": "2e4a1d9cdc1b56cf8cfc0e02a5912be8ad84e01fb417b110de49cead6f8c61c0",
+      "raw_match": true,
+      "source_sha256": "e3c629a489da2d6cd662a7d9e4b44a21f32e96b828ed065126681aa10e58951e",
+      "approved_normalized_sha256": "e3c629a489da2d6cd662a7d9e4b44a21f32e96b828ed065126681aa10e58951e",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Posting Calendar Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "username-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/username-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/username-generator/index.html",
+      "checked_at": "2026-11-07T04:58:16.321984+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "818a1cf1a2984442193a5c97a8e7b92c5726f56f3baf57f130d2ca1c8879b4e3",
+      "raw_approved_sha256": "818a1cf1a2984442193a5c97a8e7b92c5726f56f3baf57f130d2ca1c8879b4e3",
+      "raw_match": true,
+      "source_sha256": "22c95639efe252840f1ee07181ad479b6258b3f64d644232e700961d33846934",
+      "approved_normalized_sha256": "22c95639efe252840f1ee07181ad479b6258b3f64d644232e700961d33846934",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Username Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "percentage-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/percentage-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/percentage-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:16.427788+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "e8729d3c97a84fc46a54d026e4da6f05bc1f2c59bbfcd9c1acb4f9056ca68c0c",
+      "raw_approved_sha256": "e8729d3c97a84fc46a54d026e4da6f05bc1f2c59bbfcd9c1acb4f9056ca68c0c",
+      "raw_match": true,
+      "source_sha256": "0fdb156ad6ac4194f308881d627dec3f37fb2b240e4aa6db19411ce9f1e25323",
+      "approved_normalized_sha256": "0fdb156ad6ac4194f308881d627dec3f37fb2b240e4aa6db19411ce9f1e25323",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Percentage Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "percentage-change-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/percentage-change-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/percentage-change-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:19.807660+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "6d87b9a6eebe333a2088121df765f8cbd5ab609463c4d509813a7e681369cd15",
+      "raw_approved_sha256": "6d87b9a6eebe333a2088121df765f8cbd5ab609463c4d509813a7e681369cd15",
+      "raw_match": true,
+      "source_sha256": "0c55abfd53e23f4cc78cdf2c70b32f5e52b1c7b0dfb2ec914a0be6b17ea22f03",
+      "approved_normalized_sha256": "0c55abfd53e23f4cc78cdf2c70b32f5e52b1c7b0dfb2ec914a0be6b17ea22f03",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Percentage Change Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "vat-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/vat-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/vat-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:19.807925+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "13f638970e4ea54fcaada0655041a7bc998917624a0c9f278728ce80d257a71a",
+      "raw_approved_sha256": "13f638970e4ea54fcaada0655041a7bc998917624a0c9f278728ce80d257a71a",
+      "raw_match": true,
+      "source_sha256": "3a988d59542ffed5f6489afb4bbf23500776df0723d78eed2ef027a51e8d88d7",
+      "approved_normalized_sha256": "3a988d59542ffed5f6489afb4bbf23500776df0723d78eed2ef027a51e8d88d7",
+      "content_type": "text/html; charset=utf-8",
+      "title": "VAT Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "discount-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/discount-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/discount-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:19.808079+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "5b8e853c9e7381343608f0f0c7dc75bb388048fa2fcb59a8107cfa3bd835afb0",
+      "raw_approved_sha256": "5b8e853c9e7381343608f0f0c7dc75bb388048fa2fcb59a8107cfa3bd835afb0",
+      "raw_match": true,
+      "source_sha256": "5ced306abe918fdec6c9b1ce054a2713da854a1b4942c63dbe4dc7d3c47e067d",
+      "approved_normalized_sha256": "5ced306abe918fdec6c9b1ce054a2713da854a1b4942c63dbe4dc7d3c47e067d",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Discount Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "age-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/age-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/age-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:20.416993+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "246072acb8a522885dcc69ee492aac343a9d6c39b23b57599643901a2175cd83",
+      "raw_approved_sha256": "246072acb8a522885dcc69ee492aac343a9d6c39b23b57599643901a2175cd83",
+      "raw_match": true,
+      "source_sha256": "d176ac8c5953439c07c2e62e02e61b0ec2f8692fbda98d477683943ba96e8f03",
+      "approved_normalized_sha256": "d176ac8c5953439c07c2e62e02e61b0ec2f8692fbda98d477683943ba96e8f03",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Age Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "date-difference-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/date-difference-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/date-difference-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:20.539049+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "f807de990d11871759ebd18e827ac9b7b08efb6b9e23aac50d08bae9f4748143",
+      "raw_approved_sha256": "f807de990d11871759ebd18e827ac9b7b08efb6b9e23aac50d08bae9f4748143",
+      "raw_match": true,
+      "source_sha256": "f1fcdc20f329dd02d247fd3c97cab0977cffacc68c5bf335b9df5f9fcd4a4a46",
+      "approved_normalized_sha256": "f1fcdc20f329dd02d247fd3c97cab0977cffacc68c5bf335b9df5f9fcd4a4a46",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Date Difference Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "working-days-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/working-days-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/working-days-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:20.552703+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "f5eefcd5fe9d63cedfa2c8b99503cae653abc3d2fabafed3f7a60e41440a9281",
+      "raw_approved_sha256": "f5eefcd5fe9d63cedfa2c8b99503cae653abc3d2fabafed3f7a60e41440a9281",
+      "raw_match": true,
+      "source_sha256": "a46a558f5c48542e862a32e33beb7006123c92649814413a3429e69f18a95735",
+      "approved_normalized_sha256": "a46a558f5c48542e862a32e33beb7006123c92649814413a3429e69f18a95735",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Working Days Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "loan-repayment-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/loan-repayment-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/loan-repayment-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:20.557016+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "e3b4badbf4b57f2debfd18b2adf1dc9161a7cf329963e3553103311090470e9d",
+      "raw_approved_sha256": "e3b4badbf4b57f2debfd18b2adf1dc9161a7cf329963e3553103311090470e9d",
+      "raw_match": true,
+      "source_sha256": "eadc07ca9ce5bc4d8795bb7eb76778293f54c1ece9626d80d8cd4b4c47c75f2f",
+      "approved_normalized_sha256": "eadc07ca9ce5bc4d8795bb7eb76778293f54c1ece9626d80d8cd4b4c47c75f2f",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Loan Repayment Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "profit-margin-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/profit-margin-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/profit-margin-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:21.123917+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "7803612757fe7d8aec84cfbf6193131c5cc169edb88a5dc720525fd8e63bf44b",
+      "raw_approved_sha256": "7803612757fe7d8aec84cfbf6193131c5cc169edb88a5dc720525fd8e63bf44b",
+      "raw_match": true,
+      "source_sha256": "ffa361936b0d22b21b1253cac0c04dbd8cdcc5ed221b1bdf72eebf68ede70025",
+      "approved_normalized_sha256": "ffa361936b0d22b21b1253cac0c04dbd8cdcc5ed221b1bdf72eebf68ede70025",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Profit Margin Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "compound-interest-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/compound-interest-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/compound-interest-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:21.175176+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "761e375f0240b91a465e21f0ea018948ff4f2d8999bf3e6c454628ef1ee12883",
+      "raw_approved_sha256": "761e375f0240b91a465e21f0ea018948ff4f2d8999bf3e6c454628ef1ee12883",
+      "raw_match": true,
+      "source_sha256": "09aa6dd060a2342ce9afc398f74f961feaaa5ab467dda169740e7e6d309cdd6a",
+      "approved_normalized_sha256": "09aa6dd060a2342ce9afc398f74f961feaaa5ab467dda169740e7e6d309cdd6a",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Compound Interest Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "password-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/password-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/password-generator/index.html",
+      "checked_at": "2026-11-07T04:58:21.236692+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "aab4e2feda7860702d8fd4ed9a1477d781f1bbc1c52e94908d6b347ba6fff073",
+      "raw_approved_sha256": "aab4e2feda7860702d8fd4ed9a1477d781f1bbc1c52e94908d6b347ba6fff073",
+      "raw_match": true,
+      "source_sha256": "ccd7e401abc193ffe4d2cac50431442b355f7ba17019301db0e94e61187b2d6a",
+      "approved_normalized_sha256": "ccd7e401abc193ffe4d2cac50431442b355f7ba17019301db0e94e61187b2d6a",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Password Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "secure-random-number-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/secure-random-number-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/secure-random-number-generator/index.html",
+      "checked_at": "2026-11-07T04:58:21.285023+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "476de61456b49ed026d5f150706952bbd777d4225208c7d453022dd164a58a5e",
+      "raw_approved_sha256": "476de61456b49ed026d5f150706952bbd777d4225208c7d453022dd164a58a5e",
+      "raw_match": true,
+      "source_sha256": "d691354ed364f6e3fc2eb2906b52f953de0170841969198dacc3a00f90933352",
+      "approved_normalized_sha256": "d691354ed364f6e3fc2eb2906b52f953de0170841969198dacc3a00f90933352",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Secure Random Number Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "file-signature-inspector/index.html": {
+      "url": "https://everydaydigitalbox.com/file-signature-inspector/index.html",
+      "final_url": "https://everydaydigitalbox.com/file-signature-inspector/index.html",
+      "checked_at": "2026-11-07T04:58:22.478281+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "2b99104465ae13ed1365593c1cbaf318160394366c3656ca59118352acf1efce",
+      "raw_approved_sha256": "2b99104465ae13ed1365593c1cbaf318160394366c3656ca59118352acf1efce",
+      "raw_match": true,
+      "source_sha256": "2b845bd8af6fdea9dd18f4d0dde18e0f1f65c1c4a5a8dbc92c224984ef35893b",
+      "approved_normalized_sha256": "2b845bd8af6fdea9dd18f4d0dde18e0f1f65c1c4a5a8dbc92c224984ef35893b",
+      "content_type": "text/html; charset=utf-8",
+      "title": "File Signature Inspector — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "passphrase-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/passphrase-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/passphrase-generator/index.html",
+      "checked_at": "2026-11-07T04:58:22.573769+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "f16f6d93698c38549396fd9c7d379771e70cedd4fd931a1984b3cfe056d2bdd0",
+      "raw_approved_sha256": "f16f6d93698c38549396fd9c7d379771e70cedd4fd931a1984b3cfe056d2bdd0",
+      "raw_match": true,
+      "source_sha256": "cb209580582a7bc27a4d4fd570c95fdbddfe4755dd7acafa220202e8d0aa9b64",
+      "approved_normalized_sha256": "cb209580582a7bc27a4d4fd570c95fdbddfe4755dd7acafa220202e8d0aa9b64",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Passphrase Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js",
+        "../assets/data/eff-wordlist.js"
+      ]
+    },
+    "qr-code-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/qr-code-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/qr-code-generator/index.html",
+      "checked_at": "2026-11-07T04:58:22.607992+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "005f8bdd939b9caa997b88477fe84179ea0b222c7c05f394001dd35420514e6e",
+      "raw_approved_sha256": "005f8bdd939b9caa997b88477fe84179ea0b222c7c05f394001dd35420514e6e",
+      "raw_match": true,
+      "source_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
+      "approved_normalized_sha256": "b579464833bd454c81c0beedbcd78deedba1d26df9af33b1d326b6cb88f4e116",
+      "content_type": "text/html; charset=utf-8",
+      "title": "QR Code Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js",
+        "../assets/vendor/qrcodegen-1.8.0.js"
+      ]
+    },
+    "markdown-converter-previewer/index.html": {
+      "url": "https://everydaydigitalbox.com/markdown-converter-previewer/index.html",
+      "final_url": "https://everydaydigitalbox.com/markdown-converter-previewer/index.html",
+      "checked_at": "2026-11-07T04:58:22.728215+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "da23dd5a5483935fdc70399ed738e8bf9145f284e48878f374a9adccceeea503",
+      "raw_approved_sha256": "da23dd5a5483935fdc70399ed738e8bf9145f284e48878f374a9adccceeea503",
+      "raw_match": true,
+      "source_sha256": "17f673ec6b9a2c059df6d6c41a3fd53c109e18b59740cb33f7df3eca2bc2489e",
+      "approved_normalized_sha256": "17f673ec6b9a2c059df6d6c41a3fd53c109e18b59740cb33f7df3eca2bc2489e",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Markdown Converter & Previewer — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js",
+        "../assets/vendor/task22/markdown-source.js"
+      ]
+    },
+    "html-to-markdown/index.html": {
+      "url": "https://everydaydigitalbox.com/html-to-markdown/index.html",
+      "final_url": "https://everydaydigitalbox.com/html-to-markdown/index.html",
+      "checked_at": "2026-11-07T04:58:23.189058+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "fe423cc6c3f92adc2c847beda65ac33de6595697b7c1d90a22bbb322e38462f6",
+      "raw_approved_sha256": "fe423cc6c3f92adc2c847beda65ac33de6595697b7c1d90a22bbb322e38462f6",
+      "raw_match": true,
+      "source_sha256": "3e3198471cf5eca4f71d0637cc16e9d0a8ad9232b9c31ca623013c0dd6b83b45",
+      "approved_normalized_sha256": "3e3198471cf5eca4f71d0637cc16e9d0a8ad9232b9c31ca623013c0dd6b83b45",
+      "content_type": "text/html; charset=utf-8",
+      "title": "HTML to Markdown — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js",
+        "../assets/vendor/task21/markup-source.js"
+      ]
+    },
+    "csv-to-txt/index.html": {
+      "url": "https://everydaydigitalbox.com/csv-to-txt/index.html",
+      "final_url": "https://everydaydigitalbox.com/csv-to-txt/index.html",
+      "checked_at": "2026-11-07T04:58:23.244479+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "432594cca900fc7f4cc1e3bfa8f2c9ff789d90e716f6bed6bbd1864ca435588a",
+      "raw_approved_sha256": "432594cca900fc7f4cc1e3bfa8f2c9ff789d90e716f6bed6bbd1864ca435588a",
+      "raw_match": true,
+      "source_sha256": "9f960bcc4b3c1bee64d69203108ad02cb55b772f57bd833696c7cfd2cdf5b97b",
+      "approved_normalized_sha256": "9f960bcc4b3c1bee64d69203108ad02cb55b772f57bd833696c7cfd2cdf5b97b",
+      "content_type": "text/html; charset=utf-8",
+      "title": "CSV to TXT — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "json-to-txt/index.html": {
+      "url": "https://everydaydigitalbox.com/json-to-txt/index.html",
+      "final_url": "https://everydaydigitalbox.com/json-to-txt/index.html",
+      "checked_at": "2026-11-07T04:58:23.241235+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "1e141dff6850a7bbd3c95bd42560c2f27fa10608c204ab43d3ca425becfbf8dd",
+      "raw_approved_sha256": "1e141dff6850a7bbd3c95bd42560c2f27fa10608c204ab43d3ca425becfbf8dd",
+      "raw_match": true,
+      "source_sha256": "dc69efc1f5c5dd842d55e33699e88b4b522eff123d177d4a9fc1102c56ed4356",
+      "approved_normalized_sha256": "dc69efc1f5c5dd842d55e33699e88b4b522eff123d177d4a9fc1102c56ed4356",
+      "content_type": "text/html; charset=utf-8",
+      "title": "JSON to TXT — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "png-to-ico/index.html": {
+      "url": "https://everydaydigitalbox.com/png-to-ico/index.html",
+      "final_url": "https://everydaydigitalbox.com/png-to-ico/index.html",
+      "checked_at": "2026-11-07T04:58:23.241516+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "b71196dea1c6ac2339a2a9363718b52bde87da676119539d913d9967ffd546ad",
+      "raw_approved_sha256": "b71196dea1c6ac2339a2a9363718b52bde87da676119539d913d9967ffd546ad",
+      "raw_match": true,
+      "source_sha256": "20b5eef801640ae9a4e4fadec36bf4993b55662f150f84eb818198feceaa8482",
+      "approved_normalized_sha256": "20b5eef801640ae9a4e4fadec36bf4993b55662f150f84eb818198feceaa8482",
+      "content_type": "text/html; charset=utf-8",
+      "title": "PNG to ICO — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "file-size-converter/index.html": {
+      "url": "https://everydaydigitalbox.com/file-size-converter/index.html",
+      "final_url": "https://everydaydigitalbox.com/file-size-converter/index.html",
+      "checked_at": "2026-11-07T04:58:23.531025+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "e5c407ebe28441684cf569f775f90740b856b3d5f997655f69858f539fa61cf1",
+      "raw_approved_sha256": "e5c407ebe28441684cf569f775f90740b856b3d5f997655f69858f539fa61cf1",
+      "raw_match": true,
+      "source_sha256": "a7f9049f044037e40178245cd87c4eddae94fbcd829130a5c1070e497219b121",
+      "approved_normalized_sha256": "a7f9049f044037e40178245cd87c4eddae94fbcd829130a5c1070e497219b121",
+      "content_type": "text/html; charset=utf-8",
+      "title": "File Size Converter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "html-previewer/index.html": {
+      "url": "https://everydaydigitalbox.com/html-previewer/index.html",
+      "final_url": "https://everydaydigitalbox.com/html-previewer/index.html",
+      "checked_at": "2026-11-07T04:58:23.614625+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "e099d671c23b8220080c1d4ae92c9be1e1dad0cac854eb98a5b1f1c31a1b6742",
+      "raw_approved_sha256": "e099d671c23b8220080c1d4ae92c9be1e1dad0cac854eb98a5b1f1c31a1b6742",
+      "raw_match": true,
+      "source_sha256": "0bde0accbd4efe8bf0bb20575fa480aac3aa9d723c12003f7abab938aec0508b",
+      "approved_normalized_sha256": "0bde0accbd4efe8bf0bb20575fa480aac3aa9d723c12003f7abab938aec0508b",
+      "content_type": "text/html; charset=utf-8",
+      "title": "HTML Previewer — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js",
+        "../assets/vendor/task21/markup-source.js"
+      ]
+    },
+    "pomodoro-timer/index.html": {
+      "url": "https://everydaydigitalbox.com/pomodoro-timer/index.html",
+      "final_url": "https://everydaydigitalbox.com/pomodoro-timer/index.html",
+      "checked_at": "2026-11-07T04:58:23.666506+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "c17d8acf59a746d3a8dcad198699592ef9b8880c2ebf62eb60f1b7ba5c999e55",
+      "raw_approved_sha256": "c17d8acf59a746d3a8dcad198699592ef9b8880c2ebf62eb60f1b7ba5c999e55",
+      "raw_match": true,
+      "source_sha256": "c17d8acf59a746d3a8dcad198699592ef9b8880c2ebf62eb60f1b7ba5c999e55",
+      "approved_normalized_sha256": "c17d8acf59a746d3a8dcad198699592ef9b8880c2ebf62eb60f1b7ba5c999e55",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Pomodoro Timer — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "countdown-timer/index.html": {
+      "url": "https://everydaydigitalbox.com/countdown-timer/index.html",
+      "final_url": "https://everydaydigitalbox.com/countdown-timer/index.html",
+      "checked_at": "2026-11-07T04:58:23.660543+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "c2b8092a4c161d3ce46e1c2038475d46af82c2fa1dae2f477c86fd3bb47e25c1",
+      "raw_approved_sha256": "c2b8092a4c161d3ce46e1c2038475d46af82c2fa1dae2f477c86fd3bb47e25c1",
+      "raw_match": true,
+      "source_sha256": "58dbee0b612c0744cbf2056be9b1f87af42fd12915e44d575660524ba97b948f",
+      "approved_normalized_sha256": "58dbee0b612c0744cbf2056be9b1f87af42fd12915e44d575660524ba97b948f",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Countdown Timer — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "random-name-picker/index.html": {
+      "url": "https://everydaydigitalbox.com/random-name-picker/index.html",
+      "final_url": "https://everydaydigitalbox.com/random-name-picker/index.html",
+      "checked_at": "2026-11-07T04:58:23.872775+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "1aaa4dad4ec4f549d333723bb3efb449554e750ca6fa864076413dffd5781ff2",
+      "raw_approved_sha256": "1aaa4dad4ec4f549d333723bb3efb449554e750ca6fa864076413dffd5781ff2",
+      "raw_match": true,
+      "source_sha256": "f9e2dbb21db106c6a8c1ac29cd91888ebe69df6c74e023572304cbbf1d93f361",
+      "approved_normalized_sha256": "f9e2dbb21db106c6a8c1ac29cd91888ebe69df6c74e023572304cbbf1d93f361",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Random Name Picker — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "local-to-do-list/index.html": {
+      "url": "https://everydaydigitalbox.com/local-to-do-list/index.html",
+      "final_url": "https://everydaydigitalbox.com/local-to-do-list/index.html",
+      "checked_at": "2026-11-07T04:58:23.960326+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "cdf9c3fc0119972593868bbf3b8e331b993f0c3ae3121a32d0edb8f704ffd844",
+      "raw_approved_sha256": "cdf9c3fc0119972593868bbf3b8e331b993f0c3ae3121a32d0edb8f704ffd844",
+      "raw_match": true,
+      "source_sha256": "cdf9c3fc0119972593868bbf3b8e331b993f0c3ae3121a32d0edb8f704ffd844",
+      "approved_normalized_sha256": "cdf9c3fc0119972593868bbf3b8e331b993f0c3ae3121a32d0edb8f704ffd844",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Local To-Do List — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "invoice-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/invoice-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/invoice-generator/index.html",
+      "checked_at": "2026-11-07T04:58:23.996536+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "567fdec52dcf39ad99474ff2e1b35f055d668674fb5420f3912dc9b1bfd2e1b2",
+      "raw_approved_sha256": "567fdec52dcf39ad99474ff2e1b35f055d668674fb5420f3912dc9b1bfd2e1b2",
+      "raw_match": true,
+      "source_sha256": "567fdec52dcf39ad99474ff2e1b35f055d668674fb5420f3912dc9b1bfd2e1b2",
+      "approved_normalized_sha256": "567fdec52dcf39ad99474ff2e1b35f055d668674fb5420f3912dc9b1bfd2e1b2",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Invoice Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "resume-builder/index.html": {
+      "url": "https://everydaydigitalbox.com/resume-builder/index.html",
+      "final_url": "https://everydaydigitalbox.com/resume-builder/index.html",
+      "checked_at": "2026-11-07T04:58:24.006609+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "87478090d2e918bbf29f1504763a7b72ddca7455671ed4185624bd71245d9804",
+      "raw_approved_sha256": "87478090d2e918bbf29f1504763a7b72ddca7455671ed4185624bd71245d9804",
+      "raw_match": true,
+      "source_sha256": "06bd8e051571ebc099185f41dabfc876117f2d07eba1b17bd2bb3d1a5e467adc",
+      "approved_normalized_sha256": "06bd8e051571ebc099185f41dabfc876117f2d07eba1b17bd2bb3d1a5e467adc",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Resume Builder — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "meeting-agenda-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/meeting-agenda-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/meeting-agenda-generator/index.html",
+      "checked_at": "2026-11-07T04:58:24.283833+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "5ce7019d339357f0e431298caf698b9c7a5fd5a756e5a522972ed58ff6b155cc",
+      "raw_approved_sha256": "5ce7019d339357f0e431298caf698b9c7a5fd5a756e5a522972ed58ff6b155cc",
+      "raw_match": true,
+      "source_sha256": "5ce7019d339357f0e431298caf698b9c7a5fd5a756e5a522972ed58ff6b155cc",
+      "approved_normalized_sha256": "5ce7019d339357f0e431298caf698b9c7a5fd5a756e5a522972ed58ff6b155cc",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Meeting Agenda Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "printable-calendar-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/printable-calendar-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/printable-calendar-generator/index.html",
+      "checked_at": "2026-11-07T04:58:24.427899+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "951578abaef331aa9857039f0e4d8e273b0e6463258e79c43ac5e78f491b9c55",
+      "raw_approved_sha256": "951578abaef331aa9857039f0e4d8e273b0e6463258e79c43ac5e78f491b9c55",
+      "raw_match": true,
+      "source_sha256": "37e2a027293cee4d8388bbbe1c952d08806a2afb8e7d779d42187eeb0a7694fe",
+      "approved_normalized_sha256": "37e2a027293cee4d8388bbbe1c952d08806a2afb8e7d779d42187eeb0a7694fe",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Printable Calendar Generator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "number-base-converter/index.html": {
+      "url": "https://everydaydigitalbox.com/number-base-converter/index.html",
+      "final_url": "https://everydaydigitalbox.com/number-base-converter/index.html",
+      "checked_at": "2026-11-07T04:58:24.452307+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "af7c2d98d17689d146c2dd487f9e775c65392a1bfdab34ff3b10d3ff5f93eec3",
+      "raw_approved_sha256": "af7c2d98d17689d146c2dd487f9e775c65392a1bfdab34ff3b10d3ff5f93eec3",
+      "raw_match": true,
+      "source_sha256": "7d44e30061fd9e6f4570903937379f153129b099b7eeb898fbcfba6335c016b2",
+      "approved_normalized_sha256": "7d44e30061fd9e6f4570903937379f153129b099b7eeb898fbcfba6335c016b2",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Number Base Converter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "unit-converter/index.html": {
+      "url": "https://everydaydigitalbox.com/unit-converter/index.html",
+      "final_url": "https://everydaydigitalbox.com/unit-converter/index.html",
+      "checked_at": "2026-11-07T04:58:24.824822+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "8ea27c8492f15f271b34a0f50b33a34da6bf0e7e2c73893fc2829cd7a62a4f7f",
+      "raw_approved_sha256": "8ea27c8492f15f271b34a0f50b33a34da6bf0e7e2c73893fc2829cd7a62a4f7f",
+      "raw_match": true,
+      "source_sha256": "5bf6acd58a2ff3d6808449172ff8400715a93f8f7cd2c96f9933857a9e76d964",
+      "approved_normalized_sha256": "5bf6acd58a2ff3d6808449172ff8400715a93f8f7cd2c96f9933857a9e76d964",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Unit Converter — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "duration-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/duration-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/duration-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:24.830114+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "29e485638cdc71abecdaca9d3cd942dde25c0632bf78d738fef6ac1741fb6187",
+      "raw_approved_sha256": "29e485638cdc71abecdaca9d3cd942dde25c0632bf78d738fef6ac1741fb6187",
+      "raw_match": true,
+      "source_sha256": "4da965140c1fbbd7ede22fb798a87dabb5d526167064da27f8af4b2a1109e330",
+      "approved_normalized_sha256": "4da965140c1fbbd7ede22fb798a87dabb5d526167064da27f8af4b2a1109e330",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Duration Calculator — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "url-inspector-query-builder/index.html": {
+      "url": "https://everydaydigitalbox.com/url-inspector-query-builder/index.html",
+      "final_url": "https://everydaydigitalbox.com/url-inspector-query-builder/index.html",
+      "checked_at": "2026-11-07T04:58:25.296955+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "1322ab9a554d260440c7467cec157fbb9660e09eb76f67c305a0801fab13f9a7",
+      "raw_approved_sha256": "1322ab9a554d260440c7467cec157fbb9660e09eb76f67c305a0801fab13f9a7",
+      "raw_match": true,
+      "source_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+      "approved_normalized_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+      "content_type": "text/html; charset=utf-8",
+      "title": "URL Inspector & Query Builder — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "list-comparison-set-operations/index.html": {
+      "url": "https://everydaydigitalbox.com/list-comparison-set-operations/index.html",
+      "final_url": "https://everydaydigitalbox.com/list-comparison-set-operations/index.html",
+      "checked_at": "2026-11-07T04:58:25.697786+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "8d6478160b3d25e5f91322ba480a09b70b7b22e34df6b4863d425b48eac648c0",
+      "raw_approved_sha256": "8d6478160b3d25e5f91322ba480a09b70b7b22e34df6b4863d425b48eac648c0",
+      "raw_match": true,
+      "source_sha256": "debcbede1959b4cee44d2b07552550cd4cef3a29ec347676567a89a6016c924e",
+      "approved_normalized_sha256": "debcbede1959b4cee44d2b07552550cd4cef3a29ec347676567a89a6016c924e",
+      "content_type": "text/html; charset=utf-8",
+      "title": "List Comparison & Set Operations — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "color-contrast-checker/index.html": {
+      "url": "https://everydaydigitalbox.com/color-contrast-checker/index.html",
+      "final_url": "https://everydaydigitalbox.com/color-contrast-checker/index.html",
+      "checked_at": "2026-11-07T04:58:26.448272+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "11f80e033b2eb4f3a5556b881061a836f19ea621288f1a70d6f2e8a433f8c96a",
+      "raw_approved_sha256": "11f80e033b2eb4f3a5556b881061a836f19ea621288f1a70d6f2e8a433f8c96a",
+      "raw_match": true,
+      "source_sha256": "1a4fe79bc483370abc574217d2e78951b17a55c92010ba9f744b336514f213e7",
+      "approved_normalized_sha256": "1a4fe79bc483370abc574217d2e78951b17a55c92010ba9f744b336514f213e7",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Color Contrast Checker — Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "word-frequency-analyzer/index.html": {
+      "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+      "final_url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+      "checked_at": "2026-11-07T04:58:26.598491+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+      "raw_approved_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+      "raw_match": true,
+      "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+      "approved_normalized_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Word Frequency Analyzer | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "unicode-inspector/index.html": {
+      "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+      "final_url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+      "checked_at": "2026-11-07T04:58:27.123778+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "ffff512e80d44a1900ed04f81049b7104ef601b1bbd825e9de6160616dc0346d",
+      "raw_approved_sha256": "ffff512e80d44a1900ed04f81049b7104ef601b1bbd825e9de6160616dc0346d",
+      "raw_match": true,
+      "source_sha256": "049b8a1d446f3ed513cbbe31654e033ea0ea320331301baf12e308f01f121440",
+      "approved_normalized_sha256": "049b8a1d446f3ed513cbbe31654e033ea0ea320331301baf12e308f01f121440",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Unicode Inspector | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "ipv4-subnet-calculator/index.html": {
+      "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+      "final_url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+      "checked_at": "2026-11-07T04:58:27.425285+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "acfa9c5550be43a22fac982c35f3132eaaa579ffbda5b2d67dcb973681ca08fc",
+      "raw_approved_sha256": "acfa9c5550be43a22fac982c35f3132eaaa579ffbda5b2d67dcb973681ca08fc",
+      "raw_match": true,
+      "source_sha256": "0ecf3b6abe5f986737f7b2c9aa4a3a270925acb69ffeb5fea890fc8a60d00bf0",
+      "approved_normalized_sha256": "0ecf3b6abe5f986737f7b2c9aa4a3a270925acb69ffeb5fea890fc8a60d00bf0",
+      "content_type": "text/html; charset=utf-8",
+      "title": "IPv4 Subnet Calculator | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "batch-filename-planner/index.html": {
+      "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+      "final_url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+      "checked_at": "2026-11-07T04:58:27.544608+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+      "raw_approved_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+      "raw_match": true,
+      "source_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+      "approved_normalized_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Batch Filename Planner | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "file-byte-comparator/index.html": {
+      "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+      "final_url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+      "checked_at": "2026-11-07T04:58:27.949893+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+      "raw_approved_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+      "raw_match": true,
+      "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+      "approved_normalized_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+      "content_type": "text/html; charset=utf-8",
+      "title": "File Byte Comparator | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "css-gradient-generator/index.html": {
+      "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+      "final_url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+      "checked_at": "2026-11-07T04:58:28.723359+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "c3c4fa6c7ec48016a122c591325c5559030666408c9c5e2596d2b22bcd7cc259",
+      "raw_approved_sha256": "c3c4fa6c7ec48016a122c591325c5559030666408c9c5e2596d2b22bcd7cc259",
+      "raw_match": true,
+      "source_sha256": "0c31f44c7d68ba0398a30fd69592ddf8a30c6dde816ec2a0dabedbfcdd364d4c",
+      "approved_normalized_sha256": "0c31f44c7d68ba0398a30fd69592ddf8a30c6dde816ec2a0dabedbfcdd364d4c",
+      "content_type": "text/html; charset=utf-8",
+      "title": "CSS Gradient Generator | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    }
+  },
+  "canonical_public_urls": {
+    "word-frequency-analyzer": {
+      "url": "https://everydaydigitalbox.com/word-frequency-analyzer/",
+      "final_url": "https://everydaydigitalbox.com/word-frequency-analyzer/",
+      "checked_at": "2026-11-07T04:58:29.644698+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+      "raw_approved_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+      "raw_match": true,
+      "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+      "approved_normalized_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Word Frequency Analyzer | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "unicode-inspector": {
+      "url": "https://everydaydigitalbox.com/unicode-inspector/",
+      "final_url": "https://everydaydigitalbox.com/unicode-inspector/",
+      "checked_at": "2026-11-07T04:58:30.435421+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "ffff512e80d44a1900ed04f81049b7104ef601b1bbd825e9de6160616dc0346d",
+      "raw_approved_sha256": "ffff512e80d44a1900ed04f81049b7104ef601b1bbd825e9de6160616dc0346d",
+      "raw_match": true,
+      "source_sha256": "049b8a1d446f3ed513cbbe31654e033ea0ea320331301baf12e308f01f121440",
+      "approved_normalized_sha256": "049b8a1d446f3ed513cbbe31654e033ea0ea320331301baf12e308f01f121440",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Unicode Inspector | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "ipv4-subnet-calculator": {
+      "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/",
+      "final_url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/",
+      "checked_at": "2026-11-07T04:58:31.271167+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "acfa9c5550be43a22fac982c35f3132eaaa579ffbda5b2d67dcb973681ca08fc",
+      "raw_approved_sha256": "acfa9c5550be43a22fac982c35f3132eaaa579ffbda5b2d67dcb973681ca08fc",
+      "raw_match": true,
+      "source_sha256": "0ecf3b6abe5f986737f7b2c9aa4a3a270925acb69ffeb5fea890fc8a60d00bf0",
+      "approved_normalized_sha256": "0ecf3b6abe5f986737f7b2c9aa4a3a270925acb69ffeb5fea890fc8a60d00bf0",
+      "content_type": "text/html; charset=utf-8",
+      "title": "IPv4 Subnet Calculator | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "batch-filename-planner": {
+      "url": "https://everydaydigitalbox.com/batch-filename-planner/",
+      "final_url": "https://everydaydigitalbox.com/batch-filename-planner/",
+      "checked_at": "2026-11-07T04:58:32.081012+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+      "raw_approved_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+      "raw_match": true,
+      "source_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+      "approved_normalized_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+      "content_type": "text/html; charset=utf-8",
+      "title": "Batch Filename Planner | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "file-byte-comparator": {
+      "url": "https://everydaydigitalbox.com/file-byte-comparator/",
+      "final_url": "https://everydaydigitalbox.com/file-byte-comparator/",
+      "checked_at": "2026-11-07T04:58:33.255651+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+      "raw_approved_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+      "raw_match": true,
+      "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+      "approved_normalized_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+      "content_type": "text/html; charset=utf-8",
+      "title": "File Byte Comparator | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    },
+    "css-gradient-generator": {
+      "url": "https://everydaydigitalbox.com/css-gradient-generator/",
+      "final_url": "https://everydaydigitalbox.com/css-gradient-generator/",
+      "checked_at": "2026-11-07T04:58:37.887419+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "c3c4fa6c7ec48016a122c591325c5559030666408c9c5e2596d2b22bcd7cc259",
+      "raw_approved_sha256": "c3c4fa6c7ec48016a122c591325c5559030666408c9c5e2596d2b22bcd7cc259",
+      "raw_match": true,
+      "source_sha256": "0c31f44c7d68ba0398a30fd69592ddf8a30c6dde816ec2a0dabedbfcdd364d4c",
+      "approved_normalized_sha256": "0c31f44c7d68ba0398a30fd69592ddf8a30c6dde816ec2a0dabedbfcdd364d4c",
+      "content_type": "text/html; charset=utf-8",
+      "title": "CSS Gradient Generator | Everyday Digital Box",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "../assets/consent.js"
+      ]
+    }
+  },
+  "homepage": {
+    "cards": 87,
+    "distinct": 87,
+    "routes": [
+      "age-calculator/index.html",
+      "base64-encoder-decoder/index.html",
+      "batch-filename-planner/index.html",
+      "case-converter/index.html",
+      "color-contrast-checker/index.html",
+      "compound-interest-calculator/index.html",
+      "countdown-timer/index.html",
+      "css-gradient-generator/index.html",
+      "css-minifier/index.html",
+      "csv-column-extractor/index.html",
+      "csv-data-cleaner/index.html",
+      "csv-json-converter/index.html",
+      "csv-merger/index.html",
+      "csv-to-txt/index.html",
+      "csv-viewer/index.html",
+      "date-difference-calculator/index.html",
+      "discount-calculator/index.html",
+      "duplicate-line-remover/index.html",
+      "duplicate-row-finder/index.html",
+      "duration-calculator/index.html",
+      "emoji-picker/index.html",
+      "excel-formula-generator/index.html",
+      "excel-sandbox/index.html",
+      "file-byte-comparator/index.html",
+      "file-signature-inspector/index.html",
+      "file-size-converter/index.html",
+      "find-and-replace/index.html",
+      "hashtag-counter/index.html",
+      "hashtag-organizer/index.html",
+      "html-formatter/index.html",
+      "html-previewer/index.html",
+      "html-to-markdown/index.html",
+      "image-color-picker/index.html",
+      "image-compressor/index.html",
+      "image-cropper/index.html",
+      "image-format-converter/index.html",
+      "image-resizer/index.html",
+      "image-rotator/index.html",
+      "image-watermark/index.html",
+      "instagram-bio-formatter/index.html",
+      "invoice-generator/index.html",
+      "ipv4-subnet-calculator/index.html",
+      "javascript-minifier/index.html",
+      "json-formatter/index.html",
+      "json-to-txt/index.html",
+      "list-comparison-set-operations/index.html",
+      "loan-repayment-calculator/index.html",
+      "local-to-do-list/index.html",
+      "markdown-converter-previewer/index.html",
+      "meeting-agenda-generator/index.html",
+      "number-base-converter/index.html",
+      "passphrase-generator/index.html",
+      "passport-photo-layout-maker/index.html",
+      "password-generator/index.html",
+      "percentage-calculator/index.html",
+      "percentage-change-calculator/index.html",
+      "png-to-ico/index.html",
+      "pomodoro-timer/index.html",
+      "posting-calendar-generator/index.html",
+      "printable-calendar-generator/index.html",
+      "profit-margin-calculator/index.html",
+      "qr-code-generator/index.html",
+      "random-name-picker/index.html",
+      "regex-tester/index.html",
+      "resume-builder/index.html",
+      "secure-random-number-generator/index.html",
+      "sha-256-hash-checker/index.html",
+      "slug-generator/index.html",
+      "social-counter/index.html",
+      "streaming-roulette/index.html",
+      "text-cleaner/index.html",
+      "text-difference-checker/index.html",
+      "text-reverser/index.html",
+      "text-sorter/index.html",
+      "timestamp-converter/index.html",
+      "unicode-inspector/index.html",
+      "unit-converter/index.html",
+      "url-encoder-decoder/index.html",
+      "url-inspector-query-builder/index.html",
+      "username-generator/index.html",
+      "uuid-generator/index.html",
+      "vat-calculator/index.html",
+      "word-frequency-analyzer/index.html",
+      "working-days-calculator/index.html",
+      "youtube-description-formatter/index.html",
+      "youtube-thumbnail-preview/index.html",
+      "youtube-title-checker/index.html"
+    ],
+    "canonical_routes_match": true,
+    "custom_domain": "everydaydigitalbox.com",
+    "visible_cards": 87,
+    "root": {
+      "url": "https://everydaydigitalbox.com/",
+      "final_url": "https://everydaydigitalbox.com/",
+      "checked_at": "2026-11-07T04:58:39.431028+00:00",
+      "http_status": 200,
+      "raw_public_sha256": "8b8df4ea4c790a0efb5f12804fd6987f9afa0ef25d479b22f710f6f726af0e77",
+      "raw_approved_sha256": "8b8df4ea4c790a0efb5f12804fd6987f9afa0ef25d479b22f710f6f726af0e77",
+      "raw_match": true,
+      "source_sha256": "702fb7ee21c6d6f4a4ba35f310aa3a4427ed31435bcc518d9f3af2b5549f76b1",
+      "approved_normalized_sha256": "702fb7ee21c6d6f4a4ba35f310aa3a4427ed31435bcc518d9f3af2b5549f76b1",
+      "content_type": "text/html; charset=utf-8",
+      "title": "WebUtils Hub — Small tools. Everyday wins.",
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "assets/consent.js"
+      ]
+    }
+  },
+  "registered": 105,
+  "deployed_registry_counts": {
+    "RELEASED": 81,
+    "TESTED": 6,
+    "READY": 0,
+    "PLANNED": 17,
+    "BLOCKED": 1
+  },
+  "proposed_registry_counts": {
+    "RELEASED": 87,
+    "TESTED": 0,
+    "READY": 0,
+    "PLANNED": 17,
+    "BLOCKED": 1
+  },
+  "public_browser": {
+    "result": "PASS",
+    "deployment_commit": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "started_at": "2026-11-07T05:02:00.665Z",
+    "scope": "Fresh interactions on public HTTPS. Production responses are unchanged. Clipboard and downloads are captured in memory. One real Worker is instrumented through Chromium DevTools to observe native Blob read sizes and concurrency.",
+    "checks": [
+      {
+        "tool_id": "word-frequency-analyzer",
+        "check": "known Unicode tokens and punctuation boundaries",
+        "checked_at": "2026-11-07T05:02:01.603Z",
+        "result": "PASS",
+        "observed": {
+          "occurrences": 7,
+          "unique": 6
+        }
+      },
+      {
+        "tool_id": "word-frequency-analyzer",
+        "check": "case-sensitive and native lowercase counts",
+        "checked_at": "2026-11-07T05:02:02.273Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "word-frequency-analyzer",
+        "check": "NFC opt-in and literal spelling",
+        "checked_at": "2026-11-07T05:02:02.474Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "word-frequency-analyzer",
+        "check": "alphabetical, frequency and least-first ordering",
+        "checked_at": "2026-11-07T05:02:02.606Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "word-frequency-analyzer",
+        "check": "100,000 input units and 20,000 tokens at the boundary",
+        "checked_at": "2026-11-07T05:02:02.782Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "word-frequency-analyzer",
+        "check": "ranking and byte budgets disclose omissions",
+        "checked_at": "2026-11-07T05:02:03.213Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "unicode-inspector",
+        "check": "known supplementary, combining and emoji cluster boundaries",
+        "checked_at": "2026-11-07T05:02:03.838Z",
+        "result": "PASS",
+        "observed": {
+          "code_points": 6,
+          "utf16_units": 9,
+          "utf8_bytes": 18,
+          "clusters": 3
+        }
+      },
+      {
+        "tool_id": "unicode-inspector",
+        "check": "character categories and normalization without guessed names",
+        "checked_at": "2026-11-07T05:02:04.177Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "unicode-inspector",
+        "check": "lone surrogates and unavailable Segmenter are explicitly labeled",
+        "checked_at": "2026-11-07T05:02:04.370Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "unicode-inspector",
+        "check": "8,192-unit input, capped rows and byte report",
+        "checked_at": "2026-11-07T05:02:04.560Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "ipv4-subnet-calculator",
+        "check": "independent /24 mask, network, broadcast, range and counts",
+        "checked_at": "2026-11-07T05:02:04.850Z",
+        "result": "PASS",
+        "observed": {
+          "mask": "255.255.255.0",
+          "network": "192.0.2.0",
+          "broadcast": "192.0.2.255",
+          "total": 256
+        }
+      },
+      {
+        "tool_id": "ipv4-subnet-calculator",
+        "check": "/0 exact unsigned address range and count",
+        "checked_at": "2026-11-07T05:02:05.060Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "ipv4-subnet-calculator",
+        "check": "/31 point-to-point and /32 host-route boundaries",
+        "checked_at": "2026-11-07T05:02:05.212Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "ipv4-subnet-calculator",
+        "check": "reject invalid addresses and prefixes without retaining output",
+        "checked_at": "2026-11-07T05:02:05.383Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "ipv4-subnet-calculator",
+        "check": "private and shared ranges labeled separately",
+        "checked_at": "2026-11-07T05:02:05.709Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "batch-filename-planner",
+        "check": "Unicode paste, affixes, numbering, dotfiles and case conversion",
+        "checked_at": "2026-11-07T05:02:05.882Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "batch-filename-planner",
+        "check": "selected File metadata only and byte-exact formula-protected CSV",
+        "checked_at": "2026-11-07T05:02:06.094Z",
+        "result": "PASS",
+        "observed": {
+          "file_content_reads": 0,
+          "filesystem_picker_calls": 0,
+          "csv_type": "text/csv;charset=utf-8",
+          "csv_bytes": 117
+        }
+      },
+      {
+        "tool_id": "batch-filename-planner",
+        "check": "case and Unicode collisions deny copy and export",
+        "checked_at": "2026-11-07T05:02:06.391Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "batch-filename-planner",
+        "check": "portable reserved names, invalid characters and output limits",
+        "checked_at": "2026-11-07T05:02:06.591Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "file-byte-comparator",
+        "check": "empty and identical actual File selections",
+        "checked_at": "2026-11-07T05:02:06.902Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "file-byte-comparator",
+        "check": "early difference and shorter-file EOF with unequal lengths",
+        "checked_at": "2026-11-07T05:02:07.308Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "file-byte-comparator",
+        "check": "actual native Worker shows bounded pairs at the chunk boundary",
+        "checked_at": "2026-11-07T05:02:07.587Z",
+        "result": "PASS",
+        "observed": {
+          "slices": [
+            [
+              0,
+              262144
+            ],
+            [
+              0,
+              262144
+            ],
+            [
+              262144,
+              524288
+            ],
+            [
+              262144,
+              524288
+            ]
+          ],
+          "read_sizes": [
+            262144,
+            262144,
+            262144,
+            262144
+          ],
+          "peak_reads_in_flight": 2,
+          "read_count": 4
+        }
+      },
+      {
+        "tool_id": "file-byte-comparator",
+        "check": "late difference after several chunks",
+        "checked_at": "2026-11-07T05:02:07.857Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "file-byte-comparator",
+        "check": "64 MiB pair succeeds and oversize never starts a Worker",
+        "checked_at": "2026-11-07T05:02:08.088Z",
+        "result": "PASS",
+        "observed": {
+          "bytes_per_file": 67108864,
+          "observed_elapsed_ms": 588,
+          "worker_starts_after_oversize": 1
+        }
+      },
+      {
+        "tool_id": "file-byte-comparator",
+        "check": "cancellation, reselection and reset discard prior native Worker results",
+        "checked_at": "2026-11-07T05:02:08.835Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "css-gradient-generator",
+        "check": "live linear preview, exact angle and generated CSS",
+        "checked_at": "2026-11-07T05:02:09.158Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "css-gradient-generator",
+        "check": "centered radial mode disables angle and preserves hard stops",
+        "checked_at": "2026-11-07T05:02:09.566Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "css-gradient-generator",
+        "check": "validate colour grammar, numeric angles, positions and order",
+        "checked_at": "2026-11-07T05:02:09.804Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "css-gradient-generator",
+        "check": "eight stops allowed and nine rejected",
+        "checked_at": "2026-11-07T05:02:10.089Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "css-gradient-generator",
+        "check": "CSS and markup injection probes stay inert",
+        "checked_at": "2026-11-07T05:02:10.395Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "word-frequency-analyzer",
+        "check": "copy success, denied clipboard fallback and reset",
+        "checked_at": "2026-11-07T05:02:10.725Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "word-frequency-analyzer",
+        "check": "native keyboard operation and no overflow at four widths",
+        "checked_at": "2026-11-07T05:02:10.919Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "unicode-inspector",
+        "check": "copy success, denied clipboard fallback and reset",
+        "checked_at": "2026-11-07T05:02:11.134Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "unicode-inspector",
+        "check": "native keyboard operation and no overflow at four widths",
+        "checked_at": "2026-11-07T05:02:11.333Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "ipv4-subnet-calculator",
+        "check": "copy success, denied clipboard fallback and reset",
+        "checked_at": "2026-11-07T05:02:11.540Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "ipv4-subnet-calculator",
+        "check": "native keyboard operation and no overflow at four widths",
+        "checked_at": "2026-11-07T05:02:11.721Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "batch-filename-planner",
+        "check": "copy success, denied clipboard fallback and reset",
+        "checked_at": "2026-11-07T05:02:11.901Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "batch-filename-planner",
+        "check": "native keyboard operation and no overflow at four widths",
+        "checked_at": "2026-11-07T05:02:12.150Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "file-byte-comparator",
+        "check": "copy success, denied clipboard fallback and reset",
+        "checked_at": "2026-11-07T05:02:12.462Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "file-byte-comparator",
+        "check": "native keyboard operation and no overflow at four widths",
+        "checked_at": "2026-11-07T05:02:12.737Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "css-gradient-generator",
+        "check": "copy success, denied clipboard fallback and reset",
+        "checked_at": "2026-11-07T05:02:12.992Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "css-gradient-generator",
+        "check": "native keyboard operation and no overflow at four widths",
+        "checked_at": "2026-11-07T05:02:13.176Z",
+        "result": "PASS"
+      },
+      {
+        "tool_id": "homepage",
+        "check": "87 distinct visible canonical cards and six tested labels",
+        "checked_at": "2026-11-07T05:02:13.365Z",
+        "result": "PASS",
+        "observed": {
+          "visible_cards": 87,
+          "previously_released": 81,
+          "publication_pending": 6
+        }
+      }
+    ],
+    "browser": "Edg/157.0.4341.42",
+    "console_errors": [
+      {
+        "source": "network",
+        "url": "https://everydaydigitalbox.com/favicon.ico",
+        "message": "Browser console error; text omitted to avoid retaining inputs."
+      }
+    ],
+    "unexpected_javascript_errors": 0,
+    "unexpected_dependencies": [],
+    "input_transport_requests": 0,
+    "completed_at": "2026-11-07T05:02:14.696Z"
+  },
+  "public_network": {
+    "started_at": "2026-11-07T05:02:01.600Z",
+    "browser": "Edg/157.0.4341.42",
+    "scope": "Fresh public HTTPS, actual deployed HTML/JS/CDN/consent; no response substitution, external-request blocking or Google stubs. Synthetic QA inputs; clipboard/download capture only.",
+    "pages": [
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "checked_at": "2026-11-07T05:02:02.187Z",
+        "title": "Word Frequency Analyzer | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "checked_at": "2026-11-07T05:02:02.450Z",
+        "title": "Word Frequency Analyzer | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "checked_at": "2026-11-07T05:02:02.584Z",
+        "title": "Word Frequency Analyzer | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "checked_at": "2026-11-07T05:02:02.740Z",
+        "title": "Word Frequency Analyzer | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "checked_at": "2026-11-07T05:02:03.088Z",
+        "title": "Word Frequency Analyzer | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "checked_at": "2026-11-07T05:02:03.422Z",
+        "title": "Word Frequency Analyzer | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "checked_at": "2026-11-07T05:02:04.131Z",
+        "title": "Unicode Inspector | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "checked_at": "2026-11-07T05:02:04.324Z",
+        "title": "Unicode Inspector | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "checked_at": "2026-11-07T05:02:04.503Z",
+        "title": "Unicode Inspector | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "checked_at": "2026-11-07T05:02:04.697Z",
+        "title": "Unicode Inspector | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "checked_at": "2026-11-07T05:02:05.027Z",
+        "title": "IPv4 Subnet Calculator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "checked_at": "2026-11-07T05:02:05.195Z",
+        "title": "IPv4 Subnet Calculator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "checked_at": "2026-11-07T05:02:05.347Z",
+        "title": "IPv4 Subnet Calculator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "checked_at": "2026-11-07T05:02:05.509Z",
+        "title": "IPv4 Subnet Calculator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "checked_at": "2026-11-07T05:02:05.841Z",
+        "title": "IPv4 Subnet Calculator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "checked_at": "2026-11-07T05:02:06.055Z",
+        "title": "Batch Filename Planner | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "checked_at": "2026-11-07T05:02:06.319Z",
+        "title": "Batch Filename Planner | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "checked_at": "2026-11-07T05:02:06.557Z",
+        "title": "Batch Filename Planner | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "checked_at": "2026-11-07T05:02:06.745Z",
+        "title": "Batch Filename Planner | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "checked_at": "2026-11-07T05:02:07.117Z",
+        "title": "File Byte Comparator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "checked_at": "2026-11-07T05:02:07.463Z",
+        "title": "File Byte Comparator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "checked_at": "2026-11-07T05:02:07.752Z",
+        "title": "File Byte Comparator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "checked_at": "2026-11-07T05:02:08.021Z",
+        "title": "File Byte Comparator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "checked_at": "2026-11-07T05:02:08.212Z",
+        "title": "File Byte Comparator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "checked_at": "2026-11-07T05:02:09.066Z",
+        "title": "File Byte Comparator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "checked_at": "2026-11-07T05:02:09.554Z",
+        "title": "CSS Gradient Generator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "checked_at": "2026-11-07T05:02:09.788Z",
+        "title": "CSS Gradient Generator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "checked_at": "2026-11-07T05:02:10.048Z",
+        "title": "CSS Gradient Generator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "checked_at": "2026-11-07T05:02:10.371Z",
+        "title": "CSS Gradient Generator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "checked_at": "2026-11-07T05:02:10.700Z",
+        "title": "CSS Gradient Generator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "checked_at": "2026-11-07T05:02:10.887Z",
+        "title": "Word Frequency Analyzer | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "checked_at": "2026-11-07T05:02:11.075Z",
+        "title": "Word Frequency Analyzer | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "checked_at": "2026-11-07T05:02:11.278Z",
+        "title": "Unicode Inspector | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "checked_at": "2026-11-07T05:02:11.474Z",
+        "title": "Unicode Inspector | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "checked_at": "2026-11-07T05:02:11.694Z",
+        "title": "IPv4 Subnet Calculator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "checked_at": "2026-11-07T05:02:11.835Z",
+        "title": "IPv4 Subnet Calculator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "checked_at": "2026-11-07T05:02:12.127Z",
+        "title": "Batch Filename Planner | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "checked_at": "2026-11-07T05:02:12.367Z",
+        "title": "Batch Filename Planner | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "checked_at": "2026-11-07T05:02:12.633Z",
+        "title": "File Byte Comparator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "checked_at": "2026-11-07T05:02:12.873Z",
+        "title": "File Byte Comparator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "checked_at": "2026-11-07T05:02:13.143Z",
+        "title": "CSS Gradient Generator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "checked_at": "2026-11-07T05:02:13.287Z",
+        "title": "CSS Gradient Generator | Everyday Digital Box"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/",
+        "checked_at": "2026-11-07T05:02:13.772Z",
+        "title": "WebUtils Hub — Small tools. Everyday wins."
+      }
+    ],
+    "requests": [
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/favicon.ico",
+        "type": "Other",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "blob:[local-object]",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/",
+        "type": "Document",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "type": "Script",
+        "method": "GET"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "type": "Script",
+        "method": "GET"
+      }
+    ],
+    "responses": [
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/favicon.ico",
+        "status": 404,
+        "mime": "text/html",
+        "type": "Other"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "blob:[local-object]",
+        "status": 200,
+        "mime": "text/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/",
+        "status": 200,
+        "mime": "text/html",
+        "type": "Document"
+      },
+      {
+        "url": "https://everydaydigitalbox.com/assets/consent.js",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+        "status": 200,
+        "mime": "application/javascript",
+        "type": "Script"
+      }
+    ],
+    "console_errors": [
+      {
+        "source": "network",
+        "url": "https://everydaydigitalbox.com/favicon.ico",
+        "message": "Browser console error; text omitted to avoid retaining inputs."
+      }
+    ],
+    "exceptions": [],
+    "unexpected_dependencies": [],
+    "google_requests": 0,
+    "input_transport_requests": 0,
+    "completed_at": "2026-11-07T05:02:13.783Z"
+  },
+  "consent": {
+    "result": "PASS",
+    "deployment_commit": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "started_at": "2026-11-07T04:57:57.557Z",
+    "measurement_id": "G-XDHPQYJ5CH",
+    "scope": "Actual public HTTPS and real Google tag/collection endpoints; no interception or external-request blocking. Two new isolated Chromium profiles; synthetic QA inputs only. Request bodies/client identifiers are not retained.",
+    "checks": [
+      {
+        "check": "First visit without saved consent:zero Google requests",
+        "result": "PASS"
+      },
+      {
+        "check": "New and existing public tools usable before consent;zero Google requests",
+        "result": "PASS"
+      },
+      {
+        "check": "Rejection persists across new/existing direct tool navigations and an existing tool;zero Google requests",
+        "result": "PASS"
+      },
+      {
+        "check": "Acceptance loads real Google tag and one page view; repeated acceptance has no duplicate",
+        "result": "PASS"
+      },
+      {
+        "check": "Exactly one page view per accepted document navigation; query/fragment excluded",
+        "result": "PASS"
+      },
+      {
+        "check": "Withdrawal immediately disables analytics; new and existing tools usable after direct navigation with zero subsequent Google requests",
+        "result": "PASS"
+      }
+    ],
+    "page_views": [
+      {
+        "event": "page_view",
+        "measurement_id": "G-XDHPQYJ5CH",
+        "page_location": "https://everydaydigitalbox.com/",
+        "http_response": 204,
+        "timestamp_utc": "2026-11-07T04:58:20.162Z"
+      },
+      {
+        "event": "page_view",
+        "measurement_id": "G-XDHPQYJ5CH",
+        "page_location": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+        "http_response": 204,
+        "timestamp_utc": "2026-11-07T04:58:27.994Z"
+      },
+      {
+        "event": "page_view",
+        "measurement_id": "G-XDHPQYJ5CH",
+        "page_location": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+        "http_response": 204,
+        "timestamp_utc": "2026-11-07T04:58:34.354Z"
+      }
+    ],
+    "limitations": [
+      "GA4 browser collection requests verified; property-level reporting remains unverified.",
+      "Three synthetic verification page views sent. Requests already initiated before withdrawal cannot be recalled.",
+      "Observed no-request windows and tested navigations are scoped evidence, not a claim about every possible browser state."
+    ],
+    "browser": "Edg/157.0.4341.42",
+    "google_tag_loads": 3,
+    "uncaught_browser_errors": 0,
+    "completed_at": "2026-11-07T04:58:42.185Z"
+  },
+  "preservation": {
+    "old_worktrees": 30,
+    "current_worktrees": 31,
+    "original_heads_status_and_dirty_bytes_match": true,
+    "unrelated_dirty_handoffs": 2,
+    "dirty_file_sha256": [
+      "bff28e10fb43f01d399c6012aee8bf8153d3aa04c7653a5075f39e9d8f394806",
+      "4f01d54c5ce29bc0c5939277a4011f85b3147bb08ac53a9bf8f41b57ab285f79"
+    ]
+  },
+  "milestone": {
+    "target": 100,
+    "proposed_released": 87,
+    "proposed_remaining": 13,
+    "configuration_changed": false
+  },
+  "reproduction_sources": {
+    "audit/task25-public/functional.test.mjs": "9d88efb5f46688f04c2c7719f52f58bdd365b1c163b9889ea6d44ce942f302cf",
+    "audit/task25-public/public-consent.mjs": "d9bb948215408bd2135ba8a5b291972faf8117d0d55a99d13b9116f0528f4e39",
+    "audit/task25-public/public.mjs": "be1a5516e07740751b13419fd81654d671500c74e82fa8829645201c2205b53f",
+    "audit/task25-public/README.md": "fb1e2bfeb1d3fab0cbb28b8b53309ae95b40d1c6e464c836112b91c5e6c0d37a",
+    "audit/task25-public/source.py": "58343788a7fc4f21dc041d5df747e47bf2697fb2348856471d81738ce9203c7a",
+    "audit/task25-public/worker-probe.mjs": "e3105e534dae9669e2f1b1c3915a8bab096de68acaec869dad433e4e35bc0e86"
+  },
+  "scope": "Fresh public results are distinct from the earlier development and CI results. This branch proposes release metadata for owner review.",
+  "limitations": [
+    "Public browser evidence uses isolated Chromium/Edge with synthetic tool inputs. Cross-browser, physical-device and screen-reader testing are outside this scope.",
+    "Clipboard success and denial are simulated. Download bytes are captured in memory. Native OS dialogs and permissions are outside this scope.",
+    "Real browser collection is verified separately. Authenticated GA4 property reporting remains unverified."
+  ],
+  "release_proposal_local_tests": {
+    "canonical": [
+      {
+        "id": "word-frequency-analyzer",
+        "structural": "PASS",
+        "logic_cases": 8,
+        "browser_cases": 4,
+        "browser_assertions": 11
+      },
+      {
+        "id": "unicode-inspector",
+        "structural": "PASS",
+        "logic_cases": 7,
+        "browser_cases": 4,
+        "browser_assertions": 13
+      },
+      {
+        "id": "ipv4-subnet-calculator",
+        "structural": "PASS",
+        "logic_cases": 20,
+        "browser_cases": 5,
+        "browser_assertions": 15
+      },
+      {
+        "id": "batch-filename-planner",
+        "structural": "PASS",
+        "logic_cases": 13,
+        "browser_cases": 5,
+        "browser_assertions": 15
+      },
+      {
+        "id": "file-byte-comparator",
+        "structural": "PASS",
+        "logic_cases": 7,
+        "browser_cases": 2,
+        "browser_assertions": 6
+      },
+      {
+        "id": "css-gradient-generator",
+        "structural": "PASS",
+        "logic_cases": 11,
+        "browser_cases": 5,
+        "browser_assertions": 17
+      }
+    ],
+    "integration_gates": 6,
+    "focused_chromium": {
+      "tests": 71,
+      "pass": 71,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "todo": 0
+    },
+    "project_validation": {
+      "result": "PASS",
+      "errors": 0,
+      "warnings": 0
+    },
+    "full_suite_status_source": "The PR records the hosted full-suite results for its final commit."
+  }
+}

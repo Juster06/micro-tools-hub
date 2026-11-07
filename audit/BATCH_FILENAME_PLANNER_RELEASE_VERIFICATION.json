@@ -1,0 +1,236 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-07",
+  "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+  "deployment_commit": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+  "source_tree_sha": "b6a52211aaafcdb2886374d5ed46c28bf166af74",
+  "deployment": {
+    "run_id": 42338516265,
+    "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516265",
+    "jobs": [
+      {
+        "id": 128300789972,
+        "name": "build",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300881730,
+        "name": "report-build-status",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300881750,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "post_merge_ci": {
+    "run_id": 42338516503,
+    "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516503",
+    "jobs": [
+      {
+        "id": 128300787626,
+        "name": "Python and project validation",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300787726,
+        "name": "Real Chromium browser tests",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300787978,
+        "name": "Node logic regression",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128302710015,
+        "name": "Required functional checks",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "previous_evidence": "audit/BATCH_FILENAME_PLANNER_VERIFICATION.json",
+  "previous_development_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+  "publication": {
+    "url": "https://everydaydigitalbox.com/batch-filename-planner/",
+    "http_status": 200,
+    "checked_at": "2026-11-07T04:58:32.081012+00:00",
+    "source_matches": true
+  },
+  "public_index": {
+    "url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+    "final_url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+    "checked_at": "2026-11-07T04:58:27.544608+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+    "raw_approved_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+    "raw_match": true,
+    "source_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+    "approved_normalized_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Batch Filename Planner | Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "canonical_public_url": {
+    "url": "https://everydaydigitalbox.com/batch-filename-planner/",
+    "final_url": "https://everydaydigitalbox.com/batch-filename-planner/",
+    "checked_at": "2026-11-07T04:58:32.081012+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+    "raw_approved_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+    "raw_match": true,
+    "source_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+    "approved_normalized_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Batch Filename Planner | Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "public_source_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+  "approved_source_sha256": "3dd17a17bd4a2fcfa2850e8abeac96fad64899bf92ee0e720a564baa254883f1",
+  "browser": "Edg/157.0.4341.42",
+  "scope": "Fresh interactions on public HTTPS. Production responses are unchanged. Clipboard and downloads are captured in memory. One real Worker is instrumented through Chromium DevTools to observe native Blob read sizes and concurrency.",
+  "pages": [
+    {
+      "path": "batch-filename-planner/index.html",
+      "source_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+      "checks": [
+        "6 fresh public interaction cases on deployed HTTPS",
+        "Canonical and index responses returned HTTP 200 and match the approved Git bytes",
+        "Public network, console, asset and consent regression checks passed",
+        "Fresh local canonical suites and prior development evidence are identified separately"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/batch-filename-planner/",
+        "http_status": 200,
+        "checked_at": "2026-11-07T04:58:32.081012+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "public_browser_checks": [
+    {
+      "tool_id": "batch-filename-planner",
+      "check": "Unicode paste, affixes, numbering, dotfiles and case conversion",
+      "checked_at": "2026-11-07T05:02:05.882Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "batch-filename-planner",
+      "check": "selected File metadata only and byte-exact formula-protected CSV",
+      "checked_at": "2026-11-07T05:02:06.094Z",
+      "result": "PASS",
+      "observed": {
+        "file_content_reads": 0,
+        "filesystem_picker_calls": 0,
+        "csv_type": "text/csv;charset=utf-8",
+        "csv_bytes": 117
+      }
+    },
+    {
+      "tool_id": "batch-filename-planner",
+      "check": "case and Unicode collisions deny copy and export",
+      "checked_at": "2026-11-07T05:02:06.391Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "batch-filename-planner",
+      "check": "portable reserved names, invalid characters and output limits",
+      "checked_at": "2026-11-07T05:02:06.591Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "batch-filename-planner",
+      "check": "copy success, denied clipboard fallback and reset",
+      "checked_at": "2026-11-07T05:02:11.901Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "batch-filename-planner",
+      "check": "native keyboard operation and no overflow at four widths",
+      "checked_at": "2026-11-07T05:02:12.150Z",
+      "result": "PASS"
+    }
+  ],
+  "validation": {
+    "http_status": 200,
+    "source_match": true,
+    "title": "Batch Filename Planner | Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ],
+    "unexpected_javascript_errors": 0,
+    "unexpected_dependencies": [],
+    "input_transport_requests": 0,
+    "known_optional_favicon_http_status": 404
+  },
+  "consent_evidence": "audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json",
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "batch-filename-planner",
+    "generated_at": "2026-11-07T05:09:18+00:00",
+    "input_hash": "33de9d2824e450ac4daa322a59486921c27d78bedd24e8051ae363934c352263",
+    "source_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 13,
+        "failed": 0,
+        "assertions": 13,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 5,
+        "failed": 0,
+        "assertions": 15,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/157.0.4341.42"
+      }
+    },
+    "status": "PASS"
+  },
+  "canonical_report_note": "Fresh local canonical suite after release metadata update. The separate public browser checks above use live HTTPS.",
+  "limitations": [
+    "Public browser evidence uses isolated Chromium/Edge with synthetic tool inputs. Cross-browser, physical-device and screen-reader testing are outside this scope.",
+    "Clipboard success and denial are simulated. Download bytes are captured in memory. Native OS dialogs and permissions are outside this scope.",
+    "Real browser collection is verified separately. Authenticated GA4 property reporting remains unverified.",
+    "The collision policy is portable NFC and case-insensitive matching. File selection uses synthetic File objects. The preview reads names and exports a CSV mapping."
+  ],
+  "integration_gate": {
+    "status": "PASS",
+    "action": "UPDATE_PROPOSAL",
+    "patch_required": false
+  }
+}

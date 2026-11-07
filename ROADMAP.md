@@ -1,6 +1,26 @@
 # Development roadmap
 
-## Current state — Task 25 development
+## Current state — Task 25.1 release verification
+
+Task 25 development PR #45 merged at `c127f856cbd97497412ec35ed66b3b1a58c4b2dc`. Pages run 42338516265 and
+all required post-merge Functional CI checks in run 42338516503 succeeded for
+that commit. Fresh public checks verified the six tools, all 87 canonical pages
+and matching source for 105 responses. The homepage root and six directory
+aliases also matched. All 43 public browser cases passed. Two isolated profiles
+verified real consent behavior and three accepted page views returning HTTP 204.
+
+This release proposal records **105 registered, 87 RELEASED, 0 TESTED, 0 READY,
+17 PLANNED and 1 BLOCKED**. The deployed registry records 81 RELEASED and 6
+TESTED at the verified baseline. The milestone is 100, with 13 remaining in the
+proposal. PDF processing is deferred and PDF Compressor is BLOCKED.
+
+See `audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json` and the six per-tool
+release audits for source hashes, timestamps, independent public results and
+scope limitations. The known optional favicon returned HTTP 404. GA4 browser
+collection was verified using `G-XDHPQYJ5CH`. Property reporting remains
+unverified.
+
+## Historical Task 25 development
 
 Task 24 is complete and publicly verified. PRs #43 and #44 are merged. Main
 `3e6b3d256d731cacdac8d6098937e2a5a9ba1378` deployed successfully through Pages
@@ -752,12 +772,12 @@ Execute in order unless the user steers the project or a dependency/regression j
 | 24 | url-inspector-query-builder | URL Inspector & Query Builder | Developer Tools | M | RELEASED |
 | 25 | list-comparison-set-operations | List Comparison & Set Operations | Text and Writing Tools | M | RELEASED |
 | 26 | color-contrast-checker | Color Contrast Checker | Calculators | M | RELEASED |
-| 27 | word-frequency-analyzer | Word Frequency Analyzer | Text and Writing Tools | M | TESTED |
-| 28 | unicode-inspector | Unicode Inspector | Text and Writing Tools | M | TESTED |
-| 29 | ipv4-subnet-calculator | IPv4 Subnet Calculator | Calculators | M | TESTED |
-| 30 | batch-filename-planner | Batch Filename Planner | Everyday Productivity Tools | M | TESTED |
-| 31 | file-byte-comparator | File Byte Comparator | Developer Tools | M | TESTED |
-| 32 | css-gradient-generator | CSS Gradient Generator | Developer Tools | M | TESTED |
+| 27 | word-frequency-analyzer | Word Frequency Analyzer | Text and Writing Tools | M | RELEASED |
+| 28 | unicode-inspector | Unicode Inspector | Text and Writing Tools | M | RELEASED |
+| 29 | ipv4-subnet-calculator | IPv4 Subnet Calculator | Calculators | M | RELEASED |
+| 30 | batch-filename-planner | Batch Filename Planner | Everyday Productivity Tools | M | RELEASED |
+| 31 | file-byte-comparator | File Byte Comparator | Developer Tools | M | RELEASED |
+| 32 | css-gradient-generator | CSS Gradient Generator | Developer Tools | M | RELEASED |
 <!-- GENERATED:SEQUENCE:END -->
 
 ## Practical delivery sequence
@@ -817,8 +837,8 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | find-and-replace | Find and Replace | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | slug-generator | Slug Generator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | list-comparison-set-operations | List Comparison & Set Operations | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
-| word-frequency-analyzer | Word Frequency Analyzer | TESTED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
-| unicode-inspector | Unicode Inspector | TESTED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
+| word-frequency-analyzer | Word Frequency Analyzer | RELEASED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
+| unicode-inspector | Unicode Inspector | RELEASED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
 
 ### Excel and Data Tools
 
@@ -850,8 +870,8 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | timestamp-converter | Timestamp Converter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | number-base-converter | Number Base Converter | RELEASED | P1 | S | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
 | url-inspector-query-builder | URL Inspector & Query Builder | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
-| file-byte-comparator | File Byte Comparator | TESTED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
-| css-gradient-generator | CSS Gradient Generator | TESTED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
+| file-byte-comparator | File Byte Comparator | RELEASED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
+| css-gradient-generator | CSS Gradient Generator | RELEASED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
 
 ### Social Media Tools
 
@@ -886,7 +906,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | unit-converter | Unit Converter | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
 | duration-calculator | Duration Calculator | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
 | color-contrast-checker | Color Contrast Checker | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
-| ipv4-subnet-calculator | IPv4 Subnet Calculator | TESTED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
+| ipv4-subnet-calculator | IPv4 Subnet Calculator | RELEASED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
 
 ### Security and Privacy Tools
 
@@ -929,7 +949,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | resume-builder | Resume Builder | RELEASED | P2 | L | Browser-native approach; scope review before implementation |
 | meeting-agenda-generator | Meeting Agenda Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | printable-calendar-generator | Printable Calendar Generator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
-| batch-filename-planner | Batch Filename Planner | TESTED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
+| batch-filename-planner | Batch Filename Planner | RELEASED | P1 | M | Native browser APIs; Shared consent component assets/consent.js |
 
 ### Entertainment Tools
 

@@ -1,5 +1,9 @@
 # Unicode Inspector
 
+## Task 25.1 public verification
+
+The deployed page matched main `c127f856cbd97497412ec35ed66b3b1a58c4b2dc`. All 6 fresh public browser cases passed on 2026-11-07. The release proposal is backed by [the publication audit](../audit/UNICODE_INSPECTOR_RELEASE_VERIFICATION.json).
+
 Canonical route `unicode-inspector/index.html`.
 
 Inspect UTF-16 offsets, code points, hexadecimal UTF-8 bytes, grapheme boundaries and normalization summaries. Descriptions are character categories. Control characters are represented by labels and code points.
@@ -10,4 +14,4 @@ Native Unicode data and segmentation can differ across engines. A lone surrogate
 
 Native browser APIs and the existing shared consent component support this page. Input, filenames and bytes stay local.
 
-Task 25 status is TESTED. Publication is pending. Local source revision `593f679c7dd953ce4f4a5aee99d5e4fdc1614215` and [verification evidence](../audit/UNICODE_INSPECTOR_VERIFICATION.json).
+The Task 25 development status was TESTED. Local source revision `593f679c7dd953ce4f4a5aee99d5e4fdc1614215` and [verification evidence](../audit/UNICODE_INSPECTOR_VERIFICATION.json).

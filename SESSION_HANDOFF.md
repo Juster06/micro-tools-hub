@@ -1,6 +1,38 @@
 # Session handoff
 
-## Current state — Task 25 development
+## Current state — Task 25.1 release verification
+
+Task 25 development PR #45 merged at `c127f856cbd97497412ec35ed66b3b1a58c4b2dc`. Pages run 42338516265 and
+all required post-merge Functional CI checks in run 42338516503 succeeded for
+that commit. Fresh public checks verified the six tools, all 87 canonical pages
+and matching source for 105 responses. The homepage root and six directory
+aliases also matched. All 43 public browser cases passed. Two isolated profiles
+verified real consent behavior and three accepted page views returning HTTP 204.
+
+This release proposal records **105 registered, 87 RELEASED, 0 TESTED, 0 READY,
+17 PLANNED and 1 BLOCKED**. The deployed registry records 81 RELEASED and 6
+TESTED at the verified baseline. The milestone is 100, with 13 remaining in the
+proposal. PDF processing is deferred and PDF Compressor is BLOCKED.
+
+See `audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json` and the six per-tool
+release audits for source hashes, timestamps, independent public results and
+scope limitations. The known optional favicon returned HTTP 404. GA4 browser
+collection was verified using `G-XDHPQYJ5CH`. Property reporting remains
+unverified.
+
+The release branch is `release/task-25-public-verification`. The 30 earlier
+worktrees and both unrelated handoff edits were preserved.
+
+The proposal passed six evidence checks, 71 focused Chromium cases, all six
+canonical suites and all integration gates. Project validation reported zero
+errors and warnings. The PR records the full hosted checks for its commit.
+
+**Next major task:** Review the Task 25.1 release PR and required checks. Await separate owner authorization before merging.
+
+After authorized deployment, verify the final public registry and all 87 routes
+against the deployed source. Task 26 requires its own instructions.
+
+## Historical Task 25 development
 
 Task 24 is complete and publicly verified. PRs #43 and #44 are merged. Main
 `3e6b3d256d731cacdac8d6098937e2a5a9ba1378` deployed successfully through Pages
@@ -1406,28 +1438,28 @@ Changed-file privacy/allowlist/source-history review: 37 added / 7 modified file
 <!-- GENERATED:STATUS:START -->
 Snapshot of local files at generation; it does not assert later commits, pushes, functional tests, or deployment.
 
-- Milestone: 100 released tools; 81 currently recorded released.
-- Tool status counts: IDEA: 0; PLANNED: 17; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 6; RELEASED: 81; DEPRECATED: 0.
+- Milestone: 100 released tools; 87 currently recorded released.
+- Tool status counts: IDEA: 0; PLANNED: 17; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 87; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: feat/task-25-six-tools.
-- Latest commit observed before generation: 593f679c7dd953ce4f4a5aee99d5e4fdc1614215.
+- Git branch: release/task-25-public-verification.
+- Latest commit observed before generation: c127f856cbd97497412ec35ed66b3b1a58c4b2dc.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
 ### Recorded recent completions
 
 These are registry verification records, not new tests or tasks executed by this generator.
-- Word Frequency Analyzer: TESTED, evidence dated 2026-11-07.
+- Word Frequency Analyzer: RELEASED, evidence dated 2026-11-07.
 - URL Inspector & Query Builder: RELEASED, evidence dated 2026-11-07.
 - Unit Converter: RELEASED, evidence dated 2026-11-07.
-- Unicode Inspector: TESTED, evidence dated 2026-11-07.
+- Unicode Inspector: RELEASED, evidence dated 2026-11-07.
 - Number Base Converter: RELEASED, evidence dated 2026-11-07.
 - List Comparison & Set Operations: RELEASED, evidence dated 2026-11-07.
-- IPv4 Subnet Calculator: TESTED, evidence dated 2026-11-07.
-- File Byte Comparator: TESTED, evidence dated 2026-11-07.
+- IPv4 Subnet Calculator: RELEASED, evidence dated 2026-11-07.
+- File Byte Comparator: RELEASED, evidence dated 2026-11-07.
 - Duration Calculator: RELEASED, evidence dated 2026-11-07.
-- CSS Gradient Generator: TESTED, evidence dated 2026-11-07.
+- CSS Gradient Generator: RELEASED, evidence dated 2026-11-07.
 
 ### Known tool blockers
 - PDF Compressor: Blocked on a feasibility experiment demonstrating useful local compression with acceptable fidelity and memory use; no library selected.
@@ -1445,21 +1477,76 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` ROADMAP.md
 - ` M` SESSION_HANDOFF.md
 - ` M` TOOL_REGISTRY.json
-- ` M` audit/TASK_25_DEVELOPMENT_PLAN.json
 - ` M` batch-filename-planner/README.md
 - ` M` css-gradient-generator/README.md
 - ` M` file-byte-comparator/README.md
 - ` M` index.html
 - ` M` ipv4-subnet-calculator/README.md
 - ` M` scripts/ci/README.md
+- ` M` scripts/ci/coverage.json
+- ` M` scripts/consent-static.test.mjs
+- ` M` scripts/task25_test_support.py
+- ` M` tests/test_task22_preservation.py
+- ` M` tests/test_task25_preservation.py
+- ` M` tests/tools/age-calculator/integration-browser.test.mjs
+- ` M` tests/tools/base64-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/compound-interest-calculator/integration-browser.test.mjs
+- ` M` tests/tools/countdown-timer/integration-browser.test.mjs
+- ` M` tests/tools/csv-column-extractor/integration-browser.test.mjs
+- ` M` tests/tools/csv-merger/integration-browser.test.mjs
+- ` M` tests/tools/csv-viewer/integration-browser.test.mjs
+- ` M` tests/tools/date-difference-calculator/integration-browser.test.mjs
+- ` M` tests/tools/discount-calculator/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-line-remover/integration-browser.test.mjs
+- ` M` tests/tools/duplicate-row-finder/integration-browser.test.mjs
+- ` M` tests/tools/file-size-converter/integration-browser.test.mjs
+- ` M` tests/tools/find-and-replace/integration-browser.test.mjs
+- ` M` tests/tools/hashtag-organizer/integration-browser.test.mjs
+- ` M` tests/tools/image-color-picker/integration-browser.test.mjs
+- ` M` tests/tools/image-resizer/integration-browser.test.mjs
+- ` M` tests/tools/image-rotator/integration-browser.test.mjs
+- ` M` tests/tools/image-watermark/integration-browser.test.mjs
+- ` M` tests/tools/invoice-generator/integration-browser.test.mjs
+- ` M` tests/tools/json-formatter/integration-browser.test.mjs
+- ` M` tests/tools/json-to-txt/integration-browser.test.mjs
+- ` M` tests/tools/loan-repayment-calculator/integration-browser.test.mjs
+- ` M` tests/tools/local-to-do-list/integration-browser.test.mjs
+- ` M` tests/tools/markdown-converter-previewer/integration-browser.test.mjs
+- ` M` tests/tools/meeting-agenda-generator/integration-browser.test.mjs
+- ` M` tests/tools/percentage-calculator/integration-browser.test.mjs
+- ` M` tests/tools/percentage-change-calculator/integration-browser.test.mjs
+- ` M` tests/tools/pomodoro-timer/integration-browser.test.mjs
+- ` M` tests/tools/posting-calendar-generator/integration-browser.test.mjs
+- ` M` tests/tools/printable-calendar-generator/integration-browser.test.mjs
+- ` M` tests/tools/profit-margin-calculator/integration-browser.test.mjs
+- ` M` tests/tools/random-name-picker/integration-browser.test.mjs
+- ` M` tests/tools/secure-random-number-generator/integration-browser.test.mjs
+- ` M` tests/tools/sha256-hash-checker/integration-browser.test.mjs
+- ` M` tests/tools/slug-generator/integration-browser.test.mjs
+- ` M` tests/tools/task25-browser.test.mjs
+- ` M` tests/tools/text-difference-checker/integration-browser.test.mjs
+- ` M` tests/tools/text-reverser/integration-browser.test.mjs
+- ` M` tests/tools/text-sorter/integration-browser.test.mjs
+- ` M` tests/tools/timestamp-converter/integration-browser.test.mjs
+- ` M` tests/tools/url-encoder-decoder/integration-browser.test.mjs
+- ` M` tests/tools/username-generator/integration-browser.test.mjs
+- ` M` tests/tools/uuid-generator/integration-browser.test.mjs
+- ` M` tests/tools/vat-calculator/integration-browser.test.mjs
+- ` M` tests/tools/working-days-calculator/integration-browser.test.mjs
+- ` M` tests/tools/youtube-description-formatter/integration-browser.test.mjs
+- ` M` tests/tools/youtube-thumbnail-preview/integration-browser.test.mjs
 - ` M` unicode-inspector/README.md
 - ` M` word-frequency-analyzer/README.md
-- `??` audit/BATCH_FILENAME_PLANNER_VERIFICATION.json
-- `??` audit/CSS_GRADIENT_GENERATOR_VERIFICATION.json
-- `??` audit/FILE_BYTE_COMPARATOR_VERIFICATION.json
-- `??` audit/IPV4_SUBNET_CALCULATOR_VERIFICATION.json
-- `??` audit/UNICODE_INSPECTOR_VERIFICATION.json
-- `??` audit/WORD_FREQUENCY_ANALYZER_VERIFICATION.json
+- `??` audit/BATCH_FILENAME_PLANNER_RELEASE_VERIFICATION.json
+- `??` audit/CSS_GRADIENT_GENERATOR_RELEASE_VERIFICATION.json
+- `??` audit/FILE_BYTE_COMPARATOR_RELEASE_VERIFICATION.json
+- `??` audit/IPV4_SUBNET_CALCULATOR_RELEASE_VERIFICATION.json
+- `??` audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json
+- `??` audit/UNICODE_INSPECTOR_RELEASE_VERIFICATION.json
+- `??` audit/WORD_FREQUENCY_ANALYZER_RELEASE_VERIFICATION.json
+- `??` audit/task25-public/
+- `??` scripts/task25-test-support.mjs
+- `??` tests/test_task25_release.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->

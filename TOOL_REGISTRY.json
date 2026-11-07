@@ -5832,7 +5832,7 @@
       "category": "text",
       "description": "Rank repeated words and count unique terms in pasted text.",
       "directory_path": "word-frequency-analyzer",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "M",
       "dependencies": [
@@ -5847,22 +5847,28 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-07",
-      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "notes": "Task 25.1 independently verified deployed source, functionality and consent. RELEASED is proposed for owner review.",
       "sequence_rank": 27,
       "related_tools": [
         "text-cleaner",
         "hashtag-organizer"
       ],
       "verification": {
-        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
         "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
-        "evidence_path": "audit/WORD_FREQUENCY_ANALYZER_VERIFICATION.json",
+        "evidence_path": "audit/WORD_FREQUENCY_ANALYZER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "8 deterministic logic fixtures",
-          "4 canonical Chromium interaction cases",
-          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+          "8 fresh public interaction cases on deployed HTTPS",
+          "Canonical and index responses returned HTTP 200 and match the approved Git bytes",
+          "Public network, console, asset and consent regression checks passed",
+          "Fresh local canonical suites and prior development evidence are identified separately"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/word-frequency-analyzer/",
+          "http_status": 200,
+          "checked_at": "2026-11-07T04:58:29.644698+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -5884,7 +5890,7 @@
       "category": "text",
       "description": "Inspect Unicode code points, encoding units, clusters and normalization.",
       "directory_path": "unicode-inspector",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "M",
       "dependencies": [
@@ -5900,22 +5906,28 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-07",
-      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "notes": "Task 25.1 independently verified deployed source, functionality and consent. RELEASED is proposed for owner review.",
       "sequence_rank": 28,
       "related_tools": [
         "text-reverser",
         "emoji-picker"
       ],
       "verification": {
-        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
         "source_sha256": "049b8a1d446f3ed513cbbe31654e033ea0ea320331301baf12e308f01f121440",
-        "evidence_path": "audit/UNICODE_INSPECTOR_VERIFICATION.json",
+        "evidence_path": "audit/UNICODE_INSPECTOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "7 deterministic logic fixtures",
-          "4 canonical Chromium interaction cases",
-          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+          "6 fresh public interaction cases on deployed HTTPS",
+          "Canonical and index responses returned HTTP 200 and match the approved Git bytes",
+          "Public network, console, asset and consent regression checks passed",
+          "Fresh local canonical suites and prior development evidence are identified separately"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/unicode-inspector/",
+          "http_status": 200,
+          "checked_at": "2026-11-07T04:58:30.435421+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -5934,7 +5946,7 @@
       "category": "calculator",
       "description": "Calculate IPv4 subnet boundaries and address counts from an address and CIDR prefix.",
       "directory_path": "ipv4-subnet-calculator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "M",
       "dependencies": [
@@ -5950,22 +5962,28 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-07",
-      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "notes": "Task 25.1 independently verified deployed source, functionality and consent. RELEASED is proposed for owner review.",
       "sequence_rank": 29,
       "related_tools": [
         "url-inspector-query-builder",
         "number-base-converter"
       ],
       "verification": {
-        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
         "source_sha256": "0ecf3b6abe5f986737f7b2c9aa4a3a270925acb69ffeb5fea890fc8a60d00bf0",
-        "evidence_path": "audit/IPV4_SUBNET_CALCULATOR_VERIFICATION.json",
+        "evidence_path": "audit/IPV4_SUBNET_CALCULATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "20 deterministic logic fixtures",
-          "5 canonical Chromium interaction cases",
-          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+          "7 fresh public interaction cases on deployed HTTPS",
+          "Canonical and index responses returned HTTP 200 and match the approved Git bytes",
+          "Public network, console, asset and consent regression checks passed",
+          "Fresh local canonical suites and prior development evidence are identified separately"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/",
+          "http_status": 200,
+          "checked_at": "2026-11-07T04:58:31.271167+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -5985,7 +6003,7 @@
       "category": "productivity",
       "description": "Preview filename transformations and export a mapping without changing files.",
       "directory_path": "batch-filename-planner",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "M",
       "dependencies": [
@@ -6001,22 +6019,28 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-07",
-      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "notes": "Task 25.1 independently verified deployed source, functionality and consent. RELEASED is proposed for owner review.",
       "sequence_rank": 30,
       "related_tools": [
         "username-generator",
         "file-signature-inspector"
       ],
       "verification": {
-        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
         "source_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
-        "evidence_path": "audit/BATCH_FILENAME_PLANNER_VERIFICATION.json",
+        "evidence_path": "audit/BATCH_FILENAME_PLANNER_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "13 deterministic logic fixtures",
-          "5 canonical Chromium interaction cases",
-          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+          "6 fresh public interaction cases on deployed HTTPS",
+          "Canonical and index responses returned HTTP 200 and match the approved Git bytes",
+          "Public network, console, asset and consent regression checks passed",
+          "Fresh local canonical suites and prior development evidence are identified separately"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/batch-filename-planner/",
+          "http_status": 200,
+          "checked_at": "2026-11-07T04:58:32.081012+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -6042,7 +6066,7 @@
       "category": "developer",
       "description": "Compare two local files and locate the first differing byte.",
       "directory_path": "file-byte-comparator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "M",
       "dependencies": [
@@ -6058,22 +6082,28 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-07",
-      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "notes": "Task 25.1 independently verified deployed source, functionality and consent. RELEASED is proposed for owner review.",
       "sequence_rank": 31,
       "related_tools": [
         "sha256-hash-checker",
         "file-signature-inspector"
       ],
       "verification": {
-        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
         "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
-        "evidence_path": "audit/FILE_BYTE_COMPARATOR_VERIFICATION.json",
+        "evidence_path": "audit/FILE_BYTE_COMPARATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "7 deterministic logic fixtures on the synchronous byte kernel and report formatter. Actual File, chunk boundary, 64 MiB, cancellation and timeout cases use the specialist browser suite.",
-          "2 canonical Chromium interaction cases",
-          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+          "8 fresh public interaction cases on deployed HTTPS",
+          "Canonical and index responses returned HTTP 200 and match the approved Git bytes",
+          "Public network, console, asset and consent regression checks passed",
+          "Fresh local canonical suites and prior development evidence are identified separately"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/file-byte-comparator/",
+          "http_status": 200,
+          "checked_at": "2026-11-07T04:58:33.255651+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",
@@ -6095,7 +6125,7 @@
       "category": "developer",
       "description": "Build and preview linear or centered radial CSS gradients from validated colour stops.",
       "directory_path": "css-gradient-generator",
-      "status": "TESTED",
+      "status": "RELEASED",
       "priority": "P1",
       "implementation_complexity": "M",
       "dependencies": [
@@ -6111,22 +6141,28 @@
       ],
       "testing_status": "REQUIRED_PASSED",
       "last_verification_date": "2026-11-07",
-      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "notes": "Task 25.1 independently verified deployed source, functionality and consent. RELEASED is proposed for owner review.",
       "sequence_rank": 32,
       "related_tools": [
         "css-minifier",
         "color-contrast-checker"
       ],
       "verification": {
-        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
         "source_sha256": "0c31f44c7d68ba0398a30fd69592ddf8a30c6dde816ec2a0dabedbfcdd364d4c",
-        "evidence_path": "audit/CSS_GRADIENT_GENERATOR_VERIFICATION.json",
+        "evidence_path": "audit/CSS_GRADIENT_GENERATOR_RELEASE_VERIFICATION.json",
         "test_scope": [
-          "11 deterministic logic fixtures",
-          "5 canonical Chromium interaction cases",
-          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+          "7 fresh public interaction cases on deployed HTTPS",
+          "Canonical and index responses returned HTTP 200 and match the approved Git bytes",
+          "Public network, console, asset and consent regression checks passed",
+          "Fresh local canonical suites and prior development evidence are identified separately"
         ],
-        "publication": null
+        "publication": {
+          "url": "https://everydaydigitalbox.com/css-gradient-generator/",
+          "http_status": 200,
+          "checked_at": "2026-11-07T04:58:37.887419+00:00",
+          "source_matches": true
+        }
       },
       "expected_interface_ids": [
         "toolInput",

@@ -1,0 +1,275 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-07",
+  "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+  "deployment_commit": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+  "source_tree_sha": "b6a52211aaafcdb2886374d5ed46c28bf166af74",
+  "deployment": {
+    "run_id": 42338516265,
+    "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516265",
+    "jobs": [
+      {
+        "id": 128300789972,
+        "name": "build",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300881730,
+        "name": "report-build-status",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300881750,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "post_merge_ci": {
+    "run_id": 42338516503,
+    "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516503",
+    "jobs": [
+      {
+        "id": 128300787626,
+        "name": "Python and project validation",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300787726,
+        "name": "Real Chromium browser tests",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300787978,
+        "name": "Node logic regression",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128302710015,
+        "name": "Required functional checks",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "previous_evidence": "audit/FILE_BYTE_COMPARATOR_VERIFICATION.json",
+  "previous_development_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+  "publication": {
+    "url": "https://everydaydigitalbox.com/file-byte-comparator/",
+    "http_status": 200,
+    "checked_at": "2026-11-07T04:58:33.255651+00:00",
+    "source_matches": true
+  },
+  "public_index": {
+    "url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+    "final_url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+    "checked_at": "2026-11-07T04:58:27.949893+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+    "raw_approved_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+    "raw_match": true,
+    "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+    "approved_normalized_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+    "content_type": "text/html; charset=utf-8",
+    "title": "File Byte Comparator | Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "canonical_public_url": {
+    "url": "https://everydaydigitalbox.com/file-byte-comparator/",
+    "final_url": "https://everydaydigitalbox.com/file-byte-comparator/",
+    "checked_at": "2026-11-07T04:58:33.255651+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+    "raw_approved_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+    "raw_match": true,
+    "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+    "approved_normalized_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+    "content_type": "text/html; charset=utf-8",
+    "title": "File Byte Comparator | Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "public_source_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+  "approved_source_sha256": "25b34cdd3236d9bb830701e62670029be647a7406bb8362ddaf7448b263e7eaf",
+  "browser": "Edg/157.0.4341.42",
+  "scope": "Fresh interactions on public HTTPS. Production responses are unchanged. Clipboard and downloads are captured in memory. One real Worker is instrumented through Chromium DevTools to observe native Blob read sizes and concurrency.",
+  "pages": [
+    {
+      "path": "file-byte-comparator/index.html",
+      "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+      "checks": [
+        "8 fresh public interaction cases on deployed HTTPS",
+        "Canonical and index responses returned HTTP 200 and match the approved Git bytes",
+        "Public network, console, asset and consent regression checks passed",
+        "Fresh local canonical suites and prior development evidence are identified separately"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/file-byte-comparator/",
+        "http_status": 200,
+        "checked_at": "2026-11-07T04:58:33.255651+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "public_browser_checks": [
+    {
+      "tool_id": "file-byte-comparator",
+      "check": "empty and identical actual File selections",
+      "checked_at": "2026-11-07T05:02:06.902Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "file-byte-comparator",
+      "check": "early difference and shorter-file EOF with unequal lengths",
+      "checked_at": "2026-11-07T05:02:07.308Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "file-byte-comparator",
+      "check": "actual native Worker shows bounded pairs at the chunk boundary",
+      "checked_at": "2026-11-07T05:02:07.587Z",
+      "result": "PASS",
+      "observed": {
+        "slices": [
+          [
+            0,
+            262144
+          ],
+          [
+            0,
+            262144
+          ],
+          [
+            262144,
+            524288
+          ],
+          [
+            262144,
+            524288
+          ]
+        ],
+        "read_sizes": [
+          262144,
+          262144,
+          262144,
+          262144
+        ],
+        "peak_reads_in_flight": 2,
+        "read_count": 4
+      }
+    },
+    {
+      "tool_id": "file-byte-comparator",
+      "check": "late difference after several chunks",
+      "checked_at": "2026-11-07T05:02:07.857Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "file-byte-comparator",
+      "check": "64 MiB pair succeeds and oversize never starts a Worker",
+      "checked_at": "2026-11-07T05:02:08.088Z",
+      "result": "PASS",
+      "observed": {
+        "bytes_per_file": 67108864,
+        "observed_elapsed_ms": 588,
+        "worker_starts_after_oversize": 1
+      }
+    },
+    {
+      "tool_id": "file-byte-comparator",
+      "check": "cancellation, reselection and reset discard prior native Worker results",
+      "checked_at": "2026-11-07T05:02:08.835Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "file-byte-comparator",
+      "check": "copy success, denied clipboard fallback and reset",
+      "checked_at": "2026-11-07T05:02:12.462Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "file-byte-comparator",
+      "check": "native keyboard operation and no overflow at four widths",
+      "checked_at": "2026-11-07T05:02:12.737Z",
+      "result": "PASS"
+    }
+  ],
+  "validation": {
+    "http_status": 200,
+    "source_match": true,
+    "title": "File Byte Comparator | Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ],
+    "unexpected_javascript_errors": 0,
+    "unexpected_dependencies": [],
+    "input_transport_requests": 0,
+    "known_optional_favicon_http_status": 404
+  },
+  "consent_evidence": "audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json",
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "file-byte-comparator",
+    "generated_at": "2026-11-07T05:09:38+00:00",
+    "input_hash": "3a600145599aa3136fcf5ec324e944991d6f31f46dca946e9d3c9af63512f7f0",
+    "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 7,
+        "failed": 0,
+        "assertions": 7,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 6,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/157.0.4341.42"
+      }
+    },
+    "status": "PASS"
+  },
+  "canonical_report_note": "Fresh local canonical suite after release metadata update. The separate public browser checks above use live HTTPS.",
+  "limitations": [
+    "Public browser evidence uses isolated Chromium/Edge with synthetic tool inputs. Cross-browser, physical-device and screen-reader testing are outside this scope.",
+    "Clipboard success and denial are simulated. Download bytes are captured in memory. Native OS dialogs and permissions are outside this scope.",
+    "Real browser collection is verified separately. Authenticated GA4 property reporting remains unverified.",
+    "The observed two-read limit is scoped to application reads in the instrumented Worker. Browser buffering, peak heap and OS I/O are outside that measurement."
+  ],
+  "integration_gate": {
+    "status": "PASS",
+    "action": "UPDATE_PROPOSAL",
+    "patch_required": false
+  }
+}

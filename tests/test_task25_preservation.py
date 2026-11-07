@@ -15,13 +15,13 @@ def read(path):
 
 
 class Task25Preservation(unittest.TestCase):
-    def test_unchanged_prior_records_and_exact_six_tested_additions(self):
+    def test_unchanged_prior_records_and_exact_six_publicly_verified_additions(self):
         prior = json.loads(git_blob('TOOL_REGISTRY.json'))
         current = read('TOOL_REGISTRY.json')
         reconstructed = registry_before_task25(current)
         self.assertEqual({**reconstructed, 'updated_on': prior['updated_on']}, prior)
         self.assertEqual({s: sum(t['status'] == s for t in current['tools']) for s in ('RELEASED','TESTED','READY','PLANNED','BLOCKED')},
-                         {'RELEASED':81,'TESTED':6,'READY':0,'PLANNED':17,'BLOCKED':1})
+                         {'RELEASED':87,'TESTED':0,'READY':0,'PLANNED':17,'BLOCKED':1})
 
     def test_existing_runtime_privacy_and_ci_infrastructure_preserved(self):
         prior = json.loads(git_blob('TOOL_REGISTRY.json'))
@@ -50,7 +50,7 @@ class Task25Preservation(unittest.TestCase):
         self.assertEqual(tool_map_before_task25(new), old['tools'])
         for key in ('python_files','node_files','browser_files'):
             self.assertTrue(set(old[key]).issubset(new[key]))
-        self.assertEqual(new['minimum_tests'], {'python-project':219,'node-regression':530,'browser-tests':742})
+        self.assertEqual(new['minimum_tests'], {'python-project':225,'node-regression':530,'browser-tests':742})
         for job, floor in old['minimum_tests'].items():
             self.assertGreater(new['minimum_tests'][job], floor)
 
