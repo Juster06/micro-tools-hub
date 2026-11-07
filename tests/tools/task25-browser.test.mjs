@@ -1,3 +1,4 @@
+import {task25ReleasedCount} from '../../scripts/task25-test-support.mjs';
 import {test, before, after} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -197,11 +198,11 @@ test('gradient live preview applies only the validated property and clears inval
   assert.equal(await browser.evaluate('angle.value'), '90');
 });
 
-test('homepage links all 87 distinct canonical routes with six publication-pending cards', async () => {
+test('homepage links all 87 distinct canonical routes and six newly released cards', async () => {
   const registry = JSON.parse(fs.readFileSync(new URL('../../TOOL_REGISTRY.json', import.meta.url), 'utf8'));
   const expected = registry.tools.filter(tool => ['TESTED','RELEASED'].includes(tool.status));
-  assert.equal(expected.filter(tool => tool.status === 'RELEASED').length, 81);
-  assert.deepEqual(expected.filter(tool => tool.status === 'TESTED').map(tool => tool.id), tests.map(([id]) => id));
+  assert.equal(expected.filter(tool => tool.status === 'RELEASED').length, 81 + task25ReleasedCount(registry));
+  assert.equal(expected.filter(tool => tool.status === 'TESTED').length, 0);
   await browser.load(fileURLToPath(new URL('../../index.html', import.meta.url)));
   const cards = await browser.evaluate(`Array.from(document.querySelectorAll('a.tool-card[data-title]'), link => ({
     route: link.getAttribute('href'), status: link.dataset.availability,
@@ -212,7 +213,7 @@ test('homepage links all 87 distinct canonical routes with six publication-pendi
   assert.deepEqual(cards.map(card => card.route).sort(), expected.map(tool => tool.directory_path + '/index.html').sort());
   for (const [id] of tests) {
     const card = cards.find(item => item.route === id + '/index.html');
-    assert.equal(card.status, 'tested');
-    assert.match(card.text, /Tested · publication pending/);
+    assert.equal(card.status, 'released');
+    assert.match(card.text, /Live/);
   }
 });

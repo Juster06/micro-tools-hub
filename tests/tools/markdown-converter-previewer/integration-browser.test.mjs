@@ -1,13 +1,14 @@
+import {task25ReleasedCount} from '../../../scripts/task25-test-support.mjs';
 import {task24ReleasedCount} from '../../../scripts/task24-test-support.mjs';
 import {test,before,after}from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import{fileURLToPath}from'node:url';import{launchBrowser,findBrowser}from'../../../scripts/tool-tests/browser.mjs';
 const registry=JSON.parse(fs.readFileSync(new URL('../../../TOOL_REGISTRY.json',import.meta.url),'utf8'));
 const task24=['number-base-converter','unit-converter','duration-calculator','url-inspector-query-builder','list-comparison-set-operations','color-contrast-checker'];
 const expectedRoutes=registry.tools.filter(t=>['TESTED','RELEASED'].includes(t.status)).map(t=>t.directory_path+'/index.html').sort();
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,81);assert.equal(expectedRoutes.length,87);
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,81+task25ReleasedCount(registry));assert.equal(expectedRoutes.length,87);
 assert.equal(task24ReleasedCount(registry),6);
 let b;const wait=async e=>{for(let i=0;i<120;i++){try{if(await b.evaluate(e))return;}catch{}await new Promise(r=>setTimeout(r,25));}assert.fail('Navigation state unavailable');};
 before(async()=>{b=await launchBrowser(findBrowser());});after(async()=>b?.close());
-test('87 distinct cards preserve all 81 releases, six verified new labels and canonical round trip',async()=>{
+test('87 distinct cards preserve the verified releases, Task 24 labels and canonical round trip',async()=>{
  await b.load(fileURLToPath(new URL('../../../markdown-converter-previewer/index.html',import.meta.url)));assert.equal(await b.evaluate("document.querySelector('header a').getAttribute('href')"),'../index.html');await b.evaluate("document.querySelector('header a').click();true");await wait("!!document.querySelector('#toolGrid')");
  const cards=await b.evaluate("Array.from(document.querySelectorAll('.tool-card')).map(a=>({route:a.getAttribute('href'),status:a.dataset.availability,text:a.textContent}))");assert.equal(cards.length,87);assert.equal(new Set(cards.map(c=>c.route)).size,87);assert.deepEqual(cards.map(c=>c.route).sort(),expectedRoutes);const own=cards.find(c=>c.route==='markdown-converter-previewer/index.html');assert.equal(own.status,'released');assert.match(own.text,/Live/);
  for(const id of task24){const card=cards.find(c=>c.route===id+'/index.html');assert.equal(card.status,'released');assert.match(card.text,/Live/);}

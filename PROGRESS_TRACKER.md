@@ -1,6 +1,26 @@
 # Progress tracker
 
-## Current state — Task 25 development
+## Current state — Task 25.1 release verification
+
+Task 25 development PR #45 merged at `c127f856cbd97497412ec35ed66b3b1a58c4b2dc`. Pages run 42338516265 and
+all required post-merge Functional CI checks in run 42338516503 succeeded for
+that commit. Fresh public checks verified the six tools, all 87 canonical pages
+and matching source for 105 responses. The homepage root and six directory
+aliases also matched. All 43 public browser cases passed. Two isolated profiles
+verified real consent behavior and three accepted page views returning HTTP 204.
+
+This release proposal records **105 registered, 87 RELEASED, 0 TESTED, 0 READY,
+17 PLANNED and 1 BLOCKED**. The deployed registry records 81 RELEASED and 6
+TESTED at the verified baseline. The milestone is 100, with 13 remaining in the
+proposal. PDF processing is deferred and PDF Compressor is BLOCKED.
+
+See `audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json` and the six per-tool
+release audits for source hashes, timestamps, independent public results and
+scope limitations. The known optional favicon returned HTTP 404. GA4 browser
+collection was verified using `G-XDHPQYJ5CH`. Property reporting remains
+unverified.
+
+## Historical Task 25 development
 
 Task 24 is complete and publicly verified. PRs #43 and #44 are merged. Main
 `3e6b3d256d731cacdac8d6098937e2a5a9ba1378` deployed successfully through Pages
@@ -710,14 +730,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 6 |
-| RELEASED | 81 |
+| TESTED | 0 |
+| RELEASED | 87 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 18 |
 
 Status rows partition the total. The backlog subtotal overlaps those status rows; do not add it again.
 
-Current growth milestone: **100 released tools**. Progress: 81/100 (81.0%); remaining: 19.
+Current growth milestone: **100 released tools**. Progress: 87/100 (87.0%); remaining: 13.
 
 ### Tools by category
 
@@ -751,16 +771,16 @@ Next ready tool: **REQUIRES REVIEW**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
-| Word Frequency Analyzer | TESTED | 2026-11-07 |
+| Word Frequency Analyzer | RELEASED | 2026-11-07 |
 | URL Inspector & Query Builder | RELEASED | 2026-11-07 |
 | Unit Converter | RELEASED | 2026-11-07 |
-| Unicode Inspector | TESTED | 2026-11-07 |
+| Unicode Inspector | RELEASED | 2026-11-07 |
 | Number Base Converter | RELEASED | 2026-11-07 |
 | List Comparison & Set Operations | RELEASED | 2026-11-07 |
-| IPv4 Subnet Calculator | TESTED | 2026-11-07 |
-| File Byte Comparator | TESTED | 2026-11-07 |
+| IPv4 Subnet Calculator | RELEASED | 2026-11-07 |
+| File Byte Comparator | RELEASED | 2026-11-07 |
 | Duration Calculator | RELEASED | 2026-11-07 |
-| CSS Gradient Generator | TESTED | 2026-11-07 |
+| CSS Gradient Generator | RELEASED | 2026-11-07 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.

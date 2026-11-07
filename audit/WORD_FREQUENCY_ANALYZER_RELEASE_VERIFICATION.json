@@ -1,0 +1,246 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-07",
+  "source_revision": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+  "deployment_commit": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+  "source_tree_sha": "b6a52211aaafcdb2886374d5ed46c28bf166af74",
+  "deployment": {
+    "run_id": 42338516265,
+    "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516265",
+    "jobs": [
+      {
+        "id": 128300789972,
+        "name": "build",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300881730,
+        "name": "report-build-status",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300881750,
+        "name": "deploy",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "post_merge_ci": {
+    "run_id": 42338516503,
+    "sha": "c127f856cbd97497412ec35ed66b3b1a58c4b2dc",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42338516503",
+    "jobs": [
+      {
+        "id": 128300787626,
+        "name": "Python and project validation",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300787726,
+        "name": "Real Chromium browser tests",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128300787978,
+        "name": "Node logic regression",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128302710015,
+        "name": "Required functional checks",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "previous_evidence": "audit/WORD_FREQUENCY_ANALYZER_VERIFICATION.json",
+  "previous_development_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+  "publication": {
+    "url": "https://everydaydigitalbox.com/word-frequency-analyzer/",
+    "http_status": 200,
+    "checked_at": "2026-11-07T04:58:29.644698+00:00",
+    "source_matches": true
+  },
+  "public_index": {
+    "url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+    "final_url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+    "checked_at": "2026-11-07T04:58:26.598491+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+    "raw_approved_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+    "raw_match": true,
+    "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+    "approved_normalized_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Word Frequency Analyzer | Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "canonical_public_url": {
+    "url": "https://everydaydigitalbox.com/word-frequency-analyzer/",
+    "final_url": "https://everydaydigitalbox.com/word-frequency-analyzer/",
+    "checked_at": "2026-11-07T04:58:29.644698+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+    "raw_approved_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+    "raw_match": true,
+    "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+    "approved_normalized_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Word Frequency Analyzer | Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "public_source_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+  "approved_source_sha256": "7c7bfda825c255a83aef2a1e282eb4c642624ea78bdc039a8ffdb23b8d147c1b",
+  "browser": "Edg/157.0.4341.42",
+  "scope": "Fresh interactions on public HTTPS. Production responses are unchanged. Clipboard and downloads are captured in memory. One real Worker is instrumented through Chromium DevTools to observe native Blob read sizes and concurrency.",
+  "pages": [
+    {
+      "path": "word-frequency-analyzer/index.html",
+      "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+      "checks": [
+        "8 fresh public interaction cases on deployed HTTPS",
+        "Canonical and index responses returned HTTP 200 and match the approved Git bytes",
+        "Public network, console, asset and consent regression checks passed",
+        "Fresh local canonical suites and prior development evidence are identified separately"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/word-frequency-analyzer/",
+        "http_status": 200,
+        "checked_at": "2026-11-07T04:58:29.644698+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "public_browser_checks": [
+    {
+      "tool_id": "word-frequency-analyzer",
+      "check": "known Unicode tokens and punctuation boundaries",
+      "checked_at": "2026-11-07T05:02:01.603Z",
+      "result": "PASS",
+      "observed": {
+        "occurrences": 7,
+        "unique": 6
+      }
+    },
+    {
+      "tool_id": "word-frequency-analyzer",
+      "check": "case-sensitive and native lowercase counts",
+      "checked_at": "2026-11-07T05:02:02.273Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "word-frequency-analyzer",
+      "check": "NFC opt-in and literal spelling",
+      "checked_at": "2026-11-07T05:02:02.474Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "word-frequency-analyzer",
+      "check": "alphabetical, frequency and least-first ordering",
+      "checked_at": "2026-11-07T05:02:02.606Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "word-frequency-analyzer",
+      "check": "100,000 input units and 20,000 tokens at the boundary",
+      "checked_at": "2026-11-07T05:02:02.782Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "word-frequency-analyzer",
+      "check": "ranking and byte budgets disclose omissions",
+      "checked_at": "2026-11-07T05:02:03.213Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "word-frequency-analyzer",
+      "check": "copy success, denied clipboard fallback and reset",
+      "checked_at": "2026-11-07T05:02:10.725Z",
+      "result": "PASS"
+    },
+    {
+      "tool_id": "word-frequency-analyzer",
+      "check": "native keyboard operation and no overflow at four widths",
+      "checked_at": "2026-11-07T05:02:10.919Z",
+      "result": "PASS"
+    }
+  ],
+  "validation": {
+    "http_status": 200,
+    "source_match": true,
+    "title": "Word Frequency Analyzer | Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ],
+    "unexpected_javascript_errors": 0,
+    "unexpected_dependencies": [],
+    "input_transport_requests": 0,
+    "known_optional_favicon_http_status": 404
+  },
+  "consent_evidence": "audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json",
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "word-frequency-analyzer",
+    "generated_at": "2026-11-07T05:08:05+00:00",
+    "input_hash": "25eec034d1b68c59811ada7f570de3d5ba8df49f06bc86f82ec6f0e1d39538f9",
+    "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 8,
+        "failed": 0,
+        "assertions": 8,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 4,
+        "failed": 0,
+        "assertions": 11,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/157.0.4341.42"
+      }
+    },
+    "status": "PASS"
+  },
+  "canonical_report_note": "Fresh local canonical suite after release metadata update. The separate public browser checks above use live HTTPS.",
+  "limitations": [
+    "Public browser evidence uses isolated Chromium/Edge with synthetic tool inputs. Cross-browser, physical-device and screen-reader testing are outside this scope.",
+    "Clipboard success and denial are simulated. Download bytes are captured in memory. Native OS dialogs and permissions are outside this scope.",
+    "Real browser collection is verified separately. Authenticated GA4 property reporting remains unverified.",
+    "Tokenization follows the documented letter/number, mark and apostrophe rules. Native case mapping and normalization do not provide language-specific segmentation."
+  ],
+  "integration_gate": {
+    "status": "PASS",
+    "action": "UPDATE_PROPOSAL",
+    "patch_required": false
+  }
+}

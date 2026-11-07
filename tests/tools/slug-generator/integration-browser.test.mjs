@@ -1,3 +1,4 @@
+import {task25ReleasedCount} from '../../../scripts/task25-test-support.mjs';
 import {task24ReleasedCount} from '../../../scripts/task24-test-support.mjs';
 import {test,before,beforeEach,after} from 'node:test';
 import assert from 'node:assert/strict';
@@ -46,7 +47,7 @@ const task21Ids=["hashtag-counter", "html-formatter", "css-minifier", "javascrip
 const task21Released=registry.tools.filter(t=>task21Ids.includes(t.id)&&t.status==='RELEASED').length;
 const task22Released=registry.tools.filter(t=>t.id==='markdown-converter-previewer'&&t.status==='RELEASED').length;
 const task24Released=task24ReleasedCount(registry);
-assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,6+batchReleased+task8Released+task9Released+task10Released+task11Released+task12Released+task13Released+task14Released+task15Released+task16Released+task18Released+task19Released+task20Released+task21Released+task22Released+task24Released);
+assert.equal(registry.tools.filter(t=>t.status==='RELEASED').length,6+batchReleased+task8Released+task9Released+task10Released+task11Released+task12Released+task13Released+task14Released+task15Released+task16Released+task18Released+task19Released+task20Released+task21Released+task22Released+task24Released+task25ReleasedCount(registry));
 const availability=caseStatus.toLowerCase();
 let browser;
 before(async()=>{const executable=findBrowser();assert.ok(executable,'Installed Chromium required');browser=await launchBrowser(executable);});

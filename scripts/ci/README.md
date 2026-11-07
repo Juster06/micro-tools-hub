@@ -1,5 +1,14 @@
 # Functional CI — Task 9.5
 
+## Task 25.1 public release evidence
+
+Six Python checks verify the deployed source hashes, 43 fresh public browser
+cases, native Worker read observations, CSV export, real consent collection,
+and exact preservation of the 87 utility pages. The Python floor is 225.
+The Node and Chromium floors are 530 and 742, with all 87 tool profiles and
+both neutral templates required. Earlier catalog counts admit exactly six
+new release records after validating their publication evidence.
+
 ## Task 25 coverage extension
 
 The map includes all 87 canonical structural/browser profiles and 83 logic
