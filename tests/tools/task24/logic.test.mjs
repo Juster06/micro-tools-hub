@@ -13,6 +13,8 @@ for(const id of ids){
 }
 test('bases 2–36: exact independent native BigInt vectors and round trips',()=>{
  const t=load(ids[0]);for(let base=2;base<=36;base++)for(const n of [0n,1n,-1n,2n**53n+1n,-(2n**256n)+17n]){const text=n.toString(base);assert.equal(t.call(text,{from:String(base),to:'10'}),String(n));assert.equal(t.call(String(n),{to:String(base)}),text);}
+ // Compatibility case mappings must not admit non-ASCII source digits.
+ for(const text of ['K','ａ','１','😀','−1'])assert.throws(()=>t.call(text,{from:'36',to:'10'}),/Invalid digit/);
 });
 test('largest base36 value expands safely and back without Number precision loss',()=>{const t=load(ids[0]),s='z'.repeat(4096),binary=t.call(s,{from:'36',to:'2'});assert.ok(binary.length<32768);assert.equal(t.call(s,{from:'36',to:'36'}),s);assert.equal(BigInt('0b'+binary).toString(36),s);assert.throws(()=>t.call(s+'z',{from:'36'}));});
 test('unit independent identities: 12 in/ft, 5280 ft/mi, 16 oz/lb, 1000 L/m3',()=>{

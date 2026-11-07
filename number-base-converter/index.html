@@ -29,6 +29,7 @@ function run(input,options={}){
   if(!input)throw Error('Enter a signed integer.');
   const negative=input[0]==='-',digits=/^[+-]/.test(input)?input.slice(1):input;
   if(!digits||digits.length>4096)throw Error('Enter 1–4096 digits and an optional sign.');
+  if(!/^[0-9A-Za-z]+$/.test(digits))throw Error('Invalid digit: use ASCII letters and digits only.');
   const alphabet='0123456789abcdefghijklmnopqrstuvwxyz';let value=0n;
   for(const c of digits.toLowerCase()){
     const digit=alphabet.indexOf(c);if(digit<0||digit>=Number(from))throw Error('Invalid digit for base '+from+'. Spaces and prefixes are not accepted.');
