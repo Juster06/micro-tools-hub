@@ -8,18 +8,18 @@ def blob(path,ref=BASE):return subprocess.check_output(['git','show',ref+':'+pat
 def normalized(b):return b.replace(b'\r\n',b'\n')
 class Task24Preservation(unittest.TestCase):
  def test_exactly_six_new_records_and_original93_records_unchanged(self):
-  old=json.loads(blob('TOOL_REGISTRY.json'));new=json.loads((ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf-8'));self.assertEqual(historical_registry(new)['tools'],old['tools']);self.assertEqual(new['milestones'],old['milestones']);self.assertEqual({s:sum(t['status']==s for t in new['tools'])for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':75,'TESTED':6,'READY':0,'PLANNED':17,'BLOCKED':1})
+  old=json.loads(blob('TOOL_REGISTRY.json'));new=json.loads((ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf-8'));self.assertEqual(historical_registry(new)['tools'],old['tools']);self.assertEqual(new['milestones'],old['milestones']);self.assertEqual({s:sum(t['status']==s for t in new['tools'])for s in ['RELEASED','TESTED','READY','PLANNED','BLOCKED']},{'RELEASED':81,'TESTED':0,'READY':0,'PLANNED':17,'BLOCKED':1})
  def test_all75_pages_assets_privacy_historical_audits_and_workflow_unchanged(self):
   old=json.loads(blob('TOOL_REGISTRY.json'));pages=[t['directory_path']+'/index.html'for t in old['tools']if t['status']=='RELEASED'];self.assertEqual(len(pages),75)
   paths=pages+['CNAME','privacy.html','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/package-lock.json']+subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'assets','audit','templates'],cwd=ROOT,text=True).splitlines()
   for path in paths:self.assertEqual(normalized((ROOT/path).read_bytes()),normalized(blob(path)),path)
- def test_six_pending_cards_are_only_homepage_changes(self):
+ def test_six_verified_release_cards_are_only_homepage_changes(self):
   source=(ROOT/'index.html').read_text(encoding='utf-8');self.assertEqual(without_task24(source,Homepage),normalized(blob('index.html')).decode());cards=Homepage(source).cards;self.assertEqual(len(cards),81);self.assertEqual(len({c['attrs']['href']for c in cards}),81)
- def test_development_evidence_binds_git_source_and_no_publication(self):
+ def test_publication_evidence_binds_git_source_and_preserves_development(self):
   r=json.loads((ROOT/'TOOL_REGISTRY.json').read_text(encoding='utf-8'))
   for tool in r['tools']:
    if tool['id']not in IDS:continue
-   v=tool['verification'];sha=hashlib.sha256(normalized(blob(tool['id']+'/index.html',v['source_revision'])).rstrip()).hexdigest();self.assertEqual(sha,v['source_sha256']);self.assertIsNone(v['publication']);self.assertEqual(tool['status'],'TESTED')
+   v=tool['verification'];sha=hashlib.sha256(normalized(blob(tool['id']+'/index.html',v['source_revision'])).rstrip()).hexdigest();self.assertEqual(sha,v['source_sha256']);self.assertEqual(v['publication']['http_status'],200);self.assertIs(v['publication']['source_matches'],True);self.assertEqual(tool['status'],'RELEASED');audit=json.loads((ROOT/v['evidence_path']).read_text(encoding='utf-8'));previous=json.loads((ROOT/audit['previous_evidence']).read_text(encoding='utf-8'));self.assertIsNone(previous['pages'][0]['publication']);self.assertEqual(previous['result'],'PASS')
  def test_new_code_has_shared_consent_no_input_transport_or_html_evaluation(self):
   for tid in IDS:
    source=(ROOT/tid/'index.html').read_text(encoding='utf-8');self.assertEqual(source.count('<script defer src="../assets/consent.js"></script>'),1)

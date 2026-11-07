@@ -18,7 +18,8 @@
     "tests/test_tracking.py",
     "tests/test_task22_preservation.py",
     "tests/test_task22_release.py",
-    "tests/test_task24_preservation.py"
+    "tests/test_task24_preservation.py",
+    "tests/test_task24_release.py"
   ],
   "node_files": [
     "scripts/consent-static.test.mjs",
@@ -706,7 +707,7 @@
     }
   ],
   "minimum_tests": {
-    "python-project": 207,
+    "python-project": 213,
     "node-regression": 519,
     "browser-tests": 720
   },

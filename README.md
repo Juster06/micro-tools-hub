@@ -1,6 +1,40 @@
 # Everyday Digital Box — WebUtils Hub
 
-## Current state — Task 24 development; six TESTED, publication pending
+## Current state — Task 24.1 public release-verification proposal
+
+Task24 development PR [#43](https://github.com/Juster06/micro-tools-hub/pull/43)
+is merged at `a7da719ea6ccc4caae572f26f6ae5e707fbb70be`. Pages42324279460
+and all four post-merge Functional CI42324279630 checks succeeded for that commit.
+Task23 planning is complete; Task24's six utilities are implemented and deployed.
+
+Fresh actual public verification passed:99 matching source responses (all81 pages,
+privacy, registry, tracker and14 assets), six matching directory aliases,81 visible
+distinct canonical cards,61 public functionality/catalog cases, and zero unexpected
+JavaScript errors/dependencies/input transport. Two new isolated browser profiles
+verified real consent and exactly three accepted page views returning HTTP204,
+without duplicates; no Google requests before consent or after rejection/withdrawal.
+Evidence: `audit/TASK_24_PUBLIC_RELEASE_VERIFICATION.json` and six separate release
+audits. GA4 property reporting remains unverified; ID `G-XDHPQYJ5CH` is unchanged.
+
+This separate release proposal changes only the six eligible TESTED records to
+RELEASED: **99 registered,81 RELEASED,0 TESTED,0 READY,17 PLANNED,1 BLOCKED**.
+The actual deployed registry remains75 RELEASED/6 TESTED until this PR is separately
+authorized, merged and deployed. Proposed milestone progress81/100 (81%),19 remain;
+existing milestone configuration is unchanged. No next development batch is started.
+
+PDF processing remains deferred; PDF Compressor BLOCKED. All81 runtime pages,
+existing assets/privacy/consent, historical audits, workflow pins/deadlines and all
+28 pre-existing worktrees/two unrelated handoff edits are preserved. Known favicon,
+Resume print-margin, local Windows timeout/native-dialog/device/screen-reader scope
+limitations remain. Publication does not certify complete accessibility.
+
+**Next major task:** Review `release/task-24-public-verification` and its exact-head
+required CI. Do not merge/deploy this release-verification PR without explicit owner
+authorization or use administrator bypass. After authorized deployment, independently
+verify the final81-RELEASED public state. No next development batch is authorized.
+
+
+## Historical Task 24 development checkpoint
 
 Task 23 read-only consolidation and the 100-release roadmap are complete. Owner
 authorized the first six-tool development batch. Starting main is

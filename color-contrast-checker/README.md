@@ -1,5 +1,17 @@
 # Color Contrast Checker
 
+## Task 24.1 public verification — release proposal
+
+PR #43 merged at `a7da719ea6ccc4caae572f26f6ae5e707fbb70be`; Pages42324279460 and all required
+post-merge Functional CI42324279630 checks succeeded. Fresh actual public HTTPS
+source and 9 scoped interaction cases passed on 2026-11-07. See `audit/COLOR_CONTRAST_CHECKER_RELEASE_VERIFICATION.json`
+and `audit/TASK_24_PUBLIC_RELEASE_VERIFICATION.json`. This separate proposal
+requires owner authorization before merge; production metadata remains TESTED
+until the release-verification PR is authorized, merged and deployed. Existing
+limits and native/device/GA4 property-reporting limitations below remain.
+
+## Historical Task 24 development
+
 Canonical route: `color-contrast-checker/index.html`.
 
 TESTED — publication pending. Local source checkpoint `6437b046e5827d82d2f3dbf7668dc451c51c2614`; evidence: `audit/COLOR_CONTRAST_CHECKER_VERIFICATION.json`. No live-publication claim.

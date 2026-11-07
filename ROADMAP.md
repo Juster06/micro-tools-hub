@@ -1,6 +1,40 @@
 # Development roadmap
 
-## Current state — Task 24 development; six TESTED, publication pending
+## Current state — Task 24.1 public release-verification proposal
+
+Task24 development PR [#43](https://github.com/Juster06/micro-tools-hub/pull/43)
+is merged at `a7da719ea6ccc4caae572f26f6ae5e707fbb70be`. Pages42324279460
+and all four post-merge Functional CI42324279630 checks succeeded for that commit.
+Task23 planning is complete; Task24's six utilities are implemented and deployed.
+
+Fresh actual public verification passed:99 matching source responses (all81 pages,
+privacy, registry, tracker and14 assets), six matching directory aliases,81 visible
+distinct canonical cards,61 public functionality/catalog cases, and zero unexpected
+JavaScript errors/dependencies/input transport. Two new isolated browser profiles
+verified real consent and exactly three accepted page views returning HTTP204,
+without duplicates; no Google requests before consent or after rejection/withdrawal.
+Evidence: `audit/TASK_24_PUBLIC_RELEASE_VERIFICATION.json` and six separate release
+audits. GA4 property reporting remains unverified; ID `G-XDHPQYJ5CH` is unchanged.
+
+This separate release proposal changes only the six eligible TESTED records to
+RELEASED: **99 registered,81 RELEASED,0 TESTED,0 READY,17 PLANNED,1 BLOCKED**.
+The actual deployed registry remains75 RELEASED/6 TESTED until this PR is separately
+authorized, merged and deployed. Proposed milestone progress81/100 (81%),19 remain;
+existing milestone configuration is unchanged. No next development batch is started.
+
+PDF processing remains deferred; PDF Compressor BLOCKED. All81 runtime pages,
+existing assets/privacy/consent, historical audits, workflow pins/deadlines and all
+28 pre-existing worktrees/two unrelated handoff edits are preserved. Known favicon,
+Resume print-margin, local Windows timeout/native-dialog/device/screen-reader scope
+limitations remain. Publication does not certify complete accessibility.
+
+**Next major task:** Review `release/task-24-public-verification` and its exact-head
+required CI. Do not merge/deploy this release-verification PR without explicit owner
+authorization or use administrator bypass. After authorized deployment, independently
+verify the final81-RELEASED public state. No next development batch is authorized.
+
+
+## Historical Task 24 development checkpoint
 
 Task 23 read-only consolidation and the 100-release roadmap are complete. Owner
 authorized the first six-tool development batch. Starting main is
@@ -696,12 +730,12 @@ Execute in order unless the user steers the project or a dependency/regression j
 | 18 | random-name-picker | Random Name Picker | Everyday Productivity Tools | S | RELEASED |
 | 19 | hashtag-organizer | Hashtag Organizer | Social Media Tools | S | RELEASED |
 | 20 | secure-random-number-generator | Secure Random Number Generator | Security and Privacy Tools | S | RELEASED |
-| 21 | number-base-converter | Number Base Converter | Developer Tools | S | TESTED |
-| 22 | unit-converter | Unit Converter | Calculators | M | TESTED |
-| 23 | duration-calculator | Duration Calculator | Calculators | M | TESTED |
-| 24 | url-inspector-query-builder | URL Inspector & Query Builder | Developer Tools | M | TESTED |
-| 25 | list-comparison-set-operations | List Comparison & Set Operations | Text and Writing Tools | M | TESTED |
-| 26 | color-contrast-checker | Color Contrast Checker | Calculators | M | TESTED |
+| 21 | number-base-converter | Number Base Converter | Developer Tools | S | RELEASED |
+| 22 | unit-converter | Unit Converter | Calculators | M | RELEASED |
+| 23 | duration-calculator | Duration Calculator | Calculators | M | RELEASED |
+| 24 | url-inspector-query-builder | URL Inspector & Query Builder | Developer Tools | M | RELEASED |
+| 25 | list-comparison-set-operations | List Comparison & Set Operations | Text and Writing Tools | M | RELEASED |
+| 26 | color-contrast-checker | Color Contrast Checker | Calculators | M | RELEASED |
 <!-- GENERATED:SEQUENCE:END -->
 
 ## Practical delivery sequence
@@ -760,7 +794,7 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | text-reverser | Text Reverser | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | find-and-replace | Find and Replace | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | slug-generator | Slug Generator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| list-comparison-set-operations | List Comparison & Set Operations | TESTED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
+| list-comparison-set-operations | List Comparison & Set Operations | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
 
 ### Excel and Data Tools
 
@@ -790,8 +824,8 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | css-minifier | CSS Minifier | RELEASED | P2 | L | Pinned local CSS-Tree 3.2.1 parser/generator (MIT); no rule/value optimization |
 | javascript-minifier | JavaScript Minifier | RELEASED | P2 | L | Pinned local Acorn 8.19.0 (MIT) and Terser 5.51.2 (BSD-2-Clause); compression/mangling disabled |
 | timestamp-converter | Timestamp Converter | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
-| number-base-converter | Number Base Converter | TESTED | P1 | S | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
-| url-inspector-query-builder | URL Inspector & Query Builder | TESTED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
+| number-base-converter | Number Base Converter | RELEASED | P1 | S | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
+| url-inspector-query-builder | URL Inspector & Query Builder | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
 
 ### Social Media Tools
 
@@ -823,9 +857,9 @@ This catalog includes existing and proposed utilities, with status explicitly sh
 | loan-repayment-calculator | Loan Repayment Calculator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
 | profit-margin-calculator | Profit Margin Calculator | RELEASED | P1 | S | Browser-native approach; scope review before implementation |
 | compound-interest-calculator | Compound Interest Calculator | RELEASED | P2 | M | Browser-native approach; scope review before implementation |
-| unit-converter | Unit Converter | TESTED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
-| duration-calculator | Duration Calculator | TESTED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
-| color-contrast-checker | Color Contrast Checker | TESTED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
+| unit-converter | Unit Converter | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
+| duration-calculator | Duration Calculator | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
+| color-contrast-checker | Color Contrast Checker | RELEASED | P1 | M | Native browser APIs; no new runtime packages; Shared consent component assets/consent.js |
 
 ### Security and Privacy Tools
 

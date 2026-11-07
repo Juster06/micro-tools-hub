@@ -1,0 +1,219 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-07",
+  "source_revision": "a7da719ea6ccc4caae572f26f6ae5e707fbb70be",
+  "source_tree_sha": "a4f62c58dca6c58842cf54ed34139dcf27c758e7",
+  "previous_evidence": "audit/URL_INSPECTOR_QUERY_BUILDER_VERIFICATION.json",
+  "deployment_commit": "a7da719ea6ccc4caae572f26f6ae5e707fbb70be",
+  "deployment": {
+    "run_id": 42324279460,
+    "sha": "a7da719ea6ccc4caae572f26f6ae5e707fbb70be",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42324279460",
+    "jobs": [
+      {
+        "id": 128255851203,
+        "name": "build",
+        "conclusion": "success"
+      },
+      {
+        "id": 128255947880,
+        "name": "report-build-status",
+        "conclusion": "success"
+      },
+      {
+        "id": 128255947887,
+        "name": "deploy",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "post_merge_ci": {
+    "run_id": 42324279630,
+    "sha": "a7da719ea6ccc4caae572f26f6ae5e707fbb70be",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Juster06/micro-tools-hub/actions/runs/42324279630",
+    "jobs": [
+      {
+        "id": 128255848717,
+        "name": "Real Chromium browser tests",
+        "conclusion": "success"
+      },
+      {
+        "id": 128255848877,
+        "name": "Node logic regression",
+        "conclusion": "success"
+      },
+      {
+        "id": 128255848927,
+        "name": "Python and project validation",
+        "conclusion": "success"
+      },
+      {
+        "id": 128257853338,
+        "name": "Required functional checks",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "publication": {
+    "url": "https://everydaydigitalbox.com/url-inspector-query-builder/",
+    "http_status": 200,
+    "checked_at": "2026-11-07T01:45:09.699318+00:00",
+    "source_matches": true
+  },
+  "public_index": {
+    "url": "https://everydaydigitalbox.com/url-inspector-query-builder/index.html",
+    "final_url": "https://everydaydigitalbox.com/url-inspector-query-builder/index.html",
+    "checked_at": "2026-11-07T01:45:07.352216+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "1322ab9a554d260440c7467cec157fbb9660e09eb76f67c305a0801fab13f9a7",
+    "raw_approved_sha256": "1322ab9a554d260440c7467cec157fbb9660e09eb76f67c305a0801fab13f9a7",
+    "raw_match": true,
+    "source_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+    "approved_normalized_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+    "content_type": "text/html; charset=utf-8",
+    "title": "URL Inspector & Query Builder — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "canonical_public_url": {
+    "url": "https://everydaydigitalbox.com/url-inspector-query-builder/",
+    "final_url": "https://everydaydigitalbox.com/url-inspector-query-builder/",
+    "checked_at": "2026-11-07T01:45:09.699318+00:00",
+    "http_status": 200,
+    "raw_public_sha256": "1322ab9a554d260440c7467cec157fbb9660e09eb76f67c305a0801fab13f9a7",
+    "raw_approved_sha256": "1322ab9a554d260440c7467cec157fbb9660e09eb76f67c305a0801fab13f9a7",
+    "raw_match": true,
+    "source_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+    "approved_normalized_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+    "content_type": "text/html; charset=utf-8",
+    "title": "URL Inspector & Query Builder — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ]
+  },
+  "public_source_sha256": "1322ab9a554d260440c7467cec157fbb9660e09eb76f67c305a0801fab13f9a7",
+  "approved_source_sha256": "1322ab9a554d260440c7467cec157fbb9660e09eb76f67c305a0801fab13f9a7",
+  "browser": "Edg/157.0.4341.42",
+  "scope": "Fresh actual public HTTPS functionality and source identity; distinct from original development/CI evidence. No production response substitution or request blocking. Clipboard/download capture is scoped automation, not native OS certification.",
+  "pages": [
+    {
+      "path": "url-inspector-query-builder/index.html",
+      "source_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+      "checks": [
+        "native components, normalization and ordered duplicates",
+        "add/edit/remove, duplicate order, encoding and repeat-build stability",
+        "input URLs are never navigated/transmitted; controls rejected",
+        "100-pair and UTF-8 byte bounds",
+        "copy, denied-copy fallback, captured UTF-8 download and reset",
+        "keyboard run, stale-result invalidation and 320/375/768/1440 layouts"
+      ],
+      "publication": {
+        "url": "https://everydaydigitalbox.com/url-inspector-query-builder/",
+        "http_status": 200,
+        "checked_at": "2026-11-07T01:45:09.699318+00:00",
+        "source_matches": true
+      }
+    }
+  ],
+  "public_browser_checks": [
+    {
+      "tool_id": "url-inspector-query-builder",
+      "check": "native components, normalization and ordered duplicates",
+      "result": "PASS",
+      "checked_at": "2026-11-07T01:49:30.505Z"
+    },
+    {
+      "tool_id": "url-inspector-query-builder",
+      "check": "add/edit/remove, duplicate order, encoding and repeat-build stability",
+      "result": "PASS",
+      "checked_at": "2026-11-07T01:49:30.819Z"
+    },
+    {
+      "tool_id": "url-inspector-query-builder",
+      "check": "input URLs are never navigated/transmitted; controls rejected",
+      "result": "PASS",
+      "checked_at": "2026-11-07T01:49:31.110Z"
+    },
+    {
+      "tool_id": "url-inspector-query-builder",
+      "check": "100-pair and UTF-8 byte bounds",
+      "result": "PASS",
+      "checked_at": "2026-11-07T01:49:31.273Z"
+    },
+    {
+      "tool_id": "url-inspector-query-builder",
+      "check": "copy, denied-copy fallback, captured UTF-8 download and reset",
+      "result": "PASS",
+      "checked_at": "2026-11-07T01:49:38.464Z"
+    },
+    {
+      "tool_id": "url-inspector-query-builder",
+      "check": "keyboard run, stale-result invalidation and 320/375/768/1440 layouts",
+      "result": "PASS",
+      "checked_at": "2026-11-07T01:49:38.646Z"
+    }
+  ],
+  "validation": {
+    "http_status": 200,
+    "raw_source_match": true,
+    "title": "URL Inspector & Query Builder — Everyday Digital Box",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+      "../assets/consent.js"
+    ],
+    "unexpected_javascript_errors": 0,
+    "unexpected_dependencies": [],
+    "input_transport_requests": 0
+  },
+  "consent_evidence": "audit/TASK_24_PUBLIC_RELEASE_VERIFICATION.json",
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "url-inspector-query-builder",
+    "generated_at": "2026-11-07T01:58:32+00:00",
+    "input_hash": "f0d549c922f0d04dc149ce3bc0c844a6dff0be809f79afa41a2b05525bb4fd1a",
+    "source_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 18,
+        "failed": 0,
+        "assertions": 18,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 11,
+        "failed": 0,
+        "assertions": 45,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/157.0.4341.42"
+      }
+    },
+    "status": "PASS"
+  },
+  "canonical_report_note": "Fresh canonical proposal structural, logic and browser tests passed after release metadata update; independent fresh public evidence is recorded separately above.",
+  "limitations": [
+    "Actual Chromium/Edge public HTTPS; no exhaustive cross-browser, physical-device, real screen-reader or native IME certification.",
+    "Clipboard API simulated and downloads captured in memory; native OS clipboard permissions/save dialog unverified.",
+    "Existing real GA4 collection requests verified separately; property-level reporting remains unverified.",
+    "Contrast pair calculations are not complete accessibility certification.",
+    "No metadata change is merged or deployed by this proposal."
+  ]
+}

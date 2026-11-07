@@ -13,14 +13,23 @@ def historical_registry(registry):
     assert len(added)==6 and {t['id']for t in added}==IDS
     for tool in added:
         assert tool['directory_path']==tool['id']
-        assert tool['status']=='TESTED' and tool['testing_status']=='REQUIRED_PASSED'
-        verification=tool['verification'];assert verification['publication']is None
+        assert tool['status']=='RELEASED' and tool['testing_status']=='REQUIRED_PASSED'
+        verification=tool['verification'];publication=verification['publication']
+        assert verification['source_revision']=='a7da719ea6ccc4caae572f26f6ae5e707fbb70be'
+        assert publication['url']=='https://everydaydigitalbox.com/'+tool['id']+'/'
+        assert publication['http_status']==200 and publication['source_matches']is True
         source=(ROOT/tool['directory_path']/'index.html').read_text(encoding='utf-8').replace('\r\n','\n').rstrip().encode()
         assert verification['source_sha256']==hashlib.sha256(source).hexdigest()
         audit=json.loads((ROOT/verification['evidence_path']).read_text(encoding='utf-8'))
         assert audit['result']=='PASS' and audit['source_revision']==verification['source_revision']
         assert audit['pages'][0]['source_sha256']==verification['source_sha256']
-        assert audit['pages'][0]['publication']is None
+        assert audit['pages'][0]['publication']==publication==audit['publication']
+        assert audit['public_index']['raw_match']is True
+        assert audit['public_source_sha256']==audit['approved_source_sha256']
+        assert audit['canonical_public_url']['raw_match']is True
+        assert audit['public_browser_checks']and all(c['result']=='PASS'for c in audit['public_browser_checks'])
+        previous=json.loads((ROOT/audit['previous_evidence']).read_text(encoding='utf-8'))
+        assert previous['result']=='PASS'and previous['pages'][0]['publication']is None
         assert all(audit['automated_tool_report']['layers'][layer]['status']=='PASS'for layer in ['structural','logic','browser'])
     return {**registry,'tools':[t for t in registry['tools']if t['id']not in IDS]}
 def without_task24(source,Homepage):
@@ -33,8 +42,8 @@ def without_task24(source,Homepage):
     for tid in sorted(IDS):
         card=next(c for c in Homepage(source).cards if c['attrs'].get('data-tool-id')==tid)
         assert card['attrs']['href']==tid+'/index.html'
-        assert card['attrs']['data-availability']=='tested'
-        assert source[card['start']:card['end']].count('Tested · publication pending')==1
+        assert card['attrs']['data-availability']=='released'
+        assert source[card['start']:card['end']].count('Live')==1
         assert source[card['start']-2:card['start']]=='  '
         assert source[card['end']:card['end']+7]=='\n      '
         source=source[:card['start']-2]+source[card['end']+7:]
