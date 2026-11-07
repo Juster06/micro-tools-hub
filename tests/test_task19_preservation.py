@@ -12,6 +12,7 @@ IDS={'password-generator','csv-to-txt','passphrase-generator','qr-code-generator
 TASK20_IDS={'excel-formula-generator', 'resume-builder', 'emoji-picker', 'passport-photo-layout-maker', 'image-compressor', 'png-to-ico'}
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
+from task24_test_support import historical_registry,without_task24
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 
@@ -26,7 +27,7 @@ def normalized(value):
 
 class Task19Preservation(unittest.TestCase):
     def test_inventory_changes_only_selected_six_and_preserves_all_prior_records(self):
-        old=json.loads(raw('TOOL_REGISTRY.json'));new=json.loads(text('TOOL_REGISTRY.json'))
+        old=json.loads(raw('TOOL_REGISTRY.json'));new=historical_registry(json.loads(text('TOOL_REGISTRY.json')))
         self.assertEqual(len(new['tools']),93);self.assertEqual(new['milestones'],old['milestones'])
         by_id={t['id']:t for t in new['tools']};self.assertEqual(set(by_id),{t['id'] for t in old['tools']})
         for tool in old['tools']:
@@ -95,7 +96,7 @@ class Task19Preservation(unittest.TestCase):
         self.assertIn('Apache License',text('tests/vendor/jsQR-LICENSE.txt'))
 
     def test_six_development_audits_bind_real_git_source_and_successful_canonical_layers(self):
-        registry=json.loads(text('TOOL_REGISTRY.json'))
+        registry=historical_registry(json.loads(text('TOOL_REGISTRY.json')))
         for tool in registry['tools']:
             if tool['id'] not in IDS:continue
             verification=tool['verification'];audit=json.loads(text(verification['evidence_path']));page=audit['pages'][0]
@@ -123,7 +124,7 @@ class Task19Preservation(unittest.TestCase):
 
     def test_coverage_includes_all_new_tools_and_existing_mandatory_scopes(self):
         coverage=json.loads(text('scripts/ci/coverage.json'))
-        self.assertEqual(len(coverage['tools']),75)
+        self.assertEqual(len(coverage['tools']),81)
         for tid in IDS:
             self.assertEqual(coverage['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'})
             self.assertIn('tests/tools/'+tid+'/logic.test.mjs',coverage['node_files'])

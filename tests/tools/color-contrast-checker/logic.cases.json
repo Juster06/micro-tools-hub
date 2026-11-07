@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "black-white",
+      "input": "#000000",
+      "options": {},
+      "expected": "Contrast ratio: 21.0000:1 (display rounded; decisions unrounded)\nNormal text AA (4.5:1): Pass\nLarge text AA (3:1): Pass\nNormal text AAA (7:1): Pass\nLarge text AAA (4.5:1): Pass\nNon-text contrast AA (3:1, SC 1.4.11): Pass\nPair calculation only; context and exceptions apply. Not an accessibility certification."
+    },
+    {
+      "id": "identical",
+      "input": "#ffffff",
+      "options": {},
+      "expected": "Contrast ratio: 1.0000:1 (display rounded; decisions unrounded)\nNormal text AA (4.5:1): Fail\nLarge text AA (3:1): Fail\nNormal text AAA (7:1): Fail\nLarge text AAA (4.5:1): Fail\nNon-text contrast AA (3:1, SC 1.4.11): Fail\nPair calculation only; context and exceptions apply. Not an accessibility certification."
+    },
+    {
+      "id": "grey-border",
+      "input": "#777777",
+      "options": {},
+      "expected": "Contrast ratio: 4.4781:1 (display rounded; decisions unrounded)\nNormal text AA (4.5:1): Fail\nLarge text AA (3:1): Pass\nNormal text AAA (7:1): Fail\nLarge text AAA (4.5:1): Fail\nNon-text contrast AA (3:1, SC 1.4.11): Pass\nPair calculation only; context and exceptions apply. Not an accessibility certification."
+    },
+    {
+      "id": "rgb",
+      "input": "#000000",
+      "options": {
+        "background": "rgb(255, 255, 255)"
+      },
+      "expected": "Contrast ratio: 21.0000:1 (display rounded; decisions unrounded)\nNormal text AA (4.5:1): Pass\nLarge text AA (3:1): Pass\nNormal text AAA (7:1): Pass\nLarge text AAA (4.5:1): Pass\nNon-text contrast AA (3:1, SC 1.4.11): Pass\nPair calculation only; context and exceptions apply. Not an accessibility certification."
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "Use"
+    },
+    {
+      "id": "alpha",
+      "input": "#00000000",
+      "options": {},
+      "error": "Use"
+    },
+    {
+      "id": "css",
+      "input": "red",
+      "options": {},
+      "error": "Use"
+    },
+    {
+      "id": "channel",
+      "input": "rgb(256,0,0)",
+      "options": {},
+      "error": "Use"
+    },
+    {
+      "id": "html",
+      "input": "<img src=x>",
+      "options": {},
+      "error": "Use"
+    },
+    {
+      "id": "huge",
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "options": {},
+      "error": "32 UTF-16"
+    },
+    {
+      "id": "background",
+      "input": "#000000",
+      "options": {
+        "background": "var(--x)"
+      },
+      "error": "Use"
+    },
+    {
+      "id": "input-type-11",
+      "input": null,
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "input-type-12",
+      "input": 0,
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "input-type-13",
+      "input": false,
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "input-type-14",
+      "input": [],
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "input-type-15",
+      "input": {},
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "unknown-option",
+      "input": "1",
+      "options": {
+        "unknown": "value"
+      },
+      "error": "Unsupported setting"
+    }
+  ]
+}

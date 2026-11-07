@@ -1,0 +1,111 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-06",
+  "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+  "browser": "Edg/157.0.4341.42",
+  "scope": "Local scoped development evidence only. Generic URL logic prepares bounded text; dedicated Node-native and Chromium tests execute native URL parsing. Existing shared consent unchanged.",
+  "pages": [
+    {
+      "path": "list-comparison-set-operations/index.html",
+      "source_sha256": "debcbede1959b4cee44d2b07552550cd4cef3a29ec347676567a89a6016c924e",
+      "checks": [
+        "24 generic logic fixtures (bounded preparation only for URL Inspector)",
+        "9 actual Chromium browser cases / 41 assertions",
+        "Dedicated native-API/property tests and actual keyboard/clipboard-race/Blob/privacy/browser cases; batch suite totals recorded separately",
+        "320/375/768/1440 viewport no-overflow cases; shared consent lifecycle regression; no public verification claim"
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "list-comparison-set-operations",
+    "generated_at": "2026-11-06T23:52:57+00:00",
+    "input_hash": "f25899d4116a90b430994702d1f26b0a5eae559a1815eb483337f84e570af1db",
+    "source_sha256": "debcbede1959b4cee44d2b07552550cd4cef3a29ec347676567a89a6016c924e",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 24,
+        "failed": 0,
+        "assertions": 24,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 9,
+        "failed": 0,
+        "assertions": 41,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/157.0.4341.42"
+      }
+    },
+    "status": "PASS"
+  },
+  "limitations": [
+    "Publication unverified; no RELEASED claim.",
+    "Clipboard APIs simulated and downloads captured in memory; no native OS clipboard/save dialog certification.",
+    "Chromium/Edge desktop automation; no exhaustive cross-browser, physical-device, real screen-reader or native IME certification.",
+    "Provisional caps verified on representative local maximums, not universal device performance or a hard heap guarantee.",
+    "Consent endpoints synthetic in development; no real GA4 property-level reporting claim."
+  ],
+  "visual_checks": [
+    {
+      "id": "list-comparison-set-operations",
+      "viewport": 320,
+      "width": 320,
+      "scrollWidth": 305,
+      "height": 3491,
+      "error": null,
+      "status": "Complete."
+    },
+    {
+      "id": "list-comparison-set-operations",
+      "viewport": 375,
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 3254,
+      "error": null,
+      "status": "Complete."
+    },
+    {
+      "id": "list-comparison-set-operations",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 1989,
+      "error": null,
+      "status": "Complete."
+    },
+    {
+      "id": "list-comparison-set-operations",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 1841,
+      "error": null,
+      "status": "Complete."
+    }
+  ],
+  "representative_maximum_computation": {
+    "id": "list-comparison-set-operations",
+    "milliseconds": 25.5,
+    "input_units": 49999,
+    "output_units": 99999,
+    "scope": "One representative bounded maximum/native-codec-free computation on this desktop; not a universal performance or peak-heap guarantee.",
+    "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614"
+  },
+  "visual_review_scope": "24 viewport captures and overflow measurements; representative URL/mobile and contrast/desktop screenshots visually reviewed. No physical-device or screen-reader claim.",
+  "visual_browser": "Edg/157.0.4341.42",
+  "visual_source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614"
+}

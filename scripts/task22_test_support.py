@@ -11,6 +11,8 @@ def assert_unchanged_or_task22(case,old,new):
     for key in set(old)-{'status','testing_status','last_verification_date','dependencies','notes','verification'}:
         case.assertEqual(old[key],new[key],key)
 def without_task22(case,source,Homepage):
+    from task24_test_support import without_task24
+    source=without_task24(source,Homepage)
     cards=[c for c in Homepage(source).cards if c['attrs'].get('data-tool-id')==ID]
     case.assertEqual(len(cards),1);card=cards[0]
     case.assertEqual(card['attrs']['href'],ID+'/index.html');case.assertEqual(card['attrs']['data-availability'],'released')

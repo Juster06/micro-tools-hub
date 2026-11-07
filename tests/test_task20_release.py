@@ -5,9 +5,12 @@ ROOT=Path(__file__).resolve().parents[1];BASE='0b055d5b837ea0bca85f8b6583eec5607
 IDS={'excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'}
 COUNTS=dict(zip(['excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'],[5,6,9,8,7,9]))
 sys.path.insert(0,str(ROOT/'scripts'));from tool_homepage import Homepage
+from task24_test_support import historical_registry
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
-def load(p):return json.loads((ROOT/p).read_text(encoding='utf8'))
+def load(p):
+ data=json.loads((ROOT/p).read_text(encoding='utf8'))
+ return historical_registry(data) if p=='TOOL_REGISTRY.json' else data
 def git(p):return subprocess.check_output(['git','show',BASE+':'+p],cwd=ROOT)
 def norm(b):return b.replace(b'\r\n',b'\n')
 class Task20Release(unittest.TestCase):

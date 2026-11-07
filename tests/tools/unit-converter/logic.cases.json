@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "metre",
+      "input": "1",
+      "options": {},
+      "expected": "100 cm\nFactor: 1 m = 100 cm\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "feet",
+      "input": "1",
+      "options": {
+        "from": "ft",
+        "to": "in"
+      },
+      "expected": "12 in\nFactor: 1 ft = 12 in\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "miles",
+      "input": "1",
+      "options": {
+        "from": "mi",
+        "to": "ft"
+      },
+      "expected": "5280 ft\nFactor: 1 mi = 5280 ft\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "mass",
+      "input": "1",
+      "options": {
+        "category": "mass",
+        "from": "lb",
+        "to": "oz"
+      },
+      "expected": "16 oz\nFactor: 1 lb = 16 oz\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "area",
+      "input": "1",
+      "options": {
+        "category": "area",
+        "from": "m2",
+        "to": "cm2"
+      },
+      "expected": "10000 cm2\nFactor: 1 m2 = 10000 cm2\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "volume",
+      "input": "1",
+      "options": {
+        "category": "volume",
+        "from": "USgal",
+        "to": "L"
+      },
+      "expected": "3.785411784 L\nFactor: 1 USgal = 3.785411784 L\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "celsius",
+      "input": "0",
+      "options": {
+        "category": "temperature",
+        "from": "C",
+        "to": "F"
+      },
+      "expected": "32 F\nF = C \u00d7 9/5 + 32\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "fahrenheit",
+      "input": "32",
+      "options": {
+        "category": "temperature",
+        "from": "F",
+        "to": "C"
+      },
+      "expected": "0 C\nC = (F \u2212 32) \u00d7 5/9\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "absolute-zero",
+      "input": "-459.67",
+      "options": {
+        "category": "temperature",
+        "from": "F",
+        "to": "K"
+      },
+      "expected": "0 K\nK = (F + 459.67) \u00d7 5/9\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "kelvin",
+      "input": "273.15",
+      "options": {
+        "category": "temperature",
+        "from": "K",
+        "to": "C"
+      },
+      "expected": "0 C\nC = K \u2212 273.15\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "signed",
+      "input": "-1",
+      "options": {},
+      "expected": "-100 cm\nFactor: 1 m = 100 cm\nRounded to 12 significant digits; binary floating-point arithmetic."
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "Enter"
+    },
+    {
+      "id": "incompatible",
+      "input": "1",
+      "options": {
+        "from": "kg"
+      },
+      "error": "compatible"
+    },
+    {
+      "id": "negative-kelvin",
+      "input": "-1",
+      "options": {
+        "category": "temperature",
+        "from": "K",
+        "to": "C"
+      },
+      "error": "absolute zero"
+    },
+    {
+      "id": "underflow",
+      "input": "1e-400",
+      "options": {},
+      "error": "representable"
+    },
+    {
+      "id": "overlarge",
+      "input": "1e13",
+      "options": {},
+      "error": "1e12"
+    },
+    {
+      "id": "bad-number",
+      "input": "0x10",
+      "options": {},
+      "error": "decimal"
+    },
+    {
+      "id": "unicode",
+      "input": "\uff12",
+      "options": {},
+      "error": "decimal"
+    },
+    {
+      "id": "length",
+      "input": "                                                                 ",
+      "options": {},
+      "error": "64 UTF-16"
+    },
+    {
+      "id": "input-type-19",
+      "input": null,
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "input-type-20",
+      "input": 0,
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "input-type-21",
+      "input": false,
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "input-type-22",
+      "input": [],
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "input-type-23",
+      "input": {},
+      "options": {},
+      "error": "Input must be a string"
+    },
+    {
+      "id": "unknown-option",
+      "input": "1",
+      "options": {
+        "unknown": "value"
+      },
+      "error": "Unsupported setting"
+    }
+  ]
+}

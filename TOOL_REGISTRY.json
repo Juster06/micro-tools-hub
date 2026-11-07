@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-06",
+  "updated_on": "2026-11-07",
   "project": {
     "name": "Everyday Digital Box — WebUtils Hub",
     "repository": "https://github.com/Juster06/micro-tools-hub",
@@ -5476,6 +5476,324 @@
         "month",
         "weekStart",
         "locale"
+      ]
+    },
+    {
+      "id": "number-base-converter",
+      "name": "Number Base Converter",
+      "category": "developer",
+      "description": "Convert exact signed integers between bases 2–36 in one interface, with binary/octal/decimal/hex presets..",
+      "directory_path": "number-base-converter",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "S",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Exact BigInt base 2–36 conversion",
+        "Signed integer/digit validation",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-07",
+      "notes": "Task 24 scoped local development verification passed; TESTED — publication pending. No release or merge authorization.",
+      "sequence_rank": 21,
+      "related_tools": [
+        "base64-encoder-decoder"
+      ],
+      "verification": {
+        "source_revision": "494fada334af7f0e1f548484e02844f3d993c83e",
+        "source_sha256": "7d44e30061fd9e6f4570903937379f153129b099b7eeb898fbcfba6335c016b2",
+        "evidence_path": "audit/NUMBER_BASE_CONVERTER_VERIFICATION.json",
+        "test_scope": [
+          "24 generic logic fixtures (bounded preparation only for URL Inspector)",
+          "13 actual Chromium browser cases / 49 assertions",
+          "Dedicated native-API/property tests and actual keyboard/clipboard-race/Blob/privacy/browser cases; batch suite totals recorded separately",
+          "320/375/768/1440 viewport no-overflow cases; shared consent lifecycle regression; no public verification claim"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "from",
+        "to"
+      ]
+    },
+    {
+      "id": "unit-converter",
+      "name": "Unit Converter",
+      "category": "calculator",
+      "description": "Convert a reviewed fixed set of length, mass, area, volume and temperature units.",
+      "directory_path": "unit-converter",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Five measurement categories",
+        "Documented unit factors",
+        "Affine temperature conversions",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-07",
+      "notes": "Task 24 scoped local development verification passed; TESTED — publication pending. No release or merge authorization.",
+      "sequence_rank": 22,
+      "related_tools": [
+        "file-size-converter"
+      ],
+      "verification": {
+        "source_revision": "0457799fc71faae98ecc27c04a4946ac3b4756a2",
+        "source_sha256": "5bf6acd58a2ff3d6808449172ff8400715a93f8f7cd2c96f9933857a9e76d964",
+        "evidence_path": "audit/UNIT_CONVERTER_VERIFICATION.json",
+        "test_scope": [
+          "25 generic logic fixtures (bounded preparation only for URL Inspector)",
+          "14 actual Chromium browser cases / 51 assertions",
+          "Dedicated native-API/property tests and actual keyboard/clipboard-race/Blob/privacy/browser cases; batch suite totals recorded separately",
+          "320/375/768/1440 viewport no-overflow cases; shared consent lifecycle regression; no public verification claim"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "category",
+        "from",
+        "to"
+      ]
+    },
+    {
+      "id": "duration-calculator",
+      "name": "Duration Calculator",
+      "category": "calculator",
+      "description": "Add/subtract elapsed durations and normalize totals.",
+      "directory_path": "duration-calculator",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Signed elapsed durations",
+        "Add subtract compare",
+        "Exact millisecond normalization",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task 24 scoped local development verification passed; TESTED — publication pending. No release or merge authorization.",
+      "sequence_rank": 23,
+      "related_tools": [
+        "countdown-timer",
+        "date-difference-calculator"
+      ],
+      "verification": {
+        "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+        "source_sha256": "4da965140c1fbbd7ede22fb798a87dabb5d526167064da27f8af4b2a1109e330",
+        "evidence_path": "audit/DURATION_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "22 generic logic fixtures (bounded preparation only for URL Inspector)",
+          "15 actual Chromium browser cases / 53 assertions",
+          "Dedicated native-API/property tests and actual keyboard/clipboard-race/Blob/privacy/browser cases; batch suite totals recorded separately",
+          "320/375/768/1440 viewport no-overflow cases; shared consent lifecycle regression; no public verification claim"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "mode"
+      ]
+    },
+    {
+      "id": "url-inspector-query-builder",
+      "name": "URL Inspector & Query Builder",
+      "category": "developer",
+      "description": "Show URL components and edit an ordered list of duplicate-preserving query name/value pairs.",
+      "directory_path": "url-inspector-query-builder",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Native URL components",
+        "Ordered duplicate query pairs",
+        "Add edit remove without navigation",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task 24 scoped local development verification passed; TESTED — publication pending. No release or merge authorization.",
+      "sequence_rank": 24,
+      "related_tools": [
+        "url-encoder-decoder"
+      ],
+      "verification": {
+        "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+        "source_sha256": "243401a2a17199330da80ddeb800baaf6aeb9703131566327fe6b6448e95c16e",
+        "evidence_path": "audit/URL_INSPECTOR_QUERY_BUILDER_VERIFICATION.json",
+        "test_scope": [
+          "18 generic logic fixtures (bounded preparation only for URL Inspector)",
+          "11 actual Chromium browser cases / 45 assertions",
+          "Dedicated native-API/property tests and actual keyboard/clipboard-race/Blob/privacy/browser cases; batch suite totals recorded separately",
+          "320/375/768/1440 viewport no-overflow cases; shared consent lifecycle regression; no public verification claim"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "queryRows",
+        "addPair",
+        "components"
+      ]
+    },
+    {
+      "id": "list-comparison-set-operations",
+      "name": "List Comparison & Set Operations",
+      "category": "text",
+      "description": "Compare two line lists: union, intersection, A minus B, B minus A and symmetric difference.",
+      "directory_path": "list-comparison-set-operations",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Union intersection both differences symmetric difference",
+        "Explicit whitespace case and Unicode policy",
+        "Stable first-seen spelling/order",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task 24 scoped local development verification passed; TESTED — publication pending. No release or merge authorization.",
+      "sequence_rank": 25,
+      "related_tools": [
+        "duplicate-line-remover",
+        "text-difference-checker"
+      ],
+      "verification": {
+        "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+        "source_sha256": "debcbede1959b4cee44d2b07552550cd4cef3a29ec347676567a89a6016c924e",
+        "evidence_path": "audit/LIST_COMPARISON_SET_OPERATIONS_VERIFICATION.json",
+        "test_scope": [
+          "24 generic logic fixtures (bounded preparation only for URL Inspector)",
+          "9 actual Chromium browser cases / 41 assertions",
+          "Dedicated native-API/property tests and actual keyboard/clipboard-race/Blob/privacy/browser cases; batch suite totals recorded separately",
+          "320/375/768/1440 viewport no-overflow cases; shared consent lifecycle regression; no public verification claim"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "b",
+        "mode",
+        "case",
+        "space",
+        "normalization",
+        "blank"
+      ]
+    },
+    {
+      "id": "color-contrast-checker",
+      "name": "Color Contrast Checker",
+      "category": "calculator",
+      "description": "Compare two opaque sRGB colours, calculate WCAG contrast and show AA/AAA normal/large-text labels with a fixed labelled text preview.",
+      "directory_path": "color-contrast-checker",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs; no new runtime packages",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "WCAG sRGB contrast ratio",
+        "AA AAA normal/large and non-text labels",
+        "Validated colour preview",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-06",
+      "notes": "Task 24 scoped local development verification passed; TESTED — publication pending. No release or merge authorization.",
+      "sequence_rank": 26,
+      "related_tools": [
+        "image-color-picker"
+      ],
+      "verification": {
+        "source_revision": "6437b046e5827d82d2f3dbf7668dc451c51c2614",
+        "source_sha256": "1a4fe79bc483370abc574217d2e78951b17a55c92010ba9f744b336514f213e7",
+        "evidence_path": "audit/COLOR_CONTRAST_CHECKER_VERIFICATION.json",
+        "test_scope": [
+          "17 generic logic fixtures (bounded preparation only for URL Inspector)",
+          "14 actual Chromium browser cases / 51 assertions",
+          "Dedicated native-API/property tests and actual keyboard/clipboard-race/Blob/privacy/browser cases; batch suite totals recorded separately",
+          "320/375/768/1440 viewport no-overflow cases; shared consent lifecycle regression; no public verification claim"
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "background",
+        "preview"
       ]
     }
   ],

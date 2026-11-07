@@ -1,5 +1,12 @@
 # Functional CI — Task 9.5
 
+## Task 24 coverage extension
+
+All 81 canonical pages remain mandatory: 75 released and six TESTED/publication-pending native utilities. Map: 18 Python files, 75 Node files and 146 browser files. Floors: 207 Python, 519 Node, 720 browser tests. All 77 canonical logic adapters, 81 structural/browser profiles and both neutral templates remain required.
+
+Native URL execution has explicit dedicated Node/native-API and real-browser tests; the generic VM validates bounded preparation only. Strict Task24 historical projections validate exactly the six new source-bound TESTED records and pending cards before reconstructing old catalogues. A separate preservation suite compares every old registry record, all 75 runtime pages, assets, historical audits, privacy, workflow pins and deadlines against the approved main. No production consent code, existing tests, required scope or deadlines are removed. Local Windows deadline/compatibility limitations are reported separately from hosted exact-head CI.
+
+
 ## Revised Task21 coverage
 
 All74 tools remain mandatory: the68 releases plus six unpublished text/web tools.

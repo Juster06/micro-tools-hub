@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "color-contrast-checker",
+  "canonical_path": "color-contrast-checker/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

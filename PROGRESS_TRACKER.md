@@ -1,6 +1,55 @@
 # Progress tracker
 
-## Current state — Task 22 complete; 75 publicly verified releases
+## Current state — Task 24 development; six TESTED, publication pending
+
+Task 23 read-only consolidation and the 100-release roadmap are complete. Owner
+authorized the first six-tool development batch. Starting main is
+`4671204d2fb39129b0463e4b4ba8b5c8dc21e0a7`; PR #41 and documentation PR #42
+are merged. Pages 42227568412 and all required Functional CI 42227568792 checks
+passed for that baseline. Task 22 remains complete with 75 publicly verified tools.
+
+Task 24 implements Number Base Converter, Unit Converter, Duration Calculator,
+URL Inspector & Query Builder, List Comparison & Set Operations and Color Contrast
+Checker. All six are new registered entries and locally TESTED — publication
+pending. Inventory: **99 registered, 75 RELEASED, 6 TESTED, 0 READY, 17 PLANNED,
+1 BLOCKED**. The development hub has 81 cards, six explicitly marked publication
+pending; production remains at 75 releases until authorized merges and independent
+public verification. See `audit/TASK_24_DEVELOPMENT_PLAN.json` and per-tool audits.
+
+The achieved manual checkpoint is 75 released. Existing generated milestone is
+100, still 75/100 (75%), 25 remaining; configuration unchanged. PDF processing
+remains deferred, PDF Compressor BLOCKED. Existing consent/privacy and measurement
+ID `G-XDHPQYJ5CH` are unchanged; GA4 property reporting remains unverified.
+All 27 pre-existing worktrees and both unrelated handoff edits are preserved.
+Historical favicon404, Resume print-margin, Windows timeout/keyboard and native,
+physical-device/cross-browser/screen-reader testing limitations remain.
+
+**Next major task:** Complete exact-head development PR checks and await owner
+review. Do not merge/deploy this branch, start another batch, mark tools RELEASED
+or use administrator bypass. After a separately authorized development merge,
+verify Pages/post-merge CI and perform Task 24.1 independent public release audit;
+only then propose a separate release-verification PR requiring separate consent.
+
+
+### Task 24 scoped verification and local regression history
+
+The six tools passed 130 canonical logic fixtures and 76 real Chromium cases
+(290 assertions), plus29 native/property tests and30 additional browser tests.
+Full Node passed519 tests and1,529 canonical fixtures across77 adapters. The
+45-case focused consent regression passed with synthetic Google endpoints;
+this is not public GA4/property evidence. Project validation has0 errors/warnings.
+
+Local Windows full CI commands reached the unchanged240-second Python and
+900-second browser deadlines; neither is PASS. Direct Python discovery completed
+207 cases:206 passed, one historical minimum-count assertion failed. That
+assertion now protects exact raised207/519/720 floors and all seven affected
+tests passed. Two old Markdown hub assertions expected75 cards; strict81-route/
+75-release/six-pending checks now pass both cases. New Task24 preservation is6/6.
+No source regression, required scope, runtime pin or deadline is suppressed.
+Complete hosted exact-head Python/Node/Chromium and aggregate checks remain
+mandatory before owner review. See `audit/TASK_24_DEVELOPMENT_VERIFICATION.json`.
+
+## Historical Task 22 documentation checkpoint
 
 Task 22 development PR [#40](https://github.com/Juster06/micro-tools-hub/pull/40) and release-verification PR [#41](https://github.com/Juster06/micro-tools-hub/pull/41) are merged. The independently verified public main commit is `2234bffef4cf376357ccb7cae3d1c0ec105d08c8`.
 
@@ -604,14 +653,14 @@ Actual per-tool publication/source/live results are in separate release audits; 
 <!-- GENERATED:COUNTS:START -->
 | Metric | Count |
 | --- | ---: |
-| Total registered utilities | 93 |
+| Total registered utilities | 99 |
 | IDEA | 0 |
 | PLANNED | 17 |
 | READY | 0 |
 | IN_PROGRESS | 0 |
 | BLOCKED | 1 |
 | IMPLEMENTED | 0 |
-| TESTED | 0 |
+| TESTED | 6 |
 | RELEASED | 75 |
 | DEPRECATED | 0 |
 | Backlog subtotal (IDEA + PLANNED + READY + BLOCKED) | 18 |
@@ -626,11 +675,11 @@ Current growth milestone: **100 released tools**. Progress: 75/100 (75.0%); rema
 | --- | ---: |
 | PDF Tools | 9 |
 | Image Tools | 8 |
-| Text and Writing Tools | 8 |
+| Text and Writing Tools | 9 |
 | Excel and Data Tools | 10 |
-| Developer Tools | 9 |
+| Developer Tools | 11 |
 | Social Media Tools | 11 |
-| Calculators | 10 |
+| Calculators | 13 |
 | Security and Privacy Tools | 9 |
 | File Conversion Tools | 9 |
 | Everyday Productivity Tools | 9 |
@@ -640,7 +689,7 @@ Current growth milestone: **100 released tools**. Progress: 75/100 (75.0%); rema
 
 | Priority | Count |
 | --- | ---: |
-| P1 | 20 |
+| P1 | 26 |
 | P2 | 71 |
 | P3 | 2 |
 
@@ -652,16 +701,16 @@ Next ready tool: **REQUIRES REVIEW**.
 
 | Tool | Status | Last verification |
 | --- | --- | --- |
+| Unit Converter | TESTED | 2026-11-07 |
+| Number Base Converter | TESTED | 2026-11-07 |
+| URL Inspector & Query Builder | TESTED | 2026-11-06 |
 | Resume Builder | RELEASED | 2026-11-06 |
 | PNG to ICO | RELEASED | 2026-11-06 |
 | Passport Photo Layout Maker | RELEASED | 2026-11-06 |
 | Markdown Converter & Previewer | RELEASED | 2026-11-06 |
+| List Comparison & Set Operations | TESTED | 2026-11-06 |
 | JavaScript Minifier | RELEASED | 2026-11-06 |
 | Image Compressor | RELEASED | 2026-11-06 |
-| HTML to Markdown | RELEASED | 2026-11-06 |
-| HTML Previewer | RELEASED | 2026-11-06 |
-| HTML Formatter | RELEASED | 2026-11-06 |
-| Hashtag Counter | RELEASED | 2026-11-06 |
 <!-- GENERATED:COUNTS:END -->
 
 The backlog total includes READY and BLOCKED; those rows must not be added again. TESTED means publication has not yet been verified. RELEASED means the recorded implementation and scoped behavior matched the published page at the dated check, not that it has no limitations.

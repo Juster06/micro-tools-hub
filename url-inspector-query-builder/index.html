@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Show URL components and edit an ordered list of duplicate-preserving query name/value pairs."><title>URL Inspector &amp; Query Builder — Everyday Digital Box</title><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>*{box-sizing:border-box}html{color-scheme:dark}body{margin:0;background:#020617;color:#e2e8f0;font:16px/1.65 system-ui,sans-serif;overflow-wrap:anywhere}.container{max-width:1120px;margin:auto;padding:24px}a{color:#c7d2fe}header{border-bottom:1px solid #334155}header .container{display:flex;justify-content:space-between;gap:18px}h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2}.description{color:#cbd5e1;max-width:80ch}.panel,fieldset{min-width:0;border:1px solid #334155;border-radius:14px;background:#0f172a;padding:20px;margin:18px 0}legend{color:#c7d2fe}label{display:block;font-weight:600;margin:12px 0 6px}input,select,textarea{display:block;width:100%;min-width:0;border:1px solid #64748b;border-radius:8px;background:#020617;color:#f1f5f9;font:inherit;padding:12px}textarea{min-height:150px;resize:vertical}#toolOutput{min-height:220px}button{min-height:44px;border:1px solid #64748b;border-radius:8px;background:#1e293b;color:#f1f5f9;font:inherit;padding:10px 16px;cursor:pointer}.primary{background:#4338ca;border-color:#a5b4fc}button:disabled{opacity:.5;cursor:not-allowed}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.panels,.settings{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panels>.panel{margin:0}.settings>div{min-width:0}#toolError{color:#fda4af}#toolStatus,.privacy{color:#cbd5e1}summary{cursor:pointer;font-weight:600}:focus-visible{outline:3px solid #c7d2fe;outline-offset:3px}[hidden]{display:none!important}.query-row{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;border-bottom:1px solid #475569;padding:10px 0;align-items:end}.query-row label{margin:0}.skip{position:absolute;top:-100px;left:16px}.skip:focus{top:8px;background:#4338ca;padding:8px;z-index:10}pre{white-space:pre-wrap;overflow-wrap:anywhere}#preview{border:3px solid #64748b;border-radius:8px;padding:24px;font-size:20px}footer{border-top:1px solid #334155;margin-top:24px;color:#cbd5e1}@media(max-width:700px){.container{padding:16px}.panels,.settings,.query-row{grid-template-columns:1fr}header .container{font-size:.85rem}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}</style><script defer src="../assets/consent.js"></script></head>
+<body><a class="skip" href="#toolInput">Skip to input</a><header><div class="container"><a href="../index.html">← Back to Hub</a><span>Everyday Digital Box</span></div></header><main class="container"><h1>URL Inspector &amp; Query Builder</h1><p class="description">Show URL components and edit an ordered list of duplicate-preserving query name/value pairs.</p><p class="privacy">Local processing · Optional analytics only with consent</p><div class="panels"><section class="panel"><h2>Input</h2><label for="toolInput">Absolute HTTP(S) URL</label><textarea id="toolInput" rows="6" autocomplete="off" spellcheck="false" aria-describedby="inputHelp"></textarea><p id="inputHelp">See the exact formats and limits below. Input is never silently truncated.</p><button id="runBtn" type="button" class="primary">Inspect / build URL</button></section><section class="panel"><h2>Result</h2><label for="toolOutput">Result text</label><textarea id="toolOutput" rows="8" readonly spellcheck="false" aria-describedby="toolStatus"></textarea><div class="actions"><button id="copyBtn" type="button" class="primary" disabled>Copy result</button><button id="downloadBtn" type="button" disabled>Download .txt</button><button id="clearBtn" type="button">Reset</button></div></section></div><p id="toolError" role="alert" hidden></p><p id="toolStatus" role="status" aria-live="polite" aria-atomic="true">Ready.</p><section class="panel"><h2>Ordered query parameters</h2><p>Inspect a URL first, then edit the fields or add/remove pairs and run again. Duplicate names stay separate.</p><div id="queryRows"></div><button id="addPair" type="button">Add parameter</button><h2>Components</h2><pre id="components"></pre></section><details class="panel" open><summary>Exact rules, limits and privacy</summary><p>Explicit Inspect/Build uses native URL and URLSearchParams; never visits, fetches, validates destination safety or stores URLs. Credentials/userinfo, raw spaces/controls, backslashes and non-HTTP(S) schemes rejected. Input ≤8192 UTF-8 bytes (also ≤8192 UTF-16 units); ≤100 query pairs; fields ≤2048 units and combined edited fields ≤16384 UTF-8 bytes. Output URL ≤16384 UTF-8 bytes. Duplicate names and order preserved. Inspect preserves native URL representation; editing serializes query spaces as + and can change signed URLs. Fragment contents omitted from component summary but preserved in the copied URL. Query values appear only as needed for editing/output; avoid pasting secrets.</p><p>Inputs stay in browser memory: no uploads, input logging, automatic saved drafts or external processing. Hosting and existing Tailwind CDN requests still occur. Shared analytics requires consent and excludes tool inputs. Copy places text on your system clipboard; permission may fail with manual-copy guidance. Text downloads use bounded UTF-8 Blobs and temporary URLs are released.</p><p><a href="https://url.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">Official URL standard</a></p></details></main><footer><div class="container">Everyday Digital Box · Small tools. Everyday wins.</div></footer><script id="toolConfig" type="application/json">{"id": "url-inspector-query-builder", "kind": "url", "fields": []}</script><script id="edb-tool-metadata">window.EDB_META={"id": "url-inspector-query-builder", "name": "URL Inspector & Query Builder", "category": "developer"};</script>
+<script id="edb-tool-logic">(() => {
+'use strict';
+function guard(input,options,allowed,limit){
+  if(typeof input!=='string')throw TypeError('Input must be a string.');
+  if(input.length>limit)throw RangeError('Input exceeds '+limit+' UTF-16 units. Nothing was truncated.');
+  if(!options||typeof options!=='object'||Array.isArray(options))throw TypeError('Options must be an object.');
+  for(const key of Object.keys(options))if(!Object.hasOwn(allowed,key)||!allowed[key](options[key]))throw TypeError('Unsupported setting: '+key+'.');
+}
+const oneOf=(...values)=>v=>values.includes(v);
+function bytes(text){
+  let total=0;
+  for(let i=0;i<text.length;i++){
+    const c=text.charCodeAt(i);
+    if(c>=0xd800&&c<=0xdbff){const d=text.charCodeAt(++i);if(!(d>=0xdc00&&d<=0xdfff))throw Error('Unpaired Unicode surrogate.');total+=4;}
+    else if(c>=0xdc00&&c<=0xdfff)throw Error('Unpaired Unicode surrogate.');
+    else total+=c<128?1:c<2048?2:3;
+  }
+  return total;
+}
+function bounded(text,units,maxBytes){if(text.length>units||bytes(text)>maxBytes)throw RangeError('Output exceeds the supported limit. Nothing was truncated.');return text;}
+
+// Generic run prepares bounded data only. convert uses the actual native APIs;
+// dedicated native-API Node and real-browser tests cover parsing/serialization.
+function run(input,options={}){
+  guard(input,options,{pairs:v=>Array.isArray(v)},8192);
+  if(!input)throw Error('Enter an absolute HTTP(S) URL.');
+  if(bytes(input)>8192)throw RangeError('URL exceeds 8192 UTF-8 bytes.');
+  if(/[\u0000-\u0020\u007f]/.test(input))throw Error('URL must not contain raw spaces or control characters; percent-encode spaces.');
+  const pairs=Object.hasOwn(options,'pairs')?options.pairs:null;
+  if(pairs!==null){
+    if(pairs.length>100)throw RangeError('At most 100 query pairs.');
+    let total=0;
+    for(const pair of pairs){if(!Array.isArray(pair)||pair.length!==2||pair.some(x=>typeof x!=='string'||x.length>2048))throw Error('Each pair must contain two strings, at most 2048 UTF-16 units each.');for(const value of pair){if(/[\u0000-\u001f\u007f]/.test(value))throw Error('Query fields must not contain control characters.');total+=bytes(value);}}
+    if(total>16384)throw RangeError('Query fields exceed the 16384-byte budget.');
+  }
+  return {url:input,pairs:pairs===null?null:pairs.map(p=>p.slice())};
+}
+function convert(input,options={}){
+  const prepared=run(input,options);
+  if(typeof URL!=='function'||typeof URLSearchParams!=='function')throw Error('Native URL APIs unavailable.');
+  let url;try{url=new URL(prepared.url);}catch{throw Error('Enter a valid absolute HTTP(S) URL.');}
+  if(!['http:','https:'].includes(url.protocol))throw Error('Only HTTP(S) URLs are supported.');
+  if(url.username||url.password)throw Error('Credential URLs are rejected. Remove the username/password.');
+  // Reject backslash normalization and an empty userinfo delimiter as well.
+  if(input.includes('\\')||/^https?:\/\/[^/?#]*@/i.test(input))throw Error('Backslashes and URL userinfo are not supported.');
+  if(prepared.pairs!==null){const params=new URLSearchParams();for(const [name,value]of prepared.pairs)params.append(name,value);url.search=params.toString();}
+  const pairs=Array.from(url.searchParams.entries());if(pairs.length>100)throw RangeError('At most 100 query pairs.');
+  for(const pair of pairs)if(pair.some(x=>x.length>2048||/[\u0000-\u001f\u007f]/.test(x)))throw Error('Decoded query fields exceed limits or contain controls.');
+  const text=bounded(url.href,16384,16384);
+  return {text,pairs,components:'Protocol: '+url.protocol+'\nHostname: '+url.hostname+'\nPort: '+(url.port||'(default)')+'\nPath: '+url.pathname+'\nQuery pairs: '+pairs.length+'\nFragment present: '+(url.hash?'yes (value omitted)':'no')};
+}
+window.EDB_TOOL={isScaffold:false,allowEmpty:false,run,convert};
+
+})();</script>
+<script>(() => {
+  'use strict';
+  const config=JSON.parse(document.getElementById('toolConfig').textContent);
+  const $=id=>document.getElementById(id),input=$('toolInput'),output=$('toolOutput');
+  let revision=0,result=null,pairsChanged=false;
+  const fields=config.fields.map(f=>f.id);
+  function invalidate(){revision++;result=null;output.value='';$('copyBtn').disabled=true;$('downloadBtn').disabled=true;$('toolError').hidden=true;input.removeAttribute('aria-invalid');$('toolStatus').textContent='Input changed. Run again to calculate.';if($('preview'))$('preview').hidden=true;if($('components'))$('components').textContent='';}
+  function unitOptions(){
+    const table=window.EDB_TOOL.units[$('category').value];
+    for(const id of ['from','to']){const select=$(id);select.replaceChildren();for(const [key,[name]]of Object.entries(table)){const option=document.createElement('option');option.value=key;option.textContent=name;select.append(option);}}
+    $('to').selectedIndex=Math.min(1,$('to').options.length-1);
+  }
+  function row(name='',value=''){
+    const count=$('queryRows').children.length;
+    if(count>=100){$('toolError').textContent='At most 100 query pairs.';$('toolError').hidden=false;return;}
+    const line=document.createElement('div');line.className='query-row';
+    const make=(caption,value)=>{const label=document.createElement('label');label.append(document.createTextNode(caption));const field=document.createElement('input');field.type='text';field.autocomplete='off';field.spellcheck=false;field.value=value;field.addEventListener('input',()=>{pairsChanged=true;invalidate();});label.append(field);line.append(label);return field;};
+    make('Parameter name',name);make('Parameter value',value);
+    const remove=document.createElement('button');remove.type='button';remove.textContent='Remove parameter';remove.addEventListener('click',()=>{line.remove();pairsChanged=true;invalidate();$('addPair').focus();});line.append(remove);$('queryRows').append(line);
+    return line;
+  }
+  function options(){return Object.fromEntries(fields.map(id=>[id,$(id).value]));}
+  function run(){
+    invalidate();const opts=options();
+    try{
+      if(config.kind==='url'){
+        if(pairsChanged)opts.pairs=Array.from($('queryRows').children,line=>Array.from(line.querySelectorAll('input'),x=>x.value));
+        const data=window.EDB_TOOL.convert(input.value,opts);result=data.text;$('components').textContent=data.components;
+        // Rebuild only after validation; rows remain plain native controls.
+        $('queryRows').replaceChildren();for(const pair of data.pairs)row(...pair);
+        // Keep edited pairs authoritative across repeated builds until raw URL changes.
+      }else{
+        result=window.EDB_TOOL.run(input.value,opts);
+        if(config.kind==='contrast'){const colors=window.EDB_TOOL.analyze(input.value,opts);$('preview').style.color=colors.foreground;$('preview').style.backgroundColor=colors.background;$('preview').hidden=false;}
+      }
+      output.value=result;$('copyBtn').disabled=false;$('downloadBtn').disabled=false;$('toolStatus').textContent='Complete.';
+    }catch(error){result=null;output.value='';$('toolError').textContent=error.message;$('toolError').hidden=false;input.setAttribute('aria-invalid','true');$('toolStatus').textContent='Check the input and settings. Nothing was truncated.';}
+  }
+  input.addEventListener('input',()=>{if(config.kind==='url'){$('queryRows').replaceChildren();pairsChanged=false;}invalidate();});
+  for(const id of fields)$(id).addEventListener('input',()=>{if(id==='category')unitOptions();invalidate();});
+  $('runBtn').addEventListener('click',run);
+  $('clearBtn').addEventListener('click',()=>{
+    input.value='';for(const field of config.fields)$(field.id).value=field.default;
+    if(config.kind==='unit')unitOptions();
+    if(config.kind==='url'){$('queryRows').replaceChildren();pairsChanged=false;}
+    invalidate();$('toolStatus').textContent='Ready.';input.focus();
+  });
+  $('copyBtn').addEventListener('click',async()=>{
+    if(result===null)return;const text=result,version=revision;
+    try{if(!navigator.clipboard?.writeText)throw Error('unavailable');await navigator.clipboard.writeText(text);if(version===revision)$('toolStatus').textContent='Copied.';}
+    catch{if(version===revision){output.focus();output.select();$('toolStatus').textContent='Copy unavailable. Output selected; press Ctrl+C or ⌘C.';}}
+  });
+  $('downloadBtn').addEventListener('click',()=>{
+    if(result===null)return;let url;
+    try{url=URL.createObjectURL(new Blob([result],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=config.id+'.txt';a.hidden=true;document.body.append(a);try{a.click();}finally{a.remove();}$('toolStatus').textContent='Download requested. Your browser controls saving.';}
+    catch{$('toolStatus').textContent='Download unavailable. Copy or select the result instead.';}
+    finally{if(url)URL.revokeObjectURL(url);}
+  });
+  if(config.kind==='unit')unitOptions();
+  if(config.kind==='url')$('addPair').addEventListener('click',()=>{const line=row();if(line){pairsChanged=true;invalidate();line.querySelector('input').focus();}});
+})();
+</script></body></html>
