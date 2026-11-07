@@ -1,5 +1,15 @@
 # Functional CI — Task 9.5
 
+## Task 25 coverage extension
+
+The map includes all 87 canonical structural/browser profiles and 83 logic
+profiles. Reviewed floors are 219 Python, 530 Node and 742 Chromium tests.
+The comparator's generic logic fixtures cover its byte kernel. Dedicated
+tests exercise real File objects and Workers, chunk boundaries, maximum file
+sizes, cancellation and failure. Six new synthetic consent cases cover the
+unchanged analytics component. Prior exact catalog checks validate the six
+TESTED additions before reconstructing the historical snapshot.
+
 ## Task 24.1 release evidence coverage
 
 Six additional Python checks bind the six release records to deployed Git bytes,

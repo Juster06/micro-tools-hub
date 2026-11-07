@@ -41,7 +41,7 @@
       "implementation_started": false,
       "dependencies_review": "No new runtime package, paid service, backend or framework proposed. Retain existing styling/consent trust boundary; native APIs only. Limits are proposed acceptance caps, not measured results.",
       "security_requirements": "Bound token count/term length/output, use text-only cells and formula-safe CSV export; deterministic tie ordering. No automatic stop-word/stemming inference. Use labelled native controls, text-only output, explicit input/output bounds, no input persistence/transport, and truthful copy/download failures.",
-      "final_scope_limits": "100,000 UTF-16 units; 20,000 tokens; 256 units per term; 1,000 ranked rows and 256 KiB output. Unicode letters/numbers, attached marks and internal apostrophes form tokens. Hyphens split tokens and emoji are excluded. NFC and native lowercase are explicit options.",
+      "final_scope_limits": "Input allows 100,000 UTF-16 units, 20,000 tokens and 256 units per term. Output is capped at 1,000 ranked rows and 256 KiB. Unicode letters/numbers, attached marks and internal apostrophes form tokens. Hyphens split tokens and emoji are excluded. NFC and native lowercase are explicit options.",
       "required_features": [
         "Unicode word counts",
         "Case, normalization and sort controls",
@@ -239,14 +239,16 @@
       "canonical_route": "css-gradient-generator/index.html",
       "complexity": "M",
       "risk": "LOW RISK",
-      "primary_functionality": "Build a linear CSS gradient from 2–8 opaque hex colour stops, positions and angle; preview and copy the generated declaration.",
+      "primary_functionality": "Build and preview linear and centered radial gradients from two to eight validated opaque hex stops.",
       "dependencies_and_browser_apis": "Native fixed CSS property assignment and numeric/string validation; no arbitrary CSS parser/library.",
       "provisional_input_output_limits": "2–8 stops, #RRGGBB colours, positions 0–100%, angle -360–360°; declaration/report at most 4 KiB.",
       "security_gate": "Generate from an allowlisted grammar only; reject url(), var(), CSS tokens and HTML. Provide labelled numeric/colour controls, keyboard stop order and text output.",
       "important_tests": "Endpoints, sorted/equal-position hard stops, angle bounds, invalid colour/CSS injection, add/remove/reorder by keyboard, deterministic output and reset.",
       "duplicate_check": "CSS Minifier transforms supplied CSS; it does not design a gradient. Contrast Checker measures two fixed colours and cannot claim a gradient is accessible.",
-      "known_limitations": "Linear opaque sRGB gradients initially; no arbitrary CSS import, images, conic/radial modes or automatic text contrast guarantee.",
-      "primary_sources": [],
+      "known_limitations": "Linear or centered radial circle only. No conic gradients, images, arbitrary CSS import or accessibility claim.",
+      "primary_sources": [
+        "https://drafts.csswg.org/css-images-3/#gradients"
+      ],
       "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested",
       "current_registry_status": "UNREGISTERED ROADMAP PROPOSAL",
       "exists_in_registry": false,
@@ -267,7 +269,7 @@
       "implementation_started": false,
       "dependencies_review": "No new runtime package, paid service, backend or framework proposed. Retain existing styling/consent trust boundary; native APIs only. Limits are proposed acceptance caps, not measured results.",
       "security_requirements": "Generate from an allowlisted grammar only; reject url(), var(), CSS tokens and HTML. Provide labelled numeric/colour controls, keyboard stop order and text output. Use labelled native controls, text-only output, explicit input/output bounds, no input persistence/transport, and truthful copy/download failures.",
-      "final_scope_limits": "Two to eight opaque #RRGGBB stops with nondecreasing 0–100% positions, two decimal places. Linear angle −360–360 degrees; radial circle centered. Stop text at most 256 units and output at most 4 KiB. Only generated CSS assigned to backgroundImage.",
+      "final_scope_limits": "Two to eight opaque #RRGGBB stops with nondecreasing 0–100% positions, two decimal places. Linear angles range from −360 to 360 degrees. Radial gradients use a centered circle. Stop text at most 256 units and output at most 4 KiB. Only generated CSS assigned to backgroundImage.",
       "required_features": [
         "Linear and radial types",
         "Stops and linear angle",

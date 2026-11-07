@@ -1,0 +1,66 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-07",
+  "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+  "approved_baseline": "3e6b3d256d731cacdac8d6098937e2a5a9ba1378",
+  "browser": "Edg/157.0.4341.42",
+  "scope": "Local canonical structure, logic and interaction. Publication pending.",
+  "pages": [
+    {
+      "path": "ipv4-subnet-calculator/index.html",
+      "source_sha256": "0ecf3b6abe5f986737f7b2c9aa4a3a270925acb69ffeb5fea890fc8a60d00bf0",
+      "checks": [
+        "20 deterministic logic fixtures",
+        "5 canonical Chromium interaction cases",
+        "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "ipv4-subnet-calculator",
+    "generated_at": "2026-11-07T03:54:46+00:00",
+    "input_hash": "6b845f1fffe9e9221946ea2a06d521fcefaa8b42a59bb1f957ab68cc6582a0e4",
+    "source_sha256": "0ecf3b6abe5f986737f7b2c9aa4a3a270925acb69ffeb5fea890fc8a60d00bf0",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 20,
+        "failed": 0,
+        "assertions": 20,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 5,
+        "failed": 0,
+        "assertions": 15,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/157.0.4341.42"
+      }
+    },
+    "status": "PASS"
+  },
+  "limitations": [
+    "Local development evidence. Public behavior and publication unverified.",
+    "Browser automation captures copy/download and uses synthetic file selection. Native dialogs and physical-device/screen-reader scope require separate checks.",
+    "Synthetic Google endpoints test consent integration. GA4 property reporting is unverified.",
+    "Observed caps and Worker behavior do not establish a hard browser heap guarantee."
+  ],
+  "integration_gate": {
+    "status": "PASS",
+    "action": "UPDATE_PROPOSAL",
+    "patch_required": false
+  }
+}

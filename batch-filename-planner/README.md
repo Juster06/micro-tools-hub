@@ -10,4 +10,6 @@ The tool previews mappings and checks a restrictive, case-insensitive NFC collis
 
 Native browser APIs and the existing shared consent component support this page. Input, filenames and bytes stay local.
 
-Task 25 development. Publication pending.
+Task 25 status is TESTED. Publication is pending. Local source revision `593f679c7dd953ce4f4a5aee99d5e4fdc1614215` and [verification evidence](../audit/BATCH_FILENAME_PLANNER_VERIFICATION.json).
+
+[Windows naming rules](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file) informed the portable naming policy. The preview includes case-insensitive NFC collision checks and leaves destination validation to the user.

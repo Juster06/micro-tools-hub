@@ -10,4 +10,6 @@ IPv4 only. /31 endpoints apply to point-to-point links. Conventional host counts
 
 Native browser APIs and the existing shared consent component support this page. Input, filenames and bytes stay local.
 
-Task 25 development. Publication pending.
+Task 25 status is TESTED. Publication is pending. Local source revision `593f679c7dd953ce4f4a5aee99d5e4fdc1614215` and [verification evidence](../audit/IPV4_SUBNET_CALCULATOR_VERIFICATION.json).
+
+[IANA special-purpose address registry](https://www.iana.org/assignments/iana-ipv4-special-registry/) and [RFC 3021 point-to-point endpoints](https://www.rfc-editor.org/rfc/rfc3021.html). The in-page address-purpose table lists selected ranges.

@@ -1,0 +1,142 @@
+{
+  "task": 25,
+  "result": "PASS — scoped development and integration",
+  "verified_at": "2026-11-07T03:55:06.504428+00:00",
+  "approved_baseline": "3e6b3d256d731cacdac8d6098937e2a5a9ba1378",
+  "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+  "inventory": {
+    "registered": 105,
+    "RELEASED": 81,
+    "TESTED": 6,
+    "READY": 0,
+    "PLANNED": 17,
+    "BLOCKED": 1
+  },
+  "homepage_cards": 87,
+  "milestone": 100,
+  "tool_results": [
+    {
+      "id": "word-frequency-analyzer",
+      "route": "word-frequency-analyzer/index.html",
+      "audit": "audit/WORD_FREQUENCY_ANALYZER_VERIFICATION.json",
+      "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+      "logic_cases": 8,
+      "browser_cases": 4,
+      "browser_assertions": 11
+    },
+    {
+      "id": "unicode-inspector",
+      "route": "unicode-inspector/index.html",
+      "audit": "audit/UNICODE_INSPECTOR_VERIFICATION.json",
+      "source_sha256": "049b8a1d446f3ed513cbbe31654e033ea0ea320331301baf12e308f01f121440",
+      "logic_cases": 7,
+      "browser_cases": 4,
+      "browser_assertions": 13
+    },
+    {
+      "id": "ipv4-subnet-calculator",
+      "route": "ipv4-subnet-calculator/index.html",
+      "audit": "audit/IPV4_SUBNET_CALCULATOR_VERIFICATION.json",
+      "source_sha256": "0ecf3b6abe5f986737f7b2c9aa4a3a270925acb69ffeb5fea890fc8a60d00bf0",
+      "logic_cases": 20,
+      "browser_cases": 5,
+      "browser_assertions": 15
+    },
+    {
+      "id": "batch-filename-planner",
+      "route": "batch-filename-planner/index.html",
+      "audit": "audit/BATCH_FILENAME_PLANNER_VERIFICATION.json",
+      "source_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+      "logic_cases": 13,
+      "browser_cases": 5,
+      "browser_assertions": 15
+    },
+    {
+      "id": "file-byte-comparator",
+      "route": "file-byte-comparator/index.html",
+      "audit": "audit/FILE_BYTE_COMPARATOR_VERIFICATION.json",
+      "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+      "logic_cases": 7,
+      "browser_cases": 2,
+      "browser_assertions": 6
+    },
+    {
+      "id": "css-gradient-generator",
+      "route": "css-gradient-generator/index.html",
+      "audit": "audit/CSS_GRADIENT_GENERATOR_VERIFICATION.json",
+      "source_sha256": "0c31f44c7d68ba0398a30fd69592ddf8a30c6dde816ec2a0dabedbfcdd364d4c",
+      "logic_cases": 11,
+      "browser_cases": 5,
+      "browser_assertions": 17
+    }
+  ],
+  "canonical_totals": {
+    "logic": 66,
+    "browser": 25,
+    "browser_assertions": 77
+  },
+  "focused_node": {
+    "tests": 11,
+    "pass": 11,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "focused_chromium": {
+    "tests": 18,
+    "pass": 18,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "consent_regression": {
+    "tests": 51,
+    "pass": 51,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0
+  },
+  "consent_scope": "Six new cases and prior consent regressions use synthetic Google endpoints. The measurement ID is G-XDHPQYJ5CH.",
+  "project_validation": {
+    "result": "PASS",
+    "errors": 0,
+    "warnings": 0
+  },
+  "preservation": {
+    "existing_worktrees": 29,
+    "dirty_handoffs": 2,
+    "prior_heads_and_dirty_bytes_match": true,
+    "dirty_file_sha256": [
+      "bff28e10fb43f01d399c6012aee8bf8153d3aa04c7653a5075f39e9d8f394806",
+      "4f01d54c5ce29bc0c5939277a4011f85b3147bb08ac53a9bf8f41b57ab285f79"
+    ]
+  },
+  "full_local_python": {
+    "tests": 219,
+    "failed": 0,
+    "skipped": 0,
+    "expected_failures": 0,
+    "unexpected_successes": 0,
+    "passed": 219
+  },
+  "full_local_node": {
+    "result": "PASS",
+    "tests": 530,
+    "canonical_logic_profiles": 83,
+    "canonical_logic_cases": 1595
+  },
+  "full_regression_evidence": "Full local Python and Node preceded final help text edits. The refreshed canonical suites bind the committed pages. The PR links hosted job results for the final branch commit.",
+  "publication": null,
+  "limitations": [
+    "Clipboard and file chooser actions are exercised using isolated browser automation.",
+    "The observed file limits and timeouts bound application work. They do not prove a hard browser heap budget.",
+    "Analytics tests cover request gating and event counts with synthetic Google endpoints. GA4 property reporting and the live release are unverified."
+  ],
+  "initial_test_corrections": [
+    "The CSV bytes use CRLF. The test now checks the exported bytes directly rather than comparing them with the textarea, which normalizes line endings.",
+    "The complete catalog test passed after the TESTED cards were integrated and all six interfaces were explicitly declared."
+  ]
+}
