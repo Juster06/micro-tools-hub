@@ -1,6 +1,22 @@
 # Everyday Digital Box — WebUtils Hub
 
-## Current state — Task 24.1 public release-verification proposal
+## Current state — Task 25 development
+
+Task 24 is complete and publicly verified. PRs #43 and #44 are merged. Main
+`3e6b3d256d731cacdac8d6098937e2a5a9ba1378` deployed successfully through Pages
+run 42329046627, and post-merge Functional CI run 42329046815 passed. Task 24.2
+verified all 81 public tools, the six new utilities and consent-aware analytics.
+
+Task 25 adds Word Frequency Analyzer, Unicode Inspector, IPv4 Subnet Calculator,
+Batch Filename Planner, File Byte Comparator and CSS Gradient Generator. The
+development registry has **105 registered, 81 RELEASED, 6 TESTED, 0 READY,
+17 PLANNED and 1 BLOCKED**. The development homepage adds six publication-pending
+cards, for 87 total. The milestone remains 100 released tools, with 19 remaining.
+PDF processing remains deferred. PDF Compressor is BLOCKED.
+
+See the Task 25 tool READMEs and `audit/TASK_25_DEVELOPMENT_PLAN.json` for scope, resource limits and local processing.
+
+## Historical Task 24.1 release-verification proposal
 
 Task24 development PR [#43](https://github.com/Juster06/micro-tools-hub/pull/43)
 is merged at `a7da719ea6ccc4caae572f26f6ae5e707fbb70be`. Pages42324279460

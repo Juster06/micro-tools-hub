@@ -1,0 +1,294 @@
+{
+  "task": 25,
+  "approved_baseline": "3e6b3d256d731cacdac8d6098937e2a5a9ba1378",
+  "reviewed_on": "2026-11-07",
+  "tools": [
+    {
+      "task": 25,
+      "order": 7,
+      "name": "Word Frequency Analyzer",
+      "id": "word-frequency-analyzer",
+      "canonical_route": "word-frequency-analyzer/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Produce a sorted word-frequency table and optional case-normalized totals using an explicit documented Unicode token rule; export the bounded frequency table.",
+      "dependencies_and_browser_apis": "Native Unicode property escapes, Map and strings; no NLP model, stop-word dataset or new library.",
+      "provisional_input_output_limits": "100,000 UTF-16 input units; 20,000 tokens; at most 1,000 displayed/exported terms and 256 KiB output, with an explicit truncated-ranking notice.",
+      "security_gate": "Bound token count/term length/output, use text-only cells and formula-safe CSV export; deterministic tie ordering. No automatic stop-word/stemming inference.",
+      "important_tests": "Repeated words/ties, case/apostrophe/hyphen policy, accents/emoji/CJK policy disclosure, malicious CSV cells, caps, empty/invalid cases, deterministic ordering.",
+      "duplicate_check": "Text Cleaner already counts words/reading time but has no per-token frequency ranking. Hashtag tools operate on #tags; this analyses ordinary words.",
+      "known_limitations": "Not linguistic segmentation, sentiment, stemming or SEO advice; token rules may not segment all languages into lexical words.",
+      "primary_sources": [],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested",
+      "current_registry_status": "UNREGISTERED ROADMAP PROPOSAL",
+      "exists_in_registry": false,
+      "route_exists_in_approved_tree": false,
+      "proposed_acceptance": "Count runs of Unicode letters/numbers with attached combining marks and internal straight/curly apostrophes; split at hyphens, omit emoji, document CJK as runs rather than linguistic words. Optional native lowercase and NFC matching must be explicit. Rank by count then locale-independent token order; disclose capped ranking.",
+      "proposed_limits": "100,000 UTF-16 input units; 20,000 tokens; 256 units per term; at most 1,000 displayed/exported terms; 256 KiB UTF-8 report. Reject input/token/term overflow; clearly label ranking truncation.",
+      "additional_tests": "Independent exact frequency tables; equal-count deterministic ties; straight/curly apostrophes, hyphens, digits, composed/decomposed accents, emoji/CJK and case policy; 20,000/20,001 tokens and 1,000-term ranking notice; literal HTML, CSV quoting/formula-safe export, reset/copy denial/stale results.",
+      "framework": "Standard text/structured inline logic adapter and bounded DOM table, existing copy/Blob/reset patterns. No NLP dataset, model, library or architecture change.",
+      "sources": [
+        "https://www.unicode.org/reports/tr18/"
+      ],
+      "reviewed_existing": [
+        "text-cleaner",
+        "hashtag-organizer",
+        "hashtag-counter",
+        "duplicate-line-remover",
+        "list-comparison-set-operations"
+      ],
+      "development_order": 1,
+      "implementation_started": false,
+      "dependencies_review": "No new runtime package, paid service, backend or framework proposed. Retain existing styling/consent trust boundary; native APIs only. Limits are proposed acceptance caps, not measured results.",
+      "security_requirements": "Bound token count/term length/output, use text-only cells and formula-safe CSV export; deterministic tie ordering. No automatic stop-word/stemming inference. Use labelled native controls, text-only output, explicit input/output bounds, no input persistence/transport, and truthful copy/download failures.",
+      "final_scope_limits": "Input allows 100,000 UTF-16 units, 20,000 tokens and 256 units per term. Output is capped at 1,000 ranked rows and 256 KiB. Unicode letters/numbers, attached marks and internal apostrophes form tokens. Hyphens split tokens and emoji are excluded. NFC and native lowercase are explicit options.",
+      "required_features": [
+        "Unicode word counts",
+        "Case, normalization and sort controls",
+        "Copy and reset"
+      ]
+    },
+    {
+      "task": 25,
+      "order": 8,
+      "name": "Unicode Inspector",
+      "id": "unicode-inspector",
+      "canonical_route": "unicode-inspector/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Inspect code points, UTF-16 units and UTF-8 bytes; show grapheme boundaries where supported and compare NFC/NFD/NFKC/NFKD normalization.",
+      "dependencies_and_browser_apis": "Native codePointAt, TextEncoder, String.normalize, Intl.Segmenter with explicit unavailable state; no character-name/confusables database.",
+      "provisional_input_output_limits": "8,192 UTF-16 input units; at most 4,096 rendered table rows and 128 KiB report, with counts and disclosure when table display is capped.",
+      "security_gate": "Render control/bidi characters as labelled code points, not active layout controls in diagnostics; label lone surrogates instead of silently UTF-8 replacing; avoid security/confusable certification.",
+      "important_tests": "Astral characters, combining marks, ZWJ, normalization equivalence, controls/bidi/lone surrogates, unavailable Segmenter, bounded table and raw text never injected.",
+      "duplicate_check": "Text Reverser uses grapheme segmentation for reversal; Emoji Picker searches named emoji sequences. Neither exposes general encoding/code-point diagnostics.",
+      "known_limitations": "Engine Unicode segmentation versions differ; no complete Unicode names, transliteration or spoofing detector.",
+      "primary_sources": [],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested",
+      "current_registry_status": "UNREGISTERED ROADMAP PROPOSAL",
+      "exists_in_registry": false,
+      "route_exists_in_approved_tree": false,
+      "proposed_acceptance": "Show code point, UTF-16 units and UTF-8 encoding diagnostics; compare NFC/NFD/NFKC/NFKD. Label controls/bidi characters with escaped forms. Label lone surrogates as invalid scalar values; do not claim TextEncoder replacement bytes preserve original input. Grapheme view uses Intl.Segmenter or an explicit unavailable state.",
+      "proposed_limits": "8,192 UTF-16 input units; inspect all bounded input but render at most 4,096 rows; report at most 128 KiB UTF-8. Apply both row and byte limits with a visible prefix/truncation notice and complete counts.",
+      "additional_tests": "Astral emoji, combining marks, ZWJ family, CRLF, variation selectors, normalization expansion, isolated high/low surrogates, bidi/control safe labels, absent Segmenter, exact unit/byte counts, limits, safe text rendering, reset and stale output.",
+      "framework": "Text adapter plus specialist bounded table/normalization panes. Reuse the native Segmenter availability pattern already present in Text Reverser; no names/confusables dataset.",
+      "sources": [
+        "https://tc39.es/ecma402/#segmenter-objects",
+        "https://www.unicode.org/reports/tr15/"
+      ],
+      "reviewed_existing": [
+        "text-reverser",
+        "emoji-picker",
+        "base64-encoder-decoder",
+        "youtube-title-checker"
+      ],
+      "development_order": 2,
+      "implementation_started": false,
+      "dependencies_review": "No new runtime package, paid service, backend or framework proposed. Retain existing styling/consent trust boundary; native APIs only. Limits are proposed acceptance caps, not measured results.",
+      "security_requirements": "Render control/bidi characters as labelled code points, not active layout controls in diagnostics; label lone surrogates instead of silently UTF-8 replacing; avoid security/confusable certification. Use labelled native controls, text-only output, explicit input/output bounds, no input persistence/transport, and truthful copy/download failures.",
+      "final_scope_limits": "8,192 UTF-16 input units, 4,096 diagnostic rows and 128 KiB report. Character category descriptions, no names database. Intl.Segmenter is optional. Show invalid lone surrogates and escaped controls, and label capped output.",
+      "required_features": [
+        "Unicode code points and character descriptions",
+        "UTF-16 and UTF-8 diagnostics",
+        "Grapheme and normalization views",
+        "Copy and reset"
+      ]
+    },
+    {
+      "task": 25,
+      "order": 9,
+      "name": "IPv4 Subnet Calculator",
+      "id": "ipv4-subnet-calculator",
+      "canonical_route": "ipv4-subnet-calculator/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Calculate network, mask, broadcast/range and address counts from strict IPv4/CIDR notation, with explicit /31 point-to-point and /32 host-route explanations.",
+      "dependencies_and_browser_apis": "Native BigInt/bit arithmetic and strict decimal parser; no DNS, network probes or address dataset.",
+      "provisional_input_output_limits": "One IPv4/CIDR string at most 32 ASCII characters; prefix 0–32; summary at most 4 KiB. Never enumerate all hosts.",
+      "security_gate": "Reject ambiguous octal/hex/partial addresses and out-of-range fields; keep unsigned arithmetic exact and explain host policies; no scanning or allocation claim.",
+      "important_tests": "/0,/8,/24,/30,/31,/32 and all-ones addresses, network masking, invalid octets/prefixes, no signed-32-bit overflow, exact counts, independent RFC vectors.",
+      "duplicate_check": "No existing tool performs IP network arithmetic. URL Inspector may parse a host but does not calculate subnets. IPv6, if later justified, belongs as a mode rather than automatic separate count.",
+      "known_limitations": "IPv4 only; /31 usability is for point-to-point contexts, not universal LAN advice. No route discovery or device reachability.",
+      "primary_sources": [
+        "https://www.rfc-editor.org/rfc/rfc3021.html"
+      ],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested",
+      "current_registry_status": "UNREGISTERED ROADMAP PROPOSAL",
+      "exists_in_registry": false,
+      "route_exists_in_approved_tree": false,
+      "proposed_acceptance": "Strict decimal IPv4/CIDR with four octets and prefix 0–32. Reject leading-zero ambiguity, hex/octal/partial addresses, signs and non-ASCII. Show network, mask, address interval and exact counts; explain /31 as point-to-point and /32 as one host route. Never enumerate or probe hosts.",
+      "proposed_limits": "One raw ASCII input at most 32 characters; octets 0–255; prefix 0–32; summary at most 4 KiB. Optional outer ASCII whitespace policy must be stated.",
+      "additional_tests": "Independent /0, /8, /24, /30, /31, /32 vectors; 192.0.2.130/24 network 192.0.2.0 and last 192.0.2.255; 192.0.2.0/31 two point-to-point endpoints; 2^32 count without signed overflow; invalid octets/prefixes/leading zeros; zero network/storage calls and reset.",
+      "framework": "Standard inline pure BigInt/unsigned integer adapter and text report. No DNS, fetch, scanning, route lookup or new dependency.",
+      "sources": [
+        "https://www.rfc-editor.org/rfc/rfc3021.html"
+      ],
+      "reviewed_existing": [
+        "url-inspector-query-builder",
+        "number-base-converter"
+      ],
+      "development_order": 3,
+      "implementation_started": false,
+      "dependencies_review": "No new runtime package, paid service, backend or framework proposed. Retain existing styling/consent trust boundary; native APIs only. Limits are proposed acceptance caps, not measured results.",
+      "security_requirements": "Reject ambiguous octal/hex/partial addresses and out-of-range fields; keep unsigned arithmetic exact and explain host policies; no scanning or allocation claim. Use labelled native controls, text-only output, explicit input/output bounds, no input persistence/transport, and truthful copy/download failures.",
+      "final_scope_limits": "IPv4 field at most 32 ASCII characters, prefix at most two decimal digits, output at most 4 KiB. Strict canonical decimal octets, /0–/32, RFC 3021 /31 point-to-point endpoints. No address enumeration.",
+      "required_features": [
+        "Exact IPv4 subnet and mask arithmetic",
+        "Broadcast, endpoints and counts",
+        "Special-purpose address notes",
+        "Copy and reset"
+      ]
+    },
+    {
+      "task": 25,
+      "order": 10,
+      "name": "Batch Filename Planner",
+      "id": "batch-filename-planner",
+      "canonical_route": "batch-filename-planner/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Preview literal prefix/suffix/sequence/case filename changes and collisions from pasted names or FileList names; export a rename manifest without touching files.",
+      "dependencies_and_browser_apis": "Native FileList name metadata, strings, Set and Blob; no File System Access writes or file-content reads.",
+      "provisional_input_output_limits": "500 names, at most 255 UTF-16 units each; 128 KiB manifest. Bound each generated name and reject collisions/invalid target names.",
+      "security_gate": "Reject path separators/control characters/reserved device names/trailing dot-space by documented portable policy; literal templates only, formula-safe manifest, no filesystem mutation.",
+      "important_tests": "Extension preservation/dotfiles, numbering padding, case-only collisions under chosen filesystem policy, Unicode, Windows reserved names, caps, manifest bytes, spies proving no content reads/writes.",
+      "duplicate_check": "Username Generator suggests account names; no existing tool previews renaming a file batch. Scope is a reviewable name mapping, not secure file management.",
+      "known_limitations": "Does not rename files, guarantee every filesystem’s rules or handle directory trees. Owner must accept a planning-only interface.",
+      "primary_sources": [],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested",
+      "current_registry_status": "UNREGISTERED ROADMAP PROPOSAL",
+      "exists_in_registry": false,
+      "route_exists_in_approved_tree": false,
+      "proposed_acceptance": "Preview literal prefix/suffix, sequence and case changes, preserving extensions by a stated last-dot rule and treating leading-only-dot names as dotfiles. Read FileList.name only or pasted names; export a reviewable manifest. No actual renaming, file-content access, paths, commands or filesystem writes.",
+      "proposed_limits": "500 names; 255 UTF-16 units per original/generated name; proposed 128 KiB UTF-8 pasted-input and manifest caps; prefix/suffix at most 64 units each; bounded sequence/padding. Reject oversized manifests and collisions instead of silently omitting rows.",
+      "additional_tests": "Dotfiles/multiple dots/extension preservation, padding/order, unchanged mappings, duplicate and case-only/NFC collisions, Windows device names including extensions, separators/controls/trailing dot-space, Unicode, malicious CSV fields; 500/501 and byte limits; spies proving no FileReader/arrayBuffer/filesystem writes.",
+      "framework": "Structured input adapter plus optional multi-file name selection. Map/Set collision detection and existing safe CSV/export pattern. Portable validation is a documented restrictive policy, not a guarantee for every filesystem.",
+      "sources": [
+        "https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file",
+        "https://www.w3.org/TR/FileAPI/"
+      ],
+      "reviewed_existing": [
+        "username-generator",
+        "file-signature-inspector",
+        "list-comparison-set-operations"
+      ],
+      "development_order": 4,
+      "implementation_started": false,
+      "dependencies_review": "No new runtime package, paid service, backend or framework proposed. Retain existing styling/consent trust boundary; native APIs only. Limits are proposed acceptance caps, not measured results.",
+      "security_requirements": "Reject path separators/control characters/reserved device names/trailing dot-space by documented portable policy; literal templates only, formula-safe manifest, no filesystem mutation. Use labelled native controls, text-only output, explicit input/output bounds, no input persistence/transport, and truthful copy/download failures.",
+      "final_scope_limits": "Up to 500 names, 255 UTF-16 units per name, 64 per affix, 128 KiB UTF-8 input and manifest. Reject Windows-invalid portable names and NFC/lowercase target collisions. Only File.name is read.",
+      "required_features": [
+        "File name metadata or pasted names",
+        "Prefix, suffix, sequence and case rules",
+        "Collision detection and safe CSV plan",
+        "Copy and reset"
+      ]
+    },
+    {
+      "task": 25,
+      "order": 11,
+      "name": "File Byte Comparator",
+      "id": "file-byte-comparator",
+      "canonical_route": "file-byte-comparator/index.html",
+      "complexity": "M+",
+      "risk": "LOW RISK",
+      "primary_functionality": "Compare two local files as opaque bytes, report equality, size difference and first differing byte offset, with progress and cancellation.",
+      "dependencies_and_browser_apis": "Native File.slice/arrayBuffer, Uint8Array, Worker for the comparison loop and Blob report; no format parser or hashing dependency.",
+      "provisional_input_output_limits": "Two files at most 64 MiB each; 256 KiB chunks, one paired chunk in flight; small summary at most 8 KiB. No full content or byte dump.",
+      "security_gate": "Read only user-selected files in bounded chunks, revision-guard/cancel jobs; no persistence/transport. Review chunk lifetime/cancellation before development; standard native-resource gate, no hostile-format parser.",
+      "important_tests": "Empty/identical/different sizes, difference at first/last/chunk boundary, late mismatch, files over prior SHA tool limit, cancellation/reselection/read failure, spy on slice sizes and maximum in-flight buffers.",
+      "duplicate_check": "SHA-256 Checker hashes one entire bounded file and compares an expected digest. This compares two files without a known digest and locates the first mismatch with chunked reads.",
+      "known_limitations": "No malware/authenticity assessment, format semantics, directory comparison or list of every differing byte; file permission/read failures can stop work.",
+      "primary_sources": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Blob/slice"
+      ],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested",
+      "current_registry_status": "UNREGISTERED ROADMAP PROPOSAL",
+      "exists_in_registry": false,
+      "route_exists_in_approved_tree": false,
+      "proposed_acceptance": "Compare two user-selected opaque files; report exact equality, sizes and first differing zero-based offset, or shorter-file EOF when common prefixes match. Use trusted disposable Worker jobs, revision guards, progress and cancellation. No format decoding, hashing service, uploads or byte dump.",
+      "proposed_limits": "Two files, each at most 64 MiB; 256 KiB chunks with at most one paired read in flight (two chunk buffers, not whole files); report at most 8 KiB. Proposed 10-second job deadline and responsiveness/cancellation budget require measurement before acceptance; browser I/O completion and total heap are not hard guarantees.",
+      "additional_tests": "Two empty files, same name/different bytes, independently known first/last/chunk-boundary and late differences, different sizes/common prefix, exact 64 MiB and oversize rejection, read/Worker failures, cancellation/reselection races and URL cleanup; instrument slice sizes and maximum in-flight buffers; zero input transport/storage.",
+      "framework": "Specialist two-file UI and trusted Worker using existing project worker/revision/cancellation patterns. Extend pure fixture metadata and real-browser tests for actual Blob/File behavior; unavailable Worker must fail honestly. No parser/library or architectural rewrite.",
+      "sources": [
+        "https://www.w3.org/TR/FileAPI/",
+        "https://html.spec.whatwg.org/multipage/workers.html"
+      ],
+      "reviewed_existing": [
+        "sha256-hash-checker",
+        "text-difference-checker",
+        "file-signature-inspector"
+      ],
+      "development_order": 5,
+      "implementation_started": false,
+      "dependencies_review": "No new runtime package, paid service, backend or framework proposed. Retain existing styling/consent trust boundary; native APIs only. Limits are proposed acceptance caps, not measured results.",
+      "security_requirements": "Read only user-selected files in bounded chunks, revision-guard/cancel jobs; no persistence/transport. Review chunk lifetime/cancellation before development; standard native-resource gate, no hostile-format parser. Review read lifetime, revision IDs, Worker termination, paired-buffer instrumentation and read-error behavior before implementation.",
+      "final_scope_limits": "Two files, at most 64 MiB each, paired 256 KiB chunk reads, one pair in flight and 8 KiB report. Ten-second Worker deadline, cancellation and revision guards. Browser buffers and queued I/O are not hard heap or cancellation guarantees.",
+      "required_features": [
+        "Opaque byte equality and first differing offset",
+        "Sizes and shorter-file EOF",
+        "Bounded Worker reads, progress and cancellation",
+        "Reset"
+      ]
+    },
+    {
+      "task": 25,
+      "order": 12,
+      "name": "CSS Gradient Generator",
+      "id": "css-gradient-generator",
+      "canonical_route": "css-gradient-generator/index.html",
+      "complexity": "M",
+      "risk": "LOW RISK",
+      "primary_functionality": "Build and preview linear and centered radial gradients from two to eight validated opaque hex stops.",
+      "dependencies_and_browser_apis": "Native fixed CSS property assignment and numeric/string validation; no arbitrary CSS parser/library.",
+      "provisional_input_output_limits": "2–8 stops, #RRGGBB colours, positions 0–100%, angle -360–360°; declaration/report at most 4 KiB.",
+      "security_gate": "Generate from an allowlisted grammar only; reject url(), var(), CSS tokens and HTML. Provide labelled numeric/colour controls, keyboard stop order and text output.",
+      "important_tests": "Endpoints, sorted/equal-position hard stops, angle bounds, invalid colour/CSS injection, add/remove/reorder by keyboard, deterministic output and reset.",
+      "duplicate_check": "CSS Minifier transforms supplied CSS; it does not design a gradient. Contrast Checker measures two fixed colours and cannot claim a gradient is accessible.",
+      "known_limitations": "Linear or centered radial circle only. No conic gradients, images, arbitrary CSS import or accessibility claim.",
+      "primary_sources": [
+        "https://drafts.csswg.org/css-images-3/#gradients"
+      ],
+      "status": "UNREGISTERED PROPOSAL — not approved, implemented or tested",
+      "current_registry_status": "UNREGISTERED ROADMAP PROPOSAL",
+      "exists_in_registry": false,
+      "route_exists_in_approved_tree": false,
+      "proposed_acceptance": "Build deterministic linear-gradient declarations from validated opaque hex stops, finite positions and angle. Preserve intentional equal-position hard stops. Preview by assigning only the fixed backgroundImage property from generated grammar; provide labelled keyboard controls and text output.",
+      "proposed_limits": "2–8 stops; ASCII #RRGGBB colours; positions 0–100%; angles -360–360 degrees, proposed at most two decimal places; CSS/report at most 4 KiB. Explicit nondecreasing positions and stable reorder policy.",
+      "additional_tests": "Two/eight stop bounds, endpoints/equal-position hard stops, angle bounds and -0, invalid/nonfinite numbers, malformed hex and url()/var()/HTML canaries; exact generated syntax, CSS.supports/computed preview, keyboard add/remove/reorder, copy denial, reset and no network fetch.",
+      "framework": "Structured native controls, allowlisted string/number logic adapter and fixed CSS preview. No arbitrary CSS parsing, images, library, canvas or sanitizer dependency.",
+      "sources": [
+        "https://drafts.csswg.org/css-images-3/#linear-gradients"
+      ],
+      "reviewed_existing": [
+        "css-minifier",
+        "color-contrast-checker",
+        "image-color-picker"
+      ],
+      "development_order": 6,
+      "implementation_started": false,
+      "dependencies_review": "No new runtime package, paid service, backend or framework proposed. Retain existing styling/consent trust boundary; native APIs only. Limits are proposed acceptance caps, not measured results.",
+      "security_requirements": "Generate from an allowlisted grammar only; reject url(), var(), CSS tokens and HTML. Provide labelled numeric/colour controls, keyboard stop order and text output. Use labelled native controls, text-only output, explicit input/output bounds, no input persistence/transport, and truthful copy/download failures.",
+      "final_scope_limits": "Two to eight opaque #RRGGBB stops with nondecreasing 0–100% positions, two decimal places. Linear angles range from −360 to 360 degrees. Radial gradients use a centered circle. Stop text at most 256 units and output at most 4 KiB. Only generated CSS assigned to backgroundImage.",
+      "required_features": [
+        "Linear and radial types",
+        "Stops and linear angle",
+        "Live preview and CSS copy",
+        "Reset"
+      ]
+    }
+  ],
+  "scope_decisions": [
+    "Add centered radial gradients alongside linear gradients to meet the requested type selection. Do not accept pasted CSS.",
+    "Use character-category descriptions and native grapheme segmentation rather than bundling a Unicode names database.",
+    "Word rankings use a plain-text report. Filename plans use quoted, formula-protected CSV. All outputs are rendered as text.",
+    "Most routines are synchronous with finite input and iteration caps. Measure representative maximums. The comparator has an explicit 10-second deadline."
+  ],
+  "security_review": {
+    "privacy": "No user input network, storage or logging. Browser-selected file names/bytes stay in memory. Existing styling request and consent trust boundary apply.",
+    "dependencies": "No new packages, datasets, remote services or paid dependencies. Trusted local Worker only for opaque byte comparison.",
+    "accessibility": "Native controls, labelled inputs, keyboard actions, focus restoration, readable validation and status. Test narrow widths and motion-free previews.",
+    "resources": "Reject oversize input before costly work. Cap report construction and use a single paired read in flight. Validate observed maximums, worker failure and cancellation.",
+    "verdict": "No significant blocker for the bounded implementation."
+  }
+}

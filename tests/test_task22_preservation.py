@@ -5,6 +5,7 @@ import hashlib,json,subprocess,sys,unittest
 ROOT=Path(__file__).resolve().parents[1];BASE='93f2589b244f933e353d4d93ee145e35ed354399'
 sys.path.insert(0,str(ROOT/'scripts'))
 from task24_test_support import historical_registry,without_task24
+from task25_test_support import tool_map_before_task25
 from task22_test_support import ID,COUNTS,assert_unchanged_or_task22,without_task22
 from tool_homepage import Homepage
 def load(p):
@@ -41,11 +42,11 @@ class Task22Preservation(unittest.TestCase):
   for text in ['localStorage','sessionStorage','innerHTML','gtag(','allow-scripts','allow-same-origin']:self.assertNotIn(text,source)
   self.assertNotRegex(source,r'\beval\s*\(|new\s+Function');self.assertEqual(norm((ROOT/'assets/consent.js').read_bytes()),norm(git('assets/consent.js')))
  def test_ci_adds_mandatory_scope_without_changing_pins_or_deadlines(self):
-  old=json.loads(git('scripts/ci/coverage.json'));new=load('scripts/ci/coverage.json');self.assertEqual(len(new['tools']),81)
+  old=json.loads(git('scripts/ci/coverage.json'));new=load('scripts/ci/coverage.json');self.assertEqual(len(tool_map_before_task25(new)),81)
   for key in ['runtimes','aggregate','jobs']:self.assertEqual(old[key],new[key])
   # Six authorized utilities add mandatory cases; protect the raised floors
   # while keeping every historical floor, runtime pin and deadline intact.
-  self.assertEqual(new['minimum_tests'],{'python-project':213,'node-regression':519,'browser-tests':720})
+  self.assertEqual(new['minimum_tests'],{'python-project':219,'node-regression':530,'browser-tests':742})
   for job,floor in old['minimum_tests'].items():self.assertGreaterEqual(new['minimum_tests'][job],floor)
   for key in ['python_files','node_files','browser_files']:self.assertTrue(set(old[key])<=set(new[key]))
   self.assertEqual(new['tools'][ID],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'})

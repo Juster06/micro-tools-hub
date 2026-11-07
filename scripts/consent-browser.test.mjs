@@ -139,3 +139,66 @@ for(const id of Object.keys(task24Inputs))test(`Task 24 ${id}: first visit/rejec
  await click('edb-consent-settings');await click('edb-consent-reject');assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"),true);
  events=[];await navigate(route);await exerciseTask24(id);assert.deepEqual(gaRequests(),[]);
 });
+
+const task25Samples = {
+  'word-frequency-analyzer': 'consent_fixture a a',
+  'unicode-inspector': 'consent_fixture e\u0301😀',
+  'ipv4-subnet-calculator': '192.0.2.130',
+  'batch-filename-planner': 'consent_fixture.txt',
+  'file-byte-comparator': null,
+  'css-gradient-generator': '#123456 0%\n#abcdef 100%',
+};
+
+async function exerciseTask25(id) {
+  const sample = task25Samples[id];
+  if (sample === null) {
+    await b.evaluate(`(() => {
+      for (const id of ['toolInput', 'secondFile']) {
+        const selection = new DataTransfer();
+        selection.items.add(new File(['consent_fixture'], 'sample.txt'));
+        document.getElementById(id).files = selection.files;
+      }
+      return true;
+    })()`);
+  } else await b.evaluate(`toolInput.value = ${JSON.stringify(sample)}; toolInput.dispatchEvent(new Event('input', {bubbles: true})); true`);
+  await click('runBtn');
+  await wait(() => b.evaluate("toolStatus.textContent === 'Complete.' && Boolean(toolOutput.value)"));
+  assert.equal(await b.evaluate('toolError.hidden'), true);
+}
+
+for (const id of Object.keys(task25Samples)) {
+  test(`Task 25 ${id}: first visit, rejection, acceptance, navigation and withdrawal`, async () => {
+    const route = '/' + id + '/index.html';
+    await navigate(route);
+    await exerciseTask25(id);
+    assert.deepEqual(gaRequests(), []);
+    await click('edb-consent-reject');
+    await navigate(route);
+    await exerciseTask25(id);
+    assert.deepEqual(gaRequests(), []);
+
+    await click('edb-consent-settings');
+    await click('edb-consent-accept');
+    const pageViews = async () => (await commands()).filter(x => x[0] === 'event' && x[1] === 'page_view');
+    await wait(async () => (await pageViews()).length > 0);
+    assert.equal(gaRequests().filter(url => url.includes('gtag/js')).length, 1);
+    assert.equal((await pageViews()).length, 1);
+    assert.equal((await pageViews())[0][2].page_location, origin + route);
+    await click('edb-consent-settings');
+    await click('edb-consent-accept');
+    assert.equal((await pageViews()).length, 1);
+    events = [];
+    await navigate(route);
+    await wait(async () => (await pageViews()).length > 0);
+    assert.equal((await pageViews()).length, 1);
+
+    await click('edb-consent-settings');
+    await click('edb-consent-reject');
+    assert.equal(await b.evaluate("window['ga-disable-G-XDHPQYJ5CH']"), true);
+    events = [];
+    await navigate(route);
+    await exerciseTask25(id);
+    assert.deepEqual(gaRequests(), []);
+    assert.equal((await pageViews()).length, 0);
+  });
+}

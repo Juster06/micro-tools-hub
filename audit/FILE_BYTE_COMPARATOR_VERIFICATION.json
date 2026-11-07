@@ -1,0 +1,66 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-07",
+  "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+  "approved_baseline": "3e6b3d256d731cacdac8d6098937e2a5a9ba1378",
+  "browser": "Edg/157.0.4341.42",
+  "scope": "Local canonical structure, logic and interaction. Publication pending.",
+  "pages": [
+    {
+      "path": "file-byte-comparator/index.html",
+      "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+      "checks": [
+        "7 deterministic logic fixtures on the synchronous byte kernel and report formatter. Actual File, chunk boundary, 64 MiB, cancellation and timeout cases use the specialist browser suite.",
+        "2 canonical Chromium interaction cases",
+        "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "file-byte-comparator",
+    "generated_at": "2026-11-07T03:54:53+00:00",
+    "input_hash": "3ca07ed71bd88ef3202f9265b2a9aac43f7ccf7d2d261123d3793d94894f0ed7",
+    "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 7,
+        "failed": 0,
+        "assertions": 7,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 2,
+        "failed": 0,
+        "assertions": 6,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/157.0.4341.42"
+      }
+    },
+    "status": "PASS"
+  },
+  "limitations": [
+    "Local development evidence. Public behavior and publication unverified.",
+    "Browser automation captures copy/download and uses synthetic file selection. Native dialogs and physical-device/screen-reader scope require separate checks.",
+    "Synthetic Google endpoints test consent integration. GA4 property reporting is unverified.",
+    "Observed caps and Worker behavior do not establish a hard browser heap guarantee."
+  ],
+  "integration_gate": {
+    "status": "PASS",
+    "action": "UPDATE_PROPOSAL",
+    "patch_required": false
+  }
+}

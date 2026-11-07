@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "prefix-0",
+      "input": "192.0.2.130",
+      "options": {
+        "prefix": "0"
+      },
+      "expected": "CIDR: 0.0.0.0/0\nSubnet mask: 0.0.0.0\nNetwork address: 0.0.0.0\nBroadcast address: 255.255.255.255\nAddress range: 0.0.0.0 \u2013 255.255.255.255\nTotal addresses: 4294967296\nConventional host range: 0.0.0.1 \u2013 255.255.255.254\nConventional host slots: 4294967294 (before special-purpose restrictions)\nEntered address: Documentation (TEST-NET-1) (192.0.2.0/24)."
+    },
+    {
+      "id": "prefix-8",
+      "input": "192.0.2.130",
+      "options": {
+        "prefix": "8"
+      },
+      "expected": "CIDR: 192.0.0.0/8\nSubnet mask: 255.0.0.0\nNetwork address: 192.0.0.0\nBroadcast address: 192.255.255.255\nAddress range: 192.0.0.0 \u2013 192.255.255.255\nTotal addresses: 16777216\nConventional host range: 192.0.0.1 \u2013 192.255.255.254\nConventional host slots: 16777214 (before special-purpose restrictions)\nEntered address: Documentation (TEST-NET-1) (192.0.2.0/24)."
+    },
+    {
+      "id": "prefix-24",
+      "input": "192.0.2.130",
+      "options": {
+        "prefix": "24"
+      },
+      "expected": "CIDR: 192.0.2.0/24\nSubnet mask: 255.255.255.0\nNetwork address: 192.0.2.0\nBroadcast address: 192.0.2.255\nAddress range: 192.0.2.0 \u2013 192.0.2.255\nTotal addresses: 256\nConventional host range: 192.0.2.1 \u2013 192.0.2.254\nConventional host slots: 254 (before special-purpose restrictions)\nEntered address: Documentation (TEST-NET-1) (192.0.2.0/24)."
+    },
+    {
+      "id": "prefix-30",
+      "input": "192.0.2.130",
+      "options": {
+        "prefix": "30"
+      },
+      "expected": "CIDR: 192.0.2.128/30\nSubnet mask: 255.255.255.252\nNetwork address: 192.0.2.128\nBroadcast address: 192.0.2.131\nAddress range: 192.0.2.128 \u2013 192.0.2.131\nTotal addresses: 4\nConventional host range: 192.0.2.129 \u2013 192.0.2.130\nConventional host slots: 2 (before special-purpose restrictions)\nEntered address: Documentation (TEST-NET-1) (192.0.2.0/24)."
+    },
+    {
+      "id": "prefix-31",
+      "input": "192.0.2.130",
+      "options": {
+        "prefix": "31"
+      },
+      "expected": "CIDR: 192.0.2.130/31\nSubnet mask: 255.255.255.254\nNetwork address: 192.0.2.130\nBroadcast address: None for this prefix\nAddress range: 192.0.2.130 \u2013 192.0.2.131\nTotal addresses: 2\nTwo endpoint addresses on an RFC 3021 point-to-point link.\nEntered address: Documentation (TEST-NET-1) (192.0.2.0/24)."
+    },
+    {
+      "id": "prefix-32",
+      "input": "192.0.2.130",
+      "options": {
+        "prefix": "32"
+      },
+      "expected": "CIDR: 192.0.2.130/32\nSubnet mask: 255.255.255.255\nNetwork address: 192.0.2.130\nBroadcast address: None for this prefix\nAddress range: 192.0.2.130 \u2013 192.0.2.130\nTotal addresses: 1\nSingle address (host route).\nEntered address: Documentation (TEST-NET-1) (192.0.2.0/24)."
+    },
+    {
+      "id": "all-ones",
+      "input": "255.255.255.255",
+      "options": {
+        "prefix": "32"
+      },
+      "expected": "CIDR: 255.255.255.255/32\nSubnet mask: 255.255.255.255\nNetwork address: 255.255.255.255\nBroadcast address: None for this prefix\nAddress range: 255.255.255.255 \u2013 255.255.255.255\nTotal addresses: 1\nSingle address (host route).\nEntered address: Limited broadcast (255.255.255.255/32)."
+    },
+    {
+      "id": "private",
+      "input": "172.31.255.255",
+      "options": {
+        "prefix": "12"
+      },
+      "expected": "CIDR: 172.16.0.0/12\nSubnet mask: 255.240.0.0\nNetwork address: 172.16.0.0\nBroadcast address: 172.31.255.255\nAddress range: 172.16.0.0 \u2013 172.31.255.255\nTotal addresses: 1048576\nConventional host range: 172.16.0.1 \u2013 172.31.255.254\nConventional host slots: 1048574 (before special-purpose restrictions)\nEntered address: Private use (172.16.0.0/12)."
+    },
+    {
+      "id": "invalid-address-0",
+      "input": "",
+      "options": {},
+      "error": "four decimal IPv4 octets"
+    },
+    {
+      "id": "invalid-address-1",
+      "input": "256.0.0.1",
+      "options": {},
+      "error": "four decimal IPv4 octets"
+    },
+    {
+      "id": "invalid-address-2",
+      "input": "010.0.0.1",
+      "options": {},
+      "error": "four decimal IPv4 octets"
+    },
+    {
+      "id": "invalid-address-3",
+      "input": "127.1",
+      "options": {},
+      "error": "four decimal IPv4 octets"
+    },
+    {
+      "id": "invalid-address-4",
+      "input": "0x7F.0.0.1",
+      "options": {},
+      "error": "four decimal IPv4 octets"
+    },
+    {
+      "id": "invalid-address-5",
+      "input": "1.2.3.4\n",
+      "options": {},
+      "error": "four decimal IPv4 octets"
+    },
+    {
+      "id": "invalid-address-6",
+      "input": "\uff11.2.3.4",
+      "options": {},
+      "error": "four decimal IPv4 octets"
+    },
+    {
+      "id": "invalid-prefix-15",
+      "input": "1.2.3.4",
+      "options": {
+        "prefix": "33"
+      },
+      "error": "CIDR prefix"
+    },
+    {
+      "id": "invalid-prefix-16",
+      "input": "1.2.3.4",
+      "options": {
+        "prefix": "-1"
+      },
+      "error": "CIDR prefix"
+    },
+    {
+      "id": "invalid-prefix-17",
+      "input": "1.2.3.4",
+      "options": {
+        "prefix": "01"
+      },
+      "error": "CIDR prefix"
+    },
+    {
+      "id": "invalid-prefix-18",
+      "input": "1.2.3.4",
+      "options": {
+        "prefix": "1.0"
+      },
+      "error": "CIDR prefix"
+    },
+    {
+      "id": "invalid-prefix-19",
+      "input": "1.2.3.4",
+      "options": {
+        "prefix": "/24"
+      },
+      "error": "CIDR prefix"
+    }
+  ]
+}

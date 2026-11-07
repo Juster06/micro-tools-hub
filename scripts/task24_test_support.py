@@ -5,9 +5,11 @@ new Task24 preservation suite independently binds the entire 75-release baseline
 """
 from pathlib import Path
 import hashlib,json
+from task25_test_support import homepage_before_task25, registry_before_task25
 ROOT=Path(__file__).resolve().parents[1]
 IDS={'number-base-converter','unit-converter','duration-calculator','url-inspector-query-builder','list-comparison-set-operations','color-contrast-checker'}
 def historical_registry(registry):
+    registry = registry_before_task25(registry)
     assert len(registry['tools'])==99
     added=[t for t in registry['tools']if t['id']in IDS]
     assert len(added)==6 and {t['id']for t in added}==IDS
@@ -33,6 +35,7 @@ def historical_registry(registry):
         assert all(audit['automated_tool_report']['layers'][layer]['status']=='PASS'for layer in ['structural','logic','browser'])
     return {**registry,'tools':[t for t in registry['tools']if t['id']not in IDS]}
 def without_task24(source,Homepage):
+    source = homepage_before_task25(source, Homepage)
     found=[c for c in Homepage(source).cards if c['attrs'].get('data-tool-id')in IDS]
     if not found:
         assert len(Homepage(source).cards)==75

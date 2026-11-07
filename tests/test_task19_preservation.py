@@ -13,6 +13,7 @@ TASK20_IDS={'excel-formula-generator', 'resume-builder', 'emoji-picker', 'passpo
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
+from task25_test_support import tool_map_before_task25
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 
@@ -124,7 +125,7 @@ class Task19Preservation(unittest.TestCase):
 
     def test_coverage_includes_all_new_tools_and_existing_mandatory_scopes(self):
         coverage=json.loads(text('scripts/ci/coverage.json'))
-        self.assertEqual(len(coverage['tools']),81)
+        self.assertEqual(len(tool_map_before_task25(coverage)),81)
         for tid in IDS:
             self.assertEqual(coverage['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'})
             self.assertIn('tests/tools/'+tid+'/logic.test.mjs',coverage['node_files'])

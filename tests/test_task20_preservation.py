@@ -11,6 +11,7 @@ IDS={'excel-formula-generator','emoji-picker','image-compressor','png-to-ico','r
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
+from task25_test_support import tool_map_before_task25
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
 def blob(path,revision=BASE):return subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT)
@@ -65,7 +66,7 @@ class Task20Preservation(unittest.TestCase):
                 if layer!='structural':self.assertGreater(audit['canonical_layers'][layer]['passed'],0)
             self.assertGreater(audit['focused_test_count'],0)
     def test_all68_tools_and_new_tests_remain_mandatory_in_ci(self):
-        c=load('scripts/ci/coverage.json');self.assertEqual(len(c['tools']),81)
+        c=load('scripts/ci/coverage.json');self.assertEqual(len(tool_map_before_task25(c)),81)
         for tid in IDS:
             self.assertEqual(c['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'});self.assertIn('tests/tools/'+tid+'/logic.test.mjs',c['node_files'])
             for name in ['extended-browser.test.mjs','integration-browser.test.mjs']:self.assertIn('tests/tools/'+tid+'/'+name,c['browser_files'])

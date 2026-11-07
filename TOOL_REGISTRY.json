@@ -5825,6 +5825,322 @@
         "background",
         "preview"
       ]
+    },
+    {
+      "id": "word-frequency-analyzer",
+      "name": "Word Frequency Analyzer",
+      "category": "text",
+      "description": "Rank repeated words and count unique terms in pasted text.",
+      "directory_path": "word-frequency-analyzer",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Unicode word counts",
+        "Case, normalization and sort controls",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-07",
+      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "sequence_rank": 27,
+      "related_tools": [
+        "text-cleaner",
+        "hashtag-organizer"
+      ],
+      "verification": {
+        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+        "evidence_path": "audit/WORD_FREQUENCY_ANALYZER_VERIFICATION.json",
+        "test_scope": [
+          "8 deterministic logic fixtures",
+          "4 canonical Chromium interaction cases",
+          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "caseMode",
+        "normalization",
+        "order"
+      ]
+    },
+    {
+      "id": "unicode-inspector",
+      "name": "Unicode Inspector",
+      "category": "text",
+      "description": "Inspect Unicode code points, encoding units, clusters and normalization.",
+      "directory_path": "unicode-inspector",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Unicode code points and character descriptions",
+        "UTF-16 and UTF-8 diagnostics",
+        "Grapheme and normalization views",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-07",
+      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "sequence_rank": 28,
+      "related_tools": [
+        "text-reverser",
+        "emoji-picker"
+      ],
+      "verification": {
+        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_sha256": "049b8a1d446f3ed513cbbe31654e033ea0ea320331301baf12e308f01f121440",
+        "evidence_path": "audit/UNICODE_INSPECTOR_VERIFICATION.json",
+        "test_scope": [
+          "7 deterministic logic fixtures",
+          "4 canonical Chromium interaction cases",
+          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus"
+      ]
+    },
+    {
+      "id": "ipv4-subnet-calculator",
+      "name": "IPv4 Subnet Calculator",
+      "category": "calculator",
+      "description": "Calculate IPv4 subnet boundaries and address counts from an address and CIDR prefix.",
+      "directory_path": "ipv4-subnet-calculator",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Exact IPv4 subnet and mask arithmetic",
+        "Broadcast, endpoints and counts",
+        "Special-purpose address notes",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-07",
+      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "sequence_rank": 29,
+      "related_tools": [
+        "url-inspector-query-builder",
+        "number-base-converter"
+      ],
+      "verification": {
+        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_sha256": "0ecf3b6abe5f986737f7b2c9aa4a3a270925acb69ffeb5fea890fc8a60d00bf0",
+        "evidence_path": "audit/IPV4_SUBNET_CALCULATOR_VERIFICATION.json",
+        "test_scope": [
+          "20 deterministic logic fixtures",
+          "5 canonical Chromium interaction cases",
+          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "prefix"
+      ]
+    },
+    {
+      "id": "batch-filename-planner",
+      "name": "Batch Filename Planner",
+      "category": "productivity",
+      "description": "Preview filename transformations and export a mapping without changing files.",
+      "directory_path": "batch-filename-planner",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "File name metadata or pasted names",
+        "Prefix, suffix, sequence and case rules",
+        "Collision detection and safe CSV plan",
+        "Copy and reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-07",
+      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "sequence_rank": 30,
+      "related_tools": [
+        "username-generator",
+        "file-signature-inspector"
+      ],
+      "verification": {
+        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_sha256": "df07f316a0ceaa8897a7b694ec2c275d76876e5aa25542e5b3969abafdf24ec5",
+        "evidence_path": "audit/BATCH_FILENAME_PLANNER_VERIFICATION.json",
+        "test_scope": [
+          "13 deterministic logic fixtures",
+          "5 canonical Chromium interaction cases",
+          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "nameFiles",
+        "prefix",
+        "suffix",
+        "letterCase",
+        "numbering",
+        "start",
+        "padding"
+      ]
+    },
+    {
+      "id": "file-byte-comparator",
+      "name": "File Byte Comparator",
+      "category": "developer",
+      "description": "Compare two local files and locate the first differing byte.",
+      "directory_path": "file-byte-comparator",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Opaque byte equality and first differing offset",
+        "Sizes and shorter-file EOF",
+        "Bounded Worker reads, progress and cancellation",
+        "Reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-07",
+      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "sequence_rank": 31,
+      "related_tools": [
+        "sha256-hash-checker",
+        "file-signature-inspector"
+      ],
+      "verification": {
+        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_sha256": "3617c95c2aa4cb39ca264919ed4a0152e32d18f63260fab1ed2bd33441619e16",
+        "evidence_path": "audit/FILE_BYTE_COMPARATOR_VERIFICATION.json",
+        "test_scope": [
+          "7 deterministic logic fixtures on the synchronous byte kernel and report formatter. Actual File, chunk boundary, 64 MiB, cancellation and timeout cases use the specialist browser suite.",
+          "2 canonical Chromium interaction cases",
+          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "secondFile",
+        "cancelBtn",
+        "compareProgress"
+      ]
+    },
+    {
+      "id": "css-gradient-generator",
+      "name": "CSS Gradient Generator",
+      "category": "developer",
+      "description": "Build and preview linear or centered radial CSS gradients from validated colour stops.",
+      "directory_path": "css-gradient-generator",
+      "status": "TESTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Linear and radial types",
+        "Stops and linear angle",
+        "Live preview and CSS copy",
+        "Reset"
+      ],
+      "testing_status": "REQUIRED_PASSED",
+      "last_verification_date": "2026-11-07",
+      "notes": "Task 25 development verification passed. TESTED — publication pending.",
+      "sequence_rank": 32,
+      "related_tools": [
+        "css-minifier",
+        "color-contrast-checker"
+      ],
+      "verification": {
+        "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+        "source_sha256": "0c31f44c7d68ba0398a30fd69592ddf8a30c6dde816ec2a0dabedbfcdd364d4c",
+        "evidence_path": "audit/CSS_GRADIENT_GENERATOR_VERIFICATION.json",
+        "test_scope": [
+          "11 deterministic logic fixtures",
+          "5 canonical Chromium interaction cases",
+          "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+        ],
+        "publication": null
+      },
+      "expected_interface_ids": [
+        "toolInput",
+        "runBtn",
+        "clearBtn",
+        "toolOutput",
+        "copyBtn",
+        "downloadBtn",
+        "toolError",
+        "toolStatus",
+        "type",
+        "angle",
+        "gradientPreview"
+      ]
     }
   ],
   "milestones": [

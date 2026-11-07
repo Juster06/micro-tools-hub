@@ -1,0 +1,66 @@
+{
+  "result": "PASS",
+  "verified_on": "2026-11-07",
+  "source_revision": "593f679c7dd953ce4f4a5aee99d5e4fdc1614215",
+  "approved_baseline": "3e6b3d256d731cacdac8d6098937e2a5a9ba1378",
+  "browser": "Edg/157.0.4341.42",
+  "scope": "Local canonical structure, logic and interaction. Publication pending.",
+  "pages": [
+    {
+      "path": "word-frequency-analyzer/index.html",
+      "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+      "checks": [
+        "8 deterministic logic fixtures",
+        "4 canonical Chromium interaction cases",
+        "Additional bounded-input, worker/file, privacy, clipboard and homepage cases mapped into required CI."
+      ],
+      "publication": null
+    }
+  ],
+  "automated_tool_report": {
+    "schema_version": 1,
+    "tool_id": "word-frequency-analyzer",
+    "generated_at": "2026-11-07T03:54:36+00:00",
+    "input_hash": "0284368700cb7b4b31db6ee73c0e39c5a696ded38989be8a2bbfb6acfe13b6f1",
+    "source_sha256": "91b0a9476fb0fd3aa82c4dd29065d69d4f81ef11f3aaea2f20ae9bda44ba293e",
+    "workspace": "canonical",
+    "is_scaffold": false,
+    "layers": {
+      "structural": {
+        "status": "PASS",
+        "errors": [],
+        "warnings": [],
+        "scope": "STRUCTURAL_ONLY"
+      },
+      "logic": {
+        "status": "PASS",
+        "passed": 8,
+        "failed": 0,
+        "assertions": 8,
+        "failures": [],
+        "scope": "Deterministic inline JavaScript logic, executed in Node with explicit fixtures."
+      },
+      "browser": {
+        "status": "PASS",
+        "passed": 4,
+        "failed": 0,
+        "assertions": 11,
+        "failures": [],
+        "scope": "Real Chromium DOM; clipboard/download APIs simulated; external HTTP(S) blocked.",
+        "browser": "Edg/157.0.4341.42"
+      }
+    },
+    "status": "PASS"
+  },
+  "limitations": [
+    "Local development evidence. Public behavior and publication unverified.",
+    "Browser automation captures copy/download and uses synthetic file selection. Native dialogs and physical-device/screen-reader scope require separate checks.",
+    "Synthetic Google endpoints test consent integration. GA4 property reporting is unverified.",
+    "Observed caps and Worker behavior do not establish a hard browser heap guarantee."
+  ],
+  "integration_gate": {
+    "status": "PASS",
+    "action": "UPDATE_PROPOSAL",
+    "patch_required": false
+  }
+}

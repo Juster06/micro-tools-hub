@@ -6,9 +6,12 @@ ROOT=Path(__file__).resolve().parents[1];BASE='a7da719ea6ccc4caae572f26f6ae5e707
 sys.path.insert(0,str(ROOT/'scripts'))
 from task24_test_support import IDS
 from tool_homepage import Homepage
+from task25_test_support import homepage_before_task25, registry_before_task25
 @lru_cache(maxsize=None)
 def blob(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=ROOT)
-def load(path):return json.loads((ROOT/path).read_text(encoding='utf-8'))
+def load(path):
+ data=json.loads((ROOT/path).read_text(encoding='utf-8'))
+ return registry_before_task25(data) if path=='TOOL_REGISTRY.json' else data
 def norm(b):return b.replace(b'\r\n',b'\n')
 def sha(b):return hashlib.sha256(b).hexdigest()
 class Task24Release(unittest.TestCase):
@@ -38,7 +41,7 @@ class Task24Release(unittest.TestCase):
   for view in c['page_views']:self.assertEqual(view['event'],'page_view');self.assertEqual(view['measurement_id'],'G-XDHPQYJ5CH');self.assertEqual(view['http_response'],204);self.assertNotIn('?',view['page_location']);self.assertNotIn('#',view['page_location'])
   self.assertTrue(any('property-level reporting remains unverified'in x for x in c['limitations']))
  def test_only_six_availability_labels_change_on_homepage(self):
-  source=(ROOT/'index.html').read_text(encoding='utf-8');home=Homepage(source);self.assertEqual(len(home.cards),81)
+  source=homepage_before_task25((ROOT/'index.html').read_text(encoding='utf-8'),Homepage);home=Homepage(source);self.assertEqual(len(home.cards),81)
   for tid in IDS:
    card=next(c for c in Homepage(source).cards if c['attrs'].get('data-tool-id')==tid);chunk=source[card['start']:card['end']];self.assertEqual(card['attrs']['data-availability'],'released');self.assertEqual(chunk.count('Live'),1);chunk=chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending');source=source[:card['start']]+chunk+source[card['end']:]
   self.assertEqual(source,norm(blob('index.html')).decode('utf-8'))
