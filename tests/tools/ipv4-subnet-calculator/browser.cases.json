@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "native-enter-and-result",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "192.0.2.130"
+        },
+        {
+          "action": "focus",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "key",
+          "key": "Enter"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "Network address: 192.0.2.0"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Complete."
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-and-reset",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "192.0.2.130"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "includes": "Network address: 192.0.2.0"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "copy-denied-fallback",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "192.0.2.130"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "clipboard",
+          "mode": "failure"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolOutput"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Output selected"
+        }
+      ]
+    },
+    {
+      "id": "zero-and-invalid",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "255.255.255.255"
+        },
+        {
+          "action": "set",
+          "selector": "#prefix",
+          "value": "0"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "Total addresses: 4294967296"
+        },
+        {
+          "action": "set",
+          "selector": "#prefix",
+          "value": "33"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "textContent",
+          "includes": "CIDR prefix"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    },
+    {
+      "id": "point-to-point",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "192.0.2.131"
+        },
+        {
+          "action": "set",
+          "selector": "#prefix",
+          "value": "31"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "RFC 3021"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "192.0.2.130 \u2013 192.0.2.131"
+        }
+      ]
+    }
+  ]
+}

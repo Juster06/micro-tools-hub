@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "word-frequency-analyzer",
+  "canonical_path": "word-frequency-analyzer/index.html",
+  "template": "text",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

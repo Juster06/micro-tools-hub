@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "native-enter-and-result",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "e\u0301\ud83d\ude00"
+        },
+        {
+          "action": "focus",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "key",
+          "key": "Enter"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "Grapheme clusters: 2"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Complete."
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-and-reset",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "e\u0301\ud83d\ude00"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "includes": "Grapheme clusters: 2"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "copy-denied-fallback",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "e\u0301\ud83d\ude00"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "clipboard",
+          "mode": "failure"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolOutput"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Output selected"
+        }
+      ]
+    },
+    {
+      "id": "codepoint-versus-grapheme",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\ud83d\udc69\u200d\ud83d\udcbb"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "Code points: 3"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "Grapheme clusters: 1"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "U+200D"
+        }
+      ]
+    }
+  ]
+}

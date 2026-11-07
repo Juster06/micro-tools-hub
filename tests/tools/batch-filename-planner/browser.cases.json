@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "native-enter-and-result",
+      "width": 320,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\u00e9.txt"
+        },
+        {
+          "action": "focus",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "key",
+          "key": "Enter"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "\"\u00e9.txt\",\"\u00e9.txt\""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "equals": "Complete."
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "copy-and-reset",
+      "width": 768,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\u00e9.txt"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$clipboard",
+          "property": "text",
+          "includes": "\"\u00e9.txt\",\"\u00e9.txt\""
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolInput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        }
+      ]
+    },
+    {
+      "id": "copy-denied-fallback",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "\u00e9.txt"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "clipboard",
+          "mode": "failure"
+        },
+        {
+          "action": "click",
+          "selector": "#copyBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolOutput"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolStatus",
+          "property": "textContent",
+          "includes": "Output selected"
+        }
+      ]
+    },
+    {
+      "id": "collision-denies-export",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "A.txt\na.TXT"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "textContent",
+          "includes": "Destination collision"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "includes": "Original,Proposed"
+        },
+        {
+          "action": "expect",
+          "selector": "#downloadBtn",
+          "property": "disabled",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "invalid-reserved",
+      "width": 375,
+      "steps": [
+        {
+          "action": "set",
+          "selector": "#toolInput",
+          "value": "CON.txt"
+        },
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "textContent",
+          "includes": "portable filename rules"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolOutput",
+          "property": "value",
+          "equals": ""
+        }
+      ]
+    }
+  ]
+}

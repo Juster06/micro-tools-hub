@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "linear",
+      "input": "#123ABC 0%\n#00FF00 100%",
+      "options": {},
+      "expected": "background-image: linear-gradient(90deg, #123abc 0%, #00ff00 100%);"
+    },
+    {
+      "id": "radial",
+      "input": "#123ABC 0%\n#00FF00 100%",
+      "options": {
+        "type": "radial",
+        "angle": "ignored"
+      },
+      "expected": "background-image: radial-gradient(circle at center, #123abc 0%, #00ff00 100%);"
+    },
+    {
+      "id": "hard-stops",
+      "input": "#000000 25%\n#ffffff 25%",
+      "options": {
+        "angle": "-360"
+      },
+      "expected": "background-image: linear-gradient(-360deg, #000000 25%, #ffffff 25%);"
+    },
+    {
+      "id": "fractional",
+      "input": "#000000 2.25%\n#ffffff 79.5%",
+      "options": {
+        "angle": "-0"
+      },
+      "expected": "background-image: linear-gradient(0deg, #000000 2.25%, #ffffff 79.5%);"
+    },
+    {
+      "id": "bad-order",
+      "input": "#000000 100%\n#ffffff 0%",
+      "options": {},
+      "error": "nondecreasing"
+    },
+    {
+      "id": "bad-angle",
+      "input": "#123ABC 0%\n#00FF00 100%",
+      "options": {
+        "angle": "361"
+      },
+      "error": "between -360 and 360"
+    },
+    {
+      "id": "bad-position",
+      "input": "#000000 0%\n#ffffff 101%",
+      "options": {},
+      "error": "between 0 and 100"
+    },
+    {
+      "id": "url-injection",
+      "input": "url(https://example.invalid) 0%\n#ffffff 100%",
+      "options": {},
+      "error": "use #RRGGBB"
+    },
+    {
+      "id": "alpha",
+      "input": "#000000ff 0%\n#ffffff 100%",
+      "options": {},
+      "error": "use #RRGGBB"
+    },
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "error": "between 2 and 8"
+    },
+    {
+      "id": "too-many",
+      "input": "#abcdef 0%\n#abcdef 0%\n#abcdef 0%\n#abcdef 0%\n#abcdef 0%\n#abcdef 0%\n#abcdef 0%\n#abcdef 0%\n#abcdef 0%",
+      "options": {},
+      "error": "between 2 and 8"
+    }
+  ]
+}

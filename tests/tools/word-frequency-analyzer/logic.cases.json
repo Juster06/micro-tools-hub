@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "empty",
+      "input": "",
+      "options": {},
+      "expected": "Occurrences: 0\nUnique words: 0\nWord\tCount"
+    },
+    {
+      "id": "case-sensitive",
+      "input": "Dog dog DOG dog",
+      "options": {},
+      "expected": "Occurrences: 4\nUnique words: 3\nWord\tCount\ndog\t2\nDOG\t1\nDog\t1"
+    },
+    {
+      "id": "case-insensitive",
+      "input": "Dog dog DOG dog",
+      "options": {
+        "caseMode": "lowercase"
+      },
+      "expected": "Occurrences: 4\nUnique words: 1\nWord\tCount\ndog\t4"
+    },
+    {
+      "id": "marks-apostrophes-punctuation",
+      "input": "\u00e9 e\u0301 can\u2019t can't well-known \ud83d\ude42 \u4e2d\u6587",
+      "options": {
+        "normalization": "NFC"
+      },
+      "expected": "Occurrences: 7\nUnique words: 6\nWord\tCount\n\u00e9\t2\ncan't\t1\ncan\u2019t\t1\nknown\t1\nwell\t1\n\u4e2d\u6587\t1"
+    },
+    {
+      "id": "alphabetical",
+      "input": "z z a",
+      "options": {
+        "order": "alphabetical"
+      },
+      "expected": "Occurrences: 3\nUnique words: 2\nWord\tCount\na\t1\nz\t2"
+    },
+    {
+      "id": "least",
+      "input": "a a z",
+      "options": {
+        "order": "least"
+      },
+      "expected": "Occurrences: 3\nUnique words: 2\nWord\tCount\nz\t1\na\t2"
+    },
+    {
+      "id": "long-term",
+      "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "options": {},
+      "error": "256 UTF-16"
+    },
+    {
+      "id": "invalid-option",
+      "input": "a",
+      "options": {
+        "order": "injection"
+      },
+      "error": "valid sort order"
+    }
+  ]
+}

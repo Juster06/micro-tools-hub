@@ -5825,6 +5825,185 @@
         "background",
         "preview"
       ]
+    },
+    {
+      "id": "word-frequency-analyzer",
+      "name": "Word Frequency Analyzer",
+      "category": "text",
+      "description": "Rank repeated words and count unique terms in pasted text.",
+      "directory_path": "word-frequency-analyzer",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Unicode word counts",
+        "Case, normalization and sort controls",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 25 approved development scope. See audit/TASK_25_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 27,
+      "related_tools": [
+        "text-cleaner",
+        "hashtag-organizer"
+      ],
+      "verification": null
+    },
+    {
+      "id": "unicode-inspector",
+      "name": "Unicode Inspector",
+      "category": "text",
+      "description": "Inspect Unicode code points, encoding units, clusters and normalization.",
+      "directory_path": "unicode-inspector",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Unicode code points and character descriptions",
+        "UTF-16 and UTF-8 diagnostics",
+        "Grapheme and normalization views",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 25 approved development scope. See audit/TASK_25_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 28,
+      "related_tools": [
+        "text-reverser",
+        "emoji-picker"
+      ],
+      "verification": null
+    },
+    {
+      "id": "ipv4-subnet-calculator",
+      "name": "IPv4 Subnet Calculator",
+      "category": "calculator",
+      "description": "Calculate IPv4 subnet boundaries and address counts from an address and CIDR prefix.",
+      "directory_path": "ipv4-subnet-calculator",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Exact IPv4 subnet and mask arithmetic",
+        "Broadcast, endpoints and counts",
+        "Special-purpose address notes",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 25 approved development scope. See audit/TASK_25_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 29,
+      "related_tools": [
+        "url-inspector-query-builder",
+        "number-base-converter"
+      ],
+      "verification": null
+    },
+    {
+      "id": "batch-filename-planner",
+      "name": "Batch Filename Planner",
+      "category": "productivity",
+      "description": "Preview filename transformations and export a mapping without changing files.",
+      "directory_path": "batch-filename-planner",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "File name metadata or pasted names",
+        "Prefix, suffix, sequence and case rules",
+        "Collision detection and safe CSV plan",
+        "Copy and reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 25 approved development scope. See audit/TASK_25_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 30,
+      "related_tools": [
+        "username-generator",
+        "file-signature-inspector"
+      ],
+      "verification": null
+    },
+    {
+      "id": "file-byte-comparator",
+      "name": "File Byte Comparator",
+      "category": "developer",
+      "description": "Compare two local files and locate the first differing byte.",
+      "directory_path": "file-byte-comparator",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Opaque byte equality and first differing offset",
+        "Sizes and shorter-file EOF",
+        "Bounded Worker reads, progress and cancellation",
+        "Reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 25 approved development scope. See audit/TASK_25_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 31,
+      "related_tools": [
+        "sha256-hash-checker",
+        "file-signature-inspector"
+      ],
+      "verification": null
+    },
+    {
+      "id": "css-gradient-generator",
+      "name": "CSS Gradient Generator",
+      "category": "developer",
+      "description": "Build and preview linear or centered radial CSS gradients from validated colour stops.",
+      "directory_path": "css-gradient-generator",
+      "status": "IMPLEMENTED",
+      "priority": "P1",
+      "implementation_complexity": "M",
+      "dependencies": [
+        "Tailwind CSS Play CDN v4",
+        "Native browser APIs",
+        "Shared consent component assets/consent.js"
+      ],
+      "required_features": [
+        "Linear and radial types",
+        "Stops and linear angle",
+        "Live preview and CSS copy",
+        "Reset"
+      ],
+      "testing_status": "NOT_STARTED",
+      "last_verification_date": null,
+      "notes": "Task 25 approved development scope. See audit/TASK_25_DEVELOPMENT_PLAN.json.",
+      "sequence_rank": 32,
+      "related_tools": [
+        "css-minifier",
+        "color-contrast-checker"
+      ],
+      "verification": null
     }
   ],
   "milestones": [

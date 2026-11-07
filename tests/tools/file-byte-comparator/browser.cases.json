@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "two-files-required",
+      "width": 320,
+      "steps": [
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "textContent",
+          "includes": "Select two files."
+        },
+        {
+          "action": "expect",
+          "selector": "#copyBtn",
+          "property": "disabled",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "overflow",
+          "equals": false
+        }
+      ]
+    },
+    {
+      "id": "reset-error-focus",
+      "width": 375,
+      "steps": [
+        {
+          "action": "click",
+          "selector": "#runBtn"
+        },
+        {
+          "action": "click",
+          "selector": "#clearBtn"
+        },
+        {
+          "action": "expect",
+          "selector": "#toolError",
+          "property": "hidden",
+          "equals": true
+        },
+        {
+          "action": "expect",
+          "selector": "$page",
+          "property": "activeId",
+          "equals": "toolInput"
+        },
+        {
+          "action": "expect",
+          "selector": "#cancelBtn",
+          "property": "disabled",
+          "equals": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tool_id": "batch-filename-planner",
+  "canonical_path": "batch-filename-planner/index.html",
+  "template": "structured",
+  "requires_specialized_implementation": true,
+  "purpose": "Development scaffold; no lifecycle or publication claim."
+}

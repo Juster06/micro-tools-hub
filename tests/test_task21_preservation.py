@@ -11,6 +11,7 @@ BASE='8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20'
 sys.path.insert(0,str(ROOT/'scripts'))
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
+from task25_test_support import tool_map_before_task25
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS,COUNTS,assert_transition,without_cards
 
@@ -87,7 +88,7 @@ class Task21Preservation(unittest.TestCase):
         for p in (ROOT/'scripts/vendor/task21').glob('*-worker.mjs'):self.assertNotRegex(p.read_text(encoding='utf8'),r'\beval\s*\(|new\s+Function')
 
     def test_ci_maps_all74_tools_and_every_new_scope_without_lowering_floors(self):
-        c=load('scripts/ci/coverage.json');old=json.loads(blob('scripts/ci/coverage.json'));self.assertEqual(len(c['tools']),81)
+        c=load('scripts/ci/coverage.json');old=json.loads(blob('scripts/ci/coverage.json'));self.assertEqual(len(tool_map_before_task25(c)),81)
         for tid in IDS:
             self.assertEqual(c['tools'][tid],{'structural_job':'python-project','logic_job':'node-regression','browser_job':'browser-tests'})
             self.assertIn('tests/tools/'+tid+'/logic.test.mjs',c['node_files'])

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "empty",
+      "input": "",
+      "options": {
+        "other": ""
+      },
+      "expected": "Result: Identical\nFile A: 0 bytes\nFile B: 0 bytes\nSize difference: 0 bytes\nFirst differing offset: None"
+    },
+    {
+      "id": "identical",
+      "input": "00ffac",
+      "options": {
+        "other": "00FFAC"
+      },
+      "expected": "Result: Identical\nFile A: 3 bytes\nFile B: 3 bytes\nSize difference: 0 bytes\nFirst differing offset: None"
+    },
+    {
+      "id": "early",
+      "input": "01ab",
+      "options": {
+        "other": "ffab"
+      },
+      "expected": "Result: Different\nFile A: 2 bytes\nFile B: 2 bytes\nSize difference: 0 bytes\nFirst differing offset: 0 (zero-based)"
+    },
+    {
+      "id": "late",
+      "input": "01abf0",
+      "options": {
+        "other": "01abf1"
+      },
+      "expected": "Result: Different\nFile A: 3 bytes\nFile B: 3 bytes\nSize difference: 0 bytes\nFirst differing offset: 2 (zero-based)"
+    },
+    {
+      "id": "size-eof",
+      "input": "01ab",
+      "options": {
+        "other": "01abff"
+      },
+      "expected": "Result: Different\nFile A: 2 bytes\nFile B: 3 bytes\nSize difference: 1 bytes\nFirst differing offset: 2 (zero-based, shorter file ends here)"
+    },
+    {
+      "id": "size-and-early",
+      "input": "01ab",
+      "options": {
+        "other": "02abff"
+      },
+      "expected": "Result: Different\nFile A: 2 bytes\nFile B: 3 bytes\nSize difference: 1 bytes\nFirst differing offset: 0 (zero-based)"
+    },
+    {
+      "id": "invalid-fixture",
+      "input": "0",
+      "options": {},
+      "error": "complete hexadecimal pairs"
+    }
+  ]
+}
