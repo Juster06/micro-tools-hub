@@ -18,6 +18,9 @@ change registry categories, routes, statuses or publication records.
 directory links, category anchors and a content-named first-party stylesheet.
 JavaScript adds filtering; no-JavaScript visitors retain navigation and links.
 Search is transient in page memory, uses textContent, and sends no telemetry.
+Normalized phrase matching extends the original name search to reviewed descriptions
+and aliases. Counts update synchronously in a polite live region. The existing
+clearSearch identifier and readable card text boundaries are retained.
 Clear resets both search and category. Category anchors restore the complete
 directory before navigating so an earlier filter cannot hide their targets.
 

@@ -23,7 +23,7 @@
       "controls": "Focus blue and control borders meet3:1 on white/background",
       "limits": "Not a complete WCAG conformance audit; manual assistive technology/physical devices remain unverified"
     },
-    "6. Search improvements": "Names, reviewed descriptions and approved aliases; case and whitespace normalization, AND-word matching, accurate debounced polite counts, zero-results state, clear resets category/query. textContent only; no persistence, uploads or query analytics.",
+    "6. Search improvements": "Names, reviewed descriptions and approved aliases; case and whitespace normalization, phrase matching, accurate synchronous polite counts, zero-results state, clear resets category/query. textContent only; no persistence, uploads or query analytics.",
     "7. Category mapping": [
       {
         "id": "text-writing",
@@ -131,6 +131,7 @@
   "validation_notes": [
     "Initial Python run overlapped development edits and correctly failed snapshot freshness; stable full run passed.",
     "Initial Node fixture omitted new approval files; corrected fixture preserves old assertions and adds new mutation coverage.",
-    "Initial enlarged-text probe compounded root and body scaling; final probe applies actual200%text. Consent wrapping was improved; final bounds pass."
+    "Initial enlarged-text probe compounded root and body scaling; final probe applies actual200%text. Consent wrapping was improved; final bounds pass.",
+    "Initial hosted Chromium run 42438449473 failed 129 of747 tests: card text boundaries, reset identifier, delayed counts and broad word matching broke existing homepage contracts; task18 navigation also read partially parsed HTML. Candidate corrected these behaviors, retained all assertions and strengthened the navigation readiness wait to document complete. Original failed logs are retained; exact corrected-commit hosted results are recorded externally."
   ]
 }

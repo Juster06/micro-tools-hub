@@ -20,13 +20,14 @@ async function fixture(action){
   await load();await action(b,google,load);assert.deepEqual(errors,[]);
  }finally{if(b)await b.close();await new Promise(r=>server.close(r));}
 }
-const set=async(b,value)=>{await b.evaluate(`toolSearch.value=${JSON.stringify(value)};toolSearch.dispatchEvent(new Event('input',{bubbles:true}));true`);await delay(180);};
+const set=async(b,value)=>{await b.evaluate(`toolSearch.value=${JSON.stringify(value)};toolSearch.dispatchEvent(new Event('input',{bubbles:true}));true`);};
 const visible=b=>b.evaluate('[...document.querySelectorAll(".tool-card")].filter(x=>!x.hidden).map(x=>x.dataset.toolId)');
 test('homepage search, reviewed aliases, category filters, clear and safe zero results',async()=>fixture(async(b,google)=>{
  assert.equal((await visible(b)).length,87);
+ for(const [query,expected] of [['Age Calculator',['percentage-calculator','age-calculator']],['Percentage Calculator',['percentage-calculator']],['File Size Converter',['file-size-converter']],['Password Generator',['password-generator']]]){await set(b,query);assert.deepEqual(await visible(b),expected);assert.equal(await b.evaluate('resultCount.textContent'),`${expected.length} of 87 tools match`);}
  for(const c of mapping.search_acceptance_cases.filter(x=>x.must_include)){await set(b,'  '+c.query.toUpperCase().replaceAll(' ','   ')+'  ');const ids=await visible(b);for(const id of c.must_include)assert.ok(ids.includes(id),c.query);}
  await set(b,'<img src=x onerror=alert(1)>');assert.equal((await visible(b)).length,0);assert.equal(await b.evaluate('empty.hidden'),false);assert.equal(await b.evaluate('document.querySelectorAll("img").length'),0);
- await b.evaluate('document.getElementById("clear-search").click();true');assert.equal((await visible(b)).length,87);assert.equal(await b.evaluate('document.activeElement.id'),'toolSearch');
+ await b.evaluate('document.getElementById("clearSearch").click();true');assert.equal((await visible(b)).length,87);assert.equal(await b.evaluate('document.activeElement.id'),'toolSearch');
  for(const c of mapping.categories){await b.evaluate(`document.querySelector('[data-category-filter="${c.id}"]').click();true`);assert.deepEqual((await visible(b)).sort(),[...c.tool_ids].sort());}
  await b.evaluate('document.getElementById("reset-results").click();true');assert.equal(await b.evaluate('resultCount.textContent'),'87 tools ready to use');assert.deepEqual(google,[]);
 }));
@@ -36,7 +37,7 @@ test('LIVE-03: in-flow consent, menu keyboard, reflow, enlarged text and reduced
   await b.call('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:false});
   await b.evaluate(`document.documentElement.style.fontSize=${JSON.stringify(enlarged?'200%':'100%')};document.body.style.fontSize="1rem";true`);
   assert.equal(await b.evaluate('document.documentElement.scrollWidth>innerWidth'),false,`reflow ${width} enlarged ${enlarged}: `+JSON.stringify(await b.evaluate('[...document.querySelectorAll("body *")].filter(e=>{const r=e.getBoundingClientRect();return r.right>innerWidth||r.left<0||e.scrollWidth>e.clientWidth+1}).map(e=>({tag:e.tagName,id:e.id,cls:e.className,text:e.textContent.slice(0,50),right:e.getBoundingClientRect().right,scroll:e.scrollWidth,client:e.clientWidth}))')));
-  for(const id of ['toolSearch','clear-search','edb-consent-accept','edb-consent-reject']){
+  for(const id of ['toolSearch','clearSearch','edb-consent-accept','edb-consent-reject']){
    const v=await b.evaluate(`(()=>{const e=document.getElementById('${id}');e.focus();const r=e.getBoundingClientRect();const hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return {id:e.id,visible:r.top>=0&&r.bottom<=innerHeight,hit:e===hit||e.contains(hit),height:r.height,width:r.width,top:r.top,bottom:r.bottom,outline:getComputedStyle(e).outlineWidth,panel:getComputedStyle(document.getElementById('edb-consent-panel')).position}})()`);
    assert.ok(v.visible&&v.hit,JSON.stringify({viewportWidth:width,enlarged,...v}));assert.ok(v.height>=44);assert.equal(v.panel,'static');evidence.push({viewportWidth:width,enlarged,...v});
   }

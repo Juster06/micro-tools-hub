@@ -21,7 +21,7 @@ export function navigationTests(id,name) {
       assert.equal(audit.source_revision,tool.verification.source_revision);
     }
     assert.equal(await b.evaluate('document.querySelector("header a").getAttribute("href")'),'../index.html');
-    await b.evaluate('document.querySelector("header a").click();true');await wait(b,'!!document.getElementById("toolGrid")');
+    await b.evaluate('document.querySelector("header a").click();true');await wait(b,'document.readyState === "complete" && !!document.getElementById("toolGrid")');
     assert.deepEqual(await b.evaluate('Array.from(document.querySelectorAll("#toolGrid a[data-title]"),a=>a.getAttribute("href")).sort()'),routes);
     assert.equal(await b.evaluate('resultCount.textContent'),routes.length+' tools ready to use');
     assert.equal(await b.evaluate(`document.querySelector('[data-tool-id="${id}"]').getAttribute('data-availability')`),tool.status.toLowerCase());
@@ -30,7 +30,7 @@ export function navigationTests(id,name) {
     assert.match(await b.evaluate('document.title'),new RegExp(name));
   });
   test('homepage search finds the selected tool and reset restores full count',async()=>{
-    await b.evaluate('document.querySelector("header a").click();true');await wait(b,'!!document.getElementById("toolGrid")');
+    await b.evaluate('document.querySelector("header a").click();true');await wait(b,'document.readyState === "complete" && !!document.getElementById("toolGrid")');
     await set(b,'toolSearch',name);
     assert.deepEqual(await b.evaluate('Array.from(document.querySelectorAll("#toolGrid a[data-title]")).filter(a=>!a.hidden).map(a=>a.getAttribute("href"))'),[id+'/index.html']);
     await click(b,'clearSearch');assert.equal(await b.evaluate('resultCount.textContent'),routes.length+' tools ready to use');
