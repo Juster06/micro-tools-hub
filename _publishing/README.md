@@ -48,7 +48,10 @@ canonical, robots/noindex and refresh metadata must remain unchanged. Changing
 that historical exposure requires a separate review.
 
 The 89 canonical HTML files, source CSS, consent script, sitemap and robots must
-match source bytes. The theme stylesheet has its production hash pinned. The
+match approved source (the existing UTF-8/LF normalization for text; exact bytes
+for CSS) and their exact production output hashes. This accounts for the
+observed CRLF-to-LF conversion without ignoring any content difference.
+The theme stylesheet also has its production hash pinned. The
 original design document is hash checked in Git. Any new generated file fails,
 including Markdown HTML, raw Markdown, an explicit HTML file, an extensionless
 route or a redirect. Unknown noindex pages also fail: noindex is not permission

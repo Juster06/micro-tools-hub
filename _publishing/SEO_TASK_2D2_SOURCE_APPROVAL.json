@@ -195,15 +195,15 @@
       "normalization": "utf8-lf"
     },
     "_publishing/README.md": {
-      "sha256": "73a2664624ee284066324d801cb2f8e45e0138b7080375b2facb8fbb8bfd2a35",
+      "sha256": "538a6c903dd1d87ab03e5b860341ee3c5fd4cb9b318d32c416f23f0f15a946dd",
       "normalization": "utf8-lf"
     },
     "_publishing/output-policy.json": {
-      "sha256": "99f4fce67efdfce60e403fe38e379f8088ef9d8d1bcbeead3da50ea75de47431",
+      "sha256": "d4e6fde09ad4e30ed84e5a3b5a14efc2dfe17fbd43b36add762a42ddbb3434be",
       "normalization": "utf8-lf"
     },
     "_publishing/verify_site.py": {
-      "sha256": "ecddb65315e6816b059f07ffb13131b04059005bc31e1ece11f52da6e7397072",
+      "sha256": "4c276a054c76169954a93f9eb7782bc10f65ae3e0b1df327ca00582e46c3f97b",
       "normalization": "utf8-lf"
     },
     "age-calculator/README.md": {
@@ -2335,7 +2335,7 @@
       "normalization": "utf8-lf"
     },
     "tests/test_pages_output.py": {
-      "sha256": "fdee2d81eff0418a116e168b1ab4e5b211b79df60bb603ada55260578f846fd2",
+      "sha256": "479f7c345e624a4f2b9078bb1989a181a6fd44d71b7b39702556ae38721a667d",
       "normalization": "utf8-lf"
     },
     "tests/test_prepare_tool_seo.py": {

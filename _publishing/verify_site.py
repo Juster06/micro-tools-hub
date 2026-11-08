@@ -56,6 +56,16 @@ def metadata(text):
     return parser.result()
 
 
+def approved_bytes(root, name, policy):
+    data = (root / name).read_bytes()
+    mode = policy['source_normalization'][name]
+    if mode == 'utf8-lf':
+        data = data.decode('utf-8').replace('\r\n', '\n').encode('utf-8')
+    elif mode != 'bytes':
+        raise ValueError('Unknown approved source normalization')
+    return data
+
+
 def check_config(root):
     """Deliberately accept only the reviewed, narrow exclusion-only config."""
     lines = [line.strip() for line in (root / '_config.yml').read_text(encoding='utf-8').splitlines()
@@ -124,11 +134,16 @@ def verify_output(site, root, policy):
         if name in canonical:
             if actual['canonicals'] != [canonical[name]] or actual['noindex'] or actual['refresh']:
                 raise ValueError('Approved canonical page is not indexable at its intended URL: ' + name)
-            if files[name].read_bytes() != (root / name).read_bytes():
+            if files[name].read_bytes() != approved_bytes(root, name, policy):
                 raise ValueError('Generated canonical page differs from approved source: ' + name)
     for name in policy['exact_public_files']:
-        if files[name].read_bytes() != (root / name).read_bytes():
+        if files[name].read_bytes() != approved_bytes(root, name, policy):
             raise ValueError('Public asset or discovery file changed during generation: ' + name)
+    if set(policy['public_output_hashes']) != set(canonical) | set(policy['exact_public_files']):
+        raise ValueError('Production output hash coverage is incomplete')
+    for name, expected_hash in policy['public_output_hashes'].items():
+        if hashlib.sha256(files[name].read_bytes()).hexdigest() != expected_hash:
+            raise ValueError('Public output differs from exact production bytes: ' + name)
     for name, expected_hash in policy['generated_asset_hashes'].items():
         if hashlib.sha256(files[name].read_bytes()).hexdigest() != expected_hash:
             raise ValueError('Generated theme asset changed: ' + name)

@@ -37,7 +37,7 @@ class PagesOutputTests(unittest.TestCase):
                 source += '<meta http-equiv="refresh" content="' + html.escape(content, quote=True) + '">'
             (cls.site / name).write_text(source + '</head><body>fixture</body></html>', encoding='utf-8')
         for name in [*cls.policy['canonical_pages'], *cls.policy['exact_public_files']]:
-            shutil.copyfile(ROOT / name, cls.site / name)
+            (cls.site / name).write_bytes(publishing.approved_bytes(ROOT, name, cls.policy))
         # The actual theme CSS is verified against production in real-build CI.
         cls.policy['generated_asset_hashes'] = {}
 
