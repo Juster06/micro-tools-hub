@@ -12,7 +12,7 @@ const root=new URL('../',import.meta.url),rootDirectory=fileURLToPath(root);
 const approval=validateCurrent(root);
 const parent=fs.mkdtempSync(path.join(os.tmpdir(),'edb-css-node-'));
 const fixture=path.join(parent,'repo');fs.mkdirSync(fixture);
-for(const name of [...Object.keys(approval.files),'_publishing/SEO_TASK_2D2_SOURCE_APPROVAL.json','scripts/_publishing_approval_identity.py']){
+for(const name of [...Object.keys(approval.files),'_publishing/SEO_TASK_2E1_SOURCE_APPROVAL.json','scripts/_historical_publishing_approval_identity.py']){
   const target=path.join(fixture,name);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(rootDirectory,name),target);
 }
 const fixtureURL=pathToFileURL(fixture+path.sep);
@@ -71,7 +71,7 @@ test('canonical, body, consent and source-argument mutations are rejected',()=>{
   mutate('index.html',()=>assert.throws(()=>validateCurrent(fixtureURL)),raw=>Buffer.from(raw.toString('utf8').replace('rel="canonical"','rel="alternate"')));
 });
 test('manifest/bootstrap, lock, build, CI and historical evidence tamper is rejected',()=>{
-  for(const relative of ['_publishing/SEO_TASK_2D2_SOURCE_APPROVAL.json','scripts/_publishing_approval_identity.py','_config.yml','_publishing/output-policy.json','_publishing/verify_site.py','audit/SEO_TASK_2D_SOURCE_APPROVAL.json','scripts/homepage_approval_identity.py','styles/homepage-directory.json','styles/homepage.js','styles/homepage.css',approval.homepage_asset,'audit/SEO_TASK_2C_SOURCE_APPROVAL.json','scripts/css_approval_identity.py','scripts/styles/package-lock.json','styles/sources.json','styles/build-manifest.json','scripts/build_styles.mjs','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/coverage.json','audit/SEO_TASK_2A_SOURCE_OVERLAY.json','audit/TASK_17_CANDIDATE.json','scripts/seo_overlay.py','scripts/seo-overlay.mjs','scripts/consent_overlay.py'])mutate(relative,()=>assert.throws(()=>validateCurrent(fixtureURL)));
+  for(const relative of ['_publishing/SEO_TASK_2D2_SOURCE_APPROVAL.json','scripts/_publishing_approval_identity.py','_publishing/SEO_TASK_2D2_OUTPUT_POLICY.json','_publishing/SEO_TASK_2E1_SOURCE_APPROVAL.json','scripts/_historical_publishing_approval_identity.py','_config.yml','_publishing/output-policy.json','_publishing/verify_site.py','audit/SEO_TASK_2D_SOURCE_APPROVAL.json','scripts/homepage_approval_identity.py','styles/homepage-directory.json','styles/homepage.js','styles/homepage.css',approval.homepage_asset,'audit/SEO_TASK_2C_SOURCE_APPROVAL.json','scripts/css_approval_identity.py','scripts/styles/package-lock.json','styles/sources.json','styles/build-manifest.json','scripts/build_styles.mjs','.github/workflows/functional-ci.yml','scripts/ci/run.py','scripts/ci/coverage.json','audit/SEO_TASK_2A_SOURCE_OVERLAY.json','audit/TASK_17_CANDIDATE.json','scripts/seo_overlay.py','scripts/seo-overlay.mjs','scripts/consent_overlay.py'])mutate(relative,()=>assert.throws(()=>validateCurrent(fixtureURL)));
 });
 test('same-size same-mtime source tamper cannot hide behind a cache',()=>{
   const filename=path.join(fixture,approval.css_asset.path),info=fs.statSync(filename),raw=fs.readFileSync(filename);
