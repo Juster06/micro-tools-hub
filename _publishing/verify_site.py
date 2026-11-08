@@ -24,6 +24,8 @@ POLICY = '_publishing/output-policy.json'
 EXCLUDES = ['Gemfile', 'Gemfile.lock', 'node_modules', 'vendor/bundle/',
             'vendor/cache/', 'vendor/gems/', 'vendor/ruby/', 'CNAME',
             'HOMEPAGE_DESIGN.md', 'tests/test_pages_output.py']
+# Exact reviewed file exclusions, not directory globs.
+EXCLUDES += ['AGENTS.md', 'ARCHITECTURE.md', 'CHANGELOG.md', 'CSS_PIPELINE.md', 'DECISIONS.md', 'PROGRESS_TRACKER.md', 'PROJECT_MASTER_PLAN.md', 'ROADMAP.md', 'SEO_FOUNDATION.md', 'SESSION_HANDOFF.md', 'TOOL_CONTRACT.md', 'TOOL_DEVELOPMENT_GUIDE.md', 'audit/BACKLOG_RECONCILIATION.md', 'audit/CURRENT_STATE.md', 'audit/TASK_10_DELIVERY.md', 'audit/TASK_10_DEVELOPMENT_PLAN.md', 'audit/TASK_11_DEVELOPMENT_PLAN.md', 'audit/TASK_12_DEVELOPMENT_PLAN.md', 'audit/TASK_13_DEVELOPMENT_PLAN.md', 'audit/TASK_14_DEVELOPMENT_PLAN.md', 'audit/TASK_15_DEVELOPMENT_PLAN.md', 'audit/TASK_16_DEVELOPMENT_PLAN.md', 'audit/TASK_17_CONSENT_REVIEW.md', 'audit/TASK_18_DEVELOPMENT_PLAN.md', 'audit/TASK_19_DEVELOPMENT_PLAN.md', 'audit/TASK_20_DEVELOPMENT_PLAN.md', 'audit/TASK_24_RELEASE_TESTING.md', 'audit/TASK_7_DEVELOPMENT_PLAN.md', 'audit/TASK_8_DEVELOPMENT_PLAN.md', 'audit/TASK_9_DEVELOPMENT_PLAN.md', 'audit/task22-prototype/README.md', 'audit/task22-public/README.md', 'audit/task24-public/README.md', 'audit/task25-public/README.md', 'scripts/DASHBOARD.md', 'scripts/README.md', 'scripts/WINDOWS_LAUNCHER.md', 'scripts/ci/DESIGN.md', 'scripts/ci/MAIN_BRANCH_PROTECTION.md', 'scripts/ci/README.md', 'scripts/public-verification/task21/README.md', 'scripts/styles/DEPENDENCIES.md', 'scripts/vendor/task21/README.md', 'scripts/vendor/task22/README.md', 'templates/README.md', 'templates/structured-input.html', 'templates/text-input.html', 'templates/tool-page.html']
 
 
 class Metadata(HTMLParser):
@@ -111,18 +113,24 @@ def verify_output(site, root, policy):
     """Pure output checks; CLI separately requires the strict source approval."""
     root = Path(root)
     check_config(root)
-    check_markdown_sources(root, policy['markdown_source_paths'])
     files = output_files(site)
     expected = set(policy['output_paths'])
     if len(expected) != len(policy['output_paths']) or set(files) != expected:
         raise ValueError('Generated output inventory mismatch: ' + json.dumps({
             'unexpected': sorted(set(files) - expected), 'missing': sorted(expected - set(files))}))
+    check_markdown_sources(root, policy['markdown_source_paths'])
     html = {p for p in files if p.lower().endswith(('.html', '.htm'))}
     if html != set(policy['html']):
         raise ValueError('Generated HTML policy is incomplete')
     for name in files:
         if 'homepage_design' in name.lower() or name.startswith(('_publishing/', 'scripts/_publishing_')):
             raise ValueError('Internal documentation or publishing control leaked')
+    for retired in policy.get('retired_routes', []):
+        original = (root / retired['source']).read_bytes().replace(b'\r\n', b'\n')
+        if hashlib.sha256(original).hexdigest() != retired['source_sha256']:
+            raise ValueError('Retired source history changed: ' + retired['source'])
+        if any(name in files for name in retired['removed_outputs'] + retired['aliases']):
+            raise ValueError('Retired documentation output reintroduced')
     canonical = policy['canonical_pages']
     if len(canonical) != 89 or len(set(canonical.values())) != 89:
         raise ValueError('Canonical policy must retain exactly 89 unique URLs')
@@ -157,6 +165,8 @@ def verify_output(site, root, policy):
     return {'status': 'PASS', 'scope': 'GENERATED_OUTPUT_NOT_PUBLIC_DEPLOYMENT',
             'output_files': len(files), 'html_pages': len(html), 'canonical_pages': len(canonical),
             'historical_html_routes_retained': len(html) - len(canonical),
+            'retired_html_outputs': len(policy.get('retired_routes', [])),
+            'retired_output_files': len(policy.get('retired_output_paths', [])),
             'sitemap_urls': len(urls), 'exact_public_files': len(policy['exact_public_files']),
             'removed_routes': ['/HOMEPAGE_DESIGN.html', '/HOMEPAGE_DESIGN', '/HOMEPAGE_DESIGN.md'],
             'alias_limit': 'No source HTML, Markdown, extensionless file, redirect or alternative output route remains. Hosting behavior requires post-deployment HTTP verification.'}

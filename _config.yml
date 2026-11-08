@@ -11,3 +11,52 @@ exclude:
   - CNAME
   - HOMEPAGE_DESIGN.md
   - tests/test_pages_output.py
+# Task 2E.1: exact reviewed sources only; runtime directories remain publishable.
+  - AGENTS.md
+  - ARCHITECTURE.md
+  - CHANGELOG.md
+  - CSS_PIPELINE.md
+  - DECISIONS.md
+  - PROGRESS_TRACKER.md
+  - PROJECT_MASTER_PLAN.md
+  - ROADMAP.md
+  - SEO_FOUNDATION.md
+  - SESSION_HANDOFF.md
+  - TOOL_CONTRACT.md
+  - TOOL_DEVELOPMENT_GUIDE.md
+  - audit/BACKLOG_RECONCILIATION.md
+  - audit/CURRENT_STATE.md
+  - audit/TASK_10_DELIVERY.md
+  - audit/TASK_10_DEVELOPMENT_PLAN.md
+  - audit/TASK_11_DEVELOPMENT_PLAN.md
+  - audit/TASK_12_DEVELOPMENT_PLAN.md
+  - audit/TASK_13_DEVELOPMENT_PLAN.md
+  - audit/TASK_14_DEVELOPMENT_PLAN.md
+  - audit/TASK_15_DEVELOPMENT_PLAN.md
+  - audit/TASK_16_DEVELOPMENT_PLAN.md
+  - audit/TASK_17_CONSENT_REVIEW.md
+  - audit/TASK_18_DEVELOPMENT_PLAN.md
+  - audit/TASK_19_DEVELOPMENT_PLAN.md
+  - audit/TASK_20_DEVELOPMENT_PLAN.md
+  - audit/TASK_24_RELEASE_TESTING.md
+  - audit/TASK_7_DEVELOPMENT_PLAN.md
+  - audit/TASK_8_DEVELOPMENT_PLAN.md
+  - audit/TASK_9_DEVELOPMENT_PLAN.md
+  - audit/task22-prototype/README.md
+  - audit/task22-public/README.md
+  - audit/task24-public/README.md
+  - audit/task25-public/README.md
+  - scripts/DASHBOARD.md
+  - scripts/README.md
+  - scripts/WINDOWS_LAUNCHER.md
+  - scripts/ci/DESIGN.md
+  - scripts/ci/MAIN_BRANCH_PROTECTION.md
+  - scripts/ci/README.md
+  - scripts/public-verification/task21/README.md
+  - scripts/styles/DEPENDENCIES.md
+  - scripts/vendor/task21/README.md
+  - scripts/vendor/task22/README.md
+  - templates/README.md
+  - templates/structured-input.html
+  - templates/text-input.html
+  - templates/tool-page.html

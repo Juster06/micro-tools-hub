@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "production_commit": "1634bff8449db3a5398f5e0c1d070098b3cd2f16",
-  "production_workflow": 42440717015,
-  "production_artifact": 13601019321,
-  "production_artifact_sha256": "a38c131fcab1116b0cfaf7fcdc952d7d4d73d5979c59a40fa036d57c1ddacb08",
-  "review_note": "Exact production output inventory minus HOMEPAGE_DESIGN.html and HOMEPAGE_DESIGN.md. Historical HTML routes are retained, not newly approved canonical pages. New output routes require separate review; no automatic discovery or allowlist regeneration in CI.",
+  "production_commit": "3d78c267b479690331fd618e2982c51cbdc6da4b",
+  "production_workflow": 42446041160,
+  "production_artifact": 13603981019,
+  "production_artifact_sha256": "373cfebbc05165d03a4c5e34accda58634fdca36a17e36f9fe864656d93c28d6",
+  "review_note": "Owner-authorized Task 2E.1 retirement: exact prior production inventory minus the 48 reviewed HTML outputs and their 45 published Markdown sources. No policy generation from candidate output.",
   "preserved_document_sha256": "7b08606179d29fc090857cb32346e5e03750928b212811b9133938e09f4237ba",
   "canonical_pages": {
     "age-calculator/index.html": "https://everydaydigitalbox.com/age-calculator/index.html",
@@ -106,281 +106,9 @@
     "sitemap.xml"
   ],
   "html": {
-    "AGENTS.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/AGENTS.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "ARCHITECTURE.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/ARCHITECTURE.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "CHANGELOG.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/CHANGELOG.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "CSS_PIPELINE.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/CSS_PIPELINE.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "DECISIONS.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/DECISIONS.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "PROGRESS_TRACKER.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/PROGRESS_TRACKER.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "PROJECT_MASTER_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/PROJECT_MASTER_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "ROADMAP.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/ROADMAP.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "SEO_FOUNDATION.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/SEO_FOUNDATION.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "SESSION_HANDOFF.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/SESSION_HANDOFF.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "TOOL_CONTRACT.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/TOOL_CONTRACT.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "TOOL_DEVELOPMENT_GUIDE.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/TOOL_DEVELOPMENT_GUIDE.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
     "age-calculator/index.html": {
       "canonicals": [
         "https://everydaydigitalbox.com/age-calculator/index.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/BACKLOG_RECONCILIATION.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/BACKLOG_RECONCILIATION.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/CURRENT_STATE.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/CURRENT_STATE.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_10_DELIVERY.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_10_DELIVERY.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_10_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_10_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_11_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_11_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_12_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_12_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_13_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_13_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_14_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_14_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_15_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_15_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_16_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_16_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_17_CONSENT_REVIEW.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_17_CONSENT_REVIEW.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_18_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_18_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_19_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_19_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_20_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_20_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_24_RELEASE_TESTING.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_24_RELEASE_TESTING.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_7_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_7_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_8_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_8_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/TASK_9_DEVELOPMENT_PLAN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/TASK_9_DEVELOPMENT_PLAN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/task22-prototype/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/task22-prototype/"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/task22-public/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/task22-public/"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/task24-public/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/task24-public/"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "audit/task25-public/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/audit/task25-public/"
       ],
       "robots": [],
       "noindex": false,
@@ -914,86 +642,6 @@
       "noindex": false,
       "refresh": []
     },
-    "scripts/DASHBOARD.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/DASHBOARD.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "scripts/WINDOWS_LAUNCHER.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/WINDOWS_LAUNCHER.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "scripts/ci/DESIGN.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/ci/DESIGN.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "scripts/ci/MAIN_BRANCH_PROTECTION.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/ci/MAIN_BRANCH_PROTECTION.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "scripts/ci/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/ci/"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "scripts/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "scripts/public-verification/task21/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/public-verification/task21/"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "scripts/styles/DEPENDENCIES.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/styles/DEPENDENCIES.html"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "scripts/vendor/task21/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/vendor/task21/"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "scripts/vendor/task22/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/scripts/vendor/task22/"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
     "secure-random-number-generator/index.html": {
       "canonicals": [
         "https://everydaydigitalbox.com/secure-random-number-generator/index.html"
@@ -1032,37 +680,6 @@
       ],
       "robots": [],
       "noindex": false,
-      "refresh": []
-    },
-    "templates/index.html": {
-      "canonicals": [
-        "https://everydaydigitalbox.com/templates/"
-      ],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "templates/structured-input.html": {
-      "canonicals": [],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "templates/text-input.html": {
-      "canonicals": [],
-      "robots": [],
-      "noindex": false,
-      "refresh": []
-    },
-    "templates/tool-page.html": {
-      "canonicals": [],
-      "robots": [
-        [
-          "robots",
-          "noindex"
-        ]
-      ],
-      "noindex": true,
       "refresh": []
     },
     "text-cleaner/index.html": {
@@ -1203,31 +820,7 @@
     }
   },
   "output_paths": [
-    "AGENTS.html",
-    "AGENTS.md",
-    "ARCHITECTURE.html",
-    "ARCHITECTURE.md",
-    "CHANGELOG.html",
-    "CHANGELOG.md",
-    "CSS_PIPELINE.html",
-    "CSS_PIPELINE.md",
-    "DECISIONS.html",
-    "DECISIONS.md",
-    "PROGRESS_TRACKER.html",
-    "PROGRESS_TRACKER.md",
-    "PROJECT_MASTER_PLAN.html",
-    "PROJECT_MASTER_PLAN.md",
     "README.md",
-    "ROADMAP.html",
-    "ROADMAP.md",
-    "SEO_FOUNDATION.html",
-    "SEO_FOUNDATION.md",
-    "SESSION_HANDOFF.html",
-    "SESSION_HANDOFF.md",
-    "TOOL_CONTRACT.html",
-    "TOOL_CONTRACT.md",
-    "TOOL_DEVELOPMENT_GUIDE.html",
-    "TOOL_DEVELOPMENT_GUIDE.md",
     "TOOL_REGISTRY.json",
     "age-calculator/README.md",
     "age-calculator/index.html",
@@ -1251,8 +844,6 @@
     "assets/vendor/task22/markdown-source.js",
     "audit/AGE_CALCULATOR_RELEASE_VERIFICATION.json",
     "audit/AGE_CALCULATOR_VERIFICATION.json",
-    "audit/BACKLOG_RECONCILIATION.html",
-    "audit/BACKLOG_RECONCILIATION.md",
     "audit/BASE64_ENCODER_DECODER_RELEASE_VERIFICATION.json",
     "audit/BASE64_ENCODER_DECODER_VERIFICATION.json",
     "audit/BASELINE_VERIFICATION.json",
@@ -1282,8 +873,6 @@
     "audit/CSV_TO_TXT_VERIFICATION.json",
     "audit/CSV_VIEWER_RELEASE_VERIFICATION.json",
     "audit/CSV_VIEWER_VERIFICATION.json",
-    "audit/CURRENT_STATE.html",
-    "audit/CURRENT_STATE.md",
     "audit/DATE_DIFFERENCE_CALCULATOR_RELEASE_VERIFICATION.json",
     "audit/DATE_DIFFERENCE_CALCULATOR_VERIFICATION.json",
     "audit/DISCOUNT_CALCULATOR_RELEASE_VERIFICATION.json",
@@ -1395,43 +984,19 @@
     "audit/SHA256_HASH_CHECKER_VERIFICATION.json",
     "audit/SLUG_GENERATOR_RELEASE_VERIFICATION.json",
     "audit/SLUG_GENERATOR_VERIFICATION.json",
-    "audit/TASK_10_DELIVERY.html",
-    "audit/TASK_10_DELIVERY.md",
-    "audit/TASK_10_DEVELOPMENT_PLAN.html",
-    "audit/TASK_10_DEVELOPMENT_PLAN.md",
-    "audit/TASK_11_DEVELOPMENT_PLAN.html",
-    "audit/TASK_11_DEVELOPMENT_PLAN.md",
-    "audit/TASK_12_DEVELOPMENT_PLAN.html",
-    "audit/TASK_12_DEVELOPMENT_PLAN.md",
-    "audit/TASK_13_DEVELOPMENT_PLAN.html",
-    "audit/TASK_13_DEVELOPMENT_PLAN.md",
-    "audit/TASK_14_DEVELOPMENT_PLAN.html",
-    "audit/TASK_14_DEVELOPMENT_PLAN.md",
-    "audit/TASK_15_DEVELOPMENT_PLAN.html",
-    "audit/TASK_15_DEVELOPMENT_PLAN.md",
-    "audit/TASK_16_DEVELOPMENT_PLAN.html",
-    "audit/TASK_16_DEVELOPMENT_PLAN.md",
     "audit/TASK_17_CANDIDATE.json",
-    "audit/TASK_17_CONSENT_REVIEW.html",
-    "audit/TASK_17_CONSENT_REVIEW.md",
     "audit/TASK_17_DEPLOYMENT.json",
-    "audit/TASK_18_DEVELOPMENT_PLAN.html",
-    "audit/TASK_18_DEVELOPMENT_PLAN.md",
     "audit/TASK_18_DEVELOPMENT_VERIFICATION.json",
     "audit/TASK_18_FINAL_PUBLIC_STATE.json",
     "audit/TASK_18_PUBLIC_RELEASE_VERIFICATION.json",
     "audit/TASK_18_RELEASE_REGRESSION.json",
     "audit/TASK_19_DEPENDENCIES.json",
-    "audit/TASK_19_DEVELOPMENT_PLAN.html",
-    "audit/TASK_19_DEVELOPMENT_PLAN.md",
     "audit/TASK_19_DEVELOPMENT_VERIFICATION.json",
     "audit/TASK_19_FINAL_PUBLIC_STATE.json",
     "audit/TASK_19_PUBLIC_RELEASE_VERIFICATION.json",
     "audit/TASK_19_RELEASE_REGRESSION.json",
     "audit/TASK_20_1_REGRESSION.json",
     "audit/TASK_20_DEPENDENCIES.json",
-    "audit/TASK_20_DEVELOPMENT_PLAN.html",
-    "audit/TASK_20_DEVELOPMENT_PLAN.md",
     "audit/TASK_20_DEVELOPMENT_VERIFICATION.json",
     "audit/TASK_20_PUBLIC_RELEASE_VERIFICATION.json",
     "audit/TASK_20_SCOPE.json",
@@ -1448,18 +1013,10 @@
     "audit/TASK_24_DEVELOPMENT_PLAN.json",
     "audit/TASK_24_DEVELOPMENT_VERIFICATION.json",
     "audit/TASK_24_PUBLIC_RELEASE_VERIFICATION.json",
-    "audit/TASK_24_RELEASE_TESTING.html",
-    "audit/TASK_24_RELEASE_TESTING.md",
     "audit/TASK_24_SECURITY_REVIEW.json",
     "audit/TASK_25_DEVELOPMENT_PLAN.json",
     "audit/TASK_25_DEVELOPMENT_VERIFICATION.json",
     "audit/TASK_25_PUBLIC_RELEASE_VERIFICATION.json",
-    "audit/TASK_7_DEVELOPMENT_PLAN.html",
-    "audit/TASK_7_DEVELOPMENT_PLAN.md",
-    "audit/TASK_8_DEVELOPMENT_PLAN.html",
-    "audit/TASK_8_DEVELOPMENT_PLAN.md",
-    "audit/TASK_9_DEVELOPMENT_PLAN.html",
-    "audit/TASK_9_DEVELOPMENT_PLAN.md",
     "audit/TEXT_DIFFERENCE_CHECKER_RELEASE_VERIFICATION.json",
     "audit/TEXT_DIFFERENCE_CHECKER_VERIFICATION.json",
     "audit/TEXT_REVERSER_RELEASE_VERIFICATION.json",
@@ -1492,37 +1049,29 @@
     "audit/YOUTUBE_THUMBNAIL_PREVIEW_VERIFICATION.json",
     "audit/YOUTUBE_TITLE_CHECKER_RELEASE_VERIFICATION.json",
     "audit/YOUTUBE_TITLE_CHECKER_VERIFICATION.json",
-    "audit/task22-prototype/README.md",
     "audit/task22-prototype/engine.mjs",
     "audit/task22-prototype/hardened-engine.mjs",
     "audit/task22-prototype/hardened-resource-cases.mjs",
-    "audit/task22-prototype/index.html",
     "audit/task22-prototype/isolation-cases.mjs",
     "audit/task22-prototype/prototype-html.txt",
     "audit/task22-prototype/resource-cases.mjs",
     "audit/task22-prototype/security-gate-hardened.txt",
     "audit/task22-prototype/security-gate.txt",
     "audit/task22-prototype/worker.mjs",
-    "audit/task22-public/README.md",
     "audit/task22-public/approved-registry.json",
     "audit/task22-public/browser-transport.mjs",
     "audit/task22-public/functional.test.mjs",
-    "audit/task22-public/index.html",
     "audit/task22-public/isolation.test.mjs",
     "audit/task22-public/public-browser.mjs",
     "audit/task22-public/public-consent.mjs",
     "audit/task22-public/source.py",
-    "audit/task24-public/README.md",
     "audit/task24-public/approved-registry.json",
     "audit/task24-public/browser-transport.mjs",
     "audit/task24-public/functional.test.mjs",
-    "audit/task24-public/index.html",
     "audit/task24-public/public-consent.mjs",
     "audit/task24-public/public.mjs",
     "audit/task24-public/source.py",
-    "audit/task25-public/README.md",
     "audit/task25-public/functional.test.mjs",
-    "audit/task25-public/index.html",
     "audit/task25-public/public-consent.mjs",
     "audit/task25-public/public.mjs",
     "audit/task25-public/source.py",
@@ -1659,22 +1208,11 @@
     "resume-builder/README.md",
     "resume-builder/index.html",
     "robots.txt",
-    "scripts/DASHBOARD.html",
-    "scripts/DASHBOARD.md",
-    "scripts/README.md",
-    "scripts/WINDOWS_LAUNCHER.html",
-    "scripts/WINDOWS_LAUNCHER.md",
     "scripts/build_homepage.py",
     "scripts/build_styles.mjs",
     "scripts/check_project.py",
-    "scripts/ci/DESIGN.html",
-    "scripts/ci/DESIGN.md",
-    "scripts/ci/MAIN_BRANCH_PROTECTION.html",
-    "scripts/ci/MAIN_BRANCH_PROTECTION.md",
-    "scripts/ci/README.md",
     "scripts/ci/browser-path.cjs",
     "scripts/ci/coverage.json",
-    "scripts/ci/index.html",
     "scripts/ci/package-lock.json",
     "scripts/ci/package.json",
     "scripts/ci/preflight.mjs",
@@ -1702,7 +1240,6 @@
     "scripts/homepage-browser.test.mjs",
     "scripts/homepage.test.mjs",
     "scripts/homepage_approval_identity.py",
-    "scripts/index.html",
     "scripts/install_status_shortcut.py",
     "scripts/integrate_tool.py",
     "scripts/plan_tool_batch.py",
@@ -1710,11 +1247,9 @@
     "scripts/project.mjs",
     "scripts/project.test.mjs",
     "scripts/project_status.py",
-    "scripts/public-verification/task21/README.md",
     "scripts/public-verification/task21/browser.mjs",
     "scripts/public-verification/task21/consent.mjs",
     "scripts/public-verification/task21/functional.mjs",
-    "scripts/public-verification/task21/index.html",
     "scripts/public-verification/task21/isolation.mjs",
     "scripts/seo-overlay.mjs",
     "scripts/seo-overlay.test.mjs",
@@ -1723,8 +1258,6 @@
     "scripts/status_launcher.py",
     "scripts/status_launcher.pyw",
     "scripts/styles.test.mjs",
-    "scripts/styles/DEPENDENCIES.html",
-    "scripts/styles/DEPENDENCIES.md",
     "scripts/styles/licenses/tailwindcss-MIT.txt",
     "scripts/styles/package-lock.json",
     "scripts/styles/package.json",
@@ -1744,21 +1277,17 @@
     "scripts/tracking.py",
     "scripts/validate_registry.py",
     "scripts/validate_seo.py",
-    "scripts/vendor/task21/README.md",
     "scripts/vendor/task21/build.mjs",
     "scripts/vendor/task21/css-preflight.mjs",
     "scripts/vendor/task21/css-worker.mjs",
     "scripts/vendor/task21/format-worker.mjs",
-    "scripts/vendor/task21/index.html",
     "scripts/vendor/task21/javascript-worker.mjs",
     "scripts/vendor/task21/markup-core.mjs",
     "scripts/vendor/task21/markup-worker.mjs",
     "scripts/vendor/task21/package.json",
     "scripts/vendor/task21/pnpm-lock.yaml",
-    "scripts/vendor/task22/README.md",
     "scripts/vendor/task22/build.mjs",
     "scripts/vendor/task22/engine.mjs",
-    "scripts/vendor/task22/index.html",
     "scripts/vendor/task22/package.json",
     "scripts/vendor/task22/pnpm-lock.yaml",
     "scripts/vendor/task22/worker.mjs",
@@ -1780,13 +1309,8 @@
     "styles/homepage.js",
     "styles/sources.json",
     "styles/tailwind.input.css",
-    "templates/README.md",
     "templates/fragments/base.css",
     "templates/fragments/tool-ui.js",
-    "templates/index.html",
-    "templates/structured-input.html",
-    "templates/text-input.html",
-    "templates/tool-page.html",
     "tests/helpers/ico_fixture.mjs",
     "tests/helpers/ico_reader.py",
     "tests/test_ci.py",
@@ -2352,6 +1876,7 @@
     "SESSION_HANDOFF.md",
     "TOOL_CONTRACT.md",
     "TOOL_DEVELOPMENT_GUIDE.md",
+    "_publishing/HISTORICAL_CLEANUP.md",
     "_publishing/README.md",
     "age-calculator/README.md",
     "audit/BACKLOG_RECONCILIATION.md",
@@ -2663,5 +2188,912 @@
     "youtube-description-formatter/index.html": "utf8-lf",
     "youtube-thumbnail-preview/index.html": "utf8-lf",
     "youtube-title-checker/index.html": "utf8-lf"
-  }
+  },
+  "retired_routes": [
+    {
+      "html": "AGENTS.html",
+      "source": "AGENTS.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "5953894eff7cd47a21303e233102e48dfe3d240f2de1debf5c08bcefb874b8dd",
+      "removed_outputs": [
+        "AGENTS.html",
+        "AGENTS.md"
+      ],
+      "aliases": [
+        "AGENTS",
+        "AGENTS.html",
+        "AGENTS.md",
+        "AGENTS/index.html"
+      ]
+    },
+    {
+      "html": "ARCHITECTURE.html",
+      "source": "ARCHITECTURE.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "e3ecaf936118084953f9b58d3bff15c87f9c8fedaeb89b0a04d3fa4e2db00c3e",
+      "removed_outputs": [
+        "ARCHITECTURE.html",
+        "ARCHITECTURE.md"
+      ],
+      "aliases": [
+        "ARCHITECTURE",
+        "ARCHITECTURE.html",
+        "ARCHITECTURE.md",
+        "ARCHITECTURE/index.html"
+      ]
+    },
+    {
+      "html": "CHANGELOG.html",
+      "source": "CHANGELOG.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "10c6a41609c73c664a166c4e216b55f77c370fb822f6bbedd524c1242ee74079",
+      "removed_outputs": [
+        "CHANGELOG.html",
+        "CHANGELOG.md"
+      ],
+      "aliases": [
+        "CHANGELOG",
+        "CHANGELOG.html",
+        "CHANGELOG.md",
+        "CHANGELOG/index.html"
+      ]
+    },
+    {
+      "html": "CSS_PIPELINE.html",
+      "source": "CSS_PIPELINE.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "51752e9c5fb965c30cb0f1080e59033d5099a13d00a8a3caebd463d9b9fbc317",
+      "removed_outputs": [
+        "CSS_PIPELINE.html",
+        "CSS_PIPELINE.md"
+      ],
+      "aliases": [
+        "CSS_PIPELINE",
+        "CSS_PIPELINE.html",
+        "CSS_PIPELINE.md",
+        "CSS_PIPELINE/index.html"
+      ]
+    },
+    {
+      "html": "DECISIONS.html",
+      "source": "DECISIONS.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "54f4595302509781c847efe0b2f1adf32912359701b75c8113db479b574e6626",
+      "removed_outputs": [
+        "DECISIONS.html",
+        "DECISIONS.md"
+      ],
+      "aliases": [
+        "DECISIONS",
+        "DECISIONS.html",
+        "DECISIONS.md",
+        "DECISIONS/index.html"
+      ]
+    },
+    {
+      "html": "PROGRESS_TRACKER.html",
+      "source": "PROGRESS_TRACKER.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "85930c6de3a8c27f3c7d577956c2a894857bc1e9190f74c001f60fddc99fbc9f",
+      "removed_outputs": [
+        "PROGRESS_TRACKER.html",
+        "PROGRESS_TRACKER.md"
+      ],
+      "aliases": [
+        "PROGRESS_TRACKER",
+        "PROGRESS_TRACKER.html",
+        "PROGRESS_TRACKER.md",
+        "PROGRESS_TRACKER/index.html"
+      ]
+    },
+    {
+      "html": "PROJECT_MASTER_PLAN.html",
+      "source": "PROJECT_MASTER_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "cf5c618250432c2d8c90f35e61fa6db91191d21f11336f32b31c1c180a7da8b1",
+      "removed_outputs": [
+        "PROJECT_MASTER_PLAN.html",
+        "PROJECT_MASTER_PLAN.md"
+      ],
+      "aliases": [
+        "PROJECT_MASTER_PLAN",
+        "PROJECT_MASTER_PLAN.html",
+        "PROJECT_MASTER_PLAN.md",
+        "PROJECT_MASTER_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "ROADMAP.html",
+      "source": "ROADMAP.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "deddb8ae9388f1557d7fdeb8b2cb875d25e4ef91da869fa5a2e2bc80b57873c1",
+      "removed_outputs": [
+        "ROADMAP.html",
+        "ROADMAP.md"
+      ],
+      "aliases": [
+        "ROADMAP",
+        "ROADMAP.html",
+        "ROADMAP.md",
+        "ROADMAP/index.html"
+      ]
+    },
+    {
+      "html": "SEO_FOUNDATION.html",
+      "source": "SEO_FOUNDATION.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "b721e56dcfd6686a44cca10a7540554159115e8978b95fe19f16fcb87eff9849",
+      "removed_outputs": [
+        "SEO_FOUNDATION.html",
+        "SEO_FOUNDATION.md"
+      ],
+      "aliases": [
+        "SEO_FOUNDATION",
+        "SEO_FOUNDATION.html",
+        "SEO_FOUNDATION.md",
+        "SEO_FOUNDATION/index.html"
+      ]
+    },
+    {
+      "html": "SESSION_HANDOFF.html",
+      "source": "SESSION_HANDOFF.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "26c0eeed2cf16ab4e3cb41f29207d8b375d9b64d643cb84cf4b3e8e527474ee4",
+      "removed_outputs": [
+        "SESSION_HANDOFF.html",
+        "SESSION_HANDOFF.md"
+      ],
+      "aliases": [
+        "SESSION_HANDOFF",
+        "SESSION_HANDOFF.html",
+        "SESSION_HANDOFF.md",
+        "SESSION_HANDOFF/index.html"
+      ]
+    },
+    {
+      "html": "TOOL_CONTRACT.html",
+      "source": "TOOL_CONTRACT.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "1ee6f9dd1c5d1173dacea0915dfc4bdce58ac57240d6403cfd42bb12bd2077a1",
+      "removed_outputs": [
+        "TOOL_CONTRACT.html",
+        "TOOL_CONTRACT.md"
+      ],
+      "aliases": [
+        "TOOL_CONTRACT",
+        "TOOL_CONTRACT.html",
+        "TOOL_CONTRACT.md",
+        "TOOL_CONTRACT/index.html"
+      ]
+    },
+    {
+      "html": "TOOL_DEVELOPMENT_GUIDE.html",
+      "source": "TOOL_DEVELOPMENT_GUIDE.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "8fff9b5a8a33160f9ea6ace6d0e6fed5d7d3a4f3c27956735855836f54f39f9a",
+      "removed_outputs": [
+        "TOOL_DEVELOPMENT_GUIDE.html",
+        "TOOL_DEVELOPMENT_GUIDE.md"
+      ],
+      "aliases": [
+        "TOOL_DEVELOPMENT_GUIDE",
+        "TOOL_DEVELOPMENT_GUIDE.html",
+        "TOOL_DEVELOPMENT_GUIDE.md",
+        "TOOL_DEVELOPMENT_GUIDE/index.html"
+      ]
+    },
+    {
+      "html": "audit/BACKLOG_RECONCILIATION.html",
+      "source": "audit/BACKLOG_RECONCILIATION.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "9e48cdbf8822b22362bc60a13144b9fd0b52955e7d4cba73777a5f0c66be65c4",
+      "removed_outputs": [
+        "audit/BACKLOG_RECONCILIATION.html",
+        "audit/BACKLOG_RECONCILIATION.md"
+      ],
+      "aliases": [
+        "audit/BACKLOG_RECONCILIATION",
+        "audit/BACKLOG_RECONCILIATION.html",
+        "audit/BACKLOG_RECONCILIATION.md",
+        "audit/BACKLOG_RECONCILIATION/index.html"
+      ]
+    },
+    {
+      "html": "audit/CURRENT_STATE.html",
+      "source": "audit/CURRENT_STATE.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "973be11801400865a99ea5fe03ac81e0136579c40cc30dad4bf90cabf9b0a84e",
+      "removed_outputs": [
+        "audit/CURRENT_STATE.html",
+        "audit/CURRENT_STATE.md"
+      ],
+      "aliases": [
+        "audit/CURRENT_STATE",
+        "audit/CURRENT_STATE.html",
+        "audit/CURRENT_STATE.md",
+        "audit/CURRENT_STATE/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_10_DELIVERY.html",
+      "source": "audit/TASK_10_DELIVERY.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "6fb148198be02aeabf74a427606b9cfd2265f6d718095a5baac31edf21a8bee5",
+      "removed_outputs": [
+        "audit/TASK_10_DELIVERY.html",
+        "audit/TASK_10_DELIVERY.md"
+      ],
+      "aliases": [
+        "audit/TASK_10_DELIVERY",
+        "audit/TASK_10_DELIVERY.html",
+        "audit/TASK_10_DELIVERY.md",
+        "audit/TASK_10_DELIVERY/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_10_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_10_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "d947d8f882543494e3ceddcc6fe8ee0231a8a31fae9719bfa20aab1443733864",
+      "removed_outputs": [
+        "audit/TASK_10_DEVELOPMENT_PLAN.html",
+        "audit/TASK_10_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_10_DEVELOPMENT_PLAN",
+        "audit/TASK_10_DEVELOPMENT_PLAN.html",
+        "audit/TASK_10_DEVELOPMENT_PLAN.md",
+        "audit/TASK_10_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_11_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_11_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "050b0ad2612dca046be938dfadb68c6aa57b54bfdca969876c5e14c3c756cc8e",
+      "removed_outputs": [
+        "audit/TASK_11_DEVELOPMENT_PLAN.html",
+        "audit/TASK_11_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_11_DEVELOPMENT_PLAN",
+        "audit/TASK_11_DEVELOPMENT_PLAN.html",
+        "audit/TASK_11_DEVELOPMENT_PLAN.md",
+        "audit/TASK_11_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_12_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_12_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "575598063f4e04ebc69d51e7fbaff07defa21625c2a41e9d257638ca78740314",
+      "removed_outputs": [
+        "audit/TASK_12_DEVELOPMENT_PLAN.html",
+        "audit/TASK_12_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_12_DEVELOPMENT_PLAN",
+        "audit/TASK_12_DEVELOPMENT_PLAN.html",
+        "audit/TASK_12_DEVELOPMENT_PLAN.md",
+        "audit/TASK_12_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_13_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_13_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "c6b3d4a7e941ebb42d28ac3b0c6c6afefe85c46256ae700280135a301581b546",
+      "removed_outputs": [
+        "audit/TASK_13_DEVELOPMENT_PLAN.html",
+        "audit/TASK_13_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_13_DEVELOPMENT_PLAN",
+        "audit/TASK_13_DEVELOPMENT_PLAN.html",
+        "audit/TASK_13_DEVELOPMENT_PLAN.md",
+        "audit/TASK_13_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_14_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_14_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "400785f07d9c081c3d9c1fecc4b787d7fb27a07735f91fa0d6fe15bf9044364c",
+      "removed_outputs": [
+        "audit/TASK_14_DEVELOPMENT_PLAN.html",
+        "audit/TASK_14_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_14_DEVELOPMENT_PLAN",
+        "audit/TASK_14_DEVELOPMENT_PLAN.html",
+        "audit/TASK_14_DEVELOPMENT_PLAN.md",
+        "audit/TASK_14_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_15_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_15_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "fa14ce8da0eacba84cf90931a4087fbc5013068047338ace52e8cadc7ab55e7a",
+      "removed_outputs": [
+        "audit/TASK_15_DEVELOPMENT_PLAN.html",
+        "audit/TASK_15_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_15_DEVELOPMENT_PLAN",
+        "audit/TASK_15_DEVELOPMENT_PLAN.html",
+        "audit/TASK_15_DEVELOPMENT_PLAN.md",
+        "audit/TASK_15_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_16_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_16_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "87a764d3d5d1d511a3b811578198af685052b7c62876d46928acef2d9546e625",
+      "removed_outputs": [
+        "audit/TASK_16_DEVELOPMENT_PLAN.html",
+        "audit/TASK_16_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_16_DEVELOPMENT_PLAN",
+        "audit/TASK_16_DEVELOPMENT_PLAN.html",
+        "audit/TASK_16_DEVELOPMENT_PLAN.md",
+        "audit/TASK_16_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_17_CONSENT_REVIEW.html",
+      "source": "audit/TASK_17_CONSENT_REVIEW.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "ec01b6f1f4034a2fa8e54e23da24a5bf75dd9e65f4401567b3dfcf6d2e138d91",
+      "removed_outputs": [
+        "audit/TASK_17_CONSENT_REVIEW.html",
+        "audit/TASK_17_CONSENT_REVIEW.md"
+      ],
+      "aliases": [
+        "audit/TASK_17_CONSENT_REVIEW",
+        "audit/TASK_17_CONSENT_REVIEW.html",
+        "audit/TASK_17_CONSENT_REVIEW.md",
+        "audit/TASK_17_CONSENT_REVIEW/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_18_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_18_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "62ced7bb26c02aa402145687c87e397183d76926e92bb30d1f9cf98fc19e0cce",
+      "removed_outputs": [
+        "audit/TASK_18_DEVELOPMENT_PLAN.html",
+        "audit/TASK_18_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_18_DEVELOPMENT_PLAN",
+        "audit/TASK_18_DEVELOPMENT_PLAN.html",
+        "audit/TASK_18_DEVELOPMENT_PLAN.md",
+        "audit/TASK_18_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_19_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_19_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "6f237e518e82297de9820bbe1e148d72436f2fe5d9e34b0d9a77ef3d7af183b9",
+      "removed_outputs": [
+        "audit/TASK_19_DEVELOPMENT_PLAN.html",
+        "audit/TASK_19_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_19_DEVELOPMENT_PLAN",
+        "audit/TASK_19_DEVELOPMENT_PLAN.html",
+        "audit/TASK_19_DEVELOPMENT_PLAN.md",
+        "audit/TASK_19_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_20_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_20_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "3c403cd3cf56b3d151373131daa8cc2d1f537f1a2370950ee8c5db33dad8b756",
+      "removed_outputs": [
+        "audit/TASK_20_DEVELOPMENT_PLAN.html",
+        "audit/TASK_20_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_20_DEVELOPMENT_PLAN",
+        "audit/TASK_20_DEVELOPMENT_PLAN.html",
+        "audit/TASK_20_DEVELOPMENT_PLAN.md",
+        "audit/TASK_20_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_24_RELEASE_TESTING.html",
+      "source": "audit/TASK_24_RELEASE_TESTING.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "b6b5bef6e407484464b5a0a94bdc6d8740d5260449731e61d3783cabef5bd7c5",
+      "removed_outputs": [
+        "audit/TASK_24_RELEASE_TESTING.html",
+        "audit/TASK_24_RELEASE_TESTING.md"
+      ],
+      "aliases": [
+        "audit/TASK_24_RELEASE_TESTING",
+        "audit/TASK_24_RELEASE_TESTING.html",
+        "audit/TASK_24_RELEASE_TESTING.md",
+        "audit/TASK_24_RELEASE_TESTING/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_7_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_7_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "9ce904a5261d8c410f812d3c4d8a3aabbd5f6412aec99a6cb80448c958685bdf",
+      "removed_outputs": [
+        "audit/TASK_7_DEVELOPMENT_PLAN.html",
+        "audit/TASK_7_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_7_DEVELOPMENT_PLAN",
+        "audit/TASK_7_DEVELOPMENT_PLAN.html",
+        "audit/TASK_7_DEVELOPMENT_PLAN.md",
+        "audit/TASK_7_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_8_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_8_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "b137ae4c13f5137f5d0fca9a164d02580711d71651452000e099c6e9578c61bf",
+      "removed_outputs": [
+        "audit/TASK_8_DEVELOPMENT_PLAN.html",
+        "audit/TASK_8_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_8_DEVELOPMENT_PLAN",
+        "audit/TASK_8_DEVELOPMENT_PLAN.html",
+        "audit/TASK_8_DEVELOPMENT_PLAN.md",
+        "audit/TASK_8_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/TASK_9_DEVELOPMENT_PLAN.html",
+      "source": "audit/TASK_9_DEVELOPMENT_PLAN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "560d27c3423332a4d33670e6698b990614a83ef9b532273283f700f40da1de30",
+      "removed_outputs": [
+        "audit/TASK_9_DEVELOPMENT_PLAN.html",
+        "audit/TASK_9_DEVELOPMENT_PLAN.md"
+      ],
+      "aliases": [
+        "audit/TASK_9_DEVELOPMENT_PLAN",
+        "audit/TASK_9_DEVELOPMENT_PLAN.html",
+        "audit/TASK_9_DEVELOPMENT_PLAN.md",
+        "audit/TASK_9_DEVELOPMENT_PLAN/index.html"
+      ]
+    },
+    {
+      "html": "audit/task22-prototype/index.html",
+      "source": "audit/task22-prototype/README.md",
+      "kind": "Markdown README index",
+      "classification": "internal documentation/template",
+      "source_sha256": "dbe25d8f51921c8eaff058055a508748145721e31ea75dcb9b5bca674e24c010",
+      "removed_outputs": [
+        "audit/task22-prototype/README.md",
+        "audit/task22-prototype/index.html"
+      ],
+      "aliases": [
+        "audit/task22-prototype/",
+        "audit/task22-prototype/README.md",
+        "audit/task22-prototype/index",
+        "audit/task22-prototype/index.html"
+      ]
+    },
+    {
+      "html": "audit/task22-public/index.html",
+      "source": "audit/task22-public/README.md",
+      "kind": "Markdown README index",
+      "classification": "historical verification guide",
+      "source_sha256": "fbd94dc3c553c2a56dcc0fdc6f4934896c4b15e469db0e150aa6d83c0e7c0e18",
+      "removed_outputs": [
+        "audit/task22-public/README.md",
+        "audit/task22-public/index.html"
+      ],
+      "aliases": [
+        "audit/task22-public/",
+        "audit/task22-public/README.md",
+        "audit/task22-public/index",
+        "audit/task22-public/index.html"
+      ]
+    },
+    {
+      "html": "audit/task24-public/index.html",
+      "source": "audit/task24-public/README.md",
+      "kind": "Markdown README index",
+      "classification": "historical verification guide",
+      "source_sha256": "9e013ca46e1ba90e130bce42b0354fa31bd211fc67d70ea0ba7e5220f367d639",
+      "removed_outputs": [
+        "audit/task24-public/README.md",
+        "audit/task24-public/index.html"
+      ],
+      "aliases": [
+        "audit/task24-public/",
+        "audit/task24-public/README.md",
+        "audit/task24-public/index",
+        "audit/task24-public/index.html"
+      ]
+    },
+    {
+      "html": "audit/task25-public/index.html",
+      "source": "audit/task25-public/README.md",
+      "kind": "Markdown README index",
+      "classification": "historical verification guide",
+      "source_sha256": "fb1e2bfeb1d3fab0cbb28b8b53309ae95b40d1c6e464c836112b91c5e6c0d37a",
+      "removed_outputs": [
+        "audit/task25-public/README.md",
+        "audit/task25-public/index.html"
+      ],
+      "aliases": [
+        "audit/task25-public/",
+        "audit/task25-public/README.md",
+        "audit/task25-public/index",
+        "audit/task25-public/index.html"
+      ]
+    },
+    {
+      "html": "scripts/DASHBOARD.html",
+      "source": "scripts/DASHBOARD.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "25c3468ee01ce2e95b29e96518befa494edc38e76e6efa4115bfe3e8ec39dcb8",
+      "removed_outputs": [
+        "scripts/DASHBOARD.html",
+        "scripts/DASHBOARD.md"
+      ],
+      "aliases": [
+        "scripts/DASHBOARD",
+        "scripts/DASHBOARD.html",
+        "scripts/DASHBOARD.md",
+        "scripts/DASHBOARD/index.html"
+      ]
+    },
+    {
+      "html": "scripts/WINDOWS_LAUNCHER.html",
+      "source": "scripts/WINDOWS_LAUNCHER.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "13364bef14ffcc8a04789b861a4cf47a5cba706aa885eecf98a4d95defc94072",
+      "removed_outputs": [
+        "scripts/WINDOWS_LAUNCHER.html",
+        "scripts/WINDOWS_LAUNCHER.md"
+      ],
+      "aliases": [
+        "scripts/WINDOWS_LAUNCHER",
+        "scripts/WINDOWS_LAUNCHER.html",
+        "scripts/WINDOWS_LAUNCHER.md",
+        "scripts/WINDOWS_LAUNCHER/index.html"
+      ]
+    },
+    {
+      "html": "scripts/ci/DESIGN.html",
+      "source": "scripts/ci/DESIGN.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "7f88151a22dd1a7ebe9fd583c0c1edcfac3160311babfa3640b658a80d4242b0",
+      "removed_outputs": [
+        "scripts/ci/DESIGN.html",
+        "scripts/ci/DESIGN.md"
+      ],
+      "aliases": [
+        "scripts/ci/DESIGN",
+        "scripts/ci/DESIGN.html",
+        "scripts/ci/DESIGN.md",
+        "scripts/ci/DESIGN/index.html"
+      ]
+    },
+    {
+      "html": "scripts/ci/MAIN_BRANCH_PROTECTION.html",
+      "source": "scripts/ci/MAIN_BRANCH_PROTECTION.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "078773666eca2a1b1f6d4a0bcaa59b9af046fc7fce62b5e36572a7f3cd0463ea",
+      "removed_outputs": [
+        "scripts/ci/MAIN_BRANCH_PROTECTION.html",
+        "scripts/ci/MAIN_BRANCH_PROTECTION.md"
+      ],
+      "aliases": [
+        "scripts/ci/MAIN_BRANCH_PROTECTION",
+        "scripts/ci/MAIN_BRANCH_PROTECTION.html",
+        "scripts/ci/MAIN_BRANCH_PROTECTION.md",
+        "scripts/ci/MAIN_BRANCH_PROTECTION/index.html"
+      ]
+    },
+    {
+      "html": "scripts/ci/index.html",
+      "source": "scripts/ci/README.md",
+      "kind": "Markdown README index",
+      "classification": "internal documentation/template",
+      "source_sha256": "a469c677ac9fd8f1209b5e86fd12820597ae13d2141a672696a32fca5e541c4c",
+      "removed_outputs": [
+        "scripts/ci/README.md",
+        "scripts/ci/index.html"
+      ],
+      "aliases": [
+        "scripts/ci/",
+        "scripts/ci/README.md",
+        "scripts/ci/index",
+        "scripts/ci/index.html"
+      ]
+    },
+    {
+      "html": "scripts/index.html",
+      "source": "scripts/README.md",
+      "kind": "Markdown README index",
+      "classification": "internal documentation/template",
+      "source_sha256": "a6b697ba2ec18433efe5fb889bb76ce0404e5b8081f4dc4cecf6446da2f37397",
+      "removed_outputs": [
+        "scripts/README.md",
+        "scripts/index.html"
+      ],
+      "aliases": [
+        "scripts/",
+        "scripts/README.md",
+        "scripts/index",
+        "scripts/index.html"
+      ]
+    },
+    {
+      "html": "scripts/public-verification/task21/index.html",
+      "source": "scripts/public-verification/task21/README.md",
+      "kind": "Markdown README index",
+      "classification": "historical verification guide",
+      "source_sha256": "eca2c05985bdc045f9d82aaeacd44e16a66c423117f45da7d47dfe77c0c090e3",
+      "removed_outputs": [
+        "scripts/public-verification/task21/README.md",
+        "scripts/public-verification/task21/index.html"
+      ],
+      "aliases": [
+        "scripts/public-verification/task21/",
+        "scripts/public-verification/task21/README.md",
+        "scripts/public-verification/task21/index",
+        "scripts/public-verification/task21/index.html"
+      ]
+    },
+    {
+      "html": "scripts/styles/DEPENDENCIES.html",
+      "source": "scripts/styles/DEPENDENCIES.md",
+      "kind": "Markdown to HTML",
+      "classification": "internal documentation/template",
+      "source_sha256": "f9800b813eee8221b14d9c8e570457ad0eb313a1a2a826a27764c5f3f1c5e3af",
+      "removed_outputs": [
+        "scripts/styles/DEPENDENCIES.html",
+        "scripts/styles/DEPENDENCIES.md"
+      ],
+      "aliases": [
+        "scripts/styles/DEPENDENCIES",
+        "scripts/styles/DEPENDENCIES.html",
+        "scripts/styles/DEPENDENCIES.md",
+        "scripts/styles/DEPENDENCIES/index.html"
+      ]
+    },
+    {
+      "html": "scripts/vendor/task21/index.html",
+      "source": "scripts/vendor/task21/README.md",
+      "kind": "Markdown README index",
+      "classification": "internal documentation/template",
+      "source_sha256": "c6d2e511e95a3380ec9b11d9ea25f0c0812c3f536c955d25e85ccf821b3ea473",
+      "removed_outputs": [
+        "scripts/vendor/task21/README.md",
+        "scripts/vendor/task21/index.html"
+      ],
+      "aliases": [
+        "scripts/vendor/task21/",
+        "scripts/vendor/task21/README.md",
+        "scripts/vendor/task21/index",
+        "scripts/vendor/task21/index.html"
+      ]
+    },
+    {
+      "html": "scripts/vendor/task22/index.html",
+      "source": "scripts/vendor/task22/README.md",
+      "kind": "Markdown README index",
+      "classification": "internal documentation/template",
+      "source_sha256": "7d54b68a3bb89c2451a979d9f0a5435854797876c76c83dec4d3d4e15dca700d",
+      "removed_outputs": [
+        "scripts/vendor/task22/README.md",
+        "scripts/vendor/task22/index.html"
+      ],
+      "aliases": [
+        "scripts/vendor/task22/",
+        "scripts/vendor/task22/README.md",
+        "scripts/vendor/task22/index",
+        "scripts/vendor/task22/index.html"
+      ]
+    },
+    {
+      "html": "templates/index.html",
+      "source": "templates/README.md",
+      "kind": "Markdown README index",
+      "classification": "internal documentation/template",
+      "source_sha256": "352d011c09afa2fedcb169ee37f442a62a7c6891409241f427bc2f55b597774f",
+      "removed_outputs": [
+        "templates/README.md",
+        "templates/index.html"
+      ],
+      "aliases": [
+        "templates/",
+        "templates/README.md",
+        "templates/index",
+        "templates/index.html"
+      ]
+    },
+    {
+      "html": "templates/structured-input.html",
+      "source": "templates/structured-input.html",
+      "kind": "explicit HTML copy",
+      "classification": "internal documentation/template",
+      "source_sha256": "c0bcdb97e5ba89e4c823beb31c1b191cfdb9d3b7db61b67ab3dde2230a0581b4",
+      "removed_outputs": [
+        "templates/structured-input.html"
+      ],
+      "aliases": [
+        "templates/structured-input",
+        "templates/structured-input.html",
+        "templates/structured-input/index.html"
+      ]
+    },
+    {
+      "html": "templates/text-input.html",
+      "source": "templates/text-input.html",
+      "kind": "explicit HTML copy",
+      "classification": "internal documentation/template",
+      "source_sha256": "d4e0e25ca60e9fb82c764a2c699665d81cf30db20e226867db4acd0d29fee6ab",
+      "removed_outputs": [
+        "templates/text-input.html"
+      ],
+      "aliases": [
+        "templates/text-input",
+        "templates/text-input.html",
+        "templates/text-input/index.html"
+      ]
+    },
+    {
+      "html": "templates/tool-page.html",
+      "source": "templates/tool-page.html",
+      "kind": "explicit HTML copy",
+      "classification": "internal documentation/template",
+      "source_sha256": "16383ba5580564540346dc3accbec896324a1df3a98597b296052d0a9f609607",
+      "removed_outputs": [
+        "templates/tool-page.html"
+      ],
+      "aliases": [
+        "templates/tool-page",
+        "templates/tool-page.html",
+        "templates/tool-page/index.html"
+      ]
+    }
+  ],
+  "retired_output_paths": [
+    "AGENTS.html",
+    "AGENTS.md",
+    "ARCHITECTURE.html",
+    "ARCHITECTURE.md",
+    "CHANGELOG.html",
+    "CHANGELOG.md",
+    "CSS_PIPELINE.html",
+    "CSS_PIPELINE.md",
+    "DECISIONS.html",
+    "DECISIONS.md",
+    "PROGRESS_TRACKER.html",
+    "PROGRESS_TRACKER.md",
+    "PROJECT_MASTER_PLAN.html",
+    "PROJECT_MASTER_PLAN.md",
+    "ROADMAP.html",
+    "ROADMAP.md",
+    "SEO_FOUNDATION.html",
+    "SEO_FOUNDATION.md",
+    "SESSION_HANDOFF.html",
+    "SESSION_HANDOFF.md",
+    "TOOL_CONTRACT.html",
+    "TOOL_CONTRACT.md",
+    "TOOL_DEVELOPMENT_GUIDE.html",
+    "TOOL_DEVELOPMENT_GUIDE.md",
+    "audit/BACKLOG_RECONCILIATION.html",
+    "audit/BACKLOG_RECONCILIATION.md",
+    "audit/CURRENT_STATE.html",
+    "audit/CURRENT_STATE.md",
+    "audit/TASK_10_DELIVERY.html",
+    "audit/TASK_10_DELIVERY.md",
+    "audit/TASK_10_DEVELOPMENT_PLAN.html",
+    "audit/TASK_10_DEVELOPMENT_PLAN.md",
+    "audit/TASK_11_DEVELOPMENT_PLAN.html",
+    "audit/TASK_11_DEVELOPMENT_PLAN.md",
+    "audit/TASK_12_DEVELOPMENT_PLAN.html",
+    "audit/TASK_12_DEVELOPMENT_PLAN.md",
+    "audit/TASK_13_DEVELOPMENT_PLAN.html",
+    "audit/TASK_13_DEVELOPMENT_PLAN.md",
+    "audit/TASK_14_DEVELOPMENT_PLAN.html",
+    "audit/TASK_14_DEVELOPMENT_PLAN.md",
+    "audit/TASK_15_DEVELOPMENT_PLAN.html",
+    "audit/TASK_15_DEVELOPMENT_PLAN.md",
+    "audit/TASK_16_DEVELOPMENT_PLAN.html",
+    "audit/TASK_16_DEVELOPMENT_PLAN.md",
+    "audit/TASK_17_CONSENT_REVIEW.html",
+    "audit/TASK_17_CONSENT_REVIEW.md",
+    "audit/TASK_18_DEVELOPMENT_PLAN.html",
+    "audit/TASK_18_DEVELOPMENT_PLAN.md",
+    "audit/TASK_19_DEVELOPMENT_PLAN.html",
+    "audit/TASK_19_DEVELOPMENT_PLAN.md",
+    "audit/TASK_20_DEVELOPMENT_PLAN.html",
+    "audit/TASK_20_DEVELOPMENT_PLAN.md",
+    "audit/TASK_24_RELEASE_TESTING.html",
+    "audit/TASK_24_RELEASE_TESTING.md",
+    "audit/TASK_7_DEVELOPMENT_PLAN.html",
+    "audit/TASK_7_DEVELOPMENT_PLAN.md",
+    "audit/TASK_8_DEVELOPMENT_PLAN.html",
+    "audit/TASK_8_DEVELOPMENT_PLAN.md",
+    "audit/TASK_9_DEVELOPMENT_PLAN.html",
+    "audit/TASK_9_DEVELOPMENT_PLAN.md",
+    "audit/task22-prototype/README.md",
+    "audit/task22-prototype/index.html",
+    "audit/task22-public/README.md",
+    "audit/task22-public/index.html",
+    "audit/task24-public/README.md",
+    "audit/task24-public/index.html",
+    "audit/task25-public/README.md",
+    "audit/task25-public/index.html",
+    "scripts/DASHBOARD.html",
+    "scripts/DASHBOARD.md",
+    "scripts/README.md",
+    "scripts/WINDOWS_LAUNCHER.html",
+    "scripts/WINDOWS_LAUNCHER.md",
+    "scripts/ci/DESIGN.html",
+    "scripts/ci/DESIGN.md",
+    "scripts/ci/MAIN_BRANCH_PROTECTION.html",
+    "scripts/ci/MAIN_BRANCH_PROTECTION.md",
+    "scripts/ci/README.md",
+    "scripts/ci/index.html",
+    "scripts/index.html",
+    "scripts/public-verification/task21/README.md",
+    "scripts/public-verification/task21/index.html",
+    "scripts/styles/DEPENDENCIES.html",
+    "scripts/styles/DEPENDENCIES.md",
+    "scripts/vendor/task21/README.md",
+    "scripts/vendor/task21/index.html",
+    "scripts/vendor/task22/README.md",
+    "scripts/vendor/task22/index.html",
+    "templates/README.md",
+    "templates/index.html",
+    "templates/structured-input.html",
+    "templates/text-input.html",
+    "templates/tool-page.html"
+  ]
 }
