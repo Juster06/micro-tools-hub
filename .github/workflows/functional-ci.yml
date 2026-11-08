@@ -71,6 +71,26 @@ jobs:
         with:
           node-version: '24.22.1'
           package-manager-cache: false
+      # Same action revision and image as production Pages workflow 42440717015.
+      # Only builds an artifact; no Pages deployment permission or deploy action.
+      - name: Build actual GitHub Pages output
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1, image v1.0.13
+        with:
+          source: ./
+          destination: ./reports/pages-site
+          build_revision: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Require approved generated Pages output
+        run: python _publishing/verify_site.py --site reports/pages-site --report reports/ci/pages-output.json
+      - name: Retain generated Pages evidence (never deploy)
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pages-publishing-verification
+          path: |
+            reports/ci/pages-output.json
+            reports/pages-site/
+          if-no-files-found: error
+          retention-days: 7
       - name: Install locked development-only CSS compiler
         run: npm ci --prefix scripts/styles --ignore-scripts --no-audit --no-fund
       - name: Execute required node-regression scopes

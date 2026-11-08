@@ -1,0 +1,13 @@
+# Jekyll 3 replaces this array. Retain its defaults and Pages' CNAME exclusion.
+# Keep the original internal document in Git, absent from every output route.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - CNAME
+  - HOMEPAGE_DESIGN.md
+  - tests/test_pages_output.py

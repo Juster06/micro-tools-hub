@@ -1,5 +1,32 @@
 # Session handoff
 
+## Current checkpoint — SEO Task 2D.2 publishing correction
+
+Starting main is `1634bff8449db3a5398f5e0c1d070098b3cd2f16`; PR #49 is merged.
+Task 2D.1 verified the homepage, 89 canonical pages, 87 tools and scoped LIVE-03
+resolution, but found SEO-2D1-01: Pages renders internal HOMEPAGE_DESIGN.md.
+That production blocker remains OPEN until separately authorized deployment
+and independent public verification. The older checkpoints below are history.
+
+Branch `seo/task-2d2-pages-exclusion` excludes only the offending document and
+new internal test, retaining Jekyll 3 defaults and the Pages CNAME exclusion.
+The document remains byte-for-byte in Git. New `_publishing/` controls verify
+real Jekyll output, preserve historical routes, and bind the current source
+without rewriting any frozen Task 2A/2C/2D/consent or release audit.
+See `_publishing/README.md` for rationale, validation and rollback.
+
+The 34 existing worktrees, two unrelated handoff edits and prior external
+reports are preserved; this correction uses one additional worktree.
+Performance timing is INCONCLUSIVE / DEFERRED; Image Compressor timing remains
+an UNRESOLVED RELIABILITY OBSERVATION. No timing assertion is changed.
+
+**Next major task:** Review this corrective PR and its four required checks.
+Do not merge or deploy without separate owner authorization. After authorized
+deployment, independently verify the three removed routes, all canonical pages,
+discovery files, tools, homepage, consent and LIVE-03. Task 2D is not complete
+before that verification. Task 26 remains paused; Task 2E is not authorized.
+The external development report contains actual executed results and commit ID.
+
 ## Current checkpoint — SEO Task 2D homepage development
 
 Starting main `20ecae29a1f20d7903946d6cf00c3897307ee766` is publicly verified
