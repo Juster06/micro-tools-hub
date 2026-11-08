@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-08 — SEO Task 2D development proposal
+
+- Add Option B homepage, accessible mobile disclosure, local search and eight
+  reviewed presentation groups for the existing 87 released destinations.
+- Move homepage consent controls into document flow with enlarged-text wrapping;
+  keep the consent runtime, analytics ID and all tool logic unchanged.
+- Add deterministic homepage generation, new exact source approval and regression
+  checks. Preserve frozen evidence and the existing static-CSS pipeline.
+- Development only; no merge, deployment, measured performance or WCAG claim.
+
+
 ## 2026-11-07 — SEO Task 2C development candidate (not deployed)
 
 - Introduce a locked development-only Tailwind CLI build, explicit scanner input,

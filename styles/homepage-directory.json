@@ -1,0 +1,1594 @@
+{
+  "schema_version": 1,
+  "design": "Reviewed SEO Task 2B Option B; presentation categories only",
+  "categories": [
+    {
+      "id": "text-writing",
+      "label": "Text & writing",
+      "scope": "Clean, compare and inspect text.",
+      "count": 11,
+      "homepage_anchor": "https://everydaydigitalbox.com/index.html#category-text-writing",
+      "tool_ids": [
+        "text-cleaner",
+        "case-converter",
+        "duplicate-line-remover",
+        "text-difference-checker",
+        "text-sorter",
+        "text-reverser",
+        "find-and-replace",
+        "slug-generator",
+        "list-comparison-set-operations",
+        "word-frequency-analyzer",
+        "unicode-inspector"
+      ]
+    },
+    {
+      "id": "csv-spreadsheets",
+      "label": "CSV & spreadsheets",
+      "scope": "Inspect tables, prepare CSV data and build or inspect Excel formulas.",
+      "count": 10,
+      "homepage_anchor": "https://everydaydigitalbox.com/index.html#category-csv-spreadsheets",
+      "tool_ids": [
+        "excel-sandbox",
+        "csv-json-converter",
+        "csv-column-extractor",
+        "duplicate-row-finder",
+        "csv-data-cleaner",
+        "csv-merger",
+        "csv-viewer",
+        "excel-formula-generator",
+        "csv-to-txt",
+        "json-to-txt"
+      ]
+    },
+    {
+      "id": "developer",
+      "label": "Developer tools",
+      "scope": "Format code, inspect URLs and encodings, and work with design and network values.",
+      "count": 17,
+      "homepage_anchor": "https://everydaydigitalbox.com/index.html#category-developer",
+      "tool_ids": [
+        "json-formatter",
+        "base64-encoder-decoder",
+        "url-encoder-decoder",
+        "uuid-generator",
+        "regex-tester",
+        "html-formatter",
+        "css-minifier",
+        "javascript-minifier",
+        "timestamp-converter",
+        "markdown-converter-previewer",
+        "html-to-markdown",
+        "html-previewer",
+        "number-base-converter",
+        "url-inspector-query-builder",
+        "color-contrast-checker",
+        "ipv4-subnet-calculator",
+        "css-gradient-generator"
+      ]
+    },
+    {
+      "id": "images",
+      "label": "Images",
+      "scope": "Resize, crop, convert and inspect local images.",
+      "count": 9,
+      "homepage_anchor": "https://everydaydigitalbox.com/index.html#category-images",
+      "tool_ids": [
+        "image-compressor",
+        "image-resizer",
+        "image-format-converter",
+        "image-cropper",
+        "image-rotator",
+        "image-watermark",
+        "image-color-picker",
+        "passport-photo-layout-maker",
+        "png-to-ico"
+      ]
+    },
+    {
+      "id": "calculators",
+      "label": "Calculators",
+      "scope": "Work with numbers, dates, durations, units and explicit financial assumptions.",
+      "count": 13,
+      "homepage_anchor": "https://everydaydigitalbox.com/index.html#category-calculators",
+      "tool_ids": [
+        "percentage-calculator",
+        "percentage-change-calculator",
+        "vat-calculator",
+        "discount-calculator",
+        "age-calculator",
+        "date-difference-calculator",
+        "working-days-calculator",
+        "loan-repayment-calculator",
+        "profit-margin-calculator",
+        "compound-interest-calculator",
+        "file-size-converter",
+        "unit-converter",
+        "duration-calculator"
+      ]
+    },
+    {
+      "id": "social-media",
+      "label": "Social media",
+      "scope": "Prepare captions, bios, hashtags and manual publishing plans.",
+      "count": 10,
+      "homepage_anchor": "https://everydaydigitalbox.com/index.html#category-social-media",
+      "tool_ids": [
+        "social-counter",
+        "hashtag-organizer",
+        "youtube-title-checker",
+        "youtube-description-formatter",
+        "instagram-bio-formatter",
+        "emoji-picker",
+        "hashtag-counter",
+        "youtube-thumbnail-preview",
+        "posting-calendar-generator",
+        "username-generator"
+      ]
+    },
+    {
+      "id": "security-files",
+      "label": "Passwords & file checks",
+      "scope": "Generate secrets locally and inspect file bytes or hashes; not a malware scanner.",
+      "count": 6,
+      "homepage_anchor": "https://everydaydigitalbox.com/index.html#category-security-files",
+      "tool_ids": [
+        "sha256-hash-checker",
+        "password-generator",
+        "secure-random-number-generator",
+        "file-signature-inspector",
+        "passphrase-generator",
+        "file-byte-comparator"
+      ]
+    },
+    {
+      "id": "everyday",
+      "label": "Everyday tools",
+      "scope": "Plan tasks, manage timers, prepare printable documents and find a streaming destination.",
+      "count": 11,
+      "homepage_anchor": "https://everydaydigitalbox.com/index.html#category-everyday",
+      "tool_ids": [
+        "streaming-roulette",
+        "qr-code-generator",
+        "pomodoro-timer",
+        "countdown-timer",
+        "random-name-picker",
+        "local-to-do-list",
+        "invoice-generator",
+        "resume-builder",
+        "meeting-agenda-generator",
+        "printable-calendar-generator",
+        "batch-filename-planner"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "social-counter",
+      "name": "Social Media Character Counter & Live Previewer",
+      "current_html_title": "Social Media Character Counter & Live Previewer | WebUtils Hub",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "social-counter",
+      "canonical_url": "https://everydaydigitalbox.com/social-counter/index.html",
+      "description_from_registry": "Count caption characters and preview approximate feed openings.",
+      "proposed_search_aliases": [
+        "caption character count",
+        "post length",
+        "LinkedIn hook preview"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "excel-sandbox",
+      "name": "Excel Formula Sandbox & Analyzer",
+      "current_html_title": "Excel Formula Sandbox & Analyzer",
+      "registry_category_unchanged": "data",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "excel-sandbox",
+      "canonical_url": "https://everydaydigitalbox.com/excel-sandbox/index.html",
+      "description_from_registry": "Format and inspect Excel formula structure without evaluation.",
+      "proposed_search_aliases": [
+        "formula formatter",
+        "formula structure",
+        "Excel nesting"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "text-cleaner",
+      "name": "AI Text Footprint Cleanser",
+      "current_html_title": "AI Text Footprint Cleanser",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "text-cleaner",
+      "canonical_url": "https://everydaydigitalbox.com/text-cleaner/index.html",
+      "description_from_registry": "Highlight and replace listed editorial phrases locally.",
+      "proposed_search_aliases": [
+        "editorial phrase cleanup",
+        "word count",
+        "reading time estimate"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "streaming-roulette",
+      "name": "Free Stream Roulette",
+      "current_html_title": "Free Legal Streaming Roulette & Finder",
+      "registry_category_unchanged": "entertainment",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "streaming-roulette",
+      "canonical_url": "https://everydaydigitalbox.com/streaming-roulette/index.html",
+      "description_from_registry": "Pick a curated streaming destination by genre.",
+      "proposed_search_aliases": [
+        "random streaming destination",
+        "genre picker",
+        "next streaming site"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "image-compressor",
+      "name": "Image Compressor",
+      "current_html_title": "Image Compressor — Everyday Digital Box",
+      "registry_category_unchanged": "image",
+      "proposed_primary_category": "images",
+      "directory_path_unchanged": "image-compressor",
+      "canonical_url": "https://everydaydigitalbox.com/image-compressor/index.html",
+      "description_from_registry": "Reduce raster image size with visible quality tradeoffs.",
+      "proposed_search_aliases": [
+        "reduce image file size",
+        "image quality",
+        "compress picture"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "image-resizer",
+      "name": "Image Resizer",
+      "current_html_title": "Image Resizer — Everyday Digital Box",
+      "registry_category_unchanged": "image",
+      "proposed_primary_category": "images",
+      "directory_path_unchanged": "image-resizer",
+      "canonical_url": "https://everydaydigitalbox.com/image-resizer/index.html",
+      "description_from_registry": "Resize raster images by dimensions or percentage.",
+      "proposed_search_aliases": [
+        "resize picture",
+        "image dimensions",
+        "scale image"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "image-format-converter",
+      "name": "Image Format Converter",
+      "current_html_title": "Image Format Converter — Everyday Digital Box",
+      "registry_category_unchanged": "image",
+      "proposed_primary_category": "images",
+      "directory_path_unchanged": "image-format-converter",
+      "canonical_url": "https://everydaydigitalbox.com/image-format-converter/index.html",
+      "description_from_registry": "Convert among JPEG, PNG and WebP in one interface.",
+      "proposed_search_aliases": [
+        "JPEG PNG WebP conversion",
+        "change image format"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "image-cropper",
+      "name": "Image Cropper",
+      "current_html_title": "Image Cropper — Everyday Digital Box",
+      "registry_category_unchanged": "image",
+      "proposed_primary_category": "images",
+      "directory_path_unchanged": "image-cropper",
+      "canonical_url": "https://everydaydigitalbox.com/image-cropper/index.html",
+      "description_from_registry": "Crop an image with an accessible selection workflow.",
+      "proposed_search_aliases": [
+        "crop picture",
+        "aspect ratio",
+        "numeric crop"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "image-rotator",
+      "name": "Image Rotator",
+      "current_html_title": "Image Rotator — Everyday Digital Box",
+      "registry_category_unchanged": "image",
+      "proposed_primary_category": "images",
+      "directory_path_unchanged": "image-rotator",
+      "canonical_url": "https://everydaydigitalbox.com/image-rotator/index.html",
+      "description_from_registry": "Rotate or flip local raster images.",
+      "proposed_search_aliases": [
+        "rotate picture",
+        "flip image",
+        "mirror picture"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "image-watermark",
+      "name": "Image Watermark",
+      "current_html_title": "Image Watermark — Everyday Digital Box",
+      "registry_category_unchanged": "image",
+      "proposed_primary_category": "images",
+      "directory_path_unchanged": "image-watermark",
+      "canonical_url": "https://everydaydigitalbox.com/image-watermark/index.html",
+      "description_from_registry": "Overlay text on local raster images.",
+      "proposed_search_aliases": [
+        "text overlay on image",
+        "watermark picture"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "image-color-picker",
+      "name": "Image Color Picker",
+      "current_html_title": "Image Color Picker — Everyday Digital Box",
+      "registry_category_unchanged": "image",
+      "proposed_primary_category": "images",
+      "directory_path_unchanged": "image-color-picker",
+      "canonical_url": "https://everydaydigitalbox.com/image-color-picker/index.html",
+      "description_from_registry": "Inspect pixel colors in a local image.",
+      "proposed_search_aliases": [
+        "pixel colour",
+        "image hex code",
+        "image RGB"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "passport-photo-layout-maker",
+      "name": "Passport Photo Layout Maker",
+      "current_html_title": "Passport Photo Layout Maker — Everyday Digital Box",
+      "registry_category_unchanged": "image",
+      "proposed_primary_category": "images",
+      "directory_path_unchanged": "passport-photo-layout-maker",
+      "canonical_url": "https://everydaydigitalbox.com/passport-photo-layout-maker/index.html",
+      "description_from_registry": "Arrange user-sized photo tiles on a printable sheet.",
+      "proposed_search_aliases": [
+        "photo print sheet",
+        "photo tile layout"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "case-converter",
+      "name": "Case Converter",
+      "current_html_title": "Case Converter — Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "case-converter",
+      "canonical_url": "https://everydaydigitalbox.com/case-converter/index.html",
+      "description_from_registry": "Convert text case with an explicit choice of transformation.",
+      "proposed_search_aliases": [
+        "uppercase",
+        "lowercase",
+        "title case",
+        "sentence case"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "duplicate-line-remover",
+      "name": "Duplicate Line Remover",
+      "current_html_title": "Duplicate Line Remover — Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "duplicate-line-remover",
+      "canonical_url": "https://everydaydigitalbox.com/duplicate-line-remover/index.html",
+      "description_from_registry": "Remove repeated lines with controllable matching rules.",
+      "proposed_search_aliases": [
+        "deduplicate lines",
+        "unique text lines",
+        "remove repeated lines"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "text-difference-checker",
+      "name": "Text Difference Checker",
+      "current_html_title": "Text Difference Checker — Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "text-difference-checker",
+      "canonical_url": "https://everydaydigitalbox.com/text-difference-checker/index.html",
+      "description_from_registry": "Compare two texts and explain line-level differences.",
+      "proposed_search_aliases": [
+        "text diff",
+        "compare text",
+        "line differences"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "text-sorter",
+      "name": "Text Sorter",
+      "current_html_title": "Text Sorter — Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "text-sorter",
+      "canonical_url": "https://everydaydigitalbox.com/text-sorter/index.html",
+      "description_from_registry": "Sort text lines using explicit ordering rules.",
+      "proposed_search_aliases": [
+        "sort lines",
+        "alphabetical list",
+        "numeric line sort"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "text-reverser",
+      "name": "Text Reverser",
+      "current_html_title": "Text Reverser — Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "text-reverser",
+      "canonical_url": "https://everydaydigitalbox.com/text-reverser/index.html",
+      "description_from_registry": "Reverse text by line, word, or grapheme unit.",
+      "proposed_search_aliases": [
+        "reverse words",
+        "reverse lines",
+        "reverse text"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "find-and-replace",
+      "name": "Find and Replace",
+      "current_html_title": "Find and Replace — Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "find-and-replace",
+      "canonical_url": "https://everydaydigitalbox.com/find-and-replace/index.html",
+      "description_from_registry": "Preview and apply literal text replacements safely.",
+      "proposed_search_aliases": [
+        "literal text replacement",
+        "replace words",
+        "find matches"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "slug-generator",
+      "name": "Slug Generator",
+      "current_html_title": "Slug Generator — Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "slug-generator",
+      "canonical_url": "https://everydaydigitalbox.com/slug-generator/index.html",
+      "description_from_registry": "Create URL-friendly slugs from text with documented Unicode rules.",
+      "proposed_search_aliases": [
+        "URL slug",
+        "slugify",
+        "friendly URL text"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "csv-json-converter",
+      "name": "CSV ↔ JSON Converter",
+      "current_html_title": "CSV ↔ JSON Converter — Everyday Digital Box",
+      "registry_category_unchanged": "data",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "csv-json-converter",
+      "canonical_url": "https://everydaydigitalbox.com/csv-json-converter/index.html",
+      "description_from_registry": "Convert CSV and arrays of JSON records in a single utility.",
+      "proposed_search_aliases": [
+        "CSV to JSON",
+        "JSON to CSV",
+        "records conversion"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "csv-column-extractor",
+      "name": "CSV Column Extractor",
+      "current_html_title": "CSV Column Extractor — Everyday Digital Box",
+      "registry_category_unchanged": "data",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "csv-column-extractor",
+      "canonical_url": "https://everydaydigitalbox.com/csv-column-extractor/index.html",
+      "description_from_registry": "Select named or numbered columns from CSV data.",
+      "proposed_search_aliases": [
+        "select CSV columns",
+        "reorder CSV columns",
+        "extract fields"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "duplicate-row-finder",
+      "name": "Duplicate Row Finder",
+      "current_html_title": "Duplicate Row Finder — Everyday Digital Box",
+      "registry_category_unchanged": "data",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "duplicate-row-finder",
+      "canonical_url": "https://everydaydigitalbox.com/duplicate-row-finder/index.html",
+      "description_from_registry": "Find or remove repeated CSV records.",
+      "proposed_search_aliases": [
+        "duplicate CSV rows",
+        "deduplicate records",
+        "unique rows"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "csv-data-cleaner",
+      "name": "CSV Data Cleaner",
+      "current_html_title": "CSV Data Cleaner — Everyday Digital Box",
+      "registry_category_unchanged": "data",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "csv-data-cleaner",
+      "canonical_url": "https://everydaydigitalbox.com/csv-data-cleaner/index.html",
+      "description_from_registry": "Apply explicit cleaning operations to CSV fields.",
+      "proposed_search_aliases": [
+        "clean CSV fields",
+        "missing values",
+        "trim table data"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "csv-merger",
+      "name": "CSV Merger",
+      "current_html_title": "CSV Merger — Everyday Digital Box",
+      "registry_category_unchanged": "data",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "csv-merger",
+      "canonical_url": "https://everydaydigitalbox.com/csv-merger/index.html",
+      "description_from_registry": "Append compatible CSV files while validating headers.",
+      "proposed_search_aliases": [
+        "append CSV files",
+        "combine CSV rows",
+        "align CSV headers"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "json-formatter",
+      "name": "JSON Formatter",
+      "current_html_title": "JSON Formatter — Everyday Digital Box",
+      "registry_category_unchanged": "data",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "json-formatter",
+      "canonical_url": "https://everydaydigitalbox.com/json-formatter/index.html",
+      "description_from_registry": "Validate, pretty-print and compact JSON locally.",
+      "proposed_search_aliases": [
+        "pretty print JSON",
+        "validate JSON",
+        "compact JSON"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "csv-viewer",
+      "name": "CSV Viewer",
+      "current_html_title": "CSV Viewer — Everyday Digital Box",
+      "registry_category_unchanged": "data",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "csv-viewer",
+      "canonical_url": "https://everydaydigitalbox.com/csv-viewer/index.html",
+      "description_from_registry": "Inspect a local CSV in a bounded accessible table.",
+      "proposed_search_aliases": [
+        "open CSV",
+        "inspect CSV table",
+        "view spreadsheet data"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "excel-formula-generator",
+      "name": "Excel Formula Generator",
+      "current_html_title": "Excel Formula Generator — Everyday Digital Box",
+      "registry_category_unchanged": "data",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "excel-formula-generator",
+      "canonical_url": "https://everydaydigitalbox.com/excel-formula-generator/index.html",
+      "description_from_registry": "Generate formulas from deterministic guided templates.",
+      "proposed_search_aliases": [
+        "guided Excel formulas",
+        "formula templates",
+        "formula separator"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "base64-encoder-decoder",
+      "name": "Base64 Encoder and Decoder",
+      "current_html_title": "Base64 Encoder and Decoder — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "base64-encoder-decoder",
+      "canonical_url": "https://everydaydigitalbox.com/base64-encoder-decoder/index.html",
+      "description_from_registry": "Encode and decode Unicode text with clear Base64 validation.",
+      "proposed_search_aliases": [
+        "UTF-8 Base64",
+        "encode text",
+        "decode Base64"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "url-encoder-decoder",
+      "name": "URL Encoder and Decoder",
+      "current_html_title": "URL Encoder and Decoder — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "url-encoder-decoder",
+      "canonical_url": "https://everydaydigitalbox.com/url-encoder-decoder/index.html",
+      "description_from_registry": "Encode or decode URI components with explicit mode selection.",
+      "proposed_search_aliases": [
+        "percent encoding",
+        "URI component",
+        "decode URL escapes"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "uuid-generator",
+      "name": "UUID Generator",
+      "current_html_title": "UUID Generator — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "uuid-generator",
+      "canonical_url": "https://everydaydigitalbox.com/uuid-generator/index.html",
+      "description_from_registry": "Generate version-4 UUIDs using browser cryptographic randomness.",
+      "proposed_search_aliases": [
+        "version 4 UUID",
+        "v4 identifier",
+        "random UUID"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "sha256-hash-checker",
+      "name": "SHA-256 Text & File Hash Checker",
+      "current_html_title": "SHA-256 Text & File Hash Checker — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "security-files",
+      "directory_path_unchanged": "sha-256-hash-checker",
+      "canonical_url": "https://everydaydigitalbox.com/sha-256-hash-checker/index.html",
+      "description_from_registry": "Hash text or a bounded local file and compare a known digest.",
+      "proposed_search_aliases": [
+        "SHA256",
+        "checksum",
+        "file digest",
+        "compare SHA-256"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "regex-tester",
+      "name": "Regex Tester",
+      "current_html_title": "Regex Tester — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "regex-tester",
+      "canonical_url": "https://everydaydigitalbox.com/regex-tester/index.html",
+      "description_from_registry": "Inspect regular-expression matches with explicit execution limits.",
+      "proposed_search_aliases": [
+        "regular expression",
+        "pattern match",
+        "regex flags"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "html-formatter",
+      "name": "HTML Formatter",
+      "current_html_title": "HTML Formatter — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "html-formatter",
+      "canonical_url": "https://everydaydigitalbox.com/html-formatter/index.html",
+      "description_from_registry": "Format markup using an evaluated parser without executing it.",
+      "proposed_search_aliases": [
+        "pretty print HTML",
+        "format markup"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "css-minifier",
+      "name": "CSS Minifier",
+      "current_html_title": "CSS Minifier — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "css-minifier",
+      "canonical_url": "https://everydaydigitalbox.com/css-minifier/index.html",
+      "description_from_registry": "Minify stylesheet text using a reviewed parser.",
+      "proposed_search_aliases": [
+        "compress CSS",
+        "minify stylesheet"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "javascript-minifier",
+      "name": "JavaScript Minifier",
+      "current_html_title": "JavaScript Minifier — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "javascript-minifier",
+      "canonical_url": "https://everydaydigitalbox.com/javascript-minifier/index.html",
+      "description_from_registry": "Minify JavaScript source without running it.",
+      "proposed_search_aliases": [
+        "minify JS",
+        "compress JavaScript"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "timestamp-converter",
+      "name": "Timestamp Converter",
+      "current_html_title": "Timestamp Converter — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "timestamp-converter",
+      "canonical_url": "https://everydaydigitalbox.com/timestamp-converter/index.html",
+      "description_from_registry": "Convert epoch values and ISO dates with explicit timezone handling.",
+      "proposed_search_aliases": [
+        "Unix timestamp",
+        "epoch seconds",
+        "epoch milliseconds",
+        "ISO date"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "hashtag-organizer",
+      "name": "Hashtag Organizer",
+      "current_html_title": "Hashtag Organizer — Everyday Digital Box",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "hashtag-organizer",
+      "canonical_url": "https://everydaydigitalbox.com/hashtag-organizer/index.html",
+      "description_from_registry": "Normalize and group hashtag lists without platform account access.",
+      "proposed_search_aliases": [
+        "deduplicate hashtags",
+        "sort hashtags",
+        "hashtag list"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "youtube-title-checker",
+      "name": "YouTube Title Checker",
+      "current_html_title": "YouTube Title Checker — Everyday Digital Box",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "youtube-title-checker",
+      "canonical_url": "https://everydaydigitalbox.com/youtube-title-checker/index.html",
+      "description_from_registry": "Measure title length against a maintained configurable guide.",
+      "proposed_search_aliases": [
+        "video title length",
+        "title opening preview"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "youtube-description-formatter",
+      "name": "YouTube Description Formatter",
+      "current_html_title": "YouTube Description Formatter — Everyday Digital Box",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "youtube-description-formatter",
+      "canonical_url": "https://everydaydigitalbox.com/youtube-description-formatter/index.html",
+      "description_from_registry": "Assemble structured descriptions from user-provided sections.",
+      "proposed_search_aliases": [
+        "video description sections",
+        "description template"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "instagram-bio-formatter",
+      "name": "Instagram Bio Formatter",
+      "current_html_title": "Instagram Bio Formatter — Everyday Digital Box",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "instagram-bio-formatter",
+      "canonical_url": "https://everydaydigitalbox.com/instagram-bio-formatter/index.html",
+      "description_from_registry": "Preview and format a short profile biography.",
+      "proposed_search_aliases": [
+        "profile biography",
+        "bio line breaks",
+        "bio preview"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "emoji-picker",
+      "name": "Emoji Picker",
+      "current_html_title": "Emoji Picker — Everyday Digital Box",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "emoji-picker",
+      "canonical_url": "https://everydaydigitalbox.com/emoji-picker/index.html",
+      "description_from_registry": "Find and copy emoji from a maintained local dataset.",
+      "proposed_search_aliases": [
+        "copy emoji",
+        "emoji search",
+        "skin tone emoji"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "hashtag-counter",
+      "name": "Hashtag Counter",
+      "current_html_title": "Hashtag Counter — Everyday Digital Box",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "hashtag-counter",
+      "canonical_url": "https://everydaydigitalbox.com/hashtag-counter/index.html",
+      "description_from_registry": "Count hashtags in pasted posts with explicit token rules.",
+      "proposed_search_aliases": [
+        "count hashtags",
+        "unique hashtags",
+        "extract hashtags"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "youtube-thumbnail-preview",
+      "name": "YouTube Thumbnail Preview",
+      "current_html_title": "YouTube Thumbnail Preview — Everyday Digital Box",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "youtube-thumbnail-preview",
+      "canonical_url": "https://everydaydigitalbox.com/youtube-thumbnail-preview/index.html",
+      "description_from_registry": "Preview a local thumbnail at typical feed sizes.",
+      "proposed_search_aliases": [
+        "thumbnail feed preview",
+        "safe area",
+        "local thumbnail"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "posting-calendar-generator",
+      "name": "Posting Calendar Generator",
+      "current_html_title": "Posting Calendar Generator — Everyday Digital Box",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "posting-calendar-generator",
+      "canonical_url": "https://everydaydigitalbox.com/posting-calendar-generator/index.html",
+      "description_from_registry": "Build a manual posting plan for export.",
+      "proposed_search_aliases": [
+        "manual posting schedule",
+        "social content calendar",
+        "posting plan CSV"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "username-generator",
+      "name": "Username Generator",
+      "current_html_title": "Username Generator — Everyday Digital Box",
+      "registry_category_unchanged": "social",
+      "proposed_primary_category": "social-media",
+      "directory_path_unchanged": "username-generator",
+      "canonical_url": "https://everydaydigitalbox.com/username-generator/index.html",
+      "description_from_registry": "Generate candidate usernames from local user-supplied words.",
+      "proposed_search_aliases": [
+        "username ideas",
+        "handle candidates"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "percentage-calculator",
+      "name": "Percentage Calculator",
+      "current_html_title": "Percentage Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "percentage-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/percentage-calculator/index.html",
+      "description_from_registry": "Calculate a percentage of a value and one value as a percentage of another.",
+      "proposed_search_aliases": [
+        "percent of a number",
+        "ratio as percent"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "percentage-change-calculator",
+      "name": "Percentage Change Calculator",
+      "current_html_title": "Percentage Change Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "percentage-change-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/percentage-change-calculator/index.html",
+      "description_from_registry": "Calculate increase or decrease from a starting value.",
+      "proposed_search_aliases": [
+        "percent increase",
+        "percent decrease",
+        "percentage difference from start"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "vat-calculator",
+      "name": "VAT Calculator",
+      "current_html_title": "VAT Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "vat-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/vat-calculator/index.html",
+      "description_from_registry": "Add or remove a user-entered VAT rate.",
+      "proposed_search_aliases": [
+        "add VAT",
+        "remove VAT",
+        "net gross tax calculation"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "discount-calculator",
+      "name": "Discount Calculator",
+      "current_html_title": "Discount Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "discount-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/discount-calculator/index.html",
+      "description_from_registry": "Calculate a discounted price and savings.",
+      "proposed_search_aliases": [
+        "sale price",
+        "price reduction",
+        "savings amount"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "age-calculator",
+      "name": "Age Calculator",
+      "current_html_title": "Age Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "age-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/age-calculator/index.html",
+      "description_from_registry": "Calculate calendar age between user-selected dates.",
+      "proposed_search_aliases": [
+        "calendar age",
+        "age between dates"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "date-difference-calculator",
+      "name": "Date Difference Calculator",
+      "current_html_title": "Date Difference Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "date-difference-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/date-difference-calculator/index.html",
+      "description_from_registry": "Compare two calendar dates without daylight-saving drift.",
+      "proposed_search_aliases": [
+        "days between dates",
+        "date interval"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "working-days-calculator",
+      "name": "Working Days Calculator",
+      "current_html_title": "Working Days Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "working-days-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/working-days-calculator/index.html",
+      "description_from_registry": "Count weekdays with user-defined exclusions.",
+      "proposed_search_aliases": [
+        "business days",
+        "weekdays",
+        "working days exclusions"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "loan-repayment-calculator",
+      "name": "Loan Repayment Calculator",
+      "current_html_title": "Loan Repayment Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "loan-repayment-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/loan-repayment-calculator/index.html",
+      "description_from_registry": "Estimate fixed-rate loan payments from explicit assumptions.",
+      "proposed_search_aliases": [
+        "fixed rate loan payment",
+        "repayment schedule",
+        "loan estimate"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "profit-margin-calculator",
+      "name": "Profit Margin Calculator",
+      "current_html_title": "Profit Margin Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "profit-margin-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/profit-margin-calculator/index.html",
+      "description_from_registry": "Calculate profit, margin and markup with distinct labels.",
+      "proposed_search_aliases": [
+        "markup",
+        "margin",
+        "profit from cost revenue"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "compound-interest-calculator",
+      "name": "Compound Interest Calculator",
+      "current_html_title": "Compound Interest Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "compound-interest-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/compound-interest-calculator/index.html",
+      "description_from_registry": "Estimate growth under user-defined compounding assumptions.",
+      "proposed_search_aliases": [
+        "compound growth estimate",
+        "savings contributions"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "password-generator",
+      "name": "Password Generator",
+      "current_html_title": "Password Generator — Everyday Digital Box",
+      "registry_category_unchanged": "security",
+      "proposed_primary_category": "security-files",
+      "directory_path_unchanged": "password-generator",
+      "canonical_url": "https://everydaydigitalbox.com/password-generator/index.html",
+      "description_from_registry": "Create passwords using browser cryptographic randomness.",
+      "proposed_search_aliases": [
+        "random password",
+        "secure password generator"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "secure-random-number-generator",
+      "name": "Secure Random Number Generator",
+      "current_html_title": "Secure Random Number Generator — Everyday Digital Box",
+      "registry_category_unchanged": "security",
+      "proposed_primary_category": "security-files",
+      "directory_path_unchanged": "secure-random-number-generator",
+      "canonical_url": "https://everydaydigitalbox.com/secure-random-number-generator/index.html",
+      "description_from_registry": "Generate unbiased integers within a validated safe-integer interval.",
+      "proposed_search_aliases": [
+        "random integer",
+        "cryptographic random numbers"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "file-signature-inspector",
+      "name": "File Signature Inspector",
+      "current_html_title": "File Signature Inspector — Everyday Digital Box",
+      "registry_category_unchanged": "security",
+      "proposed_primary_category": "security-files",
+      "directory_path_unchanged": "file-signature-inspector",
+      "canonical_url": "https://everydaydigitalbox.com/file-signature-inspector/index.html",
+      "description_from_registry": "Compare initial file bytes with a maintained signature list.",
+      "proposed_search_aliases": [
+        "magic bytes",
+        "file header",
+        "extension mismatch"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "passphrase-generator",
+      "name": "Passphrase Generator",
+      "current_html_title": "Passphrase Generator — Everyday Digital Box",
+      "registry_category_unchanged": "security",
+      "proposed_primary_category": "security-files",
+      "directory_path_unchanged": "passphrase-generator",
+      "canonical_url": "https://everydaydigitalbox.com/passphrase-generator/index.html",
+      "description_from_registry": "Generate random word sequences from a reviewed local word list.",
+      "proposed_search_aliases": [
+        "random word password",
+        "word passphrase"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "qr-code-generator",
+      "name": "QR Code Generator",
+      "current_html_title": "QR Code Generator — Everyday Digital Box",
+      "registry_category_unchanged": "security",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "qr-code-generator",
+      "canonical_url": "https://everydaydigitalbox.com/qr-code-generator/index.html",
+      "description_from_registry": "Generate QR codes locally from user-provided text.",
+      "proposed_search_aliases": [
+        "text to QR",
+        "create QR image",
+        "QR SVG"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "markdown-converter-previewer",
+      "name": "Markdown Converter & Previewer",
+      "current_html_title": "Markdown Converter & Previewer — Everyday Digital Box",
+      "registry_category_unchanged": "conversion",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "markdown-converter-previewer",
+      "canonical_url": "https://everydaydigitalbox.com/markdown-converter-previewer/index.html",
+      "description_from_registry": "Convert Markdown to sanitized HTML and preview it safely.",
+      "proposed_search_aliases": [
+        "Markdown to HTML",
+        "Markdown preview",
+        "sanitized HTML"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "html-to-markdown",
+      "name": "HTML to Markdown",
+      "current_html_title": "HTML to Markdown — Everyday Digital Box",
+      "registry_category_unchanged": "conversion",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "html-to-markdown",
+      "canonical_url": "https://everydaydigitalbox.com/html-to-markdown/index.html",
+      "description_from_registry": "Convert supplied markup to Markdown without executing it.",
+      "proposed_search_aliases": [
+        "markup to Markdown",
+        "HTML conversion"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "csv-to-txt",
+      "name": "CSV to TXT",
+      "current_html_title": "CSV to TXT — Everyday Digital Box",
+      "registry_category_unchanged": "conversion",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "csv-to-txt",
+      "canonical_url": "https://everydaydigitalbox.com/csv-to-txt/index.html",
+      "description_from_registry": "Render selected CSV fields into a configurable text layout.",
+      "proposed_search_aliases": [
+        "CSV to text",
+        "CSV text layout",
+        "extract CSV values"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "json-to-txt",
+      "name": "JSON to TXT",
+      "current_html_title": "JSON to TXT — Everyday Digital Box",
+      "registry_category_unchanged": "conversion",
+      "proposed_primary_category": "csv-spreadsheets",
+      "directory_path_unchanged": "json-to-txt",
+      "canonical_url": "https://everydaydigitalbox.com/json-to-txt/index.html",
+      "description_from_registry": "Extract readable text from selected JSON values.",
+      "proposed_search_aliases": [
+        "JSON to text",
+        "JSON field extraction",
+        "JSON path values"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "png-to-ico",
+      "name": "PNG to ICO",
+      "current_html_title": "PNG to ICO — Everyday Digital Box",
+      "registry_category_unchanged": "conversion",
+      "proposed_primary_category": "images",
+      "directory_path_unchanged": "png-to-ico",
+      "canonical_url": "https://everydaydigitalbox.com/png-to-ico/index.html",
+      "description_from_registry": "Package supported PNG-derived sizes into an icon file.",
+      "proposed_search_aliases": [
+        "PNG icon",
+        "favicon file",
+        "ICO converter"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "file-size-converter",
+      "name": "File Size Converter",
+      "current_html_title": "File Size Converter — Everyday Digital Box",
+      "registry_category_unchanged": "conversion",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "file-size-converter",
+      "canonical_url": "https://everydaydigitalbox.com/file-size-converter/index.html",
+      "description_from_registry": "Convert byte quantities using explicitly labeled units.",
+      "proposed_search_aliases": [
+        "bytes KB MB",
+        "SI IEC units",
+        "KiB MiB"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "html-previewer",
+      "name": "HTML Previewer",
+      "current_html_title": "HTML Previewer — Everyday Digital Box",
+      "registry_category_unchanged": "conversion",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "html-previewer",
+      "canonical_url": "https://everydaydigitalbox.com/html-previewer/index.html",
+      "description_from_registry": "Preview untrusted markup in an isolated sandbox.",
+      "proposed_search_aliases": [
+        "sandbox HTML preview",
+        "inspect markup preview"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "pomodoro-timer",
+      "name": "Pomodoro Timer",
+      "current_html_title": "Pomodoro Timer — Everyday Digital Box",
+      "registry_category_unchanged": "productivity",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "pomodoro-timer",
+      "canonical_url": "https://everydaydigitalbox.com/pomodoro-timer/index.html",
+      "description_from_registry": "Run a work and break timer with user-selected durations.",
+      "proposed_search_aliases": [
+        "focus timer",
+        "work break timer",
+        "Pomodoro"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "countdown-timer",
+      "name": "Countdown Timer",
+      "current_html_title": "Countdown Timer — Everyday Digital Box",
+      "registry_category_unchanged": "productivity",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "countdown-timer",
+      "canonical_url": "https://everydaydigitalbox.com/countdown-timer/index.html",
+      "description_from_registry": "Run a duration timer using an actual deadline rather than interval ticks.",
+      "proposed_search_aliases": [
+        "duration countdown",
+        "pause timer",
+        "countdown"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "random-name-picker",
+      "name": "Random Name Picker",
+      "current_html_title": "Random Name Picker — Everyday Digital Box",
+      "registry_category_unchanged": "productivity",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "random-name-picker",
+      "canonical_url": "https://everydaydigitalbox.com/random-name-picker/index.html",
+      "description_from_registry": "Draw from a local list with an explicit replacement policy.",
+      "proposed_search_aliases": [
+        "random list draw",
+        "choose a name",
+        "replacement policy"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "local-to-do-list",
+      "name": "Local To-Do List",
+      "current_html_title": "Local To-Do List — Everyday Digital Box",
+      "registry_category_unchanged": "productivity",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "local-to-do-list",
+      "canonical_url": "https://everydaydigitalbox.com/local-to-do-list/index.html",
+      "description_from_registry": "Manage tasks with explicit opt-in local persistence.",
+      "proposed_search_aliases": [
+        "task list",
+        "checklist",
+        "optional local task storage"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "invoice-generator",
+      "name": "Invoice Generator",
+      "current_html_title": "Invoice Generator — Everyday Digital Box",
+      "registry_category_unchanged": "productivity",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "invoice-generator",
+      "canonical_url": "https://everydaydigitalbox.com/invoice-generator/index.html",
+      "description_from_registry": "Create a printable invoice from user-entered business details.",
+      "proposed_search_aliases": [
+        "printable invoice",
+        "line item totals",
+        "invoice template"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "resume-builder",
+      "name": "Resume Builder",
+      "current_html_title": "Resume Builder — Everyday Digital Box",
+      "registry_category_unchanged": "productivity",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "resume-builder",
+      "canonical_url": "https://everydaydigitalbox.com/resume-builder/index.html",
+      "description_from_registry": "Prepare a structured printable resume without account registration.",
+      "proposed_search_aliases": [
+        "CV builder",
+        "printable resume",
+        "resume sections"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "meeting-agenda-generator",
+      "name": "Meeting Agenda Generator",
+      "current_html_title": "Meeting Agenda Generator — Everyday Digital Box",
+      "registry_category_unchanged": "productivity",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "meeting-agenda-generator",
+      "canonical_url": "https://everydaydigitalbox.com/meeting-agenda-generator/index.html",
+      "description_from_registry": "Build a structured agenda with time allocations.",
+      "proposed_search_aliases": [
+        "meeting plan",
+        "agenda time allocation"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "printable-calendar-generator",
+      "name": "Printable Calendar Generator",
+      "current_html_title": "Printable Calendar Generator — Everyday Digital Box",
+      "registry_category_unchanged": "productivity",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "printable-calendar-generator",
+      "canonical_url": "https://everydaydigitalbox.com/printable-calendar-generator/index.html",
+      "description_from_registry": "Create monthly calendars with explicit locale choices.",
+      "proposed_search_aliases": [
+        "monthly calendar",
+        "print calendar",
+        "week start"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "number-base-converter",
+      "name": "Number Base Converter",
+      "current_html_title": "Number Base Converter — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "number-base-converter",
+      "canonical_url": "https://everydaydigitalbox.com/number-base-converter/index.html",
+      "description_from_registry": "Convert exact signed integers between bases 2–36 in one interface, with binary/octal/decimal/hex presets..",
+      "proposed_search_aliases": [
+        "binary decimal hex",
+        "radix",
+        "base 2 to 36"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "unit-converter",
+      "name": "Unit Converter",
+      "current_html_title": "Unit Converter — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "unit-converter",
+      "canonical_url": "https://everydaydigitalbox.com/unit-converter/index.html",
+      "description_from_registry": "Convert a reviewed fixed set of length, mass, area, volume and temperature units.",
+      "proposed_search_aliases": [
+        "length mass area volume temperature",
+        "measurement conversion"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "duration-calculator",
+      "name": "Duration Calculator",
+      "current_html_title": "Duration Calculator — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "calculators",
+      "directory_path_unchanged": "duration-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/duration-calculator/index.html",
+      "description_from_registry": "Add/subtract elapsed durations and normalize totals.",
+      "proposed_search_aliases": [
+        "add durations",
+        "subtract time intervals",
+        "elapsed time"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "url-inspector-query-builder",
+      "name": "URL Inspector & Query Builder",
+      "current_html_title": "URL Inspector & Query Builder — Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "url-inspector-query-builder",
+      "canonical_url": "https://everydaydigitalbox.com/url-inspector-query-builder/index.html",
+      "description_from_registry": "Show URL components and edit an ordered list of duplicate-preserving query name/value pairs.",
+      "proposed_search_aliases": [
+        "URL parts",
+        "query parameters",
+        "duplicate query pairs"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "list-comparison-set-operations",
+      "name": "List Comparison & Set Operations",
+      "current_html_title": "List Comparison & Set Operations — Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "list-comparison-set-operations",
+      "canonical_url": "https://everydaydigitalbox.com/list-comparison-set-operations/index.html",
+      "description_from_registry": "Compare two line lists: union, intersection, A minus B, B minus A and symmetric difference.",
+      "proposed_search_aliases": [
+        "compare lists",
+        "intersection",
+        "union",
+        "list difference"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "color-contrast-checker",
+      "name": "Color Contrast Checker",
+      "current_html_title": "Color Contrast Checker — Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "color-contrast-checker",
+      "canonical_url": "https://everydaydigitalbox.com/color-contrast-checker/index.html",
+      "description_from_registry": "Compare two opaque sRGB colours, calculate WCAG contrast and show AA/AAA normal/large-text labels with a fixed labelled text preview.",
+      "proposed_search_aliases": [
+        "WCAG contrast ratio",
+        "colour contrast",
+        "AA AAA contrast"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "word-frequency-analyzer",
+      "name": "Word Frequency Analyzer",
+      "current_html_title": "Word Frequency Analyzer | Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "word-frequency-analyzer",
+      "canonical_url": "https://everydaydigitalbox.com/word-frequency-analyzer/index.html",
+      "description_from_registry": "Rank repeated words and count unique terms in pasted text.",
+      "proposed_search_aliases": [
+        "word frequency",
+        "repeated words",
+        "unique word count"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "unicode-inspector",
+      "name": "Unicode Inspector",
+      "current_html_title": "Unicode Inspector | Everyday Digital Box",
+      "registry_category_unchanged": "text",
+      "proposed_primary_category": "text-writing",
+      "directory_path_unchanged": "unicode-inspector",
+      "canonical_url": "https://everydaydigitalbox.com/unicode-inspector/index.html",
+      "description_from_registry": "Inspect Unicode code points, encoding units, clusters and normalization.",
+      "proposed_search_aliases": [
+        "code points",
+        "UTF-8 UTF-16",
+        "grapheme",
+        "Unicode normalization"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "ipv4-subnet-calculator",
+      "name": "IPv4 Subnet Calculator",
+      "current_html_title": "IPv4 Subnet Calculator | Everyday Digital Box",
+      "registry_category_unchanged": "calculator",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "ipv4-subnet-calculator",
+      "canonical_url": "https://everydaydigitalbox.com/ipv4-subnet-calculator/index.html",
+      "description_from_registry": "Calculate IPv4 subnet boundaries and address counts from an address and CIDR prefix.",
+      "proposed_search_aliases": [
+        "CIDR",
+        "subnet mask",
+        "IPv4 network broadcast"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "batch-filename-planner",
+      "name": "Batch Filename Planner",
+      "current_html_title": "Batch Filename Planner | Everyday Digital Box",
+      "registry_category_unchanged": "productivity",
+      "proposed_primary_category": "everyday",
+      "directory_path_unchanged": "batch-filename-planner",
+      "canonical_url": "https://everydaydigitalbox.com/batch-filename-planner/index.html",
+      "description_from_registry": "Preview filename transformations and export a mapping without changing files.",
+      "proposed_search_aliases": [
+        "filename preview",
+        "rename mapping plan",
+        "filename collision"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "file-byte-comparator",
+      "name": "File Byte Comparator",
+      "current_html_title": "File Byte Comparator | Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "security-files",
+      "directory_path_unchanged": "file-byte-comparator",
+      "canonical_url": "https://everydaydigitalbox.com/file-byte-comparator/index.html",
+      "description_from_registry": "Compare two local files and locate the first differing byte.",
+      "proposed_search_aliases": [
+        "binary compare",
+        "first different byte",
+        "identical files"
+      ],
+      "status_unchanged": "RELEASED"
+    },
+    {
+      "id": "css-gradient-generator",
+      "name": "CSS Gradient Generator",
+      "current_html_title": "CSS Gradient Generator | Everyday Digital Box",
+      "registry_category_unchanged": "developer",
+      "proposed_primary_category": "developer",
+      "directory_path_unchanged": "css-gradient-generator",
+      "canonical_url": "https://everydaydigitalbox.com/css-gradient-generator/index.html",
+      "description_from_registry": "Build and preview linear or centered radial CSS gradients from validated colour stops.",
+      "proposed_search_aliases": [
+        "linear gradient",
+        "radial gradient",
+        "gradient CSS"
+      ],
+      "status_unchanged": "RELEASED"
+    }
+  ],
+  "search_acceptance_cases": [
+    {
+      "query": "business days",
+      "must_include": [
+        "working-days-calculator"
+      ]
+    },
+    {
+      "query": "checksum",
+      "must_include": [
+        "sha256-hash-checker"
+      ]
+    },
+    {
+      "query": "word count",
+      "must_include": [
+        "text-cleaner"
+      ]
+    },
+    {
+      "query": "JSON",
+      "must_include": [
+        "json-formatter",
+        "csv-json-converter",
+        "json-to-txt"
+      ]
+    },
+    {
+      "query": "binary compare",
+      "must_include": [
+        "file-byte-comparator"
+      ]
+    },
+    {
+      "query": "csv join",
+      "must_not_claim": "CSV Merger performs relational joins; explain append-only matching if shown."
+    },
+    {
+      "query": "AI detector",
+      "must_not_claim": "AI Text Footprint Cleanser detects AI-written content."
+    },
+    {
+      "query": "rename files",
+      "must_not_claim": "Batch Filename Planner renames files; label preview/export only if shown."
+    },
+    {
+      "query": "not-a-real-tool-zz",
+      "expected": "Zero results, keep search focus, announce count, offer Clear search and All tools."
+    }
+  ]
+}

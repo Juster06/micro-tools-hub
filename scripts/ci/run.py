@@ -180,6 +180,7 @@ def run(job):
             execute("whitespace-working", ["git", "diff", "--check"])
             execute("whitespace-commits", ["git", "diff", "--check", whitespace_base(), "HEAD"])
         elif job == "node-regression":
+            execute("homepage-build-freshness", [sys.executable, "scripts/build_homepage.py", "--check"])
             execute("css-build-freshness", ["node", "scripts/build_styles.mjs", "--check"])
             execute("node-logic", ["node", "--test", "--test-concurrency=1", "--test-reporter=tap", *value["node_files"]], "node", timeout=300, minimum=value["minimum_tests"][job])
             for tid, item in value["tools"].items():

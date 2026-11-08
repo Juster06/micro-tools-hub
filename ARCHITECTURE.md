@@ -1,5 +1,14 @@
 # Architecture
 
+## SEO Task 2D — generated static homepage
+
+The homepage uses a reviewed presentation map, deterministic HTML/CSS generator,
+local progressive search and a homepage-only in-flow consent layout. Existing
+tool logic and shared consent state machine are unchanged. The seven-page
+shared CSS build remains reproducible. New current approval binds the homepage
+and required inputs while old manifests remain frozen; see HOMEPAGE_DESIGN.md.
+
+
 ## SEO Task 2C — limited static CSS delivery
 
 The development pilot replaces Tailwind browser compilation on seven explicitly

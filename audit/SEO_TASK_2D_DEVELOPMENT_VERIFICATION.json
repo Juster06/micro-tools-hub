@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "task": "SEO Task 2D",
+  "generated_at": "2026-11-08T02:24:20.878587+00:00",
+  "state": "DEVELOPMENT_CANDIDATE_NOT_DEPLOYED",
+  "sections": {
+    "1. Verified starting state": {
+      "main": "20ecae29a1f20d7903946d6cf00c3897307ee766",
+      "public_baseline": "Task 2C publicly verified; Functional CI 42430046221 attempt 2 succeeded",
+      "registry": "105 registered,87 RELEASED,0 TESTED,0 READY,17 PLANNED,1 BLOCKED",
+      "canonical_pages": 89,
+      "deferred": "Task26 paused; performance timing deferred; Image Compressor reliability observation unresolved"
+    },
+    "2. Worktree and branch": {
+      "branch": "seo/task-2d-homepage",
+      "isolation": "One additional development worktree; 33 existing worktrees and two unrelated handoff edits preserved"
+    },
+    "3. Exact implementation scope": "Homepage presentation, deterministic homepage generator/data/CSS/JS, regenerated shared CSS and reference-only updates in six tool pages, new source approval, test wiring and current documentation. No shared consent runtime or tool logic changes.",
+    "4. Design changes": "Approved Option B navy/teal light palette, system fonts, compact responsive header, prominent search, static eight-group directory and concise cards; no dark mode or external runtime dependency.",
+    "5. Colour and contrast validation": {
+      "status": "PASS",
+      "text": "Declared main/secondary/action/hover/selected pairs meet4.5:1 in automated contrast tests",
+      "controls": "Focus blue and control borders meet3:1 on white/background",
+      "limits": "Not a complete WCAG conformance audit; manual assistive technology/physical devices remain unverified"
+    },
+    "6. Search improvements": "Names, reviewed descriptions and approved aliases; case and whitespace normalization, phrase matching, accurate synchronous polite counts, zero-results state, clear resets category/query. textContent only; no persistence, uploads or query analytics.",
+    "7. Category mapping": [
+      {
+        "id": "text-writing",
+        "label": "Text & writing",
+        "count": 11
+      },
+      {
+        "id": "csv-spreadsheets",
+        "label": "CSV & spreadsheets",
+        "count": 10
+      },
+      {
+        "id": "developer",
+        "label": "Developer tools",
+        "count": 17
+      },
+      {
+        "id": "images",
+        "label": "Images",
+        "count": 9
+      },
+      {
+        "id": "calculators",
+        "label": "Calculators",
+        "count": 13
+      },
+      {
+        "id": "social-media",
+        "label": "Social media",
+        "count": 10
+      },
+      {
+        "id": "security-files",
+        "label": "Passwords & file checks",
+        "count": 6
+      },
+      {
+        "id": "everyday",
+        "label": "Everyday tools",
+        "count": 11
+      }
+    ],
+    "8. Mobile navigation results": "PASS in bounded Edge scenarios: native Enter opens disclosure, native Tab traverses three navigation links, Escape closes and restores Menu focus. Existing destinations only. No-JavaScript navigation and all87 links remain visible.",
+    "9. LIVE-03 resolution evidence": {
+      "development": "PASS: homepage-only CSS makes panel/settings static in normal flow, focused search/clear/navigation/consent controls visible and hit-testable at320/390/768/1365 widths and200%text",
+      "public": "Not deployed; public LIVE-03 remains OPEN until separately authorized deployment and independent public verification",
+      "runtime": "assets/consent.js unchanged; state machine and focus restoration preserved"
+    },
+    "10. Source-verification changes": {
+      "record": "audit/SEO_TASK_2D_SOURCE_APPROVAL.json",
+      "bound_files": 1072,
+      "identity": "scripts/homepage_approval_identity.py",
+      "mechanism": "Existing strict Python/Node entry points select new exact record. Frozen2C/2A/consent audits remain unchanged and bound. Hash-bound full preimages preserve existing historical assertions; no generic bypass. Live gate rereads closure at entry/return.",
+      "tests": "New Python mutations plus expanded Node mutations cover homepage source/assets/data/generator/new manifest/bootstrap and frozen predecessor. Existing path/route/consumer/normalization/snapshot assertions retained."
+    },
+    "11. CSS build verification": {
+      "status": "PASS",
+      "shared": {
+        "path": "assets/css/site.d8c3bb4f35a90e73.css",
+        "sha256": "d8c3bb4f35a90e736927e640ca28d1a11dd5ba7542ad35fbdbcd3d092b36f60a",
+        "bytes": 30310,
+        "gzip_bytes": 6069
+      },
+      "homepage": {
+        "path": "assets/css/homepage.13bda86daed58e77.css",
+        "bytes": 11324,
+        "sha256": "13bda86daed58e77e5ae5042671af23296a860ff9901578f3e677301ab538a3b",
+        "development_gzip_bytes": 2905
+      },
+      "determinism": "Existing repeated isolated compiler and LF/CRLF checks pass; homepage --check reproduces exact HTML/CSS",
+      "other_consumers": "All12initial computed-style comparisons (6pages×2widths) identical; runtime functional suites remain required"
+    },
+    "12. Accessibility test results": "Five homepage browser scenarios PASS; focus/labels/live counts/native keyboard/reduced motion/narrow reflow/no-JavaScript covered.320CSSpx is a zoom-equivalent layout probe, not native physical-device zoom certification. Project targets44px, distinct from WCAG2.2AA24px minimum/exceptions. No screen-reader or full WCAG claim.",
+    "13. Python tests": {
+      "status": "PASS",
+      "unit_tests": 308,
+      "structural_profiles": 87,
+      "execution": "Local Windows; complete python-project partition"
+    },
+    "14. Node tests": {
+      "status": "PASS",
+      "tests": 573,
+      "logic_profiles": 83,
+      "logic_assertions": 1595,
+      "execution": "Local; complete node-regression partition"
+    },
+    "15. Chromium tests": {
+      "local_homepage_scenarios": 5,
+      "local_result": "PASS",
+      "full_hosted_partition": "REQUIRED — exact-commit PR result recorded externally after push; not substituted with old totals",
+      "local_full_suite": "Not run; full browser workload delegated to existing hosted required job, no local memory-intensive benchmark"
+    },
+    "16. Analytics consent regression": "Two isolated accept/reject browser contexts plus homepage contexts; synthetic Google responses only. No preconsent/rejected requests, deduplicated sanitized consented page_view, no search telemetry, withdrawal prevents later tracking. Shared runtime and existing full consent tests unchanged. Real Google ingestion unverified.",
+    "17. SEO validation": "PASS:89canonical pages,89-URL sitemap,robots and87released directory targets. Google verification metadata,privacy page,registry and all tool routes preserved.",
+    "18. Known limitations": [
+      "Performance timing INCONCLUSIVE / DEFERRED; local memory investigation parked",
+      "Image Compressor timing remains unresolved; no assertion or timeout changes",
+      "Public verification pending authorized merge/deployment",
+      "Automated checks do not establish full WCAG conformance or native OS/assistive technology behavior",
+      "No ranking,traffic,bounce-rate or Core Web Vitals improvement claim"
+    ],
+    "19. Rollback instructions": "Before merge, close PR to keep production unchanged. After authorized deployment, separately review coherent revert of homepage/generatedstyles/references/currentapproval/build-test wiring; retain historical evidence and oldCSS. Rollback restores priorLIVE-03 issue.",
+    "20. Recommended public verification": "After owner-authorized merge: verify exactmain,Pages andrequiredCI; fetch89canonicals,sitemap,robots,assets; verify87links/eightgroups/search/menu/noJS; compareCSS hashes and six consumers; independently repeat LIVE-03 at mobile/enlarged layouts and isolated consent checks. No deployment in this task."
+  },
+  "validation_notes": [
+    "Initial Python run overlapped development edits and correctly failed snapshot freshness; stable full run passed.",
+    "Initial Node fixture omitted new approval files; corrected fixture preserves old assertions and adds new mutation coverage.",
+    "Initial enlarged-text probe compounded root and body scaling; final probe applies actual200%text. Consent wrapping was improved; final bounds pass.",
+    "Initial hosted Chromium run 42438449473 failed 129 of747 tests: card text boundaries, reset identifier, delayed counts and broad word matching broke existing homepage contracts; task18 navigation also read partially parsed HTML. Candidate corrected these behaviors, retained all assertions and strengthened the navigation readiness wait to document complete. Original failed logs are retained; exact corrected-commit hosted results are recorded externally."
+  ]
+}

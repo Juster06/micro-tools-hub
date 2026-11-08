@@ -1,629 +1,159 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-  <link rel="canonical" href="https://everydaydigitalbox.com/index.html">
-
-  <meta name="google-site-verification" content="r9GLjYMnOsZvdykkVFgNMltev3zV4XCy54VhGQO87f0" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <meta name="description" content="WebUtils Hub: free browser tools for social captions, finding your next watch, untangling Excel formulas, and cleaning up your writing.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%234f46e5'/%3E%3Ctext x='24' y='33' text-anchor='middle' font-size='30' fill='white'%3EW%3C/text%3E%3C/svg%3E">
-  <title>WebUtils Hub — Small tools. Everyday wins.</title>
-  <link rel="stylesheet" href="assets/css/site.77d4325c7538174e.css">
-  <style>
-    body { margin:0; background:#020617; color:#e2e8f0; font-family:ui-sans-serif,system-ui,sans-serif; }
-    [hidden] { display:none!important; }
-    :focus-visible { outline:3px solid #a5b4fc; outline-offset:5px; }
-    .dot-grid { background-image:radial-gradient(#33415566 1px,transparent 1px); background-size:20px 20px; }
-    .tool-card { transition:transform .2s ease,border-color .2s ease,background-color .2s ease; }
-    .tool-card:hover { transform:translateY(-4px); }
-    input[type="search"]::-webkit-search-cancel-button { display:none; }
-    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; scroll-behavior:auto!important; } .tool-card:hover { transform:none; } }
-  </style>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://everydaydigitalbox.com/index.html">
+<meta name="google-site-verification" content="r9GLjYMnOsZvdykkVFgNMltev3zV4XCy54VhGQO87f0" />
+<meta name="color-scheme" content="light">
+<meta name="description" content="Everyday Digital Box: 87 free utilities for text, CSV, code, images, calculations and everyday tasks. Find a tool by name, category or task.">
+<title>Everyday Digital Box — Useful tools for everyday tasks</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230F2742'/%3E%3Cpath d='M12 12h24v24H12z' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.d8c3bb4f35a90e73.css">
+<link rel="stylesheet" href="assets/css/homepage.13bda86daed58e77.css">
 <script defer src="assets/consent.js"></script></head>
-<body class="min-h-screen flex flex-col antialiased">
-  <a href="#tools" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-indigo-600 focus:px-4 focus:py-3 focus:text-white">Skip to tools</a>
-  <header class="border-b border-slate-800 bg-slate-950">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex flex-wrap justify-between items-center gap-4">
-      <a href="index.html" aria-label="WebUtils Hub home" class="inline-flex items-center gap-3 rounded-lg">
-        <span aria-hidden="true" class="size-10 grid place-items-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-950/50 text-white">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7" stroke-linecap="round"/></svg>
-        </span><span class="font-bold text-lg tracking-tight text-white">WebUtils <span class="text-indigo-400">Hub</span></span>
-      </a>
-      <a href="#tools" class="text-sm text-slate-400 hover:text-indigo-300 transition-colors rounded">Explore tools <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-
-  <main class="flex-1 w-full max-w-6xl mx-auto px-5 sm:px-8 pt-12 sm:pt-16 pb-10">
-    <section aria-labelledby="welcomeTitle" class="relative pb-10 sm:pb-12">
-      <div aria-hidden="true" class="pointer-events-none absolute -top-12 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl"></div>
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400 mb-5">Your everyday digital toolkit</p>
-      <h1 id="welcomeTitle" class="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.12] text-white">Small tools.<br><span class="text-indigo-400">Everyday wins.</span></h1>
-      <p class="mt-6 max-w-xl text-slate-400 leading-relaxed sm:text-lg">Less busywork, more doing. A growing collection of focused browser tools for your spreadsheets, your writing, your social posts, and your downtime.</p>
-      <div class="flex flex-wrap gap-x-5 gap-y-2 mt-6 text-xs text-slate-400">
-        <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-emerald-400">✓</span> Free to use</span>
-        <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-emerald-400">✓</span> No account needed</span>
-        <span class="inline-flex items-center gap-2"><span aria-hidden="true" class="text-emerald-400">✓</span> Runs in your browser</span>
-      </div>
-    </section>
-
-    <div aria-label="Top advertisement space" class="rounded-2xl border border-slate-800 bg-slate-900/30 p-3 mb-10"><div class="dot-grid min-h-24 rounded-xl border-2 border-dashed border-slate-700 flex flex-col items-center justify-center text-center p-5"><p class="text-[11px] font-mono tracking-[0.2em] text-slate-400">ADSENSE PLACEMENT</p><p class="text-xs text-slate-600 mt-2">Responsive banner space</p></div></div>
-
-    <section id="tools" aria-labelledby="toolsTitle" class="scroll-mt-6">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-6">
-        <div><p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-2">Find your shortcut</p><h2 id="toolsTitle" class="text-2xl font-bold tracking-tight text-white">The tool collection</h2></div>
-        <div role="search" class="sm:w-80">
-          <label for="toolSearch" class="sr-only">Search tools by title</label>
-          <div class="relative">
-            <svg aria-hidden="true" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5" stroke-linecap="round"/></svg>
-            <input id="toolSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search tools by name…" aria-controls="toolGrid" aria-describedby="resultCount" class="w-full rounded-xl border border-slate-700 bg-slate-900/70 py-3 pl-11 pr-11 text-sm text-slate-100 placeholder:text-slate-500 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20">
-            <button id="clearSearch" type="button" hidden aria-label="Clear search" class="absolute right-2 top-1/2 -translate-y-1/2 grid place-items-center size-8 rounded-lg text-slate-400 hover:bg-slate-800 hover:text-white"><span aria-hidden="true">×</span></button>
-          </div>
-        </div>
-      </div>
-      <p id="resultCount" role="status" aria-live="polite" aria-atomic="true" class="text-xs text-slate-500 mb-5">87 tools ready to use</p>
-
-      <div id="toolGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <a href="social-counter/index.html" data-title="Social Media Character Counter &amp; Live Previewer" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="socialTitle">
-          <div class="flex items-start justify-between mb-7"><span aria-hidden="true" class="size-12 rounded-xl border border-indigo-400/20 bg-indigo-500/10 text-indigo-300 grid place-items-center font-mono text-2xl">#</span><span class="text-[10px] uppercase tracking-wider text-emerald-300 border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 rounded-full">Live</span></div>
-          <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-indigo-400 mb-2">Write &amp; share</p><h3 id="socialTitle" class="text-lg font-semibold text-white group-hover:text-indigo-200">Social Media Character Counter &amp; Live Previewer</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Check caption limits for X, LinkedIn, Instagram, and TikTok. Preview your opening lines, clean up spaces, and copy in one click.</p>
-          <div class="mt-auto pt-7 flex justify-between items-center text-xs font-semibold text-indigo-300"><span>Polish your next post</span><span aria-hidden="true" class="text-lg">↗</span></div>
-        </a>
-        <a href="streaming-roulette/index.html" data-title="Free Stream Roulette" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="streamTitle">
-          <div class="flex items-start justify-between mb-7"><span aria-hidden="true" class="size-12 rounded-xl border border-indigo-400/20 bg-indigo-500/10 text-indigo-300 grid place-items-center"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3V9Z" stroke-linejoin="round"/></svg></span><span class="text-[10px] uppercase tracking-wider text-emerald-300 border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 rounded-full">Live</span></div>
-          <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-indigo-400 mb-2">Discover &amp; unwind</p><h3 id="streamTitle" class="text-lg font-semibold text-white group-hover:text-indigo-200">Free Stream Roulette</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Skip the endless scrolling. Pick a genre and discover a legal, free streaming destination for your next movie night.</p>
-          <div class="mt-auto pt-7 flex justify-between items-center text-xs font-semibold text-indigo-300"><span>Find your next watch</span><span aria-hidden="true" class="text-lg">↗</span></div>
-        </a>
-        <a href="excel-sandbox/index.html" data-title="Excel Formula Sandbox" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="excelTitle">
-          <div class="flex items-start justify-between mb-7"><span aria-hidden="true" class="size-12 rounded-xl border border-emerald-400/20 bg-emerald-500/10 text-emerald-300 grid place-items-center font-mono font-semibold text-2xl">ƒx</span><span class="text-[10px] uppercase tracking-wider text-emerald-300 border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 rounded-full">Live</span></div>
-          <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400 mb-2">Untangle &amp; understand</p><h3 id="excelTitle" class="text-lg font-semibold text-white group-hover:text-indigo-200">Excel Formula Sandbox</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Make sense of nested formulas with a readable tree, matching parenthesis colors, and one-click formatted copying.</p>
-          <div class="mt-auto pt-7 flex justify-between items-center text-xs font-semibold text-indigo-300"><span>Untangle a formula</span><span aria-hidden="true" class="text-lg">↗</span></div>
-        </a>
-        <a href="text-cleaner/index.html" data-title="AI Text Footprint Cleanser" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="cleanerTitle">
-          <div class="flex items-start justify-between mb-7"><span aria-hidden="true" class="size-12 rounded-xl border border-violet-400/20 bg-violet-500/10 text-violet-300 grid place-items-center"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m4 16-1 5 5-1L20 8a2.8 2.8 0 0 0-4-4L4 16Z" stroke-linejoin="round"/><path d="m14 6 4 4M4 16l4 4"/></svg></span><span class="text-[10px] uppercase tracking-wider text-emerald-300 border border-emerald-500/20 bg-emerald-500/5 px-2 py-1 rounded-full">Live</span></div>
-          <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-violet-400 mb-2">Simplify &amp; express</p><h3 id="cleanerTitle" class="text-lg font-semibold text-white group-hover:text-indigo-200">AI Text Footprint Cleanser</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Spot overused phrases and trade buzzwords for simpler wording. Keep your voice, with live writing metrics and reversible edits.</p>
-          <div class="mt-auto pt-7 flex justify-between items-center text-xs font-semibold text-indigo-300"><span>Clean up your writing</span><span aria-hidden="true" class="text-lg">↗</span></div>
-        </a>
-        <a href="case-converter/index.html" data-title="Case Converter" data-tool-id="case-converter" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-case-converter-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-case-converter-title" class="mt-4 text-lg font-semibold text-white">Case Converter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Convert text case with an explicit choice of transformation.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="duplicate-line-remover/index.html" data-title="Duplicate Line Remover" data-tool-id="duplicate-line-remover" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-duplicate-line-remover-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-duplicate-line-remover-title" class="mt-4 text-lg font-semibold text-white">Duplicate Line Remover</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Remove repeated lines with controllable matching rules.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="text-sorter/index.html" data-title="Text Sorter" data-tool-id="text-sorter" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-text-sorter-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-text-sorter-title" class="mt-4 text-lg font-semibold text-white">Text Sorter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Sort text lines using explicit ordering rules.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="slug-generator/index.html" data-title="Slug Generator" data-tool-id="slug-generator" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-slug-generator-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-slug-generator-title" class="mt-4 text-lg font-semibold text-white">Slug Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Create URL-friendly slugs from text with documented Unicode rules.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="find-and-replace/index.html" data-title="Find and Replace" data-tool-id="find-and-replace" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-find-and-replace-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-find-and-replace-title" class="mt-4 text-lg font-semibold text-white">Find and Replace</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Preview and apply literal text replacements safely.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="text-reverser/index.html" data-title="Text Reverser" data-tool-id="text-reverser" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-text-reverser-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-text-reverser-title" class="mt-4 text-lg font-semibold text-white">Text Reverser</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Reverse text by line, word, or grapheme unit.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="json-formatter/index.html" data-title="JSON Formatter" data-tool-id="json-formatter" data-category="data" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-json-formatter-title">
-          <p class="text-xs text-indigo-300">Excel and Data Tools · Live</p>
-          <h3 id="tool-json-formatter-title" class="mt-4 text-lg font-semibold text-white">JSON Formatter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Validate, pretty-print and compact JSON locally.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="url-encoder-decoder/index.html" data-title="URL Encoder and Decoder" data-tool-id="url-encoder-decoder" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-url-encoder-decoder-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-url-encoder-decoder-title" class="mt-4 text-lg font-semibold text-white">URL Encoder and Decoder</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Encode or decode URI components with explicit mode selection.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="base64-encoder-decoder/index.html" data-title="Base64 Encoder and Decoder" data-tool-id="base64-encoder-decoder" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-base64-encoder-decoder-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-base64-encoder-decoder-title" class="mt-4 text-lg font-semibold text-white">Base64 Encoder and Decoder</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Encode and decode Unicode text with clear Base64 validation.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="uuid-generator/index.html" data-title="UUID Generator" data-tool-id="uuid-generator" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-uuid-generator-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-uuid-generator-title" class="mt-4 text-lg font-semibold text-white">UUID Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Generate version-4 UUIDs using browser cryptographic randomness.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="timestamp-converter/index.html" data-title="Timestamp Converter" data-tool-id="timestamp-converter" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-timestamp-converter-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-timestamp-converter-title" class="mt-4 text-lg font-semibold text-white">Timestamp Converter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Convert epoch values and ISO dates with explicit timezone handling.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="percentage-calculator/index.html" data-title="Percentage Calculator" data-tool-id="percentage-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-percentage-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-percentage-calculator-title" class="mt-4 text-lg font-semibold text-white">Percentage Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Calculate a percentage of a value and one value as a percentage of another.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="percentage-change-calculator/index.html" data-title="Percentage Change Calculator" data-tool-id="percentage-change-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-percentage-change-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-percentage-change-calculator-title" class="mt-4 text-lg font-semibold text-white">Percentage Change Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Calculate increase or decrease from a starting value.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="discount-calculator/index.html" data-title="Discount Calculator" data-tool-id="discount-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-discount-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-discount-calculator-title" class="mt-4 text-lg font-semibold text-white">Discount Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Calculate a discounted price and savings.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="profit-margin-calculator/index.html" data-title="Profit Margin Calculator" data-tool-id="profit-margin-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-profit-margin-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-profit-margin-calculator-title" class="mt-4 text-lg font-semibold text-white">Profit Margin Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Calculate profit, margin and markup with distinct labels.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="date-difference-calculator/index.html" data-title="Date Difference Calculator" data-tool-id="date-difference-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-date-difference-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-date-difference-calculator-title" class="mt-4 text-lg font-semibold text-white">Date Difference Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Compare two calendar dates without daylight-saving drift.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="countdown-timer/index.html" data-title="Countdown Timer" data-tool-id="countdown-timer" data-category="productivity" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-countdown-timer-title">
-          <p class="text-xs text-indigo-300">Everyday Productivity Tools · Live</p>
-          <h3 id="tool-countdown-timer-title" class="mt-4 text-lg font-semibold text-white">Countdown Timer</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Run a duration timer using an actual deadline rather than interval ticks.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="random-name-picker/index.html" data-title="Random Name Picker" data-tool-id="random-name-picker" data-category="productivity" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-random-name-picker-title">
-          <p class="text-xs text-indigo-300">Everyday Productivity Tools · Live</p>
-          <h3 id="tool-random-name-picker-title" class="mt-4 text-lg font-semibold text-white">Random Name Picker</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Draw from a local list with an explicit replacement policy.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="hashtag-organizer/index.html" data-title="Hashtag Organizer" data-tool-id="hashtag-organizer" data-category="social" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-hashtag-organizer-title">
-          <p class="text-xs text-indigo-300">Social Media Tools · Live</p>
-          <h3 id="tool-hashtag-organizer-title" class="mt-4 text-lg font-semibold text-white">Hashtag Organizer</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Normalize and group hashtag lists without platform account access.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="secure-random-number-generator/index.html" data-title="Secure Random Number Generator" data-tool-id="secure-random-number-generator" data-category="security" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-secure-random-number-generator-title">
-          <p class="text-xs text-indigo-300">Security and Privacy Tools · Live</p>
-          <h3 id="tool-secure-random-number-generator-title" class="mt-4 text-lg font-semibold text-white">Secure Random Number Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Generate unbiased integers within a validated safe-integer interval.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="file-size-converter/index.html" data-title="File Size Converter" data-tool-id="file-size-converter" data-category="conversion" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-file-size-converter-title">
-          <p class="text-xs text-indigo-300">File Conversion Tools · Live</p>
-          <h3 id="tool-file-size-converter-title" class="mt-4 text-lg font-semibold text-white">File Size Converter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Convert byte quantities using explicitly labeled units.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="age-calculator/index.html" data-title="Age Calculator" data-tool-id="age-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-age-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-age-calculator-title" class="mt-4 text-lg font-semibold text-white">Age Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Calculate calendar age between user-selected dates.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="vat-calculator/index.html" data-title="VAT Calculator" data-tool-id="vat-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-vat-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-vat-calculator-title" class="mt-4 text-lg font-semibold text-white">VAT Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Add or remove a user-entered VAT rate.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="working-days-calculator/index.html" data-title="Working Days Calculator" data-tool-id="working-days-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-working-days-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-working-days-calculator-title" class="mt-4 text-lg font-semibold text-white">Working Days Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Count weekdays with user-defined exclusions.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="meeting-agenda-generator/index.html" data-title="Meeting Agenda Generator" data-tool-id="meeting-agenda-generator" data-category="productivity" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-meeting-agenda-generator-title">
-          <p class="text-xs text-indigo-300">Everyday Productivity Tools · Live</p>
-          <h3 id="tool-meeting-agenda-generator-title" class="mt-4 text-lg font-semibold text-white">Meeting Agenda Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Build a structured agenda with time allocations.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="image-rotator/index.html" data-title="Image Rotator" data-tool-id="image-rotator" data-category="image" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-image-rotator-title">
-          <p class="text-xs text-indigo-300">Image Tools · Live</p>
-          <h3 id="tool-image-rotator-title" class="mt-4 text-lg font-semibold text-white">Image Rotator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Rotate or flip local raster images.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="sha-256-hash-checker/index.html" data-title="SHA-256 Text &amp; File Hash Checker" data-tool-id="sha256-hash-checker" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-sha256-hash-checker-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-sha256-hash-checker-title" class="mt-4 text-lg font-semibold text-white">SHA-256 Text &amp; File Hash Checker</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Hash text or a bounded local file and compare a known digest.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="printable-calendar-generator/index.html" data-title="Printable Calendar Generator" data-tool-id="printable-calendar-generator" data-category="productivity" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-printable-calendar-generator-title">
-          <p class="text-xs text-indigo-300">Everyday Productivity Tools · Live</p>
-          <h3 id="tool-printable-calendar-generator-title" class="mt-4 text-lg font-semibold text-white">Printable Calendar Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Create monthly calendars with explicit locale choices.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="username-generator/index.html" data-title="Username Generator" data-tool-id="username-generator" data-category="social" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-username-generator-title">
-          <p class="text-xs text-indigo-300">Social Media Tools · Live</p>
-          <h3 id="tool-username-generator-title" class="mt-4 text-lg font-semibold text-white">Username Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Generate candidate usernames from local user-supplied words.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="youtube-description-formatter/index.html" data-title="YouTube Description Formatter" data-tool-id="youtube-description-formatter" data-category="social" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-youtube-description-formatter-title">
-          <p class="text-xs text-indigo-300">Social Media Tools · Live</p>
-          <h3 id="tool-youtube-description-formatter-title" class="mt-4 text-lg font-semibold text-white">YouTube Description Formatter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Assemble structured descriptions from user-provided sections.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="json-to-txt/index.html" data-title="JSON to TXT" data-tool-id="json-to-txt" data-category="conversion" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-json-to-txt-title">
-          <p class="text-xs text-indigo-300">File Conversion Tools · Live</p>
-          <h3 id="tool-json-to-txt-title" class="mt-4 text-lg font-semibold text-white">JSON to TXT</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Extract readable text from selected JSON values.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="image-resizer/index.html" data-title="Image Resizer" data-tool-id="image-resizer" data-category="image" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-image-resizer-title">
-          <p class="text-xs text-indigo-300">Image Tools · Live</p>
-          <h3 id="tool-image-resizer-title" class="mt-4 text-lg font-semibold text-white">Image Resizer</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Resize raster images by dimensions or percentage.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="text-difference-checker/index.html" data-title="Text Difference Checker" data-tool-id="text-difference-checker" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-text-difference-checker-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-text-difference-checker-title" class="mt-4 text-lg font-semibold text-white">Text Difference Checker</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Compare two texts and explain line-level differences.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="image-color-picker/index.html" data-title="Image Color Picker" data-tool-id="image-color-picker" data-category="image" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-image-color-picker-title">
-          <p class="text-xs text-indigo-300">Image Tools · Live</p>
-          <h3 id="tool-image-color-picker-title" class="mt-4 text-lg font-semibold text-white">Image Color Picker</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Inspect pixel colors in a local image.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="csv-viewer/index.html" data-title="CSV Viewer" data-tool-id="csv-viewer" data-category="data" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-csv-viewer-title">
-          <p class="text-xs text-indigo-300">Excel and Data Tools · Live</p>
-          <h3 id="tool-csv-viewer-title" class="mt-4 text-lg font-semibold text-white">CSV Viewer</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Inspect a local CSV in a bounded accessible table.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="image-watermark/index.html" data-title="Image Watermark" data-tool-id="image-watermark" data-category="image" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-image-watermark-title">
-          <p class="text-xs text-indigo-300">Image Tools · Live</p>
-          <h3 id="tool-image-watermark-title" class="mt-4 text-lg font-semibold text-white">Image Watermark</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Overlay text on local raster images.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="local-to-do-list/index.html" data-title="Local To-Do List" data-tool-id="local-to-do-list" data-category="productivity" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-local-to-do-list-title">
-          <p class="text-xs text-indigo-300">Everyday Productivity Tools · Live</p>
-          <h3 id="tool-local-to-do-list-title" class="mt-4 text-lg font-semibold text-white">Local To-Do List</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Manage tasks with explicit opt-in local persistence.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="posting-calendar-generator/index.html" data-title="Posting Calendar Generator" data-tool-id="posting-calendar-generator" data-category="social" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-posting-calendar-generator-title">
-          <p class="text-xs text-indigo-300">Social Media Tools · Live</p>
-          <h3 id="tool-posting-calendar-generator-title" class="mt-4 text-lg font-semibold text-white">Posting Calendar Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Build a manual posting plan for export.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="compound-interest-calculator/index.html" data-title="Compound Interest Calculator" data-tool-id="compound-interest-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-compound-interest-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-compound-interest-calculator-title" class="mt-4 text-lg font-semibold text-white">Compound Interest Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Estimate growth under user-defined compounding assumptions.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="loan-repayment-calculator/index.html" data-title="Loan Repayment Calculator" data-tool-id="loan-repayment-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-loan-repayment-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-loan-repayment-calculator-title" class="mt-4 text-lg font-semibold text-white">Loan Repayment Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Estimate fixed-rate loan payments from explicit assumptions.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="csv-column-extractor/index.html" data-title="CSV Column Extractor" data-tool-id="csv-column-extractor" data-category="data" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-csv-column-extractor-title">
-          <p class="text-xs text-indigo-300">Excel and Data Tools · Live</p>
-          <h3 id="tool-csv-column-extractor-title" class="mt-4 text-lg font-semibold text-white">CSV Column Extractor</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Select named or numbered columns from CSV data.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="duplicate-row-finder/index.html" data-title="Duplicate Row Finder" data-tool-id="duplicate-row-finder" data-category="data" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-duplicate-row-finder-title">
-          <p class="text-xs text-indigo-300">Excel and Data Tools · Live</p>
-          <h3 id="tool-duplicate-row-finder-title" class="mt-4 text-lg font-semibold text-white">Duplicate Row Finder</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Find or remove repeated CSV records.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="youtube-thumbnail-preview/index.html" data-title="YouTube Thumbnail Preview" data-tool-id="youtube-thumbnail-preview" data-category="social" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-youtube-thumbnail-preview-title">
-          <p class="text-xs text-indigo-300">Social Media Tools · Live</p>
-          <h3 id="tool-youtube-thumbnail-preview-title" class="mt-4 text-lg font-semibold text-white">YouTube Thumbnail Preview</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Preview a local thumbnail at typical feed sizes.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="pomodoro-timer/index.html" data-title="Pomodoro Timer" data-tool-id="pomodoro-timer" data-category="productivity" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-pomodoro-timer-title">
-          <p class="text-xs text-indigo-300">Everyday Productivity Tools · Live</p>
-          <h3 id="tool-pomodoro-timer-title" class="mt-4 text-lg font-semibold text-white">Pomodoro Timer</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Run a work and break timer with user-selected durations.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="invoice-generator/index.html" data-title="Invoice Generator" data-tool-id="invoice-generator" data-category="productivity" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-invoice-generator-title">
-          <p class="text-xs text-indigo-300">Everyday Productivity Tools · Live</p>
-          <h3 id="tool-invoice-generator-title" class="mt-4 text-lg font-semibold text-white">Invoice Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Create a printable invoice from user-entered business details.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="csv-merger/index.html" data-title="CSV Merger" data-tool-id="csv-merger" data-category="data" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-csv-merger-title">
-          <p class="text-xs text-indigo-300">Excel and Data Tools · Live</p>
-          <h3 id="tool-csv-merger-title" class="mt-4 text-lg font-semibold text-white">CSV Merger</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Append compatible CSV files while validating headers.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="youtube-title-checker/index.html" data-title="YouTube Title Checker" data-tool-id="youtube-title-checker" data-category="social" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-youtube-title-checker-title">
-          <p class="text-xs text-indigo-300">Social Media Tools · Live</p>
-          <h3 id="tool-youtube-title-checker-title" class="mt-4 text-lg font-semibold text-white">YouTube Title Checker</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Measure title length against a maintained configurable guide.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="instagram-bio-formatter/index.html" data-title="Instagram Bio Formatter" data-tool-id="instagram-bio-formatter" data-category="social" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-instagram-bio-formatter-title">
-          <p class="text-xs text-indigo-300">Social Media Tools · Live</p>
-          <h3 id="tool-instagram-bio-formatter-title" class="mt-4 text-lg font-semibold text-white">Instagram Bio Formatter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Preview and format a short profile biography.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="file-signature-inspector/index.html" data-title="File Signature Inspector" data-tool-id="file-signature-inspector" data-category="security" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-file-signature-inspector-title">
-          <p class="text-xs text-indigo-300">Security and Privacy Tools · Live</p>
-          <h3 id="tool-file-signature-inspector-title" class="mt-4 text-lg font-semibold text-white">File Signature Inspector</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Compare initial file bytes with a maintained signature list.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="image-format-converter/index.html" data-title="Image Format Converter" data-tool-id="image-format-converter" data-category="image" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-image-format-converter-title">
-          <p class="text-xs text-indigo-300">Image Tools · Live</p>
-          <h3 id="tool-image-format-converter-title" class="mt-4 text-lg font-semibold text-white">Image Format Converter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Convert among JPEG, PNG and WebP in one interface.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="csv-json-converter/index.html" data-title="CSV ↔ JSON Converter" data-tool-id="csv-json-converter" data-category="data" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-csv-json-converter-title">
-          <p class="text-xs text-indigo-300">Excel and Data Tools · Live</p>
-          <h3 id="tool-csv-json-converter-title" class="mt-4 text-lg font-semibold text-white">CSV ↔ JSON Converter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Convert CSV and arrays of JSON records in a single utility.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="regex-tester/index.html" data-title="Regex Tester" data-tool-id="regex-tester" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-regex-tester-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-regex-tester-title" class="mt-4 text-lg font-semibold text-white">Regex Tester</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Inspect regular-expression matches with explicit execution limits.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="password-generator/index.html" data-title="Password Generator" data-tool-id="password-generator" data-category="security" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-password-generator-title">
-          <p class="text-xs text-indigo-300">Security and Privacy Tools · Live</p>
-          <h3 id="tool-password-generator-title" class="mt-4 text-lg font-semibold text-white">Password Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Create passwords using browser cryptographic randomness.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="csv-to-txt/index.html" data-title="CSV to TXT" data-tool-id="csv-to-txt" data-category="conversion" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-csv-to-txt-title">
-          <p class="text-xs text-indigo-300">File Conversion Tools · Live</p>
-          <h3 id="tool-csv-to-txt-title" class="mt-4 text-lg font-semibold text-white">CSV to TXT</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Render selected CSV fields into a configurable text layout.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="passphrase-generator/index.html" data-title="Passphrase Generator" data-tool-id="passphrase-generator" data-category="security" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-passphrase-generator-title">
-          <p class="text-xs text-indigo-300">Security and Privacy Tools · Live</p>
-          <h3 id="tool-passphrase-generator-title" class="mt-4 text-lg font-semibold text-white">Passphrase Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Generate random word sequences from a reviewed local word list.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="qr-code-generator/index.html" data-title="QR Code Generator" data-tool-id="qr-code-generator" data-category="security" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-qr-code-generator-title">
-          <p class="text-xs text-indigo-300">Security and Privacy Tools · Live</p>
-          <h3 id="tool-qr-code-generator-title" class="mt-4 text-lg font-semibold text-white">QR Code Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Generate QR codes locally from user-provided text.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="image-cropper/index.html" data-title="Image Cropper" data-tool-id="image-cropper" data-category="image" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-image-cropper-title">
-          <p class="text-xs text-indigo-300">Image Tools · Live</p>
-          <h3 id="tool-image-cropper-title" class="mt-4 text-lg font-semibold text-white">Image Cropper</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Crop an image with an accessible selection workflow.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="csv-data-cleaner/index.html" data-title="CSV Data Cleaner" data-tool-id="csv-data-cleaner" data-category="data" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-csv-data-cleaner-title">
-          <p class="text-xs text-indigo-300">Excel and Data Tools · Live</p>
-          <h3 id="tool-csv-data-cleaner-title" class="mt-4 text-lg font-semibold text-white">CSV Data Cleaner</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Apply explicit cleaning operations to CSV fields.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="excel-formula-generator/index.html" data-title="Excel Formula Generator" data-tool-id="excel-formula-generator" data-category="data" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-excel-formula-generator-title">
-          <p class="text-xs text-indigo-300">Excel and Data Tools · Live</p>
-          <h3 id="tool-excel-formula-generator-title" class="mt-4 text-lg font-semibold text-white">Excel Formula Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Generate formulas from deterministic guided templates.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="emoji-picker/index.html" data-title="Emoji Picker" data-tool-id="emoji-picker" data-category="social" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-emoji-picker-title">
-          <p class="text-xs text-indigo-300">Social Media Tools · Live</p>
-          <h3 id="tool-emoji-picker-title" class="mt-4 text-lg font-semibold text-white">Emoji Picker</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Find and copy emoji from a maintained local dataset.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="image-compressor/index.html" data-title="Image Compressor" data-tool-id="image-compressor" data-category="image" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-image-compressor-title">
-          <p class="text-xs text-indigo-300">Image Tools · Live</p>
-          <h3 id="tool-image-compressor-title" class="mt-4 text-lg font-semibold text-white">Image Compressor</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Reduce raster image size with visible quality tradeoffs.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="png-to-ico/index.html" data-title="PNG to ICO" data-tool-id="png-to-ico" data-category="conversion" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-png-to-ico-title">
-          <p class="text-xs text-indigo-300">File Conversion Tools · Live</p>
-          <h3 id="tool-png-to-ico-title" class="mt-4 text-lg font-semibold text-white">PNG to ICO</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Package supported PNG-derived sizes into an icon file.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="resume-builder/index.html" data-title="Resume Builder" data-tool-id="resume-builder" data-category="productivity" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-resume-builder-title">
-          <p class="text-xs text-indigo-300">Everyday Productivity Tools · Live</p>
-          <h3 id="tool-resume-builder-title" class="mt-4 text-lg font-semibold text-white">Resume Builder</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Prepare a structured printable resume without account registration.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="passport-photo-layout-maker/index.html" data-title="Passport Photo Layout Maker" data-tool-id="passport-photo-layout-maker" data-category="image" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-passport-photo-layout-maker-title">
-          <p class="text-xs text-indigo-300">Image Tools · Live</p>
-          <h3 id="tool-passport-photo-layout-maker-title" class="mt-4 text-lg font-semibold text-white">Passport Photo Layout Maker</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Arrange user-sized photo tiles on a printable sheet.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="hashtag-counter/index.html" data-title="Hashtag Counter" data-tool-id="hashtag-counter" data-category="social" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-hashtag-counter-title">
-          <p class="text-xs text-indigo-300">Social Media Tools · Live</p>
-          <h3 id="tool-hashtag-counter-title" class="mt-4 text-lg font-semibold text-white">Hashtag Counter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Count hashtags in pasted posts with explicit token rules.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="html-formatter/index.html" data-title="HTML Formatter" data-tool-id="html-formatter" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-html-formatter-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-html-formatter-title" class="mt-4 text-lg font-semibold text-white">HTML Formatter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Format markup using an evaluated parser without executing it.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="css-minifier/index.html" data-title="CSS Minifier" data-tool-id="css-minifier" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-css-minifier-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-css-minifier-title" class="mt-4 text-lg font-semibold text-white">CSS Minifier</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Minify stylesheet text using a reviewed parser.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="javascript-minifier/index.html" data-title="JavaScript Minifier" data-tool-id="javascript-minifier" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-javascript-minifier-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-javascript-minifier-title" class="mt-4 text-lg font-semibold text-white">JavaScript Minifier</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Minify JavaScript source without running it.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="html-to-markdown/index.html" data-title="HTML to Markdown" data-tool-id="html-to-markdown" data-category="conversion" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-html-to-markdown-title">
-          <p class="text-xs text-indigo-300">File Conversion Tools · Live</p>
-          <h3 id="tool-html-to-markdown-title" class="mt-4 text-lg font-semibold text-white">HTML to Markdown</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Convert supplied markup to Markdown without executing it.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="html-previewer/index.html" data-title="HTML Previewer" data-tool-id="html-previewer" data-category="conversion" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-html-previewer-title">
-          <p class="text-xs text-indigo-300">File Conversion Tools · Live</p>
-          <h3 id="tool-html-previewer-title" class="mt-4 text-lg font-semibold text-white">HTML Previewer</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Preview untrusted markup in an isolated sandbox.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="markdown-converter-previewer/index.html" data-title="Markdown Converter &amp; Previewer" data-tool-id="markdown-converter-previewer" data-category="conversion" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-markdown-converter-previewer-title">
-          <p class="text-xs text-indigo-300">File Conversion Tools · Live</p>
-          <h3 id="tool-markdown-converter-previewer-title" class="mt-4 text-lg font-semibold text-white">Markdown Converter &amp; Previewer</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Convert Markdown to sanitized HTML and preview it safely.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="number-base-converter/index.html" data-title="Number Base Converter" data-tool-id="number-base-converter" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-number-base-converter-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-number-base-converter-title" class="mt-4 text-lg font-semibold text-white">Number Base Converter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Convert exact signed integers between bases 2–36 in one interface, with binary/octal/decimal/hex presets..</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="unit-converter/index.html" data-title="Unit Converter" data-tool-id="unit-converter" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-unit-converter-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-unit-converter-title" class="mt-4 text-lg font-semibold text-white">Unit Converter</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Convert a reviewed fixed set of length, mass, area, volume and temperature units.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="duration-calculator/index.html" data-title="Duration Calculator" data-tool-id="duration-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-duration-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-duration-calculator-title" class="mt-4 text-lg font-semibold text-white">Duration Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Add/subtract elapsed durations and normalize totals.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="url-inspector-query-builder/index.html" data-title="URL Inspector &amp; Query Builder" data-tool-id="url-inspector-query-builder" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-url-inspector-query-builder-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-url-inspector-query-builder-title" class="mt-4 text-lg font-semibold text-white">URL Inspector &amp; Query Builder</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Show URL components and edit an ordered list of duplicate-preserving query name/value pairs.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="list-comparison-set-operations/index.html" data-title="List Comparison &amp; Set Operations" data-tool-id="list-comparison-set-operations" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-list-comparison-set-operations-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-list-comparison-set-operations-title" class="mt-4 text-lg font-semibold text-white">List Comparison &amp; Set Operations</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Compare two line lists: union, intersection, A minus B, B minus A and symmetric difference.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="color-contrast-checker/index.html" data-title="Color Contrast Checker" data-tool-id="color-contrast-checker" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-color-contrast-checker-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-color-contrast-checker-title" class="mt-4 text-lg font-semibold text-white">Color Contrast Checker</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Compare two opaque sRGB colours, calculate WCAG contrast and show AA/AAA normal/large-text labels with a fixed labelled text preview.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="word-frequency-analyzer/index.html" data-title="Word Frequency Analyzer" data-tool-id="word-frequency-analyzer" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-word-frequency-analyzer-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-word-frequency-analyzer-title" class="mt-4 text-lg font-semibold text-white">Word Frequency Analyzer</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Rank repeated words and count unique terms in pasted text.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="unicode-inspector/index.html" data-title="Unicode Inspector" data-tool-id="unicode-inspector" data-category="text" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-unicode-inspector-title">
-          <p class="text-xs text-indigo-300">Text and Writing Tools · Live</p>
-          <h3 id="tool-unicode-inspector-title" class="mt-4 text-lg font-semibold text-white">Unicode Inspector</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Inspect Unicode code points, encoding units, clusters and normalization.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="ipv4-subnet-calculator/index.html" data-title="IPv4 Subnet Calculator" data-tool-id="ipv4-subnet-calculator" data-category="calculator" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-ipv4-subnet-calculator-title">
-          <p class="text-xs text-indigo-300">Calculators · Live</p>
-          <h3 id="tool-ipv4-subnet-calculator-title" class="mt-4 text-lg font-semibold text-white">IPv4 Subnet Calculator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Calculate IPv4 subnet boundaries and address counts from an address and CIDR prefix.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="batch-filename-planner/index.html" data-title="Batch Filename Planner" data-tool-id="batch-filename-planner" data-category="productivity" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-batch-filename-planner-title">
-          <p class="text-xs text-indigo-300">Everyday Productivity Tools · Live</p>
-          <h3 id="tool-batch-filename-planner-title" class="mt-4 text-lg font-semibold text-white">Batch Filename Planner</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Preview filename transformations and export a mapping without changing files.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="file-byte-comparator/index.html" data-title="File Byte Comparator" data-tool-id="file-byte-comparator" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-file-byte-comparator-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-file-byte-comparator-title" class="mt-4 text-lg font-semibold text-white">File Byte Comparator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Compare two local files and locate the first differing byte.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-        <a href="css-gradient-generator/index.html" data-title="CSS Gradient Generator" data-tool-id="css-gradient-generator" data-category="developer" data-availability="released" class="tool-card group flex flex-col min-h-80 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-indigo-400/60 hover:bg-slate-900 p-6" aria-labelledby="tool-css-gradient-generator-title">
-          <p class="text-xs text-indigo-300">Developer Tools · Live</p>
-          <h3 id="tool-css-gradient-generator-title" class="mt-4 text-lg font-semibold text-white">CSS Gradient Generator</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">Build and preview linear or centered radial CSS gradients from validated colour stops.</p>
-          <span class="mt-auto pt-7 text-indigo-300">Open tool →</span>
-        </a>
-      </div>
-      <div id="emptyState" hidden class="dot-grid rounded-2xl border border-slate-800 bg-slate-900/30 text-center px-6 py-14"><span aria-hidden="true" class="text-3xl text-indigo-300">⌕</span><h3 class="mt-3 text-lg font-semibold text-white">No tools found</h3><p class="mt-2 text-sm text-slate-400">Try “Social”, “Excel”, “Stream”, or “Text” to find a tool.</p><button id="resetSearch" type="button" class="mt-5 text-sm font-semibold text-indigo-300 hover:text-indigo-200 rounded">Show all tools →</button></div>
-    </section>
-
-    <div aria-label="Bottom advertisement space" class="rounded-2xl border border-slate-800 bg-slate-900/30 p-3 mt-10"><div class="dot-grid min-h-24 rounded-xl border-2 border-dashed border-slate-700 flex flex-col items-center justify-center text-center p-5"><p class="text-[11px] font-mono tracking-[0.2em] text-slate-400">ADSENSE PLACEMENT</p><p class="text-xs text-slate-600 mt-2">Responsive banner space</p></div></div>
-    <p class="text-center text-xs leading-6 text-slate-500 mt-7">Built for quick tasks, without an account. Tool processing runs locally; styles load from this site.</p>
-  </main>
-  <footer class="border-t border-slate-800"><div class="max-w-6xl mx-auto px-5 sm:px-8 py-6 flex flex-wrap justify-between items-center gap-3 text-xs text-slate-500"><p>© 2026 WebUtils Hub</p><a href="privacy.html" class="hover:text-indigo-300 rounded">Privacy and cookies</a><a href="#welcomeTitle" class="hover:text-indigo-300 rounded">Back to top ↑</a></div></footer>
-  <script>
-    'use strict';
-    const searchInput = document.getElementById('toolSearch');
-    const cards = Array.from(document.querySelectorAll('#toolGrid [data-title]'));
-    const clearButton = document.getElementById('clearSearch');
-    const resultCount = document.getElementById('resultCount');
-    function normalize(text) {
-      return text.normalize('NFKC').toLocaleLowerCase('en').trim().replace(/\s+/g, ' ');
+<body class="homepage">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html" aria-label="Everyday Digital Box home"><span class="brand-mark" aria-hidden="true"></span><span>Everyday<br>Digital Box</span></a><button class="mobile-menu js-control" id="menu" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Primary"><a href="#tools">All Tools</a><a href="#categories">Categories</a><a href="privacy.html">Privacy</a></nav></div></header>
+<main id="main" class="container" tabindex="-1"><section class="hero" aria-labelledby="home-title"><h1 id="home-title">Useful tools for everyday tasks.</h1><p>Work with text, data, images and numbers. Choose a task and get started without an account.</p>
+<div class="search-area js-control"><label for="toolSearch">Find a tool</label><div class="search-row"><input id="toolSearch" type="search" placeholder="Try format JSON or resize image" aria-describedby="search-help" autocomplete="off"><button id="clearSearch" type="button">Clear</button></div><small id="search-help" class="search-help">Search names, descriptions and common tasks. Searches stay in this page.</small></div>
+<div id="categories" tabindex="-1"><div class="category-controls js-control" role="group" aria-label="Filter tools by category"><button type="button" data-category-filter="all" aria-pressed="true">All tools</button><button type="button" data-category-filter="text-writing" aria-pressed="false">Text &amp; writing</button><button type="button" data-category-filter="csv-spreadsheets" aria-pressed="false">CSV &amp; spreadsheets</button><button type="button" data-category-filter="developer" aria-pressed="false">Developer tools</button><button type="button" data-category-filter="images" aria-pressed="false">Images</button><button type="button" data-category-filter="calculators" aria-pressed="false">Calculators</button><button type="button" data-category-filter="social-media" aria-pressed="false">Social media</button><button type="button" data-category-filter="security-files" aria-pressed="false">Passwords &amp; file checks</button><button type="button" data-category-filter="everyday" aria-pressed="false">Everyday tools</button></div><div class="mobile-category js-control"><label for="category-select">Category</label><select id="category-select"><option value="all">All categories</option><option value="text-writing">Text &amp; writing</option><option value="csv-spreadsheets">CSV &amp; spreadsheets</option><option value="developer">Developer tools</option><option value="images">Images</option><option value="calculators">Calculators</option><option value="social-media">Social media</option><option value="security-files">Passwords &amp; file checks</option><option value="everyday">Everyday tools</option></select></div><details class="category-jumps"><summary>Browse all eight categories</summary><a href="#category-text-writing" data-category-jump="text-writing">Text &amp; writing</a><a href="#category-csv-spreadsheets" data-category-jump="csv-spreadsheets">CSV &amp; spreadsheets</a><a href="#category-developer" data-category-jump="developer">Developer tools</a><a href="#category-images" data-category-jump="images">Images</a><a href="#category-calculators" data-category-jump="calculators">Calculators</a><a href="#category-social-media" data-category-jump="social-media">Social media</a><a href="#category-security-files" data-category-jump="security-files">Passwords &amp; file checks</a><a href="#category-everyday" data-category-jump="everyday">Everyday tools</a></details></div></section>
+<section id="tools" tabindex="-1" aria-labelledby="directory-title"><div class="section-heading"><h2 id="directory-title">All tools</h2><p id="resultCount" class="muted" role="status" aria-live="polite" aria-atomic="true">87 tools ready to use</p></div><div id="empty" class="empty" hidden><h3>No matching tools</h3><p>Try a shorter term or clear the search and category filter.</p><button id="reset-results" type="button">Show all tools</button></div><div id="toolGrid"><section class="tool-group" id="category-text-writing" data-group="text-writing" aria-labelledby="heading-text-writing"><h3 id="heading-text-writing">Text &amp; writing <span class="muted">(11)</span></h3><div class="tool-grid"><a class="tool-card" data-title="AI Text Footprint Cleanser" data-tool-id="text-cleaner" data-category="text-writing" data-availability="released" data-search="AI Text Footprint Cleanser Highlight and replace listed editorial phrases locally. editorial phrase cleanup word count reading time estimate" href="text-cleaner/index.html" aria-labelledby="tool-text-cleaner-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-text-cleaner-title">AI Text Footprint Cleanser</h4> <p>Highlight and replace listed editorial phrases locally.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Case Converter" data-tool-id="case-converter" data-category="text-writing" data-availability="released" data-search="Case Converter Convert text case with an explicit choice of transformation. uppercase lowercase title case sentence case" href="case-converter/index.html" aria-labelledby="tool-case-converter-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-case-converter-title">Case Converter</h4> <p>Convert text case with an explicit choice of transformation.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Duplicate Line Remover" data-tool-id="duplicate-line-remover" data-category="text-writing" data-availability="released" data-search="Duplicate Line Remover Remove repeated lines with controllable matching rules. deduplicate lines unique text lines remove repeated lines" href="duplicate-line-remover/index.html" aria-labelledby="tool-duplicate-line-remover-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-duplicate-line-remover-title">Duplicate Line Remover</h4> <p>Remove repeated lines with controllable matching rules.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Text Difference Checker" data-tool-id="text-difference-checker" data-category="text-writing" data-availability="released" data-search="Text Difference Checker Compare two texts and explain line-level differences. text diff compare text line differences" href="text-difference-checker/index.html" aria-labelledby="tool-text-difference-checker-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-text-difference-checker-title">Text Difference Checker</h4> <p>Compare two texts and explain line-level differences.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Text Sorter" data-tool-id="text-sorter" data-category="text-writing" data-availability="released" data-search="Text Sorter Sort text lines using explicit ordering rules. sort lines alphabetical list numeric line sort" href="text-sorter/index.html" aria-labelledby="tool-text-sorter-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-text-sorter-title">Text Sorter</h4> <p>Sort text lines using explicit ordering rules.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Text Reverser" data-tool-id="text-reverser" data-category="text-writing" data-availability="released" data-search="Text Reverser Reverse text by line, word, or grapheme unit. reverse words reverse lines reverse text" href="text-reverser/index.html" aria-labelledby="tool-text-reverser-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-text-reverser-title">Text Reverser</h4> <p>Reverse text by line, word, or grapheme unit.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Find and Replace" data-tool-id="find-and-replace" data-category="text-writing" data-availability="released" data-search="Find and Replace Preview and apply literal text replacements safely. literal text replacement replace words find matches" href="find-and-replace/index.html" aria-labelledby="tool-find-and-replace-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-find-and-replace-title">Find and Replace</h4> <p>Preview and apply literal text replacements safely.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Slug Generator" data-tool-id="slug-generator" data-category="text-writing" data-availability="released" data-search="Slug Generator Create URL-friendly slugs from text with documented Unicode rules. URL slug slugify friendly URL text" href="slug-generator/index.html" aria-labelledby="tool-slug-generator-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-slug-generator-title">Slug Generator</h4> <p>Create URL-friendly slugs from text with documented Unicode rules.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="List Comparison &amp; Set Operations" data-tool-id="list-comparison-set-operations" data-category="text-writing" data-availability="released" data-search="List Comparison &amp; Set Operations Compare two line lists: union, intersection, A minus B, B minus A and symmetric difference. compare lists intersection union list difference" href="list-comparison-set-operations/index.html" aria-labelledby="tool-list-comparison-set-operations-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-list-comparison-set-operations-title">List Comparison &amp; Set Operations</h4> <p>Compare two line lists: union, intersection, A minus B, B minus A and symmetric difference.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Word Frequency Analyzer" data-tool-id="word-frequency-analyzer" data-category="text-writing" data-availability="released" data-search="Word Frequency Analyzer Rank repeated words and count unique terms in pasted text. word frequency repeated words unique word count" href="word-frequency-analyzer/index.html" aria-labelledby="tool-word-frequency-analyzer-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-word-frequency-analyzer-title">Word Frequency Analyzer</h4> <p>Rank repeated words and count unique terms in pasted text.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Unicode Inspector" data-tool-id="unicode-inspector" data-category="text-writing" data-availability="released" data-search="Unicode Inspector Inspect Unicode code points, encoding units, clusters and normalization. code points UTF-8 UTF-16 grapheme Unicode normalization" href="unicode-inspector/index.html" aria-labelledby="tool-unicode-inspector-title"><small class="category-label">Text &amp; writing · Live</small> <h4 id="tool-unicode-inspector-title">Unicode Inspector</h4> <p>Inspect Unicode code points, encoding units, clusters and normalization.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+</div></section>
+<section class="tool-group" id="category-csv-spreadsheets" data-group="csv-spreadsheets" aria-labelledby="heading-csv-spreadsheets"><h3 id="heading-csv-spreadsheets">CSV &amp; spreadsheets <span class="muted">(10)</span></h3><div class="tool-grid"><a class="tool-card" data-title="Excel Formula Sandbox &amp; Analyzer" data-tool-id="excel-sandbox" data-category="csv-spreadsheets" data-availability="released" data-search="Excel Formula Sandbox &amp; Analyzer Format and inspect Excel formula structure without evaluation. formula formatter formula structure Excel nesting" href="excel-sandbox/index.html" aria-labelledby="tool-excel-sandbox-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-excel-sandbox-title">Excel Formula Sandbox &amp; Analyzer</h4> <p>Format and inspect Excel formula structure without evaluation.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="CSV ↔ JSON Converter" data-tool-id="csv-json-converter" data-category="csv-spreadsheets" data-availability="released" data-search="CSV ↔ JSON Converter Convert CSV and arrays of JSON records in a single utility. CSV to JSON JSON to CSV records conversion" href="csv-json-converter/index.html" aria-labelledby="tool-csv-json-converter-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-csv-json-converter-title">CSV ↔ JSON Converter</h4> <p>Convert CSV and arrays of JSON records in a single utility.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="CSV Column Extractor" data-tool-id="csv-column-extractor" data-category="csv-spreadsheets" data-availability="released" data-search="CSV Column Extractor Select named or numbered columns from CSV data. select CSV columns reorder CSV columns extract fields" href="csv-column-extractor/index.html" aria-labelledby="tool-csv-column-extractor-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-csv-column-extractor-title">CSV Column Extractor</h4> <p>Select named or numbered columns from CSV data.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Duplicate Row Finder" data-tool-id="duplicate-row-finder" data-category="csv-spreadsheets" data-availability="released" data-search="Duplicate Row Finder Find or remove repeated CSV records. duplicate CSV rows deduplicate records unique rows" href="duplicate-row-finder/index.html" aria-labelledby="tool-duplicate-row-finder-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-duplicate-row-finder-title">Duplicate Row Finder</h4> <p>Find or remove repeated CSV records.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="CSV Data Cleaner" data-tool-id="csv-data-cleaner" data-category="csv-spreadsheets" data-availability="released" data-search="CSV Data Cleaner Apply explicit cleaning operations to CSV fields. clean CSV fields missing values trim table data" href="csv-data-cleaner/index.html" aria-labelledby="tool-csv-data-cleaner-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-csv-data-cleaner-title">CSV Data Cleaner</h4> <p>Apply explicit cleaning operations to CSV fields.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="CSV Merger" data-tool-id="csv-merger" data-category="csv-spreadsheets" data-availability="released" data-search="CSV Merger Append compatible CSV files while validating headers. append CSV files combine CSV rows align CSV headers" href="csv-merger/index.html" aria-labelledby="tool-csv-merger-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-csv-merger-title">CSV Merger</h4> <p>Append compatible CSV files while validating headers.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="CSV Viewer" data-tool-id="csv-viewer" data-category="csv-spreadsheets" data-availability="released" data-search="CSV Viewer Inspect a local CSV in a bounded accessible table. open CSV inspect CSV table view spreadsheet data" href="csv-viewer/index.html" aria-labelledby="tool-csv-viewer-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-csv-viewer-title">CSV Viewer</h4> <p>Inspect a local CSV in a bounded accessible table.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Excel Formula Generator" data-tool-id="excel-formula-generator" data-category="csv-spreadsheets" data-availability="released" data-search="Excel Formula Generator Generate formulas from deterministic guided templates. guided Excel formulas formula templates formula separator" href="excel-formula-generator/index.html" aria-labelledby="tool-excel-formula-generator-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-excel-formula-generator-title">Excel Formula Generator</h4> <p>Generate formulas from deterministic guided templates.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="CSV to TXT" data-tool-id="csv-to-txt" data-category="csv-spreadsheets" data-availability="released" data-search="CSV to TXT Render selected CSV fields into a configurable text layout. CSV to text CSV text layout extract CSV values" href="csv-to-txt/index.html" aria-labelledby="tool-csv-to-txt-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-csv-to-txt-title">CSV to TXT</h4> <p>Render selected CSV fields into a configurable text layout.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="JSON to TXT" data-tool-id="json-to-txt" data-category="csv-spreadsheets" data-availability="released" data-search="JSON to TXT Extract readable text from selected JSON values. JSON to text JSON field extraction JSON path values" href="json-to-txt/index.html" aria-labelledby="tool-json-to-txt-title"><small class="category-label">CSV &amp; spreadsheets · Live</small> <h4 id="tool-json-to-txt-title">JSON to TXT</h4> <p>Extract readable text from selected JSON values.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+</div></section>
+<section class="tool-group" id="category-developer" data-group="developer" aria-labelledby="heading-developer"><h3 id="heading-developer">Developer tools <span class="muted">(17)</span></h3><div class="tool-grid"><a class="tool-card" data-title="JSON Formatter" data-tool-id="json-formatter" data-category="developer" data-availability="released" data-search="JSON Formatter Validate, pretty-print and compact JSON locally. pretty print JSON validate JSON compact JSON" href="json-formatter/index.html" aria-labelledby="tool-json-formatter-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-json-formatter-title">JSON Formatter</h4> <p>Validate, pretty-print and compact JSON locally.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Base64 Encoder and Decoder" data-tool-id="base64-encoder-decoder" data-category="developer" data-availability="released" data-search="Base64 Encoder and Decoder Encode and decode Unicode text with clear Base64 validation. UTF-8 Base64 encode text decode Base64" href="base64-encoder-decoder/index.html" aria-labelledby="tool-base64-encoder-decoder-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-base64-encoder-decoder-title">Base64 Encoder and Decoder</h4> <p>Encode and decode Unicode text with clear Base64 validation.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="URL Encoder and Decoder" data-tool-id="url-encoder-decoder" data-category="developer" data-availability="released" data-search="URL Encoder and Decoder Encode or decode URI components with explicit mode selection. percent encoding URI component decode URL escapes" href="url-encoder-decoder/index.html" aria-labelledby="tool-url-encoder-decoder-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-url-encoder-decoder-title">URL Encoder and Decoder</h4> <p>Encode or decode URI components with explicit mode selection.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="UUID Generator" data-tool-id="uuid-generator" data-category="developer" data-availability="released" data-search="UUID Generator Generate version-4 UUIDs using browser cryptographic randomness. version 4 UUID v4 identifier random UUID" href="uuid-generator/index.html" aria-labelledby="tool-uuid-generator-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-uuid-generator-title">UUID Generator</h4> <p>Generate version-4 UUIDs using browser cryptographic randomness.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Regex Tester" data-tool-id="regex-tester" data-category="developer" data-availability="released" data-search="Regex Tester Inspect regular-expression matches with explicit execution limits. regular expression pattern match regex flags" href="regex-tester/index.html" aria-labelledby="tool-regex-tester-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-regex-tester-title">Regex Tester</h4> <p>Inspect regular-expression matches with explicit execution limits.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="HTML Formatter" data-tool-id="html-formatter" data-category="developer" data-availability="released" data-search="HTML Formatter Format markup using an evaluated parser without executing it. pretty print HTML format markup" href="html-formatter/index.html" aria-labelledby="tool-html-formatter-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-html-formatter-title">HTML Formatter</h4> <p>Format markup using an evaluated parser without executing it.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="CSS Minifier" data-tool-id="css-minifier" data-category="developer" data-availability="released" data-search="CSS Minifier Minify stylesheet text using a reviewed parser. compress CSS minify stylesheet" href="css-minifier/index.html" aria-labelledby="tool-css-minifier-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-css-minifier-title">CSS Minifier</h4> <p>Minify stylesheet text using a reviewed parser.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="JavaScript Minifier" data-tool-id="javascript-minifier" data-category="developer" data-availability="released" data-search="JavaScript Minifier Minify JavaScript source without running it. minify JS compress JavaScript" href="javascript-minifier/index.html" aria-labelledby="tool-javascript-minifier-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-javascript-minifier-title">JavaScript Minifier</h4> <p>Minify JavaScript source without running it.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Timestamp Converter" data-tool-id="timestamp-converter" data-category="developer" data-availability="released" data-search="Timestamp Converter Convert epoch values and ISO dates with explicit timezone handling. Unix timestamp epoch seconds epoch milliseconds ISO date" href="timestamp-converter/index.html" aria-labelledby="tool-timestamp-converter-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-timestamp-converter-title">Timestamp Converter</h4> <p>Convert epoch values and ISO dates with explicit timezone handling.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Markdown Converter &amp; Previewer" data-tool-id="markdown-converter-previewer" data-category="developer" data-availability="released" data-search="Markdown Converter &amp; Previewer Convert Markdown to sanitized HTML and preview it safely. Markdown to HTML Markdown preview sanitized HTML" href="markdown-converter-previewer/index.html" aria-labelledby="tool-markdown-converter-previewer-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-markdown-converter-previewer-title">Markdown Converter &amp; Previewer</h4> <p>Convert Markdown to sanitized HTML and preview it safely.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="HTML to Markdown" data-tool-id="html-to-markdown" data-category="developer" data-availability="released" data-search="HTML to Markdown Convert supplied markup to Markdown without executing it. markup to Markdown HTML conversion" href="html-to-markdown/index.html" aria-labelledby="tool-html-to-markdown-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-html-to-markdown-title">HTML to Markdown</h4> <p>Convert supplied markup to Markdown without executing it.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="HTML Previewer" data-tool-id="html-previewer" data-category="developer" data-availability="released" data-search="HTML Previewer Preview untrusted markup in an isolated sandbox. sandbox HTML preview inspect markup preview" href="html-previewer/index.html" aria-labelledby="tool-html-previewer-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-html-previewer-title">HTML Previewer</h4> <p>Preview untrusted markup in an isolated sandbox.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Number Base Converter" data-tool-id="number-base-converter" data-category="developer" data-availability="released" data-search="Number Base Converter Convert exact signed integers between bases 2–36 in one interface, with binary/octal/decimal/hex presets.. binary decimal hex radix base 2 to 36" href="number-base-converter/index.html" aria-labelledby="tool-number-base-converter-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-number-base-converter-title">Number Base Converter</h4> <p>Convert exact signed integers between bases 2–36 in one interface, with binary/octal/decimal/hex presets..</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="URL Inspector &amp; Query Builder" data-tool-id="url-inspector-query-builder" data-category="developer" data-availability="released" data-search="URL Inspector &amp; Query Builder Show URL components and edit an ordered list of duplicate-preserving query name/value pairs. URL parts query parameters duplicate query pairs" href="url-inspector-query-builder/index.html" aria-labelledby="tool-url-inspector-query-builder-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-url-inspector-query-builder-title">URL Inspector &amp; Query Builder</h4> <p>Show URL components and edit an ordered list of duplicate-preserving query name/value pairs.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Color Contrast Checker" data-tool-id="color-contrast-checker" data-category="developer" data-availability="released" data-search="Color Contrast Checker Compare two opaque sRGB colours, calculate WCAG contrast and show AA/AAA normal/large-text labels with a fixed labelled text preview. WCAG contrast ratio colour contrast AA AAA contrast" href="color-contrast-checker/index.html" aria-labelledby="tool-color-contrast-checker-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-color-contrast-checker-title">Color Contrast Checker</h4> <p>Compare two opaque sRGB colours, calculate WCAG contrast and show AA/AAA normal/large-text labels with a fixed labelled text preview.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="IPv4 Subnet Calculator" data-tool-id="ipv4-subnet-calculator" data-category="developer" data-availability="released" data-search="IPv4 Subnet Calculator Calculate IPv4 subnet boundaries and address counts from an address and CIDR prefix. CIDR subnet mask IPv4 network broadcast" href="ipv4-subnet-calculator/index.html" aria-labelledby="tool-ipv4-subnet-calculator-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-ipv4-subnet-calculator-title">IPv4 Subnet Calculator</h4> <p>Calculate IPv4 subnet boundaries and address counts from an address and CIDR prefix.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="CSS Gradient Generator" data-tool-id="css-gradient-generator" data-category="developer" data-availability="released" data-search="CSS Gradient Generator Build and preview linear or centered radial CSS gradients from validated colour stops. linear gradient radial gradient gradient CSS" href="css-gradient-generator/index.html" aria-labelledby="tool-css-gradient-generator-title"><small class="category-label">Developer tools · Live</small> <h4 id="tool-css-gradient-generator-title">CSS Gradient Generator</h4> <p>Build and preview linear or centered radial CSS gradients from validated colour stops.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+</div></section>
+<section class="tool-group" id="category-images" data-group="images" aria-labelledby="heading-images"><h3 id="heading-images">Images <span class="muted">(9)</span></h3><div class="tool-grid"><a class="tool-card" data-title="Image Compressor" data-tool-id="image-compressor" data-category="images" data-availability="released" data-search="Image Compressor Reduce raster image size with visible quality tradeoffs. reduce image file size image quality compress picture" href="image-compressor/index.html" aria-labelledby="tool-image-compressor-title"><small class="category-label">Images · Live</small> <h4 id="tool-image-compressor-title">Image Compressor</h4> <p>Reduce raster image size with visible quality tradeoffs.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Image Resizer" data-tool-id="image-resizer" data-category="images" data-availability="released" data-search="Image Resizer Resize raster images by dimensions or percentage. resize picture image dimensions scale image" href="image-resizer/index.html" aria-labelledby="tool-image-resizer-title"><small class="category-label">Images · Live</small> <h4 id="tool-image-resizer-title">Image Resizer</h4> <p>Resize raster images by dimensions or percentage.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Image Format Converter" data-tool-id="image-format-converter" data-category="images" data-availability="released" data-search="Image Format Converter Convert among JPEG, PNG and WebP in one interface. JPEG PNG WebP conversion change image format" href="image-format-converter/index.html" aria-labelledby="tool-image-format-converter-title"><small class="category-label">Images · Live</small> <h4 id="tool-image-format-converter-title">Image Format Converter</h4> <p>Convert among JPEG, PNG and WebP in one interface.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Image Cropper" data-tool-id="image-cropper" data-category="images" data-availability="released" data-search="Image Cropper Crop an image with an accessible selection workflow. crop picture aspect ratio numeric crop" href="image-cropper/index.html" aria-labelledby="tool-image-cropper-title"><small class="category-label">Images · Live</small> <h4 id="tool-image-cropper-title">Image Cropper</h4> <p>Crop an image with an accessible selection workflow.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Image Rotator" data-tool-id="image-rotator" data-category="images" data-availability="released" data-search="Image Rotator Rotate or flip local raster images. rotate picture flip image mirror picture" href="image-rotator/index.html" aria-labelledby="tool-image-rotator-title"><small class="category-label">Images · Live</small> <h4 id="tool-image-rotator-title">Image Rotator</h4> <p>Rotate or flip local raster images.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Image Watermark" data-tool-id="image-watermark" data-category="images" data-availability="released" data-search="Image Watermark Overlay text on local raster images. text overlay on image watermark picture" href="image-watermark/index.html" aria-labelledby="tool-image-watermark-title"><small class="category-label">Images · Live</small> <h4 id="tool-image-watermark-title">Image Watermark</h4> <p>Overlay text on local raster images.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Image Color Picker" data-tool-id="image-color-picker" data-category="images" data-availability="released" data-search="Image Color Picker Inspect pixel colors in a local image. pixel colour image hex code image RGB" href="image-color-picker/index.html" aria-labelledby="tool-image-color-picker-title"><small class="category-label">Images · Live</small> <h4 id="tool-image-color-picker-title">Image Color Picker</h4> <p>Inspect pixel colors in a local image.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Passport Photo Layout Maker" data-tool-id="passport-photo-layout-maker" data-category="images" data-availability="released" data-search="Passport Photo Layout Maker Arrange user-sized photo tiles on a printable sheet. photo print sheet photo tile layout" href="passport-photo-layout-maker/index.html" aria-labelledby="tool-passport-photo-layout-maker-title"><small class="category-label">Images · Live</small> <h4 id="tool-passport-photo-layout-maker-title">Passport Photo Layout Maker</h4> <p>Arrange user-sized photo tiles on a printable sheet.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="PNG to ICO" data-tool-id="png-to-ico" data-category="images" data-availability="released" data-search="PNG to ICO Package supported PNG-derived sizes into an icon file. PNG icon favicon file ICO converter" href="png-to-ico/index.html" aria-labelledby="tool-png-to-ico-title"><small class="category-label">Images · Live</small> <h4 id="tool-png-to-ico-title">PNG to ICO</h4> <p>Package supported PNG-derived sizes into an icon file.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+</div></section>
+<section class="tool-group" id="category-calculators" data-group="calculators" aria-labelledby="heading-calculators"><h3 id="heading-calculators">Calculators <span class="muted">(13)</span></h3><div class="tool-grid"><a class="tool-card" data-title="Percentage Calculator" data-tool-id="percentage-calculator" data-category="calculators" data-availability="released" data-search="Percentage Calculator Calculate a percentage of a value and one value as a percentage of another. percent of a number ratio as percent" href="percentage-calculator/index.html" aria-labelledby="tool-percentage-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-percentage-calculator-title">Percentage Calculator</h4> <p>Calculate a percentage of a value and one value as a percentage of another.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Percentage Change Calculator" data-tool-id="percentage-change-calculator" data-category="calculators" data-availability="released" data-search="Percentage Change Calculator Calculate increase or decrease from a starting value. percent increase percent decrease percentage difference from start" href="percentage-change-calculator/index.html" aria-labelledby="tool-percentage-change-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-percentage-change-calculator-title">Percentage Change Calculator</h4> <p>Calculate increase or decrease from a starting value.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="VAT Calculator" data-tool-id="vat-calculator" data-category="calculators" data-availability="released" data-search="VAT Calculator Add or remove a user-entered VAT rate. add VAT remove VAT net gross tax calculation" href="vat-calculator/index.html" aria-labelledby="tool-vat-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-vat-calculator-title">VAT Calculator</h4> <p>Add or remove a user-entered VAT rate.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Discount Calculator" data-tool-id="discount-calculator" data-category="calculators" data-availability="released" data-search="Discount Calculator Calculate a discounted price and savings. sale price price reduction savings amount" href="discount-calculator/index.html" aria-labelledby="tool-discount-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-discount-calculator-title">Discount Calculator</h4> <p>Calculate a discounted price and savings.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Age Calculator" data-tool-id="age-calculator" data-category="calculators" data-availability="released" data-search="Age Calculator Calculate calendar age between user-selected dates. calendar age age between dates" href="age-calculator/index.html" aria-labelledby="tool-age-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-age-calculator-title">Age Calculator</h4> <p>Calculate calendar age between user-selected dates.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Date Difference Calculator" data-tool-id="date-difference-calculator" data-category="calculators" data-availability="released" data-search="Date Difference Calculator Compare two calendar dates without daylight-saving drift. days between dates date interval" href="date-difference-calculator/index.html" aria-labelledby="tool-date-difference-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-date-difference-calculator-title">Date Difference Calculator</h4> <p>Compare two calendar dates without daylight-saving drift.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Working Days Calculator" data-tool-id="working-days-calculator" data-category="calculators" data-availability="released" data-search="Working Days Calculator Count weekdays with user-defined exclusions. business days weekdays working days exclusions" href="working-days-calculator/index.html" aria-labelledby="tool-working-days-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-working-days-calculator-title">Working Days Calculator</h4> <p>Count weekdays with user-defined exclusions.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Loan Repayment Calculator" data-tool-id="loan-repayment-calculator" data-category="calculators" data-availability="released" data-search="Loan Repayment Calculator Estimate fixed-rate loan payments from explicit assumptions. fixed rate loan payment repayment schedule loan estimate" href="loan-repayment-calculator/index.html" aria-labelledby="tool-loan-repayment-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-loan-repayment-calculator-title">Loan Repayment Calculator</h4> <p>Estimate fixed-rate loan payments from explicit assumptions.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Profit Margin Calculator" data-tool-id="profit-margin-calculator" data-category="calculators" data-availability="released" data-search="Profit Margin Calculator Calculate profit, margin and markup with distinct labels. markup margin profit from cost revenue" href="profit-margin-calculator/index.html" aria-labelledby="tool-profit-margin-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-profit-margin-calculator-title">Profit Margin Calculator</h4> <p>Calculate profit, margin and markup with distinct labels.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Compound Interest Calculator" data-tool-id="compound-interest-calculator" data-category="calculators" data-availability="released" data-search="Compound Interest Calculator Estimate growth under user-defined compounding assumptions. compound growth estimate savings contributions" href="compound-interest-calculator/index.html" aria-labelledby="tool-compound-interest-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-compound-interest-calculator-title">Compound Interest Calculator</h4> <p>Estimate growth under user-defined compounding assumptions.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="File Size Converter" data-tool-id="file-size-converter" data-category="calculators" data-availability="released" data-search="File Size Converter Convert byte quantities using explicitly labeled units. bytes KB MB SI IEC units KiB MiB" href="file-size-converter/index.html" aria-labelledby="tool-file-size-converter-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-file-size-converter-title">File Size Converter</h4> <p>Convert byte quantities using explicitly labeled units.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Unit Converter" data-tool-id="unit-converter" data-category="calculators" data-availability="released" data-search="Unit Converter Convert a reviewed fixed set of length, mass, area, volume and temperature units. length mass area volume temperature measurement conversion" href="unit-converter/index.html" aria-labelledby="tool-unit-converter-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-unit-converter-title">Unit Converter</h4> <p>Convert a reviewed fixed set of length, mass, area, volume and temperature units.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Duration Calculator" data-tool-id="duration-calculator" data-category="calculators" data-availability="released" data-search="Duration Calculator Add/subtract elapsed durations and normalize totals. add durations subtract time intervals elapsed time" href="duration-calculator/index.html" aria-labelledby="tool-duration-calculator-title"><small class="category-label">Calculators · Live</small> <h4 id="tool-duration-calculator-title">Duration Calculator</h4> <p>Add/subtract elapsed durations and normalize totals.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+</div></section>
+<section class="tool-group" id="category-social-media" data-group="social-media" aria-labelledby="heading-social-media"><h3 id="heading-social-media">Social media <span class="muted">(10)</span></h3><div class="tool-grid"><a class="tool-card" data-title="Social Media Character Counter &amp; Live Previewer" data-tool-id="social-counter" data-category="social-media" data-availability="released" data-search="Social Media Character Counter &amp; Live Previewer Count caption characters and preview approximate feed openings. caption character count post length LinkedIn hook preview" href="social-counter/index.html" aria-labelledby="tool-social-counter-title"><small class="category-label">Social media · Live</small> <h4 id="tool-social-counter-title">Social Media Character Counter &amp; Live Previewer</h4> <p>Count caption characters and preview approximate feed openings.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Hashtag Organizer" data-tool-id="hashtag-organizer" data-category="social-media" data-availability="released" data-search="Hashtag Organizer Normalize and group hashtag lists without platform account access. deduplicate hashtags sort hashtags hashtag list" href="hashtag-organizer/index.html" aria-labelledby="tool-hashtag-organizer-title"><small class="category-label">Social media · Live</small> <h4 id="tool-hashtag-organizer-title">Hashtag Organizer</h4> <p>Normalize and group hashtag lists without platform account access.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="YouTube Title Checker" data-tool-id="youtube-title-checker" data-category="social-media" data-availability="released" data-search="YouTube Title Checker Measure title length against a maintained configurable guide. video title length title opening preview" href="youtube-title-checker/index.html" aria-labelledby="tool-youtube-title-checker-title"><small class="category-label">Social media · Live</small> <h4 id="tool-youtube-title-checker-title">YouTube Title Checker</h4> <p>Measure title length against a maintained configurable guide.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="YouTube Description Formatter" data-tool-id="youtube-description-formatter" data-category="social-media" data-availability="released" data-search="YouTube Description Formatter Assemble structured descriptions from user-provided sections. video description sections description template" href="youtube-description-formatter/index.html" aria-labelledby="tool-youtube-description-formatter-title"><small class="category-label">Social media · Live</small> <h4 id="tool-youtube-description-formatter-title">YouTube Description Formatter</h4> <p>Assemble structured descriptions from user-provided sections.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Instagram Bio Formatter" data-tool-id="instagram-bio-formatter" data-category="social-media" data-availability="released" data-search="Instagram Bio Formatter Preview and format a short profile biography. profile biography bio line breaks bio preview" href="instagram-bio-formatter/index.html" aria-labelledby="tool-instagram-bio-formatter-title"><small class="category-label">Social media · Live</small> <h4 id="tool-instagram-bio-formatter-title">Instagram Bio Formatter</h4> <p>Preview and format a short profile biography.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Emoji Picker" data-tool-id="emoji-picker" data-category="social-media" data-availability="released" data-search="Emoji Picker Find and copy emoji from a maintained local dataset. copy emoji emoji search skin tone emoji" href="emoji-picker/index.html" aria-labelledby="tool-emoji-picker-title"><small class="category-label">Social media · Live</small> <h4 id="tool-emoji-picker-title">Emoji Picker</h4> <p>Find and copy emoji from a maintained local dataset.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Hashtag Counter" data-tool-id="hashtag-counter" data-category="social-media" data-availability="released" data-search="Hashtag Counter Count hashtags in pasted posts with explicit token rules. count hashtags unique hashtags extract hashtags" href="hashtag-counter/index.html" aria-labelledby="tool-hashtag-counter-title"><small class="category-label">Social media · Live</small> <h4 id="tool-hashtag-counter-title">Hashtag Counter</h4> <p>Count hashtags in pasted posts with explicit token rules.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="YouTube Thumbnail Preview" data-tool-id="youtube-thumbnail-preview" data-category="social-media" data-availability="released" data-search="YouTube Thumbnail Preview Preview a local thumbnail at typical feed sizes. thumbnail feed preview safe area local thumbnail" href="youtube-thumbnail-preview/index.html" aria-labelledby="tool-youtube-thumbnail-preview-title"><small class="category-label">Social media · Live</small> <h4 id="tool-youtube-thumbnail-preview-title">YouTube Thumbnail Preview</h4> <p>Preview a local thumbnail at typical feed sizes.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Posting Calendar Generator" data-tool-id="posting-calendar-generator" data-category="social-media" data-availability="released" data-search="Posting Calendar Generator Build a manual posting plan for export. manual posting schedule social content calendar posting plan CSV" href="posting-calendar-generator/index.html" aria-labelledby="tool-posting-calendar-generator-title"><small class="category-label">Social media · Live</small> <h4 id="tool-posting-calendar-generator-title">Posting Calendar Generator</h4> <p>Build a manual posting plan for export.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Username Generator" data-tool-id="username-generator" data-category="social-media" data-availability="released" data-search="Username Generator Generate candidate usernames from local user-supplied words. username ideas handle candidates" href="username-generator/index.html" aria-labelledby="tool-username-generator-title"><small class="category-label">Social media · Live</small> <h4 id="tool-username-generator-title">Username Generator</h4> <p>Generate candidate usernames from local user-supplied words.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+</div></section>
+<section class="tool-group" id="category-security-files" data-group="security-files" aria-labelledby="heading-security-files"><h3 id="heading-security-files">Passwords &amp; file checks <span class="muted">(6)</span></h3><div class="tool-grid"><a class="tool-card" data-title="SHA-256 Text &amp; File Hash Checker" data-tool-id="sha256-hash-checker" data-category="security-files" data-availability="released" data-search="SHA-256 Text &amp; File Hash Checker Hash text or a bounded local file and compare a known digest. SHA256 checksum file digest compare SHA-256" href="sha-256-hash-checker/index.html" aria-labelledby="tool-sha256-hash-checker-title"><small class="category-label">Passwords &amp; file checks · Live</small> <h4 id="tool-sha256-hash-checker-title">SHA-256 Text &amp; File Hash Checker</h4> <p>Hash text or a bounded local file and compare a known digest.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Password Generator" data-tool-id="password-generator" data-category="security-files" data-availability="released" data-search="Password Generator Create passwords using browser cryptographic randomness. random password secure password generator" href="password-generator/index.html" aria-labelledby="tool-password-generator-title"><small class="category-label">Passwords &amp; file checks · Live</small> <h4 id="tool-password-generator-title">Password Generator</h4> <p>Create passwords using browser cryptographic randomness.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Secure Random Number Generator" data-tool-id="secure-random-number-generator" data-category="security-files" data-availability="released" data-search="Secure Random Number Generator Generate unbiased integers within a validated safe-integer interval. random integer cryptographic random numbers" href="secure-random-number-generator/index.html" aria-labelledby="tool-secure-random-number-generator-title"><small class="category-label">Passwords &amp; file checks · Live</small> <h4 id="tool-secure-random-number-generator-title">Secure Random Number Generator</h4> <p>Generate unbiased integers within a validated safe-integer interval.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="File Signature Inspector" data-tool-id="file-signature-inspector" data-category="security-files" data-availability="released" data-search="File Signature Inspector Compare initial file bytes with a maintained signature list. magic bytes file header extension mismatch" href="file-signature-inspector/index.html" aria-labelledby="tool-file-signature-inspector-title"><small class="category-label">Passwords &amp; file checks · Live</small> <h4 id="tool-file-signature-inspector-title">File Signature Inspector</h4> <p>Compare initial file bytes with a maintained signature list.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Passphrase Generator" data-tool-id="passphrase-generator" data-category="security-files" data-availability="released" data-search="Passphrase Generator Generate random word sequences from a reviewed local word list. random word password word passphrase" href="passphrase-generator/index.html" aria-labelledby="tool-passphrase-generator-title"><small class="category-label">Passwords &amp; file checks · Live</small> <h4 id="tool-passphrase-generator-title">Passphrase Generator</h4> <p>Generate random word sequences from a reviewed local word list.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="File Byte Comparator" data-tool-id="file-byte-comparator" data-category="security-files" data-availability="released" data-search="File Byte Comparator Compare two local files and locate the first differing byte. binary compare first different byte identical files" href="file-byte-comparator/index.html" aria-labelledby="tool-file-byte-comparator-title"><small class="category-label">Passwords &amp; file checks · Live</small> <h4 id="tool-file-byte-comparator-title">File Byte Comparator</h4> <p>Compare two local files and locate the first differing byte.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+</div></section>
+<section class="tool-group" id="category-everyday" data-group="everyday" aria-labelledby="heading-everyday"><h3 id="heading-everyday">Everyday tools <span class="muted">(11)</span></h3><div class="tool-grid"><a class="tool-card" data-title="Free Stream Roulette" data-tool-id="streaming-roulette" data-category="everyday" data-availability="released" data-search="Free Stream Roulette Pick a curated streaming destination by genre. random streaming destination genre picker next streaming site" href="streaming-roulette/index.html" aria-labelledby="tool-streaming-roulette-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-streaming-roulette-title">Free Stream Roulette</h4> <p>Pick a curated streaming destination by genre.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="QR Code Generator" data-tool-id="qr-code-generator" data-category="everyday" data-availability="released" data-search="QR Code Generator Generate QR codes locally from user-provided text. text to QR create QR image QR SVG" href="qr-code-generator/index.html" aria-labelledby="tool-qr-code-generator-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-qr-code-generator-title">QR Code Generator</h4> <p>Generate QR codes locally from user-provided text.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Pomodoro Timer" data-tool-id="pomodoro-timer" data-category="everyday" data-availability="released" data-search="Pomodoro Timer Run a work and break timer with user-selected durations. focus timer work break timer Pomodoro" href="pomodoro-timer/index.html" aria-labelledby="tool-pomodoro-timer-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-pomodoro-timer-title">Pomodoro Timer</h4> <p>Run a work and break timer with user-selected durations.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Countdown Timer" data-tool-id="countdown-timer" data-category="everyday" data-availability="released" data-search="Countdown Timer Run a duration timer using an actual deadline rather than interval ticks. duration countdown pause timer countdown" href="countdown-timer/index.html" aria-labelledby="tool-countdown-timer-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-countdown-timer-title">Countdown Timer</h4> <p>Run a duration timer using an actual deadline rather than interval ticks.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Random Name Picker" data-tool-id="random-name-picker" data-category="everyday" data-availability="released" data-search="Random Name Picker Draw from a local list with an explicit replacement policy. random list draw choose a name replacement policy" href="random-name-picker/index.html" aria-labelledby="tool-random-name-picker-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-random-name-picker-title">Random Name Picker</h4> <p>Draw from a local list with an explicit replacement policy.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Local To-Do List" data-tool-id="local-to-do-list" data-category="everyday" data-availability="released" data-search="Local To-Do List Manage tasks with explicit opt-in local persistence. task list checklist optional local task storage" href="local-to-do-list/index.html" aria-labelledby="tool-local-to-do-list-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-local-to-do-list-title">Local To-Do List</h4> <p>Manage tasks with explicit opt-in local persistence.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Invoice Generator" data-tool-id="invoice-generator" data-category="everyday" data-availability="released" data-search="Invoice Generator Create a printable invoice from user-entered business details. printable invoice line item totals invoice template" href="invoice-generator/index.html" aria-labelledby="tool-invoice-generator-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-invoice-generator-title">Invoice Generator</h4> <p>Create a printable invoice from user-entered business details.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Resume Builder" data-tool-id="resume-builder" data-category="everyday" data-availability="released" data-search="Resume Builder Prepare a structured printable resume without account registration. CV builder printable resume resume sections" href="resume-builder/index.html" aria-labelledby="tool-resume-builder-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-resume-builder-title">Resume Builder</h4> <p>Prepare a structured printable resume without account registration.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Meeting Agenda Generator" data-tool-id="meeting-agenda-generator" data-category="everyday" data-availability="released" data-search="Meeting Agenda Generator Build a structured agenda with time allocations. meeting plan agenda time allocation" href="meeting-agenda-generator/index.html" aria-labelledby="tool-meeting-agenda-generator-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-meeting-agenda-generator-title">Meeting Agenda Generator</h4> <p>Build a structured agenda with time allocations.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Printable Calendar Generator" data-tool-id="printable-calendar-generator" data-category="everyday" data-availability="released" data-search="Printable Calendar Generator Create monthly calendars with explicit locale choices. monthly calendar print calendar week start" href="printable-calendar-generator/index.html" aria-labelledby="tool-printable-calendar-generator-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-printable-calendar-generator-title">Printable Calendar Generator</h4> <p>Create monthly calendars with explicit locale choices.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+<a class="tool-card" data-title="Batch Filename Planner" data-tool-id="batch-filename-planner" data-category="everyday" data-availability="released" data-search="Batch Filename Planner Preview filename transformations and export a mapping without changing files. filename preview rename mapping plan filename collision" href="batch-filename-planner/index.html" aria-labelledby="tool-batch-filename-planner-title"><small class="category-label">Everyday tools · Live</small> <h4 id="tool-batch-filename-planner-title">Batch Filename Planner</h4> <p>Preview filename transformations and export a mapping without changing files.</p> <span class="open-label">Open tool <span aria-hidden="true">→</span></span></a>
+</div></section>
+</div></section>
+<section class="trust" aria-labelledby="privacy-heading"><h2 id="privacy-heading">Your tasks, your choice.</h2><p>Tools process your inputs in your browser. Hosting requests still occur, and some tools link to external services. Analytics is optional; the tools work whether you accept or reject it. <a href="privacy.html">Read our privacy and cookie policy.</a></p></section></main>
+<footer class="site-footer"><div class="container row"><p>Everyday Digital Box</p><a href="#tools">All Tools</a><a href="privacy.html">Privacy</a><a href="https://github.com/Juster06/micro-tools-hub">Source on GitHub</a></div></footer>
+<script>(() => {
+  'use strict';
+  const search = document.getElementById('toolSearch');
+  const select = document.getElementById('category-select');
+  const cards = [...document.querySelectorAll('#toolGrid .tool-card')];
+  const groups = [...document.querySelectorAll('[data-group]')];
+  const buttons = [...document.querySelectorAll('[data-category-filter]')];
+  const count = document.getElementById('resultCount');
+  const menu = document.getElementById('menu');
+  const nav = document.getElementById('site-nav');
+  let category = 'all';
+  const normalize = value => value.toLocaleLowerCase('en').trim().replace(/\s+/g, ' ');
+  function filter() {
+    const query = normalize(search.value);
+    let visible = 0;
+    for (const card of cards) {
+      const haystack = normalize(card.dataset.search);
+      card.hidden = (category !== 'all' && card.dataset.category !== category) || !haystack.includes(query);
+      if (!card.hidden) visible++;
     }
-    function filterTools() {
-      const query = normalize(searchInput.value);
-      let visible = 0;
-      cards.forEach(card => {
-        const matches = normalize(card.dataset.title).includes(query);
-        card.hidden = !matches;
-        if (matches) visible++;
-      });
-      document.getElementById('emptyState').hidden = visible !== 0;
-      clearButton.hidden = !searchInput.value;
-      resultCount.textContent = query ? `${visible} of ${cards.length} tools match your search` : `${cards.length} tools ready to use`;
-    }
-    function resetSearch() { searchInput.value = ''; filterTools(); searchInput.focus(); }
-    searchInput.addEventListener('input', filterTools);
-    searchInput.addEventListener('keydown', event => { if (event.key === 'Escape') resetSearch(); });
-    clearButton.addEventListener('click', resetSearch);
-    document.getElementById('resetSearch').addEventListener('click', resetSearch);
-    // Reconcile the grid with any search value restored by the browser.
-    window.addEventListener('pageshow', filterTools);
-    filterTools();
-  </script>
-</body>
-</html>
+    groups.forEach(group => { group.hidden = ![...group.querySelectorAll('.tool-card')].some(card => !card.hidden); });
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.categoryFilter === category)));
+    select.value = category;
+    document.getElementById('empty').hidden = visible !== 0;
+    count.textContent = query || category !== 'all' ? `${visible} of ${cards.length} tools match` : `${cards.length} tools ready to use`;
+  }
+  function reset() { search.value = ''; category = 'all'; filter(); search.focus(); }
+  function closeMenu(restore = false) { menu.setAttribute('aria-expanded', 'false'); nav.classList.remove('open'); if (restore) menu.focus(); }
+  search.addEventListener('input', () => filter());
+  document.getElementById('clearSearch').addEventListener('click', reset);
+  document.getElementById('reset-results').addEventListener('click', reset);
+  buttons.forEach(button => button.addEventListener('click', () => { category = button.dataset.categoryFilter; filter(); }));
+  select.addEventListener('change', () => { category = select.value; filter(); });
+  document.querySelectorAll('[data-category-jump]').forEach(link => link.addEventListener('click', () => { search.value = ''; category = 'all'; filter(); }));
+  menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); nav.classList.toggle('open', open); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { event.preventDefault(); closeMenu(true); } });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    if (link.hash) { search.value = ''; category = 'all'; filter(); closeMenu(); document.querySelector(link.hash)?.focus(); }
+  }));
+  matchMedia('(min-width:640px)').addEventListener('change', () => { const inside = nav.contains(document.activeElement); closeMenu(inside && matchMedia('(max-width:639px)').matches); });
+  document.documentElement.classList.add('js');
+})();
+</script></body></html>

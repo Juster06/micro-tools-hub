@@ -6,9 +6,9 @@ import {createHash} from 'node:crypto';
 import {historicalSource as seoHistoricalSource} from './seo-overlay.mjs';
 
 const base = 'cf443c3b1facc2ae422fc6c55d546528671be1d0';
-const manifestPath = 'audit/SEO_TASK_2C_SOURCE_APPROVAL.json';
-const identityPath = 'scripts/css_approval_identity.py';
-const identitySource = fs.readFileSync(new URL('./css_approval_identity.py', import.meta.url), 'utf8').replaceAll('\r\n', '\n');
+const manifestPath = 'audit/SEO_TASK_2D_SOURCE_APPROVAL.json';
+const identityPath = 'scripts/homepage_approval_identity.py';
+const identitySource = fs.readFileSync(new URL('./homepage_approval_identity.py', import.meta.url), 'utf8').replaceAll('\r\n', '\n');
 const identityMatch = /^# Reviewed bootstrap trust anchor; deliberately outside the self-referential manifest\.\nMANIFEST_SHA256 = '([0-9a-f]{64})'\n$/.exec(identitySource);
 if (!identityMatch) throw new Error('Invalid CSS approval bootstrap identity');
 const manifestHash = identityMatch[1];

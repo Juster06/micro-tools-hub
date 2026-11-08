@@ -1,5 +1,31 @@
 # Session handoff
 
+## Current checkpoint — SEO Task 2D homepage development
+
+Starting main `20ecae29a1f20d7903946d6cf00c3897307ee766` is publicly verified
+for Task 2C. Functional CI 42430046221 attempt 2 succeeded; the original
+Image Compressor timing failure remains an unresolved reliability observation.
+Performance timing remains INCONCLUSIVE / DEFERRED. Task 26 remains paused.
+
+This isolated `seo/task-2d-homepage` branch implements the approved Option B
+homepage, eight reviewed presentation groups, local search, mobile navigation
+and an in-flow homepage consent layout. The shared consent runtime is unchanged.
+See [Homepage design, current approval and rollback](HOMEPAGE_DESIGN.md).
+Registry remains 105 registered: 87 RELEASED, 0 TESTED, 0 READY, 17 PLANNED,
+1 BLOCKED. All 89 canonical routes, sitemap and robots are preserved.
+
+The 33 earlier worktrees and two unrelated handoff edits remain intact; this
+branch adds one isolated worktree. New development evidence is separate from
+frozen audits. LIVE-03 has development browser evidence; public resolution
+requires separately authorized merge/deployment and fresh public verification.
+No full WCAG, measured speed, ranking or traffic improvement is claimed.
+
+**Next major task:** Review this Task 2D development PR and all four required
+checks. Do not merge or deploy without separate owner authorization. No Task 26
+or additional utility development. The external development report records
+exact local and hosted results; the containing commit identifies this checkpoint.
+
+
 ## Current checkpoint — SEO Task 2C development pilot
 
 Verified starting main is `cf443c3b1facc2ae422fc6c55d546528671be1d0`.
@@ -1498,8 +1524,8 @@ Snapshot of local files at generation; it does not assert later commits, pushes,
 - Tool status counts: IDEA: 0; PLANNED: 17; READY: 0; IN_PROGRESS: 0; BLOCKED: 1; IMPLEMENTED: 0; TESTED: 0; RELEASED: 87; DEPRECATED: 0.
 - Current registered tool task: none; see manual session notes for infrastructure work.
 - Next ready tool: REQUIRES REVIEW.
-- Git branch: seo/task-2c-static-css.
-- Latest commit observed before generation: cf443c3b1facc2ae422fc6c55d546528671be1d0.
+- Git branch: seo/task-2d-homepage.
+- Latest commit observed before generation: 20ecae29a1f20d7903946d6cf00c3897307ee766.
 - Working tree at snapshot: Dirty.
 - Push/deployment status: UNKNOWN; this offline command does not verify either.
 
@@ -1526,9 +1552,6 @@ These are registry verification records, not new tests or tasks executed by this
 - tool-verification: PASS (0 errors, 0 warnings).
 
 ### Uncommitted changes (repository-relative)
-- ` M` .github/workflows/functional-ci.yml
-- ` M` .gitignore
-- ` M` AGENTS.md
 - ` M` ARCHITECTURE.md
 - ` M` CHANGELOG.md
 - ` M` DECISIONS.md
@@ -1542,49 +1565,26 @@ These are registry verification records, not new tests or tasks executed by this
 - ` M` image-color-picker/index.html
 - ` M` index.html
 - ` M` json-formatter/index.html
-- ` M` scripts/ci/README.md
 - ` M` scripts/ci/coverage.json
 - ` M` scripts/ci/run.py
-- ` M` scripts/consent-static.test.mjs
-- ` M` scripts/seo-overlay.test.mjs
-- ` M` scripts/task24-test-support.mjs
-- ` M` scripts/task24_test_support.py
-- ` M` scripts/task25-test-support.mjs
-- ` M` scripts/task25_test_support.py
-- ` M` scripts/tracking.py
-- ` M` tests/test_consent_overlay.py
-- ` M` tests/test_seo_overlay.py
-- ` M` tests/test_task18_preservation.py
-- ` M` tests/test_task18_release.py
-- ` M` tests/test_task19_preservation.py
-- ` M` tests/test_task19_release.py
-- ` M` tests/test_task20_preservation.py
-- ` M` tests/test_task20_release.py
-- ` M` tests/test_task21_preservation.py
-- ` M` tests/test_task21_release.py
-- ` M` tests/test_task22_preservation.py
-- ` M` tests/test_task22_release.py
-- ` M` tests/test_task24_preservation.py
-- ` M` tests/test_task24_release.py
-- ` M` tests/test_task25_preservation.py
-- ` M` tests/test_task25_release.py
+- ` M` scripts/css-overlay.mjs
+- ` M` scripts/css-overlay.test.mjs
+- ` M` scripts/css_overlay.py
+- ` M` styles/build-manifest.json
 - ` M` text-cleaner/index.html
 - ` M` vat-calculator/index.html
-- `??` .gitattributes
-- `??` CSS_PIPELINE.md
-- `??` assets/css/
-- `??` audit/SEO_TASK_2C_SOURCE_APPROVAL.json
-- `??` scripts/build_styles.mjs
-- `??` scripts/css-overlay.mjs
-- `??` scripts/css-overlay.test.mjs
-- `??` scripts/css_approval_identity.py
-- `??` scripts/css_overlay.py
-- `??` scripts/git_fixtures.py
-- `??` scripts/styles.test.mjs
-- `??` scripts/styles/
-- `??` styles/
-- `??` tests/test_css_overlay.py
-- `??` tests/test_git_fixtures.py
+- `??` HOMEPAGE_DESIGN.md
+- `??` assets/css/homepage.13bda86daed58e77.css
+- `??` assets/css/site.d8c3bb4f35a90e73.css
+- `??` audit/SEO_TASK_2D_SOURCE_APPROVAL.json
+- `??` scripts/build_homepage.py
+- `??` scripts/homepage-browser.test.mjs
+- `??` scripts/homepage.test.mjs
+- `??` scripts/homepage_approval_identity.py
+- `??` styles/homepage-directory.json
+- `??` styles/homepage.css
+- `??` styles/homepage.js
+- `??` tests/test_homepage.py
 
 Unexpected termination has no cleanup guarantee. Re-run project_status.py and inspect actual source/Git before resuming. This snapshot cannot embed its own resulting commit hash.
 <!-- GENERATED:STATUS:END -->
