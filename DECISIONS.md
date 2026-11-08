@@ -1,5 +1,15 @@
 # Decision log
 
+## 2026-11-08 — Option B homepage and current-source successor
+
+Use the owner-selected navy/teal light palette and reviewed eight-group map.
+Keep all 87 links in static HTML, add local search/filtering, and resolve mobile
+focus obstruction with homepage-scoped CSS rather than changing consent logic.
+A new hash-pinned Task 2D approval supersedes current selection only; historical
+Task 2C/2A/consent records remain unchanged. Full current validation precedes
+exact historical projection. Merge and public verification remain owner gates.
+
+
 ## 2026-11-07 — Compile styling for a seven-page performance pilot
 
 Use the matching pinned Tailwind v4 CLI in a small development-only package,

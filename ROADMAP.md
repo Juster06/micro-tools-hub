@@ -1,5 +1,31 @@
 # Development roadmap
 
+## Current checkpoint — SEO Task 2D homepage development
+
+Starting main `20ecae29a1f20d7903946d6cf00c3897307ee766` is publicly verified
+for Task 2C. Functional CI 42430046221 attempt 2 succeeded; the original
+Image Compressor timing failure remains an unresolved reliability observation.
+Performance timing remains INCONCLUSIVE / DEFERRED. Task 26 remains paused.
+
+This isolated `seo/task-2d-homepage` branch implements the approved Option B
+homepage, eight reviewed presentation groups, local search, mobile navigation
+and an in-flow homepage consent layout. The shared consent runtime is unchanged.
+See [Homepage design, current approval and rollback](HOMEPAGE_DESIGN.md).
+Registry remains 105 registered: 87 RELEASED, 0 TESTED, 0 READY, 17 PLANNED,
+1 BLOCKED. All 89 canonical routes, sitemap and robots are preserved.
+
+The 33 earlier worktrees and two unrelated handoff edits remain intact; this
+branch adds one isolated worktree. New development evidence is separate from
+frozen audits. LIVE-03 has development browser evidence; public resolution
+requires separately authorized merge/deployment and fresh public verification.
+No full WCAG, measured speed, ranking or traffic improvement is claimed.
+
+**Next major task:** Review this Task 2D development PR and all four required
+checks. Do not merge or deploy without separate owner authorization. No Task 26
+or additional utility development. The external development report records
+exact local and hosted results; the containing commit identifies this checkpoint.
+
+
 ## Current checkpoint — SEO Task 2C development pilot
 
 Verified starting main is `cf443c3b1facc2ae422fc6c55d546528671be1d0`.
