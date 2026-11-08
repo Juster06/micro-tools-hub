@@ -1,5 +1,39 @@
 # Progress tracker
 
+## Current checkpoint — SEO Task 2C development pilot
+
+Verified starting main is `cf443c3b1facc2ae422fc6c55d546528671be1d0`.
+SEO Task 2A was merged through PR #47 and independently publicly verified;
+the earlier proposal checkpoints below are retained as historical context.
+The read-only Task 2B specification is complete. This branch implements its
+seven-page production CSS pilot, preserving the current slate/indigo appearance.
+See [CSS pipeline, scope and rollback](CSS_PIPELINE.md).
+
+Inventory stays **105 registered, 87 RELEASED, 0 TESTED, 0 READY,
+17 PLANNED and 1 BLOCKED**. The milestone remains 100 (13 remaining).
+Registry publication records describe the verified public baseline. The new
+CSS revision is a development candidate, not a new public verification.
+
+Branch: `seo/task-2c-static-css`. The 32 pre-existing worktrees and both unrelated
+handoff edits are preserved; development uses one additional isolated worktree.
+Only the homepage, Text Cleanser, JSON Formatter, CSV Viewer, Image Color Picker,
+VAT Calculator and Batch Filename Planner change their CSS delivery. All other
+released pages retain their existing compiler references. Tool logic, consent
+engine, routes, canonical metadata, sitemap and publication statuses stay intact.
+
+Local Python and Node partitions and targeted browser/consent checks pass.
+Actual counts and limitations are recorded in
+`audit/SEO_TASK_2C_DEVELOPMENT_VERIFICATION.json`. Timing is INCONCLUSIVE;
+exact-head hosted CI on the development PR remains a separate required gate.
+No merged deployment, field Core Web Vitals or accessibility remediation is
+claimed. The known homepage consent focus obstruction remains for Task 2D.
+
+**Next major task:** Review the Task 2C development PR and all four required
+checks. Await separate owner authorization before merge or deployment, then
+independently verify public HTML/CSS/SEO/consent for the deployed commit.
+Task 26 remains paused; PDF Compressor stays BLOCKED. Do not introduce the
+Task 2B redesign, new tools, additional tracking or autonomous SEO operations.
+
 ## Current checkpoint — SEO Task 2A development proposal
 
 Starting main is `7cdd6f43800fc1ae01ee597d9bab1a7a597f7f32`; the completed SEO 1

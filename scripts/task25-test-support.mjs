@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-import {historicalSource} from './seo-overlay.mjs';
+import {historicalSnapshot} from './css-overlay.mjs';
+const {historicalSource}=historicalSnapshot(new URL('../',import.meta.url));
 
 const root = new URL('../', import.meta.url);
 const ids = ['word-frequency-analyzer','unicode-inspector','ipv4-subnet-calculator','batch-filename-planner','file-byte-comparator','css-gradient-generator'];

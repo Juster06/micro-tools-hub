@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-07 — SEO Task 2C development candidate (not deployed)
+
+- Introduce a locked development-only Tailwind CLI build, explicit scanner input,
+  content-addressed local CSS and read-only stale-output validation.
+- Limit stylesheet delivery changes to the seven approved pilot pages; retain
+  existing layout, logic, canonical routes and consent engine.
+- Add narrow current-source approval and mutation coverage while preserving
+  dated audits and frozen historical overlays. Extend existing required CI.
+- Keep Task 26 paused and all registry publication statuses unchanged. Actual
+  development results are recorded separately; merge/deployment needs approval.
+
 ## 2026-11-07 — SEO Task 2A (development, not deployed)
 
 Add static canonical metadata for 87 released tools, home and privacy; generate

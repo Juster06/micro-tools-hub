@@ -17,6 +17,7 @@ from urllib.parse import unquote, urlsplit
 
 from consent_overlay import valid_candidate
 from seo_overlay import valid_candidate as valid_seo_candidate
+from css_overlay import candidate_snapshot as css_candidate_snapshot, validate_current as validate_css_current
 
 DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 STATUSES = ("IDEA", "PLANNED", "READY", "IN_PROGRESS", "BLOCKED", "IMPLEMENTED", "TESTED", "RELEASED", "DEPRECATED")
@@ -511,6 +512,19 @@ def check_project(root, registry=None):
     if result["errors"]:
         return finish(result)
     result["counts"] = summarize(r)
+    css_candidate = lambda candidate_root, tool, source: False
+    css_snapshot_active = False
+    if ((root / 'scripts/css_approval_identity.py').exists()
+            or (root / 'audit/SEO_TASK_2C_SOURCE_APPROVAL.json').exists()):
+        try:
+            css_approval, css_candidate = css_candidate_snapshot(root)
+            css_snapshot_active = True
+            result["details"]["css_source_approval"] = {
+                "status": "PASS", "pilot_pages": len(css_approval["pilot_pages"]),
+                "state": css_approval["state"]}
+        except (OSError, UnicodeError, ValueError, TypeError, KeyError) as error:
+            issue(result, "errors", "CSS_SOURCE_APPROVAL", str(error))
+            result["details"]["css_source_approval"] = {"status": "FAIL"}
     for filename in REQUIRED_DOCS:
         if not (root / filename).is_file():
             issue(result, "errors", "MISSING_DOCUMENTATION", "Missing documentation: " + filename, path=filename)
@@ -597,7 +611,11 @@ def check_project(root, registry=None):
         try:
             current_source = read_text(safe_path(root, filename))
             if normalized_hash(current_source) != v["source_sha256"]:
-                if t["status"] == "RELEASED" and valid_seo_candidate(root, t, current_source):
+                if t["status"] == "RELEASED" and css_candidate(root, t, current_source):
+                    note = "SEO Task 2C exact static-CSS candidate and dependency closure verified locally; historical publication evidence remains unchanged and does not verify this candidate deployment."
+                    if note not in result["information"]:
+                        result["information"].append(note)
+                elif t["status"] == "RELEASED" and valid_seo_candidate(root, t, current_source):
                     note = "SEO Task 2A exact canonical-only candidate verified locally; historical publication evidence is unchanged and does not verify this pending deployment."
                     if note not in result["information"]:
                         result["information"].append(note)
@@ -627,6 +645,14 @@ def check_project(root, registry=None):
         result["errors"].extend(seo_result["errors"])
         result["warnings"].extend(seo_result["warnings"])
         result["details"]["technical_seo"] = {"status": seo_result["status"], "counts": seo_result["counts"]}
+    # The bounded candidate reader proves only the snapshot captured at entry.
+    # Revalidate the live closure before returning any current project result.
+    if css_snapshot_active:
+        try:
+            validate_css_current(root)
+        except (OSError, UnicodeError, ValueError, TypeError, KeyError) as error:
+            issue(result, "errors", "CSS_SOURCE_APPROVAL", str(error))
+            result["details"]["css_source_approval"] = {"status": "FAIL"}
     result["information"].append("Read-only local consistency checks; external URLs and live publication were not checked.")
     return finish(result)
 

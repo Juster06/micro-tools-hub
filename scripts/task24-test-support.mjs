@@ -2,7 +2,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-import {historicalSource} from './seo-overlay.mjs';
+import {historicalSnapshot} from './css-overlay.mjs';
+const {historicalSource}=historicalSnapshot(new URL('../',import.meta.url));
 const root=new URL('../',import.meta.url);
 const ids=['number-base-converter','unit-converter','duration-calculator','url-inspector-query-builder','list-comparison-set-operations','color-contrast-checker'];
 export function task24ReleasedCount(registry){

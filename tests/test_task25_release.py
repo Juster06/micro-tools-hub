@@ -8,7 +8,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 from task25_test_support import DEPLOYMENT, IDS, git_blob, normalized, registry_before_task25
 from tool_homepage import Homepage
 
@@ -123,6 +124,7 @@ class Task25PublicRelease(unittest.TestCase):
             self.assertEqual(chunk.count('Live'), 1)
             source = source[:start] + chunk.replace('data-availability="released"','data-availability="tested"').replace('Live','Tested · publication pending') + source[end:]
         self.assertEqual(source, normalized(approved('index.html')).decode())
-        tracker = historical_source(ROOT, (ROOT / 'PROGRESS_TRACKER.md').relative_to(ROOT).as_posix(), (ROOT / 'PROGRESS_TRACKER.md').read_text(encoding='utf-8')).split('<!-- GENERATED:COUNTS:START -->',1)[1].split('<!-- GENERATED:COUNTS:END -->',1)[0]
+        # Current prose is not CSS-projected; verify its generated counts directly.
+        tracker = (ROOT / 'PROGRESS_TRACKER.md').read_text(encoding='utf-8').split('<!-- GENERATED:COUNTS:START -->',1)[1].split('<!-- GENERATED:COUNTS:END -->',1)[0]
         self.assertIn('| RELEASED | 87 |', tracker)
         self.assertIn('87/100 (87.0%); remaining: 13.', tracker)

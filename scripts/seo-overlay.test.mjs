@@ -3,12 +3,19 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import {pathToFileURL} from 'node:url';
+import {pathToFileURL,fileURLToPath} from 'node:url';
+import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {historicalSource} from './seo-overlay.mjs';
 
 const root = new URL('../', import.meta.url);
-const read = relative => fs.readFileSync(new URL(relative, root), 'utf8');
+// Test the frozen SEO adapter on its exact Git-bound baseline fixtures.
+// The new CSS dependency gate and current candidates have their own test suite.
+const fixtures = new Map();
+const read = relative => {
+  if(!fixtures.has(relative))fixtures.set(relative,execFileSync('git',['show','cf443c3b1facc2ae422fc6c55d546528671be1d0:'+relative],{cwd:fileURLToPath(root),encoding:'utf8',windowsHide:true}));
+  return fixtures.get(relative);
+};
 const manifest = JSON.parse(read('audit/SEO_TASK_2A_SOURCE_OVERLAY.json'));
 const hash = value => createHash('sha256').update(value.replaceAll('\r\n', '\n')).digest('hex');
 

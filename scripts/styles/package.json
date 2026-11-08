@@ -1,0 +1,16 @@
+{
+  "name": "edb-static-css-build",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development-only Tailwind compiler for the seven-page SEO Task 2C pilot",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=24.15.0 <25" },
+  "scripts": {
+    "build": "node ../build_styles.mjs",
+    "check": "node ../build_styles.mjs --check"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.5",
+    "tailwindcss": "4.3.5"
+  }
+}

@@ -1,5 +1,6 @@
 """Canonical candidates preserve exact historical evidence without widening it."""
 import copy
+from functools import lru_cache
 import json
 from pathlib import Path
 import shutil
@@ -16,14 +17,25 @@ import seo_overlay as overlay
 import tracking
 
 
+@lru_cache(maxsize=None)
+def frozen_baseline_source(path):
+    """The immutable Task 2A adapter is tested against its actual approved input.
+
+    New CSS candidates are tested separately, before chaining this projector.
+    Historical fixtures come from Git, never from a lossy current-source filter.
+    """
+    return subprocess.check_output(['git', 'show',
+        'cf443c3b1facc2ae422fc6c55d546528671be1d0:' + path], cwd=ROOT).decode('utf-8')
+
+
 class SEOOverlayTests(unittest.TestCase):
     def setUp(self):
         self.manifest = overlay.manifest(ROOT)
 
     def source(self, path):
-        return (ROOT / path).read_text(encoding='utf-8')
+        return frozen_baseline_source(path)
 
-    def test_all_89_current_pages_reconstruct_exact_frozen_main_and_generator(self):
+    def test_all_89_frozen_baseline_pages_reconstruct_exact_main_and_generator(self):
         registry = json.loads(self.source('TOOL_REGISTRY.json'))
         expected = {'index.html', 'privacy.html'} | {
             tool['directory_path'] + '/index.html' for tool in registry['tools']

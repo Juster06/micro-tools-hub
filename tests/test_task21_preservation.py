@@ -9,7 +9,9 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 BASE='8b1c17b86da72c3641477b5fdc5ea3cafb8a1c20'
 sys.path.insert(0,str(ROOT/'scripts'))
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+from git_fixtures import git_blob as frozen_git_blob
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
 from task25_test_support import tool_map_before_task25
@@ -20,7 +22,7 @@ def read(path):return historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_p
 def load(path):
  data=json.loads(read(path))
  return historical_registry(data) if path=='TOOL_REGISTRY.json' else data
-def blob(path,ref=BASE):return subprocess.check_output(['git','show',ref+':'+path],cwd=ROOT)
+def blob(path,ref=BASE):return frozen_git_blob(ROOT,ref,path)
 def normalized(raw):return raw.replace(b'\r\n',b'\n').rstrip()
 def page_hash(raw):return hashlib.sha256(normalized(raw)).hexdigest()
 

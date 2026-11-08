@@ -6,7 +6,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 from task25_test_support import BASE, IDS, git_blob, homepage_before_task25, normalized, registry_before_task25, tool_map_before_task25
 from tool_homepage import Homepage
 

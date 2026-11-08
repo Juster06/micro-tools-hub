@@ -2,11 +2,13 @@ import hashlib,json,subprocess,sys,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];BASE='4671204d2fb39129b0463e4b4ba8b5c8dc21e0a7'
 sys.path.insert(0,str(ROOT/'scripts'))
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+from git_fixtures import git_blob as frozen_git_blob
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 from task24_test_support import IDS,historical_registry,without_task24
 from tool_homepage import Homepage
 from task25_test_support import homepage_before_task25, registry_before_task25, tool_map_before_task25
-def blob(path,ref=BASE):return subprocess.check_output(['git','show',ref+':'+path],cwd=ROOT)
+def blob(path,ref=BASE):return frozen_git_blob(ROOT,ref,path)
 def normalized(b):return b.replace(b'\r\n',b'\n')
 class Task24Preservation(unittest.TestCase):
  def test_exactly_six_new_records_and_original93_records_unchanged(self):

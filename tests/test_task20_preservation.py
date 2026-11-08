@@ -9,13 +9,15 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE='1ead1c37861b80c552446afbdb952c9248370bf9'
 IDS={'excel-formula-generator','emoji-picker','image-compressor','png-to-ico','resume-builder','passport-photo-layout-maker'}
 sys.path.insert(0,str(ROOT/'scripts'))
-from seo_overlay import historical_source, historical_bytes
+from css_overlay import historical_snapshot
+from git_fixtures import git_blob as frozen_git_blob
+historical_source, historical_bytes = historical_snapshot(Path(__file__).resolve().parents[1])
 from tool_homepage import Homepage
 from task24_test_support import historical_registry,without_task24
 from task25_test_support import tool_map_before_task25
 from task22_test_support import assert_unchanged_or_task22,without_task22
 from task21_test_support import IDS as TASK21_IDS, COUNTS as TASK21_COUNTS, assert_transition, without_cards
-def blob(path,revision=BASE):return subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT)
+def blob(path,revision=BASE):return frozen_git_blob(ROOT,revision,path)
 def text(path):return historical_source(ROOT, (ROOT/path).relative_to(ROOT).as_posix(), (ROOT/path).read_text(encoding='utf8'))
 def load(path):
  data=json.loads(text(path))

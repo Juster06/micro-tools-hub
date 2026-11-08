@@ -169,6 +169,7 @@ def run(job):
         summary["unavailable_scopes"] = [{"tool": tid, "scope": "isolated-logic", "status": "NOT RUN", "reason": item["unavailable_reason"]}
             for tid, item in value["tools"].items() if item["logic_job"] is None]
         if job == "python-project":
+            execute("css-source-approval", [sys.executable, "scripts/css_overlay.py", "--check"])
             execute("python-unittest", [sys.executable, "scripts/ci/unittest_runner.py"], "python", timeout=240, minimum=value["minimum_tests"][job])
             for scope, script in (("registry", "validate_registry.py"), ("source-audit-homepage", "check_project.py"), ("static-tools", "verify_tools.py")):
                 execute(scope, [sys.executable, "scripts/" + script, "--json", "--no-report"], "validation")
@@ -179,6 +180,7 @@ def run(job):
             execute("whitespace-working", ["git", "diff", "--check"])
             execute("whitespace-commits", ["git", "diff", "--check", whitespace_base(), "HEAD"])
         elif job == "node-regression":
+            execute("css-build-freshness", ["node", "scripts/build_styles.mjs", "--check"])
             execute("node-logic", ["node", "--test", "--test-concurrency=1", "--test-reporter=tap", *value["node_files"]], "node", timeout=300, minimum=value["minimum_tests"][job])
             for tid, item in value["tools"].items():
                 if item["logic_job"]:
