@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-08 — SEO Task 2D.2 corrective development proposal
+
+- Exclude the preserved internal homepage design document from Jekyll output,
+  retaining Jekyll 3 and GitHub Pages default exclusions.
+- Check actual Pages-generated files and metadata against the reviewed public
+  inventory; keep all 89 canonical pages and unrelated historical routes.
+- Add strict current-source approval and negative publishing tests; preserve
+  frozen audits, website runtime, CSS, consent and release records.
+- Development only. Production finding SEO-2D1-01 awaits an authorized merge,
+  deployment and independent public verification; no performance claim.
+
 ## 2026-11-08 — SEO Task 2D development proposal
 
 - Add Option B homepage, accessible mobile disclosure, local search and eight

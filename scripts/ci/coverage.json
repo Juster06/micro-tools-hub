@@ -7,6 +7,7 @@
     "tests/test_dashboard.py",
     "tests/test_git_fixtures.py",
     "tests/test_homepage.py",
+    "tests/test_pages_output.py",
     "tests/test_prepare_tool_seo.py",
     "tests/test_seo.py",
     "tests/test_seo_overlay.py",
