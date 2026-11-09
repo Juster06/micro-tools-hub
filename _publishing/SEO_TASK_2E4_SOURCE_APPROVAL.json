@@ -255,7 +255,7 @@
       "normalization": "utf8-lf"
     },
     "_publishing/verify_site.py": {
-      "sha256": "383e14f7a023b38238aace34090990dfcbfaf0d7a3c37a24b8862f8db406c638",
+      "sha256": "3eb6b0b8e963b46a0a272b54250334efd3f418b5cf7a5b2c7e2e538d92f96c09",
       "normalization": "utf8-lf"
     },
     "age-calculator/README.md": {
@@ -2399,7 +2399,7 @@
       "normalization": "utf8-lf"
     },
     "tests/test_pages_output.py": {
-      "sha256": "82b26f174ee7f349c57f17fcef1c32a925156ff54b273e05ea35ba9edcf7e5be",
+      "sha256": "60fc12284e0fc00e525f69a5293ed7bbf4f4b812c6cc43df1a799689fe68a11c",
       "normalization": "utf8-lf"
     },
     "tests/test_prepare_tool_seo.py": {
