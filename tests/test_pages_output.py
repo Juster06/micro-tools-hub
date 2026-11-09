@@ -5,17 +5,34 @@ import gzip
 import hashlib
 import html
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / '_publishing'))
 import verify_site as publishing
 import css_overlay as approval
+
+
+# Temporary baseline instrumentation for the authorized development diagnostic.
+# Test selection, assertions, fixture behavior and CI deadlines are unchanged.
+if os.environ.get('GITHUB_ACTIONS') == 'true' and os.environ.get('GITHUB_REF') == 'refs/heads/seo/task-2e3-pages-cleanup':
+    class _PhaseATimingResult(unittest.TextTestResult):
+        def startTest(self, test):
+            super().startTest(test)
+            self._phase_a_started = time.perf_counter()
+
+        def stopTest(self, test):
+            print('EDB_TEST_TIMING=' + json.dumps({'id': test.id(), 'seconds': time.perf_counter() - self._phase_a_started}), flush=True)
+            super().stopTest(test)
+
+    unittest.TextTestRunner.resultclass = _PhaseATimingResult
 
 
 class PagesOutputTests(unittest.TestCase):

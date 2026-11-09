@@ -2379,7 +2379,7 @@
       "normalization": "utf8-lf"
     },
     "tests/test_pages_output.py": {
-      "sha256": "bcaebea5917bc10091d4800a07c6091a9e0244483a21125cbead0e9163203b82",
+      "sha256": "2c64ff4c04465a50664ff6783312b0a4efa8fb793e5128da6044142f4ede9cab",
       "normalization": "utf8-lf"
     },
     "tests/test_prepare_tool_seo.py": {
