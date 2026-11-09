@@ -12,7 +12,7 @@ const root=new URL('../',import.meta.url),rootDirectory=fileURLToPath(root);
 const approval=validateCurrent(root);
 const parent=fs.mkdtempSync(path.join(os.tmpdir(),'edb-css-node-'));
 const fixture=path.join(parent,'repo');fs.mkdirSync(fixture);
-for(const name of [...Object.keys(approval.files),'_publishing/SEO_TASK_2E3_SOURCE_APPROVAL.json','scripts/_phase_a_publishing_approval_identity.py']){
+for(const name of [...Object.keys(approval.files),'_publishing/SEO_TASK_2E4_SOURCE_APPROVAL.json','scripts/_privacy_publishing_approval_identity.py']){
   const target=path.join(fixture,name);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(rootDirectory,name),target);
 }
 const fixtureURL=pathToFileURL(fixture+path.sep);
@@ -89,6 +89,15 @@ test('unapproved consumer and unapproved HTML route are rejected',()=>{
   mutate('social-counter/index.html',()=>assert.throws(()=>validateCurrent(fixtureURL)),raw=>Buffer.from(raw.toString('utf8').replace('</head>',tag+'</head>')));
   const directory=path.join(fixture,'unexpected-route');fs.mkdirSync(directory);
   try{for(const name of ['index.html','index.htm']){fs.writeFileSync(path.join(directory,name),'<title>Unapproved</title>');assert.throws(()=>validateCurrent(fixtureURL));fs.unlinkSync(path.join(directory,name));}}finally{fs.rmdirSync(directory);}
+});
+
+test('two-report successor and original source evidence remain bound in both runtimes',()=>{
+  assert.equal(approval.security_report_parent_revision,'eec8027b7b4c293fd4ce9e5dfd4a2bb490d61b20');
+  for(const relative of ['_publishing/SEO_TASK_2E4_SOURCE_APPROVAL.json','scripts/_privacy_publishing_approval_identity.py',
+    '_publishing/SEO_TASK_2E4_OUTPUT_POLICY.json','_publishing/SEO_TASK_2E4_SCOPE.json','_publishing/SEO_TASK_2E4_PHASE_B.md',
+    'audit/TASK_21_SECURITY_REVIEW.json','audit/TASK_22_SECURITY_REVIEW.json']){
+    mutate(relative,()=>{assert.throws(()=>validateCurrent(fixtureURL));assert.notEqual(pythonResult(fixture).status,0);});
+  }
 });
 test('nested generated-directory names cannot hide an unapproved HTML route',()=>{
   const outer=path.join(fixture,'unexpected-route');fs.mkdirSync(outer);

@@ -7,20 +7,29 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+from html import escape
 from html.parser import HTMLParser
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 import re
 import stat
 import sys
+from urllib.parse import quote
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import css_overlay
 
-POLICY = '_publishing/SEO_TASK_2E3_OUTPUT_POLICY.json'
+POLICY = '_publishing/SEO_TASK_2E4_OUTPUT_POLICY.json'
+PHASE_A_POLICY = '_publishing/SEO_TASK_2E3_OUTPUT_POLICY.json'
+SECURITY_SCOPE = '_publishing/SEO_TASK_2E4_SCOPE.json'
+SECURITY_CHECKPOINT = '_publishing/SEO_TASK_2E4_PHASE_B.md'
+SECURITY_REPORTS = ('audit/TASK_21_SECURITY_REVIEW.json', 'audit/TASK_22_SECURITY_REVIEW.json')
+SECURITY_PARENT = 'eec8027b7b4c293fd4ce9e5dfd4a2bb490d61b20'
+PHASE_A_POLICY_SHA256 = '558ac5176acf56a00773c2ace9926f31e2fbe6e8ccbe3018a6dd5ffc3fcef9c9'
+PHASE_A_SCOPE_SHA256 = 'ce7741ae1677f91491e7d448969f73711870fc49e2901762dbc3b1cf2e1493d8'
 CANDIDATES = '_publishing/SEO_TASK_2E2_CLEANUP_CANDIDATES.json'
 SCOPE = '_publishing/SEO_TASK_2E3_SCOPE.json'
 PREDECESSOR = '_publishing/output-policy.json'
@@ -43,6 +52,7 @@ def reviewed_candidates(root):
 
 
 EXCLUDES += [name for group in reviewed_candidates(ROOT)['exact_sets'] for name in group['exact_paths']]
+EXCLUDES += list(SECURITY_REPORTS)
 
 
 def phase_a_contract(root, policy):
@@ -95,6 +105,82 @@ def phase_a_contract(root, policy):
         # lstat remains fresh. Publishing exclusion never permits source deletion.
         css_overlay.safe_file(root, name, checked_directories)
     return scope
+
+
+def security_report_contract(root, policy):
+    """Bind exactly two exclusions to frozen production; never learn an allowlist."""
+    previous_raw = css_overlay.safe_file(root, PHASE_A_POLICY).read_bytes().replace(b'\r\n', b'\n')
+    scope_raw = css_overlay.safe_file(root, SCOPE).read_bytes().replace(b'\r\n', b'\n')
+    if (hashlib.sha256(previous_raw).hexdigest() != PHASE_A_POLICY_SHA256
+            or hashlib.sha256(scope_raw).hexdigest() != PHASE_A_SCOPE_SHA256):
+        raise ValueError('Frozen Task 2E.3 policy or scope changed')
+    previous = json.loads(previous_raw)
+    old_scope = phase_a_contract(root, previous)
+    if (set(policy) != set(previous) | {'security_report_cleanup'}
+            or policy['security_report_cleanup'] != {'scope': SECURITY_SCOPE, 'predecessor_policy': PHASE_A_POLICY}):
+        raise ValueError('Security-report successor selection changed')
+    for key, value in previous.items():
+        if key not in {'output_paths', 'markdown_source_paths', 'review_note'} and policy.get(key) != value:
+            raise ValueError('Security-report cleanup changed a preserved predecessor rule: ' + key)
+    markdown = previous['markdown_source_paths'] + [SECURITY_CHECKPOINT]
+    retained = {name: digest for name, digest in old_scope['retained_output_sha256'].items()
+                if name not in SECURITY_REPORTS}
+    removed = {name: old_scope['retained_output_sha256'][name] for name in SECURITY_REPORTS}
+    if (policy['markdown_source_paths'] != markdown or len(retained) != 194
+            or len(policy['output_paths']) != 194 or set(policy['output_paths']) != set(retained)):
+        raise ValueError('Security-report cleanup exceeds the exact two-path subtraction')
+    # Check semantic text bytes across Git checkout line endings. No file is
+    # rewritten; the recovered candidate record still has a separate RAW gate.
+    for name, digest in removed.items():
+        source = css_overlay.safe_file(root, name).read_bytes().decode('utf-8').replace('\r\n', '\n').encode('utf-8')
+        if hashlib.sha256(source).hexdigest() != digest:
+            raise ValueError('Original security report source changed')
+    expected = {
+        'schema_version': 1, 'task': 'SEO Task 2E.4 Phase B',
+        'authorization': 'DEVELOPMENT_ONLY_NO_MERGE_NO_DEPLOYMENT',
+        'base_commit': SECURITY_PARENT,
+        'production_workflow': 42594014512, 'production_artifact': 13662792367,
+        'production_artifact_sha256': 'cfefe6c6038df2f8df1127583da0661b0c5afdf02c2dd018b68bbfab5922ffc6',
+        'audit_candidates_sha256': AUDIT_CANDIDATES_SHA256,
+        'predecessor_policy_sha256': PHASE_A_POLICY_SHA256,
+        'predecessor_scope_sha256': PHASE_A_SCOPE_SHA256,
+        'new_excluded_output_sha256': removed,
+        'excluded_output_sha256': {**old_scope['excluded_output_sha256'], **removed},
+        'retained_output_sha256': retained,
+        'source_report_sha256': removed,
+        'source_report_normalization': 'utf8-lf',
+        'owner_review_keep_paths': [name for name in old_scope['owner_review_keep_paths'] if name not in SECURITY_REPORTS],
+        'required_runtime_keep_paths': old_scope['required_runtime_keep_paths'],
+        'intentionally_public_keep_paths': old_scope['intentionally_public_keep_paths'],
+        'counts': {'baseline_outputs': 196, 'new_excluded': 2, 'excluded': 843,
+                   'retained': 194, 'canonical_html': 89, 'owner_review': 88,
+                   'runtime': 11, 'intentionally_public': 6},
+    }
+    scope = json.loads(css_overlay.safe_file(root, SECURITY_SCOPE).read_bytes())
+    if scope != expected:
+        raise ValueError('Security-report scope or protected hash coverage changed')
+    return scope
+
+
+def verify_private_values_absent(root, contents):
+    """Scan approved output in memory without publishing private values in errors."""
+    report = json.loads(css_overlay.safe_file(root, SECURITY_REPORTS[1]).read_bytes())
+    values = [package['path'] for package in report['dependencies']['packages']]
+    if len(values) != 5 or any(not isinstance(value, str) or not value for value in values):
+        raise ValueError('Original security report privacy inventory changed')
+    markers = set()
+    for value in values:
+        parts = PureWindowsPath(value).parts
+        accounts = [parts[i + 1] for i, part in enumerate(parts[:-1]) if part.lower() == 'users']
+        for text in [value, value.replace('\\', '/'), *accounts]:
+            variants = [text, json.dumps(text)[1:-1], escape(text, quote=True),
+                        quote(text, safe=''), quote(text, safe='/')]
+            markers.update(variant.lower().encode('utf-8') for variant in variants)
+    for data in contents.values():
+        lowered = data.lower()
+        if any(marker in lowered for marker in markers):
+            raise ValueError('Workstation-specific data appeared in generated output')
+    return len(contents)
 
 
 class Metadata(HTMLParser):
@@ -189,7 +275,9 @@ def verify_output(site, root, policy):
     if len(expected) != len(policy['output_paths']) or set(files) != expected:
         raise ValueError('Generated output inventory mismatch: ' + json.dumps({
             'unexpected': sorted(set(files) - expected), 'missing': sorted(expected - set(files))}))
-    scope = phase_a_contract(root, policy) if 'phase_a' in policy else None
+    security_cleanup = 'security_report_cleanup' in policy
+    scope = (security_report_contract(root, policy) if security_cleanup else
+             phase_a_contract(root, policy) if 'phase_a' in policy else None)
     # Read each output once for this invocation. No path, byte or hash result is
     # cached across calls, so subsequent mutations always get fresh validation.
     contents = {}
@@ -204,6 +292,7 @@ def verify_output(site, root, policy):
         for name, expected_hash in scope['retained_output_sha256'].items():
             if hashlib.sha256(read_output(name)).hexdigest() != expected_hash:
                 raise ValueError('Retained production output changed: ' + name)
+    privacy_files = verify_private_values_absent(root, contents) if security_cleanup else 0
     check_markdown_sources(root, policy['markdown_source_paths'])
     html = {p for p in files if p.lower().endswith(('.html', '.htm'))}
     if html != set(policy['html']):
@@ -253,7 +342,10 @@ def verify_output(site, root, policy):
             'historical_html_routes_retained': len(html) - len(canonical),
             'retired_html_outputs': len(policy.get('retired_routes', [])),
             'retired_output_files': len(policy.get('retired_output_paths', [])),
-            'phase_a_excluded_files': len(scope['excluded_output_sha256']) if scope else 0,
+            'phase_a_excluded_files': len(scope['excluded_output_sha256']) - len(scope.get('new_excluded_output_sha256', {})) if scope else 0,
+            'security_reports_excluded': len(scope.get('new_excluded_output_sha256', {})) if scope else 0,
+            'cumulative_excluded_files': len(scope['excluded_output_sha256']) if scope else 0,
+            'privacy_output_files_checked': privacy_files,
             'owner_review_files_retained': len(scope['owner_review_keep_paths']) if scope else 0,
             'retained_output_hashes_verified': len(scope['retained_output_sha256']) if scope else 0,
             'sitemap_urls': len(urls), 'exact_public_files': len(policy['exact_public_files']),

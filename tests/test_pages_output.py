@@ -5,17 +5,33 @@ import gzip
 import hashlib
 import html
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / '_publishing'))
 import verify_site as publishing
 import css_overlay as approval
+
+
+def historical_source_fixture(directory):
+    """Keep old Markdown inventories exact in a disposable source fixture."""
+    root = directory / 'historical-source'
+    previous = json.loads((ROOT / '_publishing/SEO_TASK_2E3_SOURCE_APPROVAL.json').read_text(encoding='utf-8'))
+    scope = json.loads((ROOT / '_publishing/SEO_TASK_2E3_SCOPE.json').read_text(encoding='utf-8'))
+    names = set(previous['files']) | set(scope['excluded_output_sha256']) | {
+        '_publishing/SEO_TASK_2E3_SOURCE_APPROVAL.json', 'scripts/_phase_a_publishing_approval_identity.py'}
+    for name in sorted(names):
+        target = root / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / name, target)
+    return root
 
 
 class PagesOutputTests(unittest.TestCase):
@@ -24,6 +40,7 @@ class PagesOutputTests(unittest.TestCase):
         cls.temp = tempfile.TemporaryDirectory(prefix='edb-pages-output-')
         cls.directory = Path(cls.temp.name)
         cls.site = cls.directory / 'site'
+        cls.source_root = historical_source_fixture(cls.directory)
         # Preserve the Task 2E.1 assertions as a frozen predecessor fixture.
         cls.policy = json.loads((ROOT / '_publishing/output-policy.json').read_text(encoding='utf-8'))
         cls.policy['markdown_source_paths'].append('_publishing/SEO_TASK_2E3_PHASE_A.md')
@@ -105,7 +122,7 @@ class PagesOutputTests(unittest.TestCase):
                 parent.rmdir()
 
     def verify(self):
-        return publishing.verify_output(self.site, ROOT, self.policy)
+        return publishing.verify_output(self.site, self.source_root, self.policy)
 
     def rejects(self):
         with self.assertRaises(ValueError):
@@ -179,7 +196,7 @@ class PagesOutputTests(unittest.TestCase):
         policy = copy.deepcopy(self.policy)
         policy['generated_asset_hashes'] = {'assets/css/style.css': '0' * 64}
         with self.assertRaisesRegex(ValueError, 'theme asset'):
-            publishing.verify_output(self.site, ROOT, policy)
+            publishing.verify_output(self.site, self.source_root, policy)
 
     def test_config_replacement_defaults_and_scope_are_strict(self):
         root = self.directory / 'config-fixture'
@@ -263,7 +280,7 @@ class PagesOutputTests(unittest.TestCase):
         policy = copy.deepcopy(self.policy)
         policy['retired_routes'][0]['source_sha256'] = '0' * 64
         with self.assertRaisesRegex(ValueError, 'history changed'):
-            publishing.verify_output(self.site, ROOT, policy)
+            publishing.verify_output(self.site, self.source_root, policy)
 
 
 class PhaseAOutputTests(unittest.TestCase):
@@ -272,7 +289,8 @@ class PhaseAOutputTests(unittest.TestCase):
         cls.temp = tempfile.TemporaryDirectory(prefix='edb-phase-a-output-')
         cls.directory = Path(cls.temp.name)
         cls.site = cls.directory / 'site'
-        cls.policy = json.loads((ROOT / publishing.POLICY).read_text(encoding='utf-8'))
+        cls.source_root = historical_source_fixture(cls.directory)
+        cls.policy = json.loads((ROOT / publishing.PHASE_A_POLICY).read_text(encoding='utf-8'))
         cls.scope = json.loads((ROOT / publishing.SCOPE).read_text(encoding='utf-8'))
         cls.candidates = publishing.reviewed_candidates(ROOT)
         # Exact source bytes plus the pinned old theme build are a guard fixture,
@@ -425,6 +443,24 @@ class PhaseAOutputTests(unittest.TestCase):
             with self.subTest(path=name), self.changed(name, raw + b' '):
                 self.rejects()
 
+    def test_historical_fixture_contains_all_excluded_sources_before_hash_rejection(self):
+        excluded = set(self.scope['excluded_output_sha256'])
+        self.assertEqual(len(excluded), 841)
+        for name in ['audit/SEO_TASK_2C_DEVELOPMENT_VERIFICATION.json',
+                     'audit/SEO_TASK_2D_DEVELOPMENT_VERIFICATION.json']:
+            self.assertIn(name, excluded)
+        for name in excluded:
+            with self.subTest(path=name):
+                self.assertTrue((self.source_root / name).is_file())
+                self.assertEqual(hashlib.sha256((self.source_root / name).read_bytes()).hexdigest(),
+                                 hashlib.sha256((ROOT / name).read_bytes()).hexdigest())
+        self.assertFalse((self.source_root / publishing.SECURITY_CHECKPOINT).exists())
+        self.assertEqual(self.verify()['output_files'], 196)
+        original = (self.site / 'README.md').read_bytes()
+        with self.changed('README.md', original + b' '):
+            with self.assertRaisesRegex(ValueError, '^Retained production output changed: README[.]md$'):
+                self.verify()
+
     def test_every_canonical_page_and_retired_output_remains_protected(self):
         for name in self.policy['canonical_pages']:
             with self.subTest(path=name), self.changed(name):
@@ -455,7 +491,7 @@ class PhaseAOutputTests(unittest.TestCase):
     def test_successor_and_frozen_predecessors_are_bound_before_projection(self):
         value = approval.validate_current(ROOT)
         self.assertEqual(value['phase_a_parent_revision'], '34992b8f8ac3e73efbea820bb18c96dae145ff19')
-        paths = [publishing.POLICY, publishing.SCOPE, publishing.CANDIDATES, publishing.PREDECESSOR,
+        paths = [publishing.POLICY, publishing.PHASE_A_POLICY, publishing.SCOPE, publishing.CANDIDATES, publishing.PREDECESSOR,
                  '_publishing/SEO_TASK_2E1_SOURCE_APPROVAL.json', 'scripts/_historical_publishing_approval_identity.py',
                  approval.MANIFEST, approval.IDENTITY]
         with tempfile.TemporaryDirectory(prefix='edb-phase-a-approval-') as temp:
@@ -474,3 +510,189 @@ class PhaseAOutputTests(unittest.TestCase):
                 finally:
                     path.write_bytes(raw)
             approval.validate_current(root)
+
+
+class SecurityReportOutputTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='edb-security-report-output-')
+        cls.directory = Path(cls.temp.name)
+        cls.site = cls.directory / 'site'
+        cls.source_root = ROOT
+        cls.policy = json.loads((ROOT / publishing.POLICY).read_text(encoding='utf-8'))
+        cls.scope = json.loads((ROOT / publishing.SECURITY_SCOPE).read_text(encoding='utf-8'))
+        for name in cls.policy['output_paths']:
+            target = cls.site / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if name == 'assets/css/style.css':
+                data = gzip.decompress((ROOT / '_publishing/fixtures/seo2e1-theme.css.gz').read_bytes())
+            else:
+                data = (ROOT / name).read_bytes()
+                if not name.endswith('.css'):
+                    data = data.replace(b'\r\n', b'\n')
+            target.write_bytes(data)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.temp.cleanup()
+
+    changed = PagesOutputTests.changed
+    verify = PagesOutputTests.verify
+    rejects = PagesOutputTests.rejects
+
+    def test_exact_two_report_subtraction_and_all_194_retained_hashes(self):
+        result = self.verify()
+        for field, expected in {'output_files': 194, 'canonical_pages': 89, 'html_pages': 89,
+                                'owner_review_files_retained': 88, 'retained_output_hashes_verified': 194,
+                                'phase_a_excluded_files': 841, 'security_reports_excluded': 2,
+                                'cumulative_excluded_files': 843, 'privacy_output_files_checked': 194,
+                                'sitemap_urls': 89, 'retired_output_files': 93}.items():
+            with self.subTest(field=field):
+                self.assertEqual(result[field], expected)
+        previous = json.loads((ROOT / publishing.PHASE_A_POLICY).read_text(encoding='utf-8'))
+        self.assertEqual(set(previous['output_paths']) - set(self.policy['output_paths']), set(publishing.SECURITY_REPORTS))
+        self.assertEqual(len(self.scope['required_runtime_keep_paths']), 11)
+        self.assertEqual(len(self.scope['intentionally_public_keep_paths']), 6)
+        self.assertEqual(sum(name.endswith('README.md') for name in self.policy['output_paths']), 84)
+        for name, expected in self.scope['retained_output_sha256'].items():
+            self.assertEqual(hashlib.sha256((self.site / name).read_bytes()).hexdigest(), expected)
+
+    def test_original_report_sources_match_production_without_rewriting(self):
+        for name in publishing.SECURITY_REPORTS:
+            raw = (ROOT / name).read_bytes()
+            original = subprocess.check_output(['git', 'show', publishing.SECURITY_PARENT + ':' + name], cwd=ROOT)
+            self.assertTrue(raw.replace(b'\r\n', b'\n') == original)
+            self.assertFalse((self.site / name).exists())
+            publishing.security_report_contract(ROOT, self.policy)
+            self.assertTrue((ROOT / name).read_bytes() == raw)
+
+    def test_all_843_approved_exclusions_cannot_reappear(self):
+        self.assertEqual(len(self.scope['excluded_output_sha256']), 843)
+        for name in self.scope['excluded_output_sha256']:
+            with self.subTest(path=name), self.changed(name, b'unapproved publication'):
+                self.rejects()
+
+    def test_both_reports_reject_raw_encoded_extensionless_directory_and_html_aliases(self):
+        for source in publishing.SECURITY_REPORTS:
+            stem = source.rsplit('.', 1)[0]
+            aliases = [source, stem, stem + '.html', stem + '.htm', stem + '/index.html',
+                       source + '/index.html', source.replace('/', '%2F'), source.replace('.', '%2E'),
+                       source.replace('/', '%252F'), 'alternate/' + source.rsplit('/', 1)[1]]
+            for name in aliases:
+                with self.subTest(alias=name), self.changed(name, b'---\npermalink: /index.html\n---\nreport'):
+                    self.rejects()
+
+    def test_every_retained_file_is_required_and_cannot_change(self):
+        for name in self.scope['retained_output_sha256']:
+            original = (self.site / name).read_bytes()
+            with self.subTest(path=name, mutation='missing'), self.changed(name):
+                self.rejects()
+            with self.subTest(path=name, mutation='bytes'), self.changed(name, original + b' '):
+                self.rejects()
+
+    def test_licence_notices_data_and_both_stylesheets_are_protected(self):
+        names = ['assets/vendor/task21/THIRD_PARTY_NOTICES.txt', 'assets/vendor/task22/THIRD_PARTY_NOTICES.txt',
+                 'assets/data/UNICODE-LICENSE.txt', 'assets/data/EFF-WORDLIST-LICENSE.txt',
+                 'assets/data/eff-large-wordlist.txt', 'scripts/styles/licenses/tailwindcss-MIT.txt',
+                 'assets/css/site.77d4325c7538174e.css', 'assets/css/style.css']
+        for name in names:
+            self.assertIn(name, self.scope['retained_output_sha256'])
+            with self.subTest(path=name), self.changed(name, b'replaced notice or asset'):
+                self.rejects()
+
+    def test_canonical_metadata_discovery_and_old_retirements_remain_protected(self):
+        original = (self.site / 'index.html').read_bytes()
+        for extra in [b'<meta name="robots" content="noindex">', b'<link rel="canonical" href="https://example.invalid/">',
+                      b'<meta http-equiv="refresh" content="0;url=/">']:
+            with self.changed('index.html', original.replace(b'</head>', extra + b'</head>')):
+                self.rejects()
+        for name in ['sitemap.xml', 'robots.txt']:
+            with self.changed(name, b'changed discovery'):
+                self.rejects()
+        retired = set(self.policy['retired_output_paths'])
+        for row in self.policy['retired_routes']:
+            retired.update(row['aliases'])
+        for name in sorted(retired):
+            if name.endswith('/'):
+                name += 'index.html'
+            if (self.site / name).is_dir():
+                name += '/index.html'
+            with self.subTest(path=name), self.changed(name, b'reintroduced history'):
+                self.rejects()
+
+    def test_successor_policy_cannot_expand_scope_or_change_predecessor_rules(self):
+        for field in ['canonical_pages', 'html', 'public_output_hashes', 'generated_asset_hashes',
+                      'retired_routes', 'source_normalization', 'security_report_cleanup', 'markdown_source_paths']:
+            policy = copy.deepcopy(self.policy)
+            policy[field] = {} if isinstance(policy[field], dict) else []
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                publishing.security_report_contract(ROOT, policy)
+        for paths in [self.policy['output_paths'] + [publishing.SECURITY_REPORTS[0]],
+                      [p for p in self.policy['output_paths'] if p != 'README.md'],
+                      self.policy['output_paths'] + [self.policy['output_paths'][0]]]:
+            policy = copy.deepcopy(self.policy)
+            policy['output_paths'] = paths
+            with self.assertRaises(ValueError):
+                publishing.security_report_contract(ROOT, policy)
+
+    def test_report_source_line_endings_are_semantic_but_real_tampering_and_deletion_fail(self):
+        root = historical_source_fixture(self.directory / 'source-contract')
+        scope_path = root / publishing.SECURITY_SCOPE
+        shutil.copyfile(ROOT / publishing.SECURITY_SCOPE, scope_path)
+        for name in publishing.SECURITY_REPORTS:
+            target = root / name
+            original = target.read_bytes()
+            lf = original.replace(b'\r\n', b'\n')
+            try:
+                for data in [lf, lf.replace(b'\n', b'\r\n')]:
+                    target.write_bytes(data)
+                    publishing.security_report_contract(root, self.policy)
+                for data in [original + b' ', original[:-1], b'{}']:
+                    target.write_bytes(data)
+                    with self.assertRaisesRegex(ValueError, 'Original security report source changed'):
+                        publishing.security_report_contract(root, self.policy)
+                target.unlink()
+                with self.assertRaises(OSError):
+                    publishing.security_report_contract(root, self.policy)
+            finally:
+                target.write_bytes(original)
+        original_scope = scope_path.read_bytes()
+        try:
+            altered = copy.deepcopy(self.scope)
+            altered['owner_review_keep_paths'].remove('README.md')
+            scope_path.write_text(json.dumps(altered), encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'scope or protected hash coverage'):
+                publishing.security_report_contract(root, self.policy)
+        finally:
+            scope_path.write_bytes(original_scope)
+
+    def test_known_private_values_and_encodings_fail_with_sanitized_diagnostics(self):
+        report = json.loads((ROOT / publishing.SECURITY_REPORTS[1]).read_bytes())
+        values = [p['path'] for p in report['dependencies']['packages']]
+        self.assertEqual(len(values), 5)
+        self.assertEqual(publishing.verify_private_values_absent(ROOT, {'fixture': b'public content'}), 1)
+        for index, value in enumerate(values):
+            for variant in [value, value.replace('\\', '/'), json.dumps(value)[1:-1],
+                            html.escape(value, quote=True), quote(value, safe='')]:
+                with self.subTest(entry=index):
+                    with self.assertRaisesRegex(ValueError, '^Workstation-specific data appeared in generated output$'):
+                        publishing.verify_private_values_absent(ROOT, {'fixture': variant.encode('utf-8')})
+
+    def test_generated_junction_or_symlink_cannot_hide_extra_output(self):
+        outside = self.directory / 'outside'
+        outside.mkdir()
+        (outside / 'file.txt').write_bytes(b'external fixture')
+        link = self.site / 'linked-directory'
+        if os.name == 'nt':
+            result = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(outside)], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        else:
+            link.symlink_to(outside, target_is_directory=True)
+        try:
+            self.rejects()
+            self.assertEqual((outside / 'file.txt').read_bytes(), b'external fixture')
+        finally:
+            if os.name == 'nt':
+                link.rmdir()
+            else:
+                link.unlink()

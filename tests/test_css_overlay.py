@@ -181,6 +181,15 @@ class CSSApprovalTests(unittest.TestCase):
             if os.name=='nt':link.rmdir()
             else:link.unlink()
 
+    def test_security_report_successor_and_original_evidence_remain_bound(self):
+        self.assertEqual(self.approval['security_report_parent_revision'], 'eec8027b7b4c293fd4ce9e5dfd4a2bb490d61b20')
+        for name in ['_publishing/SEO_TASK_2E4_OUTPUT_POLICY.json', '_publishing/SEO_TASK_2E4_SCOPE.json',
+                     '_publishing/SEO_TASK_2E4_PHASE_B.md', '_publishing/SEO_TASK_2E3_SOURCE_APPROVAL.json',
+                     'scripts/_phase_a_publishing_approval_identity.py',
+                     'audit/TASK_21_SECURITY_REVIEW.json', 'audit/TASK_22_SECURITY_REVIEW.json']:
+            with self.subTest(path=name), self.mutation(name):
+                self.rejects()
+
     def test_lf_crlf_projection_preserves_trailing_bytes(self):
         name='index.html';source=css.normalize((ROOT/name).read_bytes().decode())
         for candidate in [source,source.replace('\n','\r\n')]:
