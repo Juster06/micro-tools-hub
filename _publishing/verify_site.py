@@ -1,7 +1,7 @@
 """Validate real Pages output against a reviewed inventory, never approve it.
 
-The policy retains historical routes without endorsing their indexability.
-Any new output, including Markdown-generated HTML, requires explicit review.
+The current policy retires only approved exact paths and preserves all other
+production bytes. Frozen predecessor policies remain usable as test fixtures.
 """
 from __future__ import annotations
 
@@ -20,12 +20,78 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import css_overlay
 
-POLICY = '_publishing/output-policy.json'
+POLICY = '_publishing/SEO_TASK_2E3_OUTPUT_POLICY.json'
+CANDIDATES = '_publishing/SEO_TASK_2E2_CLEANUP_CANDIDATES.json'
+SCOPE = '_publishing/SEO_TASK_2E3_SCOPE.json'
+PREDECESSOR = '_publishing/output-policy.json'
+AUDIT_CANDIDATES_SHA256 = '8639edc9a260293d63cb645c9bef49812b04d85cfc286e6234fba14177e3d481'
+PREDECESSOR_SHA256 = '4c75dad3817f14e9774d743a2fc4f4f9ad9650e7aabae1a76c9d10db10831206'
 EXCLUDES = ['Gemfile', 'Gemfile.lock', 'node_modules', 'vendor/bundle/',
             'vendor/cache/', 'vendor/gems/', 'vendor/ruby/', 'CNAME',
             'HOMEPAGE_DESIGN.md', 'tests/test_pages_output.py']
 # Exact reviewed file exclusions, not directory globs.
 EXCLUDES += ['AGENTS.md', 'ARCHITECTURE.md', 'CHANGELOG.md', 'CSS_PIPELINE.md', 'DECISIONS.md', 'PROGRESS_TRACKER.md', 'PROJECT_MASTER_PLAN.md', 'ROADMAP.md', 'SEO_FOUNDATION.md', 'SESSION_HANDOFF.md', 'TOOL_CONTRACT.md', 'TOOL_DEVELOPMENT_GUIDE.md', 'audit/BACKLOG_RECONCILIATION.md', 'audit/CURRENT_STATE.md', 'audit/TASK_10_DELIVERY.md', 'audit/TASK_10_DEVELOPMENT_PLAN.md', 'audit/TASK_11_DEVELOPMENT_PLAN.md', 'audit/TASK_12_DEVELOPMENT_PLAN.md', 'audit/TASK_13_DEVELOPMENT_PLAN.md', 'audit/TASK_14_DEVELOPMENT_PLAN.md', 'audit/TASK_15_DEVELOPMENT_PLAN.md', 'audit/TASK_16_DEVELOPMENT_PLAN.md', 'audit/TASK_17_CONSENT_REVIEW.md', 'audit/TASK_18_DEVELOPMENT_PLAN.md', 'audit/TASK_19_DEVELOPMENT_PLAN.md', 'audit/TASK_20_DEVELOPMENT_PLAN.md', 'audit/TASK_24_RELEASE_TESTING.md', 'audit/TASK_7_DEVELOPMENT_PLAN.md', 'audit/TASK_8_DEVELOPMENT_PLAN.md', 'audit/TASK_9_DEVELOPMENT_PLAN.md', 'audit/task22-prototype/README.md', 'audit/task22-public/README.md', 'audit/task24-public/README.md', 'audit/task25-public/README.md', 'scripts/DASHBOARD.md', 'scripts/README.md', 'scripts/WINDOWS_LAUNCHER.md', 'scripts/ci/DESIGN.md', 'scripts/ci/MAIN_BRANCH_PROTECTION.md', 'scripts/ci/README.md', 'scripts/public-verification/task21/README.md', 'scripts/styles/DEPENDENCIES.md', 'scripts/vendor/task21/README.md', 'scripts/vendor/task22/README.md', 'templates/README.md', 'templates/structured-input.html', 'templates/text-input.html', 'templates/tool-page.html']
+
+
+def reviewed_candidates(root):
+    # This digest identifies the recovered raw artifact, including its CRLFs.
+    # JSON parsing is semantic; raw integrity must pass before any parsing.
+    raw = css_overlay.safe_file(root, CANDIDATES).read_bytes()
+    if hashlib.sha256(raw).hexdigest() != AUDIT_CANDIDATES_SHA256:
+        raise ValueError('Recovered candidate record changed')
+    return json.loads(raw)
+
+
+EXCLUDES += [name for group in reviewed_candidates(ROOT)['exact_sets'] for name in group['exact_paths']]
+
+
+def phase_a_contract(root, policy):
+    """Check the explicit subtraction from frozen production, not inferred output."""
+    if policy.get('phase_a') != {'scope': SCOPE, 'predecessor_policy': PREDECESSOR}:
+        raise ValueError('Phase A policy selection changed')
+    previous_raw = css_overlay.safe_file(root, PREDECESSOR).read_bytes().replace(b'\r\n', b'\n')
+    if hashlib.sha256(previous_raw).hexdigest() != PREDECESSOR_SHA256:
+        raise ValueError('Frozen Task 2E.1 publishing policy changed')
+    previous = json.loads(previous_raw)
+    record = reviewed_candidates(root)
+    scope = json.loads(css_overlay.safe_file(root, SCOPE).read_bytes())
+    groups = record['exact_sets']
+    if [(g['id'], len(g['exact_paths'])) for g in groups] != [('C1', 234), ('C2', 85), ('C3', 513), ('C4', 6), ('C5', 2), ('C6', 1)]:
+        raise ValueError('Phase A candidate groups changed')
+    candidates = [name for group in groups for name in group['exact_paths']]
+    excluded = set(candidates)
+    review = {row['path'] for row in record['owner_review_files']}
+    runtime = set(record['required_runtime_keep_paths'])
+    public = set(record['intentionally_public_keep_paths'])
+    if len(candidates) != 841 or len(excluded) != 841 or len(review) != 90 or len(runtime) != 11 or len(public) != 6:
+        raise ValueError('Phase A candidate/retention counts changed')
+    retained = review | runtime | public | set(previous['canonical_pages'])
+    if (excluded & retained or len(retained) != 196
+            or set(previous['output_paths']) != excluded | retained
+            or set(policy['output_paths']) != retained):
+        raise ValueError('Phase A output delta differs from exact approved subtraction')
+    for key, value in previous.items():
+        if key not in {'output_paths', 'markdown_source_paths', 'review_note'} and policy.get(key) != value:
+            raise ValueError('Phase A changed a preserved predecessor rule: ' + key)
+    if set(policy['markdown_source_paths']) != set(previous['markdown_source_paths']) | {'_publishing/SEO_TASK_2E3_PHASE_A.md'}:
+        raise ValueError('Phase A Markdown source change exceeds the checkpoint document')
+    if (scope.get('schema_version') != 1
+            or scope.get('authorization') != 'DEVELOPMENT_ONLY_NO_MERGE_NO_DEPLOYMENT'
+            or scope.get('base_commit') != '34992b8f8ac3e73efbea820bb18c96dae145ff19'
+            or scope.get('audit_candidates_sha256') != AUDIT_CANDIDATES_SHA256
+            or scope.get('predecessor_policy_sha256') != PREDECESSOR_SHA256
+            or set(scope['excluded_output_sha256']) != excluded
+            or set(scope['retained_output_sha256']) != retained
+            or set(scope['owner_review_keep_paths']) != review
+            or set(scope['required_runtime_keep_paths']) != runtime
+            or set(scope['intentionally_public_keep_paths']) != public):
+        raise ValueError('Phase A scope or protected hash coverage changed')
+    for values in (scope['excluded_output_sha256'], scope['retained_output_sha256']):
+        if any(not re.fullmatch(r'[0-9a-f]{64}', value) for value in values.values()):
+            raise ValueError('Phase A requires complete SHA-256 output evidence')
+    for name in excluded:
+        css_overlay.safe_file(root, name)  # Publishing exclusion never permits source deletion.
+    return scope
 
 
 class Metadata(HTMLParser):
@@ -118,6 +184,7 @@ def verify_output(site, root, policy):
     if len(expected) != len(policy['output_paths']) or set(files) != expected:
         raise ValueError('Generated output inventory mismatch: ' + json.dumps({
             'unexpected': sorted(set(files) - expected), 'missing': sorted(expected - set(files))}))
+    scope = phase_a_contract(root, policy) if 'phase_a' in policy else None
     check_markdown_sources(root, policy['markdown_source_paths'])
     html = {p for p in files if p.lower().endswith(('.html', '.htm'))}
     if html != set(policy['html']):
@@ -155,6 +222,10 @@ def verify_output(site, root, policy):
     for name, expected_hash in policy['generated_asset_hashes'].items():
         if hashlib.sha256(files[name].read_bytes()).hexdigest() != expected_hash:
             raise ValueError('Generated theme asset changed: ' + name)
+    if scope:
+        for name, expected_hash in scope['retained_output_sha256'].items():
+            if hashlib.sha256(files[name].read_bytes()).hexdigest() != expected_hash:
+                raise ValueError('Retained production output changed: ' + name)
     urls = [item.text for item in ET.fromstring(files['sitemap.xml'].read_bytes()).iter()
             if item.tag.endswith('}loc')]
     if len(urls) != 89 or set(urls) != set(canonical.values()):
@@ -167,6 +238,9 @@ def verify_output(site, root, policy):
             'historical_html_routes_retained': len(html) - len(canonical),
             'retired_html_outputs': len(policy.get('retired_routes', [])),
             'retired_output_files': len(policy.get('retired_output_paths', [])),
+            'phase_a_excluded_files': len(scope['excluded_output_sha256']) if scope else 0,
+            'owner_review_files_retained': len(scope['owner_review_keep_paths']) if scope else 0,
+            'retained_output_hashes_verified': len(scope['retained_output_sha256']) if scope else 0,
             'sitemap_urls': len(urls), 'exact_public_files': len(policy['exact_public_files']),
             'removed_routes': ['/HOMEPAGE_DESIGN.html', '/HOMEPAGE_DESIGN', '/HOMEPAGE_DESIGN.md'],
             'alias_limit': 'No source HTML, Markdown, extensionless file, redirect or alternative output route remains. Hosting behavior requires post-deployment HTTP verification.'}

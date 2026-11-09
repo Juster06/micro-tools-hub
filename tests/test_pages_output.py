@@ -1,10 +1,13 @@
 """Publishing-policy mutations; real Jekyll output is separately mandatory in CI."""
 from contextlib import contextmanager
 import copy
+import gzip
+import hashlib
 import html
 import json
 from pathlib import Path
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -21,7 +24,9 @@ class PagesOutputTests(unittest.TestCase):
         cls.temp = tempfile.TemporaryDirectory(prefix='edb-pages-output-')
         cls.directory = Path(cls.temp.name)
         cls.site = cls.directory / 'site'
-        cls.policy = json.loads((ROOT / publishing.POLICY).read_text(encoding='utf-8'))
+        # Preserve the Task 2E.1 assertions as a frozen predecessor fixture.
+        cls.policy = json.loads((ROOT / '_publishing/output-policy.json').read_text(encoding='utf-8'))
+        cls.policy['markdown_source_paths'].append('_publishing/SEO_TASK_2E3_PHASE_A.md')
         # Synthetic output only tests the guard. CI builds actual Jekyll output.
         for name in cls.policy['output_paths']:
             path = cls.site / name
@@ -250,3 +255,213 @@ class PagesOutputTests(unittest.TestCase):
         policy['retired_routes'][0]['source_sha256'] = '0' * 64
         with self.assertRaisesRegex(ValueError, 'history changed'):
             publishing.verify_output(self.site, ROOT, policy)
+
+
+class PhaseAOutputTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='edb-phase-a-output-')
+        cls.directory = Path(cls.temp.name)
+        cls.site = cls.directory / 'site'
+        cls.policy = json.loads((ROOT / publishing.POLICY).read_text(encoding='utf-8'))
+        cls.scope = json.loads((ROOT / publishing.SCOPE).read_text(encoding='utf-8'))
+        cls.candidates = publishing.reviewed_candidates(ROOT)
+        # Exact source bytes plus the pinned old theme build are a guard fixture,
+        # not a replacement for the mandatory new real Pages/Jekyll artifact.
+        for name in cls.policy['output_paths']:
+            target = cls.site / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if name == 'assets/css/style.css':
+                data = gzip.decompress((ROOT / '_publishing/fixtures/seo2e1-theme.css.gz').read_bytes())
+            else:
+                data = (ROOT / name).read_bytes()
+                if not name.endswith('.css'):
+                    data = data.replace(b'\r\n', b'\n')
+            target.write_bytes(data)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.temp.cleanup()
+
+    changed = PagesOutputTests.changed
+    verify = PagesOutputTests.verify
+    rejects = PagesOutputTests.rejects
+
+    def test_recovered_raw_checksum_precedes_semantic_json_parsing(self):
+        raw = (ROOT / publishing.CANDIDATES).read_bytes()
+        lf = raw.replace(b'\r\n', b'\n')
+        self.assertNotEqual(raw, lf)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), publishing.AUDIT_CANDIDATES_SHA256)
+        self.assertNotEqual(hashlib.sha256(lf).hexdigest(), publishing.AUDIT_CANDIDATES_SHA256)
+        self.assertEqual(json.loads(raw), json.loads(lf))
+        self.assertEqual(publishing.reviewed_candidates(ROOT), json.loads(raw))
+        self.assertEqual(approval.validate_current(ROOT)['files'][publishing.CANDIDATES]['normalization'], 'bytes')
+
+    def test_line_ending_conversion_whitespace_and_content_tampering_fail_raw_integrity(self):
+        raw = (ROOT / publishing.CANDIDATES).read_bytes()
+        with tempfile.TemporaryDirectory(prefix='edb-audit-raw-') as temp:
+            root = Path(temp)
+            target = root / publishing.CANDIDATES
+            target.parent.mkdir(parents=True)
+            target.write_bytes(raw)
+            self.assertEqual(publishing.reviewed_candidates(root), self.candidates)
+            for data in [raw.replace(b'\r\n', b'\n'), raw + b' ', raw.replace(b'841', b'840', 1), raw[:-1], b'corrupt']:
+                self.assertNotEqual(data, raw)
+                target.write_bytes(data)
+                with self.subTest(digest=hashlib.sha256(data).hexdigest()), self.assertRaisesRegex(ValueError, 'Recovered candidate record changed'):
+                    publishing.reviewed_candidates(root)
+
+    def test_git_preserves_audit_raw_bytes_with_lf_and_crlf_checkout_settings(self):
+        raw = (ROOT / publishing.CANDIDATES).read_bytes()
+        attributes = (ROOT / '.gitattributes').read_bytes()
+        for autocrlf in ['false', 'true', 'input']:
+            with self.subTest(autocrlf=autocrlf), tempfile.TemporaryDirectory(prefix='edb-audit-git-') as temp:
+                root = Path(temp) / 'repo'
+                root.mkdir()
+                subprocess.run(['git', 'init', '--quiet', str(root)], check=True, capture_output=True)
+                target = root / publishing.CANDIDATES
+                target.parent.mkdir(parents=True)
+                target.write_bytes(raw)
+                (root / '.gitattributes').write_bytes(attributes)
+                command = ['git', '-c', 'core.autocrlf=' + autocrlf, '-C', str(root)]
+                subprocess.run([*command, 'add', '.gitattributes', publishing.CANDIDATES], check=True, capture_output=True)
+                self.assertEqual(subprocess.check_output([*command, 'show', ':' + publishing.CANDIDATES]), raw)
+                checkout = Path(temp) / 'checkout'
+                subprocess.run([*command, 'checkout-index', '--all', '--prefix=' + checkout.as_posix() + '/'], check=True, capture_output=True)
+                self.assertEqual((checkout / publishing.CANDIDATES).read_bytes(), raw)
+                publishing.reviewed_candidates(checkout)
+
+    def test_git_staged_whitespace_accepts_frozen_crlf_but_rejects_real_errors(self):
+        raw = (ROOT / publishing.CANDIDATES).read_bytes()
+        self.assertEqual(raw.count(b'\r\n'), 1459)
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), publishing.AUDIT_CANDIDATES_SHA256)
+        with tempfile.TemporaryDirectory(prefix='edb-audit-whitespace-') as temp:
+            root = Path(temp)
+            subprocess.run(['git', 'init', '--quiet', str(root)], check=True, capture_output=True)
+            command = ['git', '-c', 'core.autocrlf=false', '-c',
+                       'core.whitespace=blank-at-eol,blank-at-eof,space-before-tab', '-C', str(root)]
+            (root / '.gitattributes').write_bytes((ROOT / '.gitattributes').read_bytes().replace(b'\r\n', b'\n'))
+            target = root / publishing.CANDIDATES
+            target.parent.mkdir(parents=True)
+            target.write_bytes(raw)
+            subprocess.run([*command, 'add', '.gitattributes', publishing.CANDIDATES], check=True, capture_output=True)
+            result = subprocess.run([*command, 'diff', '--cached', '--check'], capture_output=True)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertEqual(subprocess.check_output([*command, 'show', ':' + publishing.CANDIDATES]), raw)
+            self.assertEqual(target.read_bytes(), raw)
+            self.assertEqual(publishing.reviewed_candidates(root), self.candidates)
+            errors = [
+                (raw.replace(b'\r\n', b' \r\n', 1), b'trailing whitespace'),
+                (raw + b'\r\n', b'new blank line at eof'),
+                (raw.replace(b'\r\n', b'\r\n \t', 1), b'space before tab in indent'),
+            ]
+            for data, diagnostic in errors:
+                with self.subTest(diagnostic=diagnostic):
+                    target.write_bytes(data)
+                    subprocess.run([*command, 'add', publishing.CANDIDATES], check=True, capture_output=True)
+                    result = subprocess.run([*command, 'diff', '--cached', '--check'], capture_output=True)
+                    self.assertEqual(result.returncode, 2, result.stdout + result.stderr)
+                    self.assertIn(diagnostic, result.stdout.lower())
+                    with self.assertRaisesRegex(ValueError, 'Recovered candidate record changed'):
+                        publishing.reviewed_candidates(root)
+            # The exception must not apply to another file, even in the same directory.
+            other = '_publishing/unrelated.json'
+            (root / other).write_bytes(b'{}\r\n')
+            subprocess.run([*command, 'add', other], check=True, capture_output=True)
+            result = subprocess.run([*command, 'diff', '--cached', '--check', '--', other], capture_output=True)
+            self.assertEqual(result.returncode, 2, result.stdout + result.stderr)
+            self.assertIn(b'trailing whitespace', result.stdout.lower())
+        self.assertEqual((ROOT / publishing.CANDIDATES).read_bytes(), raw)
+
+    def test_exact_841_subtraction_and_all_196_retained_hashes(self):
+        result = self.verify()
+        self.assertEqual(result['output_files'], 196)
+        self.assertEqual(result['html_pages'], 89)
+        self.assertEqual(result['phase_a_excluded_files'], 841)
+        self.assertEqual(result['owner_review_files_retained'], 90)
+        self.assertEqual(result['retained_output_hashes_verified'], 196)
+        self.assertEqual(result['retired_output_files'], 93)
+        previous = json.loads((ROOT / publishing.PREDECESSOR).read_text(encoding='utf-8'))
+        excluded = set(self.scope['excluded_output_sha256'])
+        self.assertEqual(set(previous['output_paths']) - set(self.policy['output_paths']), excluded)
+        self.assertFalse(excluded & set(self.policy['output_paths']))
+        self.assertEqual(len(excluded), 841)
+
+    def test_each_approved_exclusion_cannot_reappear_as_a_raw_file(self):
+        for name in self.scope['excluded_output_sha256']:
+            with self.subTest(path=name), self.changed(name, b'unapproved publication'):
+                self.rejects()
+
+    def test_raw_extensionless_directory_html_and_encoded_aliases_fail(self):
+        for group in self.candidates['exact_sets']:
+            source = group['exact_paths'][0]
+            stem = source.rsplit('.', 1)[0]
+            encoded = source.replace('/', '%2F') if '/' in source else source.replace('.', '%2E')
+            for name in [stem, stem + '/index.html', source + '/index.html', stem + '.html', encoded]:
+                if (self.site / name).is_dir():
+                    name += '/index.html'
+                with self.subTest(group=group['id'], alias=name), self.changed(name, b'---\npermalink: /index.html\n---\ninternal'):
+                    self.rejects()
+
+    def test_all_90_review_holds_and_all_runtime_public_assets_are_required(self):
+        names = set(self.scope['owner_review_keep_paths']) | set(self.scope['required_runtime_keep_paths']) | set(self.scope['intentionally_public_keep_paths'])
+        self.assertEqual(len(names), 107)
+        for name in sorted(names):
+            with self.subTest(path=name), self.changed(name):
+                self.rejects()
+
+    def test_every_retained_non_html_file_requires_exact_production_bytes(self):
+        for name in sorted(set(self.policy['output_paths']) - set(self.policy['canonical_pages'])):
+            raw = (self.site / name).read_bytes()
+            with self.subTest(path=name), self.changed(name, raw + b' '):
+                self.rejects()
+
+    def test_every_canonical_page_and_retired_output_remains_protected(self):
+        for name in self.policy['canonical_pages']:
+            with self.subTest(path=name), self.changed(name):
+                self.rejects()
+        for name in self.policy['retired_output_paths']:
+            with self.subTest(path=name), self.changed(name, b'reintroduced history'):
+                self.rejects()
+
+    def test_unlisted_output_and_reintroduced_front_matter_fail(self):
+        for name in ['unlisted.json', 'new.md', 'new.html', 'redirect/index.html']:
+            with self.subTest(path=name), self.changed(name, b'---\npermalink: /index.html\n---\ninternal'):
+                self.rejects()
+        raw = (self.site / 'index.html').read_bytes()
+        with self.changed('index.html', b'front matter overwrote an approved route' + raw):
+            self.rejects()
+
+    def test_phase_a_cannot_silently_expand_the_reviewed_output_delta(self):
+        for field in ['canonical_pages', 'public_output_hashes', 'generated_asset_hashes', 'retired_routes']:
+            policy = copy.deepcopy(self.policy)
+            policy[field] = {} if isinstance(policy[field], dict) else []
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                publishing.phase_a_contract(ROOT, policy)
+        policy = copy.deepcopy(self.policy)
+        policy['output_paths'].append(next(iter(self.scope['excluded_output_sha256'])))
+        with self.assertRaises(ValueError):
+            publishing.phase_a_contract(ROOT, policy)
+
+    def test_successor_and_frozen_predecessors_are_bound_before_projection(self):
+        value = approval.validate_current(ROOT)
+        self.assertEqual(value['phase_a_parent_revision'], '34992b8f8ac3e73efbea820bb18c96dae145ff19')
+        paths = [publishing.POLICY, publishing.SCOPE, publishing.CANDIDATES, publishing.PREDECESSOR,
+                 '_publishing/SEO_TASK_2E1_SOURCE_APPROVAL.json', 'scripts/_historical_publishing_approval_identity.py',
+                 approval.MANIFEST, approval.IDENTITY]
+        with tempfile.TemporaryDirectory(prefix='edb-phase-a-approval-') as temp:
+            root = Path(temp)
+            for name in [*value['files'], approval.MANIFEST, approval.IDENTITY]:
+                target = root / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / name, target)
+            for name in paths:
+                path = root / name
+                raw = path.read_bytes()
+                try:
+                    path.write_bytes(raw + b' ')
+                    with self.subTest(path=name), self.assertRaises(ValueError):
+                        approval.validate_current(root)
+                finally:
+                    path.write_bytes(raw)
+            approval.validate_current(root)

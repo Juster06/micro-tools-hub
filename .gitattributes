@@ -1,1 +1,3 @@
 assets/css/*.css text eol=lf
+# Preserve the recovered audit's raw-byte checksum on every checkout platform.
+_publishing/SEO_TASK_2E2_CLEANUP_CANDIDATES.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

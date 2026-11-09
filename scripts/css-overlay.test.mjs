@@ -12,7 +12,7 @@ const root=new URL('../',import.meta.url),rootDirectory=fileURLToPath(root);
 const approval=validateCurrent(root);
 const parent=fs.mkdtempSync(path.join(os.tmpdir(),'edb-css-node-'));
 const fixture=path.join(parent,'repo');fs.mkdirSync(fixture);
-for(const name of [...Object.keys(approval.files),'_publishing/SEO_TASK_2E1_SOURCE_APPROVAL.json','scripts/_historical_publishing_approval_identity.py']){
+for(const name of [...Object.keys(approval.files),'_publishing/SEO_TASK_2E3_SOURCE_APPROVAL.json','scripts/_phase_a_publishing_approval_identity.py']){
   const target=path.join(fixture,name);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(rootDirectory,name),target);
 }
 const fixtureURL=pathToFileURL(fixture+path.sep);
@@ -76,6 +76,13 @@ test('manifest/bootstrap, lock, build, CI and historical evidence tamper is reje
 test('same-size same-mtime source tamper cannot hide behind a cache',()=>{
   const filename=path.join(fixture,approval.css_asset.path),info=fs.statSync(filename),raw=fs.readFileSync(filename);
   try{const modified=Buffer.from(raw);modified[0]^=1;fs.writeFileSync(filename,modified);fs.utimesSync(filename,info.atime,info.mtime);assert.throws(()=>validateCurrent(fixtureURL));}finally{fs.writeFileSync(filename,raw);}
+});
+
+test('Phase A selection and frozen predecessor remain strict in Python and Node',()=>{
+  assert.equal(approval.phase_a_parent_revision,'34992b8f8ac3e73efbea820bb18c96dae145ff19');
+  for(const relative of ['_publishing/SEO_TASK_2E3_SOURCE_APPROVAL.json','scripts/_phase_a_publishing_approval_identity.py','_publishing/SEO_TASK_2E3_OUTPUT_POLICY.json','_publishing/SEO_TASK_2E3_SCOPE.json','_publishing/SEO_TASK_2E2_CLEANUP_CANDIDATES.json','_publishing/SEO_TASK_2E1_SOURCE_APPROVAL.json','scripts/_historical_publishing_approval_identity.py','_publishing/output-policy.json']){
+    mutate(relative,()=>{assert.throws(()=>validateCurrent(fixtureURL));assert.notEqual(pythonResult(fixture).status,0);});
+  }
 });
 test('unapproved consumer and unapproved HTML route are rejected',()=>{
   const tag=approval.transformations['text-cleaner/index.html'].stylesheet_tag;
