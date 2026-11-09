@@ -15,12 +15,12 @@ import re
 import stat
 import sys
 
-from _historical_publishing_approval_identity import MANIFEST_SHA256
+from _phase_a_publishing_approval_identity import MANIFEST_SHA256
 import seo_overlay
 
 BASE_REVISION = 'cf443c3b1facc2ae422fc6c55d546528671be1d0'
-MANIFEST = '_publishing/SEO_TASK_2E1_SOURCE_APPROVAL.json'
-IDENTITY = 'scripts/_historical_publishing_approval_identity.py'
+MANIFEST = '_publishing/SEO_TASK_2E3_SOURCE_APPROVAL.json'
+IDENTITY = 'scripts/_phase_a_publishing_approval_identity.py'
 PILOT = frozenset({'index.html', 'text-cleaner/index.html', 'json-formatter/index.html',
                   'csv-viewer/index.html', 'image-color-picker/index.html',
                   'vat-calculator/index.html', 'batch-filename-planner/index.html'})
