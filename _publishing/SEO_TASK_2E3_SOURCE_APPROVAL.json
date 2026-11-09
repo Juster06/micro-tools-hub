@@ -3187,7 +3187,7 @@
       "normalization": "utf8-lf"
     },
     "tests/tools/image-compressor/extended-browser.test.mjs": {
-      "sha256": "e7a6da7eb94e91b852f72ff65e49096e758776f6e768354aacebfce75f589bd7",
+      "sha256": "c73e27e0e80ad83788422ab21807b1115b8b44c89a56972edb5283517f0cf26d",
       "normalization": "utf8-lf"
     },
     "tests/tools/image-compressor/integration-browser.test.mjs": {
