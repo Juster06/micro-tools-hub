@@ -902,3 +902,5 @@ exclude:
   - templates/fragments/base.css
   - templates/fragments/tool-ui.js
   - TOOL_REGISTRY.json
+  - audit/TASK_21_SECURITY_REVIEW.json
+  - audit/TASK_22_SECURITY_REVIEW.json
