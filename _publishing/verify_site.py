@@ -89,8 +89,11 @@ def phase_a_contract(root, policy):
     for values in (scope['excluded_output_sha256'], scope['retained_output_sha256']):
         if any(not re.fullmatch(r'[0-9a-f]{64}', value) for value in values.values()):
             raise ValueError('Phase A requires complete SHA-256 output evidence')
+    checked_directories = set()
     for name in excluded:
-        css_overlay.safe_file(root, name)  # Publishing exclusion never permits source deletion.
+        # Only ancestor checks are shared within this call; every source file's
+        # lstat remains fresh. Publishing exclusion never permits source deletion.
+        css_overlay.safe_file(root, name, checked_directories)
     return scope
 
 
@@ -144,13 +147,14 @@ def check_config(root):
 
 def check_markdown_sources(root, expected):
     found = set()
+    checked_directories = set()
     for directory, dirs, files in os.walk(root, followlinks=False):
         dirs[:] = [name for name in dirs if (Path(directory) / name).relative_to(root).as_posix()
                    not in css_overlay.SKIP_DIRECTORIES]
         for name in files:
             if Path(name).suffix.lower() in {'.md', '.markdown', '.mkdown', '.mkdn', '.mkd'}:
                 relative = (Path(directory) / name).relative_to(root).as_posix()
-                css_overlay.safe_file(root, relative)
+                css_overlay.safe_file(root, relative, checked_directories)
                 found.add(relative)
     if found != set(expected):
         raise ValueError('Markdown source inventory changed; review generated routes and permalinks')
@@ -163,6 +167,7 @@ def output_files(site):
         raise ValueError('Generated site directory is missing')
     # safe_file rejects a linked root as well as linked ancestors within it.
     found = {}
+    checked_directories = set()
     for directory, dirs, files in os.walk(site, followlinks=False):
         for name in dirs:
             target = Path(directory) / name
@@ -171,7 +176,7 @@ def output_files(site):
                 raise ValueError('Linked generated directory is forbidden')
         for name in files:
             relative = (Path(directory) / name).relative_to(site).as_posix()
-            found[relative] = css_overlay.safe_file(site, relative)
+            found[relative] = css_overlay.safe_file(site, relative, checked_directories)
     return found
 
 
@@ -185,6 +190,20 @@ def verify_output(site, root, policy):
         raise ValueError('Generated output inventory mismatch: ' + json.dumps({
             'unexpected': sorted(set(files) - expected), 'missing': sorted(expected - set(files))}))
     scope = phase_a_contract(root, policy) if 'phase_a' in policy else None
+    # Read each output once for this invocation. No path, byte or hash result is
+    # cached across calls, so subsequent mutations always get fresh validation.
+    contents = {}
+    def read_output(name):
+        if name not in contents:
+            contents[name] = files[name].read_bytes()
+        return contents[name]
+
+    if scope:
+        # Reject changed production bytes before repeatedly parsing unchanged
+        # HTML. Successful output still passes every semantic check below.
+        for name, expected_hash in scope['retained_output_sha256'].items():
+            if hashlib.sha256(read_output(name)).hexdigest() != expected_hash:
+                raise ValueError('Retained production output changed: ' + name)
     check_markdown_sources(root, policy['markdown_source_paths'])
     html = {p for p in files if p.lower().endswith(('.html', '.htm'))}
     if html != set(policy['html']):
@@ -202,31 +221,27 @@ def verify_output(site, root, policy):
     if len(canonical) != 89 or len(set(canonical.values())) != 89:
         raise ValueError('Canonical policy must retain exactly 89 unique URLs')
     for name in sorted(html):
-        source = files[name].read_text(encoding='utf-8')
+        source = read_output(name).decode('utf-8').replace('\r\n', '\n').replace('\r', '\n')
         actual = metadata(source)
         if actual != policy['html'][name]:
             raise ValueError('Generated canonical/robots/redirect metadata changed: ' + name)
         if name in canonical:
             if actual['canonicals'] != [canonical[name]] or actual['noindex'] or actual['refresh']:
                 raise ValueError('Approved canonical page is not indexable at its intended URL: ' + name)
-            if files[name].read_bytes() != approved_bytes(root, name, policy):
+            if read_output(name) != approved_bytes(root, name, policy):
                 raise ValueError('Generated canonical page differs from approved source: ' + name)
     for name in policy['exact_public_files']:
-        if files[name].read_bytes() != approved_bytes(root, name, policy):
+        if read_output(name) != approved_bytes(root, name, policy):
             raise ValueError('Public asset or discovery file changed during generation: ' + name)
     if set(policy['public_output_hashes']) != set(canonical) | set(policy['exact_public_files']):
         raise ValueError('Production output hash coverage is incomplete')
     for name, expected_hash in policy['public_output_hashes'].items():
-        if hashlib.sha256(files[name].read_bytes()).hexdigest() != expected_hash:
+        if hashlib.sha256(read_output(name)).hexdigest() != expected_hash:
             raise ValueError('Public output differs from exact production bytes: ' + name)
     for name, expected_hash in policy['generated_asset_hashes'].items():
-        if hashlib.sha256(files[name].read_bytes()).hexdigest() != expected_hash:
+        if hashlib.sha256(read_output(name)).hexdigest() != expected_hash:
             raise ValueError('Generated theme asset changed: ' + name)
-    if scope:
-        for name, expected_hash in scope['retained_output_sha256'].items():
-            if hashlib.sha256(files[name].read_bytes()).hexdigest() != expected_hash:
-                raise ValueError('Retained production output changed: ' + name)
-    urls = [item.text for item in ET.fromstring(files['sitemap.xml'].read_bytes()).iter()
+    urls = [item.text for item in ET.fromstring(read_output('sitemap.xml')).iter()
             if item.tag.endswith('}loc')]
     if len(urls) != 89 or set(urls) != set(canonical.values()):
         raise ValueError('Generated sitemap differs from approved canonical policy')

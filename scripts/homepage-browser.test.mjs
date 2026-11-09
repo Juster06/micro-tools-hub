@@ -36,6 +36,8 @@ test('LIVE-03: in-flow consent, menu keyboard, reflow, enlarged text and reduced
  for(const width of [320,390,768,1365])for(const enlarged of [false,true]){
   await b.call('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:false});
   await b.evaluate(`document.documentElement.style.fontSize=${JSON.stringify(enlarged?'200%':'100%')};document.body.style.fontSize="1rem";true`);
+  // Let viewport/media-query updates finish before opening and navigating the menu.
+  await b.evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))');
   assert.equal(await b.evaluate('document.documentElement.scrollWidth>innerWidth'),false,`reflow ${width} enlarged ${enlarged}: `+JSON.stringify(await b.evaluate('[...document.querySelectorAll("body *")].filter(e=>{const r=e.getBoundingClientRect();return r.right>innerWidth||r.left<0||e.scrollWidth>e.clientWidth+1}).map(e=>({tag:e.tagName,id:e.id,cls:e.className,text:e.textContent.slice(0,50),right:e.getBoundingClientRect().right,scroll:e.scrollWidth,client:e.clientWidth}))')));
   for(const id of ['toolSearch','clearSearch','edb-consent-accept','edb-consent-reject']){
    const v=await b.evaluate(`(()=>{const e=document.getElementById('${id}');e.focus();const r=e.getBoundingClientRect();const hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return {id:e.id,visible:r.top>=0&&r.bottom<=innerHeight,hit:e===hit||e.contains(hit),height:r.height,width:r.width,top:r.top,bottom:r.bottom,outline:getComputedStyle(e).outlineWidth,panel:getComputedStyle(document.getElementById('edb-consent-panel')).position}})()`);

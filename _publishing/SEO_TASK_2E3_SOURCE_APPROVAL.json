@@ -239,7 +239,7 @@
       "normalization": "utf8-lf"
     },
     "_publishing/verify_site.py": {
-      "sha256": "511fba3dad65d26fd0da10f18c80bbf9e2fc0465140fb624f1317d92d2acbfa5",
+      "sha256": "4828136bd9ce3f59c707868217f6f4f64e8b67ca83bd233707762704d1e60732",
       "normalization": "utf8-lf"
     },
     "age-calculator/README.md": {
@@ -2015,7 +2015,7 @@
       "normalization": "utf8-lf"
     },
     "scripts/homepage-browser.test.mjs": {
-      "sha256": "ea292e1d89625e8fefa402fb4dd4828c0ef654d96286e1479637272d5d4e608c",
+      "sha256": "a4f36cbf12609d5a038094857f2ad2d4052a8401026fa29a02fc561d6eb34c84",
       "normalization": "utf8-lf"
     },
     "scripts/homepage.test.mjs": {
@@ -2379,7 +2379,7 @@
       "normalization": "utf8-lf"
     },
     "tests/test_pages_output.py": {
-      "sha256": "2c64ff4c04465a50664ff6783312b0a4efa8fb793e5128da6044142f4ede9cab",
+      "sha256": "4bd1d36b80f731ab9e9be45c181c4e4a637412a135a6fbcf1a7342ce62f138ee",
       "normalization": "utf8-lf"
     },
     "tests/test_prepare_tool_seo.py": {
@@ -3611,7 +3611,7 @@
       "normalization": "utf8-lf"
     },
     "tests/tools/passport-photo-layout-maker/extended-browser.test.mjs": {
-      "sha256": "3deeed42cf0edb61e1aa3f89e96d0057e0fe307428423ed0d51cc495192f0071",
+      "sha256": "31b1306695ab0b493ad28654a4e7ce40a772ac9f11f41a8a2dd0b7675e244bde",
       "normalization": "utf8-lf"
     },
     "tests/tools/passport-photo-layout-maker/integration-browser.test.mjs": {
