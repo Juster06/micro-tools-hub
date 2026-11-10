@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import stat
 import subprocess
 import sys
 import tempfile
@@ -98,29 +99,52 @@ class PagesOutputTests(unittest.TestCase):
 
     @contextmanager
     def changed(self, name, data=None):
-        path = self.site / name
-        old = path.read_bytes() if path.exists() else None
+        directory, site = self.directory.resolve(), self.site.resolve()
+        relative = Path(name)
+        if (relative.anchor or '..' in relative.parts or not relative.parts
+                or site == directory or not site.is_relative_to(directory)):
+            raise ValueError('Mutation must stay inside the disposable output fixture')
+        path = site / relative
+        if not path.parent.resolve().is_relative_to(site):
+            raise ValueError('Mutation parent escapes the disposable output fixture')
+        try:
+            info = path.lstat()
+        except FileNotFoundError:
+            info = None
+        if info is not None and (not stat.S_ISREG(info.st_mode)
+                                 or getattr(info, 'st_file_attributes', 0) & 0x400):
+            raise ValueError('Mutation target must be an ordinary temporary file')
         # Restore only empty temporary parents created by this mutation. Leaving
         # them behind makes every later inventory walk revisit unrelated cases.
         created_parents = []
         parent = path.parent
-        while parent != self.site and not parent.exists():
+        while parent != site and not parent.exists():
             created_parents.append(parent)
             parent = parent.parent
-        path.parent.mkdir(parents=True, exist_ok=True)
-        if data is None:
-            path.unlink()
-        else:
-            path.write_bytes(data)
+        backup = None
         try:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            if info is not None:
+                # Move the original, retaining its bytes, identity and metadata.
+                # A unique directory outside the site also supports nesting.
+                backup = Path(tempfile.mkdtemp(prefix='output-original-', dir=directory)) / 'original'
+                path.rename(backup)
+            if data is not None:
+                path.write_bytes(data)
+            elif info is None:
+                raise FileNotFoundError(path)
             yield
         finally:
-            if old is None:
-                path.unlink()
-            else:
-                path.write_bytes(old)
+            if backup is not None and backup.exists():
+                path.unlink(missing_ok=True)
+                backup.rename(path)
+            elif info is None:
+                path.unlink(missing_ok=True)
+            if backup is not None:
+                backup.parent.rmdir()
             for parent in created_parents:
-                parent.rmdir()
+                if parent.exists():
+                    parent.rmdir()
 
     def verify(self):
         return publishing.verify_output(self.site, self.source_root, self.policy)
@@ -843,6 +867,178 @@ class SecurityReportOutputTests(unittest.TestCase):
                 link.rmdir()
             else:
                 link.unlink()
+
+
+class MutationRestorationTests(unittest.TestCase):
+    changed = PagesOutputTests.changed
+
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix='edb-mutation-restoration-')
+        self.outer = Path(self.temp.name)
+        self.directory = self.outer / 'fixture'
+        self.site = self.directory / 'site'
+        self.site.mkdir(parents=True)
+        self.sentinel = self.outer / 'untouched.bin'
+        self.sentinel.write_bytes(b'outside fixture')
+        (self.site / 'original.bin').write_bytes(b'original\x00\r\nbytes')
+        (self.site / 'empty.bin').write_bytes(b'')
+
+    def tearDown(self):
+        try:
+            self.assertEqual(self.sentinel.read_bytes(), b'outside fixture')
+            self.assertEqual(set(self.outer.iterdir()), {self.directory, self.sentinel})
+            self.assertEqual(set(self.directory.iterdir()), {self.site})
+        finally:
+            self.temp.cleanup()
+
+    def test_exact_bytes_identity_and_metadata_survive_missing_modified_and_empty_files(self):
+        for name in ['original.bin', 'empty.bin']:
+            path = self.site / name
+            raw = path.read_bytes()
+            for replacement in [None, b'changed', b'']:
+                with self.subTest(name=name, replacement=replacement):
+                    os.utime(path, ns=(1600000000000000000, 1600000001000000000))
+                    before = path.stat()
+                    with self.changed(name, replacement):
+                        if replacement is None:
+                            self.assertFalse(path.exists())
+                        else:
+                            self.assertEqual(path.read_bytes(), replacement)
+                    after = path.stat()
+                    for field in ['st_atime_ns', 'st_mtime_ns', 'st_mode', 'st_size', 'st_ino']:
+                        self.assertEqual(getattr(after, field), getattr(before, field), field)
+                    self.assertEqual(path.read_bytes(), raw)
+
+    def test_body_and_mutation_exceptions_restore_original(self):
+        path = self.site / 'original.bin'
+        original = path.read_bytes()
+        for replacement in [None, b'changed']:
+            with self.assertRaisesRegex(RuntimeError, '^body failed$'):
+                with self.changed('original.bin', replacement):
+                    raise RuntimeError('body failed')
+            self.assertEqual(path.read_bytes(), original)
+        write_bytes = Path.write_bytes
+
+        def partial_write(target, data):
+            write_bytes(target, data[:1])
+            raise OSError('fixture write failed')
+
+        with patch.object(Path, 'write_bytes', partial_write):
+            with self.assertRaisesRegex(OSError, '^fixture write failed$'):
+                with self.changed('original.bin', b'changed'):
+                    self.fail('Failed mutation must not enter its body')
+        self.assertEqual(path.read_bytes(), original)
+
+    def test_nested_mutations_restore_each_enclosing_state(self):
+        path = self.site / 'original.bin'
+        original = path.read_bytes()
+        with self.changed('original.bin', b'outer'):
+            with self.changed('original.bin', b'inner'), self.changed('empty.bin', b'other'):
+                self.assertEqual(path.read_bytes(), b'inner')
+                self.assertEqual((self.site / 'empty.bin').read_bytes(), b'other')
+            self.assertEqual(path.read_bytes(), b'outer')
+            self.assertEqual((self.site / 'empty.bin').read_bytes(), b'')
+            with self.assertRaisesRegex(RuntimeError, '^nested failure$'):
+                with self.changed('original.bin'):
+                    raise RuntimeError('nested failure')
+            self.assertEqual(path.read_bytes(), b'outer')
+        self.assertEqual(path.read_bytes(), original)
+        with self.changed('original.bin'):
+            with self.changed('original.bin', b'temporary new path'):
+                self.assertEqual(path.read_bytes(), b'temporary new path')
+            self.assertFalse(path.exists())
+        self.assertEqual(path.read_bytes(), original)
+
+    def test_new_paths_and_only_created_parents_are_cleaned_after_success_or_failure(self):
+        existing = self.site / 'existing'
+        existing.mkdir()
+        for fail in [False, True]:
+            try:
+                with self.changed('existing/new/nested/file.bin', b'new'):
+                    self.assertEqual((existing / 'new/nested/file.bin').read_bytes(), b'new')
+                    if fail:
+                        raise RuntimeError('new path body failed')
+            except RuntimeError as error:
+                self.assertTrue(fail)
+                self.assertEqual(str(error), 'new path body failed')
+            self.assertTrue(existing.is_dir())
+            self.assertEqual(list(existing.iterdir()), [])
+        with self.assertRaises(FileNotFoundError):
+            with self.changed('absent/parents/file.bin'):
+                self.fail('Deleting an absent file must fail')
+        self.assertFalse((self.site / 'absent').exists())
+        with patch.object(Path, 'write_bytes', side_effect=OSError('new write failed')):
+            with self.assertRaisesRegex(OSError, '^new write failed$'):
+                with self.changed('absent/parents/file.bin', b'new'):
+                    self.fail('Failed write must not enter its body')
+        self.assertFalse((self.site / 'absent').exists())
+
+    def test_backups_are_unique_outside_output_and_removed(self):
+        path = self.site / 'original.bin'
+        before = path.stat()
+        with self.changed('original.bin', b'outer'):
+            first = set(self.directory.glob('output-original-*/original'))
+            self.assertEqual(len(first), 1)
+            backup = next(iter(first))
+            self.assertFalse(backup.is_relative_to(self.site))
+            self.assertEqual(backup.stat().st_ino, before.st_ino)
+            with self.changed('original.bin', b'inner'):
+                both = set(self.directory.glob('output-original-*/original'))
+                self.assertEqual(len(both), 2)
+                self.assertTrue(first < both)
+                self.assertEqual({p.name for p in self.site.iterdir()}, {'original.bin', 'empty.bin'})
+            self.assertEqual(set(self.directory.glob('output-original-*/original')), first)
+        self.assertEqual(list(self.directory.glob('output-original-*')), [])
+
+    def test_mutation_cannot_change_files_outside_disposable_site(self):
+        for name in [str(self.sentinel), '../../untouched.bin', '', '.', 'folder/../original.bin', 'folder']:
+            (self.site / 'folder').mkdir(exist_ok=True)
+            with self.subTest(name=name), self.assertRaises(ValueError):
+                with self.changed(name, b'unauthorized'):
+                    self.fail('Unsafe mutation entered its body')
+        link = self.site / 'outside-link'
+        if os.name == 'nt':
+            result = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(self.outer)], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        else:
+            link.symlink_to(self.outer, target_is_directory=True)
+        try:
+            for name in ['outside-link', 'outside-link/untouched.bin']:
+                with self.assertRaises(ValueError):
+                    with self.changed(name, b'unauthorized'):
+                        self.fail('Linked mutation entered its body')
+        finally:
+            if os.name == 'nt':
+                link.rmdir()
+            else:
+                link.unlink()
+        self.assertEqual((self.site / 'original.bin').read_bytes(), b'original\x00\r\nbytes')
+
+    def test_real_verifier_rejects_mutations_and_accepts_fresh_restoration(self):
+        (self.site / 'original.bin').unlink()
+        (self.site / 'empty.bin').unlink()
+        policy = json.loads((ROOT / publishing.CURRENT_POLICY).read_text(encoding='utf-8'))
+        for name in policy['output_paths']:
+            path = self.site / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            raw = (gzip.decompress((ROOT / '_publishing/fixtures/seo2e1-theme.css.gz').read_bytes())
+                   if name == 'assets/css/style.css' else (ROOT / name).read_bytes())
+            path.write_bytes(raw if name.endswith('.css') else raw.replace(b'\r\n', b'\n'))
+        self.assertEqual(publishing.verify_output(self.site, ROOT, policy)['retained_output_hashes_verified'], 110)
+        path = self.site / 'index.html'
+        raw, before = path.read_bytes(), path.stat()
+        for replacement in [None, b'', bytes([raw[0] ^ 1]) + raw[1:]]:
+            with self.changed('index.html', replacement):
+                if replacement:
+                    os.utime(path, ns=(before.st_atime_ns, before.st_mtime_ns))
+                    self.assertEqual(path.stat().st_size, before.st_size)
+                    self.assertEqual(path.stat().st_mtime_ns, before.st_mtime_ns)
+                with self.assertRaises(ValueError):
+                    publishing.verify_output(self.site, ROOT, policy)
+            self.assertEqual(path.read_bytes(), raw)
+            result = publishing.verify_output(self.site, ROOT, policy)
+            self.assertEqual(result['retained_output_hashes_verified'], 110)
+            self.assertEqual(result['cumulative_excluded_files'], 927)
 
 
 class ReadmeOutputTests(unittest.TestCase):

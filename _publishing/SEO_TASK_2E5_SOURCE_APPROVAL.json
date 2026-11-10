@@ -2415,11 +2415,11 @@
       "normalization": "utf8-lf"
     },
     "tests/test_homepage.py": {
-      "sha256": "54dcca86466f44ac57f923df00ec84300908f9428c7b202d95a31bb00de242d2",
+      "sha256": "446a76320144b56934640da2a572fa2f66fd9784f41978ea21eab65200f256b7",
       "normalization": "utf8-lf"
     },
     "tests/test_pages_output.py": {
-      "sha256": "ed823974952ba72f028fcf04cb5635dc53ff4fa9c815b9e62145b63ac8820396",
+      "sha256": "fc548ef14e3afa73980e543ed1807de1ea1745c8255731ff5ca955d872bee630",
       "normalization": "utf8-lf"
     },
     "tests/test_prepare_tool_seo.py": {
