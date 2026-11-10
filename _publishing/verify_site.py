@@ -55,8 +55,8 @@ EXCLUDES += [name for group in reviewed_candidates(ROOT)['exact_sets'] for name 
 EXCLUDES += list(SECURITY_REPORTS)
 
 
-def phase_a_contract(root, policy):
-    """Check the explicit subtraction from frozen production, not inferred output."""
+def _phase_a_contract(root, policy):
+    """Bind the exact frozen scope; source presence is required before acceptance."""
     if policy.get('phase_a') != {'scope': SCOPE, 'predecessor_policy': PREDECESSOR}:
         raise ValueError('Phase A policy selection changed')
     previous_raw = css_overlay.safe_file(root, PREDECESSOR).read_bytes().replace(b'\r\n', b'\n')
@@ -99,15 +99,26 @@ def phase_a_contract(root, policy):
     for values in (scope['excluded_output_sha256'], scope['retained_output_sha256']):
         if any(not re.fullmatch(r'[0-9a-f]{64}', value) for value in values.values()):
             raise ValueError('Phase A requires complete SHA-256 output evidence')
-    checked_directories = set()
-    for name in excluded:
-        # Only ancestor checks are shared within this call; every source file's
-        # lstat remains fresh. Publishing exclusion never permits source deletion.
-        css_overlay.safe_file(root, name, checked_directories)
     return scope
 
 
-def security_report_contract(root, policy):
+def _require_preserved_sources(root, scope):
+    """Fresh path checks for this invocation, including every excluded source."""
+    checked_directories = set()
+    for name in scope['excluded_output_sha256']:
+        # Only ancestor checks are shared within this call; every source file's
+        # lstat remains fresh. Publishing exclusion never permits source deletion.
+        css_overlay.safe_file(root, name, checked_directories)
+
+
+def phase_a_contract(root, policy):
+    """Check the complete frozen contract, including preserved source files."""
+    scope = _phase_a_contract(root, policy)
+    _require_preserved_sources(root, scope)
+    return scope
+
+
+def _security_report_contract(root, policy):
     """Bind exactly two exclusions to frozen production; never learn an allowlist."""
     previous_raw = css_overlay.safe_file(root, PHASE_A_POLICY).read_bytes().replace(b'\r\n', b'\n')
     scope_raw = css_overlay.safe_file(root, SCOPE).read_bytes().replace(b'\r\n', b'\n')
@@ -115,7 +126,7 @@ def security_report_contract(root, policy):
             or hashlib.sha256(scope_raw).hexdigest() != PHASE_A_SCOPE_SHA256):
         raise ValueError('Frozen Task 2E.3 policy or scope changed')
     previous = json.loads(previous_raw)
-    old_scope = phase_a_contract(root, previous)
+    old_scope = _phase_a_contract(root, previous)
     if (set(policy) != set(previous) | {'security_report_cleanup'}
             or policy['security_report_cleanup'] != {'scope': SECURITY_SCOPE, 'predecessor_policy': PHASE_A_POLICY}):
         raise ValueError('Security-report successor selection changed')
@@ -159,6 +170,13 @@ def security_report_contract(root, policy):
     scope = json.loads(css_overlay.safe_file(root, SECURITY_SCOPE).read_bytes())
     if scope != expected:
         raise ValueError('Security-report scope or protected hash coverage changed')
+    return scope
+
+
+def security_report_contract(root, policy):
+    """Check the complete successor contract with fresh source-preservation checks."""
+    scope = _security_report_contract(root, policy)
+    _require_preserved_sources(root, scope)
     return scope
 
 
@@ -246,14 +264,15 @@ def check_markdown_sources(root, expected):
         raise ValueError('Markdown source inventory changed; review generated routes and permalinks')
 
 
-def output_files(site):
-    """No ignored directories: inspect every actual published output file."""
+def _discover_output_files(site):
+    """Discover all names without following links; returned files are not approved."""
     site = Path(site).absolute()
     if not site.is_dir():
         raise ValueError('Generated site directory is missing')
-    # safe_file rejects a linked root as well as linked ancestors within it.
+    info = site.lstat()
+    if stat.S_ISLNK(info.st_mode) or getattr(info, 'st_file_attributes', 0) & 0x400:
+        raise ValueError('Linked generated directory is forbidden')
     found = {}
-    checked_directories = set()
     for directory, dirs, files in os.walk(site, followlinks=False):
         for name in dirs:
             target = Path(directory) / name
@@ -262,22 +281,33 @@ def output_files(site):
                 raise ValueError('Linked generated directory is forbidden')
         for name in files:
             relative = (Path(directory) / name).relative_to(site).as_posix()
-            found[relative] = css_overlay.safe_file(site, relative, checked_directories)
+            found[relative] = Path(directory) / name
     return found
+
+
+def _validate_output_files(site, files):
+    checked_directories = set()
+    return {name: css_overlay.safe_file(site, name, checked_directories) for name in files}
+
+
+def output_files(site):
+    """Strict public inventory: every discovered file passes fresh path validation."""
+    return _validate_output_files(site, _discover_output_files(site))
 
 
 def verify_output(site, root, policy):
     """Pure output checks; CLI separately requires the strict source approval."""
     root = Path(root)
     check_config(root)
-    files = output_files(site)
+    files = _discover_output_files(site)
     expected = set(policy['output_paths'])
     if len(expected) != len(policy['output_paths']) or set(files) != expected:
         raise ValueError('Generated output inventory mismatch: ' + json.dumps({
             'unexpected': sorted(set(files) - expected), 'missing': sorted(expected - set(files))}))
+    files = _validate_output_files(site, files)
     security_cleanup = 'security_report_cleanup' in policy
-    scope = (security_report_contract(root, policy) if security_cleanup else
-             phase_a_contract(root, policy) if 'phase_a' in policy else None)
+    scope = (_security_report_contract(root, policy) if security_cleanup else
+             _phase_a_contract(root, policy) if 'phase_a' in policy else None)
     # Read each output once for this invocation. No path, byte or hash result is
     # cached across calls, so subsequent mutations always get fresh validation.
     contents = {}
@@ -292,6 +322,9 @@ def verify_output(site, root, policy):
         for name, expected_hash in scope['retained_output_sha256'].items():
             if hashlib.sha256(read_output(name)).hexdigest() != expected_hash:
                 raise ValueError('Retained production output changed: ' + name)
+        # Invalid output is already rejected. Acceptance still requires every
+        # excluded source to exist safely, freshly checked on every invocation.
+        _require_preserved_sources(root, scope)
     privacy_files = verify_private_values_absent(root, contents) if security_cleanup else 0
     check_markdown_sources(root, policy['markdown_source_paths'])
     html = {p for p in files if p.lower().endswith(('.html', '.htm'))}

@@ -12,6 +12,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -539,6 +540,148 @@ class SecurityReportOutputTests(unittest.TestCase):
     changed = PagesOutputTests.changed
     verify = PagesOutputTests.verify
     rejects = PagesOutputTests.rejects
+
+    @contextmanager
+    def copied_current_source(self):
+        # Reuse disposable fixture files, never a validation result. Each caller
+        # gets fresh approval checks; mutations are restored by the test's finally.
+        directory = self.directory / 'current-source'
+        root = directory / 'historical-source'
+        if not root.exists():
+            root = historical_source_fixture(directory)
+            for name in [publishing.POLICY, publishing.SECURITY_SCOPE, publishing.SECURITY_CHECKPOINT,
+                         approval.MANIFEST, approval.IDENTITY]:
+                shutil.copyfile(ROOT / name, root / name)
+        approval.validate_current(root)
+        yield root
+        approval.validate_current(root)
+
+    def test_successive_output_checks_detect_same_size_same_timestamp_mutations(self):
+        self.assertEqual(self.verify()['retained_output_hashes_verified'], 194)
+        for name in ['index.html', 'assets/consent.js', 'README.md']:
+            target = self.site / name
+            raw = target.read_bytes()
+            before = target.stat()
+            changed = bytes([raw[0] ^ 1]) + raw[1:]
+            try:
+                with self.subTest(path=name), self.changed(name, changed):
+                    os.utime(target, ns=(before.st_atime_ns, before.st_mtime_ns))
+                    self.assertEqual(target.stat().st_size, before.st_size)
+                    self.assertEqual(target.stat().st_mtime_ns, before.st_mtime_ns)
+                    with self.assertRaisesRegex(ValueError, '^Retained production output changed: '):
+                        self.verify()
+            finally:
+                os.utime(target, ns=(before.st_atime_ns, before.st_mtime_ns))
+            self.assertEqual(self.verify()['output_files'], 194)
+
+    def test_source_preservation_is_fresh_and_public_contracts_remain_strict(self):
+        with self.copied_current_source() as root:
+            previous = json.loads((root / publishing.PHASE_A_POLICY).read_text(encoding='utf-8'))
+            self.assertEqual(publishing.verify_output(self.site, root, self.policy)['output_files'], 194)
+            name = 'tests/test_ci.py'
+            self.assertIn(name, self.scope['excluded_output_sha256'])
+            target = root / name
+            raw = target.read_bytes()
+            try:
+                target.unlink()
+                for validate in [lambda: publishing.verify_output(self.site, root, self.policy),
+                                 lambda: publishing.phase_a_contract(root, previous),
+                                 lambda: publishing.security_report_contract(root, self.policy)]:
+                    with self.assertRaises(OSError):
+                        validate()
+            finally:
+                target.write_bytes(raw)
+            self.assertEqual(publishing.verify_output(self.site, root, self.policy)['output_files'], 194)
+            target = root / publishing.SECURITY_REPORTS[0]
+            raw = target.read_bytes()
+            try:
+                target.write_bytes(raw + b' ')
+                with self.assertRaisesRegex(ValueError, 'Original security report source changed'):
+                    publishing.verify_output(self.site, root, self.policy)
+                with self.assertRaisesRegex(ValueError, 'Original security report source changed'):
+                    publishing.security_report_contract(root, self.policy)
+            finally:
+                target.write_bytes(raw)
+            self.assertEqual(publishing.verify_output(self.site, root, self.policy)['output_files'], 194)
+
+    def test_fresh_approval_and_historical_integrity_reject_preserved_timestamp_tampering(self):
+        with self.copied_current_source() as root:
+            historical = [publishing.CANDIDATES, publishing.PREDECESSOR,
+                          publishing.PHASE_A_POLICY, publishing.SCOPE]
+            for name in historical + [approval.MANIFEST, approval.IDENTITY, 'scripts/ci/run.py']:
+                target = root / name
+                raw = target.read_bytes()
+                before = target.stat()
+                try:
+                    target.write_bytes(b'!' + raw[1:])
+                    os.utime(target, ns=(before.st_atime_ns, before.st_mtime_ns))
+                    self.assertEqual(target.stat().st_size, before.st_size)
+                    self.assertEqual(target.stat().st_mtime_ns, before.st_mtime_ns)
+                    with self.subTest(path=name), self.assertRaises(ValueError):
+                        approval.validate_current(root)
+                    if name in historical:
+                        with self.assertRaises(ValueError):
+                            publishing.verify_output(self.site, root, self.policy)
+                finally:
+                    target.write_bytes(raw)
+                    os.utime(target, ns=(before.st_atime_ns, before.st_mtime_ns))
+                approval.validate_current(root)
+                self.assertEqual(publishing.verify_output(self.site, root, self.policy)['output_files'], 194)
+
+    def test_combined_faults_cannot_accept_or_reuse_an_earlier_success(self):
+        with self.copied_current_source() as root:
+            self.assertEqual(publishing.verify_output(self.site, root, self.policy)['output_files'], 194)
+            target = root / 'tests/test_ci.py'
+            raw = target.read_bytes()
+            try:
+                target.unlink()
+                with self.changed('README.md', b'changed output'):
+                    with self.assertRaisesRegex(ValueError, '^Retained production output changed: README[.]md$'):
+                        publishing.verify_output(self.site, root, self.policy)
+                with self.assertRaises(OSError):
+                    publishing.verify_output(self.site, root, self.policy)
+            finally:
+                target.write_bytes(raw)
+            self.assertEqual(publishing.verify_output(self.site, root, self.policy)['output_files'], 194)
+
+    def test_public_output_paths_and_new_root_links_remain_strict_after_success(self):
+        self.assertEqual(len(publishing.output_files(self.site)), 194)
+        self.assertEqual(self.verify()['output_files'], 194)
+        link = self.directory / 'linked-site-root'
+        if os.name == 'nt':
+            result = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(self.site)], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        else:
+            link.symlink_to(self.site, target_is_directory=True)
+        try:
+            with self.assertRaises(ValueError):
+                publishing.output_files(link)
+            with self.assertRaises(ValueError):
+                publishing.verify_output(link, ROOT, self.policy)
+        finally:
+            if os.name == 'nt':
+                link.rmdir()
+            else:
+                link.unlink()
+        with self.changed('unsafe name.txt', b'unsafe path'):
+            with self.assertRaises(ValueError):
+                publishing.output_files(self.site)
+            self.rejects()
+        for name in ['../outside.txt', '/outside.txt', 'sub/../../outside.txt']:
+            with self.subTest(path=name), self.assertRaises(ValueError):
+                approval.safe_file(self.site, name)
+        target = self.site / 'robots.txt'
+        original_lstat = Path.lstat
+        class LinkedFile:
+            st_mode = 0o120777
+            st_file_attributes = 0x400
+        def lstat(path, *args, **kwargs):
+            return LinkedFile() if path == target else original_lstat(path, *args, **kwargs)
+        with patch.object(Path, 'lstat', lstat):
+            with self.assertRaises(ValueError):
+                publishing.output_files(self.site)
+            self.rejects()
+        self.assertEqual(self.verify()['output_files'], 194)
 
     def test_exact_two_report_subtraction_and_all_194_retained_hashes(self):
         result = self.verify()
