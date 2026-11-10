@@ -548,10 +548,14 @@ class SecurityReportOutputTests(unittest.TestCase):
         directory = self.directory / 'current-source'
         root = directory / 'historical-source'
         if not root.exists():
-            root = historical_source_fixture(directory)
-            for name in [publishing.POLICY, publishing.SECURITY_SCOPE, publishing.SECURITY_CHECKPOINT,
-                         approval.MANIFEST, approval.IDENTITY]:
-                shutil.copyfile(ROOT / name, root / name)
+            root.mkdir(parents=True)
+            current = approval.validate_current(ROOT)
+            preserved = json.loads((ROOT / publishing.README_SCOPE).read_text(encoding='utf-8'))
+            names = set(current['files']) | set(preserved['excluded_output_sha256']) | {approval.MANIFEST, approval.IDENTITY}
+            for name in sorted(names):
+                target = root / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / name, target)
         approval.validate_current(root)
         yield root
         approval.validate_current(root)
@@ -839,3 +843,156 @@ class SecurityReportOutputTests(unittest.TestCase):
                 link.rmdir()
             else:
                 link.unlink()
+
+
+class ReadmeOutputTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.temp = tempfile.TemporaryDirectory(prefix='edb-readme-output-')
+        cls.directory = Path(cls.temp.name)
+        cls.site = cls.directory / 'site'
+        cls.source_root = ROOT
+        cls.policy = json.loads((ROOT / publishing.CURRENT_POLICY).read_text(encoding='utf-8'))
+        cls.scope = json.loads((ROOT / publishing.README_SCOPE).read_text(encoding='utf-8'))
+        for name in cls.policy['output_paths']:
+            target = cls.site / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            raw = (gzip.decompress((ROOT / '_publishing/fixtures/seo2e1-theme.css.gz').read_bytes())
+                   if name == 'assets/css/style.css' else (ROOT / name).read_bytes())
+            target.write_bytes(raw if name.endswith('.css') else raw.replace(b'\r\n', b'\n'))
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.temp.cleanup()
+
+    changed = PagesOutputTests.changed
+    verify = PagesOutputTests.verify
+    rejects = PagesOutputTests.rejects
+    copied_current_source = SecurityReportOutputTests.copied_current_source
+    test_generated_junction_or_symlink_cannot_hide_extra_output = SecurityReportOutputTests.test_generated_junction_or_symlink_cannot_hide_extra_output
+
+    def test_exact_84_path_subtraction_retains_all_110_hashes_and_previous_rules(self):
+        result = self.verify()
+        for field, expected in {'output_files': 110, 'canonical_pages': 89, 'html_pages': 89,
+                                'owner_review_files_retained': 4, 'retained_output_hashes_verified': 110,
+                                'phase_a_excluded_files': 841, 'security_reports_excluded': 2,
+                                'readmes_excluded': 84, 'cumulative_excluded_files': 927,
+                                'privacy_output_files_checked': 110, 'sitemap_urls': 89,
+                                'retired_output_files': 93}.items():
+            with self.subTest(field=field):
+                self.assertEqual(result[field], expected)
+        previous = json.loads((ROOT / publishing.POLICY).read_text(encoding='utf-8'))
+        self.assertEqual(len(publishing.README_EXCLUSIONS), 84)
+        self.assertEqual(set(previous['output_paths']) - set(self.policy['output_paths']), set(publishing.README_EXCLUSIONS))
+        self.assertEqual(self.policy['markdown_source_paths'], previous['markdown_source_paths'])
+        self.assertEqual(len(self.scope['required_runtime_keep_paths']), 11)
+        self.assertEqual(len(self.scope['intentionally_public_keep_paths']), 6)
+        self.assertEqual(set(self.scope['owner_review_keep_paths']), {
+            'assets/css/site.77d4325c7538174e.css', 'assets/css/style.css',
+            'assets/data/eff-large-wordlist.txt', 'scripts/styles/licenses/tailwindcss-MIT.txt'})
+        for name, digest in self.scope['retained_output_sha256'].items():
+            self.assertEqual(hashlib.sha256((self.site / name).read_bytes()).hexdigest(), digest)
+        for name, digest in self.scope['source_readme_sha256'].items():
+            self.assertEqual(hashlib.sha256((ROOT / name).read_bytes().replace(b'\r\n', b'\n')).hexdigest(), digest)
+            self.assertFalse((self.site / name).exists())
+        publishing.readme_contract(ROOT, self.policy)
+
+    def test_all_927_approved_exclusions_cannot_reappear(self):
+        self.assertEqual(len(self.scope['excluded_output_sha256']), 927)
+        for name in self.scope['excluded_output_sha256']:
+            with self.subTest(path=name), self.changed(name, b'unapproved publication'):
+                self.rejects()
+
+    def test_all_84_readmes_reject_html_extensionless_encoded_and_directory_aliases(self):
+        for source in publishing.README_EXCLUSIONS:
+            stem = source.removesuffix('.md')
+            for name in [stem, stem + '.html', stem + '/index.html', source.replace('.', '%2E')]:
+                with self.subTest(path=source, alias=name), self.changed(name, b'reintroduced README'):
+                    self.rejects()
+
+    def test_all_110_retained_files_require_original_bytes_and_remain_required(self):
+        self.assertEqual(len(self.scope['retained_output_sha256']), 110)
+        for name in self.scope['retained_output_sha256']:
+            raw = (self.site / name).read_bytes()
+            with self.subTest(path=name, mutation='missing'), self.changed(name):
+                self.rejects()
+            with self.subTest(path=name, mutation='bytes'), self.changed(name, raw + b' '):
+                self.rejects()
+
+    def test_policy_scope_and_frozen_predecessor_tampering_cannot_expand_approval(self):
+        for field in ['canonical_pages', 'html', 'public_output_hashes', 'generated_asset_hashes',
+                      'retired_routes', 'source_normalization', 'security_report_cleanup',
+                      'readme_cleanup', 'markdown_source_paths']:
+            policy = copy.deepcopy(self.policy)
+            policy[field] = {} if isinstance(policy[field], dict) else []
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                publishing.readme_contract(ROOT, policy)
+        for paths in [self.policy['output_paths'] + ['README.md'], self.policy['output_paths'][:-1],
+                      self.policy['output_paths'] + [self.policy['output_paths'][0]]]:
+            policy = copy.deepcopy(self.policy)
+            policy['output_paths'] = paths
+            with self.assertRaises(ValueError):
+                publishing.readme_contract(ROOT, policy)
+        with self.copied_current_source() as root:
+            for name in [publishing.POLICY, publishing.SECURITY_SCOPE, publishing.README_SCOPE]:
+                target = root / name
+                raw = target.read_bytes()
+                try:
+                    value = json.loads(raw)
+                    value['unauthorized_scope_extension'] = True
+                    target.write_text(json.dumps(value), encoding='utf-8')
+                    with self.subTest(path=name), self.assertRaises(ValueError):
+                        publishing.readme_contract(root, self.policy)
+                finally:
+                    target.write_bytes(raw)
+
+    def test_readme_sources_remain_fresh_with_semantic_line_endings_and_real_tamper_rejection(self):
+        with self.copied_current_source() as root:
+            names = publishing.README_EXCLUSIONS
+            for name in [names[0], names[len(names) // 2], names[-1]]:
+                target = root / name
+                original = target.read_bytes()
+                info = target.stat()
+                try:
+                    lf = original.replace(b'\r\n', b'\n')
+                    for raw in [lf, lf.replace(b'\n', b'\r\n')]:
+                        target.write_bytes(raw)
+                        publishing.readme_contract(root, self.policy)
+                    target.write_bytes(bytes([original[0] ^ 1]) + original[1:])
+                    os.utime(target, ns=(info.st_atime_ns, info.st_mtime_ns))
+                    self.assertEqual(target.stat().st_size, info.st_size)
+                    self.assertEqual(target.stat().st_mtime_ns, info.st_mtime_ns)
+                    with self.assertRaisesRegex(ValueError, '^Original README source changed: '):
+                        publishing.verify_output(self.site, root, self.policy)
+                    with self.assertRaisesRegex(ValueError, '^Original README source changed: '):
+                        publishing.readme_contract(root, self.policy)
+                    target.unlink()
+                    with self.assertRaises(OSError):
+                        publishing.verify_output(self.site, root, self.policy)
+                finally:
+                    target.write_bytes(original)
+                    os.utime(target, ns=(info.st_atime_ns, info.st_mtime_ns))
+                self.assertEqual(publishing.verify_output(self.site, root, self.policy)['output_files'], 110)
+
+    def test_success_then_same_timestamp_output_and_combined_source_faults_never_pass(self):
+        with self.copied_current_source() as root:
+            self.assertEqual(publishing.verify_output(self.site, root, self.policy)['output_files'], 110)
+            source = root / 'README.md'
+            original = source.read_bytes()
+            output = self.site / 'index.html'
+            raw = output.read_bytes()
+            before = output.stat()
+            try:
+                source.unlink()
+                with self.changed('index.html', bytes([raw[0] ^ 1]) + raw[1:]):
+                    os.utime(output, ns=(before.st_atime_ns, before.st_mtime_ns))
+                    self.assertEqual(output.stat().st_size, before.st_size)
+                    self.assertEqual(output.stat().st_mtime_ns, before.st_mtime_ns)
+                    with self.assertRaisesRegex(ValueError, '^Retained production output changed: index[.]html$'):
+                        publishing.verify_output(self.site, root, self.policy)
+                with self.assertRaises(OSError):
+                    publishing.verify_output(self.site, root, self.policy)
+            finally:
+                source.write_bytes(original)
+                os.utime(output, ns=(before.st_atime_ns, before.st_mtime_ns))
+            self.assertEqual(publishing.verify_output(self.site, root, self.policy)['output_files'], 110)

@@ -1,0 +1,46 @@
+SEO Task 2E.5 Phase B: exact README publishing cleanup
+
+Production baseline: e907ae793525ab6c6a45bad5b2e19eab10f0c657.
+Branch: seo/task-2e5-readme-pages-cleanup.
+Authorization: development, local/hosted verification and draft PR only.
+No merge, production deployment, source deletion or history rewrite.
+
+Exclude exactly the 84 individually reviewed paths in README_EXCLUSIONS and
+SEO_TASK_2E5_SCOPE.json. Preserve every original README and security report.
+The successor retains 110 files: 89 canonical HTML, four owner-review holds,
+11 runtime assets and six intentionally public resources. Cumulative excluded
+paths are 927 (843 existing plus 84 READMEs). No broad README glob is used.
+
+All old policies, approvals, bootstraps, audit bytes/checksum, original test
+assertions and timeouts remain protected. POLICY denotes the frozen 194-file
+contract for existing historical regressions; CURRENT_POLICY selects the
+110-file successor in the CLI. The plain-text handoff deliberately leaves the
+frozen Markdown source inventories unchanged. Both contracts stay strict.
+
+The Phase C ordering and fresh-validation guarantees remain: invalid inventory
+fails early; changed retained bytes fail before the full source walk; every
+successful call checks all required source files, hashes and privacy controls.
+No cache of approval or path-safety results across independent calls.
+
+Require complete Python/Node/Chromium suites, 87 browser profiles, both neutral
+templates, consent/accessibility/homepage/CSS/worker/download/security checks,
+all 927 negative exclusion cases, all 110 retained deletion/modification cases,
+source approval, historical integrity, project status and whitespace checks.
+Keep the Python subprocess deadline at 240 seconds and measure hosted headroom.
+Verify the actual pinned Jekyll artifact, not only synthetic output fixtures.
+Use the existing artifact-only CI workflow, all four jobs in fresh hosted runs
+and the eventual draft PR. Required failures must be reported without weakening
+coverage or retrying an intermittent failure until it happens to pass.
+
+Keep the old stylesheet, generated theme stylesheet, EFF original wordlist and
+Tailwind licence public. Preserve all six public resources, runtime workers,
+canonical URLs, sitemap, robots, historic aliases/retirements and licences.
+Direct README links will stop working only after separately authorized deploy.
+Original source remains on GitHub. Existing security-report history privacy
+and Image Compressor reliability risks remain separate and unresolved.
+
+Execution evidence belongs in the private development report and draft PR.
+This checkpoint does not claim successful verification or live deployment.
+Next action: complete development verification, open a verified draft PR, stop.
+Rollback must restore the complete successor selection to this baseline while
+retaining the earlier 843 exclusions, including the two security reports.
