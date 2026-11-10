@@ -766,5 +766,587 @@
       "node-regression",
       "browser-tests"
     ]
-  }
+  },
+  "python_partitions": [
+    {
+      "id": "historical",
+      "classes": [
+        {
+          "id": "test_css_overlay.CSSApprovalTests",
+          "methods": [
+            "test_build_lock_scanner_test_and_ci_inputs_are_bound",
+            "test_candidate_snapshot_binds_six_registry_records_and_exact_sources",
+            "test_canonical_body_and_tool_logic_mutations_fail",
+            "test_consent_asset_and_loader_changes_fail",
+            "test_css_asset_crlf_change_is_not_source_normalization",
+            "test_css_asset_missing_changed_and_same_mtime_tamper_fail",
+            "test_current_seven_pages_chain_through_unchanged_seo_manifest",
+            "test_duplicate_stylesheet_is_rejected",
+            "test_every_approved_transformation_reconstructs_actual_git_main",
+            "test_exact_current_candidate_and_css_bytes_pass",
+            "test_full_closure_is_required_before_any_historical_projection",
+            "test_generic_historical_fixture_is_not_reinterpreted",
+            "test_historical_evidence_and_frozen_projectors_remain_bound",
+            "test_lf_crlf_projection_preserves_trailing_bytes",
+            "test_manifest_tamper_or_missing_manifest_is_not_an_approval",
+            "test_missing_stylesheet_link_is_rejected",
+            "test_nested_generated_directory_names_cannot_hide_html",
+            "test_new_unapproved_route_is_rejected",
+            "test_old_baseline_is_not_approved_as_current_static_css",
+            "test_project_revalidates_live_closure_after_candidate_snapshot",
+            "test_readme_successor_and_frozen_two_report_approval_remain_bound",
+            "test_retained_or_duplicate_browser_compiler_is_rejected",
+            "test_security_report_successor_and_original_evidence_remain_bound",
+            "test_six_tool_candidates_bind_historical_registry_evidence",
+            "test_snapshot_captures_verified_bytes_without_caching_live_approval",
+            "test_snapshot_rejects_frozen_projector_fallback_after_capture",
+            "test_snapshot_rejects_unbound_root_path_and_source",
+            "test_stylesheet_moved_outside_head_is_rejected",
+            "test_symlink_or_windows_junction_is_rejected_without_following",
+            "test_traversal_absolute_url_and_encoded_paths_are_rejected",
+            "test_unmigrated_social_counter_cannot_become_a_consumer",
+            "test_wrong_stylesheet_is_rejected"
+          ]
+        },
+        {
+          "id": "test_homepage.HomepageTests",
+          "methods": [
+            "test_all_frozen_audits_registry_consent_seo_are_identical_to_parent",
+            "test_complete_unique_released_directory_and_category_mapping",
+            "test_historical_comparison_rejects_disposable_tampering_and_accepts_restoration",
+            "test_new_approval_dependencies_fail_closed",
+            "test_reproducible_generated_homepage"
+          ]
+        },
+        {
+          "id": "test_pages_output.PagesOutputTests",
+          "methods": [
+            "test_all_design_document_routes_and_alternative_names_are_rejected",
+            "test_canonical_changes_duplicates_noindex_and_refresh_fail",
+            "test_config_replacement_defaults_and_scope_are_strict",
+            "test_current_inventory_has_only_89_canonical_html_outputs",
+            "test_current_publishing_approval_and_frozen_task_2d_are_bound",
+            "test_every_retired_html_markdown_and_alias_is_rejected",
+            "test_generated_source_and_discovery_file_tampering_fails",
+            "test_historical_canonical_and_noindex_metadata_cannot_drift",
+            "test_historical_route_removal_is_not_silently_approved",
+            "test_internal_controls_cannot_leak_as_static_files",
+            "test_metadata_understands_canonical_tokens_and_case_insensitive_robot_directives",
+            "test_new_markdown_html_explicit_html_noindex_and_raw_documents_are_rejected",
+            "test_new_markdown_with_existing_permalink_cannot_bypass_inventory",
+            "test_no_approved_page_or_runtime_file_may_disappear",
+            "test_retired_history_hash_and_2e1_predecessor_are_strict",
+            "test_reviewed_inventory_preserves_89_canonicals_and_48_historical_routes",
+            "test_theme_hash_is_checked"
+          ]
+        },
+        {
+          "id": "test_pages_output.PhaseAOutputTests",
+          "methods": [
+            "test_all_90_review_holds_and_all_runtime_public_assets_are_required",
+            "test_each_approved_exclusion_cannot_reappear_as_a_raw_file",
+            "test_every_canonical_page_and_retired_output_remains_protected",
+            "test_every_retained_non_html_file_requires_exact_production_bytes",
+            "test_exact_841_subtraction_and_all_196_retained_hashes",
+            "test_git_preserves_audit_raw_bytes_with_lf_and_crlf_checkout_settings",
+            "test_git_staged_whitespace_accepts_frozen_crlf_but_rejects_real_errors",
+            "test_historical_fixture_contains_all_excluded_sources_before_hash_rejection",
+            "test_line_ending_conversion_whitespace_and_content_tampering_fail_raw_integrity",
+            "test_phase_a_cannot_silently_expand_the_reviewed_output_delta",
+            "test_raw_extensionless_directory_html_and_encoded_aliases_fail",
+            "test_recovered_raw_checksum_precedes_semantic_json_parsing",
+            "test_successor_and_frozen_predecessors_are_bound_before_projection",
+            "test_unlisted_output_and_reintroduced_front_matter_fail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "current-project",
+      "classes": [
+        {
+          "id": "test_ci.CIGateTests",
+          "methods": [
+            "test_actual_child_assertion_failure_is_nonzero",
+            "test_actual_child_timeout_is_failure",
+            "test_aggregate_requires_all_real_jobs_to_succeed",
+            "test_empty_failed_skipped_cancelled_or_todo_node_fails",
+            "test_mandatory_layer_rejects_not_run_unknown_empty_or_failed",
+            "test_missing_executable_is_not_success",
+            "test_missing_or_duplicate_summary_fails",
+            "test_real_node_summary_counts",
+            "test_requested_pass_does_not_claim_omitted_scope",
+            "test_scaffold_cannot_pass_mandatory_layer",
+            "test_windows_temporary_fixture_parent_is_canonical"
+          ]
+        },
+        {
+          "id": "test_ci.CoverageTests",
+          "methods": [
+            "test_complete_explicit_mapping_passes",
+            "test_duplicate_test_mapping_fails",
+            "test_empty_browser_cases_fail",
+            "test_empty_mapped_file_fails",
+            "test_missing_mapped_file_fails",
+            "test_new_registry_tool_requires_explicit_scope",
+            "test_new_specialist_logic_cannot_be_silently_omitted",
+            "test_unmapped_new_test_fails"
+          ]
+        },
+        {
+          "id": "test_ci.PythonPartitionTests",
+          "methods": [
+            "test_all_unsuccessful_unittest_outcomes_are_rejected",
+            "test_child_rechecks_source_and_cleans_up_before_success",
+            "test_class_setup_and_teardown_failures_cannot_pass",
+            "test_distinct_class_aliases_remain_distinct_required_test_ids",
+            "test_live_contract_rejects_same_timestamp_tampering_and_accepts_restoration",
+            "test_manifest_requires_two_nonempty_disjoint_complete_groups",
+            "test_missing_new_duplicate_and_unmapped_discovered_cases_fail",
+            "test_parent_executes_sequential_groups_at_240_seconds_with_fresh_acceptance",
+            "test_parent_rejects_failed_missing_malformed_and_stale_child_results",
+            "test_parent_rejects_second_group_failure_without_partial_success",
+            "test_parent_revalidates_source_after_both_successful_children",
+            "test_protocol_identity_counts_and_single_summary_are_strict",
+            "test_real_discovery_import_errors_cannot_be_selected_away",
+            "test_reconciliation_requires_both_groups_and_exact_union",
+            "test_same_count_substitution_duplicate_and_unfinished_ids_fail",
+            "test_selection_preserves_native_order_and_whole_class_fixtures",
+            "test_strict_json_rejects_duplicate_keys_and_nonfinite_values"
+          ]
+        },
+        {
+          "id": "test_consent_overlay.ConsentOverlayTests",
+          "methods": [
+            "test_duplicate_missing_or_repositioned_loader_rejected",
+            "test_exact_overlay_is_reversible_and_bound",
+            "test_tampered_assets_or_unpassed_manifest_are_rejected",
+            "test_unrelated_edits_and_wrong_evidence_are_rejected"
+          ]
+        },
+        {
+          "id": "test_consent_overlay.DeploymentEvidenceTests",
+          "methods": [
+            "test_deployed_pages_match_source_and_historical_candidate",
+            "test_recorded_collection_evidence_has_expected_scope"
+          ]
+        },
+        {
+          "id": "test_dashboard.DashboardDataTests",
+          "methods": [
+            "test_all_statuses_and_no_double_count",
+            "test_background_refresh_streams_and_prevents_duplicates",
+            "test_blocker_reason_and_required_action_preserved",
+            "test_clipboard_summary_excludes_local_paths_and_git_identity",
+            "test_contradictory_pass_with_error_is_failure",
+            "test_corrupt_provenance_does_not_certify_reports",
+            "test_existing_launcher_entry_point_is_dashboard",
+            "test_invalid_registry_still_opens_partial_snapshot",
+            "test_invalid_reports_are_unknown",
+            "test_milestones_use_only_released_and_cap_at_100",
+            "test_missing_git_and_documents_are_explicit",
+            "test_missing_reports_are_not_run",
+            "test_old_and_future_timestamps",
+            "test_old_reports_cannot_be_rebound_to_new_inputs",
+            "test_partial_optional_fields_and_empty_registry",
+            "test_permission_denied_report_is_unknown",
+            "test_provenance_detects_input_and_report_changes",
+            "test_queue_matches_existing_ranking_and_dependencies",
+            "test_refresh_lock_rejects_second_writer",
+            "test_registry_counts_come_from_actual_registry",
+            "test_registry_supports_1500_entries_without_recursion",
+            "test_report_diagnostics_and_warning",
+            "test_search_filters_and_sorting",
+            "test_settings_and_file_actions_are_local_and_allowlisted",
+            "test_unchanged_recent_reports_and_concurrent_input_edits_not_rebound",
+            "test_worker_exception_surfaces_and_releases_guard"
+          ]
+        },
+        {
+          "id": "test_dashboard.DashboardTkTests",
+          "methods": [
+            "test_batched_render_all_screens_and_main_thread_responsiveness"
+          ]
+        },
+        {
+          "id": "test_git_fixtures.GitFixtureTests",
+          "methods": [
+            "test_batch_records_reject_wrong_identity_type_length_and_framing",
+            "test_committed_bytes_are_independent_of_later_working_tree_changes",
+            "test_missing_blob_closes_process_and_next_call_recovers",
+            "test_real_git_blobs_match_git_show_with_one_reused_process",
+            "test_repository_root_is_bound_and_subdirectory_is_not_a_root",
+            "test_sha256_git_object_identity_is_verified",
+            "test_unresponsive_process_has_a_bounded_failure_and_shutdown",
+            "test_unsafe_paths_and_mutable_or_abbreviated_revisions_are_rejected"
+          ]
+        },
+        {
+          "id": "test_pages_output.MutationRestorationTests",
+          "methods": [
+            "test_backups_are_unique_outside_output_and_removed",
+            "test_body_and_mutation_exceptions_restore_original",
+            "test_exact_bytes_identity_and_metadata_survive_missing_modified_and_empty_files",
+            "test_mutation_cannot_change_files_outside_disposable_site",
+            "test_nested_mutations_restore_each_enclosing_state",
+            "test_new_paths_and_only_created_parents_are_cleaned_after_success_or_failure",
+            "test_real_verifier_rejects_mutations_and_accepts_fresh_restoration"
+          ]
+        },
+        {
+          "id": "test_pages_output.ReadmeOutputTests",
+          "methods": [
+            "test_all_110_retained_files_require_original_bytes_and_remain_required",
+            "test_all_84_readmes_reject_html_extensionless_encoded_and_directory_aliases",
+            "test_all_927_approved_exclusions_cannot_reappear",
+            "test_exact_84_path_subtraction_retains_all_110_hashes_and_previous_rules",
+            "test_generated_junction_or_symlink_cannot_hide_extra_output",
+            "test_policy_scope_and_frozen_predecessor_tampering_cannot_expand_approval",
+            "test_readme_sources_remain_fresh_with_semantic_line_endings_and_real_tamper_rejection",
+            "test_success_then_same_timestamp_output_and_combined_source_faults_never_pass"
+          ]
+        },
+        {
+          "id": "test_pages_output.SecurityReportOutputTests",
+          "methods": [
+            "test_all_843_approved_exclusions_cannot_reappear",
+            "test_both_reports_reject_raw_encoded_extensionless_directory_and_html_aliases",
+            "test_canonical_metadata_discovery_and_old_retirements_remain_protected",
+            "test_combined_faults_cannot_accept_or_reuse_an_earlier_success",
+            "test_every_retained_file_is_required_and_cannot_change",
+            "test_exact_two_report_subtraction_and_all_194_retained_hashes",
+            "test_fresh_approval_and_historical_integrity_reject_preserved_timestamp_tampering",
+            "test_generated_junction_or_symlink_cannot_hide_extra_output",
+            "test_known_private_values_and_encodings_fail_with_sanitized_diagnostics",
+            "test_licence_notices_data_and_both_stylesheets_are_protected",
+            "test_original_report_sources_match_production_without_rewriting",
+            "test_public_output_paths_and_new_root_links_remain_strict_after_success",
+            "test_report_source_line_endings_are_semantic_but_real_tampering_and_deletion_fail",
+            "test_source_preservation_is_fresh_and_public_contracts_remain_strict",
+            "test_successive_output_checks_detect_same_size_same_timestamp_mutations",
+            "test_successor_policy_cannot_expand_scope_or_change_predecessor_rules"
+          ]
+        },
+        {
+          "id": "test_prepare_tool_seo.PreparationTests",
+          "methods": [
+            "test_noindex_is_not_removed_or_made_public",
+            "test_pending_or_released_status_cannot_be_prepared",
+            "test_prepare_is_idempotent_preserves_body_newlines_and_status",
+            "test_unknown_or_unsafe_id_writes_nothing"
+          ]
+        },
+        {
+          "id": "test_seo.SEOTests",
+          "methods": [
+            "test_canonical_in_script_and_comments_does_not_count",
+            "test_canonical_outside_head_or_in_inert_template_rejected",
+            "test_cli_json_validation_is_read_only_and_failure_is_nonzero",
+            "test_duplicate_canonical_tags_rejected",
+            "test_duplicate_rel_and_href_attributes_rejected",
+            "test_exact_annotation_preserves_crlf_compact_and_comment_heads",
+            "test_generation_is_idempotent_and_registry_unchanged",
+            "test_generator_does_not_repair_bad_canonical_by_default",
+            "test_git_crlf_sitemap_is_not_spurious_staleness",
+            "test_invalid_domain_scheme_query_fragment_and_escaping_rejected",
+            "test_missing_canonical_is_actionable_and_read_only",
+            "test_missing_canonical_target_detected",
+            "test_no_sitemap_and_no_robots_report_friendly_errors",
+            "test_noindex_and_none_on_released_pages_rejected",
+            "test_public_allowlist_released_only_with_real_directory_routes",
+            "test_registry_bad_routes_duplicate_directories_domain_and_status_fail",
+            "test_released_missing_source_fails_eligibility",
+            "test_robots_allows_explanatory_comments_but_not_unknown_directives",
+            "test_robots_sitemap_duplicates_external_and_blocking_rules_fail",
+            "test_sitemap_duplicate_missing_and_ineligible_entries",
+            "test_sitemap_entity_declarations_rejected",
+            "test_sitemap_invalid_xml_and_raw_ampersand_fail",
+            "test_sitemap_wrong_root_namespace_and_lastmod_fail",
+            "test_stale_sitemap_format_and_order_detected",
+            "test_symlink_inputs_are_rejected_before_read_or_write",
+            "test_sync_plans_every_page_before_any_mutation",
+            "test_wrong_valid_target_is_not_accepted_as_self_canonical"
+          ]
+        },
+        {
+          "id": "test_seo_overlay.SEOOverlayTests",
+          "methods": [
+            "test_87_candidates_bind_to_unchanged_registry_and_older_consent_evidence",
+            "test_all_89_frozen_baseline_pages_reconstruct_exact_main_and_generator",
+            "test_consent_runtime_mutation_is_not_hidden_by_seo_projection",
+            "test_crlf_and_lf_round_trip_without_ignoring_trailing_bytes",
+            "test_manifest_edit_cannot_authorize_another_candidate",
+            "test_manifest_preimages_match_actual_git_baseline_for_both_head_forms",
+            "test_missing_duplicated_moved_wrong_canonical_and_body_changes_fail_closed",
+            "test_only_exact_ci_validation_call_is_projected",
+            "test_project_check_calls_read_only_seo_without_recursive_registry_checks",
+            "test_unlisted_assets_and_generic_fixtures_are_never_normalized"
+          ]
+        },
+        {
+          "id": "test_status_launcher.LauncherTests",
+          "methods": [
+            "test_command_uses_absolute_paths",
+            "test_cwd_unicode_and_combined_output",
+            "test_desktop_known_folder_is_absolute",
+            "test_missing_interpreter_is_clear",
+            "test_missing_reports_folder_has_helpful_error",
+            "test_missing_script_returns_clear_error",
+            "test_nonzero_exit_is_preserved",
+            "test_open_folder_uses_windows_shell",
+            "test_pythonw_maps_to_same_installation_console_interpreter",
+            "test_shortcuts_roundtrip_idempotent_and_safe",
+            "test_windows_process_has_no_console_and_no_shell",
+            "test_worker_streams_before_process_finishes"
+          ]
+        },
+        {
+          "id": "test_task18_preservation.Task18Preservation",
+          "methods": [
+            "test_all_prior_registry_records_and_runtime_files_unchanged",
+            "test_new_pages_have_exact_shared_loader_and_no_direct_google_tag",
+            "test_only_gated_cards_and_count_change_in_homepage"
+          ]
+        },
+        {
+          "id": "test_task18_release.Task18ReleaseEvidence",
+          "methods": [
+            "test_live_catalog_assets_and_real_collection_evidence_are_complete",
+            "test_six_releases_have_matching_dated_public_source_and_browser_evidence"
+          ]
+        },
+        {
+          "id": "test_task19_preservation.Task19Preservation",
+          "methods": [
+            "test_all_56_released_runtime_sources_and_privacy_domain_settings_unchanged",
+            "test_all_historical_audit_records_remain_unchanged",
+            "test_coverage_includes_all_new_tools_and_existing_mandatory_scopes",
+            "test_dependency_payload_hashes_licenses_and_wordlist_content_are_pinned",
+            "test_inventory_changes_only_selected_six_and_preserves_all_prior_records",
+            "test_new_pages_use_only_shared_consent_and_local_reviewed_dependencies",
+            "test_only_six_gated_cards_and_initial_count_change_in_the_hub",
+            "test_six_development_audits_bind_real_git_source_and_successful_canonical_layers"
+          ]
+        },
+        {
+          "id": "test_task19_release.Task19ReleaseEvidence",
+          "methods": [
+            "test_live_catalog_assets_and_real_collection_evidence_are_complete",
+            "test_six_releases_have_matching_dated_public_source_and_browser_evidence"
+          ]
+        },
+        {
+          "id": "test_task20_formats.Task20IndependentFormats",
+          "methods": [
+            "test_production_encoder_exports_six_frames_read_by_independent_reader_and_windows"
+          ]
+        },
+        {
+          "id": "test_task20_preservation.Task20Preservation",
+          "methods": [
+            "test_all62_runtime_pages_and_existing_assets_privacy_ci_templates_are_unchanged",
+            "test_all68_tools_and_new_tests_remain_mandatory_in_ci",
+            "test_all_historical_audits_remain_byte_identical",
+            "test_each_tested_tool_has_real_source_bound_evidence_and_all_canonical_layers",
+            "test_inventory_changes_only_the_authorized_six_and_milestones_are_identical",
+            "test_new_tools_use_exact_shared_consent_without_direct_google_or_hidden_storage",
+            "test_pinned_emoji_data_license_and_original_git_source_are_preserved",
+            "test_six_pending_cards_and_count_are_the_only_homepage_changes"
+          ]
+        },
+        {
+          "id": "test_task20_release.Task20Release",
+          "methods": [
+            "test_fresh_public_catalog_assets_real_consent_and_print_scope_are_complete",
+            "test_release_changes_preserve_all_prior_records_runtime_audits_and_exact_hub_markup",
+            "test_six_releases_have_real_dated_matching_public_git_and_interaction_evidence"
+          ]
+        },
+        {
+          "id": "test_task21_preservation.Task21Preservation",
+          "methods": [
+            "test_all68_runtime_pages_existing_assets_privacy_domain_and_ci_pins_unchanged",
+            "test_all_historical_audits_remain_byte_identical",
+            "test_all_new_pages_preserve_consent_loader_and_do_not_store_or_execute_input",
+            "test_ci_maps_all74_tools_and_every_new_scope_without_lowering_floors",
+            "test_dependency_versions_integrity_licences_and_no_pdf_adoption",
+            "test_exact_inventory_and_only_six_registry_transitions",
+            "test_homepage_changes_only_six_verified_cards_and_count",
+            "test_isolation_gate_requires_network_positive_control_and_opaque_origin_probes",
+            "test_new_pages_and_worker_assets_bind_to_real_git_source_and_scoped_tests"
+          ]
+        },
+        {
+          "id": "test_task21_release.Task21Release",
+          "methods": [
+            "test_exact_six_transitions_preserve_every_other_record_and_all_tool_metadata",
+            "test_full_public_catalog_source_identity_and_real_consent_are_fresh_and_complete",
+            "test_public_isolation_has_parent_child_positive_controls_and_actual_denial_probes",
+            "test_release_does_not_change_any_runtime_asset_historical_audit_or_unrelated_hub_markup",
+            "test_six_public_audits_bind_real_git_pages_assets_dates_and_individual_behavior"
+          ]
+        },
+        {
+          "id": "test_task22_preservation.Task22Preservation",
+          "methods": [
+            "test_all74_released_pages_and_existing_assets_audits_privacy_ci_unchanged",
+            "test_ci_adds_mandatory_scope_without_changing_pins_or_deadlines",
+            "test_exactly_one_authorized_transition_and_unchanged_metadata",
+            "test_one_pending_card_is_the_only_hub_change",
+            "test_page_does_not_store_or_evaluate_input_and_retains_consent",
+            "test_release_evidence_binds_real_source_and_verified_publication",
+            "test_security_review_has_versions_integrity_advisory_review_and_positive_controls"
+          ]
+        },
+        {
+          "id": "test_task22_release.Task22Release",
+          "methods": [
+            "test_actual_public_isolation_has_parent_child_controls_and_origin_navigation_denial",
+            "test_complete_public_catalog_real_browser_results_and_real_consent_are_fresh_and_bound",
+            "test_exactly_one_verified_promotion_preserves_other92_records_and_all_identity",
+            "test_publication_binds_actual_approved_commit_page_assets_and_preserved_development_evidence",
+            "test_release_preserves_all75_runtime_pages_assets_historical_audits_and_only_changes_one_card_label"
+          ]
+        },
+        {
+          "id": "test_task24_preservation.Task24Preservation",
+          "methods": [
+            "test_all75_pages_assets_privacy_historical_audits_and_workflow_unchanged",
+            "test_exactly_six_new_records_and_original93_records_unchanged",
+            "test_new_ci_scopes_are_explicit_and_older_coverage_preserved",
+            "test_new_code_has_shared_consent_no_input_transport_or_html_evaluation",
+            "test_publication_evidence_binds_git_source_and_preserves_development",
+            "test_six_verified_release_cards_are_only_homepage_changes"
+          ]
+        },
+        {
+          "id": "test_task24_release.Task24Release",
+          "methods": [
+            "test_all81_runtime_assets_privacy_historical_audits_and_ci_pins_unchanged",
+            "test_exactly_six_transitions_and_all_other_metadata_preserved",
+            "test_fresh_public_interactions_catalog_console_and_privacy_are_scoped",
+            "test_only_six_availability_labels_change_on_homepage",
+            "test_real_consent_collection_has_three204_views_without_duplicates",
+            "test_source_evidence_matches_deployed_git_for99_responses_and_six_aliases"
+          ]
+        },
+        {
+          "id": "test_task25_preservation.Task25Preservation",
+          "methods": [
+            "test_coverage_extends_all_old_maps_and_test_floors",
+            "test_existing_runtime_privacy_and_ci_infrastructure_preserved",
+            "test_final_scope_binds_authorized_baseline_and_six_unique_routes",
+            "test_only_six_catalog_cards_and_count_added",
+            "test_shared_consent_and_no_input_transport_or_markup_execution",
+            "test_unchanged_prior_records_and_exact_six_publicly_verified_additions"
+          ]
+        },
+        {
+          "id": "test_task25_release.Task25PublicRelease",
+          "methods": [
+            "test_all_87_runtime_pages_existing_assets_audits_and_ci_pins_are_unchanged",
+            "test_fresh_browser_results_include_native_worker_and_safe_csv_evidence",
+            "test_only_six_homepage_labels_change_and_generated_milestone_is_preserved",
+            "test_only_six_tested_records_transition_and_other_metadata_is_preserved",
+            "test_public_source_evidence_binds_105_responses_and_seven_aliases_to_git",
+            "test_real_analytics_collection_has_unique_accepted_views_and_denial_checks"
+          ]
+        },
+        {
+          "id": "test_tool_framework.FrameworkTests",
+          "methods": [
+            "test_actual_logic_cases_discovery_and_failures",
+            "test_batch_order_dependencies_specialization_and_no_writes",
+            "test_batch_output_cannot_overwrite_tracking_or_local_settings",
+            "test_cli_dry_run_from_unrelated_directory",
+            "test_dashboard_counts_queue_and_blockers_unchanged",
+            "test_dry_run_is_read_only",
+            "test_duplicate_route_and_missing_metadata_rejected",
+            "test_existing_canonical_directory_never_overwritten",
+            "test_existing_scaffold_excluded_from_planned_batch",
+            "test_existing_workspace_never_overwritten",
+            "test_freshness_binds_source_tests_metadata_and_runner",
+            "test_generation_rolls_back_own_files_on_failure",
+            "test_homepage_parser_refuses_ambiguity",
+            "test_homepage_proposal_adds_only_card_and_count_and_checks_stale_gate",
+            "test_individual_case_symlink_is_rejected",
+            "test_invalid_case_schema_and_duplicate_case_ids_fail",
+            "test_legacy_released_card_preserved_without_retrofit",
+            "test_lookup_and_unsafe_unknown_identifiers",
+            "test_malformed_registry_rejected_without_side_effects",
+            "test_missing_browser_is_not_pass",
+            "test_placeholder_and_empty_suites_never_pass_as_functionality",
+            "test_released_and_active_entries_protected",
+            "test_report_generation_keeps_existing_report_schema_and_no_local_paths",
+            "test_structure_detects_duplicate_ids_broken_links_and_manifest",
+            "test_text_and_structured_rendering_structure_and_no_status_change",
+            "test_unfinished_homepage_integration_refused",
+            "test_unsafe_paths_and_symlinks_rejected"
+          ]
+        },
+        {
+          "id": "test_tracking.TrackingTests",
+          "methods": [
+            "test_all_cli_entrypoints_support_paths_with_spaces",
+            "test_bad_dependencies",
+            "test_broken_documentation_link",
+            "test_broken_homepage_link",
+            "test_check_only_status_does_not_update_documentation",
+            "test_cli_exit_codes_for_validation_and_invocation",
+            "test_crlf_checkout_is_not_reported_stale",
+            "test_dependency_cycle",
+            "test_duplicate_directories",
+            "test_duplicate_ids",
+            "test_duplicate_json_keys",
+            "test_empty_registry",
+            "test_git_failed_stderr_is_not_reported",
+            "test_git_timeout",
+            "test_git_unavailable",
+            "test_homepage_attributes_can_be_in_any_order",
+            "test_invalid_json_without_input_disclosure",
+            "test_invalid_markers_do_not_overwrite_any_documents",
+            "test_invalid_registry_preserves_generated_manual_files",
+            "test_invalid_root_types",
+            "test_invalid_status",
+            "test_invalid_status_type",
+            "test_invalid_website_type_is_a_validation_error",
+            "test_known_git_snapshot_uses_no_author_or_remote_data",
+            "test_large_registry_and_deep_dependency_chain",
+            "test_malformed_category",
+            "test_malformed_tool_objects_produce_consolidated_report",
+            "test_malformed_verification_report_is_an_error",
+            "test_manual_notes_preserved",
+            "test_missing_category",
+            "test_missing_documentation",
+            "test_missing_entrypoint",
+            "test_missing_expected_interface",
+            "test_missing_implemented_directory",
+            "test_missing_related_tool",
+            "test_missing_required_field",
+            "test_missing_title_and_navigation",
+            "test_missing_tool_dependency",
+            "test_next_task_respects_unfinished_dependency",
+            "test_nonstandard_json_constant",
+            "test_path_traversal_link",
+            "test_planned_directory_not_required",
+            "test_planned_tool_cannot_claim_tests",
+            "test_released_requires_publication_and_functional_evidence",
+            "test_repeated_progress_generation_is_identical",
+            "test_reports_have_bounded_history_and_no_absolute_root",
+            "test_status_counts_are_a_partition",
+            "test_status_does_not_hide_missing_sources",
+            "test_status_repairs_stale_generated_sections_and_records_initial_failure",
+            "test_structure_never_promotes_status",
+            "test_tool_prefixed_dependency",
+            "test_unicode_json_bridge_uses_utf8_on_windows",
+            "test_unregistered_source_directory",
+            "test_unsafe_directory_path",
+            "test_untrusted_javascript_not_executed",
+            "test_valid_registry_and_structure",
+            "test_validation_does_not_change_files"
+          ]
+        }
+      ]
+    }
+  ]
 }

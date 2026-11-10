@@ -54,6 +54,101 @@ def reviewed_candidates(root):
 EXCLUDES += [name for group in reviewed_candidates(ROOT)['exact_sets'] for name in group['exact_paths']]
 EXCLUDES += list(SECURITY_REPORTS)
 
+# POLICY remains the frozen two-report contract used by historical regression fixtures.
+CURRENT_POLICY = '_publishing/SEO_TASK_2E5_OUTPUT_POLICY.json'
+README_SCOPE = '_publishing/SEO_TASK_2E5_SCOPE.json'
+README_CHECKPOINT = '_publishing/SEO_TASK_2E5_PHASE_B.txt'
+README_PARENT = 'e907ae793525ab6c6a45bad5b2e19eab10f0c657'
+SECURITY_POLICY_SHA256 = '1023c3e03e50cea6cd00beaf3ec9e5f13fb6cdb383bacd54f7c11ae7e34ddeb7'
+SECURITY_SCOPE_SHA256 = '8ff875d1ad220ce32f6dc7539a0fb69e759916c6c57cba752d957e0da59cd69c'
+README_EXCLUSIONS = (
+    'README.md',
+    'age-calculator/README.md',
+    'base64-encoder-decoder/README.md',
+    'batch-filename-planner/README.md',
+    'case-converter/README.md',
+    'color-contrast-checker/README.md',
+    'compound-interest-calculator/README.md',
+    'countdown-timer/README.md',
+    'css-gradient-generator/README.md',
+    'css-minifier/README.md',
+    'csv-column-extractor/README.md',
+    'csv-data-cleaner/README.md',
+    'csv-json-converter/README.md',
+    'csv-merger/README.md',
+    'csv-to-txt/README.md',
+    'csv-viewer/README.md',
+    'date-difference-calculator/README.md',
+    'discount-calculator/README.md',
+    'duplicate-line-remover/README.md',
+    'duplicate-row-finder/README.md',
+    'duration-calculator/README.md',
+    'emoji-picker/README.md',
+    'excel-formula-generator/README.md',
+    'file-byte-comparator/README.md',
+    'file-signature-inspector/README.md',
+    'file-size-converter/README.md',
+    'find-and-replace/README.md',
+    'hashtag-counter/README.md',
+    'hashtag-organizer/README.md',
+    'html-formatter/README.md',
+    'html-previewer/README.md',
+    'html-to-markdown/README.md',
+    'image-color-picker/README.md',
+    'image-compressor/README.md',
+    'image-cropper/README.md',
+    'image-format-converter/README.md',
+    'image-resizer/README.md',
+    'image-rotator/README.md',
+    'image-watermark/README.md',
+    'instagram-bio-formatter/README.md',
+    'invoice-generator/README.md',
+    'ipv4-subnet-calculator/README.md',
+    'javascript-minifier/README.md',
+    'json-formatter/README.md',
+    'json-to-txt/README.md',
+    'list-comparison-set-operations/README.md',
+    'loan-repayment-calculator/README.md',
+    'local-to-do-list/README.md',
+    'markdown-converter-previewer/README.md',
+    'meeting-agenda-generator/README.md',
+    'number-base-converter/README.md',
+    'passphrase-generator/README.md',
+    'passport-photo-layout-maker/README.md',
+    'password-generator/README.md',
+    'percentage-calculator/README.md',
+    'percentage-change-calculator/README.md',
+    'png-to-ico/README.md',
+    'pomodoro-timer/README.md',
+    'posting-calendar-generator/README.md',
+    'printable-calendar-generator/README.md',
+    'profit-margin-calculator/README.md',
+    'qr-code-generator/README.md',
+    'random-name-picker/README.md',
+    'regex-tester/README.md',
+    'resume-builder/README.md',
+    'secure-random-number-generator/README.md',
+    'sha-256-hash-checker/README.md',
+    'slug-generator/README.md',
+    'text-difference-checker/README.md',
+    'text-reverser/README.md',
+    'text-sorter/README.md',
+    'timestamp-converter/README.md',
+    'unicode-inspector/README.md',
+    'unit-converter/README.md',
+    'url-encoder-decoder/README.md',
+    'url-inspector-query-builder/README.md',
+    'username-generator/README.md',
+    'uuid-generator/README.md',
+    'vat-calculator/README.md',
+    'word-frequency-analyzer/README.md',
+    'working-days-calculator/README.md',
+    'youtube-description-formatter/README.md',
+    'youtube-thumbnail-preview/README.md',
+    'youtube-title-checker/README.md',
+)
+EXCLUDES += list(README_EXCLUSIONS)
+
 
 def _phase_a_contract(root, policy):
     """Bind the exact frozen scope; source presence is required before acceptance."""
@@ -108,7 +203,13 @@ def _require_preserved_sources(root, scope):
     for name in scope['excluded_output_sha256']:
         # Only ancestor checks are shared within this call; every source file's
         # lstat remains fresh. Publishing exclusion never permits source deletion.
-        css_overlay.safe_file(root, name, checked_directories)
+        source = css_overlay.safe_file(root, name, checked_directories)
+        expected = scope.get('source_readme_sha256', {}).get(name)
+        if expected is not None:
+            # Explicit semantic text comparison; raw recovered-audit checks stay separate.
+            raw = source.read_bytes().decode('utf-8').replace('\r\n', '\n').encode('utf-8')
+            if hashlib.sha256(raw).hexdigest() != expected:
+                raise ValueError('Original README source changed: ' + name)
 
 
 def phase_a_contract(root, policy):
@@ -176,6 +277,60 @@ def _security_report_contract(root, policy):
 def security_report_contract(root, policy):
     """Check the complete successor contract with fresh source-preservation checks."""
     scope = _security_report_contract(root, policy)
+    _require_preserved_sources(root, scope)
+    return scope
+
+
+def _readme_contract(root, policy):
+    """Bind the exact reviewed subtraction; complete source checks precede success."""
+    previous_raw = css_overlay.safe_file(root, POLICY).read_bytes().replace(b'\r\n', b'\n')
+    scope_raw = css_overlay.safe_file(root, SECURITY_SCOPE).read_bytes().replace(b'\r\n', b'\n')
+    if (hashlib.sha256(previous_raw).hexdigest() != SECURITY_POLICY_SHA256
+            or hashlib.sha256(scope_raw).hexdigest() != SECURITY_SCOPE_SHA256):
+        raise ValueError('Frozen Task 2E.4 policy or scope changed')
+    previous = json.loads(previous_raw)
+    old_scope = _security_report_contract(root, previous)
+    if (set(policy) != set(previous) | {'readme_cleanup'}
+            or policy['readme_cleanup'] != {'scope': README_SCOPE, 'predecessor_policy': POLICY}):
+        raise ValueError('README successor selection changed')
+    for key, value in previous.items():
+        if key not in {'output_paths', 'review_note'} and policy.get(key) != value:
+            raise ValueError('README cleanup changed a preserved predecessor rule: ' + key)
+    removed = {name: old_scope['retained_output_sha256'][name] for name in README_EXCLUSIONS}
+    retained = {name: value for name, value in old_scope['retained_output_sha256'].items()
+                if name not in removed}
+    if (len(removed) != 84 or len(retained) != 110 or len(policy['output_paths']) != 110
+            or set(policy['output_paths']) != set(retained)):
+        raise ValueError('README cleanup exceeds the exact 84-path subtraction')
+    expected = {
+        'schema_version': 1, 'task': 'SEO Task 2E.5 Phase B',
+        'authorization': 'DEVELOPMENT_ONLY_NO_MERGE_NO_DEPLOYMENT',
+        'base_commit': README_PARENT,
+        'production_workflow': 42731438531, 'production_artifact': 13724583337,
+        'production_artifact_sha256': '2e7b6f9dd6c5d66802053b7b8b942de29cad6043ad8ae4449207abd86bdca6c9',
+        'audit_candidates_sha256': AUDIT_CANDIDATES_SHA256,
+        'predecessor_policy_sha256': SECURITY_POLICY_SHA256,
+        'predecessor_scope_sha256': SECURITY_SCOPE_SHA256,
+        'new_excluded_output_sha256': removed,
+        'excluded_output_sha256': {**old_scope['excluded_output_sha256'], **removed},
+        'retained_output_sha256': retained,
+        'source_readme_sha256': removed, 'source_readme_normalization': 'utf8-lf',
+        'owner_review_keep_paths': [name for name in old_scope['owner_review_keep_paths'] if name not in removed],
+        'required_runtime_keep_paths': old_scope['required_runtime_keep_paths'],
+        'intentionally_public_keep_paths': old_scope['intentionally_public_keep_paths'],
+        'counts': {'baseline_outputs': 194, 'new_excluded': 84, 'excluded': 927,
+                   'retained': 110, 'canonical_html': 89, 'owner_review': 4,
+                   'runtime': 11, 'intentionally_public': 6},
+    }
+    scope = json.loads(css_overlay.safe_file(root, README_SCOPE).read_bytes())
+    if scope != expected:
+        raise ValueError('README scope or protected hash coverage changed')
+    return scope
+
+
+def readme_contract(root, policy):
+    """Strict public successor contract, including all original README source bytes."""
+    scope = _readme_contract(root, policy)
     _require_preserved_sources(root, scope)
     return scope
 
@@ -306,7 +461,9 @@ def verify_output(site, root, policy):
             'unexpected': sorted(set(files) - expected), 'missing': sorted(expected - set(files))}))
     files = _validate_output_files(site, files)
     security_cleanup = 'security_report_cleanup' in policy
-    scope = (_security_report_contract(root, policy) if security_cleanup else
+    readme_cleanup = 'readme_cleanup' in policy
+    scope = (_readme_contract(root, policy) if readme_cleanup else
+             _security_report_contract(root, policy) if security_cleanup else
              _phase_a_contract(root, policy) if 'phase_a' in policy else None)
     # Read each output once for this invocation. No path, byte or hash result is
     # cached across calls, so subsequent mutations always get fresh validation.
@@ -375,8 +532,9 @@ def verify_output(site, root, policy):
             'historical_html_routes_retained': len(html) - len(canonical),
             'retired_html_outputs': len(policy.get('retired_routes', [])),
             'retired_output_files': len(policy.get('retired_output_paths', [])),
-            'phase_a_excluded_files': len(scope['excluded_output_sha256']) - len(scope.get('new_excluded_output_sha256', {})) if scope else 0,
-            'security_reports_excluded': len(scope.get('new_excluded_output_sha256', {})) if scope else 0,
+            'phase_a_excluded_files': 841 if readme_cleanup else len(scope['excluded_output_sha256']) - len(scope.get('new_excluded_output_sha256', {})) if scope else 0,
+            'security_reports_excluded': 2 if readme_cleanup else len(scope.get('new_excluded_output_sha256', {})) if scope else 0,
+            'readmes_excluded': 84 if readme_cleanup else 0,
             'cumulative_excluded_files': len(scope['excluded_output_sha256']) if scope else 0,
             'privacy_output_files_checked': privacy_files,
             'owner_review_files_retained': len(scope['owner_review_keep_paths']) if scope else 0,
@@ -393,10 +551,10 @@ def main():
     args = parser.parse_args()
     try:
         approval = css_overlay.validate_current(ROOT)
-        policy = json.loads((ROOT / POLICY).read_text(encoding='utf-8'))
+        policy = json.loads((ROOT / CURRENT_POLICY).read_text(encoding='utf-8'))
         result = verify_output(args.site, ROOT, policy)
         result['source_bound_files'] = len(approval['files'])
-        result['policy_sha256'] = css_overlay.digest((ROOT / POLICY).read_text(encoding='utf-8'))
+        result['policy_sha256'] = css_overlay.digest((ROOT / CURRENT_POLICY).read_text(encoding='utf-8'))
     except (OSError, UnicodeError, ValueError, KeyError, TypeError, ET.ParseError) as error:
         result = {'status': 'FAIL', 'error': str(error)}
     args.report.parent.mkdir(parents=True, exist_ok=True)

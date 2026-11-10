@@ -190,6 +190,15 @@ class CSSApprovalTests(unittest.TestCase):
             with self.subTest(path=name), self.mutation(name):
                 self.rejects()
 
+    def test_readme_successor_and_frozen_two_report_approval_remain_bound(self):
+        self.assertEqual(self.approval['readme_parent_revision'], 'e907ae793525ab6c6a45bad5b2e19eab10f0c657')
+        for name in ['_publishing/SEO_TASK_2E5_OUTPUT_POLICY.json', '_publishing/SEO_TASK_2E5_SCOPE.json',
+                     '_publishing/SEO_TASK_2E5_PHASE_B.txt', '_publishing/SEO_TASK_2E4_SOURCE_APPROVAL.json',
+                     'scripts/_privacy_publishing_approval_identity.py', css.MANIFEST, css.IDENTITY,
+                     'README.md', 'youtube-title-checker/README.md']:
+            with self.subTest(path=name), self.mutation(name):
+                self.rejects()
+
     def test_lf_crlf_projection_preserves_trailing_bytes(self):
         name='index.html';source=css.normalize((ROOT/name).read_bytes().decode())
         for candidate in [source,source.replace('\n','\r\n')]:

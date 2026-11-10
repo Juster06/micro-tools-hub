@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -9,6 +10,8 @@ import re
 import signal
 import subprocess
 import sys
+import time
+import uuid
 
 ROOT = Path(__file__).resolve().parents[2]
 MAP = Path(__file__).with_name("coverage.json")
@@ -108,6 +111,45 @@ def whitespace_base(root=ROOT):
     return "HEAD^" if candidate == head else candidate
 
 
+def unittest_protocol():
+    spec = importlib.util.spec_from_file_location("edb_unittest_protocol", MAP.with_name("unittest_runner.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def execute_python_groups(entry, directory, minimum, root=ROOT):
+    protocol = unittest_protocol()
+    mapping, plan, identity = protocol.source_contract(root)
+    entry.update(groups=[], identity=identity, discovered_ids=protocol.all_ids(plan))
+    completed = []
+    for group in protocol.GROUPS:
+        invocation = uuid.uuid4().hex
+        row = {"group": group, "status": "FAIL", "exit_code": None, "timeout_seconds": 240}
+        entry["groups"].append(row)
+        print("RUN python-unittest/" + group, flush=True)
+        started = time.perf_counter()
+        code, output = command([sys.executable, "scripts/ci/unittest_runner.py", "--group", group,
+                                "--invocation", invocation], timeout=240, cwd=root)
+        row.update(exit_code=code, process_seconds=time.perf_counter() - started)
+        row["headroom_seconds"] = 240 - row["process_seconds"]
+        (directory / ("python-unittest-" + group + ".log")).write_text(output, encoding="utf-8")
+        print(output, end="" if output.endswith("\n") else "\n", flush=True)
+        if code:
+            raise ValueError("Required Python group failed")
+        value = protocol.parse_group_result(output)
+        protocol.validate_group_result(value, group, invocation, plan, identity)
+        row.update(status="PASS", **value)
+        completed.append(value)
+    counts = protocol.reconcile_groups(completed, plan)
+    if counts["tests"] < minimum:
+        raise ValueError("Python count below reviewed coverage floor")
+    if protocol.source_contract(root) != (mapping, plan, identity):
+        raise ValueError("Python source contract changed before acceptance")
+    entry.update(counts)
+    entry.update(status="PASS", exit_code=0)
+
+
 def run(job):
     directory = ROOT / "reports/ci" / job
     directory.mkdir(parents=True, exist_ok=True)
@@ -170,7 +212,9 @@ def run(job):
             for tid, item in value["tools"].items() if item["logic_job"] is None]
         if job == "python-project":
             execute("css-source-approval", [sys.executable, "scripts/css_overlay.py", "--check"])
-            execute("python-unittest", [sys.executable, "scripts/ci/unittest_runner.py"], "python", timeout=240, minimum=value["minimum_tests"][job])
+            python_entry = {"scope": "python-unittest", "status": "FAIL", "exit_code": None}
+            summary["scopes"].append(python_entry)
+            execute_python_groups(python_entry, directory, value["minimum_tests"][job])
             for scope, script in (("registry", "validate_registry.py"), ("source-audit-homepage", "check_project.py"), ("static-tools", "verify_tools.py")):
                 execute(scope, [sys.executable, "scripts/" + script, "--json", "--no-report"], "validation")
             execute("technical-seo", [sys.executable, "scripts/validate_seo.py", "--json"], "validation")
