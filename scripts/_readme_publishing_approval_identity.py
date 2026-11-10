@@ -1,2 +1,2 @@
 # Reviewed bootstrap trust anchor; deliberately outside the self-referential manifest.
-MANIFEST_SHA256 = 'c5f884faacac54c09fdab0c608c7b1c0e3af1c2596edaa918c5422b4fcbdce4c'
+MANIFEST_SHA256 = '69a71413761daf13fbf3933e0da2c932af2d0767371a5c6eb9e56455159273c8'
